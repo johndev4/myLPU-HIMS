@@ -158,9 +158,12 @@ class Records extends BaseController
 				$file = $this->request->getFile('medical_file');
 				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
+				$filename = $_POST['filename'] != ""? $_POST['filename'] : $file->getName();
+				$main_filename = $lyceanName . "-" . $filename . "." . $file->getExtension();
 
 				if ($file->isValid() && !$file->hasMoved()) {
-					$file->move('./uploaded/medical_records', $lyceanName . $file->getExtension());
+					$file->move('./uploaded/medical_records', $main_filename);
+					session()->setFlashdata('success', "Successfully uploaded.");
 				}
 			} else {
 				session()->setFlashdata('upload_validation', $this->validator);
