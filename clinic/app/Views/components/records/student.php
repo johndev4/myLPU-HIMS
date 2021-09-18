@@ -18,16 +18,6 @@
         <section class="content">
             <div class="container-fluid">
 
-                <div class="row">
-                    <!-- Add record -->
-                    <div class="col-md-3 col-sm-6 col-12 mb-5">
-                        <!-- <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#exampleModal">
-                            <span class="info-box-icon add-record text-black-50"><i class="fas fa-plus"></i></span>
-                            <span class="info-box-text text-black-50">Add Record</span>
-                        </button> -->
-                    </div>
-                </div>
-
                 <!-- Modal -->
                 <!-- View Modal -->
                 <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
