@@ -70,11 +70,11 @@
                 <!-- Add Record -->
 
                 <!-- View Modal -->
-                <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title font-weight-bold text-secondary" id="exampleModalLabel">Records</h5>
+                                <h5 class="modal-title font-weight-bold text-secondary" id="">Records</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -89,7 +89,7 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Name</div>
-                                                        <div class="h5 mb-0 font-weight-normal text-dark">Jade Anne Kristel Vale</div>
+                                                        <div class="h5 mb-0 font-weight-normal text-dark" id="rec_fullname"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,41 +101,16 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">ID no.</div>
-                                                        <div class="h5 mb-0 font-weight-normal text-dark">2018-2-03248</div>
+                                                        <div class="h5 mb-0 font-weight-normal text-dark" id="rec_idno"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- <div class="col-12 form-group mb-n3">
-                                        <label for="recipient-name" class="col-form-label font-weight-normal text-secondary">Name:</label>
-                                        John Rafael P. Mistica
-                                    </div>
-                                    <div class="col-12 form-group mb-n3">
-                                        <label for="recipient-name" class="col-form-label font-weight-normal text-secondary">ID number:</label>
-                                        2018-2-02126
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="recipient-name" class="col-form-label font-weight-normal text-secondary">Department:</label>
-                                        COECSA
-                                    </div> -->
-
-                                    <!-- Details -->
                                     <div class="col-lg-4">
                                         <div class="card overflow-auto" style="height: 230px;">
                                             <h5 class="card-header text-danger">Details</h5>
                                             <div class="card-body">
-                                                <!-- <div class="d-inline">
-                                                    <span><label class="text-secondary">Birthdate:</label> 10-14-2000</span>
-                                                    <span class="float-right"><label class="text-secondary">Age:</label> 21</span>
-                                                </div><br>
-                                                <div class="d-inline">
-                                                    <span><label class="text-secondary">Height:</label> 5"2</span>
-                                                    <span class="float-right"><label class="text-secondary">Weight:</label> 100kg</span>
-                                                </div>
-                                                <span class="text-secondary d-block"><label>Sex:</label> F</span>
-                                                <span class="text-secondary d-block"><label>Blood type:</label> O-</span> -->
                                                 <div class="row">
                                                     <div class="col-md-7">
                                                         <span class=" d-block"><label class="text-secondary">Birthdate:</label> 10-14-2000</span>
@@ -152,51 +127,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <!-- /Details -->
-
                                     <div class="col-lg-8">
-
-                                        <!-- Table -->
-                                        <!-- <div class="card-body p-0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width: 10px">#</th>
-                                                        <th style="width: 450px">File Name</th>
-                                                        <th style="width: 250px">Date Added</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1.</td>
-                                                        <td><a href="">Mistica, John_Medical_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2.</td>
-                                                        <td><a href="">Mistica, John_MRI_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3.</td>
-                                                        <td><a href="">Mistica, John_Dental_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1.</td>
-                                                        <td><a href="">Mistica, John_Physical_Checkup_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div> -->
-
-
                                         <div class="card">
                                             <!-- /.card-header -->
                                             <div class="card-body table-responsive p-0" style="height: 230px;">
@@ -244,10 +177,12 @@
                                     </div>
                                     <br><br><br><br>
                                     <form action="<?= base_url('records/uploadRecord') ?>" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id_no" value="">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="medical_file">Upload File</label>
                                                 <input type="file" class="form-control-file " id="medical_file" name="medical_file">
+                                                <input type="text" class="form-control-file " id="filename" name="filename">
                                             </div>
                                         </div>
                                         <div class="col-md-6 mt-4 mb-n4">
@@ -378,6 +313,22 @@
             $("#studentRecordNav > a").addClass('active');
 
         });
+
+
+        // Retrieve data
+        function retrieveData(id) {
+            $.ajax({
+                url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    var middle_initial = response['middle_initial'] != "" ? `${response['middle_initial']}.` : ""
+                    $('#rec_idno').text(response['id_no']);
+                    $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']} ${middle_initial}`);
+                    $('input[name=id_no]').val(response['id_no']);
+                }
+            });
+        }
     </script>
 
     <?= $this->endSection('content') ?>

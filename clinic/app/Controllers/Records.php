@@ -19,8 +19,8 @@ class Records extends BaseController
 	{
 		return  [
 			'medical_file' => [
-				'rules' => 'uploaded[medical_file]',
-				'label' => 'Upload File'
+				'rules' => 'uploaded[medical_file]|ext_in[medical_file,pdf]',
+				'label' => 'File'
 			]
 		];
 	}
@@ -63,7 +63,7 @@ class Records extends BaseController
 				$value['department'],
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default \">View</button></a> 
+				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
 				</div>"
@@ -87,7 +87,7 @@ class Records extends BaseController
 				$value['department'],
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default \">View</button></a> 
+				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
 				</div>"
@@ -111,7 +111,7 @@ class Records extends BaseController
 				$value['department'],
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default \">View</button></a> 
+				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
 				</div>"
@@ -122,20 +122,53 @@ class Records extends BaseController
 	}
 
 
+	// FETCH DATA BY ID
+	// ---------------------------------------------------------
+	public function fetchLyceanById($id)
+	{
+		$lyceans = $this->lyceansModel->find($id);
+		$lyceansAccount = $this->lyceansAccountModel->find($id);
+		$result = [];
+
+		if ($lyceans) {
+			$result = [
+				'id_no' 		 => $lyceans['id_no'],
+				'last_name' 	 => $lyceans['last_name'],
+				'first_name' 	 => $lyceans['first_name'],
+				'middle_initial' => $lyceans['middle_initial'],
+				'department' 	 => $lyceans['department']
+			];
+		}
+
+		if ($lyceansAccount) {
+			$result['username'] = $lyceansAccount['username'];
+		}
+
+		return json_encode($result);
+	}
+
+
 	// UPLOAD RECORDS
 	// ---------------------------------------------------------
-	public function uploadRecord()
+	private function uploadRecord()
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			if ($this->validate($this->getRecordRules())) {
 				$file = $this->request->getFile('medical_file');
-				echo $file->getName();
+
+				if ($file->isValid() && !$file->hasMoved()) {
+					$file->move('./uploaded/medical_records');
+				}
 			} else {
 				echo $this->validator->getError('medical_file');
 			}
-
-			// return redirect()->to('records/student');
 		}
+	}
+
+	public function uploadStudentRecord()
+	{
+		$this->uploadRecord();
+		return redirect()->to('records/student');
 	}
 }

@@ -69,3 +69,50 @@ CRITICAL - 2021-09-18 16:36:35 --> Call to a member function getFilename() on nu
 #2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 {main}
+CRITICAL - 2021-09-18 20:55:46 --> Undefined property: CodeIgniter\HTTP\Files\UploadedFile::$isValid
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Records.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 134)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Records->uploadRecord()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Records))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2021-09-18 21:29:44 --> Table 'mylpuhims_db.lyceans_accounts' doesn't exist
+CRITICAL - 2021-09-18 21:29:44 --> Table 'mylpuhims_db.lyceans_accounts' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '2018-2-01345')
+#6 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Records.php(130): CodeIgniter\BaseModel->find('2018-2-01345')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Records->fetchLyceanById('2018-2-01345')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Records))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-09-18 21:30:12 --> Too few arguments to function App\Controllers\Records::fetchLyceanById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Records->fetchLyceanById()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Records))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2021-09-18 21:30:52 --> Table 'mylpuhims_db.lyceans_accounts' doesn't exist
+CRITICAL - 2021-09-18 21:30:52 --> Table 'mylpuhims_db.lyceans_accounts' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '2018-2-02181')
+#6 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Records.php(130): CodeIgniter\BaseModel->find('2018-2-02181')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Records->fetchLyceanById('2018-2-02181')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Records))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-09-18 21:36:57 --> Too few arguments to function App\Controllers\Records::fetchLyceanById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Records->fetchLyceanById()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Records))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
