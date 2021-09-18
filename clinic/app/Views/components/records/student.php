@@ -110,7 +110,7 @@
 
                                     <!-- Details -->
                                     <div class="col-lg-4">
-                                        <div class="card overflow-auto" style="height: 360px;">
+                                        <div class="card overflow-auto" style="height: 362px;">
                                             <h5 class="card-header text-danger">Details</h5>
                                             <div class="card-body">
                                                 <div class="row">
@@ -179,7 +179,7 @@
                                         <!-- /Table -->
 
 
-                                        <div class="row" style="border:1px solid blue">
+                                        <div class="row" style="border:1px solid none">
                                             <form class="col-12" action="<?= base_url('records/uploadRecord') ?>" method="post" enctype="multipart/form-data">
                                                 <input type="hidden" name="id_no" value="">
                                                 <div class="row">
@@ -196,16 +196,16 @@
                                                         </div>
                                                     </div> -->
 
-                                                    <div class="col-md-12" style="border:1px solid none;">
+                                                    <div class="col-md-8" style="border:1px solid none;">
                                                         <div class="form-group">
                                                             <label for="medical_file">Upload File
-                                                                <div class="d-flex justify-content-start mt-2">
+                                                                <div class="d-flex justify-content-start mt-3">
                                                                     <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
                                                                     <input type="file" class="form-control-file py-2 px-1" id="medical_file" name="medical_file" style="border:1px solid none;">
                                                                 </div>
                                                                 <div class="d-flex">
                                                                     <input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
-                                                                    <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color">save</button>
+                                                                    <!-- <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color">save</button> -->
                                                                 </div>
 
                                                             </label>
@@ -213,6 +213,11 @@
                                                             <!-- <button type="submit" class="btn text-light swalDefaultSuccess save-button-color">save</button> -->
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-md-4">
+                                                        <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color float-right">save</button>
+                                                    </div>
+
 
                                                 </div>
                                             </form>
