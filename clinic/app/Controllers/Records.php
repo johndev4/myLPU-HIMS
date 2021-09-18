@@ -156,12 +156,13 @@ class Records extends BaseController
 
 			if ($this->validate($this->getRecordRules())) {
 				$file = $this->request->getFile('medical_file');
+				$lyceans = $this->lyceansModel->find($_POST['id_no']);
 
 				if ($file->isValid() && !$file->hasMoved()) {
 					$file->move('./uploaded/medical_records');
 				}
 			} else {
-				echo $this->validator->getError('medical_file');
+				session()->setFlashdata('upload_validation', $this->validator);
 			}
 		}
 	}
