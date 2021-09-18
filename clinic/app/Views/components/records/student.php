@@ -18,57 +18,7 @@
         <section class="content">
             <div class="container-fluid">
 
-                <div class="row">
-                    <!-- Add record -->
-                    <div class="col-md-3 col-sm-6 col-12 mb-5">
-                        <!-- <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#exampleModal">
-                            <span class="info-box-icon add-record text-black-50"><i class="fas fa-plus"></i></span>
-                            <span class="info-box-text text-black-50">Add Record</span>
-                        </button> -->
-                    </div>
-                </div>
-
                 <!-- Modal -->
-                <!-- Add Record -->
-                <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title font-weight-bold text-secondary" id="exampleModalLabel">Student</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">First Name:</label>
-                                        <input type="text" class="form-control" id="recipient-name" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Last Name:</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Department:</label>
-                                        <select name="departments" class="form-control" id="departments">
-                                            <option value="COECSA">COECSA</option>
-                                            <option value="CITHM">CITHM</option>
-                                            <option value="CAS">CAS</option>
-                                            <option value="CAMS">CAMS</option>
-                                        </select>
-                                    </div>
-                                </form>
-                                <div class="footer float-right pb-3">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="button" id="addBtn" class="btn btn-danger" data-dismiss="modal">Add</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Record -->
-
                 <!-- View Modal -->
                 <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -107,6 +57,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- /View Info -->
 
                                     <!-- Details -->
                                     <div class="col-lg-4">
@@ -130,12 +81,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                     <!-- /Details -->
+
+                                    <!-- File -->
                                     <div class="col-lg-8">
                                         <!-- Table -->
                                         <div class="card">
-                                            <!-- /.card-header -->
                                             <div class="card-body table-responsive p-0" style="height: 230px;">
                                                 <table class="table table-head-fixed text-nowrap">
                                                     <thead>
@@ -174,28 +125,14 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <!-- /.card-body -->
                                         </div>
                                         <!-- /Table -->
 
-
+                                        <!-- Upload -->
                                         <div class="row" style="border:1px solid none">
                                             <form class="col-12" action="<?= base_url('records/uploadRecord') ?>" method="post" enctype="multipart/form-data">
                                                 <input type="hidden" name="id_no" value="">
                                                 <div class="row">
-
-                                                    <!-- <div class="col-md-4" style="border:1px solid none;">
-                                                        <div class="form-group">
-                                                            <label for="medical_file">Upload File
-                                                                <div class="d-flex justify-content-start mt-2">
-                                                                    <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
-                                                                    <input type="file" class="form-control-file py-2 px-1" id="medical_file" name="medical_file" style="border:1px solid none;">
-                                                                </div>
-                                                                </span><input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
-                                                            </label>
-                                                        </div>
-                                                    </div> -->
-
                                                     <div class="col-md-8" style="border:1px solid none;">
                                                         <div class="form-group">
                                                             <label for="medical_file">Upload File
@@ -205,42 +142,20 @@
                                                                 </div>
                                                                 <div class="d-flex">
                                                                     <input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
-                                                                    <!-- <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color">save</button> -->
                                                                 </div>
-
                                                             </label>
-
-                                                            <!-- <button type="submit" class="btn text-light swalDefaultSuccess save-button-color">save</button> -->
                                                         </div>
                                                     </div>
-
                                                     <div class="col-md-4">
-                                                        <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color float-right">save</button>
+                                                        <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color float-right">Save</button>
                                                     </div>
-
-
                                                 </div>
                                             </form>
-
                                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                        <!-- /Upload -->
                                     </div>
+                                    <!-- /File -->
                                     <br><br><br><br>
-                                </div>
-                                <div class="footer float-right pb-3">
                                 </div>
                             </div>
                         </div>
@@ -296,7 +211,6 @@
                             <div class="card-header record-header">
                                 <h3 class="card-title">Student Records</h3>
                             </div>
-                            <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="records_table" class="table table-bordered table-hover">
                                     <thead>
@@ -320,13 +234,10 @@
                                     </tfoot>
                                 </table>
                             </div>
-                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
                     </div>
-                    <!-- /.col -->
                 </div>
-
+                 <!-- /Table -->
 
             </div>
         </section>
