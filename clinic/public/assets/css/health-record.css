@@ -12,3 +12,16 @@
     border-color:rgb(190, 190, 190); 
     height:200px
 }
+input[type=file]::file-selector-button {
+    display: none;
+} 
+.save-button-color{
+    background-color:#04428b !important;
+    width: 120px; 
+}
+
+/* margin-top: 70px; */
+
+.save-button-color:hover{
+    background-color: #1a5496 !important;
+}
