@@ -30,7 +30,7 @@
 
                 <!-- Modal -->
                 <!-- Add Record -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -80,7 +80,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form class="row">
+                                <div class="row">
 
                                     <!-- View Info -->
                                     <div class="col-xl-6 col-md-6">
@@ -243,20 +243,21 @@
 
                                     </div>
                                     <br><br><br><br>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="exampleFormControlFile1">Upload File</label>
-                                            <input type="file" class="form-control-file " id="exampleFormControlFile1">
+                                    <form action="<?= base_url('records/uploadRecord') ?>" method="get" enctype="multipart/form-data">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1">Upload File</label>
+                                                <input type="file" class="form-control-file " id="" name="medical_file">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6 mt-4 mb-n4">
-                                        <div class="form-group float-right">
-                                            <button type="button" class="btn btn-secondary d-flex flex-row swalDefaultSuccess" data-dismiss="modal">save</button>
+                                        <div class="col-md-6 mt-4 mb-n4">
+                                            <div class="form-group float-right">
+                                                <button type="submit" class="btn btn-secondary d-flex flex-row swalDefaultSuccess">save</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                                 <div class="footer float-right pb-3">
-
                                 </div>
                             </div>
                         </div>

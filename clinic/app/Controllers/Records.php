@@ -13,6 +13,19 @@ class Records extends BaseController
 	}
 
 
+	// VALIDATION RULES
+	// -----------------------------------------------------------------
+	private function getRecordRules()
+	{
+		return  [
+			'medical_file' => [
+				'rules' => 'uploaded[medical_file]',
+				'label' => 'Upload File'
+			]
+		];
+	}
+
+
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
 	public function student()
@@ -40,7 +53,7 @@ class Records extends BaseController
 	{
 		$result = array('data' => array());
 		$lyceans = $this->lyceansModel->where('role', 'student')->findAll();
-		
+
 		foreach ($lyceans as $key => $value) {
 
 			$result['data'][$key] = array(
@@ -64,7 +77,7 @@ class Records extends BaseController
 	{
 		$result = array('data' => array());
 		$lyceans = $this->lyceansModel->where('role', 'faculty')->findAll();
-		
+
 		foreach ($lyceans as $key => $value) {
 
 			$result['data'][$key] = array(
@@ -88,7 +101,7 @@ class Records extends BaseController
 	{
 		$result = array('data' => array());
 		$lyceans = $this->lyceansModel->where('role', 'staff')->findAll();
-		
+
 		foreach ($lyceans as $key => $value) {
 
 			$result['data'][$key] = array(
@@ -109,20 +122,20 @@ class Records extends BaseController
 	}
 
 
-	// DELETE DATA
+	// UPLOAD RECORDS
 	// ---------------------------------------------------------
-	private function deleteLyceanAccount($id)
+	public function uploadRecord()
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			// $success1 = $this->
 
-			$success = $this->lyceansAccountModel->delete($id);
-
-			if ($success) {
-				// Create flashdata for database query status
-				session()->setFlashdata('success', 'Successfully deleted.');
+			if ($this->validate($this->getRecordRules())) {
+				$file = $this->request->getFile('medical_file');
+				echo $file->getName();
 			} else {
+				echo $this->validator->getError('medical_file');
 			}
+
+			// return redirect()->to('records/student');
 		}
 	}
 }
