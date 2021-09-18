@@ -89,7 +89,7 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Name</div>
-                                                        <div class="h5 mb-0 font-weight-normal text-dark">Jade Anne Kristel Vale</div>
+                                                        <div class="h5 mb-0 font-weight-normal text-dark" id="rec_fullname"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,51 +101,29 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">ID no.</div>
-                                                        <div class="h5 mb-0 font-weight-normal text-dark">2018-2-03248</div>
+                                                        <div class="h5 mb-0 font-weight-normal text-dark" id="rec_idno"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- <div class="col-12 form-group mb-n3">
-                                        <label for="recipient-name" class="col-form-label font-weight-normal text-secondary">Name:</label>
-                                        John Rafael P. Mistica
-                                    </div>
-                                    <div class="col-12 form-group mb-n3">
-                                        <label for="recipient-name" class="col-form-label font-weight-normal text-secondary">ID number:</label>
-                                        2018-2-02126
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="recipient-name" class="col-form-label font-weight-normal text-secondary">Department:</label>
-                                        COECSA
-                                    </div> -->
-
                                     <!-- Details -->
                                     <div class="col-lg-4">
-                                        <div class="card overflow-auto" style="height: 230px;">
+                                        <div class="card overflow-auto" style="height: 360px;">
                                             <h5 class="card-header text-danger">Details</h5>
                                             <div class="card-body">
-                                                <!-- <div class="d-inline">
-                                                    <span><label class="text-secondary">Birthdate:</label> 10-14-2000</span>
-                                                    <span class="float-right"><label class="text-secondary">Age:</label> 21</span>
-                                                </div><br>
-                                                <div class="d-inline">
-                                                    <span><label class="text-secondary">Height:</label> 5"2</span>
-                                                    <span class="float-right"><label class="text-secondary">Weight:</label> 100kg</span>
-                                                </div>
-                                                <span class="text-secondary d-block"><label>Sex:</label> F</span>
-                                                <span class="text-secondary d-block"><label>Blood type:</label> O-</span> -->
                                                 <div class="row">
                                                     <div class="col-md-7">
                                                         <span class=" d-block"><label class="text-secondary">Birthdate:</label> 10-14-2000</span>
                                                         <span class="d-block"><label class="text-secondary">Age:</label> 21</span>
                                                         <span class="d-block"><label class="text-secondary">Sex:</label> F</span>
                                                         <span class="d-block"><label class="text-secondary">Blood type:</label> O-</span>
-                                                    </div>
-                                                    <div class="col-md-5">
                                                         <span class="d-block"><label class="text-secondary">Height:</label> 5"2</span>
                                                         <span class="d-block"><label class="text-secondary">Weight:</label> 100kg</span>
+                                                    </div>
+                                                    <div class="col-md-5">
+
                                                     </div>
                                                 </div>
 
@@ -155,48 +133,7 @@
                                     <!-- /Details -->
 
                                     <div class="col-lg-8">
-
                                         <!-- Table -->
-                                        <!-- <div class="card-body p-0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width: 10px">#</th>
-                                                        <th style="width: 450px">File Name</th>
-                                                        <th style="width: 250px">Date Added</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1.</td>
-                                                        <td><a href="">Mistica, John_Medical_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2.</td>
-                                                        <td><a href="">Mistica, John_MRI_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3.</td>
-                                                        <td><a href="">Mistica, John_Dental_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1.</td>
-                                                        <td><a href="">Mistica, John_Physical_Checkup_Result.pdf</a></td>
-                                                        <td>09-07-2021</td>
-                                                        <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div> -->
-
-
                                         <div class="card">
                                             <!-- /.card-header -->
                                             <div class="card-body table-responsive p-0" style="height: 230px;">
@@ -241,21 +178,63 @@
                                         </div>
                                         <!-- /Table -->
 
+
+                                        <div class="row" style="border:1px solid blue">
+                                            <form class="col-12" action="<?= base_url('records/uploadRecord') ?>" method="post" enctype="multipart/form-data">
+                                                <input type="hidden" name="id_no" value="">
+                                                <div class="row">
+
+                                                    <!-- <div class="col-md-4" style="border:1px solid none;">
+                                                        <div class="form-group">
+                                                            <label for="medical_file">Upload File
+                                                                <div class="d-flex justify-content-start mt-2">
+                                                                    <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
+                                                                    <input type="file" class="form-control-file py-2 px-1" id="medical_file" name="medical_file" style="border:1px solid none;">
+                                                                </div>
+                                                                </span><input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
+                                                            </label>
+                                                        </div>
+                                                    </div> -->
+
+                                                    <div class="col-md-12" style="border:1px solid none;">
+                                                        <div class="form-group">
+                                                            <label for="medical_file">Upload File
+                                                                <div class="d-flex justify-content-start mt-2">
+                                                                    <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
+                                                                    <input type="file" class="form-control-file py-2 px-1" id="medical_file" name="medical_file" style="border:1px solid none;">
+                                                                </div>
+                                                                <div class="d-flex">
+                                                                    <input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
+                                                                    <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color">save</button>
+                                                                </div>
+
+                                                            </label>
+
+                                                            <!-- <button type="submit" class="btn text-light swalDefaultSuccess save-button-color">save</button> -->
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                     </div>
                                     <br><br><br><br>
-                                    <form action="<?= base_url('records/uploadRecord') ?>" method="post" enctype="multipart/form-data">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="medical_file">Upload File</label>
-                                                <input type="file" class="form-control-file " id="medical_file" name="medical_file">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-4 mb-n4">
-                                            <div class="form-group float-right">
-                                                <button type="submit" class="btn btn-secondary d-flex flex-row swalDefaultSuccess">save</button>
-                                            </div>
-                                        </div>
-                                    </form>
+
                                 </div>
                                 <div class="footer float-right pb-3">
                                 </div>
