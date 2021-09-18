@@ -243,11 +243,11 @@
 
                                     </div>
                                     <br><br><br><br>
-                                    <form action="<?= base_url('records/uploadRecord') ?>" method="get" enctype="multipart/form-data">
+                                    <form action="<?= base_url('records/uploadRecord') ?>" method="post" enctype="multipart/form-data">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="exampleFormControlFile1">Upload File</label>
-                                                <input type="file" class="form-control-file " id="" name="medical_file">
+                                                <label for="medical_file">Upload File</label>
+                                                <input type="file" class="form-control-file " id="medical_file" name="medical_file">
                                             </div>
                                         </div>
                                         <div class="col-md-6 mt-4 mb-n4">

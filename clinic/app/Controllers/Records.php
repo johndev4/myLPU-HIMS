@@ -126,7 +126,7 @@ class Records extends BaseController
 	// ---------------------------------------------------------
 	public function uploadRecord()
 	{
-		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			if ($this->validate($this->getRecordRules())) {
 				$file = $this->request->getFile('medical_file');
