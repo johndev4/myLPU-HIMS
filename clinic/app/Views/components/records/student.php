@@ -70,11 +70,11 @@
                 <!-- Add Record -->
 
                 <!-- View Modal -->
-                <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title font-weight-bold text-secondary" id="exampleModalLabel">Records</h5>
+                                <h5 class="modal-title font-weight-bold text-secondary" id="">Records</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -130,8 +130,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <!-- /Details -->
-
                                     <div class="col-lg-8">
                                         <!-- Table -->
                                         <div class="card">
@@ -239,7 +239,6 @@
 
                                     </div>
                                     <br><br><br><br>
-
                                 </div>
                                 <div class="footer float-right pb-3">
                                 </div>
@@ -362,6 +361,22 @@
             $("#studentRecordNav > a").addClass('active');
 
         });
+
+
+        // Retrieve data
+        function retrieveData(id) {
+            $.ajax({
+                url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    var middle_initial = response['middle_initial'] != "" ? `${response['middle_initial']}.` : ""
+                    $('#rec_idno').text(response['id_no']);
+                    $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']} ${middle_initial}`);
+                    $('input[name=id_no]').val(response['id_no']);
+                }
+            });
+        }
     </script>
 
     <?= $this->endSection('content') ?>

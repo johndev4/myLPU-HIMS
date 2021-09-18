@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class LyceansAccountModel extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'lyceans_accounts';
+	protected $table                = 'lyceans_account';
 	protected $primaryKey           = 'id_no';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
