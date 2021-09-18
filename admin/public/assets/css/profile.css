@@ -1,0 +1,9 @@
+.errors>ul>li{
+    border-color:rgb(255, 180, 180); 
+    background-color:rgb(255, 180, 180); 
+    border-radius:6px;
+    list-style-type:none;
+    margin: 0px 0px 0px -40px;
+    padding: 8px;
+}
+

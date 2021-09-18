@@ -1,0 +1,16 @@
+[
+    {
+        "username": "2018-2-02181",
+        "password": "03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4",
+        "role": "student",
+        "created_at": "0000-00-00 00:00:00",
+        "updated_at": "0000-00-00 00:00:00"
+    },
+    {
+        "username": "hahaha",
+        "password": "03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4",
+        "role": "student",
+        "created_at": "0000-00-00 00:00:00",
+        "updated_at": "0000-00-00 00:00:00"
+    }
+]

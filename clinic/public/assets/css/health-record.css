@@ -1,0 +1,14 @@
+.add-record{
+    background-color: none !important;
+}
+.record-header{
+    background-color: #a62d38 !important;
+    opacity: 0.95;
+    color: whitesmoke;
+}
+.records-border{
+    border-style:solid; 
+    border-radius: 6px;
+    border-color:rgb(190, 190, 190); 
+    height:200px
+}

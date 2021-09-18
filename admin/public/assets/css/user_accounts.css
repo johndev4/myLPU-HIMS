@@ -1,0 +1,22 @@
+.add-record{
+    background-color: none !important;
+}
+
+.record-header{
+    background-color: #a62d38 !important;
+    opacity: 0.95;
+    color: whitesmoke;
+}
+
+.button-color{
+    background-color:#04428b !important;
+    width: 120px; 
+}
+
+.button-width{
+    width: 120px; 
+}
+
+.button-color:hover{
+    background-color: #1a5496 !important;
+}

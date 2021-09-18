@@ -1,0 +1,23 @@
+.login-box-msg{
+    align-content: left;
+    font-size: 20px;   
+}
+.forgot_password{
+    text-decoration: none;
+    color: rgb(94, 94, 94);
+}
+.forgot_password:hover{
+    color: rgb(28, 0, 153);
+}
+.card-body{
+    border-radius: 13px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+.font-weight{
+    font-weight: 800;
+}
+.color{
+    background-color: #a62d38 !important; 
+    opacity:0.95; 
+    border-radius: 8px !important;
+}

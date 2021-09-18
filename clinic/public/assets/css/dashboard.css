@@ -1,0 +1,33 @@
+.dash-widgets{
+    background-color: #a62d38 !important; 
+    opacity:0.95; 
+    color:white;
+}
+
+x{
+    color: rgb(202, 58, 58);
+    color: rgb(255, 115, 115);
+} 
+
+.dash-banner-ico {
+    color: #d60000; 
+    text-shadow: 0 0 20px #fff;
+}
+
+.dash-banner-text {
+    top: 40px; 
+    left: 25px; 
+    font-size: 18pt;
+}
+
+@media only screen and (max-width: 360px) {
+    .icon {
+        display: none;
+    }
+    
+    .dash-banner-text {
+        top: 10px; 
+        left: 15px; 
+        font-size: 18pt;
+    }
+}
