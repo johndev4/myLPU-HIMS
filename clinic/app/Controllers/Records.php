@@ -20,7 +20,10 @@ class Records extends BaseController
 		return  [
 			'medicalfile' => [
 				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
-				'label' => 'File'
+				'errors' => [
+					'uploaded' => '- Required'
+				],
+				'label' => 'Medical File'
 			],
 			'filename' => [
 				'rules' => 'permit_empty|alpha_dash',
@@ -172,9 +175,9 @@ class Records extends BaseController
 					session()->setFlashdata('success', "Successfully uploaded.");
 				}
 			} else {
-				session()->setFlashdata('upload_validation', $this->validator);
-				// print_r($this->validator->getErrors());
-				session()->setFlashdata('postData', $_POST);
+				// Mag error pag "$this->validator" lang
+				session()->setFlashdata('upload_validation', $this->validator->getErrors());
+				session()->setFlashdata('postData', json_encode($_POST));
 			}
 		}
 	}
@@ -182,6 +185,6 @@ class Records extends BaseController
 	public function uploadStudentRecord()
 	{
 		$this->uploadRecord();
-		// return redirect()->to('records/student');
+		return redirect()->to('records/student');
 	}
 }
