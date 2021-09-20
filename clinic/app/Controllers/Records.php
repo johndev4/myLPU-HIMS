@@ -18,8 +18,8 @@ class Records extends BaseController
 	private function getRecordRules()
 	{
 		return  [
-			'medical_file' => [
-				'rules' => 'uploaded[medical_file]|max_size[medical_file,2048]|ext_in[medical_file,pdf]',
+			'medicalFile' => [
+				'rules' => 'max_size[medicalFile,2048]|ext_in[medicalFile,pdf]',
 				'label' => 'File'
 			]
 		];
@@ -155,7 +155,7 @@ class Records extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			if ($this->validate($this->getRecordRules())) {
-				$file = $this->request->getFile('medical_file');
+				$file = $this->request->getFile('medicalFile');
 				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
 				$fileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());

@@ -139,7 +139,7 @@
                                                                 <label for="medical_file">Upload File
                                                                     <div class="d-flex justify-content-start mt-3">
                                                                         <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
-                                                                        <input type="file" class="form-control-file py-2 px-1" id="medical_file" name="medical_file" style="border:1px solid none;">
+                                                                        <input type="file" name="medicalFile" id="medical_file" class="form-control-file py-2 px-1"  style="border:1px solid none;">
                                                                         <!-- Validation Error -->
                                                                         <?php if (!empty(session()->getFlashdata('upload_validation'))) : ?>
                                                                             <?php if (session()->getFlashdata('upload_validation')->hasError('medical_file')) : ?>
