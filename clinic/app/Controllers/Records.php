@@ -19,7 +19,7 @@ class Records extends BaseController
 	{
 		return  [
 			'medical_file' => [
-				'rules' => 'uploaded[medical_file]|ext_in[medical_file,pdf]',
+				'rules' => 'uploaded[medical_file]|max_size[medical_file,2048]|ext_in[medical_file,pdf]',
 				'label' => 'File'
 			]
 		];
@@ -62,7 +62,7 @@ class Records extends BaseController
 				$value['last_name'],
 				$value['department'],
 				"<div align=\"center\">
-				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
+				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
@@ -86,7 +86,7 @@ class Records extends BaseController
 				$value['last_name'],
 				$value['department'],
 				"<div align=\"center\">
-				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
+				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
@@ -110,7 +110,7 @@ class Records extends BaseController
 				$value['last_name'],
 				$value['department'],
 				"<div align=\"center\">
-				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
+				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
@@ -158,15 +158,18 @@ class Records extends BaseController
 				$file = $this->request->getFile('medical_file');
 				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
-				$filename = $_POST['filename'] != ""? $_POST['filename'] : $file->getName();
-				$main_filename = $lyceanName . "-" . $filename . "." . $file->getExtension();
+				$fileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
 
 				if ($file->isValid() && !$file->hasMoved()) {
-					$file->move('./uploaded/medical_records', $main_filename);
+					$file->move(
+						'./uploaded/medical_records/' . $_POST['id_no'],
+						$lyceanName . "-" . $fileName . "." . $file->getExtension()
+					);
 					session()->setFlashdata('success', "Successfully uploaded.");
 				}
 			} else {
 				session()->setFlashdata('upload_validation', $this->validator);
+				session()->setFlashdata('postData', json_encode($_POST));
 			}
 		}
 	}
@@ -174,6 +177,6 @@ class Records extends BaseController
 	public function uploadStudentRecord()
 	{
 		$this->uploadRecord();
-		return redirect()->to('records/student');
+		// return redirect()->to('records/student');
 	}
 }

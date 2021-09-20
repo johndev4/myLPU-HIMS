@@ -20,7 +20,7 @@
 
                 <!-- Modal -->
                 <!-- View Modal -->
-                <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -140,6 +140,19 @@
                                                                     <div class="d-flex justify-content-start mt-3">
                                                                         <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
                                                                         <input type="file" class="form-control-file py-2 px-1" id="medical_file" name="medical_file" style="border:1px solid none;">
+                                                                        <!-- Validation Error -->
+                                                                        <?php if (!empty(session()->getFlashdata('upload_validation'))) : ?>
+                                                                            <?php if (session()->getFlashdata('upload_validation')->hasError('medical_file')) : ?>
+                                                                                <span class="error text-danger">
+                                                                                    <?= session()->getFlashdata('upload_validation')->getError('medical_file'); ?>
+                                                                                </span>
+                                                                                <script>
+                                                                                    $().ready(function() {
+                                                                                        $('#medical_file').addClass('border border-danger');
+                                                                                    });
+                                                                                </script>
+                                                                            <?php endif; ?>
+                                                                        <?php endif; ?>
                                                                     </div>
                                                                     <div class="d-flex">
                                                                         <input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
@@ -273,6 +286,36 @@
             $("#mainUserRecordNav > a").addClass('active');
             $("#studentRecordNav > a").addClass('active');
 
+            // Sweet Alert for success staus
+            <?php if (session()->getFlashdata('success') !== null) : ?>
+                var Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+                Toast.fire({
+                    icon: 'success',
+                    title: '<?= session()->getFlashdata('success'); ?>'
+                });
+            <?php endif; ?>
+
+            // File Upload Validation Error
+            <?php if (!empty(session()->getFlashdata('upload_validation'))) : ?>
+                $('#viewModal').modal('show');
+                retrieveData2();
+                $('#viewModal').on('hidden.bs.modal', function(evt) {
+                    $('.error').addClass('d-none');
+                    $('input.border').removeClass('border border-danger');
+                    $('select.border').removeClass('border border-danger');
+                });
+            <?php endif; ?>
+
+            // Reset add modal on close
+            $('#viewModal').on('hidden.bs.modal', function(evt) {
+                $('#medical_file').val("");
+                $('#filename').val("");
+            });
         });
 
 
@@ -289,6 +332,13 @@
                     $('input[name=id_no]').val(response['id_no']);
                 }
             });
+        }
+        // Retrieve data
+        function retrieveData2() {
+            var data = <?= session()->get('postData') ?>
+
+            $('#medical_file').val(data['medical_file']);
+            $('#filename').val(data['filename']);
         }
     </script>
 
