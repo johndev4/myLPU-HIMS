@@ -18,9 +18,13 @@ class Records extends BaseController
 	private function getRecordRules()
 	{
 		return  [
-			'medical_file' => [
-				'rules' => 'uploaded[medical_file]|ext_in[medical_file,pdf]',
+			'medicalfile' => [
+				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
 				'label' => 'File'
+			],
+			'filename' => [
+				'rules' => 'permit_empty|alpha_dash',
+				'label' => 'Filename'
 			]
 		];
 	}
@@ -62,7 +66,7 @@ class Records extends BaseController
 				$value['last_name'],
 				$value['department'],
 				"<div align=\"center\">
-				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
+				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
@@ -86,7 +90,7 @@ class Records extends BaseController
 				$value['last_name'],
 				$value['department'],
 				"<div align=\"center\">
-				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
+				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
@@ -110,7 +114,7 @@ class Records extends BaseController
 				$value['last_name'],
 				$value['department'],
 				"<div align=\"center\">
-				<a href=\"\" data-target=\"#modifyModal\" data-toggle=\"modal\">
+				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
 				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
@@ -155,15 +159,22 @@ class Records extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			if ($this->validate($this->getRecordRules())) {
-				$file = $this->request->getFile('medical_file');
+				$file = $this->request->getFile('medicalfile');
 				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
+				$fileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
 
 				if ($file->isValid() && !$file->hasMoved()) {
-					$file->move('./uploaded/medical_records', $lyceanName . $file->getExtension());
+					$file->move(
+						'./uploaded/medical_records/' . $_POST['id_no'],
+						$lyceanName . "-" . $fileName . "." . $file->getExtension()
+					);
+					session()->setFlashdata('success', "Successfully uploaded.");
 				}
 			} else {
 				session()->setFlashdata('upload_validation', $this->validator);
+				// print_r($this->validator->getErrors());
+				session()->setFlashdata('postData', $_POST);
 			}
 		}
 	}
@@ -171,6 +182,6 @@ class Records extends BaseController
 	public function uploadStudentRecord()
 	{
 		$this->uploadRecord();
-		return redirect()->to('records/student');
+		// return redirect()->to('records/student');
 	}
 }
