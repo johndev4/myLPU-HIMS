@@ -139,12 +139,12 @@
                                                                 <label for="medical_file">Upload File
                                                                     <div class="d-flex justify-content-start mt-3">
                                                                         <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
-                                                                        <input type="file" name="medicalFile" id="medical_file" class="form-control-file py-2 px-1"  style="border:1px solid none;">
+                                                                        <input type="file" name="medicalfile" id="medical_file" class="form-control-file py-2 px-1"  style="border:1px solid none;">
                                                                         <!-- Validation Error -->
-                                                                        <?php if (!empty(session()->getFlashdata('upload_validation'))) : ?>
-                                                                            <?php if (session()->getFlashdata('upload_validation')->hasError('medical_file')) : ?>
+                                                                        <?php if (!empty(session()->get('upload_validation'))) : ?>
+                                                                            <?php if (session()->get('upload_validation')->hasError('medical_file')) : ?>
                                                                                 <span class="error text-danger">
-                                                                                    <?= session()->getFlashdata('upload_validation')->getError('medical_file'); ?>
+                                                                                    <?= session()->get('upload_validation')->getError('medical_file'); ?>
                                                                                 </span>
                                                                                 <script>
                                                                                     $().ready(function() {
@@ -287,7 +287,7 @@
             $("#studentRecordNav > a").addClass('active');
 
             // Sweet Alert for success staus
-            <?php if (session()->getFlashdata('success') !== null) : ?>
+            <?php if (session()->get('success') !== null) : ?>
                 var Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
@@ -296,12 +296,12 @@
                 });
                 Toast.fire({
                     icon: 'success',
-                    title: '<?= session()->getFlashdata('success'); ?>'
+                    title: '<?= session()->get('success'); ?>'
                 });
             <?php endif; ?>
 
             // File Upload Validation Error
-            <?php if (!empty(session()->getFlashdata('upload_validation'))) : ?>
+            <?php if (!empty(session()->get('upload_validation'))) : ?>
                 $('#viewModal').modal('show');
                 retrieveData2();
                 $('#viewModal').on('hidden.bs.modal', function(evt) {

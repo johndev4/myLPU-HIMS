@@ -18,9 +18,13 @@ class Records extends BaseController
 	private function getRecordRules()
 	{
 		return  [
-			'medicalFile' => [
-				'rules' => 'max_size[medicalFile,2048]|ext_in[medicalFile,pdf]',
+			'medicalfile' => [
+				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
 				'label' => 'File'
+			],
+			'filename' => [
+				'rules' => 'permit_empty|alpha_dash',
+				'label' => 'Filename'
 			]
 		];
 	}
@@ -155,7 +159,7 @@ class Records extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			if ($this->validate($this->getRecordRules())) {
-				$file = $this->request->getFile('medicalFile');
+				$file = $this->request->getFile('medicalfile');
 				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
 				$fileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
@@ -169,7 +173,8 @@ class Records extends BaseController
 				}
 			} else {
 				session()->setFlashdata('upload_validation', $this->validator);
-				session()->setFlashdata('postData', json_encode($_POST));
+				// print_r($this->validator->getErrors());
+				session()->setFlashdata('postData', $_POST);
 			}
 		}
 	}
