@@ -23,3 +23,6 @@ input[type=file]::file-selector-button {
 .save-button-color:hover{
     background-color: #1a5496 !important;
 }
+.details-size{
+    font-size:13pt;
+}

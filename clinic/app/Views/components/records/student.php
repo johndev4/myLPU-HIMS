@@ -65,13 +65,54 @@
                                             <h5 class="card-header text-danger">Details</h5>
                                             <div class="card-body">
                                                 <div class="row">
-                                                    <div class="col-md-7">
-                                                        <span class=" d-block"><label class="text-secondary">Birthdate:</label> 10-14-2000</span>
-                                                        <span class="d-block"><label class="text-secondary">Age:</label> 21</span>
-                                                        <span class="d-block"><label class="text-secondary">Sex:</label> F</span>
-                                                        <span class="d-block"><label class="text-secondary">Blood type:</label> O-</span>
-                                                        <span class="d-block"><label class="text-secondary">Height:</label> 5"2</span>
-                                                        <span class="d-block"><label class="text-secondary">Weight:</label> 100kg</span>
+                                                    <div class="col-md-12">
+                                                        <!-- <h5 class="d-block"><label class="text-secondary" style="font-size: 12pt; margin-right:45px;">Birthdate:</label> October 14, 2000</h5>
+                                                        <h5 class="d-block"><label class="text-secondary" style="font-size: 12pt; margin-right:90px;">Age:</label> 21 yrs. olds</h5>
+                                                        <h5 class="d-block"><label class="text-secondary" style="font-size: 12pt; margin-right:90px;">Sex:</label> Female</h5>
+                                                        <h5 class="d-block"><label class="text-secondary" style="font-size: 12pt; margin-right:40px;">Blood type:</label> O-</h5>
+                                                        <h5 class="d-block"><label class="text-secondary" style="font-size: 12pt; margin-right:70px;">Height:</label> 5'2</h5>
+                                                        <h5 class="d-block"><label class="text-secondary" style="font-size: 12pt; margin-right:65px;">Weight:</label> 100kg</h5> -->
+
+                                                        <div class="row">
+                                                            <div class="col-md-6" style="border:1px solid none">
+                                                                <label class="text-dark" >Birthdate:</label>
+                                                            </div>
+                                                            <div class="col-md-6" style="border:1px solid none">
+                                                                <span class="text-secondary details-size">Sept. 14, 2000</span>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label class="text-dark">Age:</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <span class="text-secondary details-size">21 yrs. old</span>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label class="text-dark">Gender:</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <span class="text-secondary details-size">Female</span>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label class="text-dark">Blood type:</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <span class="text-secondary details-size">B+</span>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label class="text-dark">Height:</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <span class="text-secondary details-size">5'2</span>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label class="text-dark">Weight:</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <span class="text-secondary details-size">100kg</span>
+                                                            </div>
+                                                        </div>
+
+
                                                     </div>
                                                     <div class="col-md-5">
 
@@ -139,7 +180,7 @@
                                                                 <label for="medical_file">Upload File
                                                                     <div class="d-flex justify-content-start mt-3">
                                                                         <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
-                                                                        <input type="file" name="medicalfile" id="medical_file" class="form-control-file py-2 px-1"  style="border:1px solid none;">
+                                                                        <input type="file" name="medicalfile" id="medical_file" class="form-control-file py-2 px-1" style="border:1px solid none;">
                                                                         <!-- Validation Error -->
                                                                         <?php if (!empty(session()->get('upload_validation'))) : ?>
                                                                             <?php if (session()->get('upload_validation')->hasError('medical_file')) : ?>
