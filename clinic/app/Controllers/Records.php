@@ -21,12 +21,12 @@ class Records extends BaseController
 			'medicalfile' => [
 				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
 				'errors' => [
-					'uploaded' => '- Required'
+					'uploaded' => 'No file attached.'
 				],
-				'label' => 'Medical File'
+				'label' => 'File'
 			],
 			'filename' => [
-				'rules' => 'permit_empty|alpha_dash',
+				'rules' => 'permit_empty|alpha_numeric_space',
 				'label' => 'Filename'
 			]
 		];
@@ -157,7 +157,7 @@ class Records extends BaseController
 
 	// UPLOAD RECORDS
 	// ---------------------------------------------------------
-	private function uploadRecord()
+	public function uploadRecord()
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -166,11 +166,12 @@ class Records extends BaseController
 				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
 				$fileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
+				$finalName = $lyceanName . " - " . $fileName . "." . $file->getExtension();
 
 				if ($file->isValid() && !$file->hasMoved()) {
 					$file->move(
 						'./uploaded/medical_records/' . $_POST['id_no'],
-						$lyceanName . "-" . $fileName . "." . $file->getExtension()
+						$finalName
 					);
 					session()->setFlashdata('success', "Successfully uploaded.");
 				}
@@ -180,6 +181,8 @@ class Records extends BaseController
 				session()->setFlashdata('postData', json_encode($_POST));
 			}
 		}
+
+		// echo file_get_contents(base_url('uploaded/medical_records/2018-2-01345/De Leon,Chris Jover_hello.pdf'));
 	}
 
 	public function uploadStudentRecord()

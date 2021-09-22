@@ -348,10 +348,9 @@
                 }
             });
         }
-        // Retrieve data
         function retrieveData2() {
             var data = <?= session()->get('postData') ?>
-
+            
             // $('#medicalfile').val(data['medicalfile']);
             $('#filename').val(data['filename']);
             retrieveData(data['id_no']);
