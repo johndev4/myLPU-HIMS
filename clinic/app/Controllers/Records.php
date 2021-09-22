@@ -165,15 +165,22 @@ class Records extends BaseController
 				$file = $this->request->getFile('medicalfile');
 				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
-				$fileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
-				$finalName = $lyceanName . " - " . $fileName . "." . $file->getExtension();
+				$tempFileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
+				$fileName = $lyceanName . " - " . $tempFileName . "." . $file->getExtension();
+				$fileDirectory = './uploaded/medical_records/' . $lycean['id_no'];
 
 				if ($file->isValid() && !$file->hasMoved()) {
-					$file->move(
-						'./uploaded/medical_records/' . $_POST['id_no'],
-						$finalName
-					);
-					session()->setFlashdata('success', "Successfully uploaded.");
+					$file->move($fileDirectory, $fileName);
+
+					$success = $this->healthRecordsModel->save([
+						'id_no' => $lycean['id_no'],
+						'file_path' => $fileDirectory . '/' . $fileName
+					]);
+
+					if ($success) {
+						session()->setFlashdata('success', "Successfully uploaded.");
+					} else {
+					}
 				}
 			} else {
 				// Mag error pag "$this->validator" lang
@@ -182,7 +189,7 @@ class Records extends BaseController
 			}
 		}
 
-		// echo file_get_contents(base_url('uploaded/medical_records/2018-2-01345/De Leon,Chris Jover_hello.pdf'));
+		echo scandir('./uploaded/medical_records/');
 	}
 
 	public function uploadStudentRecord()

@@ -322,7 +322,6 @@
                 $('#viewModal').on('hidden.bs.modal', function(evt) {
                     $('.error').addClass('d-none');
                     $('input.border').removeClass('border border-danger');
-                    $('select.border').removeClass('border border-danger');
                 });
             <?php endif; ?>
 

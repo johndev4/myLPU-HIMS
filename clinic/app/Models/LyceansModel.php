@@ -9,7 +9,7 @@ class LyceansModel extends Model
 	protected $DBGroup              = 'default';
 	protected $table                = 'lyceans';
 	protected $primaryKey           = 'id_no';
-	protected $useAutoIncrement     = true;
+	protected $useAutoIncrement     = false;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
