@@ -176,7 +176,7 @@
                                         <!-- Table -->
                                         <div class="card">
                                             <div class="card-body table-responsive p-0" style="height: 230px;">
-                                                <table class="table table-head-fixed text-nowrap">
+                                                <table id="medicalfiles_table" class="table table-head-fixed text-nowrap">
                                                     <thead>
                                                         <tr>
                                                             <th style="width: 10px">#</th>
@@ -186,30 +186,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>1.</td>
-                                                            <td><a href="">Mistica, John_Medical_Result.pdf</a></td>
-                                                            <td>09-07-2021</td>
-                                                            <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2.</td>
-                                                            <td><a href="">Mistica, John_MRI_Result.pdf</a></td>
-                                                            <td>09-07-2021</td>
-                                                            <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3.</td>
-                                                            <td><a href="">Mistica, John_Dental_Result.pdf</a></td>
-                                                            <td>09-07-2021</td>
-                                                            <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>1.</td>
-                                                            <td><a href="">Mistica, John_Physical_Checkup_Result.pdf</a></td>
-                                                            <td>09-07-2021</td>
-                                                            <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                        </tr>
+                                                        <!-- MEDICAL FILES -->
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -289,7 +266,7 @@
                 <!-- /View Modal -->
 
                 <!-- Delete Modal -->
-                <div class="modal fade" id="deleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <!-- <div class="modal fade" id="deleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
                         <div class="modal-content">
                             <div class="modal-body">
@@ -299,13 +276,15 @@
                                     <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the record and all other information from the system</div>
                                 </div><br>
                                 <div class="float-right">
-                                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
+                                    <form action="<?= base_url('') ?>" method="get">
+                                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- /Delete Modal -->
 
                 <!-- Table Delete Modal -->
@@ -319,8 +298,10 @@
                                     <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the file from the system</div>
                                 </div><br>
                                 <div class="float-right">
-                                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
+                                    <form action="" method="get" id="deleteModalForm">
+                                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -369,6 +350,10 @@
     </div>
     <!-- /.container-fluid -->
 
+
+
+
+
     <!-- Script -->
     <script>
         $(document).ready(function() {
@@ -408,6 +393,11 @@
                     icon: 'success',
                     title: '<?= session()->get('success'); ?>'
                 });
+
+                // Re-show view modal with data
+                $('#viewModal').modal('show');
+                var data = <?= session()->get('postData') ?>;
+                retrieveData(data['id_no']);
             <?php endif; ?>
 
             // File Upload Validation Error
@@ -441,6 +431,15 @@
                     $('input[name=id_no]').val(response['id_no']);
                 }
             });
+
+            $.ajax({
+                url: '<?= base_url('records/fetchAllRecordsById') ?>/' + id,
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#medicalfiles_table>tbody').html(response);
+                }
+            })
         }
 
         function retrieveData2() {
@@ -449,6 +448,10 @@
             // $('#medicalfile').val(data['medicalfile']);
             $('#filename').val(data['filename']);
             retrieveData(data['id_no']);
+        }
+
+        function deleteActionForm(id) {
+            $('#deleteModalForm').prop('action', '<?= base_url('records/deleteRecord') ?>/' + id);
         }
     </script>
 

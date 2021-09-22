@@ -8,8 +8,8 @@ class HealthRecordsModel extends Model
 {
 	protected $DBGroup              = 'default';
 	protected $table                = 'health_records';
-	protected $primaryKey           = 'id_no';
-	protected $useAutoIncrement     = false;
+	protected $primaryKey           = 'record_id';
+	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
