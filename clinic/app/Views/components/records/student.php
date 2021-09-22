@@ -173,32 +173,47 @@
                                         <div class="row" style="border:1px solid none">
                                             <div class="col-12">
                                                 <form action="<?= base_url('records/uploadStudentRecord') ?>" method="post" enctype="multipart/form-data">
-                                                    <input type="hidden" name="id_no" value="">
+                                                    <input type="hidden" name="id_no">
                                                     <div class="row">
                                                         <div class="col-md-8" style="border:1px solid none;">
                                                             <div class="form-group">
-                                                                <label for="medical_file">Upload File
-                                                                    <div class="d-flex justify-content-start mt-3">
-                                                                        <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
-                                                                        <input type="file" name="medicalfile" id="medical_file" class="form-control-file py-2 px-1" style="border:1px solid none;">
-                                                                        <!-- Validation Error -->
-                                                                        <?php if (!empty(session()->get('upload_validation'))) : ?>
-                                                                            <?php if (session()->get('upload_validation')->hasError('medical_file')) : ?>
-                                                                                <span class="error text-danger">
-                                                                                    <?= session()->get('upload_validation')->getError('medical_file'); ?>
-                                                                                </span>
-                                                                                <script>
-                                                                                    $().ready(function() {
-                                                                                        $('#medical_file').addClass('border border-danger');
-                                                                                    });
-                                                                                </script>
-                                                                            <?php endif; ?>
-                                                                        <?php endif; ?>
-                                                                    </div>
-                                                                    <div class="d-flex">
-                                                                        <input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
-                                                                    </div>
-                                                                </label>
+                                                                <label for="medicalfile"> Upload File </label>
+                                                                <div class="d-flex justify-content-start mt-3">
+                                                                    <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
+                                                                    <input type="file" name="medicalfile" id="medicalfile" class="form-control-file py-2 px-1" style="border:1px solid none;">
+                                                                </div>
+                                                                <!-- Validation Error -->
+                                                                <?php if (!empty(session()->get('upload_validation'))) : ?>
+                                                                    <?php if (!empty(session()->get('upload_validation')['medicalfile'])) : ?>
+                                                                        <span class="error text-danger">
+                                                                            <?= session()->get('upload_validation')['medicalfile']; ?>
+                                                                        </span>
+                                                                        <script>
+                                                                            $().ready(function() {
+                                                                                $('#medicalfile').addClass('border border-danger');
+                                                                            });
+                                                                        </script>
+                                                                    <?php endif; ?>
+                                                                <?php endif; ?>
+
+
+                                                                <div class="d-flex">
+                                                                    <input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
+                                                                </div>
+                                                                <!-- Validation Error -->
+                                                                <?php if (!empty(session()->get('upload_validation'))) : ?>
+                                                                    <?php if (!empty(session()->get('upload_validation')['filename'])) : ?>
+                                                                        <span class="error text-danger">
+                                                                            <?= session()->get('upload_validation')['filename']; ?>
+                                                                        </span>
+                                                                        <script>
+                                                                            $().ready(function() {
+                                                                                $('#filename').addClass('border border-danger');
+                                                                            });
+                                                                        </script>
+                                                                    <?php endif; ?>
+                                                                <?php endif; ?>
+
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
@@ -354,7 +369,7 @@
 
             // Reset add modal on close
             $('#viewModal').on('hidden.bs.modal', function(evt) {
-                $('#medical_file').val("");
+                $('#medicalfile').val("");
                 $('#filename').val("");
             });
         });
@@ -374,12 +389,12 @@
                 }
             });
         }
-        // Retrieve data
         function retrieveData2() {
             var data = <?= session()->get('postData') ?>
-
-            $('#medical_file').val(data['medical_file']);
+            
+            // $('#medicalfile').val(data['medicalfile']);
             $('#filename').val(data['filename']);
+            retrieveData(data['id_no']);
         }
     </script>
 
