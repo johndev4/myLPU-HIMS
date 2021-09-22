@@ -61,7 +61,7 @@
 
                                     <!-- Details -->
                                     <div class="col-lg-4">
-                                        <div class="card overflow-auto" style="height: 362px;">
+                                        <div class="card overflow-auto" style="height: 455px;">
                                             <h5 class="card-header text-danger">Details</h5>
                                             <div class="card-body">
                                                 <div class="row">
@@ -74,8 +74,8 @@
                                                         <h5 class="d-block"><label class="text-secondary" style="font-size: 12pt; margin-right:65px;">Weight:</label> 100kg</h5> -->
 
                                                         <div class="row">
-                                                            <div class="col-md-6" style="border:1px solid none">
-                                                                <label class="text-dark" >Birthdate:</label>
+                                                            <!-- <div class="col-md-6" style="border:1px solid none">
+                                                                <label class="text-dark">Birthdate:</label>
                                                             </div>
                                                             <div class="col-md-6" style="border:1px solid none">
                                                                 <span class="text-secondary details-size">Sept. 14, 2000</span>
@@ -109,9 +109,56 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <span class="text-secondary details-size">100kg</span>
-                                                            </div>
-                                                        </div>
+                                                            </div> -->
 
+
+                                                            <div class="col-md-12">
+                                                                <label class="text-secondary">Birthday</label><br>
+                                                            </div>
+                                                            <div class="col-md-6 mt-n2">
+                                                                <span class="h5">October 14, 2000</span>
+                                                            </div>
+
+                                                            <div class="col-md-12 mt-2">
+                                                                <label class="text-secondary">Age</label><br>
+                                                            </div>
+                                                            <div class="col-md-6 mt-n2">
+                                                                <span class="h5">21 yrs. old</span>
+                                                            </div>
+
+                                                            <div class="col-md-12 mt-2">
+                                                                <label class="text-secondary">Gender</label><br>
+                                                            </div>
+                                                            <div class="col-md-6 mt-n2">
+                                                                <span class="h5">Female</span>
+                                                            </div>
+
+                                                            <div class="col-md-12 mt-2">
+                                                                <label class="text-secondary">Blood type</label><br>
+                                                            </div>
+                                                            <div class="col-md-6 mt-n2">
+                                                                <span class="h5">B+</span>
+                                                            </div>
+
+                                                            <div class="col-md-12 mt-2">
+                                                                <label class="text-secondary">Height</label><br>
+                                                            </div>
+                                                            <div class="col-md-6 mt-n2">
+                                                                <span class="h5">5'2</span>
+                                                            </div>
+
+                                                            <div class="col-md-12 mt-2">
+                                                                <label class="text-secondary">Weight</label><br>
+                                                            </div>
+                                                            <div class="col-md-6 mt-n2">
+                                                                <span class="h5">52 kg</span>
+                                                            </div>
+
+
+
+
+
+                                                        </div>
 
                                                     </div>
                                                     <div class="col-md-5">
@@ -172,55 +219,62 @@
                                         <!-- Upload -->
                                         <div class="row" style="border:1px solid none">
                                             <div class="col-12">
-                                                <form action="<?= base_url('records/uploadStudentRecord') ?>" method="post" enctype="multipart/form-data">
-                                                    <input type="hidden" name="id_no">
-                                                    <div class="row">
-                                                        <div class="col-md-8" style="border:1px solid none;">
-                                                            <div class="form-group">
-                                                                <label for="medicalfile"> Upload File </label>
-                                                                <div class="d-flex justify-content-start mt-3">
-                                                                    <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
-                                                                    <input type="file" name="medicalfile" id="medicalfile" class="form-control-file py-2 px-1" style="border:1px solid none;">
+                                                <!-- Table -->
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <form action="<?= base_url('records/uploadStudentRecord') ?>" method="post" enctype="multipart/form-data">
+                                                            <input type="hidden" name="id_no">
+                                                            <div class="row">
+                                                                <div class="col-md-12" style="border:1px solid none;">
+                                                                    <div class="form-group">
+                                                                        <label for="medicalfile"> Upload File </label>
+                                                                        <div class="d-flex justify-content-start mt-2">
+                                                                            <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
+                                                                            <input type="file" name="medicalfile" id="medicalfile" class="form-control-file py-2 px-1" style="border:1px solid none;">
+                                                                        </div>
+                                                                        <!-- Validation Error -->
+                                                                        <?php if (!empty(session()->get('upload_validation'))) : ?>
+                                                                            <?php if (!empty(session()->get('upload_validation')['medicalfile'])) : ?>
+                                                                                <span class="error text-danger">
+                                                                                    <?= session()->get('upload_validation')['medicalfile']; ?>
+                                                                                </span>
+                                                                                <script>
+                                                                                    $().ready(function() {
+                                                                                        $('#medicalfile').addClass('border border-danger');
+                                                                                    });
+                                                                                </script>
+                                                                            <?php endif; ?>
+                                                                        <?php endif; ?>
+
+
+                                                                        <div class="d-block">
+                                                                            <input type="text" class="form-control mb-3" id="filename" name="filename" placeholder="File name here...">
+                                                                            <button type="submit" class="btn text-light ml-1  mt-n1 swalDefaultSuccess save-button-color float-right">Save</button>
+                                                                        </div>
+                                                                        <!-- Validation Error -->
+                                                                        <?php if (!empty(session()->get('upload_validation'))) : ?>
+                                                                            <?php if (!empty(session()->get('upload_validation')['filename'])) : ?>
+                                                                                <span class="error text-danger">
+                                                                                    <?= session()->get('upload_validation')['filename']; ?>
+                                                                                </span>
+                                                                                <script>
+                                                                                    $().ready(function() {
+                                                                                        $('#filename').addClass('border border-danger');
+                                                                                    });
+                                                                                </script>
+                                                                            <?php endif; ?>
+                                                                        <?php endif; ?>
+
+                                                                    </div>
                                                                 </div>
-                                                                <!-- Validation Error -->
-                                                                <?php if (!empty(session()->get('upload_validation'))) : ?>
-                                                                    <?php if (!empty(session()->get('upload_validation')['medicalfile'])) : ?>
-                                                                        <span class="error text-danger">
-                                                                            <?= session()->get('upload_validation')['medicalfile']; ?>
-                                                                        </span>
-                                                                        <script>
-                                                                            $().ready(function() {
-                                                                                $('#medicalfile').addClass('border border-danger');
-                                                                            });
-                                                                        </script>
-                                                                    <?php endif; ?>
-                                                                <?php endif; ?>
-
-
-                                                                <div class="d-flex">
-                                                                    <input type="text" class="form-control" id="filename" name="filename" placeholder="File name here...">
+                                                                <div class="col-md-4">
+                                                                    <!-- <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color float-right">Save</button> -->
                                                                 </div>
-                                                                <!-- Validation Error -->
-                                                                <?php if (!empty(session()->get('upload_validation'))) : ?>
-                                                                    <?php if (!empty(session()->get('upload_validation')['filename'])) : ?>
-                                                                        <span class="error text-danger">
-                                                                            <?= session()->get('upload_validation')['filename']; ?>
-                                                                        </span>
-                                                                        <script>
-                                                                            $().ready(function() {
-                                                                                $('#filename').addClass('border border-danger');
-                                                                            });
-                                                                        </script>
-                                                                    <?php endif; ?>
-                                                                <?php endif; ?>
-
                                                             </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color float-right">Save</button>
-                                                        </div>
+                                                        </form>
+
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- /Upload -->
@@ -389,9 +443,10 @@
                 }
             });
         }
+
         function retrieveData2() {
             var data = <?= session()->get('postData') ?>
-            
+
             // $('#medicalfile').val(data['medicalfile']);
             $('#filename').val(data['filename']);
             retrieveData(data['id_no']);
