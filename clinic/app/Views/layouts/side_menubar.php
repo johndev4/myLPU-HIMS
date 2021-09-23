@@ -101,19 +101,19 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <!-- Medicine -->
+                        <!-- Medicines -->
                         <li id="medicineNav" class="nav-item">
-                            <a href="<?= base_url('inventory') ?>" class="nav-link selector">
+                            <a href="<?= base_url('inventory/medicines') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
-                                    Medicine
+                                    Medicines
                                 </p>
                             </a>
                         </li>
 
                         <!-- Equipments -->
-                        <li id="" class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link selector">
+                        <li id="equipmentNav" class="nav-item">
+                            <a href="<?= base_url('inventory/equipments') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
                                     Equipments
