@@ -19,15 +19,19 @@ class Records extends BaseController
 	{
 		return  [
 			'medicalfile' => [
-				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
+				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,1024]|ext_in[medicalfile,pdf]',
 				'errors' => [
-					'uploaded' => 'No file attached.'
-				],
-				'label' => 'File'
+					'uploaded' => 'No file attached.',
+					'max_size' => 'File is too large.',
+					'ext_in'   => 'Invalid file extension.'
+				]
 			],
 			'filename' => [
-				'rules' => 'permit_empty|alpha_dash',
-				'label' => 'Filename'
+				'rules' => 'permit_empty|max_length[20]|alpha_dash',
+				'errors' => [
+					'max_length' => 'Filename max length exceeded.',
+					'alpha_dash' => 'Filename may only contain alphanumeric, underscore, and dash characters.'
+				]
 			]
 		];
 	}
@@ -215,10 +219,14 @@ class Records extends BaseController
 			<td>" . $key + 1 . "</td>
 			<td><a href=\"" . base_url($value['file_path']) . "\" target=\"_blank\">" . $fileName . "</a></td>
 			<td>" . $value['created_at'] . "</td>
-			<td><button type=\"button\" class=\"btn text-danger\" onclick=\"deleteActionForm(" . $value['record_id'] . ")\" data-toggle=\"modal\" data-target=\"#tabledeleteModal\">Delete</button></td>
+			<td><button type=\"button\" class=\"btn text-danger\" onclick=\"setDeleteActionForm(" . $value['record_id'] . ")\" data-toggle=\"modal\" data-target=\"#tabledeleteModal\">Delete</button></td>
 			<tr>";
 
 			$result .= $data;
+		}
+
+		if ($result === "") {
+			$result = "<tr><td></td><td><h5 class=\"text-gray\" style=\"margin: 65px 0 0 180px;\">No medical records to display.</h5></td><td></td><td></td></tr>";
 		}
 
 		return $result;

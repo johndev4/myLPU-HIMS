@@ -153,11 +153,6 @@
                                                             <div class="col-md-6 mt-n2">
                                                                 <span class="h5">52 kg</span>
                                                             </div>
-
-
-
-
-
                                                         </div>
 
                                                     </div>
@@ -179,9 +174,9 @@
                                                 <table id="medicalfiles_table" class="table table-head-fixed text-nowrap">
                                                     <thead>
                                                         <tr>
-                                                            <th style="width: 10px">#</th>
-                                                            <th style="width: 450px">File Name</th>
-                                                            <th style="width: 250px">Date Added</th>
+                                                            <th>#</th>
+                                                            <th>File Name</th>
+                                                            <th>Date Added</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
@@ -373,9 +368,11 @@
                 });
 
                 // Re-show view modal with data after upload and delete medical records
-                $('#viewModal').modal('show');
-                var data = <?= session()->get('postData') ?>;
-                retrieveData(data['id_no']);
+                <?php if (!empty(session()->get('postData'))) : ?>
+                    $('#viewModal').modal('show');
+                    var data = <?= session()->get('postData') ?>;
+                    retrieveData(data['id_no']);
+                <?php endif ?>
             <?php endif; ?>
 
             // File Upload Validation Error
@@ -396,7 +393,7 @@
         });
 
 
-        // Retrieve data
+        // Retrieve data with id
         function retrieveData(id) {
             $.ajax({
                 url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
@@ -420,15 +417,17 @@
             })
         }
 
+        // Retrieve data
         function retrieveData2() {
-            var data = <?= session()->get('postData') ?>
-
-            $('#medicalfile').val(data['medicalfile']);
-            $('#filename').val(data['filename']);
-            retrieveData(data['id_no']);
+            <?php if (!empty(session()->get('postData'))) : ?>
+                var data = <?= session()->get('postData') ?>;
+                $('#filename').val(data['filename']);
+                retrieveData(data['id_no']);
+            <?php endif ?>
         }
 
-        function deleteActionForm(id) {
+        // Set action form of deleteModalForm base on id
+        function setDeleteActionForm(id) {
             $('#deleteModalForm').prop('action', '<?= base_url('records/deleteRecord') ?>/' + id);
         }
     </script>
