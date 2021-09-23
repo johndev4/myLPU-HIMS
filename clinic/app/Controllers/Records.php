@@ -204,6 +204,18 @@ class Records extends BaseController
 		return redirect()->to('records/student');
 	}
 
+	public function uploadFacultyRecord()
+	{
+		$this->uploadRecord();
+		return redirect()->to('records/faculty');
+	}
+
+	public function uploadStaffRecord()
+	{
+		$this->uploadRecord();
+		return redirect()->to('records/staff');
+	}
+
 
 	// FETCH RECORDS BY ID
 	// ---------------------------------------------------------
@@ -235,7 +247,7 @@ class Records extends BaseController
 
 	// DELETE RECORD
 	// ---------------------------------------------------------
-	public function deleteRecord($id)
+	private function deleteRecord($id)
 	{
 		$healthRecord = $this->healthRecordsModel->find($id);
 		$filePath = $healthRecord['file_path'];
@@ -255,5 +267,23 @@ class Records extends BaseController
 		}
 
 		return redirect()->to('records/student');
+	}
+
+	public function deleteStudentRecord($id)
+	{
+		$this->deleteRecord($id);
+		return redirect()->to('records/student');
+	}
+
+	public function deleteFacultyRecord($id)
+	{
+		$this->deleteRecord($id);
+		return redirect()->to('records/faculty');
+	}
+
+	public function deleteStaffRecord($id)
+	{
+		$this->deleteRecord($id);
+		return redirect()->to('records/staff');
 	}
 }
