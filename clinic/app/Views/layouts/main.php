@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/health-record.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/consultation.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/table-page.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/inventory.css') ?>">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->

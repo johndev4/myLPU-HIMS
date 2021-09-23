@@ -111,7 +111,6 @@
                                                                 <span class="text-secondary details-size">100kg</span>
                                                             </div> -->
 
-
                                                             <div class="col-md-12">
                                                                 <label class="text-secondary">Birthday</label><br>
                                                             </div>
@@ -153,10 +152,6 @@
                                                             <div class="col-md-6 mt-n2">
                                                                 <span class="h5">52 kg</span>
                                                             </div>
-
-
-
-
 
                                                         </div>
 

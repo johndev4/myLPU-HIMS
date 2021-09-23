@@ -97,6 +97,7 @@
                         <i class="fas fa-capsules nav-icon text-light"></i>
                         <p class="text-light">
                             Inventory
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                 </li>
