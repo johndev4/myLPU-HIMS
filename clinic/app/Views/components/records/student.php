@@ -127,9 +127,9 @@
                                                 <table id="medicalfiles_table" class="table table-head-fixed text-nowrap">
                                                     <thead>
                                                         <tr>
-                                                            <th style="width: 10px">#</th>
-                                                            <th style="width: 450px">File Name</th>
-                                                            <th style="width: 250px">Date Added</th>
+                                                            <th>#</th>
+                                                            <th>File Name</th>
+                                                            <th>Date Added</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
@@ -212,28 +212,6 @@
                     </div>
                 </div>
                 <!-- /View Modal -->
-
-                <!-- Delete Modal -->
-                <!-- <div class="modal fade" id="deleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="text-center mt-2">
-                                    <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
-                                    <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
-                                    <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the record and all other information from the system</div>
-                                </div><br>
-                                <div class="float-right">
-                                    <form action="<?= base_url('') ?>" method="get">
-                                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- /Delete Modal -->
 
                 <!-- Table Delete Modal -->
                 <div class="modal fade" id="tabledeleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -329,8 +307,8 @@
             $("#mainUserRecordNav > a").addClass('active');
             $("#studentRecordNav > a").addClass('active');
 
-            // Sweet Alert for success staus
             <?php if (session()->get('success') !== null) : ?>
+                // Sweet Alert for success staus
                 var Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
@@ -342,10 +320,12 @@
                     title: '<?= session()->get('success'); ?>'
                 });
 
-                // Re-show view modal with data
-                $('#viewModal').modal('show');
-                var data = <?= session()->get('postData') ?>;
-                retrieveData(data['id_no']);
+                // Re-show view modal with data after upload and delete medical records
+                <?php if (!empty(session()->get('postData'))) : ?>
+                    $('#viewModal').modal('show');
+                    var data = <?= session()->get('postData') ?>;
+                    retrieveData(data['id_no']);
+                <?php endif ?>
             <?php endif; ?>
 
             // File Upload Validation Error
@@ -366,7 +346,7 @@
         });
 
 
-        // Retrieve data
+        // Retrieve data with id
         function retrieveData(id) {
             $.ajax({
                 url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
@@ -390,15 +370,17 @@
             })
         }
 
+        // Retrieve data
         function retrieveData2() {
-            var data = <?= session()->get('postData') ?>
-
-            // $('#medicalfile').val(data['medicalfile']);
-            $('#filename').val(data['filename']);
-            retrieveData(data['id_no']);
+            <?php if (!empty(session()->get('postData'))) : ?>
+                var data = <?= session()->get('postData') ?>;
+                $('#filename').val(data['filename']);
+                retrieveData(data['id_no']);
+            <?php endif ?>
         }
 
-        function deleteActionForm(id) {
+        // Set action form of deleteModalForm base on id
+        function setDeleteActionForm(id) {
             $('#deleteModalForm').prop('action', '<?= base_url('records/deleteRecord') ?>/' + id);
         }
     </script>
