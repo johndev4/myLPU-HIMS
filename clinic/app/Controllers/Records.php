@@ -26,7 +26,7 @@ class Records extends BaseController
 				'label' => 'File'
 			],
 			'filename' => [
-				'rules' => 'permit_empty|alpha_numeric_space',
+				'rules' => 'permit_empty|alpha_dash',
 				'label' => 'Filename'
 			]
 		];

@@ -265,28 +265,6 @@
                 </div>
                 <!-- /View Modal -->
 
-                <!-- Delete Modal -->
-                <!-- <div class="modal fade" id="deleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="text-center mt-2">
-                                    <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
-                                    <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
-                                    <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the record and all other information from the system</div>
-                                </div><br>
-                                <div class="float-right">
-                                    <form action="<?= base_url('') ?>" method="get">
-                                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- /Delete Modal -->
-
                 <!-- Table Delete Modal -->
                 <div class="modal fade" id="tabledeleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
@@ -381,8 +359,8 @@
             $("#mainUserRecordNav > a").addClass('active');
             $("#studentRecordNav > a").addClass('active');
 
-            // Sweet Alert for success staus
             <?php if (session()->get('success') !== null) : ?>
+                // Sweet Alert for success staus
                 var Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
@@ -394,7 +372,7 @@
                     title: '<?= session()->get('success'); ?>'
                 });
 
-                // Re-show view modal with data
+                // Re-show view modal with data after upload and delete medical records
                 $('#viewModal').modal('show');
                 var data = <?= session()->get('postData') ?>;
                 retrieveData(data['id_no']);
@@ -445,7 +423,7 @@
         function retrieveData2() {
             var data = <?= session()->get('postData') ?>
 
-            // $('#medicalfile').val(data['medicalfile']);
+            $('#medicalfile').val(data['medicalfile']);
             $('#filename').val(data['filename']);
             retrieveData(data['id_no']);
         }
