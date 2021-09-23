@@ -20,114 +20,195 @@
 
             <!-- Modal -->
             <!-- View Modal -->
-            <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="exampleModalLabel">Records</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Records</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="row">
-                                <div class="col-12 form-group mb-n3">
-                                    <label for="recipient-name" class="col-form-label">Name:</label>
-                                    John Rafael P. Mistica
-                                </div>
-                                <div class="col-12 form-group mb-n3">
-                                    <label for="recipient-name" class="col-form-label">ID number:</label>
-                                    2018-2-02126
-                                </div>
-                                <div class="col-12 form-group">
-                                    <label for="recipient-name" class="col-form-label">Department:</label>
-                                    COECSA
-                                </div>
-                                <div class="col-12 form-group overflow-auto records-border">
+                            <div class="row">
 
+                                <!-- View Info -->
+                                <div class="col-xl-6 col-md-6">
+                                    <div class="card  h-80 w-100 py-0" style="border-left: 7px solid rgb(190, 190, 190); border-radius:6px">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Name</div>
+                                                    <div class="h5 mb-0 font-weight-normal text-dark" id="rec_fullname"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-md-6 mb-2 mr-n5">
+                                    <div class="card  h-80 w-100 py-0" style="border-left: 7px solid rgb(190, 190, 190); border-radius:6px">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">ID no.</div>
+                                                    <div class="h5 mb-0 font-weight-normal text-dark" id="rec_idno"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /View Info -->
+
+                                <!-- Details -->
+                                <div class="col-lg-4">
+                                    <div class="card overflow-auto" style="height: 455px;">
+                                        <h5 class="card-header text-danger">Details</h5>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <label class="text-secondary">Birthday</label><br>
+                                                        </div>
+                                                        <div class="col-md-6 mt-n2">
+                                                            <span class="h5">October 14, 2000</span>
+                                                        </div>
+
+                                                        <div class="col-md-12 mt-2">
+                                                            <label class="text-secondary">Age</label><br>
+                                                        </div>
+                                                        <div class="col-md-6 mt-n2">
+                                                            <span class="h5">21 yrs. old</span>
+                                                        </div>
+
+                                                        <div class="col-md-12 mt-2">
+                                                            <label class="text-secondary">Gender</label><br>
+                                                        </div>
+                                                        <div class="col-md-6 mt-n2">
+                                                            <span class="h5">Female</span>
+                                                        </div>
+
+                                                        <div class="col-md-12 mt-2">
+                                                            <label class="text-secondary">Blood type</label><br>
+                                                        </div>
+                                                        <div class="col-md-6 mt-n2">
+                                                            <span class="h5">B+</span>
+                                                        </div>
+
+                                                        <div class="col-md-12 mt-2">
+                                                            <label class="text-secondary">Height</label><br>
+                                                        </div>
+                                                        <div class="col-md-6 mt-n2">
+                                                            <span class="h5">5'2</span>
+                                                        </div>
+
+                                                        <div class="col-md-12 mt-2">
+                                                            <label class="text-secondary">Weight</label><br>
+                                                        </div>
+                                                        <div class="col-md-6 mt-n2">
+                                                            <span class="h5">52 kg</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Details -->
+
+                                <!-- File -->
+                                <div class="col-lg-8">
                                     <!-- Table -->
-                                    <div class="card-body p-0">
-                                        <table class="table table-sm">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width: 10px">#</th>
-                                                    <th style="width: 450px">File Name</th>
-                                                    <th style="width: 250px">Date Added</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1.</td>
-                                                    <td><a href="">Mistica, John_Medical_Result.pdf</a></td>
-                                                    <td>09-07-2021</td>
-                                                    <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2.</td>
-                                                    <td><a href="">Mistica, John_MRI_Result.pdf</a></td>
-                                                    <td>09-07-2021</td>
-                                                    <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3.</td>
-                                                    <td><a href="">Mistica, John_Dental_Result.pdf</a></td>
-                                                    <td>09-07-2021</td>
-                                                    <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1.</td>
-                                                    <td><a href="">Mistica, John_Physical_Checkup_Result.pdf</a></td>
-                                                    <td>09-07-2021</td>
-                                                    <td><button type="button" class="btn text-danger" data-toggle="modal" data-target="#tabledeleteModal">Delete</button></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="card">
+                                        <div class="card-body table-responsive p-0" style="height: 230px;">
+                                            <table id="medicalfiles_table" class="table table-head-fixed text-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>File Name</th>
+                                                        <th>Date Added</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- MEDICAL FILES -->
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                     <!-- /Table -->
 
-                                </div>
-                                <br><br><br><br>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Upload File</label>
-                                        <input type="file" class="form-control-file " id="exampleFormControlFile1">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mt-4 mb-n4">
-                                    <div class="form-group float-right">
-                                        <button type="button" class="btn btn-secondary d-flex flex-row swalDefaultSuccess" data-dismiss="modal">save</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="footer float-right pb-3">
+                                    <!-- Upload -->
+                                    <div class="row" style="border:1px solid none">
+                                        <div class="col-12">
+                                            <!-- Table -->
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <form action="<?= base_url('records/uploadFacultyRecord') ?>" method="post" enctype="multipart/form-data">
+                                                        <input type="hidden" name="id_no">
+                                                        <div class="row">
+                                                            <div class="col-md-12" style="border:1px solid none;">
+                                                                <div class="form-group">
+                                                                    <label for="medicalfile"> Upload File </label>
+                                                                    <div class="d-flex justify-content-start mt-2">
+                                                                        <i class="d-inline fas fa-file-upload fa-2x text-secondary" style="border:1px solid none;"></i>
+                                                                        <input type="file" name="medicalfile" id="medicalfile" class="form-control-file py-2 px-1" style="border:1px solid none;">
+                                                                    </div>
+                                                                    <!-- Validation Error -->
+                                                                    <?php if (!empty(session()->get('upload_validation'))) : ?>
+                                                                        <?php if (!empty(session()->get('upload_validation')['medicalfile'])) : ?>
+                                                                            <span class="error text-danger">
+                                                                                <?= session()->get('upload_validation')['medicalfile']; ?>
+                                                                            </span>
+                                                                            <script>
+                                                                                $().ready(function() {
+                                                                                    $('#medicalfile').addClass('border border-danger');
+                                                                                });
+                                                                            </script>
+                                                                        <?php endif; ?>
+                                                                    <?php endif; ?>
 
+
+                                                                    <div class="d-block">
+                                                                        <input type="text" class="form-control mb-3" id="filename" name="filename" placeholder="File name here...">
+                                                                        <!-- Upload Button -->
+                                                                        <button type="submit" class="btn text-light ml-1  mt-n1 swalDefaultSuccess save-button-color float-right">Save</button>
+                                                                    </div>
+                                                                    <!-- Validation Error -->
+                                                                    <?php if (!empty(session()->get('upload_validation'))) : ?>
+                                                                        <?php if (!empty(session()->get('upload_validation')['filename'])) : ?>
+                                                                            <span class="error text-danger">
+                                                                                <?= session()->get('upload_validation')['filename']; ?>
+                                                                            </span>
+                                                                            <script>
+                                                                                $().ready(function() {
+                                                                                    $('#filename').addClass('border border-danger');
+                                                                                });
+                                                                            </script>
+                                                                        <?php endif; ?>
+                                                                    <?php endif; ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Upload -->
+                                </div>
+                                <!-- /File -->
+                                <br><br><br><br>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- /View Modal -->
-
-            <!-- Delete Modal -->
-            <div class="modal fade" id="deleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="text-center mt-2">
-                                <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
-                                <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
-                                <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the record and all other information from the system</div>
-                            </div><br>
-                            <div class="float-right">
-                                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Delete Modal -->
 
             <!-- Table Delete Modal -->
             <div class="modal fade" id="tabledeleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,8 +221,10 @@
                                 <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the file from the system</div>
                             </div><br>
                             <div class="float-right">
-                                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
+                                <form action="" method="get" id="deleteModalForm">
+                                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -194,7 +277,11 @@
 </div>
 <!-- /.container-fluid -->
 
-<!-- Page specific script -->
+
+
+
+
+<!-- Script -->
 <script>
     $(document).ready(function() {
         $("#records_table").DataTable({
@@ -221,7 +308,81 @@
         $("#mainUserRecordNav > a").addClass('active');
         $("#facultyRecordNav > a").addClass('active');
 
+        <?php if (session()->get('success') !== null) : ?>
+            // Sweet Alert for success staus
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->get('success'); ?>'
+            });
+
+            // Re-show view modal with data after upload and delete medical records
+            <?php if (!empty(session()->get('postData'))) : ?>
+                $('#viewModal').modal('show');
+                var data = <?= session()->get('postData') ?>;
+                retrieveData(data['id_no']);
+            <?php endif ?>
+        <?php endif; ?>
+
+        // File Upload Validation Error
+        <?php if (!empty(session()->get('upload_validation'))) : ?>
+            $('#viewModal').modal('show');
+            retrieveData2();
+            $('#viewModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Reset add modal on close
+        $('#viewModal').on('hidden.bs.modal', function(evt) {
+            $('#medicalfile').val("");
+            $('#filename').val("");
+        });
     });
+
+    // Retrieve data with id
+    function retrieveData(id) {
+        $.ajax({
+            url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                var middle_initial = response['middle_initial'] != "" ? `${response['middle_initial']}.` : ""
+                $('#rec_idno').text(response['id_no']);
+                $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']} ${middle_initial}`);
+                $('input[name=id_no]').val(response['id_no']);
+            }
+        });
+
+        $.ajax({
+            url: '<?= base_url('records/fetchAllRecordsById') ?>/' + id,
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#medicalfiles_table>tbody').html(response);
+            }
+        })
+    }
+
+    // Retrieve data
+    function retrieveData2() {
+        <?php if (!empty(session()->get('postData'))) : ?>
+            var data = <?= session()->get('postData') ?>;
+            $('#filename').val(data['filename']);
+            retrieveData(data['id_no']);
+        <?php endif ?>
+    }
+
+    // Set action form of deleteModalForm base on id
+    function setDeleteActionForm(id) {
+        $('#deleteModalForm').prop('action', '<?= base_url('records/deleteFacultyRecord') ?>/' + id);
+    }
 </script>
 
 <?= $this->endSection('content') ?>

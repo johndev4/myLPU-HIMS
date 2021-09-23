@@ -174,6 +174,7 @@
 
                                                                         <div class="d-block">
                                                                             <input type="text" class="form-control mb-3" id="filename" name="filename" placeholder="File name here...">
+                                                                            <!-- Upload Button -->
                                                                             <button type="submit" class="btn text-light ml-1  mt-n1 swalDefaultSuccess save-button-color float-right">Save</button>
                                                                         </div>
                                                                         <!-- Validation Error -->
@@ -189,11 +190,7 @@
                                                                                 </script>
                                                                             <?php endif; ?>
                                                                         <?php endif; ?>
-
                                                                     </div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                    <!-- <button type="submit" class="btn text-light ml-1 swalDefaultSuccess save-button-color float-right">Save</button> -->
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -345,7 +342,6 @@
             });
         });
 
-
         // Retrieve data with id
         function retrieveData(id) {
             $.ajax({
@@ -381,7 +377,7 @@
 
         // Set action form of deleteModalForm base on id
         function setDeleteActionForm(id) {
-            $('#deleteModalForm').prop('action', '<?= base_url('records/deleteRecord') ?>/' + id);
+            $('#deleteModalForm').prop('action', '<?= base_url('records/deleteStudentRecord') ?>/' + id);
         }
     </script>
 
