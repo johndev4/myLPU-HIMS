@@ -277,7 +277,11 @@
 </div>
 <!-- /.container-fluid -->
 
-<!-- Page specific script -->
+
+
+
+
+<!-- Script -->
 <script>
     $(document).ready(function() {
         $("#records_table").DataTable({
