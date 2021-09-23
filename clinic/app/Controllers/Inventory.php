@@ -15,9 +15,15 @@ class Inventory extends BaseController
 
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
-	public function index()
+	public function medicines()
 	{
 		// Display page view
-		return view('components/inventory', $this->data);
+		return view('components/inventory/medicines', $this->data);
+	}
+
+	public function equipments()
+	{
+		// Display page view
+		return view('components/inventory/equipments', $this->data);
 	}
 }
