@@ -114,41 +114,7 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="mr-3">
-                        <div class="card" style="width: 23rem;">
-                            <div class="card-body">
-                                <div>
-                                    <h5 class="d-inline font-weight-bold" style="font-size: 15pt;">John Rafel Mistica</h5>
-                                    <h4 class="d-inline float-right text-secondary">#4</h4>
-                                </div>
-                                <div class="mt-3">
-                                    <span class="font-weight-bold">Date</span> 09/09/2021
-                                    <div class="float-right"><span class="font-weight-bold">Time</span> 8:30am</div>
-                                </div>
-                                <div class=""><span class="font-weight-bold">ID No.</span> 2018-2-02126</div>
-                                <div class=""><span class="font-weight-bold">Department</span> COECSA</div>
-                                <div class=""><span class="font-weight-bold">Request</span> Consultation</div>
-                                <a href="#" class="btn btn-primary float-right mt-2">Done</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <div class="mr-3">
-                            <div class="card" style="width: 23rem;">
-                                <div class="card-body">
-                                    <h5 class="" style="font-size: 15pt;">Vince Cruz</h5>
-                                    <div class="">
-                                        <span class="font-weight-bold">Date</span> 09/09/2021
-                                        <div class="float-right"><span class="font-weight-bold">Time</span> 8:30am</div>
-                                    </div>
-                                    <div class=""><span class="font-weight-bold">ID No.</span> 2018-2-02126</div>
-                                    <div class=""><span class="font-weight-bold">Department</span> COECSA</div>
-                                    <div class=""><span class="font-weight-bold">Request</span> Consultation</div>
-                                </div>
-                            </div>
-                        </div> -->
+    
                 </div>
 
             </div>

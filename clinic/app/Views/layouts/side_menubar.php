@@ -92,14 +92,35 @@
                 </li>
 
                 <!-- Inventory -->
-                <li id="inventoryNav" class="nav-item">
-                    <a href="<?= base_url('inventory') ?>" class="nav-link selector">
-                        <i class="fas fa-capsules nav-icon text-light"></i>
+                <li class="nav-item" id="mainInventoryNav">
+                    <a href="#" class="nav-link selector ">
+                        <i class="fa fa-pills nav-icon text-light"></i>
                         <p class="text-light">
                             Inventory
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <!-- Medicine -->
+                        <li id="medicineNav" class="nav-item">
+                            <a href="<?= base_url('inventory') ?>" class="nav-link selector">
+                                <i class="far fa-circle nav-icon text-light"></i>
+                                <p class="text-light">
+                                    Medicine
+                                </p>
+                            </a>
+                        </li>
+
+                        <!-- Equipments -->
+                        <li id="" class="nav-item">
+                            <a href="<?= base_url('') ?>" class="nav-link selector">
+                                <i class="far fa-circle nav-icon text-light"></i>
+                                <p class="text-light">
+                                    Equipments
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <!-- Help Menu -->

@@ -3,3 +3,10 @@
     opacity: 0.95;
     color: whitesmoke;
 }
+.button-color{
+    background-color:#04428b !important;
+    width: 120px; 
+}
+.button-color:hover{
+    background-color: #1a5496 !important;
+}

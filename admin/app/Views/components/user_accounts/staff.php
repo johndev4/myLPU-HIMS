@@ -185,7 +185,7 @@
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label for="mod_idno" class="col-form-label">ID No.</label>
-                                        <input type="text" class="form-control" id="mod_idno" name="id_no" value="">
+                                        <input type="text" class="form-control" id="mod_idno" name="id_no" value="" disabled="disabled">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('id_no')) : ?>
