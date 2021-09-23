@@ -71,8 +71,6 @@ class Records extends BaseController
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
-				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
 				</div>"
 			);
 		}
@@ -95,8 +93,6 @@ class Records extends BaseController
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
-				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
 				</div>"
 			);
 		}
@@ -119,8 +115,6 @@ class Records extends BaseController
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
 				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
-				<a href=\"\" data-target=\"#deleteModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default \">Delete</button></a>
 				</div>"
 			);
 		}
@@ -155,39 +149,103 @@ class Records extends BaseController
 	}
 
 
-	// UPLOAD RECORDS
+	// UPLOAD RECORD
 	// ---------------------------------------------------------
-	public function uploadRecord()
+	private function uploadRecord()
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+			$lycean = $this->lyceansModel->find($_POST['id_no']);
 
 			if ($this->validate($this->getRecordRules())) {
 				$file = $this->request->getFile('medicalfile');
-				$lycean = $this->lyceansModel->find($_POST['id_no']);
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
-				$fileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
-				$finalName = $lyceanName . " - " . $fileName . "." . $file->getExtension();
+				$tempFileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
+				$fileName = $lyceanName . " - " . $tempFileName . "." . $file->getExtension();
+				$fileDirectory = './uploaded/medical_records/' . $lycean['id_no'];
 
 				if ($file->isValid() && !$file->hasMoved()) {
-					$file->move(
-						'./uploaded/medical_records/' . $_POST['id_no'],
-						$finalName
-					);
-					session()->setFlashdata('success', "Successfully uploaded.");
+					if (!file_exists($fileDirectory . '/' . $fileName)) {
+						$file->move($fileDirectory, $fileName);
+
+						$success = $this->healthRecordsModel->save([
+							'id_no' => $lycean['id_no'],
+							'file_path' => $fileDirectory . '/' . $fileName
+						]);
+
+						if ($success) {
+							session()->setFlashdata('success', "Successfully uploaded.");
+							session()->setFlashdata('postData', json_encode($_POST));
+						} else {
+						}
+					} else {
+						// Same to "codeline#2"
+						// codeline#1
+						session()->setFlashdata('upload_validation', ['filename' => 'The Filename already exists.']);
+						session()->setFlashdata('postData', json_encode($_POST));
+					}
 				}
 			} else {
 				// Mag error pag "$this->validator" lang
+				// Same to "codeline#1"
+				// codeline#2
 				session()->setFlashdata('upload_validation', $this->validator->getErrors());
 				session()->setFlashdata('postData', json_encode($_POST));
 			}
 		}
-
-		// echo file_get_contents(base_url('uploaded/medical_records/2018-2-01345/De Leon,Chris Jover_hello.pdf'));
 	}
 
 	public function uploadStudentRecord()
 	{
 		$this->uploadRecord();
+		return redirect()->to('records/student');
+	}
+
+
+	// FETCH RECORDS BY ID
+	// ---------------------------------------------------------
+	public function fetchAllRecordsById($id)
+	{
+		$healthRecord = $this->healthRecordsModel->where('id_no', $id)->findAll();
+		$result = "";
+
+		foreach ($healthRecord as $key => $value) {
+			$fileName = explode("/", $value['file_path'])[4];
+
+			$data = "<tr>
+			<td>" . $key + 1 . "</td>
+			<td><a href=\"" . base_url($value['file_path']) . "\" target=\"_blank\">" . $fileName . "</a></td>
+			<td>" . $value['created_at'] . "</td>
+			<td><button type=\"button\" class=\"btn text-danger\" onclick=\"deleteActionForm(" . $value['record_id'] . ")\" data-toggle=\"modal\" data-target=\"#tabledeleteModal\">Delete</button></td>
+			<tr>";
+
+			$result .= $data;
+		}
+
+		return $result;
+	}
+
+
+	// DELETE RECORD
+	// ---------------------------------------------------------
+	public function deleteRecord($id)
+	{
+		$healthRecord = $this->healthRecordsModel->find($id);
+		$filePath = $healthRecord['file_path'];
+
+		if (file_exists($filePath)) {
+			$success1 = $this->healthRecordsModel->delete($id);
+			$success2 = unlink($filePath);
+		} else {
+			$success1 = false;
+			$success2 = false;
+		}
+
+		if ($success1 && $success2) {
+			session()->setFlashdata('success', "Successfully deleted.");
+			$_POST['id_no'] = $healthRecord['id_no'];
+			session()->setFlashdata('postData', json_encode($_POST));
+		}
+
 		return redirect()->to('records/student');
 	}
 }
