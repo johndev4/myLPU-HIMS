@@ -10,6 +10,7 @@ class Records extends BaseController
 	{
 		// Page title
 		$this->data['page_title'] = 'Records';
+		$this->baseDir = './uploaded/medical_records/';
 	}
 
 
@@ -165,7 +166,7 @@ class Records extends BaseController
 				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
 				$tempFileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
 				$fileName = $lyceanName . " - " . $tempFileName . "." . $file->getExtension();
-				$fileDirectory = './uploaded/medical_records/' . $lycean['id_no'];
+				$fileDirectory = $this->baseDir . $lycean['id_no'];
 
 				if ($file->isValid() && !$file->hasMoved()) {
 					if (!file_exists($fileDirectory . '/' . $fileName)) {
