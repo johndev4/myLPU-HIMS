@@ -20,3 +20,8 @@
 .button-color:hover{
     background-color: #1a5496 !important;
 }
+
+.required:after{
+    content:" *";
+    color: red;
+}

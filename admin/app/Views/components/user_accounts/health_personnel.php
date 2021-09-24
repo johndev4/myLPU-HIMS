@@ -39,7 +39,7 @@
 
             <!-- Modal-Add-Record -->
             <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title font-weight-bold text-secondary" id="">Student</h5>
@@ -67,7 +67,7 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-5 form-group">
+                                    <div class="col-4 form-group">
                                         <label for="add_lastname" class="col-form-label">Last Name</label>
                                         <input type="text" class="form-control" id="add_lastname" name="last_name" value="">
                                         <!-- Validation Error -->
@@ -84,7 +84,7 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-5 form-group">
+                                    <div class="col-4 form-group">
                                         <label for="add_firstname" class="col-form-label">First Name</label>
                                         <input type="text" class="form-control" id="add_firstname" name="first_name" value="">
                                         <!-- Validation Error -->
@@ -101,9 +101,9 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-2 form-group">
-                                        <label for="add_middleinit" class="col-form-label">M.I.</label>
-                                        <input type="text" class="form-control" id="add_middleinit" name="middle_initial" value="" maxlength="1">
+                                    <div class="col-4 form-group">
+                                        <label for="add_middleinit" class="col-form-label">Middle Name</label>
+                                        <input type="text" class="form-control" id="add_middleinit" name="middle_initial" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
                                             <?php if (session()->getFlashdata('add_validation')->hasError('middle_initial')) : ?>
