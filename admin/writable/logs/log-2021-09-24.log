@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2021-09-24 21:30:27 --> Undefined array key "middle_initial"
 #0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\UserAccounts.php(315): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 315)
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\UserAccounts->fetchHealthPersonnelById('2016-3-1234')
@@ -27,3 +28,11 @@ CRITICAL - 2021-09-24 23:07:55 --> Undefined array key "birthdate"
 #4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #5 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 {main}
+=======
+CRITICAL - 2021-09-24 20:52:09 --> Too few arguments to function App\Controllers\UserAccounts::fetchLyceanInfoById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\UserAccounts->fetchLyceanInfoById()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserAccounts))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+>>>>>>> ec06e4efc6325dac0a3a5e0565aca63a6a5fd69a

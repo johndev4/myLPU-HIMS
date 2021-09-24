@@ -39,7 +39,7 @@
 
             <!-- Modal-Add-Record -->
             <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title font-weight-bold text-secondary" id="">Student</h5>
@@ -52,7 +52,7 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">ID No.</label>
+                                        <label for="add_idno" class="col-form-label required">ID No.</label>
                                         <input type="text" class="form-control" id="add_idno" name="id_no" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -68,59 +68,8 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-5 form-group">
-                                        <label for="add_lastname" class="col-form-label">Last Name</label>
-                                        <input type="text" class="form-control" id="add_lastname" name="last_name" value="">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('last_name')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('last_name'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#add_lastname').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-5 form-group">
-                                        <label for="add_firstname" class="col-form-label">First Name</label>
-                                        <input type="text" class="form-control" id="add_firstname" name="first_name" value="">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('first_name')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('first_name'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#add_firstname').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-2 form-group">
-                                        <label for="add_middleinit" class="col-form-label">M.I.</label>
-                                        <input type="text" class="form-control" id="add_middleinit" name="middle_initial" value="" maxlength="1">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('middle_initial')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('middle_initial'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#add_middleinit').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
                                     <div class="col-12 form-group">
-                                        <label for="#add_username" class="col-form-label">Username</label>
+                                        <label for="#add_username" class="col-form-label required">Username</label>
                                         <input type="text" class="form-control" id="add_username" name="username" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -136,8 +85,93 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_lastname" class="col-form-label required">Last Name</label>
+                                        <input type="text" class="form-control" id="add_lastname" name="last_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('last_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('last_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_lastname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_firstname" class="col-form-label required">First Name</label>
+                                        <input type="text" class="form-control" id="add_firstname" name="first_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('first_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('first_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_firstname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_middleinit" class="col-form-label required">Middle Name</label>
+                                        <input type="text" class="form-control" id="add_middleinit" name="middle_initial" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('middle_initial')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('middle_initial'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_middleinit').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label for="add_gender" class="col-form-label required">Gender</label>
+                                        <select class="form-control" id="add_gender" name="gender">
+                                            <option value="" selected="selected">---Select Gender---</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label for="add_birthday" class="col-form-label required">Date of Birth</label>
+                                        <input type="date" class="form-control" id="add_gender" name="birthday">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_height" class="col-form-label">Height</label>
+                                        <input type="text" class="form-control" id="add_height" name="height" placeholder="in feet and inches">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_weight" class="col-form-label">Weight</label>
+                                        <input type="text" class="form-control" id="add_weight" name="weight" placeholder="in pounds">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_gender" class="col-form-label">Blood-type</label>
+                                        <select class="form-control" id="add_gender" name="gender">
+                                            <option value="" selected="selected">---Blood Type---</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                        </select>
+                                    </div>
                                     <div class="col-12 form-group">
-                                        <label for="add_department" class="col-form-label">Department</label>
+                                        <label for="add_department" class="col-form-label required">Department</label>
                                         <select class="form-control" id="add_department" name="department">
                                             <option value="" selected="selected">---Choose Department---</option>
                                             <option value="COECSA">COECSA</option>
@@ -173,7 +207,7 @@
 
             <!-- Modify Modal -->
             <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title font-weight-bold text-secondary" id="">Account Details</h5>
@@ -201,57 +235,6 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-5 form-group">
-                                        <label for="mod_lastname" class="col-form-label">Last Name</label>
-                                        <input type="text" class="form-control" id="mod_lastname" name="last_name" value="">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('last_name')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('last_name'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#mod_lastname').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-5 form-group">
-                                        <label for="mod_firstname" class="col-form-label">First Name</label>
-                                        <input type="text" class="form-control" id="mod_firstname" name="first_name" value="">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('first_name')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('first_name'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#mod_firstname').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-2 form-group">
-                                        <label for="mod_middleinit" class="col-form-label">M.I.</label>
-                                        <input type="text" class="form-control" id="mod_middleinit" name="middle_initial" value="" maxlength="1">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('middle_initial')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('middle_initial'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#mod_middleinit').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
                                     <div class="col-12 form-group">
                                         <label for="#mod_username" class="col-form-label">Username</label>
                                         <input type="text" class="form-control" id="mod_username" name="username" value="">
@@ -268,6 +251,91 @@
                                                 </script>
                                             <?php endif; ?>
                                         <?php endif; ?>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="mod_lastname" class="col-form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="mod_lastname" name="last_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('last_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('last_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_lastname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="mod_firstname" class="col-form-label">First Name</label>
+                                        <input type="text" class="form-control" id="mod_firstname" name="first_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('first_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('first_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_firstname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="mod_middleinit" class="col-form-label">Middle Name</label>
+                                        <input type="text" class="form-control" id="mod_middleinit" name="middle_initial" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('middle_initial')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('middle_initial'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_middleinit').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label for="add_gender" class="col-form-label">Gender</label>
+                                        <select class="form-control" id="add_gender" name="gender">
+                                            <option value="" selected="selected">---Select Gender---</option>
+                                            <option value="Male" selected="selected">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label for="add_birthday" class="col-form-label">Date of Birth</label>
+                                        <input type="date" class="form-control" id="add_gender" name="birthday">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_height" class="col-form-label">Height</label>
+                                        <input type="text" class="form-control" id="add_height" name="height" placeholder="5'2">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_weight" class="col-form-label">Weight</label>
+                                        <input type="text" class="form-control" id="add_weight" name="weight" placeholder="132">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="add_gender" class="col-form-label">Blood-type</label>
+                                        <select class="form-control" id="add_gender" name="gender">
+                                            <option value="" selected="selected">---Blood Type---</option>
+                                            <option value="A+" selected="selected">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                        </select>
                                     </div>
                                     <div class="col-12 form-group">
                                         <label for="mod_department" class="col-form-label">Department</label>
