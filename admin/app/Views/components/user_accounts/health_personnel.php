@@ -51,7 +51,7 @@
                             <form action="<?= base_url('useraccounts/addHealthPersonnelAccount') ?>" method="get" id="add_form">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">ID No.</label>
+                                        <label for="add_idno" class="col-form-label required">ID No.</label>
                                         <input type="text" class="form-control" id="add_idno" name="id_no" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -68,7 +68,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="#add_username" class="col-form-label">Username</label>
+                                        <label for="#add_username" class="col-form-label required">Username</label>
                                         <input type="text" class="form-control" id="add_username" name="username" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -85,7 +85,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_lastname" class="col-form-label">Last Name</label>
+                                        <label for="add_lastname" class="col-form-label required">Last Name</label>
                                         <input type="text" class="form-control" id="add_lastname" name="last_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -102,7 +102,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_firstname" class="col-form-label">First Name</label>
+                                        <label for="add_firstname" class="col-form-label required">First Name</label>
                                         <input type="text" class="form-control" id="add_firstname" name="first_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -119,7 +119,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_middlename" class="col-form-label">Middle Name</label>
+                                        <label for="add_middlename" class="col-form-label required">Middle Name</label>
                                         <input type="text" class="form-control" id="add_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -136,7 +136,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="add_designation" class="col-form-label">Designation</label>
+                                        <label for="add_designation" class="col-form-label required">Designation</label>
                                         <select class="form-control" id="add_designation" name="designation">
                                             <option value="" selected="selected">---Choose Designation---</option>
                                             <option value="Doctor">Doctor</option>
@@ -183,7 +183,7 @@
                             <form action="" method="get" id="modify_form">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="mod_idno" class="col-form-label">ID No.</label>
+                                        <label for="mod_idno" class="col-form-label required">ID No.</label>
                                         <input type="text" class="form-control" id="mod_idno" name="id_no" value="" disabled="disabled">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -200,7 +200,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="#mod_username" class="col-form-label">Username</label>
+                                        <label for="#mod_username" class="col-form-label required">Username</label>
                                         <input type="text" class="form-control" id="mod_username" name="username" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -217,7 +217,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_lastname" class="col-form-label">Last Name</label>
+                                        <label for="mod_lastname" class="col-form-label required">Last Name</label>
                                         <input type="text" class="form-control" id="mod_lastname" name="last_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -234,7 +234,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_firstname" class="col-form-label">First Name</label>
+                                        <label for="mod_firstname" class="col-form-label required">First Name</label>
                                         <input type="text" class="form-control" id="mod_firstname" name="first_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -251,7 +251,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_middlename" class="col-form-label">Middle Name</label>
+                                        <label for="mod_middlename" class="col-form-label required">Middle Name</label>
                                         <input type="text" class="form-control" id="mod_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -268,7 +268,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="mod_designation" class="col-form-label">Designation</label>
+                                        <label for="mod_designation" class="col-form-label required">Designation</label>
                                         <select class="form-control" id="mod_designation" name="designation">
                                             <option value="" selected="selected">---Choose Designation---</option>
                                             <option value="Doctor">Doctor</option>
