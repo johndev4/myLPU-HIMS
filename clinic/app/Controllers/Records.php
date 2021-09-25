@@ -141,8 +141,14 @@ class Records extends BaseController
 				'id_no' 		 => $lyceans['id_no'],
 				'last_name' 	 => $lyceans['last_name'],
 				'first_name' 	 => $lyceans['first_name'],
-				'middle_initial' => $lyceans['middle_initial'],
-				'department' 	 => $lyceans['department']
+				'department' 	 => $lyceans['department'],
+
+				'birth_date' 	 => date('F d, Y', strtotime($lyceans['birth_date'])),
+				'age' 			 => date_diff(date_create($lyceans['birth_date']), date_create(date("d-m-Y")))->format('%y'),
+				'gender' 	 	 => $lyceans['gender'],
+				'blood_type' 	 => ($lyceans['blood_type'] == "") ? "N/a" : $lyceans['blood_type'],
+				'height' 	 	 => ($lyceans['height'] == "") ? "N/a" : $lyceans['height'],
+				'weight' 	 	 => ($lyceans['weight'] == "") ? "N/a" : $lyceans['weight']
 			];
 		}
 

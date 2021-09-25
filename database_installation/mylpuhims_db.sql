@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2021 at 10:48 AM
+-- Generation Time: Sep 25, 2021 at 05:10 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -105,11 +105,11 @@ CREATE TABLE `health_personnels_account` (
 --
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`) VALUES
-('2016-3-1234', 'krizel.luna@lpu.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
-('2016-3-3456', 'johnny.sins@lpu.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
-('2016-3-5678', 'willy.ong@lpu.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
-('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
-('2016-3-9012', 'kwak.kwak@lpu.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4');
+('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623'),
+('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79'),
+('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8'),
+('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839'),
+('2016-3-9012', 'kwak.kwak@lpu.edu.ph', '9e166b2660994213ac25eb570995d53aca1736c2cda1e36f7342991f9423cdfc');
 
 -- --------------------------------------------------------
 
@@ -152,14 +152,13 @@ CREATE TABLE `lyceans` (
 --
 
 INSERT INTO `lyceans` (`id_no`, `first_name`, `middle_name`, `last_name`, `role`, `department`, `birth_date`, `gender`, `height`, `weight`, `blood_type`) VALUES
-('2014-1-72634', 'Amanda', 'N', 'Menta', 'faculty', 'COECSA', '1991-10-12', 'Female', '', '', ''),
-('2015-2-06969', 'Ji-eun', 'Lee', 'Mistica', 'staff', 'CITHM', '1993-05-16', 'Female', '', '', ''),
+('2014-1-72634', 'Amanda', 'N', 'Menta', 'faculty', 'COECSA', '1991-10-12', 'Female', NULL, NULL, NULL),
+('2015-2-06969', 'Ji-eun', 'N', 'Lee', 'staff', 'CITHM', '1993-05-16', 'Female', NULL, NULL, NULL),
 ('2015-2-09696', 'Momo', 'N', 'Hirai', 'staff', 'CAMS', '1996-11-09', 'Female', NULL, NULL, NULL),
-('2018-2-01509', 'Chris Jover', 'A', 'De Leon', 'student', 'COECSA', '1999-11-06', 'Male', '', '', ''),
-('2018-2-01763', 'Rick Vincent Jeffrey', 'P', 'Dela Cruz', 'student', 'COECSA', '1999-10-19', 'Male', '5\'8', '50', 'O+'),
-('2018-2-02181', 'John Rafael', 'Pineda', 'Mistica', 'student', 'COECSA', '1998-07-04', 'Male', '', '', ''),
-('2018-2-03248', 'Jade Anne Kristel', 'J', 'Vale', 'student', 'COECSA', '2000-10-14', 'Female', NULL, NULL, NULL),
-('dsa', 'ds', 'ds', 'das', 'student', 'CITHM', '2021-09-01', 'Male', '', '', '');
+('2018-2-01509', 'Chris Jover', 'A', 'De Leon', 'student', 'COECSA', '1999-11-06', 'Male', NULL, NULL, NULL),
+('2018-2-01763', 'Rick Vincent Jeffrey', 'P', 'Dela Cruz', 'student', 'COECSA', '1999-10-19', 'Male', NULL, NULL, NULL),
+('2018-2-02181', 'John Rafael', 'P', 'Mistica', 'student', 'COECSA', '1998-07-04', 'Male', NULL, NULL, NULL),
+('2018-2-03248', 'Jade Anne Kristel', 'J', 'Vale', 'student', 'COECSA', '2000-10-14', 'Female', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -179,13 +178,13 @@ CREATE TABLE `lyceans_account` (
 --
 
 INSERT INTO `lyceans_account` (`id_no`, `username`, `password`) VALUES
-('2014-1-72634', 'amanda.menta@lpunetwork.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
-('2015-2-06969', 'jieun.lee@lpunetwork.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
-('2015-2-09696', 'momo.hirai@lpunetwork.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
-('2018-2-01509', 'chris.deleon@lpunetwork.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4'),
+('2014-1-72634', 'amanda.menta@lpunetwork.edu.ph', '760e2c08813b3ace8cdfe79e8db2fcfb00337cc2364f827466b0544de5cf07d6'),
+('2015-2-06969', 'jieun.lee@lpunetwork.edu.ph', '918f24ab2bacdffde0f9cc096f5d02d37a5b89d68a8bed1320cf4868f16d2301'),
+('2015-2-09696', 'momo.hirai@lpunetwork.edu.ph', '00bd50b4eead991214bef23eb367a8837fd062bc657c5c74b8f24c095f91875a'),
+('2018-2-01509', 'chris.deleon@lpunetwork.edu.ph', 'a0e9b8dc58ebbeb7557345815930c3657d115677e26d42a201c5e8b42e5190c2'),
 ('2018-2-01763', 'rick.delacruz@lpunetwork.edu.ph', '17b68c72ec60978f5333b82882db8197e236288b0ac424a77e64dc633cd6d0b6'),
 ('2018-2-02181', 'john.mistica@lpunetwork.edu.ph', '918f24ab2bacdffde0f9cc096f5d02d37a5b89d68a8bed1320cf4868f16d2301'),
-('2018-2-03248', 'jade.vale@lpunetwork.edu.ph', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4');
+('2018-2-03248', 'jade.vale@lpunetwork.edu.ph', '278d3872d86a41fd8ea83b5ef0c7118ecc6a445e6d0da818b08ac7c689d53f6d');
 
 --
 -- Indexes for dumped tables

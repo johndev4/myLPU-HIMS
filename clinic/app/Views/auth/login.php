@@ -30,8 +30,7 @@
                 <!--<b class="font-weight">myLPU HIMS</b>-->
             </a>
         </div>
-        <!-- /.login-logo -->
-        <!--<div class="card">-->
+
         <div class="card-body login-card-body mb-5">
             <!--<p class="login-box-msg"><b>Login</b></p>-->
             <div class="row">
@@ -85,16 +84,14 @@
             </form>
 
         </div>
-        <!-- /.login-card-body -->
-        <!--</div>-->
-        <!-- /.login-card -->
+    </div>
 
-        <!-- jQuery -->
-        <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-        <!-- AdminLTE App -->
-        <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/dist/js/adminlte.min.js') ?>"></script>
+    <!-- jQuery -->
+    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <!-- AdminLTE App -->
+    <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/dist/js/adminlte.min.js') ?>"></script>
 </body>
 
 </html>

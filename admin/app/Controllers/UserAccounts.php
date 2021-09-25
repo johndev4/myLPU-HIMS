@@ -423,7 +423,6 @@ class UserAccounts extends BaseController
 					'role' => htmlspecialchars($_GET['role']),
 					'department' => htmlspecialchars($_GET['department']),
 					'birth_date' => htmlspecialchars(date($_GET['birth_date'])),
-					// 'age' => date_diff(date_create($_GET['birth_date']), date_create(date("d-m-Y"))),
 					'gender' => htmlspecialchars($_GET['gender']),
 					'height' => htmlspecialchars($_GET['height']),
 					'weight' => htmlspecialchars($_GET['weight']),
