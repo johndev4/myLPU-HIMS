@@ -92,6 +92,59 @@
                     </ul>
                 </li>
 
+                <!-- User Informations -->
+                <li class="nav-item" id="mainUserInformationNav">
+                    <a href="#" class="nav-link selector">
+                        <i class="fa fa-file-alt nav-icon text-light"></i>
+                        <p class="text-light">
+                            User Informations
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <!-- Student -->
+                        <li id="studentInformationNav" class="nav-item">
+                            <a href="<?= base_url('') ?>" class="nav-link selector">
+                                <i class="far fa-circle nav-icon text-light"></i>
+                                <p class="text-light">
+                                    Student
+                                </p>
+                            </a>
+                        </li>
+
+                        <!-- Faculty -->
+                        <li id="facultyInformationNav" class="nav-item">
+                            <a href="<?php echo base_url('') ?>" class="nav-link selector">
+                                <i class="far fa-circle nav-icon text-light"></i>
+                                <p class="text-light">
+                                    Faculty
+                                </p>
+                            </a>
+                        </li>
+
+                        <!-- Staff -->
+                        <li id="staffInformationNav" class="nav-item">
+                            <a href="<?php echo base_url('') ?>" class="nav-link selector">
+                                <i class="far fa-circle nav-icon text-light"></i>
+                                <p class="text-light">
+                                    Staff
+                                </p>
+                            </a>
+                        </li>
+
+                        <!-- Clinic Staff -->
+                        <li id="healthpersonnelInformationNav" class="nav-item">
+                            <a href="<?php echo base_url('') ?>" class="nav-link selector">
+                                <i class="far fa-circle nav-icon text-light"></i>
+                                <p class="text-light">
+                                    Clinic Staff
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
                 <!-- Logout -->
                 <li id="" class="nav-item selector logout mt-5">
                     <a href="<?= base_url('auth/logout') ?>" class="nav-link">
