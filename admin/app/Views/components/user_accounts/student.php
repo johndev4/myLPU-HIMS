@@ -37,7 +37,7 @@
 
             <!-- Modals  -->
 
-            <!-- Modal-Add-Record -->
+            <!-- Add Modal -->
             <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
@@ -268,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- /Modal-Add-Record -->
+            </div><!-- /Add Modal -->
 
             <!-- Modify Modal -->
             <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
@@ -284,8 +284,8 @@
                             <form action="" method="get" id="modify_form">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="mod_idno" class="col-form-label">ID No.</label>
-                                        <input type="text" class="form-control" id="mod_idno" name="id_no" value="" disabled="disabled">
+                                        <label for="mod_idno" class="col-form-label required">ID No.</label>
+                                        <input type="text" class="form-control" id="mod_idno" name="id_no" readonly="readonly">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('id_no')) : ?>
@@ -301,8 +301,8 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="#mod_username" class="col-form-label">Username</label>
-                                        <input type="text" class="form-control" id="mod_username" name="username" value="">
+                                        <label for="#mod_username" class="col-form-label required">Username</label>
+                                        <input type="text" class="form-control" id="mod_username" name="username">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('username')) : ?>
@@ -318,8 +318,8 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_lastname" class="col-form-label">Last Name</label>
-                                        <input type="text" class="form-control" id="mod_lastname" name="last_name" value="">
+                                        <label for="mod_lastname" class="col-form-label required">Last Name</label>
+                                        <input type="text" class="form-control" id="mod_lastname" name="last_name">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('last_name')) : ?>
@@ -335,8 +335,8 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_firstname" class="col-form-label">First Name</label>
-                                        <input type="text" class="form-control" id="mod_firstname" name="first_name" value="">
+                                        <label for="mod_firstname" class="col-form-label required">First Name</label>
+                                        <input type="text" class="form-control" id="mod_firstname" name="first_name">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('first_name')) : ?>
@@ -352,8 +352,8 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_middlename" class="col-form-label">Middle Name</label>
-                                        <input type="text" class="form-control" id="mod_middlename" name="middle_name" value="">
+                                        <label for="mod_middlename" class="col-form-label required">Middle Name</label>
+                                        <input type="text" class="form-control" id="mod_middlename" name="middle_name">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('middle_name')) : ?>
@@ -369,7 +369,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="mod_gender" class="col-form-label">Gender</label>
+                                        <label for="mod_gender" class="col-form-label required">Gender</label>
                                         <select class="form-control" id="mod_gender" name="gender">
                                             <option value="" selected="selected">---Select Gender---</option>
                                             <option value="Male" selected="selected">Male</option>
@@ -390,8 +390,8 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="mod_birthdate" class="col-form-label">Date of Birth</label>
-                                        <input type="date" class="form-control" id="mod_birthdate" name="mod_birthdate" value="">
+                                        <label for="mod_birthdate" class="col-form-label required">Date of Birth</label>
+                                        <input type="date" class="form-control" id="mod_birthdate" name="birth_date">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('birth_date')) : ?>
@@ -408,9 +408,9 @@
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="mod_height" class="col-form-label">Height</label>
-                                        <input type="text" class="form-control" id="mod_height" name="height" placeholder="in feet and inches" value="">
-                                         <!-- Validation Error -->
-                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                        <input type="text" class="form-control" id="mod_height" name="height" placeholder="in feet and inches">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('height')) : ?>
                                                 <span class="error text-danger">
                                                     <?= session()->getFlashdata('mod_validation')->getError('height'); ?>
@@ -425,7 +425,7 @@
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="mod_weight" class="col-form-label">Weight</label>
-                                        <input type="text" class="form-control" id="mod_weight" name="weight" placeholder="in pounds" value="">
+                                        <input type="text" class="form-control" id="mod_weight" name="weight" placeholder="in pounds">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('weight')) : ?>
@@ -468,7 +468,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="mod_department" class="col-form-label">Department</label>
+                                        <label for="mod_department" class="col-form-label required">Department</label>
                                         <select class="form-control" id="mod_department" name="department">
                                             <option value="" selected="selected">---Choose Department---</option>
                                             <option value="COECSA">COECSA</option>
@@ -608,6 +608,10 @@
         </div>
     </section>
 </div><!-- /.container-fluid -->
+
+
+
+
 
 <!-- Script -->
 <script>

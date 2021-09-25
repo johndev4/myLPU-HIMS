@@ -80,23 +80,20 @@ class UserAccounts extends BaseController
 				]
 			],
 			'height' => [
-				'rules' => 'required|max_length[3]',
+				'rules' => 'max_length[3]',
 				'errors' => [
-					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
 				]
 			],
 			'weight' => [
-				'rules' => 'required|max_length[3]',
+				'rules' => 'max_length[3]',
 				'errors' => [
-					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
 				]
 			],
 			'blood_type' => [
-				'rules' => 'required|max_length[3]',
+				'rules' => 'max_length[3]',
 				'errors' => [
-					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
 				]
 			],
@@ -131,6 +128,15 @@ class UserAccounts extends BaseController
 
 				]
 			],
+			'username' => [
+				'rules' => 'required|valid_email|max_length[45]|is_unique[lyceans_account.username' . $optional_usrUnq . ']',
+				'errors' => [
+					'required' => '- Required',
+					'valid_email' => 'Must be in email address format.',
+					'max_length' => 'Max length exceeded.',
+					'is_unique' => 'ID No. is already exists'
+				]
+			],
 			'last_name' => [
 				'rules' => 'required|max_length[45]',
 				'errors' => [
@@ -149,15 +155,6 @@ class UserAccounts extends BaseController
 				'rules' => 'max_length[1]',
 				'errors' => [
 					'max_length' => 'Max length exceeded.',
-				]
-			],
-			'username' => [
-				'rules' => 'required|valid_email|max_length[45]|is_unique[lyceans_account.username' . $optional_usrUnq . ']',
-				'errors' => [
-					'required' => '- Required',
-					'valid_email' => 'Must be in email address format.',
-					'max_length' => 'Max length exceeded.',
-					'is_unique' => 'ID No. is already exists'
 				]
 			],
 			'designation' => [
@@ -326,7 +323,7 @@ class UserAccounts extends BaseController
 				'first_name' 	 => $lyceans['first_name'],
 				'middle_name' 	 => $lyceans['middle_name'],
 				'gender' 		 => $lyceans['gender'],
-				'birth_date' 	 => $lyceans['birth_date'],
+				'birth_date' 	 => date($lyceans['birth_date']),
 				'height' 		 => $lyceans['height'],
 				'weight' 		 => $lyceans['weight'],
 				'blood_type' 	 => $lyceans['blood_type'],
@@ -380,7 +377,7 @@ class UserAccounts extends BaseController
 				'first_name' 	 => $lyceans['first_name'],
 				'middle_name' 	 => $lyceans['middle_name'],
 				'gender' 		 => $lyceans['gender'],
-				'birth_date' 	 => $lyceans['birth_date'],
+				'birth_date' 	 => date($lyceans['birth_date']),
 				'height' 		 => $lyceans['height'],
 				'weight' 		 => $lyceans['weight'],
 				'blood_type' 	 => $lyceans['blood_type'],
@@ -425,7 +422,7 @@ class UserAccounts extends BaseController
 					'last_name' => htmlspecialchars($_GET['last_name']),
 					'role' => htmlspecialchars($_GET['role']),
 					'department' => htmlspecialchars($_GET['department']),
-					'birth_date' => htmlspecialchars($_GET['birth_date']),
+					'birth_date' => htmlspecialchars(date($_GET['birth_date'])),
 					// 'age' => date_diff(date_create($_GET['birth_date']), date_create(date("d-m-Y"))),
 					'gender' => htmlspecialchars($_GET['gender']),
 					'height' => htmlspecialchars($_GET['height']),
@@ -524,6 +521,11 @@ class UserAccounts extends BaseController
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
 					'department' => htmlspecialchars($_GET['department']),
+					'birth_date' => htmlspecialchars(date($_GET['birth_date'])),
+					'gender' => htmlspecialchars($_GET['gender']),
+					'height' => htmlspecialchars($_GET['height']),
+					'weight' => htmlspecialchars($_GET['weight']),
+					'blood_type' => htmlspecialchars($_GET['blood_type']),
 				];
 
 				$data2 = [

@@ -14,7 +14,19 @@ class LyceansModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id_no', 'first_name', 'middle_initial', 'last_name', 'role', 'department'];
+	protected $allowedFields        = [
+		'id_no',
+		'first_name',
+		'middle_name',
+		'last_name',
+		'role',
+		'gender',
+		'birth_date',
+		'height',
+		'weight',
+		'blood_type',
+		'department'
+	];
 
 	// Dates
 	protected $useTimestamps        = false;
