@@ -71,42 +71,42 @@
                                                             <label class="text-secondary">Birthday</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">October 14, 2000</span>
+                                                            <span class="h5" id="birthdate"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Age</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">21 yrs. old</span>
+                                                            <span class="h5" id="age"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Gender</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">Female</span>
+                                                            <span class="h5" id="gender"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Blood type</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">B+</span>
+                                                            <span class="h5" id="bloodtype"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Height</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">5'2</span>
+                                                            <span class="h5" id="height"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Weight</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">52 kg</span>
+                                                            <span class="h5" id="weight"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -353,10 +353,16 @@
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                var middle_initial = response['middle_initial'] != "" ? `${response['middle_initial']}.` : ""
                 $('#rec_idno').text(response['id_no']);
-                $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']} ${middle_initial}`);
+                $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']}`);
                 $('input[name=id_no]').val(response['id_no']);
+
+                $('#birthdate').text(response['birth_date']);
+                $('#age').text(response['age']);
+                $('#gender').text(response['gender']);
+                $('#bloodtype').text(response['blood_type']);
+                $('#height').text(response['height']);
+                $('#weight').text(response['weight']);
             }
         });
 

@@ -71,42 +71,42 @@
                                                             <label class="text-secondary">Birthday</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">October 14, 2000</span>
+                                                            <span class="h5" id="birthdate"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Age</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">21 yrs. old</span>
+                                                            <span class="h5" id="age"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Gender</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">Female</span>
+                                                            <span class="h5" id="gender"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Blood type</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">B+</span>
+                                                            <span class="h5" id="bloodtype"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Height</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">5'2</span>
+                                                            <span class="h5" id="height"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Weight</label><br>
                                                         </div>
                                                         <div class="col-md-6 mt-n2">
-                                                            <span class="h5">52 kg</span>
+                                                            <span class="h5" id="weight"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -348,41 +348,47 @@
 
     // Retrieve data with id
     function retrieveData(id) {
-            $.ajax({
-                url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
-                type: 'get',
-                dataType: 'json',
-                success: function(response) {
-                    var middle_initial = response['middle_initial'] != "" ? `${response['middle_initial']}.` : ""
-                    $('#rec_idno').text(response['id_no']);
-                    $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']} ${middle_initial}`);
-                    $('input[name=id_no]').val(response['id_no']);
-                }
-            });
+        $.ajax({
+            url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#rec_idno').text(response['id_no']);
+                $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']}`);
+                $('input[name=id_no]').val(response['id_no']);
 
-            $.ajax({
-                url: '<?= base_url('records/fetchAllRecordsById') ?>/' + id,
-                type: 'get',
-                dataType: 'html',
-                success: function(response) {
-                    $('#medicalfiles_table>tbody').html(response);
-                }
-            })
-        }
+                $('#birthdate').text(response['birth_date']);
+                $('#age').text(response['age']);
+                $('#gender').text(response['gender']);
+                $('#bloodtype').text(response['blood_type']);
+                $('#height').text(response['height']);
+                $('#weight').text(response['weight']);
+            }
+        });
 
-        // Retrieve data
-        function retrieveData2() {
-            <?php if (!empty(session()->get('postData'))) : ?>
-                var data = <?= session()->get('postData') ?>;
-                $('#filename').val(data['filename']);
-                retrieveData(data['id_no']);
-            <?php endif ?>
-        }
+        $.ajax({
+            url: '<?= base_url('records/fetchAllRecordsById') ?>/' + id,
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#medicalfiles_table>tbody').html(response);
+            }
+        })
+    }
 
-        // Set action form of deleteModalForm base on id
-        function setDeleteActionForm(id) {
-            $('#deleteModalForm').prop('action', '<?= base_url('records/deleteStaffRecord') ?>/' + id);
-        }
+    // Retrieve data
+    function retrieveData2() {
+        <?php if (!empty(session()->get('postData'))) : ?>
+            var data = <?= session()->get('postData') ?>;
+            $('#filename').val(data['filename']);
+            retrieveData(data['id_no']);
+        <?php endif ?>
+    }
+
+    // Set action form of deleteModalForm base on id
+    function setDeleteActionForm(id) {
+        $('#deleteModalForm').prop('action', '<?= base_url('records/deleteStaffRecord') ?>/' + id);
+    }
 </script>
 
 <?= $this->endSection('content') ?>
