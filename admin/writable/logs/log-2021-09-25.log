@@ -183,3 +183,18 @@ CRITICAL - 2021-09-25 16:31:54 --> Too few arguments to function App\Controllers
 #3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 {main}
 >>>>>>> 9b5f0127e853b5b9888dc77c37ea326fc3028bfc
+ERROR - 2021-09-25 22:19:29 --> Unknown column 'role' in 'where clause'
+CRITICAL - 2021-09-25 22:19:29 --> Unknown column 'role' in 'where clause'
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('DELETE FROM `ly...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `ly...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `ly...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(2175): CodeIgniter\Database\BaseConnection->query('DELETE FROM `ly...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(963): CodeIgniter\Model->doDelete(NULL, false)
+#6 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\UserAccounts.php(729): CodeIgniter\BaseModel->delete()
+#7 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\UserAccounts.php(740): App\Controllers\UserAccounts->deleteAllAccounts()
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\UserAccounts->deleteAllStudentAccounts()
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserAccounts))
+#10 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
