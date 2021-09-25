@@ -42,7 +42,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Student</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Staff</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -579,9 +579,9 @@
                             <table id="staff_account" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID Number</th>
-                                        <th>First name</th>
-                                        <th>Surname</th>
+                                        <th>ID No.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
                                         <th>Department</th>
                                         <th style="width:150px;"></th>
                                     </tr>
@@ -589,9 +589,9 @@
                                 <!-- TBODY HERE -->
                                 <tfoot>
                                     <tr>
-                                        <th>ID Number</th>
-                                        <th>First name</th>
-                                        <th>Surname</th>
+                                        <th>ID No.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
                                         <th>Department</th>
                                         <th></th>
                                     </tr>

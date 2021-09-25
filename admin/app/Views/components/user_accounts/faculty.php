@@ -578,9 +578,9 @@
                             <table id="faculty_account" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID Number</th>
-                                        <th>First name</th>
-                                        <th>Surname</th>
+                                        <th>ID No.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
                                         <th>Department</th>
                                         <th style="width:150px;"></th>
                                     </tr>
@@ -588,9 +588,9 @@
                                 <!-- TBODY HERE -->
                                 <tfoot>
                                     <tr>
-                                        <th>ID Number</th>
-                                        <th>First name</th>
-                                        <th>Surname</th>
+                                        <th>ID No.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
                                         <th>Department</th>
                                         <th></th>
                                     </tr>
