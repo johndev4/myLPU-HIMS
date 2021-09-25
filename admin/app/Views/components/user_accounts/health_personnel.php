@@ -119,17 +119,17 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_middleinit" class="col-form-label">Middle Name</label>
-                                        <input type="text" class="form-control" id="add_middleinit" name="middle_initial" value="">
+                                        <label for="add_middlename" class="col-form-label">Middle Name</label>
+                                        <input type="text" class="form-control" id="add_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('middle_initial')) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('middle_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('middle_initial'); ?>
+                                                    <?= session()->getFlashdata('add_validation')->getError('middle_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
-                                                        $('#add_middleinit').addClass('border border-danger');
+                                                        $('#add_middlename').addClass('border border-danger');
                                                     });
                                                 </script>
                                             <?php endif; ?>
@@ -251,17 +251,17 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_middleinit" class="col-form-label">Middle Name</label>
-                                        <input type="text" class="form-control" id="mod_middleinit" name="middle_initial" value="">
+                                        <label for="mod_middlename" class="col-form-label">Middle Name</label>
+                                        <input type="text" class="form-control" id="mod_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('middle_initial')) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('middle_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('middle_initial'); ?>
+                                                    <?= session()->getFlashdata('mod_validation')->getError('middle_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
-                                                        $('#mod_middleinit').addClass('border border-danger');
+                                                        $('#mod_middlename').addClass('border border-danger');
                                                     });
                                                 </script>
                                             <?php endif; ?>
@@ -482,7 +482,7 @@
             $('#add_idno').val("");
             $('#add_lastname').val("");
             $('#add_firstname').val("");
-            $('#add_middleinit').val("");
+            $('#add_middlename').val("");
             $('#add_username').val("");
             $('#add_designation').val("");
         });
@@ -496,7 +496,7 @@
                 success: function(response) {
                     $('#add_lastname').val(response['last_name']);
                     $('#add_firstname').val(response['first_name']);
-                    $('#add_middleinit').val(response['middle_initial']);
+                    $('#add_middlename').val(response['middle_name']);
                     $('#add_designation').val(response['designation']);
                 }
             });
@@ -514,7 +514,7 @@
             $('#' + obj['modalType'] + '_idno').val(data['id_no']);
             $('#' + obj['modalType'] + '_lastname').val(data['last_name']);
             $('#' + obj['modalType'] + '_firstname').val(data['first_name']);
-            $('#' + obj['modalType'] + '_middleinit').val(data['middle_initial']);
+            $('#' + obj['modalType'] + '_middlename').val(data['middle_name']);
             $('#' + obj['modalType'] + '_username').val(data['username']);
             $('#' + obj['modalType'] + '_designation').val(data['designation']);
         } else {
@@ -526,7 +526,7 @@
                     $('#mod_idno').val(response['id_no']);
                     $('#mod_lastname').val(response['last_name']);
                     $('#mod_firstname').val(response['first_name']);
-                    $('#mod_middleinit').val(response['middle_initial']);
+                    $('#mod_middlename').val(response['middle_name']);
                     $('#mod_username').val(response['username']);
                     $('#mod_designation').val(response['designation']);
 
