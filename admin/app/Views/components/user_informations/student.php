@@ -98,7 +98,7 @@
                             <div class="text-center mt-2">
                                 <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
                                 <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
-                                <div class="mt-1 font-weight-normal text-secondary">This will permanently wipe out all of the users' information from the system.</div>
+                                <div class="mt-1 font-weight-normal text-secondary">This will permanently wipe out all of the users' information from the system, including health records</div>
                             </div><br>
                             <form action="" method="get" id="deleteall_form">
                                 <div class="float-right mt-1">

@@ -67,6 +67,23 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
+                                    <div class="col-12 form-group">
+                                        <label for="#add_username" class="col-form-label">Username</label>
+                                        <input type="text" class="form-control" id="add_username" name="username" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('username')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('username'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_username').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
                                     <div class="col-4 form-group">
                                         <label for="add_lastname" class="col-form-label">Last Name</label>
                                         <input type="text" class="form-control" id="add_lastname" name="last_name" value="">
@@ -113,23 +130,6 @@
                                                 <script>
                                                     $().ready(function() {
                                                         $('#add_middleinit').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="#add_username" class="col-form-label">Username</label>
-                                        <input type="text" class="form-control" id="add_username" name="username" value="">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('username')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('username'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#add_username').addClass('border border-danger');
                                                     });
                                                 </script>
                                             <?php endif; ?>
@@ -199,7 +199,24 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-5 form-group">
+                                    <div class="col-12 form-group">
+                                        <label for="#mod_username" class="col-form-label">Username</label>
+                                        <input type="text" class="form-control" id="mod_username" name="username" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('username')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('username'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_username').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-4 form-group">
                                         <label for="mod_lastname" class="col-form-label">Last Name</label>
                                         <input type="text" class="form-control" id="mod_lastname" name="last_name" value="">
                                         <!-- Validation Error -->
@@ -216,7 +233,7 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-5 form-group">
+                                    <div class="col-4 form-group">
                                         <label for="mod_firstname" class="col-form-label">First Name</label>
                                         <input type="text" class="form-control" id="mod_firstname" name="first_name" value="">
                                         <!-- Validation Error -->
@@ -233,9 +250,9 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-2 form-group">
-                                        <label for="mod_middleinit" class="col-form-label">M.I.</label>
-                                        <input type="text" class="form-control" id="mod_middleinit" name="middle_initial" value="" maxlength="1">
+                                    <div class="col-4 form-group">
+                                        <label for="mod_middleinit" class="col-form-label">Middle Name</label>
+                                        <input type="text" class="form-control" id="mod_middleinit" name="middle_initial" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('middle_initial')) : ?>
@@ -245,23 +262,6 @@
                                                 <script>
                                                     $().ready(function() {
                                                         $('#mod_middleinit').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="#mod_username" class="col-form-label">Username</label>
-                                        <input type="text" class="form-control" id="mod_username" name="username" value="">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('username')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('username'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#mod_username').addClass('border border-danger');
                                                     });
                                                 </script>
                                             <?php endif; ?>
@@ -378,9 +378,9 @@
                             <table id="healthpersonnel_account" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID Number</th>
-                                        <th>First name</th>
-                                        <th>Surname</th>
+                                        <th>ID No.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
                                         <th>Designation</th>
                                         <th style="width:150px;"></th>
                                     </tr>
@@ -388,9 +388,9 @@
                                 <!-- TBODY HERE -->
                                 <tfoot>
                                     <tr>
-                                        <th>ID Number</th>
-                                        <th>First name</th>
-                                        <th>Surname</th>
+                                        <th>ID No.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
                                         <th>Designation</th>
                                         <th></th>
                                     </tr>
