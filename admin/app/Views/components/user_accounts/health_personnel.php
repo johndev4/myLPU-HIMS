@@ -26,13 +26,13 @@
                         <span class="info-box-text text-black-50">Add User</span>
                     </button>
                 </div>
-                <!-- Import List -->
-                <!-- <div class="col-md-3 col-12 mb-3">
-                    <button type="button" class="btn btn-block btn-default shadow p-3">
-                        <span class="info-box-icon add-record text-black-50"><i class="fas fa-file-import"></i></span>
-                        <span class="info-box-text text-black-50">Import Data</span>
+                <!-- Delete all Button -->
+                <div class="col-md-3 col-12 mb-3">
+                    <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#deleteallModal">
+                        <span class="info-box-icon add-record text-black-50"><i class="fas fa-trash"></i></span>
+                        <span class="info-box-text text-black-50">Delete all data</span>
                     </button>
-                </div> -->
+                </div>
             </div>
 
             <!-- Modals  -->
@@ -343,6 +343,26 @@
                 </div>
             </div><!-- /Delete Modal -->
 
+            <!-- Delete all Modal -->
+            <div class="modal fade" id="deleteallModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2">
+                                <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
+                                <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
+                                <div class="mt-1 font-weight-normal text-secondary">This will permanently wipe out all of the accounts from the system</div>
+                            </div><br>
+                            <form action="" method="get" id="deleteall_form">
+                                <div class="float-right mt-1">
+                                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /Delete all Modal -->
 
             <!-- /Modals -->
 
