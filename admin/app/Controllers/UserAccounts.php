@@ -36,6 +36,15 @@ class UserAccounts extends BaseController
 
 				]
 			],
+			'username' => [
+				'rules' => 'required|valid_email|max_length[45]|is_unique[lyceans_account.username' . $optional_usrUnq . ']',
+				'errors' => [
+					'required' => '- Required',
+					'valid_email' => 'Must be in email address format.',
+					'max_length' => 'Max length exceeded.',
+					'is_unique' => 'ID No. is already exists'
+				]
+			],
 			'last_name' => [
 				'rules' => 'required|max_length[45]',
 				'errors' => [
@@ -50,19 +59,45 @@ class UserAccounts extends BaseController
 					'max_length' => 'Max length exceeded.',
 				]
 			],
-			'middle_initial' => [
-				'rules' => 'max_length[1]',
+			'middle_name' => [
+				'rules' => 'required|max_length[45]',
 				'errors' => [
+					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
 				]
 			],
-			'username' => [
-				'rules' => 'required|valid_email|max_length[45]|is_unique[lyceans_account.username' . $optional_usrUnq . ']',
+			'gender' => [
+				'rules' => 'required|max_length[6]',
 				'errors' => [
 					'required' => '- Required',
-					'valid_email' => 'Must be in email address format.',
 					'max_length' => 'Max length exceeded.',
-					'is_unique' => 'ID No. is already exists'
+				]
+			],
+			'birth_date' => [
+				'rules' => 'required',
+				'errors' => [
+					'required' => '- Required'
+				]
+			],
+			'height' => [
+				'rules' => 'required|max_length[3]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.',
+				]
+			],
+			'weight' => [
+				'rules' => 'required|max_length[3]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.',
+				]
+			],
+			'blood_type' => [
+				'rules' => 'required|max_length[3]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.',
 				]
 			],
 			'department' => [
@@ -110,7 +145,7 @@ class UserAccounts extends BaseController
 					'max_length' => 'Max length exceeded.',
 				]
 			],
-			'middle_initial' => [
+			'middle_name' => [
 				'rules' => 'max_length[1]',
 				'errors' => [
 					'max_length' => 'Max length exceeded.',
@@ -289,7 +324,12 @@ class UserAccounts extends BaseController
 				'id_no' 		 => $lyceans['id_no'],
 				'last_name' 	 => $lyceans['last_name'],
 				'first_name' 	 => $lyceans['first_name'],
-				'middle_initial' => $lyceans['middle_initial'],
+				'middle_name' 	 => $lyceans['middle_name'],
+				'gender' 		 => $lyceans['gender'],
+				'birth_date' 	 => $lyceans['birth_date'],
+				'height' 		 => $lyceans['height'],
+				'weight' 		 => $lyceans['weight'],
+				'blood_type' 	 => $lyceans['blood_type'],
 				'department' 	 => $lyceans['department']
 			];
 		}
@@ -312,7 +352,7 @@ class UserAccounts extends BaseController
 				'id_no' 		 => $healthPersonnels['id_no'],
 				'last_name' 	 => $healthPersonnels['last_name'],
 				'first_name' 	 => $healthPersonnels['first_name'],
-				'middle_initial' => $healthPersonnels['middle_initial'],
+				'middle_name' => $healthPersonnels['middle_name'],
 				'designation' 	 => $healthPersonnels['designation']
 			];
 		}
@@ -338,7 +378,12 @@ class UserAccounts extends BaseController
 				'id_no' 		 => $lyceans['id_no'],
 				'last_name' 	 => $lyceans['last_name'],
 				'first_name' 	 => $lyceans['first_name'],
-				'middle_initial' => $lyceans['middle_initial'],
+				'middle_name' 	 => $lyceans['middle_name'],
+				'gender' 		 => $lyceans['gender'],
+				'birth_date' 	 => $lyceans['birth_date'],
+				'height' 		 => $lyceans['height'],
+				'weight' 		 => $lyceans['weight'],
+				'blood_type' 	 => $lyceans['blood_type'],
 				'department' 	 => $lyceans['department']
 			];
 		}
@@ -357,7 +402,7 @@ class UserAccounts extends BaseController
 				'id_no' 		 => $healthPersonnels['id_no'],
 				'last_name' 	 => $healthPersonnels['last_name'],
 				'first_name' 	 => $healthPersonnels['first_name'],
-				'middle_initial' => $healthPersonnels['middle_initial'],
+				'middle_name' => $healthPersonnels['middle_name'],
 				'designation' 	 => $healthPersonnels['designation']
 			];
 		}
@@ -376,12 +421,12 @@ class UserAccounts extends BaseController
 				$data1 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
-					'middle_initial' => htmlspecialchars($_GET['middle_initial']),
+					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
 					'role' => htmlspecialchars($_GET['role']),
 					'department' => htmlspecialchars($_GET['department']),
-					'birthdate' => htmlspecialchars($_GET['birthdate']),
-					'age' => date_diff(date_create($_GET['birthdate']), date_create(date("d-m-Y"))),
+					'birth_date' => htmlspecialchars($_GET['birth_date']),
+					// 'age' => date_diff(date_create($_GET['birth_date']), date_create(date("d-m-Y"))),
 					'gender' => htmlspecialchars($_GET['gender']),
 					'height' => htmlspecialchars($_GET['height']),
 					'weight' => htmlspecialchars($_GET['weight']),
@@ -435,7 +480,7 @@ class UserAccounts extends BaseController
 				$data1 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
-					'middle_initial' => htmlspecialchars($_GET['middle_initial']),
+					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
 					'designation' => htmlspecialchars($_GET['designation']),
 					'department' => htmlspecialchars("HSD")
@@ -476,7 +521,7 @@ class UserAccounts extends BaseController
 				$data1 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
-					'middle_initial' => htmlspecialchars($_GET['middle_initial']),
+					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
 					'department' => htmlspecialchars($_GET['department']),
 				];
@@ -534,7 +579,7 @@ class UserAccounts extends BaseController
 				$data1 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
-					'middle_initial' => htmlspecialchars($_GET['middle_initial']),
+					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
 					'designation' => htmlspecialchars($_GET['designation']),
 				];

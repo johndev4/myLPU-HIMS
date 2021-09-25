@@ -120,17 +120,17 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_middleinit" class="col-form-label required">Middle Name</label>
-                                        <input type="text" class="form-control" id="add_middleinit" name="middle_initial" value="">
+                                        <label for="add_middlename" class="col-form-label required">Middle Name</label>
+                                        <input type="text" class="form-control" id="add_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('middle_initial')) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('middle_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('middle_initial'); ?>
+                                                    <?= session()->getFlashdata('add_validation')->getError('middle_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
-                                                        $('#add_middleinit').addClass('border border-danger');
+                                                        $('#add_middlename').addClass('border border-danger');
                                                     });
                                                 </script>
                                             <?php endif; ?>
@@ -143,22 +143,74 @@
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('gender')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('gender'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_gender').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_birthday" class="col-form-label required">Date of Birth</label>
-                                        <input type="date" class="form-control" id="add_gender" name="birthday">
+                                        <label for="add_birthdate" class="col-form-label required">Date of Birth</label>
+                                        <input type="date" class="form-control" id="add_birthdate" name="birth_date" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('birth_date')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('birth_date'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_birthdate').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="add_height" class="col-form-label">Height</label>
                                         <input type="text" class="form-control" id="add_height" name="height" placeholder="in feet and inches">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('height')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('height'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_height').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="add_weight" class="col-form-label">Weight</label>
-                                        <input type="text" class="form-control" id="add_weight" name="weight" placeholder="in pounds">
+                                        <input type="text" class="form-control" id="add_weight" name="weight" placeholder="in pounds" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('weight')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('weight'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_weight').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_gender" class="col-form-label">Blood-type</label>
-                                        <select class="form-control" id="add_gender" name="gender">
+                                        <label for="add_bloodtype" class="col-form-label">Blood-type</label>
+                                        <select class="form-control" id="add_bloodtype" name="blood_type">
                                             <option value="" selected="selected">---Blood Type---</option>
                                             <option value="A+">A+</option>
                                             <option value="A-">A-</option>
@@ -169,6 +221,19 @@
                                             <option value="O+">O+</option>
                                             <option value="O-">O-</option>
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('blood_type')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('blood_type'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_bloodtype').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
                                         <label for="add_department" class="col-form-label required">Department</label>
@@ -287,45 +352,97 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="mod_middleinit" class="col-form-label">Middle Name</label>
-                                        <input type="text" class="form-control" id="mod_middleinit" name="middle_initial" value="">
+                                        <label for="mod_middlename" class="col-form-label">Middle Name</label>
+                                        <input type="text" class="form-control" id="mod_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('middle_initial')) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('middle_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('middle_initial'); ?>
+                                                    <?= session()->getFlashdata('mod_validation')->getError('middle_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
-                                                        $('#mod_middleinit').addClass('border border-danger');
+                                                        $('#mod_middlename').addClass('border border-danger');
                                                     });
                                                 </script>
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_gender" class="col-form-label">Gender</label>
-                                        <select class="form-control" id="add_gender" name="gender">
+                                        <label for="mod_gender" class="col-form-label">Gender</label>
+                                        <select class="form-control" id="mod_gender" name="gender">
                                             <option value="" selected="selected">---Select Gender---</option>
                                             <option value="Male" selected="selected">Male</option>
                                             <option value="Female">Female</option>
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('gender')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('gender'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_gender').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_birthday" class="col-form-label">Date of Birth</label>
-                                        <input type="date" class="form-control" id="add_gender" name="birthday">
+                                        <label for="mod_birthdate" class="col-form-label">Date of Birth</label>
+                                        <input type="date" class="form-control" id="mod_birthdate" name="mod_birthdate" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('birth_date')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('birth_date'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_birthdate').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_height" class="col-form-label">Height</label>
-                                        <input type="text" class="form-control" id="add_height" name="height" placeholder="5'2">
+                                        <label for="mod_height" class="col-form-label">Height</label>
+                                        <input type="text" class="form-control" id="mod_height" name="height" placeholder="in feet and inches" value="">
+                                         <!-- Validation Error -->
+                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('height')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('height'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_height').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_weight" class="col-form-label">Weight</label>
-                                        <input type="text" class="form-control" id="add_weight" name="weight" placeholder="132">
+                                        <label for="mod_weight" class="col-form-label">Weight</label>
+                                        <input type="text" class="form-control" id="mod_weight" name="weight" placeholder="in pounds" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('weight')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('weight'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_weight').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_gender" class="col-form-label">Blood-type</label>
-                                        <select class="form-control" id="add_gender" name="gender">
+                                        <label for="mod_bloodtype" class="col-form-label">Blood-type</label>
+                                        <select class="form-control" id="mod_bloodtype" name="blood_type">
                                             <option value="" selected="selected">---Blood Type---</option>
                                             <option value="A+" selected="selected">A+</option>
                                             <option value="A-">A-</option>
@@ -336,6 +453,19 @@
                                             <option value="O+">O+</option>
                                             <option value="O-">O-</option>
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('blood_type')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('blood_type'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_bloodtype').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
                                         <label for="mod_department" class="col-form-label">Department</label>
@@ -531,10 +661,15 @@
         // Reset add modal on close
         $('#addModal').on('hidden.bs.modal', function(evt) {
             $('#add_idno').val("");
+            $('#add_username').val("");
             $('#add_lastname').val("");
             $('#add_firstname').val("");
-            $('#add_middleinit').val("");
-            $('#add_username').val("");
+            $('#add_middlename').val("");
+            $('#add_gender').val("");
+            $('#add_birthdate').val("");
+            $('#add_height').val("");
+            $('#add_weight').val("");
+            $('#add_bloodtype').val("");
             $('#add_department').val("");
         });
 
@@ -547,7 +682,12 @@
                 success: function(response) {
                     $('#add_lastname').val(response['last_name']);
                     $('#add_firstname').val(response['first_name']);
-                    $('#add_middleinit').val(response['middle_initial']);
+                    $('#add_middlename').val(response['middle_name']);
+                    $('#add_gender').val(response['gender']);
+                    $('#add_birthdate').val(response['birth_date']);
+                    $('#add_height').val(response['height']);
+                    $('#add_weight').val(response['weight']);
+                    $('#add_bloodtype').val(response['blood_type']);
                     $('#add_department').val(response['department']);
                 }
             });
@@ -563,10 +703,15 @@
             var data = <?= session()->get('getData') ?>
 
             $('#' + obj['modalType'] + '_idno').val(data['id_no']);
+            $('#' + obj['modalType'] + '_username').val(data['username']);
             $('#' + obj['modalType'] + '_lastname').val(data['last_name']);
             $('#' + obj['modalType'] + '_firstname').val(data['first_name']);
-            $('#' + obj['modalType'] + '_middleinit').val(data['middle_initial']);
-            $('#' + obj['modalType'] + '_username').val(data['username']);
+            $('#' + obj['modalType'] + '_middlename').val(data['middle_name']);
+            $('#' + obj['modalType'] + '_gender').val(data['gender']);
+            $('#' + obj['modalType'] + '_birthdate').val(data['birth_date']);
+            $('#' + obj['modalType'] + '_height').val(data['height']);
+            $('#' + obj['modalType'] + '_weight').val(data['weight']);
+            $('#' + obj['modalType'] + '_bloodtype').val(data['blood_type']);
             $('#' + obj['modalType'] + '_department').val(data['department']);
         } else {
             $.ajax({
@@ -575,10 +720,15 @@
                 dataType: 'json',
                 success: function(response) {
                     $('#mod_idno').val(response['id_no']);
+                    $('#mod_username').val(response['username']);
                     $('#mod_lastname').val(response['last_name']);
                     $('#mod_firstname').val(response['first_name']);
-                    $('#mod_middleinit').val(response['middle_initial']);
-                    $('#mod_username').val(response['username']);
+                    $('#mod_middlename').val(response['middle_name']);
+                    $('#mod_gender').val(response['gender']);
+                    $('#mod_birthdate').val(response['birth_date']);
+                    $('#mod_height').val(response['height']);
+                    $('#mod_weight').val(response['weight']);
+                    $('#mod_bloodtype').val(response['blood_type']);
                     $('#mod_department').val(response['department']);
 
                     resId = response['id_no'];
