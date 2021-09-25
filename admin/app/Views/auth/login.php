@@ -30,8 +30,7 @@
                 <!--<b class="font-weight">myLPU HIMS</b>-->
             </a>
         </div>
-        <!-- /.login-logo -->
-        <!--<div class="card">-->
+
         <div class="card-body login-card-body mb-5">
             <!--<p class="login-box-msg"><b>Login</b></p>-->
             <div class="row">
@@ -56,7 +55,7 @@
             <form action="<?= base_url('login') ?>" method="post" accept-charset="utf-8" id="login_form">
                 <?= csrf_field() ?>
                 <div class="input-group mb-3 mt-3">
-                    <input type="text"class="form-control" name="username" placeholder="Username" autocomplete="off" style="border-radius: 10px 0px 0px 10px;" required="required">
+                    <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" style="border-radius: 10px 0px 0px 10px;" required="required">
                     <div class="input-group-append">
                         <div class="input-group-text" style="border-radius: 0px 10px 10px 0px;">
                             <span class="fas fa-user"></span>
@@ -81,16 +80,14 @@
             </form>
 
         </div>
-        <!-- /.login-card-body -->
-        <!--</div>-->
-        <!-- /.login-card -->
+    </div>
 
-        <!-- jQuery -->
-        <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-        <!-- AdminLTE App -->
-        <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/js/adminlte.min.js') ?>"></script>
+    <!-- jQuery -->
+    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <!-- AdminLTE App -->
+    <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/js/adminlte.min.js') ?>"></script>
 </body>
 
 </html>

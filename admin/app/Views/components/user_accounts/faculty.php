@@ -512,10 +512,12 @@
                                 <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
                                 <div class="mt-1 font-weight-normal text-secondary">This will reset the password to default</div>
                             </div><br>
-                            <div class="float-right">
-                                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-danger swalDefaultSuccess">Reset</button>
-                            </div>
+                            <form action="" method="get" id="reset_form">
+                                <div class="float-right">
+                                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-danger swalDefaultSuccess">Reset</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -554,6 +556,7 @@
                                 <div class="mt-1 font-weight-normal text-secondary">This will permanently wipe out all of the accounts from the system</div>
                             </div><br>
                             <form action="" method="get" id="deleteall_form">
+                                <input type="hidden" name="role" value="faculty">
                                 <div class="float-right mt-1">
                                     <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
@@ -711,6 +714,12 @@
                 }
             });
         });
+
+        // Set Delete All Modal Form
+        $('#deleteall_form').attr(
+            'action',
+            '<?= base_url('useraccounts/deleteAllFacultyAccounts') ?>'
+        );
     });
 
     // Retrieve data
@@ -765,7 +774,7 @@
         );
         $('#reset_form').attr(
             'action',
-            '<?= base_url('useraccounts/resetStudentAccount') ?>/' + id
+            '<?= base_url('useraccounts/resetFacultyAccount') ?>/' + id
         );
     }
 </script>

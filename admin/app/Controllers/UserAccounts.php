@@ -724,7 +724,54 @@ class UserAccounts extends BaseController
 
 	// DELETE ALL ACCOUNT
 	// ---------------------------------------------------------
-	public function deleteAllStudentAccount() {
+	private function deleteAllAccounts()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$lyceans = $this->lyceansModel->where('role', $_GET['role'])->findAll();
+			$id = [];
 
+			foreach ($lyceans as $key => $value) {
+				$id[$key] = $value['id_no'];
+			}
+
+			$success = $this->lyceansAccountModel->delete($id);
+
+			if ($success) {
+				// Create flashdata for database query status
+				session()->setFlashdata('success', 'Successfully deleted.');
+			} else {
+			}
+		}
+	}
+
+	public function deleteAllStudentAccounts()
+	{
+		$this->deleteAllAccounts();
+		return redirect()->to('useraccounts/student');
+	}
+
+	public function deleteAllFacultyAccounts()
+	{
+		$this->deleteAllAccounts();
+		return redirect()->to('useraccounts/faculty');
+	}
+
+	public function deleteAllStaffAccounts()
+	{
+		$this->deleteAllAccounts();
+		return redirect()->to('useraccounts/staff');
+	}
+
+	public function deleteAllHealthPersonnelAccounts()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$success = $this->lyceansAccountModel->delete();
+
+			if ($success) {
+				// Create flashdata for database query status
+				session()->setFlashdata('success', 'Successfully deleted.');
+			} else {
+			}
+		}
 	}
 }

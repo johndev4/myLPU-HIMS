@@ -555,6 +555,7 @@
                                 <div class="mt-1 font-weight-normal text-secondary">This will permanently wipe out all of the accounts from the system</div>
                             </div><br>
                             <form action="" method="get" id="deleteall_form">
+                                <input type="hidden" name="role" value="student">
                                 <div class="float-right mt-1">
                                     <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
@@ -717,6 +718,12 @@
                 }
             });
         });
+
+        // Set Delete All Modal Form
+        $('#deleteall_form').attr(
+            'action',
+            '<?= base_url('useraccounts/deleteAllStudentAccounts') ?>'
+        );
     });
 
     // Retrieve data
@@ -768,10 +775,6 @@
         $('#delete_form').attr(
             'action',
             '<?= base_url('useraccounts/deleteStudentAccount') ?>/' + id
-        );
-        $('#deleteall_form').attr(
-            'action',
-            '<?= base_url('useraccounts/deleteAllStudentAccount') ?>'
         );
         $('#reset_form').attr(
             'action',
