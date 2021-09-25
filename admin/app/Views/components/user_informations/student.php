@@ -21,7 +21,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('') ?>',
+                url: '<?= base_url('useraccounts/fetchAllStudent') ?>',
                 contentType: ' application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
