@@ -769,6 +769,10 @@
             'action',
             '<?= base_url('useraccounts/deleteStudentAccount') ?>/' + id
         );
+        $('#deleteall_form').attr(
+            'action',
+            '<?= base_url('useraccounts/deleteAllStudentAccount') ?>'
+        );
         $('#reset_form').attr(
             'action',
             '<?= base_url('useraccounts/resetStudentAccount') ?>/' + id

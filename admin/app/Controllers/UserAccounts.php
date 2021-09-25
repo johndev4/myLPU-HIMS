@@ -720,4 +720,11 @@ class UserAccounts extends BaseController
 			return redirect()->to('useraccounts/healthpersonnel');
 		}
 	}
+
+
+	// DELETE ALL ACCOUNT
+	// ---------------------------------------------------------
+	public function deleteAllStudentAccount() {
+
+	}
 }
