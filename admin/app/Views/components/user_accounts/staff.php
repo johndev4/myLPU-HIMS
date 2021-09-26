@@ -577,7 +577,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="staff_account" class="table table-bordered table-hover">
+                            <table id="accounts_table" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>ID No.</th>
@@ -613,7 +613,7 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
-        $("#staff_account").DataTable({
+        $("#accounts_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
@@ -630,7 +630,7 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
 
         // For sidebar
         $("#mainUserAccountNav").addClass('menu-open');
