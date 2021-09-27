@@ -10,6 +10,7 @@ class UserInformations extends BaseController
     {
         // Page title
         $this->data['page_title'] = 'User Accounts';
+        $this->medicalRecordsDir = $_SERVER['DOCUMENT_ROOT'] . 'myLPU-HIMS/clinic/public/uploaded/medical_records/';
     }
 
 
@@ -154,9 +155,22 @@ class UserInformations extends BaseController
     private function deleteLyceanInformation($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $success = $this->lyceansModel->delete($id);
+            $success1 = $this->healthRecordsModel->delete($id);
 
-            if ($success) {
+            // Delete directory
+            if (file_exists($this->medicalRecordsDir . $id)) {
+                $files = glob($this->medicalRecordsDir . $id . '/*');
+
+                foreach ($files as $file) {
+                    unlink($file);
+                }
+
+                $success2 =  rmdir($this->medicalRecordsDir . $id);
+            }
+
+            $success3 = $this->lyceansModel->delete($id);
+
+            if ($success1 && $success2 && $success3) {
                 // Create flashdata for database query status
                 session()->setFlashdata('success', 'Successfully deleted.');
             } else {
@@ -200,24 +214,38 @@ class UserInformations extends BaseController
 
     // DELETE ALL ACCOUNT
     // ---------------------------------------------------------
-    private function deleteAllInformations()
+    public function deleteAllInformations()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $lyceans = $this->lyceansModel->where('role', $_GET['role'])->findAll();
-            $id = [];
+            $lyceansId = [];
 
             foreach ($lyceans as $key => $value) {
                 $lyceansAccount = $this->lyceansAccountModel->find($value['id_no']);
                 if (!$lyceansAccount) {
-                    $id[$key] = $value['id_no'];
+                    $lyceansId[$key] = $value['id_no'];
                 }
             }
 
-            if ($id != []) {
-                $success = $this->lyceansModel->delete($id);
+            if ($lyceansId != []) {
+                $success1 = $this->healthRecordsModel->delete($lyceansId);
 
+                // Delete directories
+                foreach ($lyceansId as $id) {
+                    if (file_exists($this->medicalRecordsDir . $id)) {
+                        $files = glob($this->medicalRecordsDir . $id . '/*');
 
-                if ($success) {
+                        foreach ($files as $file) {
+                            unlink($file);
+                        }
+
+                        $success2 =  rmdir($this->medicalRecordsDir . $id);
+                    }
+                }
+
+                $success3 = $this->lyceansModel->delete($lyceansId);
+
+                if ($success1 && $success2 && $success3) {
                     // Create flashdata for database query status
                     session()->setFlashdata('success', 'Successfully deleted.');
                 } else {

@@ -16,12 +16,14 @@ class Auth extends BaseController
 	{
 		// Request to login
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$credentials = $this->userAccountsModel
+			$credentials = $this->userAccountModel
 				->where('username', $_POST['username'])
 				->where('password', hash('sha256', $_POST['password']))
 				->first();
 
 			if ($credentials) {
+				$user = $this->userModel->find($credentials['id_no']);
+
 				// Create login session
 				session()->set([
 					'uid' => $credentials['username'],
@@ -29,7 +31,11 @@ class Auth extends BaseController
 					'logged_in' => TRUE
 				]);
 
-				return redirect()->to('dashboard');
+				if ($credentials['password'] === hash('sha256', strtoupper($user['last_name']))) {
+					return redirect()->to('changepassword');
+				} else {
+					return redirect()->to('dashboard');
+				}
 			} else {
 				$this->data['error'] = 'Invalid login, please try again';
 			}

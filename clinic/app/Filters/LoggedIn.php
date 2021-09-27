@@ -10,8 +10,8 @@ class LoggedIn implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        $userAccountsModel = model('App\Models\HealthPersonnelsAccountModel');
-        $credentials = $userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $userAccountModel = model('App\Models\HealthPersonnelsAccountModel');
+        $credentials = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
         if ($credentials == []) {
             return redirect()->to('login');
         }
@@ -20,5 +20,8 @@ class LoggedIn implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         // 
+        if (true) {
+            return redirect()->to('changepassword');
+        }
     }
 }

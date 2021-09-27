@@ -42,7 +42,7 @@ class Profile extends BaseController
 
     public function index()
     {
-        $user = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
         $this->data['username'] = $user['username'];
 
         // Display page view
@@ -51,7 +51,7 @@ class Profile extends BaseController
 
     public function getFirstname()
     {
-        $user = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
         $userInfo = $this->userModel->find($user['id_no']);
         return $userInfo['first_name'];
     }
@@ -59,7 +59,7 @@ class Profile extends BaseController
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $user = $this->userAccountsModel
+            $user = $this->userAccountModel
                 ->where('username', session()->get('uid'))
                 ->where('password', hash("sha256", $_POST['current_password']))
                 ->first();
@@ -76,7 +76,7 @@ class Profile extends BaseController
                         'password' => hash("sha256", $_POST['password'])
                     ];
 
-                    $success = $this->userAccountsModel->update($user['id_no'], $data);
+                    $success = $this->userAccountModel->update($user['id_no'], $data);
 
                     if ($success) {
                         // Update username in login session
