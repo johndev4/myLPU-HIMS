@@ -20,8 +20,5 @@ class LoggedIn implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         // 
-        if (true) {
-            return redirect()->to('changepassword');
-        }
     }
 }
