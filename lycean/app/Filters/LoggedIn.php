@@ -25,7 +25,7 @@ class LoggedIn implements FilterInterface
         if ($credentials != []) {
             $userModel = model('App\Models\LyceansModel');
             $user = $userModel->find($credentials['id_no']);
-            if ($credentials['password'] !== hash('sha256', strtoupper($user['last_name']))) {
+            if ($credentials['password'] === hash('sha256', strtoupper($user['last_name']))) {
                 return redirect()->to('changepassword');
             }
         }
