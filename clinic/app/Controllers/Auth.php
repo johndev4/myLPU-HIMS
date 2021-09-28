@@ -22,8 +22,6 @@ class Auth extends BaseController
 				->first();
 
 			if ($credentials) {
-				$user = $this->userModel->find($credentials['id_no']);
-
 				// Create login session
 				session()->set([
 					'uid' => $credentials['username'],
@@ -31,11 +29,7 @@ class Auth extends BaseController
 					'logged_in' => TRUE
 				]);
 
-				if ($credentials['password'] === hash('sha256', strtoupper($user['last_name']))) {
-					return redirect()->to('changepassword');
-				} else {
-					return redirect()->to('dashboard');
-				}
+				return redirect()->to('dashboard');
 			} else {
 				$this->data['error'] = 'Invalid login, please try again';
 			}
