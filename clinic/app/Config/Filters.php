@@ -18,11 +18,11 @@ class Filters extends BaseConfig
 	 * @var array
 	 */
 	public $aliases = [
-		'csrf'     => CSRF::class,
-		'toolbar'  => DebugToolbar::class,
-		'honeypot' => Honeypot::class,
-		'loggedin'     => LoggedIn::class,
-		'notloggedin'   => NotLoggedIn::class
+		'csrf'            => CSRF::class,
+		'toolbar'         => DebugToolbar::class,
+		'honeypot'   	  => Honeypot::class,
+		'loggedin'        => LoggedIn::class,
+		'notloggedin'     => NotLoggedIn::class
 	];
 
 	/**
@@ -66,7 +66,7 @@ class Filters extends BaseConfig
 	 */
 	public $filters = [
 		'loggedin' => [
-			'before' => ['dashboard', 'profile', 'records/*', 'consultations', 'inventory/*', 'changepassword'],
+			'before' => ['dashboard', 'profile', 'records/*', 'consultations', 'inventory/*','changepassword'],
 			'after' => ['dashboard', 'profile', 'records/*', 'consultations', 'inventory/*']
 		],
 		'notloggedin' => [

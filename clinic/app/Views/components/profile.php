@@ -139,7 +139,11 @@
     </section>
 </div><!-- /.container-fluid -->
 
-<!-- Sweetalert -->
+
+
+
+
+<!-- Script -->
 <script>
     $('document').ready(function() {
         // Sweet Alert for success staus

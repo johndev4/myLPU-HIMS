@@ -10,8 +10,7 @@
 
     <!-- Webapp Icon -->
     <link rel="icon" href="<?= base_url('assets/images/app_icon.png') ?>" type="image/png" sizes="16x16">
-    <!-- External CSS -->
-   
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
@@ -28,7 +27,7 @@
         <div class="card card-outline shadow">
             <div class="card-body box-profile">
 
-                <form action="<?= base_url('profile/updatePassword') ?>" method="post">
+                <form action="<?= base_url('changepassword/updatePassword') ?>" method="post">
                     <span class="p-2 d-block mb-2" style="background-color:rgb(223, 223, 223); border-radius:4px;">
                         You are required to change the default password.</span>
 
@@ -43,7 +42,6 @@
                             </span>
                             <script>
                                 $().ready(function() {
-                                    $('#current_password').val('<?= session()->get('postData')['current_password'] ?>');
                                     $('#password').addClass('border border-danger');
                                     $('#password').val('<?= session()->get('postData')['password'] ?>');
                                 });
@@ -60,7 +58,6 @@
                             </span>
                             <script>
                                 $().ready(function() {
-                                    $('#current_password').val('<?= session()->get('postData')['current_password'] ?>');
                                     $('#confirm_password').addClass('border border-danger');
                                     $('#confirm_password').val('<?= session()->get('postData')['confirm_password'] ?>');
                                 });
@@ -101,13 +98,41 @@
 
     </div>
 
-
     <!-- jQuery -->
     <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/dist/js/adminlte.min.js') ?>"></script>
+
+
+
+
+
+    <!-- Script -->
+    <script>
+        $('document').ready(function() {
+            // Sweet Alert for success staus
+            <?php if (session()->getFlashdata('success') !== null) : ?>
+                var Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+                Toast.fire({
+                    icon: 'success',
+                    title: '<?= session()->getFlashdata('success'); ?>'
+                });
+            <?php endif; ?>
+
+            // Bootstrap Modal for password changed status
+            <?php if (session()->getFlashdata('password_changed') == TRUE) : ?>
+                $("#messageModal").modal('show');
+            <?php endif; ?>
+        });
+    </script>
+
 </body>
 
 </html>

@@ -12,6 +12,9 @@ class ForgotPassword extends BaseController
 		$this->data['page_title'] = 'Forgot Password?';
 	}
 
+
+	// RETURN VIEWS
+	// -----------------------------------------------------------------
 	public function index()
 	{
 		// Display page view

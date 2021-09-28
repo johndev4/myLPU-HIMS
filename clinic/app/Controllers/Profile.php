@@ -12,7 +12,7 @@ class Profile extends BaseController
         $this->data['page_title'] = 'Profile';
 
         // Array of Validation Rules
-        $this->rules2 = [
+        $this->rules = [
             'current_password' => [
                 'rules' => 'required',
                 'errors' => [
@@ -40,6 +40,9 @@ class Profile extends BaseController
         ];
     }
 
+
+    // RETURN VIEWS
+	// -----------------------------------------------------------------
     public function index()
     {
         $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
@@ -49,6 +52,9 @@ class Profile extends BaseController
         return view('components/profile', $this->data);
     }
 
+
+    // GET NAME
+	// -----------------------------------------------------------------
     public function getFirstname()
     {
         $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
@@ -56,6 +62,9 @@ class Profile extends BaseController
         return $userInfo['first_name'];
     }
 
+
+    // UPDATE PASSWORD
+	// -----------------------------------------------------------------
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -70,7 +79,7 @@ class Profile extends BaseController
                 session()->setFlashdata('postData', $_POST);
             }
 
-            if ($this->validate($this->rules2)) {
+            if ($this->validate($this->rules)) {
                 if ($user) {
                     $data = [
                         'password' => hash("sha256", $_POST['password'])
