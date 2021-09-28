@@ -10,6 +10,34 @@ class ChangePassword extends BaseController
     {
         // Page title
         $this->data['page_title'] = 'Change Password';
+
+        // Array of Validation Rules
+        $this->rules2 = [
+            'current_password' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required'       => '- Required'
+                ]
+            ],
+            'password' => [
+                'rules' => 'required|matches[confirm_password]|valid_password[{field}]|differs[current_password]',
+                'errors' => [
+                    'required'       => '- Required',
+                    'matches'        => 'Passwords do not match.',
+                    'valid_password' => 'Passwords must have 8 or more characters with a mix of letters, numbers & symbols.',
+                    'differs'        => 'New password must be different than the current one.'
+                ]
+            ],
+            'confirm_password' => [
+                'rules' => 'required|matches[password]|valid_password[{field}]|differs[current_password]',
+                'errors' => [
+                    'required'       => '- Required',
+                    'matches'        => 'Passwords do not match.',
+                    'valid_password' => 'Passwords must have 8 or more characters with a mix of letters, numbers & symbols.',
+                    'differs'        => 'New password must be different than the current one.'
+                ]
+            ]
+        ];
     }
 
     public function index()
