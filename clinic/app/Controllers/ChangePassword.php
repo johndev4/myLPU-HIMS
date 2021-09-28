@@ -13,12 +13,6 @@ class ChangePassword extends BaseController
 
         // Array of Validation Rules
         $this->rules2 = [
-            'current_password' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required'       => '- Required'
-                ]
-            ],
             'password' => [
                 'rules' => 'required|matches[confirm_password]|valid_password[{field}]|differs[current_password]',
                 'errors' => [
