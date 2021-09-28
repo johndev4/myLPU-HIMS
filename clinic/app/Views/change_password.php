@@ -11,7 +11,7 @@
     <!-- Webapp Icon -->
     <link rel="icon" href="<?= base_url('assets/images/app_icon.png') ?>" type="image/png" sizes="16x16">
     <!-- External CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/login.css') ?>">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
@@ -23,11 +23,83 @@
 </head>
 
 <body class="hold-transition login-page">
+    <div class="login-box">
 
-    <!-- CONTENT HERE -->
-    <!-- CONTENT HERE -->
-    <!-- CONTENT HERE -->
-    
+        <div class="card card-outline shadow">
+            <div class="card-body box-profile">
+
+                <form action="<?= base_url('profile/updatePassword') ?>" method="post">
+                    <span class="p-2 d-block mb-2" style="background-color:rgb(223, 223, 223); border-radius:4px;">
+                        You are required to change the default password.</span>
+
+                    <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+
+                    <input type="password" class="form-control mb-2" id="password" placeholder="New Password" name="password">
+                    <!-- Validation Error -->
+                    <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
+                        <?php if (session()->getFlashdata('p_validation')->hasError('password')) : ?>
+                            <span class="error text-danger">
+                                <?= session()->getFlashdata('p_validation')->getError('password'); ?>
+                            </span>
+                            <script>
+                                $().ready(function() {
+                                    $('#current_password').val('<?= session()->get('postData')['current_password'] ?>');
+                                    $('#password').addClass('border border-danger');
+                                    $('#password').val('<?= session()->get('postData')['password'] ?>');
+                                });
+                            </script>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" name="confirm_password">
+                    <!-- Validation Error -->
+                    <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
+                        <?php if (session()->getFlashdata('p_validation')->hasError('confirm_password')) : ?>
+                            <span class="error text-danger">
+                                <?= session()->getFlashdata('p_validation')->getError('confirm_password'); ?>
+                            </span>
+                            <script>
+                                $().ready(function() {
+                                    $('#current_password').val('<?= session()->get('postData')['current_password'] ?>');
+                                    $('#confirm_password').addClass('border border-danger');
+                                    $('#confirm_password').val('<?= session()->get('postData')['confirm_password'] ?>');
+                                });
+                            </script>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <button type="submit" class="btn btn-danger btn-block mt-3 swalDefaultSuccess">
+                        <b>Change Password</b></button>
+                </form>
+            </div>
+            <!-- /.card-body -->
+        </div>
+
+        <!-- Modal -->
+        <!-- Message Modal -->
+        <div class="modal fade" id="messageModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+                <div class="modal-content">
+                    <div class="modal-body p-4" align="center">
+                        <i class="fas fa-check-circle"></i>
+                        <label>
+                            <h5>Password changed successfully!</h5>
+                        </label><br>
+                        You will now be logged out.
+                        <br><br>
+                        <div align="center">
+                            <a href="<?= base_url('auth/logout') ?>">
+                                <button type="button" class="btn btn-danger swalDefaultSuccess" id="continueLogout">Continue</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Message Modal -->
+        <!-- /Modal -->
+
+    </div>
 
     <!-- jQuery -->
     <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>

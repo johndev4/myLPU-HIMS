@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2021-09-28 15:04:41 --> The framework needs the following extension(s) installed and loaded: intl.
 #0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(218): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(176): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
@@ -51,6 +52,16 @@ Main connection [MySQLi]: Unknown database 'mylpuhims_db'
 #4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
 #5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
 #6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+=======
+CRITICAL - 2021-09-28 20:13:18 --> Undefined variable $username
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\change_password.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 38)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('change_password', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\ChangePassword.php(18): view('change_password', Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\ChangePassword->index()
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ChangePassword))
+>>>>>>> f329aafd3940e7421421b0be0574a88b1a507a47
 #7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}

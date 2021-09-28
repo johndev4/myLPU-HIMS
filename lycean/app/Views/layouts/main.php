@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/consultation.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/table-page.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/inventory.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/navbar.css') ?>">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -67,7 +68,7 @@
 
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition layout-top-nav layout-fixed">
     <div class="wrapper">
 
         <!-- Render top_menubar -->
