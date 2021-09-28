@@ -1,0 +1,58 @@
+CRITICAL - 2021-09-28 20:29:17 --> Call to a member function where() on null
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2021-09-28 20:30:02 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2021-09-28 20:30:02 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2021-09-28 20:31:50 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2021-09-28 20:31:50 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2021-09-28 20:32:01 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2021-09-28 20:32:01 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2021-09-28 20:32:07 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2021-09-28 20:32:07 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
