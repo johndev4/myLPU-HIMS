@@ -15,6 +15,6 @@ class ForgotPassword extends BaseController
 	public function index()
 	{
 		// Display page view
-		return view('auth/forgotpassword', $this->data);
+		return view('forgot_password', $this->data);
 	}
 }

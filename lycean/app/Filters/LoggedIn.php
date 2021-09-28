@@ -10,8 +10,8 @@ class LoggedIn implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        $userAccountsModel = model('App\Models\LyceansAccountModel');
-        $credentials = $userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $userAccountModel = model('App\Models\LyceansAccountModel');
+        $credentials = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
         if ($credentials == []) {
             return redirect()->to('login');
         }
@@ -19,6 +19,15 @@ class LoggedIn implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // 
+        $userAccountModel = model('App\Models\LyceansAccountModel');
+        $credentials = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+
+        if ($credentials != []) {
+            $userModel = model('App\Models\LyceansModel');
+            $user = $userModel->find($credentials['id_no']);
+            if ($credentials['password'] === hash('sha256', strtoupper($user['last_name']))) {
+                return redirect()->to('changepassword');
+            }
+        }
     }
 }

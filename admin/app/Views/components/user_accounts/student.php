@@ -577,7 +577,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="student_account" class="table table-bordered table-hover">
+                            <table id="accounts_table" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>ID No.</th>
@@ -618,7 +618,7 @@
 <script>
     $(document).ready(function() {
         // For datatable
-        $("#student_account").DataTable({
+        $("#accounts_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
@@ -627,7 +627,7 @@
             ajax: {
                 type: 'post',
                 url: '<?= base_url('useraccounts/fetchAllStudent') ?>',
-                contentType: ' application/x-www-form-urlencoded; charset=UTF-8',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
                 },
@@ -635,7 +635,7 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
 
         // For sidebar
         $("#mainUserAccountNav").addClass('menu-open');

@@ -16,7 +16,7 @@ class Auth extends BaseController
 	{
 		// Request to login
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$credentials = $this->userAccountsModel
+			$credentials = $this->userAccountModel
 				->where('username', $_POST['username'])
 				->where('password', hash('sha256', $_POST['password']))
 				->first();

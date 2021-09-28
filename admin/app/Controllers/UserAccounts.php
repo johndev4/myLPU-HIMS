@@ -764,7 +764,14 @@ class UserAccounts extends BaseController
 	public function deleteAllHealthPersonnelAccounts()
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			$success = $this->lyceansAccountModel->delete();
+			$healthPersonnels = $this->healthPersonnelsModel->findAll();
+			$id = [];
+
+			foreach ($healthPersonnels as $key => $value) {
+				$id[$key] = $value['id_no'];
+			}
+
+			$success = $this->healthPersonnelsAccountModel->delete($id);
 
 			if ($success) {
 				// Create flashdata for database query status
@@ -772,5 +779,7 @@ class UserAccounts extends BaseController
 			} else {
 			}
 		}
+
+		return redirect()->to('useraccounts/healthpersonnel');
 	}
 }
