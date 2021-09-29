@@ -114,64 +114,17 @@
                             </div>
                         </div>
                     </div>
-    
+
                 </div>
 
             </div>
             <!-- /Scheduled Request -->
 
             <!-- Requests -->
-            <div class="col-md-4 overflow-auto" style="height:100vh; min-height:580px; border-left:solid; border-color:rgb(204, 204, 204);">
-                <div class="row pb-3">
-                    <h4 class="text-black-50 mt-3 ml-2 mb-4">New Requests</h4>
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="card" style="width: 20rem;">
-                            <div class="card-body">
-                                <div>
-                                    <span class="card-title mb-2" style="font-size: 12pt;">Sept 12, 2021, 8:38 PM</span>
-                                    <span class="d-inline float-right text-primary request-type">Consultation</span>
-                                </div>
-                                <div class="card-text"><span class="font-weight-bold">John Rafael MIstica</span></div>
-                                <div class="card-text"><span>2018-2-01212</span></div>
-                                <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn text-primary d-block accept-button">Accept</a>
-                                <a href="#" class="btn d-block text-secondary font-weight-bold reject-button">Reject</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="card" style="width: 20rem;">
-                            <div class="card-body">
-                                <div>
-                                    <span class="card-title mb-2" style="font-size: 12pt;">Sept 12, 2021, 8:00 PM</span>
-                                    <span class="d-inline float-right text-primary request-type">Mental Wellness</span>
-                                </div>
-                                <div class="card-text"><span class="font-weight-bold">Chris Jover De Leon</span></div>
-                                <div class="card-text"><span>2018-2-01862</span></div>
-                                <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn text-primary d-block accept-button">Accept</a>
-                                <a href="#" class="btn d-block text-secondary font-weight-bold reject-button">Reject</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="card" style="width: 20rem;">
-                            <div class="card-body">
-                                <div>
-                                    <span class="card-title mb-2" style="font-size: 12pt;">Sept 12, 2021, 7:48 PM</span>
-                                    <span class="d-inline float-right text-primary request-type">Consultation</span>
-                                </div>
-                                <div class="card-text"><span class="font-weight-bold">Jade Anne Kristel Vale</span></div>
-                                <div class="card-text"><span>2018-2-01987</span></div>
-                                <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <a href="#" class="btn text-primary d-block accept-button">Accept</a>
-                                <a href="#" class="btn d-block text-secondary font-weight-bold reject-button">Reject</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-md-4 overflow-auto mymedia" style="height:100vh; min-height:580px; border-left:solid; border-color:rgb(204, 204, 204);">
+                <h4 class="text-black-50 mt-3 ml-2 mb-4">New Requests</h4>
+                <div id="newRequestSection" class="row">
+                    <!-- REQUEST CARD HERE -->
                 </div>
             </div> <!-- /Requests -->
 
@@ -190,6 +143,26 @@
     $(document).ready(function() {
         // For sidebar
         $("#consultationNav > a").addClass('active');
+
+        // Fetch All New Request Consultations
+        $.ajax({
+            url: '<?= base_url('consultations/fetchAllRequestConsultations') ?>',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#newRequestSection').html(response);
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultations/fetchAllRequestConsultations') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#newRequestSection').html(response);
+                }
+            });
+        }, 500);
     });
 </script>
 
