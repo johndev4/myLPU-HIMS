@@ -57,25 +57,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mr-3">
-                        <div class="card" style="width: 23rem;">
-                            <!-- <div class="card-header bg-danger"></div> -->
-                            <div class="card-body">
-                                <h4 class="d-inline float-left text-secondary font-weight-light">#2</h4>
-                                <span class="d-inline float-right text-primary request-type">Mental Wellness</span>
-                                <br><br>
-                                <div>
-                                    <h5 class="d-inline font-weight-bold" style="font-size: 15pt;">Chris Jover De Leon</h5>
-                                </div>
-                                <div class="text-secondary mb-2"> 2018-2-09666</div>
-                                <span class="mb-2 text-secondary d-inline" style="font-size: 12pt;">
-                                    <div class="font-weight-bold d-inline">Schedule:</div> Sept 12, 2021, 8:50 PM
-                                </span>
-
-                                <a href="#" class="btn text-primary d-block mt-3 accept-button">Done</a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
