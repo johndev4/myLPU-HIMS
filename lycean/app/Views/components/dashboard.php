@@ -12,42 +12,45 @@
         </div>
 
         <br>
-        <div class="row">
+        <div class="row mb-5">
+            <!-- Consult -->
             <div class="col-md-6 d-flex justify-content-center" style="border:1px solid none">
-                <div class="card shadow">
+
+                <div class="card shadow" style="max-width:32rem">
 
                     <div class="row mt-5" style="border:1px solid none">
 
                         <div class="col-7 pt-3 mt-n2 pl-4" style="border:1px solid none">
-                            <span class="font-weight-bold" style="font-size: 25pt;">Consult</span>
+                            <span class="font-weight-bold" style="font-size: 25pt; color: #7687CD">Consult</span>
                         </div>
 
                         <div class="col-5 mt-n2" align="center" style="border:1px solid none">
-                            <i class="fas fa-comment-medical fa-5x"></i>
+                            <i class="fas fa-comment-medical fa-5x" style="color: #7687CD"></i>
                         </div>
 
                     </div>
 
                     <div class="card-body">
                         <p class="card-text">Feeling unwell? schedule a consultation to one of our doctor, and wait for the schedule to be sent to you. </p>
-                        <a href="#" class="btn float-right"><i class="fas fa-chevron-circle-right fa-2x"></i></a>
+                        <a href="#" class="btn float-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                     </div>
 
                 </div>
             </div>
+            <!-- /Consult -->
 
-
+            <!-- Mental Wellnes -->
             <div class="col-md-6 d-flex justify-content-center" style="border:1px solid none">
-                <div class="card shadow">
+                <div class="card shadow" style="max-width:32rem">
 
                     <div class="row mt-5" style="border:1px solid none">
 
                         <div class="col-7 pt-3 mt-n2 pl-4" style="border:1px solid none">
-                            <span class="font-weight-bold" style="font-size: 25pt;">Mental Wellness</span>
+                            <span class="font-weight-bold" style="font-size: 25pt; color: #CC6699">Mental Wellness</span>
                         </div>
 
                         <div class="col-5 mt-n2" align="center" style="border:1px solid none">
-                            <i class="fas fa-brain fa-5x"></i>
+                            <i class="fas fa-brain fa-5x" style="color: #CC6699"></i>
                         </div>
 
                     </div>
@@ -57,16 +60,14 @@
                             Need someone to talk with? schedule a consultation to one of our guidance counselor,
                             and wait for the schedule to be sent to you.
                         </p>
-                        <a href="#" class="btn float-right"><i class="fas fa-chevron-circle-right fa-2x"></i></a>
+                        <a href="#" class="btn float-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                     </div>
 
                 </div>
             </div>
-
+            <!-- /Mental Wellnes -->
         </div>
-
-        <br><br><br><br><br><br><br>
-
+        <br><br>
 
     </div>
 </body>

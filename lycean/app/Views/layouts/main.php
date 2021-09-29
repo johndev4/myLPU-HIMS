@@ -78,7 +78,7 @@
         <?= $this->renderSection('content') ?>
 
         <!-- Footer -->
-        <footer class="main-footer" style="text-align: center;">
+        <footer class="main-footer fixed-bottom" style="text-align: center;">
             <strong>Copyright &copy;<?= date('Y') ?></strong>
             All rights reserved.
         </footer>

@@ -23,7 +23,9 @@ button.navbar-toggler{
     margin-left: 5px !important;
   }
   .far{
-    margin-left: 5px !important;
+    margin-left: 8px !important;
+    margin-right: 2px !important;
+    font-size: 22pt !important;
   }
   .dropdown-menu-lg {
     min-width: 260px !important;
@@ -37,3 +39,8 @@ button.navbar-toggler{
   }
 }
 
+span.text-white.ml-1.uname{
+  vertical-align: top !important;
+  /* font-size: 15pt !important; */
+
+}

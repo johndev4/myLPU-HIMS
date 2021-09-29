@@ -28,7 +28,8 @@ body {
     color: #000 !important;
     overflow-x: hidden !important;
     height: 100% !important;
-    background-color: #ebebeb !important;
+    background: linear-gradient(110deg, #ebebeb 60%, #a62d38 60%); 
+    /* background-color: #ebebeb !important; */
     /* background-image: linear-gradient(#dde595, #a62d38); */
     background-repeat: no-repeat;
 }
