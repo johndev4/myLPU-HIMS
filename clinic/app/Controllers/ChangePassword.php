@@ -43,7 +43,10 @@ class ChangePassword extends BaseController
 
         if ($credentials != []) {
             $user = $this->userModel->find($credentials['id_no']);
-            if ($credentials['password'] !== hash('sha256', strtoupper($user['last_name']))) {
+            if (
+                $credentials['password'] !== hash('sha256', strtoupper($user['last_name'])) &&
+                session()->get('logged_in') == TRUE
+            ) {
                 return redirect()->to('dashboard');
             }
         }
@@ -78,6 +81,8 @@ class ChangePassword extends BaseController
                         ]);
                         // Create flashdata for database query status
                         session()->setFlashdata('password_changed', TRUE);
+                        // Set logged_in status to FALSE
+                        session()->set('logged_in', FALSE);
                     } else {
                     }
                 } else {

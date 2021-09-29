@@ -76,44 +76,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mr-3">
-                        <div class="card" style="width: 23rem;">
-                            <!-- <div class="card-header bg-danger"></div> -->
-                            <div class="card-body">
-                                <h4 class="d-inline float-left text-secondary font-weight-light">#3</h4>
-                                <span class="d-inline float-right text-primary request-type">Consultation</span>
-                                <br><br>
-                                <div>
-                                    <h5 class="d-inline font-weight-bold" style="font-size: 15pt;">Jade Anne Kristel Vale</h5>
-                                </div>
-                                <div class="text-secondary mb-2"> 2018-2-07852</div>
-                                <span class="mb-2 text-secondary d-inline" style="font-size: 12pt;">
-                                    <div class="font-weight-bold d-inline">Schedule:</div> Sept 12, 2021, 9:10 PM
-                                </span>
-
-                                <a href="#" class="btn text-primary d-block mt-3 accept-button">Done</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mr-3">
-                        <div class="card" style="width: 23rem;">
-                            <!-- <div class="card-header bg-danger"></div> -->
-                            <div class="card-body">
-                                <h4 class="d-inline float-left text-secondary font-weight-light">#4</h4>
-                                <span class="d-inline float-right text-primary request-type">Consultation</span>
-                                <br><br>
-                                <div>
-                                    <h5 class="d-inline font-weight-bold" style="font-size: 15pt;">Vince Cruz</h5>
-                                </div>
-                                <div class="text-secondary mb-2"> 2018-2-02186</div>
-                                <span class="mb-2 text-secondary d-inline" style="font-size: 12pt;">
-                                    <div class="font-weight-bold d-inline">Schedule:</div> Sept 12, 2021, 9:30 PM
-                                </span>
-
-                                <a href="#" class="btn text-primary d-block mt-3 accept-button">Done</a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
