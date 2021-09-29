@@ -25,7 +25,7 @@
 <body class="hold-transition login-page">
 
     <div class="container-fluid px-1 px-md-2 px-lg-4 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center mt-5">
             <div class="col-xl-7 col-lg-8 col-md-9 col-sm-11">
 
                 <!-- Logo -->

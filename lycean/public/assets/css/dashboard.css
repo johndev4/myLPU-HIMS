@@ -1,4 +1,17 @@
 .card{
-    border: 3px solid rgb(82, 82, 82) !important;
+    border: 3px solid rgb(170, 170, 170) !important;
     border-radius: 15px !important;
 }
+
+.card{
+    transition: transform 0.2s ease !important;
+}
+
+.card:hover {
+    transform: scale(1.1) !important;
+}
+
+body{
+    background: linear-gradient(110deg, #ffffff 60%, #e4e4e4 60%);
+}
+

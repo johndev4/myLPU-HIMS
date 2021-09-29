@@ -2,7 +2,7 @@
 <nav class="main-header navbar navbar-expand-md navbar-light navbar-white py-3" style="background-color: #a62d38;">
     <div class="container">
         <div class="navbar-brand">
-            <img src="<?= base_url('assets/images/sidebar_icon.png') ?>" alt="myLpu Clinic Logo" class="brand-image" style="opacity: .8">
+            <img src="<?= base_url('assets/images/sidebar_icon.png') ?>" alt="myLPU Clinic Logo" class="brand-image" style="opacity: .8">
             <span class="brand-text font-weight-bold text-light">myLPU Clinic</span>
         </div>
 
@@ -17,8 +17,8 @@
                 <!-- Dropdown Modal -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="fas fa-user-circle fa-lg text-light mt-n1"></i>
-                        <span class="text-white ml-1 xz">Vince</span>
+                        <i class="fas fa-user-circle fa-2x text-light mt-n1"></i>
+                        <span class="text-white ml-1 uname">John Rafael Mistica</span> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                         <a href="<?= base_url('') ?>" class="dropdown-item">
