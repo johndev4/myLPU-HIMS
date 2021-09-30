@@ -52,7 +52,7 @@
             </span>
 
             <!-- Login Form -->
-            <form action="<?= base_url('login') ?>" method="post" accept-charset="utf-8" id="login_form">
+            <form action="<?= base_url('login') ?>" method="post" accept-charset="utf-8">
                 <?= csrf_field() ?>
                 <div class="input-group mb-3 mt-3">
                     <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" style="border-radius: 10px 0px 0px 10px;" required="required">

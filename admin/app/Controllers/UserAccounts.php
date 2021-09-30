@@ -432,7 +432,8 @@ class UserAccounts extends BaseController
 				$data2 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => hash('sha256', strtoupper(htmlspecialchars($_GET['last_name'])))
+					'password' => hash('sha256', strtoupper(htmlspecialchars($_GET['last_name']))),
+					'locked' => 0
 				];
 
 				$success1 = $this->lyceansModel->save($data1);
@@ -485,7 +486,8 @@ class UserAccounts extends BaseController
 				$data2 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => hash('sha256', strtoupper(htmlspecialchars($_GET['last_name'])))
+					'password' => hash('sha256', strtoupper(htmlspecialchars($_GET['last_name']))),
+					'locked' => 0
 				];
 
 				$success1 = $this->healthPersonnelsModel->save($data1);
@@ -530,7 +532,8 @@ class UserAccounts extends BaseController
 				$data2 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => $lyceansAccount['password']
+					'password' => $lyceansAccount['password'],
+					'locked' => 0
 				];
 
 				$success1 = $this->lyceansAccountModel->delete($id);
@@ -588,7 +591,8 @@ class UserAccounts extends BaseController
 				$data2 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => $healthPersonnelsAccount['password']
+					'password' => $healthPersonnelsAccount['password'],
+					'locked' => 0
 				];
 
 				$success1 = $this->healthPersonnelsAccountModel->delete($id);
@@ -672,7 +676,10 @@ class UserAccounts extends BaseController
 			$lyceans = $this->lyceansModel->find($id);
 			$success = $this->lyceansAccountModel
 				->where('id_no', $id)
-				->set(['password' => hash('sha256', strtoupper(htmlspecialchars($lyceans['last_name'])))])
+				->set([
+					'password' => hash('sha256', strtoupper(htmlspecialchars($lyceans['last_name']))),
+					'locked' => 0
+				])
 				->update();
 
 			if ($success and $lyceans) {
@@ -707,7 +714,10 @@ class UserAccounts extends BaseController
 			$lyceans = $this->healthPersonnelsModel->find($id);
 			$success = $this->healthPersonnelsAccountModel
 				->where('id_no', $id)
-				->set(['password' => hash('sha256', strtoupper(htmlspecialchars($lyceans['last_name'])))])
+				->set([
+					'password' => hash('sha256', strtoupper(htmlspecialchars($lyceans['last_name']))),
+					'locked' => 0
+				])
 				->update();
 
 			if ($success and $lyceans) {

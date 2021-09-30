@@ -56,7 +56,7 @@ class Profile extends BaseController
 
     public function index()
     {
-        $user = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
         $this->data['username'] = $user['username'];
 
         // Display page view
@@ -65,14 +65,14 @@ class Profile extends BaseController
 
     public function getFirstname()
     {
-        $user = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
         return $user['admin_name'];
     }
 
     public function updateUsername()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $user = $this->userAccountsModel
+            $user = $this->userAccountModel
                 ->where('username', session()->get('uid'))
                 ->where('password', session()->get('pwd'))
                 ->first();
@@ -81,7 +81,7 @@ class Profile extends BaseController
                 $data = [
                     'username' => htmlspecialchars($_POST['username'])
                 ];
-                $success = $this->userAccountsModel->update($user['admin_id'], $data);
+                $success = $this->userAccountModel->update($user['admin_id'], $data);
 
                 if ($success) {
                     // Update username in login session
@@ -103,7 +103,7 @@ class Profile extends BaseController
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $user = $this->userAccountsModel
+            $user = $this->userAccountModel
                 ->where('username', session()->get('uid'))
                 ->where('password', hash("sha256", $_POST['current_password']))
                 ->first();
@@ -120,7 +120,7 @@ class Profile extends BaseController
                         'password' => hash("sha256", $_POST['password'])
                     ];
 
-                    $success = $this->userAccountsModel->update($user['admin_id'], $data);
+                    $success = $this->userAccountModel->update($user['admin_id'], $data);
 
                     if ($success) {
                         // Update username in login session

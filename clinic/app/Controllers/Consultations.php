@@ -38,7 +38,7 @@ class Consultations extends BaseController
 				<div class=\"card\" style=\"width: 20rem;\">
 					<div class=\"card-body\">
 						<div>
-							<span class=\"card-title mb-2\" style=\"font-size: 12pt;\"> {$value['created_at']} </span>
+							<span class=\"card-title mb-2\" style=\"font-size: 12pt;\"> ". date('F d, Y h:m A', strtotime($value['created_at'])) ." </span>
 							<span class=\"d-inline float-right text-primary request-type\">Consultation</span>
 						</div>
 						<div class=\"card-text\"><span class=\"font-weight-bold\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </span></div>
@@ -63,7 +63,13 @@ class Consultations extends BaseController
 	// -----------------------------------------------------------------
 	public function fetchAllScheduledConsultations()
 	{
-		$scheduledConsultations = $this->consultationsModel->where('status', 'active')->findAll();
+		$user = $this->userAccountModel
+		->where('username', session()->get('uid'))
+		->where('password', session()->get('pwd'))->find();
+		$scheduledConsultations = $this->consultationsModel
+			->where('status', 'active')
+			->where('personnel_id_no', $user[0]['id_no'])
+			->orderBy('queue_no', 'asc')->findAll();
 		$result = "";
 
 		foreach ($scheduledConsultations as $key => $value) {
@@ -71,18 +77,22 @@ class Consultations extends BaseController
 			$middle_init = $lycean['middle_name'];
 
 			$data = "
-			<div class=\"col-12 d-flex justify-content-center\">
-				<div class=\"card\" style=\"width: 20rem;\">
+			<div class=\"mr-3\">
+				<div class=\"card\" style=\"width: 23rem;\">
+					<!-- <div class=\"card-header bg-danger\"></div> -->
 					<div class=\"card-body\">
+						<h4 class=\"d-inline float-left text-secondary font-weight-light\">#{$value['queue_no']}</h4>
+						<span class=\"d-inline float-right text-primary request-type\"> {$value['category']} </span>
+						<br><br>
 						<div>
-							<span class=\"card-title mb-2\" style=\"font-size: 12pt;\"> {$value['created_at']} </span>
-							<span class=\"d-inline float-right text-primary request-type\">Consultation</span>
+							<h5 class=\"d-inline font-weight-bold\" style=\"font-size: 15pt;\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </h5>
 						</div>
-						<div class=\"card-text\"><span class=\"font-weight-bold\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </span></div>
-						<div class=\"card-text\"><span> {$lycean['id_no']} </span></div>
-						<p class=\"card-text text-justify\"> {$value['message']} </p>
-						<a href=\"#\" class=\"btn text-primary d-block accept-button\">Accept</a>
-						<a href=\"#\" class=\"btn d-block text-secondary font-weight-bold reject-button\">Reject</a>
+						<div class=\"text-secondary mb-2\"> {$lycean['id_no']} </div>
+						<span class=\"mb-2 text-secondary d-inline\" style=\"font-size: 12pt;\">
+							<span class=\"font-weight-bold d-inline\">Schedule:</span> ". date('F d, Y h:m A', strtotime($value['schedule'])) ."
+						</span>
+
+						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\">Done</a>
 					</div>
 				</div>
 			</div>
