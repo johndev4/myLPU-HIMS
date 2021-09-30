@@ -22,7 +22,7 @@ class Auth extends BaseController
 				->where('password', hash('sha256', $_POST['password']))
 				->first();
 				
-			if ($userAccount && $userAccount['locked'] >= 5) {
+			if ($userAccount && $userAccount['locked'] >= 3) {
 				$this->data['error'] = 'Your account is locked.';
 			} else if ($credentials) {
 				// Create login session

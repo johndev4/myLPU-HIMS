@@ -11,60 +11,60 @@ use CodeIgniter\Filters\Honeypot;
 
 class Filters extends BaseConfig
 {
-	/**
-	 * Configures aliases for Filter classes to
-	 * make reading things nicer and simpler.
-	 *
-	 * @var array
-	 */
-	public $aliases = [
-		'csrf'     => CSRF::class,
-		'toolbar'  => DebugToolbar::class,
-		'honeypot' => Honeypot::class,
-		'loggedin'     => LoggedIn::class,
+    /**
+     * Configures aliases for Filter classes to
+     * make reading things nicer and simpler.
+     *
+     * @var array
+     */
+    public $aliases = [
+        'csrf'          => CSRF::class,
+        'toolbar'       => DebugToolbar::class,
+        'honeypot'      => Honeypot::class,
+        'loggedin'      => LoggedIn::class,
 		'notloggedin'   => NotLoggedIn::class
-	];
+    ];
 
-	/**
-	 * List of filter aliases that are always
-	 * applied before and after every request.
-	 *
-	 * @var array
-	 */
-	public $globals = [
-		'before' => [
-			// 'honeypot',
-			'csrf' => [
-				'except' => []
+    /**
+     * List of filter aliases that are always
+     * applied before and after every request.
+     *
+     * @var array
+     */
+    public $globals = [
+        'before' => [
+            // 'honeypot',
+            'csrf' => [
+				'except' => ['test/*']
 			],
-		],
-		'after'  => [
-			'toolbar',
-			// 'honeypot',
-		],
-	];
+        ],
+        'after' => [
+            'toolbar',
+            // 'honeypot',
+        ],
+    ];
 
-	/**
-	 * List of filter aliases that works on a
-	 * particular HTTP method (GET, POST, etc.).
-	 *
-	 * Example:
-	 * 'post' => ['csrf', 'throttle']
-	 *
-	 * @var array
-	 */
-	public $methods = [];
+    /**
+     * List of filter aliases that works on a
+     * particular HTTP method (GET, POST, etc.).
+     *
+     * Example:
+     * 'post' => ['csrf', 'throttle']
+     *
+     * @var array
+     */
+    public $methods = [];
 
-	/**
-	 * List of filter aliases that should run on any
-	 * before or after URI patterns.
-	 *
-	 * Example:
-	 * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
-	 *
-	 * @var array
-	 */
-	public $filters = [
+    /**
+     * List of filter aliases that should run on any
+     * before or after URI patterns.
+     *
+     * Example:
+     * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
+     *
+     * @var array
+     */
+    public $filters = [
 		'loggedin' => [
 			'before' => ['dashboard', 'profile', 'consultation', 'mentalwellness', 'changepassword'],
 			'after' => ['dashboard', 'profile', 'consultation', 'mentalwellness']

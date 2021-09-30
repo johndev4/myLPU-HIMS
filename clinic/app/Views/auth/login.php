@@ -39,7 +39,6 @@
                         Login
                     </label>
                 </div>
-                <!-- /.col -->
             </div>
 
             <!-- Invalid login display -->
