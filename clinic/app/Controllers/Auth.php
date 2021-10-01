@@ -21,10 +21,8 @@ class Auth extends BaseController
 				->where('username', $_POST['username'])
 				->where('password', hash('sha256', $_POST['password']))
 				->first();
-				
-			if ($userAccount && $userAccount['locked'] >= 3) {
-				$this->data['error'] = 'Your account is locked.';
-			} else if ($credentials) {
+
+			if ($credentials) {
 				// Create login session
 				session()->set([
 					'uid' => $credentials['username'],
@@ -37,6 +35,8 @@ class Auth extends BaseController
 					->set(['locked' => 0])->update();
 
 				return redirect()->to('dashboard');
+			} else if ($userAccount && $userAccount['locked'] >= 2) {
+				$this->data['error'] = 'Your account is locked.';
 			} else {
 				$this->data['error'] = 'Invalid login, please try again';
 
