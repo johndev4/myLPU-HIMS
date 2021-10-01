@@ -44,7 +44,7 @@ class Consultations extends BaseController
 						<div class=\"card-text\"><span class=\"font-weight-bold\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </span></div>
 						<div class=\"card-text\"><span> {$lycean['id_no']} </span></div>
 						<p class=\"card-text text-justify\"> {$value['message']} </p>
-						<a href=\"#\" class=\"btn text-primary d-block accept-button\">Accept</a>
+						<a href=\"#\" class=\"btn text-primary d-block accept-button\" data-target=\"#acceptModal\" data-toggle=\"modal\">Accept</a>
 						<a href=\"#\" class=\"btn d-block text-secondary font-weight-bold reject-button\">Reject</a>
 					</div>
 				</div>
