@@ -15,8 +15,7 @@
         <div class="row mb-5">
             <!-- Consult -->
             <div class="col-md-6 d-flex justify-content-center" style="border:1px solid none">
-
-                <div class="card shadow" style="max-width:32rem">
+                <div class="card shadow card1" style="max-width:32rem">
 
                     <div class="row mt-5" style="border:1px solid none">
 
@@ -32,16 +31,15 @@
 
                     <div class="card-body">
                         <p class="card-text">Feeling unwell? schedule a consultation to one of our doctor, and wait for the schedule to be sent to you. </p>
-                        <a href="#" class="btn float-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                     </div>
-
+                    <a href="<?= base_url('consultation') ?>" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                 </div>
             </div>
             <!-- /Consult -->
 
             <!-- Mental Wellnes -->
             <div class="col-md-6 d-flex justify-content-center" style="border:1px solid none">
-                <div class="card shadow" style="max-width:32rem">
+                <div class="card shadow card1" style="max-width:32rem">
 
                     <div class="row mt-5" style="border:1px solid none">
 
@@ -60,9 +58,8 @@
                             Need someone to talk with? schedule a consultation to one of our guidance counselor,
                             and wait for the schedule to be sent to you.
                         </p>
-                        <a href="#" class="btn float-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                     </div>
-
+                    <a href="#" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                 </div>
             </div>
             <!-- /Mental Wellnes -->

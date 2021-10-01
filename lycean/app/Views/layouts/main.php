@@ -11,13 +11,10 @@
     <!-- Webapp Icon -->
     <link rel="icon" href="<?= base_url('assets/images/app_icon.png') ?>" type="image/png" sizes="16x16">
     <!-- External CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/sidebar.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/dashboard.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/health-record.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/consultation.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/table-page.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/inventory.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/navbar.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/consultation.css') ?>">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->

@@ -1,0 +1,25 @@
+.card2{
+    border: 3px solid none !important;
+    border-radius: 15px !important;
+}
+
+.card2{
+    transition: transform 0.2s ease !important;
+}
+
+.card2:hover {
+    transform: scale(1.1) !important;
+}
+
+.txtarea{
+    resize: none;
+}
+
+.card-txtarea{
+    border-radius: 10px !important;
+}
+
+
+test{
+    color: rgb(238, 238, 238);
+}
