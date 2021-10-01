@@ -3,6 +3,79 @@
 
 <div class="content-wrapper">
 
+
+    <!-- Modal -->
+    <!-- Accept Modal -->
+    <div class="modal fade" id="acceptModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url('') ?>" method="get" id="">
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <label for="add_idno" class="col-form-label required">Date</label>
+                                <input type="date" class="form-control" id="date_idno" name="date" value="<?= date('Y-m-d') ?>">
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="add_idno" class="col-form-label required">Time</label>
+                                <input type="time" class="form-control" id="time_idno" name="time" value="<?= date('H:m') ?>">
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="add_idno" class="col-form-label required">Meeting Link</label>
+                                <input type="text" class="form-control" id="link_idno" name="link" value="" placeholder="Meeting link here...">
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="footer float-right pb-3">
+                            <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
+                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- /Accept Modal -->
+
+
+
+
+
+
+
+
+    <!-- /Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Main content -->
     <section class="content">
 
@@ -43,7 +116,6 @@
             </div> <!-- /Requests -->
 
         </div><!-- /row -->
-
 
     </section><br>
 </div><!-- /.content-wrapper -->
