@@ -19,11 +19,11 @@
                         <div class="row">
                             <div class="col-6 form-group">
                                 <label for="add_idno" class="col-form-label required">Date</label>
-                                <input type="date" class="form-control" id="date_idno" name="date" value="<?= date('Y-m-d') ?>">
+                                <input type="date" class="form-control" id="date_idno" name="date" value="">
                             </div>
                             <div class="col-6 form-group">
                                 <label for="add_idno" class="col-form-label required">Time</label>
-                                <input type="time" class="form-control" id="time_idno" name="time" value="<?= date('H:m') ?>">
+                                <input type="time" class="form-control" id="time_idno" name="time" value="">
                             </div>
                             <div class="col-12 form-group">
                                 <label for="add_idno" class="col-form-label required">Meeting Link</label>
@@ -131,44 +131,54 @@
         $("#consultationNav > a").addClass('active');
 
         // Fetch All New Request Consultations
+        var requestCount;
         $.ajax({
             url: '<?= base_url('consultations/fetchAllRequestConsultations') ?>',
             type: 'get',
-            dataType: 'html',
+            dataType: 'json',
             success: function(response) {
-                $('#newRequestSection').html(response);
+                $('#newRequestSection').html(response['result']);
+                requestCount = response['count'];
             }
         });
         setInterval(function() {
             $.ajax({
                 url: '<?= base_url('consultations/fetchAllRequestConsultations') ?>',
                 type: 'get',
-                dataType: 'html',
+                dataType: 'json',
                 success: function(response) {
-                    $('#newRequestSection').html(response);
+                    if (response['count'] != requestCount) {
+                        $('#newRequestSection').html(response['result']);
+                        requestCount = response['count'];
+                    }
                 }
             });
         }, 500);
 
         // Fetch All Scheduled Consultations
+        var scheduledCount;
         $.ajax({
             url: '<?= base_url('consultations/fetchAllScheduledConsultations') ?>',
             type: 'get',
-            dataType: 'html',
+            dataType: 'json',
             success: function(response) {
-                $('#scheduledSection').html(response);
+                $('#scheduledSection').html(response['result']);
+                scheduledCount = response['count'];
             }
         });
         setInterval(function() {
             $.ajax({
                 url: '<?= base_url('consultations/fetchAllScheduledConsultations') ?>',
                 type: 'get',
-                dataType: 'html',
+                dataType: 'json',
                 success: function(response) {
-                    $('#scheduledSection').html(response);
+                    if (response['count'] != scheduledCount) {
+                        $('#scheduledSection').html(response['result']);
+                        scheduledCount = response['count'];
+                    }
                 }
             });
-        }, 500);
+        }, 5000);
     });
 </script>
 

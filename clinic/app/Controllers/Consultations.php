@@ -54,8 +54,7 @@ class Consultations extends BaseController
 			$result .= $data;
 		}
 
-		// print_r($pendingConsultations);
-		return $result;
+		return json_encode(['result' => $result, 'count' => count($pendingConsultations)]);
 	}
 
 
@@ -101,7 +100,6 @@ class Consultations extends BaseController
 			$result .= $data;
 		}
 
-		// print_r($pendingConsultations);
-		return $result;
+		return json_encode(['result' => $result, 'count' => count($scheduledConsultations)]);
 	}
 }
