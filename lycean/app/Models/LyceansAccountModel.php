@@ -14,7 +14,7 @@ class LyceansAccountModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['password'];
+	protected $allowedFields        = ['password', 'locked'];
 
 	// Dates
 	protected $useTimestamps        = false;
