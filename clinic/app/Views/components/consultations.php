@@ -3,11 +3,10 @@
 
 <div class="content-wrapper">
 
-
     <!-- Modal -->
     <!-- Accept Modal -->
     <div class="modal fade" id="acceptModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -19,20 +18,16 @@
                         <div class="row">
                             <div class="col-6 form-group">
                                 <label for="add_idno" class="col-form-label required">Date</label>
-                                <input type="date" class="form-control" id="date_idno" name="date" value="<?= date('Y-m-d') ?>">
+                                <input type="date" class="form-control" id="date_idno" name="date" value="">
                             </div>
                             <div class="col-6 form-group">
                                 <label for="add_idno" class="col-form-label required">Time</label>
-                                <input type="time" class="form-control" id="time_idno" name="time" value="<?= date('H:m') ?>">
+                                <input type="time" class="form-control" id="time_idno" name="time" value="">
                             </div>
                             <div class="col-12 form-group">
                                 <label for="add_idno" class="col-form-label required">Meeting Link</label>
-                                <input type="text" class="form-control" id="link_idno" name="link" value="" placeholder="Meeting link here...">
+                                <input type="text" class="form-control border-top-0 border-left-0 border-right-0" id="link_idno" name="link" value="" placeholder="Paste link here..." style="border-radius: 0;">
                             </div>
-
-
-
-
                         </div>
 
                         <div class="footer float-right pb-3">
@@ -44,37 +39,41 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
     <!-- /Accept Modal -->
 
+    <!-- Reject Modal -->
+    <div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url('') ?>" method="get" id="">
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="reject_idno" class="col-form-label required" style="font-size: 16pt;">Message</label>
+                                <textarea class="form-control rounded-3 txtarea border-0" id="FormControlTextarea" rows="10" placeholder="Type here..." maxlength="300" autofocus></textarea>
+                                <div id="count" align="right">
+                                    <span id="current">0</span>
+                                    <span id="maximum">/ 300</span>
+                                </div>
+                            </div>
+                        </div>
 
-
-
-
-
-
-
+                        <div class="footer float-right pb-3">
+                            <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
+                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Reject Modal -->
     <!-- /Modal -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Main content -->
     <section class="content">
@@ -169,6 +168,33 @@
                 }
             });
         }, 500);
+
+        //For Textarea character count
+        $('textarea').keyup(function() {
+
+            var characterCount = $(this).val().length,
+                current = $('#current'),
+                maximum = $('#maximum'),
+                theCount = $('#count');
+
+            current.text(characterCount);
+            if (characterCount < 250) {
+                current.css('color', '#666');
+            }
+
+            if (characterCount >= 250) {
+                maximum.css('color', '#8f0001');
+                current.css('color', '#8f0001');
+                theCount.css('font-weight', 'bold');
+            } else {
+                maximum.css('color', '#666');
+                theCount.css('font-weight', 'normal');
+            }
+
+
+
+        });
+
     });
 </script>
 
