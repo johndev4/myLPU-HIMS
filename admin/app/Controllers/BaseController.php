@@ -51,7 +51,7 @@ class BaseController extends Controller
 		parent::initController($request, $response, $logger);
 
 		// Initialized database models
-		$this->userAccountsModel = model('App\Models\AdministratorsModel');
+		$this->userAccountModel = model('App\Models\AdministratorsModel');
 		$this->lyceansModel = model('App\Models\LyceansModel');
 		$this->lyceansAccountModel = model('App\Models\LyceansAccountModel');
 		$this->healthPersonnelsModel = model('App\Models\HealthPersonnelsModel');

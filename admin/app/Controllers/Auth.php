@@ -16,7 +16,7 @@ class Auth extends BaseController
 	{
 		// Request to login
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$credentials = $this->userAccountsModel
+			$credentials = $this->userAccountModel
 				->where('username', $_POST['username'])
 				->where('password', hash('sha256', $_POST['password']))
 				->first();
@@ -32,9 +32,6 @@ class Auth extends BaseController
 				return redirect()->to('dashboard');
 			} else {
 				$this->data['error'] = 'Invalid login, please try again';
-				// INCREMENT INVALID LOGIN ATTEMPT
-				// ++$credentials['invalid_attempt'];
-				// $this->userAccountsModel->where('admin_id', $credentials['admin_id'])->update($credentials);
 			}
 		}
 

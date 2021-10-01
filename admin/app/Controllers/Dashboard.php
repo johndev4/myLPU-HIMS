@@ -14,7 +14,7 @@ class Dashboard extends BaseController
 
 	public function index()
 	{
-		$credentials = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+		$credentials = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
 		$this->data['firstname'] = $credentials['admin_name'];
 
 		$this->data['widget_counter'] = [

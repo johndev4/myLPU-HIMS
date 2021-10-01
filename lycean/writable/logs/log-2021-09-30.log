@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 CRITICAL - 2021-09-30 08:18:26 --> Undefined property: App\Controllers\Profile::$userAccountsModel
+=======
+CRITICAL - 2021-09-30 20:33:36 --> Undefined property: App\Controllers\Profile::$userAccountsModel
+>>>>>>> 56df30dda7cac9638e6afee7fc37a832edc01898
 #0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Profile.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54)
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Profile->getFirstname()
 #2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
 #3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+<<<<<<< HEAD
 CRITICAL - 2021-09-30 12:57:39 --> Undefined property: App\Controllers\Profile::$userAccountsModel
 #0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Profile.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54)
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Profile->getFirstname()
@@ -3506,6 +3511,9 @@ CRITICAL - 2021-09-30 22:47:05 --> Undefined property: App\Controllers\Profile::
 #4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
 CRITICAL - 2021-09-30 22:47:43 --> Undefined property: App\Controllers\Profile::$userAccountsModel
+=======
+CRITICAL - 2021-09-30 20:33:49 --> Undefined property: App\Controllers\Profile::$userAccountsModel
+>>>>>>> 56df30dda7cac9638e6afee7fc37a832edc01898
 #0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Profile.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54)
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Profile->getFirstname()
 #2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))

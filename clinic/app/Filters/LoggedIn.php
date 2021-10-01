@@ -26,7 +26,7 @@ class LoggedIn implements FilterInterface
             $userModel = model('App\Models\HealthPersonnelsModel');
             $user = $userModel->find($credentials['id_no']);
             // Change "!==" to "==="
-            if ($credentials['password'] !== hash('sha256', strtoupper($user['last_name']))) {
+            if ($credentials['password'] === hash('sha256', strtoupper($user['last_name']))) {
                 return redirect()->to('changepassword');
             }
         }

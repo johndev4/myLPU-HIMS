@@ -16,22 +16,40 @@ class Auth extends BaseController
 	{
 		// Request to login
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+			$userAccount = $this->userAccountModel->where('username', $_POST['username'])->first();
 			$credentials = $this->userAccountModel
 				->where('username', $_POST['username'])
 				->where('password', hash('sha256', $_POST['password']))
 				->first();
-
-			if ($credentials) {
+				
+			if ($userAccount && $userAccount['locked'] >= 3) {
+				$this->data['error'] = 'Your account is locked.';
+			} else if ($credentials) {
 				// Create login session
 				session()->set([
 					'uid' => $credentials['username'],
 					'pwd' => $credentials['password'],
 					'logged_in' => TRUE
 				]);
+				$this->userAccountModel
+					->where('username', session()->get('uid'))
+					->where('password', session()->get('pwd'))
+					->set(['locked' => 0])->update();
 
 				return redirect()->to('dashboard');
 			} else {
 				$this->data['error'] = 'Invalid login, please try again';
+
+				// On 3 login attempts account will be locked
+				$userAccount = $this->userAccountModel->where('username', $_POST['username'])->first();
+				if ($userAccount) {
+					$userAccount['locked'] += 1;
+					$this->userAccountModel
+						->where('username', $_POST['username'])
+						->set([
+							'locked' => $userAccount['locked']
+						])->update();
+				}
 			}
 		}
 
