@@ -75,3 +75,11 @@
     border-radius: 50%;
   }
   /* Switch toggle */
+
+  /* Textarea */
+  .txtarea{
+    border-radius: 0px !important; 
+    background-color:rgb(238, 238, 238) !important;
+    resize: none;
+  }
+
