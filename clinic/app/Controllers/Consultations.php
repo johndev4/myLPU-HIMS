@@ -127,10 +127,10 @@ class Consultations extends BaseController
 			$middle_init = $lycean['middle_name'];
 
 			$data = "
-			<div class=\"mr-3\">
-				<div class=\"card\" style=\"width: 23rem;\">
+			<div class=\"px-2\">
+				<div class=\"card\">
 					<!-- <div class=\"card-header bg-danger\"></div> -->
-					<div class=\"card-body\">
+					<div class=\"card-body sched\">
 						<h4 class=\"d-inline float-left text-secondary font-weight-light\">#{$value['queue_no']}</h4>
 						<span class=\"d-inline float-right text-primary request-type\"> {$value['category']} </span>
 						<br><br>
@@ -142,7 +142,7 @@ class Consultations extends BaseController
 							<span class=\"font-weight-bold d-inline\">Schedule:</span> " . date('F d, Y h:m A', strtotime($value['meeting_schedule'])) . "
 						</span>
 
-						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\">Done</a>
+						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\" data-target=\"#doneModal\" data-toggle=\"modal\">Done</a>
 					</div>
 				</div>
 			</div>

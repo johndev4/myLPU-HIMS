@@ -72,6 +72,39 @@
         </div>
     </div>
     <!-- /Reject Modal -->
+
+    <!-- Done Modal -->
+    <div class="modal fade" id="doneModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url('') ?>" method="get" id="">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <form method="post" action="#" id="#">
+                                    <div class="form-group files">
+                                        <label style="font-size: 16pt;">Upload File </label>
+                                        <input type="file" class="form-control" multiple="">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="footer float-right pb-3">
+                            <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
+                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Done Modal -->
     <!-- /Modal -->
 
     <!-- Main content -->
@@ -98,10 +131,29 @@
                     <!-- /Switch -->
                 </div>
 
-                <div id="scheduledSection" class="row mt-3 justify-content-center pb-3" style="border: 1px solid none;">
+                <div id="scheduledSection" class="row d-flex justify-content-center pb-3" style="border: 1px solid none;">
                     <!-- SCHEDULED CONSULTATIONS CARD HERE -->
-                </div>
 
+                    <!-- <div class="px-2">
+                        <div class="card">
+                            <div class="card-body sched">
+                                <h4 class="d-inline float-left text-secondary font-weight-light">#1</h4>
+                                <span class="d-inline float-right text-primary request-type"> Consulation </span>
+                                <br><br>
+                                <div>
+                                    <h5 class="d-inline font-weight-bold" style="font-size: 15pt;"> John Rafael Mistica </h5>
+                                </div>
+                                <div class="text-secondary mb-2"> 2018-8-6658 </div>
+                                <span class="mb-2 text-secondary d-inline" style="font-size: 12pt;">
+                                    <span class="font-weight-bold d-inline">Schedule:</span> 7:27
+                                </span>
+
+                                <a href="#" class="btn text-primary d-block mt-3 accept-button" data-target="#doneModal" data-toggle="modal">Done</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
             </div>
             <!-- /Scheduled Request -->
 
@@ -117,8 +169,6 @@
 
     </section><br>
 </div><!-- /.content-wrapper -->
-
-
 
 
 
