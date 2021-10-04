@@ -58,6 +58,12 @@ class Consultations extends BaseController
 	// -----------------------------------------------------------------
 	public function index()
 	{
+		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+		$userInfo = $this->userModel->find($user['id_no']);
+		$this->data['firstname'] = $userInfo['first_name'];
+		// For guidance counselor permission on sidebar
+		$this->data['designation'] = $userInfo['designation'];
+
 		// Display page view
 		return view('components/consultations', $this->data);
 	}
@@ -72,8 +78,8 @@ class Consultations extends BaseController
 			->first();
 		$userInfo = $this->userModel->find($user['id_no']);
 
-		$category = $userInfo['designation'] == 'Guidance Counselor'? 'Mental Wellness' : 'Consultation';
-		
+		$category = $userInfo['designation'] == 'Guidance Counselor' ? 'Mental Wellness' : 'Consultation';
+
 		$pendingConsultations = $this->consultationsModel
 			->where('status', 'pending')
 			->where('category', $category)

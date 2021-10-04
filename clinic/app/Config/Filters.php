@@ -72,6 +72,6 @@ class Filters extends BaseConfig
 		'notloggedin' => [
 			'before' => ['/', 'login', 'forgotpassword'],
 			'after' => ['/', 'login', 'forgotpassword']
-		]
+        ]
 	];
 }
