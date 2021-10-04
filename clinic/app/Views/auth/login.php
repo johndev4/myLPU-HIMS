@@ -9,7 +9,7 @@
     <title>myLPU HIMS: <?= $page_title ?></title>
 
     <!-- Webapp Icon -->
-    <link rel="icon" href="<?= base_url('assets/images/app_icon.png') ?>" type="image/png" sizes="16x16">
+    <link rel="icon" href="<?= base_url('assets/images/appicon.png') ?>" type="image/png" sizes="16x16">
     <!-- External CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/login.css') ?>">
     <!-- Font Awesome -->
@@ -24,7 +24,7 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo mt-n5 mb-3 ml-n4 mx-auto d-block">
+        <div class="login-logo mt-n5 mb-3 mx-auto d-block">
             <a role="button">
                 <img src="<?= base_url('assets/images/Lpu_HIMS.png') ?>" class="img-fluid" alt="Logo" width="300" height="240" role="button">
                 <!--<b class="font-weight">myLPU HIMS</b>-->
