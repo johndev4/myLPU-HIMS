@@ -14,7 +14,16 @@ class ConsultationsModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['consultation_no', 'status', 'personnel_id_no', 'lycean_id_no'];
+    protected $allowedFields        = [
+        'consultation_no',
+        'queue_no',
+        'status',
+        'personnel_id_no',
+        'lycean_id_no',
+        'meeting_schedule',
+        'meeting_link',
+        'rejection_message'
+    ];
 
     // Dates
     protected $useTimestamps        = true;

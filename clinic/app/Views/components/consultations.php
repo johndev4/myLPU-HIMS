@@ -14,25 +14,25 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= base_url('') ?>" method="get" id="">
+                    <form action="" method="get" id="accept_form">
+                        <input type="hidden" name="consultation_no">
                         <div class="row">
                             <div class="col-6 form-group">
-                                <label for="add_idno" class="col-form-label required">Date</label>
-                                <input type="date" class="form-control" id="date_idno" name="date" value="">
+                                <label for="accept_meetingdate" class="col-form-label required">Date</label>
+                                <input type="date" class="form-control" id="accept_meetingdate" name="meeting_date" value="" required="required">
                             </div>
                             <div class="col-6 form-group">
-                                <label for="add_idno" class="col-form-label required">Time</label>
-                                <input type="time" class="form-control" id="time_idno" name="time" value="">
+                                <label for="accept_meetingtime" class="col-form-label required">Time</label>
+                                <input type="time" class="form-control" id="accept_meetingtime" name="meeting_time" value="" required="required">
                             </div>
                             <div class="col-12 form-group">
-                                <label for="add_idno" class="col-form-label required">Meeting Link</label>
-                                <input type="text" class="form-control border-top-0 border-left-0 border-right-0" id="link_idno" name="link" value="" placeholder="Paste link here..." style="border-radius: 0;">
+                                <label for="accept_meetinglink" class="col-form-label required">Meeting Link</label>
+                                <input type="url" class="form-control border-top-0 border-left-0 border-right-0" id="accept_meetinglink" name="meeting_link" value="" required="required" placeholder="Paste link here..." style="border-radius: 0;">
                             </div>
                         </div>
 
                         <div class="footer float-right pb-3">
                             <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
-                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
                         </div>
                     </form>
                 </div>
@@ -51,11 +51,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= base_url('') ?>" method="get" id="">
+                    <form action="" method="get" id="reject_form">
                         <div class="row">
                             <div class="col-12 form-group">
-                                <label for="reject_idno" class="col-form-label required" style="font-size: 16pt;">Message</label>
-                                <textarea class="form-control rounded-3 txtarea border-0" id="FormControlTextarea" rows="10" placeholder="Type here..." maxlength="300" autofocus></textarea>
+                                <label for="reject_rejectionmessage" class="col-form-label required" style="font-size: 16pt;">Message</label>
+                                <textarea class="form-control rounded-3 txtarea border-0" id="reject_rejectionmessage" name="rejection_message" rows="10" placeholder="Type here..." maxlength="300"></textarea>
                                 <div id="count" align="right">
                                     <span id="current">0</span>
                                     <span id="maximum">/ 300</span>
@@ -65,7 +65,6 @@
 
                         <div class="footer float-right pb-3">
                             <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
-                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
                         </div>
                     </form>
                 </div>
@@ -253,13 +252,36 @@
 
         });
 
-        //Upload file
+        <?php if (session()->get('success') !== null) : ?>
+            // Sweet Alert for success staus
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->get('success'); ?>'
+            });
+        <?php endif; ?>
 
-
-
-
-
+        // Reset add modal on close
+        $('#acceptModal').on('hidden.bs.modal', function(evt) {
+            $('#accept_meetingdate').val("");
+            $('#accept_meetingtime').val("");
+            $('#accept_meetinglink').val("");
+        });
     });
+
+    // On accept new request, set action value
+    function accept(id) {
+        $('#accept_form').prop('action', "<?= base_url('consultations/acceptRequestById') ?>/" + id);
+    }
+    // On reject new request, set action value
+    function reject(id) {
+        $('#reject_form').prop('action', "<?= base_url('consultations/rejectRequestById') ?>/" + id);
+    }
 </script>
 
 <?= $this->endSection('content') ?>

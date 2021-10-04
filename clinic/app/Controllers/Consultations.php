@@ -13,6 +13,47 @@ class Consultations extends BaseController
 	}
 
 
+	// VALIDATION RULES
+	// -----------------------------------------------------------------
+	private function getAcceptRules()
+	{
+		return  [
+			'meeting_date' => [
+				'rules' => 'required',
+				'errors' => [
+					'required' => '- Required',
+				]
+			],
+			'meeting_time' => [
+				'rules' => 'required',
+				'errors' => [
+					'required' => '- Required',
+				]
+			],
+			'meeting_link' => [
+				'rules' => 'required|valid_url',
+				'errors' => [
+					'required' => '- Required',
+					'valid_url' => 'Invalid URL.',
+				]
+			]
+		];
+	}
+
+	private function getRejectRules()
+	{
+		return  [
+			'rejection_message' => [
+				'rules' => 'required|max_length[300]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Maximum length exceeds',
+				]
+			]
+		];
+	}
+
+
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
 	public function index()
@@ -26,7 +67,17 @@ class Consultations extends BaseController
 	// -----------------------------------------------------------------
 	public function fetchAllRequestConsultations()
 	{
-		$pendingConsultations = $this->consultationsModel->where('status', 'pending')->findAll();
+		$user = $this->userAccountModel
+			->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
+			->first();
+		$userInfo = $this->userModel->find($user['id_no']);
+
+		$category = $userInfo['designation'] == 'Guidance Counselor'? 'Mental Wellness' : 'Consultation';
+		
+		$pendingConsultations = $this->consultationsModel
+			->where('status', 'pending')
+			->where('category', $category)
+			->findAll();
 		$result = "";
 
 		foreach ($pendingConsultations as $key => $value) {
@@ -38,14 +89,14 @@ class Consultations extends BaseController
 				<div class=\"card\" style=\"width: 20rem;\">
 					<div class=\"card-body\">
 						<div>
-							<span class=\"card-title mb-2\" style=\"font-size: 12pt;\"> ". date('F d, Y h:m A', strtotime($value['created_at'])) ." </span>
+							<span class=\"card-title mb-2\" style=\"font-size: 12pt;\"> " . date('F d, Y h:m A', strtotime($value['created_at'])) . " </span>
 							<span class=\"d-inline float-right text-primary request-type\">Consultation</span>
 						</div>
 						<div class=\"card-text\"><span class=\"font-weight-bold\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </span></div>
 						<div class=\"card-text\"><span> {$lycean['id_no']} </span></div>
 						<p class=\"card-text text-justify\"> {$value['message']} </p>
-						<a href=\"#\" class=\"btn text-primary d-block accept-button\" data-target=\"#acceptModal\" data-toggle=\"modal\">Accept</a>
-						<a href=\"#\" class=\"btn d-block text-secondary font-weight-bold reject-button\" data-target=\"#rejectModal\" data-toggle=\"modal\">Reject</a>
+						<a href=\"#\" class=\"btn text-primary d-block accept-button\" data-target=\"#acceptModal\" data-toggle=\"modal\" onclick=\"accept('{$value['consultation_no']}')\">Accept</a>
+						<a href=\"#\" class=\"btn d-block text-secondary font-weight-bold reject-button\" data-target=\"#rejectModal\" data-toggle=\"modal\" onclick=\"reject('{$value['consultation_no']}')\">Reject</a>
 					</div>
 				</div>
 			</div>
@@ -63,11 +114,11 @@ class Consultations extends BaseController
 	public function fetchAllScheduledConsultations()
 	{
 		$user = $this->userAccountModel
-		->where('username', session()->get('uid'))
-		->where('password', session()->get('pwd'))->find();
+			->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
+			->first();
 		$scheduledConsultations = $this->consultationsModel
 			->where('status', 'active')
-			->where('personnel_id_no', $user[0]['id_no'])
+			->where('personnel_id_no', $user['id_no'])
 			->orderBy('queue_no', 'asc')->findAll();
 		$result = "";
 
@@ -88,7 +139,7 @@ class Consultations extends BaseController
 						</div>
 						<div class=\"text-secondary mb-2\"> {$lycean['id_no']} </div>
 						<span class=\"mb-2 text-secondary d-inline\" style=\"font-size: 12pt;\">
-							<span class=\"font-weight-bold d-inline\">Schedule:</span> ". date('F d, Y h:m A', strtotime($value['schedule'])) ."
+							<span class=\"font-weight-bold d-inline\">Schedule:</span> " . date('F d, Y h:m A', strtotime($value['meeting_schedule'])) . "
 						</span>
 
 						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\" data-target=\"#doneModal\" data-toggle=\"modal\">Done</a>
@@ -101,5 +152,79 @@ class Consultations extends BaseController
 		}
 
 		return json_encode(['result' => $result, 'count' => count($scheduledConsultations)]);
+	}
+
+
+	// ACCEPT NEW REQUEST BY ID
+	// -----------------------------------------------------------------
+	public function acceptRequestById($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getAcceptRules())) {
+				$user = $this->userAccountModel
+					->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
+					->first();
+
+				$scheduledConsultations = $this->consultationsModel
+					->where('status', 'active')->where('personnel_id_no', $user['id_no'])
+					->orderBy('queue_no', 'asc')->findAll();
+
+				$data = [
+					'queue_no' => count($scheduledConsultations) + 1,
+					'status' => 'active',
+					'personnel_id_no' => $user['id_no'],
+					'meeting_schedule' => $_GET['meeting_date'] . " " . $_GET['meeting_time'],
+					'meeting_link' => $_GET['meeting_link']
+				];
+
+				$success = $this->consultationsModel
+					->where('consultation_no', $id)
+					->set($data)->update();
+
+				if ($success) {
+					session()->setFlashdata('success', 'Ok!');
+				}
+			}
+		}
+
+		return redirect()->to('consultations');
+	}
+
+
+	// REJECT NEW REQUEST BY ID
+	// -----------------------------------------------------------------
+	public function rejectRequestById($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getRejectRules())) {
+				$user = $this->userAccountModel
+					->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
+					->first();
+
+				$scheduledConsultations = $this->consultationsModel
+					->where('status', 'active')->where('personnel_id_no', $user['id_no'])
+					->orderBy('queue_no', 'asc')->findAll();
+
+				$data = [
+					'status' => 'rejected',
+					'personnel_id_no' => $user['id_no'],
+					'rejection_message' => $_GET['rejection_message']
+				];
+
+				$success = $this->consultationsModel
+					->where('consultation_no', $id)
+					->set($data)->update();
+
+				if ($success) {
+					session()->setFlashdata('success', 'Ok!');
+				}
+			}
+
+			print_r($_GET);
+		}
+
+		return redirect()->to('consultations');
 	}
 }
