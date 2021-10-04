@@ -76,8 +76,8 @@ class Filters extends BaseConfig
 			'after' => ['/', 'login', 'forgotpassword']
         ],
 		'user_check' => [
-			'before' => ['/', 'login', 'forgotpassword'],
-			'after' => ['/', 'login', 'forgotpassword']
+			'before' => [],
+			'after' => []
         ]
 	];
 }
