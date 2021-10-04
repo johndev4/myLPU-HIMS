@@ -51,15 +51,17 @@
                 </div>
 
                 <!-- Records -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="info-box shadow p-3">
-                        <span class="info-box-icon dash-widgets"><i class="fas fa-file-medical"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Records</span>
-                            <span class="info-box-number"><?= $widget_counter['records'] ?></span>
+                <?php if ($designation !== 'Guidance Counselor') : ?>
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <div class="info-box shadow p-3">
+                            <span class="info-box-icon dash-widgets"><i class="fas fa-file-medical"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Records</span>
+                                <span class="info-box-number"><?= $widget_counter['records'] ?></span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
 
         </div><!-- /.container-fluid -->

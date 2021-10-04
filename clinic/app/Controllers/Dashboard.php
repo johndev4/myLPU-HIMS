@@ -13,23 +13,6 @@ class Dashboard extends BaseController
 	}
 
 
-	// PERMISSION FOR GUIDANCE COUNSELOR USER
-	// -----------------------------------------------------------------
-	public function permission()
-	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
-		if ($userInfo['designation'] !== "Guidance Counselor") {
-			return redirect()->to('profile');
-			// $this->data['page_title'] = 'TRUE';
-		}
-	}
-
-
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
 	public function index()
@@ -37,7 +20,7 @@ class Dashboard extends BaseController
 		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
 		$userInfo = $this->userModel->find($user['id_no']);
 		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
+		// For guidance counselor permission on sidebar and dashboard
 		$this->data['designation'] = $userInfo['designation'];
 
 		$this->data['widget_counter'] = [
