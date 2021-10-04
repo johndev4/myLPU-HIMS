@@ -79,12 +79,12 @@
                             </a>
                         </li>
 
-                        <!-- Clinic Staff -->
+                        <!-- Health Personnel -->
                         <li id="healthpersonnelAccountNav" class="nav-item">
                             <a href="<?php echo base_url('useraccounts/healthpersonnel') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
-                                    Clinic Staff
+                                    Health Personnel
                                 </p>
                             </a>
                         </li>
@@ -132,12 +132,12 @@
                             </a>
                         </li>
 
-                        <!-- Clinic Staff -->
+                        <!-- Health Personnel -->
                         <li id="healthpersonnelInformationNav" class="nav-item">
                             <a href="<?php echo base_url('userinformations/healthPersonnel') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
-                                    Clinic Staff
+                                    Health Personnel
                                 </p>
                             </a>
                         </li>

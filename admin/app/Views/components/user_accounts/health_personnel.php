@@ -42,7 +42,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Clinic Staff</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Health Personnel</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -141,7 +141,7 @@
                                             <option value="" selected="selected">---Choose Designation---</option>
                                             <option value="Doctor">Doctor</option>
                                             <option value="Nurse">Nurse</option>
-                                            <option value="Assistant">Assistant</option>
+                                            <option value="Guidance Counselor">Guidance Counselor</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -273,7 +273,7 @@
                                             <option value="" selected="selected">---Choose Designation---</option>
                                             <option value="Doctor">Doctor</option>
                                             <option value="Nurse">Nurse</option>
-                                            <option value="Assistant">Assistant</option>
+                                            <option value="Guidance Counselor">Guidance Counselor</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -371,7 +371,7 @@
                 <div class="col-12 mb-5">
                     <div class="card">
                         <div class="card-header record-header">
-                            <h3 class="card-title">Health Care</h3>
+                            <h3 class="card-title">Health Personnel</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

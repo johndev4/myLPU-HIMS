@@ -2,7 +2,7 @@
 <aside class="main-sidebar elevation-4">
     <!-- Brand Logo -->
     <div class="brand-link">
-        <img src="<?= base_url('assets/images/sidebar_icon.png') ?>" alt="Logo" class="brand-image">
+        <img src="<?= base_url('assets/images/Icon 2.png') ?>" alt="Logo" class="brand-image">
         <span class="brand-text font-weight-normal text-light">myLPU HIMS</span>
         <hr style="margin-bottom:-10px; margin-top:13px;">
     </div>

@@ -28,12 +28,15 @@
             </div>
 
             <div class="row">
+                <div class="col-12">
+                    <label class="text-secondary">Accounts</label>
+                </div>
                 <!-- Student Accounts -->
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-graduate"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Student Accounts</span>
+                            <span class="info-box-text">Student</span>
                             <span class="info-box-number"><?= $widget_counter['student'] ?></span>
                         </div>
                     </div>
@@ -44,7 +47,7 @@
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-chalkboard-teacher"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Faculty Accounts</span>
+                            <span class="info-box-text">Faculty</span>
                             <span class="info-box-number"><?= $widget_counter['faculty'] ?></span>
                         </div>
                     </div>
@@ -55,7 +58,7 @@
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-tie"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Staff Accounts</span>
+                            <span class="info-box-text">Staff</span>
                             <span class="info-box-number"><?= $widget_counter['staff'] ?></span>
                         </div>
                     </div>
@@ -66,7 +69,7 @@
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-md"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Clinic Staff Accounts</span>
+                            <span class="info-box-text">Health Personnel</span>
                             <span class="info-box-number"><?= $widget_counter['health_personnel'] ?></span>
                         </div>
                     </div>
