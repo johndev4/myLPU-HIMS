@@ -30,6 +30,8 @@ class LoggedIn implements FilterInterface
             // Change "!==" to "==="
             if ($user['password'] !== hash('sha256', strtoupper($userInfo['last_name']))) {
                 return redirect()->to('changepassword');
+            } else if ($userInfo['designation'] == 'Guidance Counselor') {
+                return redirect()->to('changepassword');
             }
         }
     }
