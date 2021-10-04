@@ -24,9 +24,9 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo mt-n5 mb-n5 ">
+        <div class="login-logo mt-n5 mb-3 ml-n4 mx-auto d-block">
             <a role="button">
-                <img src="<?= base_url('assets/images/LPU_logo.png') ?>" width="320" height="240" role="button">
+                <img src="<?= base_url('assets/images/Lpu_HIMS.png') ?>" class="img-fluid" alt="Logo" width="300" height="240" role="button">
                 <!--<b class="font-weight">myLPU HIMS</b>-->
             </a>
         </div>
