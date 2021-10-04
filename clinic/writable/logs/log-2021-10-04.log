@@ -33,6 +33,7 @@ CRITICAL - 2021-10-04 11:50:38 --> Undefined array key 0
 #3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+<<<<<<< HEAD
 CRITICAL - 2021-10-04 14:43:14 --> Undefined array key "meeting_schedule"
 #0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 142)
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->fetchAllScheduledConsultations()
@@ -6935,3 +6936,15 @@ CRITICAL - 2021-10-04 15:02:29 --> Undefined array key "meeting_schedule"
 #3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+=======
+CRITICAL - 2021-10-04 14:59:09 --> unlink(C:\xampp\htdocs\myLPU-HIMS\clinic\writable\debugbar/debugbar_1633330392.json): Resource temporarily unavailable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 74)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Debug\Toolbar\Collectors\History.php(74): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Debug\Toolbar.php(399): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1633330748, 20)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Debug\Toolbar.php(375): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Config\Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(299): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+>>>>>>> 14b71cc140860a16dd7abe71960d136086e48742
