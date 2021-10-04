@@ -22,9 +22,6 @@ class Inventory extends BaseController
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
-		if ($userInfo['designation'] !== "Guidance Counselor") {
-			return redirect()->to('dashboard');
-		}
 
 		// Display page view
 		return view('components/inventory/medicines', $this->data);
@@ -37,9 +34,6 @@ class Inventory extends BaseController
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
-		if ($userInfo['designation'] !== "Guidance Counselor") {
-			return redirect()->to('dashboard');
-		}
 
 		// Display page view
 		return view('components/inventory/equipments', $this->data);

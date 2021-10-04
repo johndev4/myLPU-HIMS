@@ -40,6 +40,10 @@ class Dashboard extends BaseController
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
 
+		$this->data['widget_counter'] = [
+			'records' => $this->countLyceanRecords()
+		];
+
 		// Display page view
 		return view('components/dashboard', $this->data);
 	}

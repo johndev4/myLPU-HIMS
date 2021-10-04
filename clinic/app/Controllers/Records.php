@@ -47,9 +47,6 @@ class Records extends BaseController
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
-		if ($userInfo['designation'] !== "Guidance Counselor") {
-			return redirect()->to('dashboard');
-		}
 
 		// Display page view
 		return view('components/records/student', $this->data);
@@ -62,9 +59,6 @@ class Records extends BaseController
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
-		if ($userInfo['designation'] !== "Guidance Counselor") {
-			return redirect()->to('dashboard');
-		}
 
 		// Display page view
 		return view('components/records/faculty', $this->data);
@@ -77,9 +71,6 @@ class Records extends BaseController
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
-		if ($userInfo['designation'] !== "Guidance Counselor") {
-			return redirect()->to('dashboard');
-		}
 
 		// Display page view
 		return view('components/records/staff', $this->data);
