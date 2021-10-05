@@ -55,7 +55,7 @@
                         <div class="row">
                             <div class="col-12 form-group">
                                 <label for="reject_rejectionmessage" class="col-form-label required" style="font-size: 16pt;">Message</label>
-                                <textarea class="form-control rounded-3 txtarea border-0" id="reject_rejectionmessage" name="rejection_message" rows="10" placeholder="Type here..." maxlength="300"></textarea>
+                                <textarea class="form-control rounded-3 txtarea border-0" id="reject_rejectionmessage" name="rejection_message" rows="10" placeholder="Type here..." maxlength="300" required="required"></textarea>
                                 <div id="count" align="right">
                                     <span id="current">0</span>
                                     <span id="maximum">/ 300</span>
@@ -83,21 +83,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="get" id="doneForm">
+                    <form action="" method="get" id="done_form">
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <form method="post" action="#" id="#">
-                                    <div class="form-group files">
-                                        <label style="font-size: 16pt;">Upload File </label>
-                                        <input type="file" class="form-control" multiple="">
-                                    </div>
-                                </form>
+                                <div class="form-group files">
+                                    <label style="font-size: 16pt;">Upload File </label>
+                                    <input type="file" class="form-control" id="done_medicalfiles" name="medicalfiles[]" multiple="multiple" required="required">
+                                </div>
                             </div>
                         </div>
 
                         <div class="footer float-right pb-3">
                             <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
-                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
                         </div>
                     </form>
                 </div>
@@ -133,26 +130,6 @@
 
                 <div id="scheduledSection" class="row d-flex justify-content-center pb-3" style="border: 1px solid none;">
                     <!-- SCHEDULED CONSULTATIONS CARD HERE -->
-
-                    <!-- <div class="px-2">
-                        <div class="card">
-                            <div class="card-body sched">
-                                <h4 class="d-inline float-left text-secondary font-weight-light">#1</h4>
-                                <span class="d-inline float-right text-primary request-type"> Consulation </span>
-                                <br><br>
-                                <div>
-                                    <h5 class="d-inline font-weight-bold" style="font-size: 15pt;"> John Rafael Mistica </h5>
-                                </div>
-                                <div class="text-secondary mb-2"> 2018-8-6658 </div>
-                                <span class="mb-2 text-secondary d-inline" style="font-size: 12pt;">
-                                    <span class="font-weight-bold d-inline">Schedule:</span> 7:27
-                                </span>
-
-                                <a href="#" class="btn text-primary d-block mt-3 accept-button" data-target="#doneModal" data-toggle="modal">Done</a>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
             <!-- /Scheduled Request -->
@@ -281,6 +258,10 @@
     // On reject new request, set action value
     function reject(id) {
         $('#reject_form').prop('action', "<?= base_url('consultations/rejectRequestById') ?>/" + id);
+    }
+    // On done, set action value
+    function reject(id) {
+        $('#done_form').prop('action', "<?= base_url('consultations/sendMedicalFilesById') ?>/" + id);
     }
 </script>
 

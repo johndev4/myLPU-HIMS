@@ -10,6 +10,7 @@ class Consultations extends BaseController
 	{
 		// Page title
 		$this->data['page_title'] = 'Consultations';
+		$this->baseDir = './uploaded/medical_files/';
 	}
 
 
@@ -48,6 +49,19 @@ class Consultations extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Maximum length exceeds',
+				]
+			]
+		];
+	}
+
+	private function getUploadRules()
+	{
+		return  [
+			'medical_files' => [
+				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfile,1024]',
+				'errors' => [
+					'uploaded' => 'No file attached.',
+					'max_size' => 'File is too large.'
 				]
 			]
 		];
@@ -148,7 +162,7 @@ class Consultations extends BaseController
 							<span class=\"font-weight-bold d-inline\">Schedule:</span> " . date('F d, Y h:m A', strtotime($value['meeting_schedule'])) . "
 						</span>
 
-						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\" data-target=\"#doneModal\" data-toggle=\"modal\">Done</a>
+						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\" data-target=\"#doneModal\" data-toggle=\"modal\" onclick=\"reject('{$value['consultation_no']}')\">Done</a>
 					</div>
 				</div>
 			</div>
@@ -232,5 +246,51 @@ class Consultations extends BaseController
 		}
 
 		return redirect()->to('consultations');
+	}
+
+
+	// SEND MEDICAL FILES BY ID
+	// -----------------------------------------------------------------
+	public function sendMedicalFilesById($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			if ($this->validate($this->getUploadRules())) {
+				$files = $this->request->getFiles();
+				$consultation = $this->consultationsModel->find($id);
+
+				foreach ($files['medicalfiles'] as $file) {
+					$fileName = $file->getName();
+					$fileDirectory = $this->baseDir . $consultation['lycean_id_no'];
+
+					if ($file->isValid() && !$file->hasMoved()) {
+						if (!file_exists($fileDirectory . '/' . $fileName)) {
+							$file->move($fileDirectory, $fileName);
+
+							$success = $this->medicalFilesModel->save([
+								'consultation_no' => $id,
+								'file_path' => $fileDirectory . '/' . $fileName
+							]);
+
+							if ($success) {
+								session()->setFlashdata('success', "Successfully uploaded.");
+							} else {
+							}
+						} else {
+							// $fileName = $file->getName() . '(1)';
+						}
+					}
+				}
+			}
+		}
+
+		return redirect()->to('consultations');
+	}
+
+
+	// AVAILABLE TOGGLE
+	// -----------------------------------------------------------------
+	public function availableToggle()
+	{
 	}
 }

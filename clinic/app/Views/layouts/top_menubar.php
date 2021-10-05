@@ -39,18 +39,3 @@
     </ul>
 </nav>
 <!-- /.navbar -->
-
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            type: 'post',
-            url: '<?= base_url('profile/getFirstname') ?>',
-            data: {
-                <?= csrf_token() ?>: '<?= csrf_hash() ?>'
-            },
-            success: function(response) {
-                $('#username').text(response);
-            }
-        });
-    });
-</script>
