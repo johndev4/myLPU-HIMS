@@ -24,13 +24,11 @@
 
 
 
-body {
+/* body {
     color: #000 !important;
     overflow-x: hidden !important;
     height: 100% !important;
     background: linear-gradient(110deg, #ebebeb 60%, #a62d38 60%); 
-    /* background-color: #ebebeb !important; */
-    /* background-image: linear-gradient(#dde595, #a62d38); */
     background-repeat: no-repeat;
 }
 
@@ -82,5 +80,72 @@ body {
 
 ul{
     list-style-type: circle;
+} */
+
+
+/* Login V2 */
+@media only screen and (min-width: 900px) {
+    .login-box{
+        width: 820px !important;
+    }
 }
 
+@media only screen and (max-width: 750px) {
+    .login-box{
+        margin-top: 10% !important;
+    }
+}
+
+body {
+    color: #000 !important;
+    overflow-x: hidden !important;
+    background: linear-gradient(110deg, #ebebeb 60%, #a62d38 60%); 
+    background-repeat: no-repeat;
+}
+
+.card-body{
+    border-radius: 10px !important;
+}
+
+.color{
+    background-color: #a62d38 !important; 
+    opacity:0.95; 
+    border-radius: 5px;
+} 
+
+.forgot_password{
+    text-decoration: none;
+    color: rgb(94, 94, 94);
+}
+
+.forgot_password:hover{
+    color: rgb(28, 0, 153);
+}
+
+.border-line {
+    border-right: 1px solid #BDBDBD !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .border-line {
+        border-right: none !important;
+        border-bottom: 1px solid #EEEEEE !important;
+        padding-bottom: 15px !important;
+    }
+    .text-md{
+        margin-top: 15px !important;
+    }
+    body{
+        height: 100% !important;
+    }
+    .login-box{
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
+    }
+}
+
+ul{
+    list-style-type: circle;
+}
+
+/* Login V2 */
