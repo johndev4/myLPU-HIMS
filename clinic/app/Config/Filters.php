@@ -4,6 +4,7 @@ namespace Config;
 
 use App\Filters\LoggedIn;
 use App\Filters\NotLoggedIn;
+use App\Filters\UserPermission;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -22,7 +23,8 @@ class Filters extends BaseConfig
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'loggedin'      => LoggedIn::class,
-		'notloggedin'   => NotLoggedIn::class
+		'notloggedin'   => NotLoggedIn::class,
+        'user_permission'   => UserPermission::class
     ];
 
     /**
@@ -72,6 +74,10 @@ class Filters extends BaseConfig
 		'notloggedin' => [
 			'before' => ['/', 'login', 'forgotpassword'],
 			'after' => ['/', 'login', 'forgotpassword']
-		]
+        ],
+		'user_permission' => [
+			'before' => ['inventory/*', 'records/*'],
+            'after' => ['inventory/*', 'records/*']
+        ]
 	];
 }

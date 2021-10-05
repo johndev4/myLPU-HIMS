@@ -17,7 +17,7 @@
             </div>
             <div class="info">
                 <a href="<?= base_url('profile') ?>">
-                    <span class="text-light" id="username"></span>
+                    <span class="text-light"><?= $firstname ?></span>
                 </a>
             </div>
         </div>
@@ -40,46 +40,48 @@
                 </li>
 
                 <!-- Records -->
-                <li class="nav-item" id="mainUserRecordNav">
-                    <a href="#" class="nav-link selector ">
-                        <i class="fa fa-file-medical-alt nav-icon text-light"></i>
-                        <p class="text-light">
-                            Records
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <!-- Student -->
-                        <li id="studentRecordNav" class="nav-item">
-                            <a href="<?= base_url('records/student') ?>" class="nav-link selector">
-                                <i class="far fa-circle nav-icon text-light"></i>
-                                <p class="text-light">
-                                    Student
-                                </p>
-                            </a>
-                        </li>
+                <?php if ($designation !== 'Guidance Counselor') : ?>
+                    <li class="nav-item" id="mainUserRecordNav">
+                        <a href="#" class="nav-link selector ">
+                            <i class="fa fa-file-medical-alt nav-icon text-light"></i>
+                            <p class="text-light">
+                                Records
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <!-- Student -->
+                            <li id="studentRecordNav" class="nav-item">
+                                <a href="<?= base_url('records/student') ?>" class="nav-link selector">
+                                    <i class="far fa-circle nav-icon text-light"></i>
+                                    <p class="text-light">
+                                        Student
+                                    </p>
+                                </a>
+                            </li>
 
-                        <!-- Faculty -->
-                        <li id="facultyRecordNav" class="nav-item">
-                            <a href="<?php echo base_url('records/faculty') ?>" class="nav-link selector">
-                                <i class="far fa-circle nav-icon text-light"></i>
-                                <p class="text-light">
-                                    Faculty
-                                </p>
-                            </a>
-                        </li>
+                            <!-- Faculty -->
+                            <li id="facultyRecordNav" class="nav-item">
+                                <a href="<?php echo base_url('records/faculty') ?>" class="nav-link selector">
+                                    <i class="far fa-circle nav-icon text-light"></i>
+                                    <p class="text-light">
+                                        Faculty
+                                    </p>
+                                </a>
+                            </li>
 
-                        <!-- Staff -->
-                        <li id="staffRecordNav" class="nav-item">
-                            <a href="<?php echo base_url('records/staff') ?>" class="nav-link selector">
-                                <i class="far fa-circle nav-icon text-light"></i>
-                                <p class="text-light">
-                                    Staff
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                            <!-- Staff -->
+                            <li id="staffRecordNav" class="nav-item">
+                                <a href="<?php echo base_url('records/staff') ?>" class="nav-link selector">
+                                    <i class="far fa-circle nav-icon text-light"></i>
+                                    <p class="text-light">
+                                        Staff
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
 
                 <!-- Consultation -->
                 <li id="consultationNav" class="nav-item">
@@ -92,36 +94,38 @@
                 </li>
 
                 <!-- Inventory -->
-                <li class="nav-item" id="mainInventoryNav">
-                    <a href="#" class="nav-link selector ">
-                        <i class="fa fa-pills nav-icon text-light"></i>
-                        <p class="text-light">
-                            Inventory
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <!-- Medicines -->
-                        <li id="medicineNav" class="nav-item">
-                            <a href="<?= base_url('inventory/medicines') ?>" class="nav-link selector">
-                                <i class="far fa-circle nav-icon text-light"></i>
-                                <p class="text-light">
-                                    Medicines
-                                </p>
-                            </a>
-                        </li>
+                <?php if ($designation !== 'Guidance Counselor') : ?>
+                    <li class="nav-item" id="mainInventoryNav">
+                        <a href="#" class="nav-link selector ">
+                            <i class="fa fa-pills nav-icon text-light"></i>
+                            <p class="text-light">
+                                Inventory
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <!-- Medicines -->
+                            <li id="medicineNav" class="nav-item">
+                                <a href="<?= base_url('inventory/medicines') ?>" class="nav-link selector">
+                                    <i class="far fa-circle nav-icon text-light"></i>
+                                    <p class="text-light">
+                                        Medicines
+                                    </p>
+                                </a>
+                            </li>
 
-                        <!-- Equipments -->
-                        <li id="equipmentNav" class="nav-item">
-                            <a href="<?= base_url('inventory/equipments') ?>" class="nav-link selector">
-                                <i class="far fa-circle nav-icon text-light"></i>
-                                <p class="text-light">
-                                    Equipments
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                            <!-- Equipments -->
+                            <li id="equipmentNav" class="nav-item">
+                                <a href="<?= base_url('inventory/equipments') ?>" class="nav-link selector">
+                                    <i class="far fa-circle nav-icon text-light"></i>
+                                    <p class="text-light">
+                                        Equipments
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
 
                 <!-- Help Menu -->
                 <li id="helpmenuNav" class="nav-item">
@@ -149,20 +153,3 @@
     </div>
     <!-- /.sidebar -->
 </aside>
-
-<script>
-    // Get profile firstname
-    $('document').ready(function() {
-        $.ajax({
-            type: 'get',
-            url: "<?= base_url('profile/getFirstname') ?>",
-            contentType: 'text/html; charset=UTF-8',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            success: function(response) {
-                $('#username').text(response);
-            }
-        });
-    });
-</script>

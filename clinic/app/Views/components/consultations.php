@@ -83,7 +83,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= base_url('') ?>" method="get" id="">
+                    <form action="" method="get" id="doneForm">
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <form method="post" action="#" id="#">

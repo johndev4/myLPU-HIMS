@@ -46,20 +46,15 @@ class Profile extends BaseController
     public function index()
     {
         $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+		$userInfo = $this->userModel->find($user['id_no']);
+		$this->data['firstname'] = $userInfo['first_name'];
+		// For guidance counselor permission on sidebar
+		$this->data['designation'] = $userInfo['designation'];
+
         $this->data['username'] = $user['username'];
 
         // Display page view
         return view('components/profile', $this->data);
-    }
-
-
-    // GET NAME
-	// -----------------------------------------------------------------
-    public function getFirstname()
-    {
-        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-        $userInfo = $this->userModel->find($user['id_no']);
-        return $userInfo['first_name'];
     }
 
 
