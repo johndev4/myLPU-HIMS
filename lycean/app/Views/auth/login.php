@@ -24,7 +24,7 @@
 
 <body class="hold-transition login-page">
 
-    <div class="login-box" style="border:1px solid red">
+    <div class="login-box" style="border:1px solid none">
         <div class="login-logo mb-3 my-3px mx-auto d-block">
             <a role="button">
                 <img src="<?= base_url('assets/images/Lpu_Clinic.png') ?>" class="img-fluid" alt="Logo" width="300" height="240" role="button">

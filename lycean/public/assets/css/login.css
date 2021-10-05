@@ -127,6 +127,25 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+    /* .border-line {
+        border-right: none !important;
+        border-bottom: 1px solid #EEEEEE !important;
+        padding-bottom: 15px !important;
+    } */
+    /* .text-md{
+        margin-top: 15px !important;
+    }
+    body{
+        height: 100% !important;
+    }
+    .login-box{
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
+    } */
+}
+
+/* Line responsive */
+@media screen and (max-width: 992px) {
     .border-line {
         border-right: none !important;
         border-bottom: 1px solid #EEEEEE !important;
@@ -147,5 +166,4 @@ body {
 ul{
     list-style-type: circle;
 }
-
 /* Login V2 */
