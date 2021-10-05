@@ -83,7 +83,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="get" id="done_form">
+                    <form action="" method="post" id="done_form" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <div class="form-group files">

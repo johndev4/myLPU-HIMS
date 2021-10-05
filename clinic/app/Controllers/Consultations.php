@@ -259,32 +259,35 @@ class Consultations extends BaseController
 				$files = $this->request->getFiles();
 				$consultation = $this->consultationsModel->find($id);
 
-				foreach ($files['medicalfiles'] as $file) {
-					$fileName = $file->getName();
-					$fileDirectory = $this->baseDir . $consultation['lycean_id_no'];
+				// foreach ($files['medicalfiles'] as $file) {
+				// 	$fileName = $file->getName();
+				// 	$fileDirectory = $this->baseDir . $consultation['lycean_id_no'];
 
-					if ($file->isValid() && !$file->hasMoved()) {
-						if (!file_exists($fileDirectory . '/' . $fileName)) {
-							$file->move($fileDirectory, $fileName);
+				// 	if ($file->isValid() && !$file->hasMoved()) {
+				// 		if (!file_exists($fileDirectory . '/' . $fileName)) {
+				// 			$success1 = $file->move($fileDirectory, $fileName);
 
-							$success = $this->medicalFilesModel->save([
-								'consultation_no' => $id,
-								'file_path' => $fileDirectory . '/' . $fileName
-							]);
+				// 			$success2 = $this->medicalFilesModel->save([
+				// 				'consultation_no' => $id,
+				// 				'file_path' => $fileDirectory . '/' . $fileName
+				// 			]);
 
-							if ($success) {
-								session()->setFlashdata('success', "Successfully uploaded.");
-							} else {
-							}
-						} else {
-							// $fileName = $file->getName() . '(1)';
-						}
-					}
-				}
+				// 			if ($success1 && $success2) {
+				// 				session()->setFlashdata('success', "Successfully uploaded.");
+				// 			} else {
+				// 				session()->setFlashdata('success', "ERROR!");
+				// 			}
+				// 		} else {
+				// 			// $fileName = $file->getName() . '(1)';
+				// 		}
+				// 	}
+				// }
+
+				print_r($files);
 			}
 		}
 
-		return redirect()->to('consultations');
+		// return redirect()->to('consultations');
 	}
 
 
