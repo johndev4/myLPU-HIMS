@@ -98,7 +98,7 @@ ul{
 
 body {
     color: #000 !important;
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
     background: linear-gradient(110deg, #ebebeb 60%, #a62d38 60%); 
     background-repeat: no-repeat;
 }
@@ -167,3 +167,13 @@ ul{
     list-style-type: circle;
 }
 /* Login V2 */
+
+/* Temp Fix for Zooming Login V2 */
+@media screen and (min-width: 993px) and (max-width: 1080px){
+     body{
+        overflow-y: scroll !important;
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
+     }
+}
+/* Temp Fix for Zooming Login V2 */
