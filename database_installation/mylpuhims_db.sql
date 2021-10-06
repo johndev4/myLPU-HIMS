@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2021 at 08:51 AM
+-- Generation Time: Oct 06, 2021 at 05:38 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -72,9 +72,9 @@ CREATE TABLE `consultations` (
 
 INSERT INTO `consultations` (`consultation_no`, `queue_no`, `status`, `category`, `message`, `personnel_id_no`, `lycean_id_no`, `meeting_schedule`, `meeting_link`, `rejection_message`, `created_at`, `updated_at`) VALUES
 (1, NULL, 'pending', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', NULL, '2018-2-03248', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
-(2, 2, 'active', 'Mental Wellness', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2018-2-02181', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
-(3, 1, 'active', 'Mental Wellness', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2018-2-01763', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
-(4, 3, 'active', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2018-2-01509', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00');
+(2, NULL, 'pending', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', NULL, '2018-2-02181', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
+(3, 1, 'active', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', '2016-3-3456', '2018-2-01763', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
+(4, 1, 'active', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2018-2-01509', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-10-06 23:35:01');
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ CREATE TABLE `health_personnels_account` (
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locked`) VALUES
 ('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', 0),
-('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL),
+('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', 0),
 ('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8', NULL),
 ('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839', NULL),
 ('2016-3-9012', 'kwak.kwak@lpu.edu.ph', '9e166b2660994213ac25eb570995d53aca1736c2cda1e36f7342991f9423cdfc', NULL);
@@ -199,8 +199,8 @@ INSERT INTO `lyceans_account` (`id_no`, `username`, `password`, `locked`) VALUES
 ('2014-1-72634', 'amanda.menta@lpunetwork.edu.ph', '760e2c08813b3ace8cdfe79e8db2fcfb00337cc2364f827466b0544de5cf07d6', NULL),
 ('2015-2-06969', 'jieun.lee@lpunetwork.edu.ph', '5eda95ce0649e173966bf5026880d15fb1cbef6d2bc33533db879082d05c26aa', NULL),
 ('2015-2-09696', 'momo.hirai@lpunetwork.edu.ph', '00bd50b4eead991214bef23eb367a8837fd062bc657c5c74b8f24c095f91875a', NULL),
-('2018-2-01509', 'chris.deleon@lpunetwork.edu.ph', 'a0e9b8dc58ebbeb7557345815930c3657d115677e26d42a201c5e8b42e5190c2', NULL),
-('2018-2-01763', 'rick.delacruz@lpunetwork.edu.ph', '17b68c72ec60978f5333b82882db8197e236288b0ac424a77e64dc633cd6d0b6', NULL),
+('2018-2-01509', 'chris.deleon@lpunetwork.edu.ph', '15b3530e61aa540e86b8f9b4f3d88245fd4fe81ea411cdbb84a5da52f75255b6', NULL),
+('2018-2-01763', 'rick.delacruz@lpunetwork.edu.ph', '32c0230638a1a851c38d5f223e94a0e9ac9b55bae7747233b6edc358aa72c23a', NULL),
 ('2018-2-02181', 'john.mistica@lpunetwork.edu.ph', '918f24ab2bacdffde0f9cc096f5d02d37a5b89d68a8bed1320cf4868f16d2301', NULL),
 ('2018-2-03248', 'jade.vale@lpunetwork.edu.ph', '278d3872d86a41fd8ea83b5ef0c7118ecc6a445e6d0da818b08ac7c689d53f6d', NULL);
 
@@ -214,7 +214,7 @@ DROP TABLE IF EXISTS `medical_files`;
 CREATE TABLE `medical_files` (
   `file_id` int(11) NOT NULL,
   `consultation_no` int(11) NOT NULL,
-  `file_path` varchar(45) DEFAULT NULL
+  `file_path` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -293,13 +293,13 @@ ALTER TABLE `consultations`
 -- AUTO_INCREMENT for table `health_records`
 --
 ALTER TABLE `health_records`
-  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `medical_files`
 --
 ALTER TABLE `medical_files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
