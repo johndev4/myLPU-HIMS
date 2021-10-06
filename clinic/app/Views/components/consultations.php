@@ -84,6 +84,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="" method="post" id="done_form" enctype="multipart/form-data">
+                    
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <div class="form-group files">
@@ -92,6 +93,19 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Validation Error -->
+                        <?php if (!empty(session()->get('upload_validation'))) : ?>
+                            <?php if (!empty(session()->get('upload_validation')['medicalfiles'])) : ?>
+                                <span class="error text-danger">
+                                    <?= session()->get('upload_validation')['medicalfiles']; ?>
+                                </span>
+                                <script>
+                                    $().ready(function() {
+                                        $('#done_medicalfiles').addClass('border border-danger');
+                                    });
+                                </script>
+                            <?php endif; ?>
+                        <?php endif; ?>
 
                         <div class="footer float-right pb-3">
                             <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
@@ -240,6 +254,16 @@
             Toast.fire({
                 icon: 'success',
                 title: '<?= session()->get('success'); ?>'
+            });
+        <?php endif; ?>
+
+        // File Upload Validation Error
+        <?php if (!empty(session()->get('upload_validation'))) : ?>
+            $('#doneModal').modal('show');
+            done('<?= session()->get('consultationNo') ?>');
+            $('#doneModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
             });
         <?php endif; ?>
 

@@ -20,7 +20,7 @@ class Records extends BaseController
 	{
 		return  [
 			'medicalfile' => [
-				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,1024]|ext_in[medicalfile,pdf]',
+				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
 					'max_size' => 'File is too large.',
@@ -194,14 +194,14 @@ class Records extends BaseController
 
 				if ($file->isValid() && !$file->hasMoved()) {
 					if (!file_exists($fileDirectory . '/' . $fileName)) {
-						$file->move($fileDirectory, $fileName);
+						$success1 = $file->move($fileDirectory, $fileName);
 
-						$success = $this->healthRecordsModel->save([
+						$success2 = $this->healthRecordsModel->save([
 							'id_no' => $lycean['id_no'],
 							'file_path' => $fileDirectory . '/' . $fileName
 						]);
 
-						if ($success) {
+						if ($success1 && $success2) {
 							session()->setFlashdata('success', "Successfully uploaded.");
 							session()->setFlashdata('postData', json_encode($_POST));
 						} else {

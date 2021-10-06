@@ -57,8 +57,8 @@ class Consultations extends BaseController
 	private function getUploadRules()
 	{
 		return  [
-			'medical_files' => [
-				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfiles,1024]',
+			'medicalfiles' => [
+				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfiles,2048]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
 					'max_size' => 'File is too large.'
@@ -273,18 +273,26 @@ class Consultations extends BaseController
 									'file_path' => $fileDirectory . '/' . $fileName
 								]);
 
-								if ($success1 && $success2) {
+								$success3 = $this->consultationsModel
+									->where('consultation_no', $id)
+									->set([
+										'status' => 'done'
+									])->update();
+
+								if ($success1 && $success2 && $success3) {
 									session()->setFlashdata('success', "Successfully uploaded.");
 								} else {
 								}
 								break;
 							} else {
-								$fileName = explode('.', $file->getName())[0] . ' ('. $i .').' . $file->getExtension();
+								$fileName = explode('.', $file->getName())[0] . ' (' . $i . ').' . $file->getExtension();
 							}
 						}
 					}
 				}
 			} else {
+				session()->setFlashdata('upload_validation', $this->validator->getErrors());
+				session()->setFlashdata('consultationNo', $id);
 			}
 		}
 
