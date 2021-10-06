@@ -249,6 +249,12 @@
             $('#accept_meetingtime').val("");
             $('#accept_meetinglink').val("");
         });
+        $('#rejectModal').on('hidden.bs.modal', function(evt) {
+            $('#reject_rejectionmessage').val("");
+        });
+        $('#doneModal').on('hidden.bs.modal', function(evt) {
+            $('#done_medicalfiles').val("");
+        });
     });
 
     // On accept new request, set action value
@@ -260,7 +266,7 @@
         $('#reject_form').prop('action', "<?= base_url('consultations/rejectRequestById') ?>/" + id);
     }
     // On done, set action value
-    function reject(id) {
+    function done(id) {
         $('#done_form').prop('action', "<?= base_url('consultations/sendMedicalFilesById') ?>/" + id);
     }
 </script>

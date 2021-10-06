@@ -23,7 +23,7 @@ class Filters extends BaseConfig
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'loggedin'      => LoggedIn::class,
-		'notloggedin'   => NotLoggedIn::class,
+        'notloggedin'   => NotLoggedIn::class,
         'user_permission'   => UserPermission::class
     ];
 
@@ -37,8 +37,11 @@ class Filters extends BaseConfig
         'before' => [
             // 'honeypot',
             'csrf' => [
-				'except' => ['records/uploadStudentRecord']
-			],
+                'except' => [
+                    'consultations/sendMedicalFilesById/*',
+                    'records/uploadRecord',
+                ]
+            ],
         ],
         'after' => [
             'toolbar',
@@ -67,17 +70,17 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-		'loggedin' => [
-			'before' => ['dashboard', 'profile', 'records/*', 'consultations', 'inventory/*', 'changepassword'],
-			'after' => ['dashboard', 'profile', 'records/*', 'consultations', 'inventory/*']
-		],
-		'notloggedin' => [
-			'before' => ['/', 'login', 'forgotpassword'],
-			'after' => ['/', 'login', 'forgotpassword']
+        'loggedin' => [
+            'before' => ['dashboard', 'profile', 'records/*', 'consultations', 'inventory/*', 'changepassword'],
+            'after' => ['dashboard', 'profile', 'records/*', 'consultations', 'inventory/*']
         ],
-		'user_permission' => [
-			'before' => ['inventory/*', 'records/*'],
+        'notloggedin' => [
+            'before' => ['/', 'login', 'forgotpassword'],
+            'after' => ['/', 'login', 'forgotpassword']
+        ],
+        'user_permission' => [
+            'before' => ['inventory/*', 'records/*'],
             'after' => ['inventory/*', 'records/*']
         ]
-	];
+    ];
 }

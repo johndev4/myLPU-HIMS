@@ -677,7 +677,7 @@ class UserAccounts extends BaseController
 			$success = $this->lyceansAccountModel
 				->where('id_no', $id)
 				->set([
-					'password' => hash('sha256', strtoupper(htmlspecialchars($lyceans['last_name']))),
+					'password' => hash('sha256', str_replace(' ', '', strtoupper(htmlspecialchars($lyceans['last_name'])))),
 					'locked' => 0
 				])
 				->update();

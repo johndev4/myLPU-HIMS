@@ -58,7 +58,7 @@ class Consultations extends BaseController
 	{
 		return  [
 			'medical_files' => [
-				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfile,1024]',
+				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfiles,1024]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
 					'max_size' => 'File is too large.'
@@ -162,7 +162,7 @@ class Consultations extends BaseController
 							<span class=\"font-weight-bold d-inline\">Schedule:</span> " . date('F d, Y h:m A', strtotime($value['meeting_schedule'])) . "
 						</span>
 
-						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\" data-target=\"#doneModal\" data-toggle=\"modal\" onclick=\"reject('{$value['consultation_no']}')\">Done</a>
+						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\" data-target=\"#doneModal\" data-toggle=\"modal\" onclick=\"done('{$value['consultation_no']}')\">Done</a>
 					</div>
 				</div>
 			</div>
@@ -259,35 +259,36 @@ class Consultations extends BaseController
 				$files = $this->request->getFiles();
 				$consultation = $this->consultationsModel->find($id);
 
-				// foreach ($files['medicalfiles'] as $file) {
-				// 	$fileName = $file->getName();
-				// 	$fileDirectory = $this->baseDir . $consultation['lycean_id_no'];
+				foreach ($files['medicalfiles'] as $file) {
+					$fileName = $file->getName();
+					$fileDirectory = $this->baseDir . $consultation['lycean_id_no'];
 
-				// 	if ($file->isValid() && !$file->hasMoved()) {
-				// 		if (!file_exists($fileDirectory . '/' . $fileName)) {
-				// 			$success1 = $file->move($fileDirectory, $fileName);
+					if ($file->isValid() && !$file->hasMoved()) {
+						for ($i = 0; true; $i += 1) {
+							if (!file_exists($fileDirectory . '/' . $fileName)) {
+								$success1 = $file->move($fileDirectory, $fileName);
 
-				// 			$success2 = $this->medicalFilesModel->save([
-				// 				'consultation_no' => $id,
-				// 				'file_path' => $fileDirectory . '/' . $fileName
-				// 			]);
+								$success2 = $this->medicalFilesModel->save([
+									'consultation_no' => $id,
+									'file_path' => $fileDirectory . '/' . $fileName
+								]);
 
-				// 			if ($success1 && $success2) {
-				// 				session()->setFlashdata('success', "Successfully uploaded.");
-				// 			} else {
-				// 				session()->setFlashdata('success', "ERROR!");
-				// 			}
-				// 		} else {
-				// 			// $fileName = $file->getName() . '(1)';
-				// 		}
-				// 	}
-				// }
-
-				print_r($files);
+								if ($success1 && $success2) {
+									session()->setFlashdata('success', "Successfully uploaded.");
+								} else {
+								}
+								break;
+							} else {
+								$fileName = explode('.', $file->getName())[0] . ' ('. $i .').' . $file->getExtension();
+							}
+						}
+					}
+				}
+			} else {
 			}
 		}
 
-		// return redirect()->to('consultations');
+		return redirect()->to('consultations');
 	}
 
 
