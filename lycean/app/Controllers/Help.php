@@ -8,8 +8,11 @@ class Help extends BaseController
 {
 	public function __construct()
 	{
+		helper('useraccount');
 		// Page title
-		$this->data['page_title'] = 'Help Menu';
+		$this->data['page_title'] = 'Dashboard';
+		// User fullname
+		$this->data['fullname'] = getUserFullname();
 	}
 
 

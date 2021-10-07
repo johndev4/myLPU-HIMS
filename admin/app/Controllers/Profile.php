@@ -8,11 +8,19 @@ class Profile extends BaseController
 {
     public function __construct()
     {
+        helper('useraccount');
         // Page title
-        $this->data['page_title'] = 'Profile';
+        $this->data['page_title'] = 'Dashboard';
+        // User firstname
+        $this->data['adminName'] = getAdminName();
+    }
 
-        // Array of Validation Rules
-        $this->rules1 = [
+
+    // VALIDATION RULES
+    // -----------------------------------------------------------------
+    private function getUsernameRules()
+    {
+        return [
             'username' => [
                 'rules' => 'required|alpha_dash|min_length[5]|max_length[45]|is_unique[administrators.username,username,' . session()->get('uid') . ']',
                 'errors' => [
@@ -24,9 +32,11 @@ class Profile extends BaseController
                 ]
             ]
         ];
+    }
 
-        // Array of Validation Rules
-        $this->rules2 = [
+    private function getPasswordRules()
+    {
+        return [
             'current_password' => [
                 'rules' => 'required',
                 'errors' => [
@@ -54,21 +64,21 @@ class Profile extends BaseController
         ];
     }
 
+
+    // RETURN VIEW
+    // -----------------------------------------------------------------
     public function index()
     {
-        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-        $this->data['username'] = $user['username'];
+        // Admin email
+        $this->data['username'] = getAdminEmail();
 
         // Display page view
         return view('components/profile', $this->data);
     }
 
-    public function getFirstname()
-    {
-        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-        return $user['admin_name'];
-    }
 
+    // UPDATE USERNAME
+    // -----------------------------------------------------------------
     public function updateUsername()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -77,7 +87,7 @@ class Profile extends BaseController
                 ->where('password', session()->get('pwd'))
                 ->first();
 
-            if ($this->validate($this->rules1)) {
+            if ($this->validate($this->getUsernameRules())) {
                 $data = [
                     'username' => htmlspecialchars($_POST['username'])
                 ];
@@ -100,6 +110,9 @@ class Profile extends BaseController
         }
     }
 
+
+    // UPDATE PASSWORD
+    // -----------------------------------------------------------------
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -114,7 +127,7 @@ class Profile extends BaseController
                 session()->setFlashdata('postData', $_POST);
             }
 
-            if ($this->validate($this->rules2)) {
+            if ($this->validate($this->getPasswordRules())) {
                 if ($user) {
                     $data = [
                         'password' => hash("sha256", $_POST['password'])

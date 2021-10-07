@@ -8,8 +8,15 @@ class Consultations extends BaseController
 {
 	public function __construct()
 	{
+		helper('useraccount');
 		// Page title
-		$this->data['page_title'] = 'Consultations';
+		$this->data['page_title'] = 'Dashboard';
+		// User firstname
+		$this->data['firstname'] = getUserFirstname();
+		// User designation
+		$this->data['designation'] = getUserDesignation();
+
+		// Base Directory of medical files
 		$this->baseDir = './uploaded/medical_files/';
 	}
 

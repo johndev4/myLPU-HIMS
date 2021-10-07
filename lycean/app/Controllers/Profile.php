@@ -8,11 +8,19 @@ class Profile extends BaseController
 {
     public function __construct()
     {
+        helper('useraccount');
         // Page title
-        $this->data['page_title'] = 'Profile';
+        $this->data['page_title'] = 'Dashboard';
+        // User fullname
+        $this->data['fullname'] = getUserFullname();
+    }
 
-        // Array of Validation Rules
-        $this->rules2 = [
+
+    // VALIDATION RULES
+    // -----------------------------------------------------------------
+    private function getPasswordRules()
+    {
+        return [
             'current_password' => [
                 'rules' => 'required',
                 'errors' => [
@@ -45,24 +53,10 @@ class Profile extends BaseController
     // -----------------------------------------------------------------
     public function index()
     {
-        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-        $userInfo = $this->userModel->find($user['id_no']);
-        $this->data['firstname'] = $userInfo['first_name'];
-        // For username in profile page
-        $this->data['username'] = $user['username'];
-
+        // User email
+        $this->data['username'] = getUserEmail();
         // Display page view
         return view('components/profile', $this->data);
-    }
-
-
-    // GET FIRSTNAME
-    // -----------------------------------------------------------------
-    public function getFirstname()
-    {
-        $user = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-        $userInfo = $this->userModel->find($user['id_no']);
-        return $userInfo['first_name'];
     }
 
 
@@ -82,7 +76,7 @@ class Profile extends BaseController
                 session()->setFlashdata('postData', $_POST);
             }
 
-            if ($this->validate($this->rules2)) {
+            if ($this->validate($this->getPasswordRules())) {
                 if ($user) {
                     $data = [
                         'password' => hash("sha256", $_POST['password'])

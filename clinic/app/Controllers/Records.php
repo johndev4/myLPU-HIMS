@@ -8,8 +8,15 @@ class Records extends BaseController
 {
 	public function __construct()
 	{
+		helper('useraccount');
 		// Page title
-		$this->data['page_title'] = 'Records';
+		$this->data['page_title'] = 'Dashboard';
+		// User firstname
+		$this->data['firstname'] = getUserFirstname();
+		// User designation
+		$this->data['designation'] = getUserDesignation();
+
+		// Base Directory of medical records
 		$this->baseDir = './uploaded/medical_records/';
 	}
 
@@ -42,36 +49,18 @@ class Records extends BaseController
 	// -----------------------------------------------------------------
 	public function student()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
 		// Display page view
 		return view('components/records/student', $this->data);
 	}
 
 	public function faculty()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
 		// Display page view
 		return view('components/records/faculty', $this->data);
 	}
 
 	public function staff()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
 		// Display page view
 		return view('components/records/staff', $this->data);
 	}

@@ -8,8 +8,11 @@ class Consultation extends BaseController
 {
     public function __construct()
     {
+        helper('useraccount');
         // Page title
-        $this->data['page_title'] = 'Consultation';
+        $this->data['page_title'] = 'Dashboard';
+        // User fullname
+        $this->data['fullname'] = getUserFullname();
     }
 
     public function index()

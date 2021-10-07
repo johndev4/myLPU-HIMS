@@ -8,8 +8,13 @@ class Dashboard extends BaseController
 {
 	public function __construct()
 	{
+		helper('useraccount');
 		// Page title
 		$this->data['page_title'] = 'Dashboard';
+		// User firstname
+		$this->data['firstname'] = getUserFirstname();
+		// User designation
+		$this->data['designation'] = getUserDesignation();
 	}
 
 
@@ -17,12 +22,7 @@ class Dashboard extends BaseController
 	// -----------------------------------------------------------------
 	public function index()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar and dashboard
-		$this->data['designation'] = $userInfo['designation'];
-
+		// Widget counter
 		$this->data['widget_counter'] = [
 			'records' => $this->countLyceanRecords()
 		];
