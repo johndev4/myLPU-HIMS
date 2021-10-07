@@ -24,7 +24,6 @@ class LoggedIn implements FilterInterface
         $userModel = model('App\Models\HealthPersonnelsModel');
 
         $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-
         if ($user != []) {
             $userInfo = $userModel->find($user['id_no']);
             // Change "!==" to "==="

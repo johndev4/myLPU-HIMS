@@ -11,8 +11,9 @@ class LoggedIn implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         $userAccountModel = model('App\Models\LyceansAccountModel');
-        $credentials = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-        if ($credentials == []) {
+
+        $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        if ($user == []) {
             return redirect()->to('login');
         }
     }
@@ -20,13 +21,13 @@ class LoggedIn implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         $userAccountModel = model('App\Models\LyceansAccountModel');
-        $credentials = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $userModel = model('App\Models\LyceansModel');
 
-        if ($credentials != []) {
-            $userModel = model('App\Models\LyceansModel');
-            $user = $userModel->find($credentials['id_no']);
+        $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        if ($user != []) {
+            $user = $userModel->find($user['id_no']);
             // Change "!==" to "==="
-            if ($credentials['password'] !== hash('sha256', strtoupper($user['last_name']))) {
+            if ($user['password'] !== hash('sha256', strtoupper($user['last_name']))) {
                 return redirect()->to('changepassword');
             }
         }
