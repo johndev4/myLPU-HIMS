@@ -40,15 +40,24 @@ class Profile extends BaseController
         ];
     }
 
+
+    // RETURN VIEWS
+    // -----------------------------------------------------------------
     public function index()
     {
-        $user = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        $userInfo = $this->userModel->find($user['id_no']);
+        $this->data['firstname'] = $userInfo['first_name'];
+        // For username in profile page
         $this->data['username'] = $user['username'];
 
         // Display page view
         return view('components/profile', $this->data);
     }
 
+
+    // GET FIRSTNAME
+    // -----------------------------------------------------------------
     public function getFirstname()
     {
         $user = $this->userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
@@ -56,6 +65,9 @@ class Profile extends BaseController
         return $userInfo['first_name'];
     }
 
+
+    // UPDATE PASSWORD
+    // -----------------------------------------------------------------
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

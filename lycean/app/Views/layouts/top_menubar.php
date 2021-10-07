@@ -18,7 +18,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fas fa-user-circle fa-2x text-light mt-n1"></i>
-                        <span class="text-white ml-1 uname">John Rafael Mistica</span> 
+                        <span class="text-white ml-1 uname"> <?= $fullname ?> </span> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                         <a href="<?= base_url('') ?>" class="dropdown-item">

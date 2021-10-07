@@ -42,15 +42,15 @@ class Profile extends BaseController
 
 
     // RETURN VIEWS
-	// -----------------------------------------------------------------
+    // -----------------------------------------------------------------
     public function index()
     {
         $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
+        $userInfo = $this->userModel->find($user['id_no']);
+        $this->data['firstname'] = $userInfo['first_name'];
+        // For guidance counselor permission on sidebar
+        $this->data['designation'] = $userInfo['designation'];
+        // For username in profile page
         $this->data['username'] = $user['username'];
 
         // Display page view
@@ -59,7 +59,7 @@ class Profile extends BaseController
 
 
     // UPDATE PASSWORD
-	// -----------------------------------------------------------------
+    // -----------------------------------------------------------------
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
