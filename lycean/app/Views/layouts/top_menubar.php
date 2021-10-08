@@ -21,7 +21,7 @@
                         <span class="text-white ml-1 uname"> <?= $fullname ?> </span> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                        <a href="<?= base_url('') ?>" class="dropdown-item">
+                        <a href="<?= base_url('profile') ?>" class="dropdown-item">
                             <i class="fas fa-user-cog mr-2"></i> Profile
                         </a>
                         <div class="dropdown-divider"></div>
