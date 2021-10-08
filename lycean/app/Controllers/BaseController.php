@@ -54,5 +54,7 @@ class BaseController extends Controller
 		$this->userModel = model('App\Models\LyceansModel');
 		$this->userAccountModel = model('App\Models\LyceansAccountModel');
 		$this->healthRecordsModel = model('App\Models\HealthRecordsModel');
+		$this->consultationsModel = model('App\Models\ConsultationsModel');
+		$this->healthPersonnelsModel = model('App\Models\HealthPersonnelsModel');
 	}
 }
