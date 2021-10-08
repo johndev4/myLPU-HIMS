@@ -27,7 +27,7 @@ class LoggedIn implements FilterInterface
         if ($user != []) {
             $userInfo = $userModel->find($user['id_no']);
             // Change "!==" to "==="
-            if ($user['password'] !== hash('sha256', strtoupper($userInfo['last_name']))) {
+            if ($user['password'] !== hash('sha256', strtoupper(str_replace(' ', '', $userInfo['last_name'])))) {
                 return redirect()->to('changepassword');
             }
         }

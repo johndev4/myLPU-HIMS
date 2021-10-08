@@ -18,7 +18,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fas fa-user-circle fa-2x text-light mt-n1"></i>
-                        <span class="text-white ml-1 uname"> <?= $fullname ?> </span> 
+                        <span class="text-white ml-1 uname"> <?= $fullname ?> </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                         <a href="<?= base_url('profile') ?>" class="dropdown-item">
@@ -68,20 +68,3 @@
     </div>
 </nav>
 <!-- /.navbar -->
-
-
-
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            type: 'post',
-            url: '<?= base_url('profile/getFirstname') ?>',
-            data: {
-                <?= csrf_token() ?>: '<?= csrf_hash() ?>'
-            },
-            success: function(response) {
-                $('#username').text(response);
-            }
-        });
-    });
-</script>
