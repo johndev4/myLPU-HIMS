@@ -59,7 +59,7 @@
                             and wait for the schedule to be sent to you.
                         </p>
                     </div>
-                    <a href="#" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
+                    <a href="<?= base_url('mentalwellness') ?>" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                 </div>
             </div>
             <!-- /Mental Wellnes -->

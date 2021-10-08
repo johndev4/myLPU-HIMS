@@ -9,8 +9,8 @@
 
 
 
-<a href="<?= base_url('auth/logout') ?>">
-    <h2>Logout</h2>
+<a href="<?= base_url('dashboard') ?>">
+    <h2>Home</h2>
 </a>
 
 <?= $this->endSection('content') ?>

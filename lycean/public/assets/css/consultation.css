@@ -13,13 +13,108 @@
 
 .txtarea{
     resize: none;
+    border-radius: 4px !important; 
+    background-color:rgb(238, 238, 238) !important;
 }
 
 .card-txtarea{
     border-radius: 10px !important;
 }
 
+.card.card-txtarea{
+    border: 2px solid rgb(204, 204, 204);
+}
+
+button.btn.btn-block.btn-default.p-2{
+    border-radius: 10px !important; 
+    background-color:#a62d38 !important; 
+    color:white !important;
+}
+
+.card.card-primary.card-outline.card-outline-tabs{
+    border: 2px solid rgb(204, 204, 204) !important;
+}
+
+/* Icon size */
+@media screen and (max-width: 800px) {
+    i.far.fa-paper-plane.ml-2{
+        font-size: 1rem !important;
+    }
+}
+/* Icon size */
+
+/* Active */
+a#custom-tabs-four-active-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-active-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+}
+
+/* Pending */
+a#custom-tabs-four-pending-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-pending-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+}
+
+/* Rejected */
+a#custom-tabs-four-rejected-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-rejected-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+}
+
+/* Done */
+a#custom-tabs-four-done-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-done-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+}
+
+/* Tabs button */
+@media screen and (max-width:900px) {
+    button.btn.btn-default.p-2{
+        margin-top: 15px !important;
+    }
+}
+
+@media screen and (min-width:900px) {
+    button.btn.btn-default.p-2{
+        margin-top: 15px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 test{
-    color: rgb(238, 238, 238);
+    color: rgb(43, 134, 119);
 }
