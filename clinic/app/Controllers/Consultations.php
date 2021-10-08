@@ -117,7 +117,7 @@ class Consultations extends BaseController
 					<div class=\"card-body\">
 						<div>
 							<span class=\"card-title mb-2\" style=\"font-size: 12pt;\"> " . date('F d, Y h:m A', strtotime($value['created_at'])) . " </span>
-							<span class=\"d-inline float-right text-primary request-type\">Consultation</span>
+							<span class=\"d-inline float-right text-primary request-type\"> {$value['category']} </span>
 						</div>
 						<div class=\"card-text\"><span class=\"font-weight-bold\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </span></div>
 						<div class=\"card-text\"><span> {$lycean['id_no']} </span></div>
