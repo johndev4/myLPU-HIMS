@@ -47,17 +47,17 @@ span.text-white.ml-1.uname{
 }
 /* Top Nav */
 
-/* Hide Default 600 */
+/* Hide Default Nav 600 */
 @media screen and (max-width: 585px) {
-  div.row.p-3{
+  div.row.p-3.default-nav{
     display: none !important;
   } 
-  div.col-12{
+  div.col-12.default-nav{
     display: none !important;
   }
 }
 
-/* Hide Secondary */
+/* Hide Mobile Nav */
 @media screen and (min-width: 585px) {
   div.col-4{
     display: none !important;

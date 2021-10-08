@@ -8,10 +8,10 @@
             <!-- Navigation -->
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 default-nav">
                         <a href="<?= base_url('dashboard') ?>">
                             <div class="card shadow card2" style="max-width:32rem">
-                                <div class="row p-3" style="border:1px solid none">
+                                <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-12 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                         <i class="fas fa-chevron-left fa-2x" style="color: #999999;"></i>
                                         <span class="font-weight-bold ml-1" style="font-size: 25pt; color: #999999">Home</span>
@@ -22,10 +22,10 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card shadow card2" style="max-width:32rem">
-                            <div class="row p-3" style="border:1px solid none">
+                <div class="row border-outside">
+                    <div class="col-12 default-nav">
+                        <div class="card shadow card2" style="max-width:32rem; border:3px solid #7687CD">
+                            <div class="row p-3 default-nav">
                                 <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                     <span class="font-weight-bold" style="font-size: 25pt; color: #7687CD">Consult</span>
                                 </div>
@@ -38,10 +38,10 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 default-nav">
                         <a href="<?= base_url('mentalwellness') ?>">
                             <div class="card shadow card2" style="max-width:32rem">
-                                <div class="row p-3" style="border:1px solid none">
+                                <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                         <span class="font-weight-bold" style="font-size: 25pt; color: #CC6699">Mental Wellness</span>
                                     </div>
@@ -69,7 +69,7 @@
 
                     <div class="col-4 text-center">
                         <a href="<?= base_url('consultation') ?>">
-                            <div class="card shadow card2 py-3" style="max-width:32rem">
+                            <div class="card shadow card2 py-3" style="max-width:32rem; border:3px solid #7687CD">
                                 <i class="fas fa-comment-medical fa-2x" style="color: #7687CD"></i>
                             </div>
                         </a>
@@ -154,6 +154,8 @@
                                             <button type="submit" class="btn btn-default p-2">view all</button>
                                         </div>
                                     </div>
+
+                                    <hr class="text-danger" width="100%">
                                 </div>
                             </div>
                             <!-- /Active Tab -->
@@ -179,12 +181,20 @@
                                             <button type="submit" class="btn btn-default p-2">view all</button>
                                         </div>
                                     </div>
+
+                                    <hr class="text-danger" width="100%">
                                 </div>
                             </div>
                             <!-- /Pending tab -->
 
                             <!-- Rejected Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
+
+                                <div class="mt-n2 mb-n2" style="text-align: right;">
+                                    <a href="">Clear all</a>
+                                </div>
+                                <hr class="text-danger" width="100%">
+
                                 <div class="row">
                                     <div class="col-md-12" style="border:1px solid none">
                                         <div class="float-left">
@@ -254,6 +264,12 @@
 
                             <!-- Done Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-done" role="tabpanel" aria-labelledby="custom-tabs-four-done-tab">
+
+                                <div class="mt-n2 mb-n2" style="text-align: right;">
+                                    <a href="">Clear all</a>
+                                </div>
+                                <hr class="text-danger" width="100%">
+
                                 <div class="row">
                                     <div class="col-md-12" style="border:1px solid none">
                                         <div class="float-left">
