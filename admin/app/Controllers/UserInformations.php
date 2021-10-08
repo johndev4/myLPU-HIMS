@@ -8,8 +8,13 @@ class UserInformations extends BaseController
 {
     public function __construct()
     {
+        helper('useraccount');
         // Page title
-        $this->data['page_title'] = 'User Accounts';
+        $this->data['page_title'] = 'Dashboard';
+        // User firstname
+        $this->data['adminName'] = getAdminName();
+
+        // Medical Records Directory
         $this->medicalRecordsDir = $_SERVER['DOCUMENT_ROOT'] . 'myLPU-HIMS/clinic/public/uploaded/medical_records/';
     }
 

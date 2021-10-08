@@ -22,7 +22,7 @@ class Filters extends BaseConfig
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'loggedin'      => LoggedIn::class,
-		'notloggedin'   => NotLoggedIn::class
+        'notloggedin'   => NotLoggedIn::class
     ];
 
     /**
@@ -35,8 +35,8 @@ class Filters extends BaseConfig
         'before' => [
             // 'honeypot',
             'csrf' => [
-				'except' => ['test/*']
-			],
+                'except' => []
+            ],
         ],
         'after' => [
             'toolbar',
@@ -65,11 +65,11 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-		'loggedin' => [
-			'before' => ['dashboard', 'profile', 'useraccounts/*', 'userinformations/*']
-		],
-		'notloggedin' => [
-			'before' => ['/', 'login', 'forgotpassword']
-		]
-	];
+        'loggedin' => [
+            'before' => ['dashboard', 'profile', 'useraccounts/*', 'userinformations/*']
+        ],
+        'notloggedin' => [
+            'before' => ['/', 'login', 'forgotpassword']
+        ]
+    ];
 }

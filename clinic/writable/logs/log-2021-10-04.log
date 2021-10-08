@@ -8114,3 +8114,57 @@ CRITICAL - 2021-10-04 22:03:21 --> Trying to access array offset on value of typ
 #3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-10-04 22:58:21 --> The action you requested is not allowed.
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Security\Security.php(222): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('records/fetchAl...', 'before')
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-10-04 23:04:48 --> Undefined variable $firstname
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\layouts\side_menubar.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('layouts/side_me...', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\layouts\main.php(76): view('layouts/side_me...')
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(230): CodeIgniter\View\View->render('layouts/main', Array, true)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/help...', Array, true)
+#9 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Help.php(21): view('components/help...', Array)
+#10 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Help->index()
+#11 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Help))
+#12 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2021-10-04 23:36:25 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 127)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->fetchAllScheduledConsultations()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-04 23:36:25 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 79)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->fetchAllRequestConsultations()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-04 23:39:08 --> Undefined variable $firstname
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\layouts\side_menubar.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('layouts/side_me...', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\layouts\main.php(76): view('layouts/side_me...')
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(230): CodeIgniter\View\View->render('layouts/main', Array, true)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/help...', Array, true)
+#9 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Help.php(21): view('components/help...', Array)
+#10 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Help->index()
+#11 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Help))
+#12 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}

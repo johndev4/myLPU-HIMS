@@ -8,8 +8,11 @@ class Dashboard extends BaseController
 {
 	public function __construct()
 	{
-		// Page title
-		$this->data['page_title'] = 'Dashboard';
+		helper('useraccount');
+        // Page title
+        $this->data['page_title'] = 'Dashboard';
+        // User firstname
+        $this->data['adminName'] = getAdminName();
 	}
 
 	public function index()

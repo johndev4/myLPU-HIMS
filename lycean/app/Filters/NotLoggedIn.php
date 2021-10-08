@@ -11,8 +11,9 @@ class NotLoggedIn implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         $userAccountsModel = model('App\Models\LyceansAccountModel');
-        $credentials = $userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-        if ($credentials != []) {
+        
+        $user = $userAccountsModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        if ($user != []) {
             return redirect()->to('dashboard');
         }
     }

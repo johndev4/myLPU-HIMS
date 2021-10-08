@@ -12,11 +12,13 @@ class Auth extends BaseController
 		$this->data['page_title'] = 'Login';
 	}
 
+
+	// REQUEST TO LOGIN AND VIEW LOGIN PAGE
+	// -----------------------------------------------------------------
 	public function index()
 	{
-		// Request to login
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$userAccount = $this->userAccountModel->where('username', $_POST['username'])->first();
+			$user = $this->userAccountModel->where('username', $_POST['username'])->first();
 			$credentials = $this->userAccountModel
 				->where('username', $_POST['username'])
 				->where('password', hash('sha256', $_POST['password']))
@@ -35,19 +37,19 @@ class Auth extends BaseController
 					->set(['locked' => 0])->update();
 
 				return redirect()->to('dashboard');
-			} else if ($userAccount && $userAccount['locked'] >= 2) {
+			} else if ($user && $user['locked'] >= 2) {
 				$this->data['error'] = 'Your account is locked.';
 			} else {
 				$this->data['error'] = 'Invalid login, please try again';
 
 				// On 3 login attempts account will be locked
-				$userAccount = $this->userAccountModel->where('username', $_POST['username'])->first();
-				if ($userAccount) {
-					$userAccount['locked'] += 1;
+				$user = $this->userAccountModel->where('username', $_POST['username'])->first();
+				if ($user) {
+					$user['locked'] += 1;
 					$this->userAccountModel
 						->where('username', $_POST['username'])
 						->set([
-							'locked' => $userAccount['locked']
+							'locked' => $user['locked']
 						])->update();
 				}
 			}
@@ -57,6 +59,9 @@ class Auth extends BaseController
 		return view('auth/login', $this->data);
 	}
 
+
+	// REQUEST TO LOGOUT
+	// -----------------------------------------------------------------
 	public function logout()
 	{
 		// Delete login session on client

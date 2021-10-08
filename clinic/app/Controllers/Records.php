@@ -8,8 +8,15 @@ class Records extends BaseController
 {
 	public function __construct()
 	{
+		helper('useraccount');
 		// Page title
-		$this->data['page_title'] = 'Records';
+		$this->data['page_title'] = 'Dashboard';
+		// User firstname
+		$this->data['firstname'] = getUserFirstname();
+		// User designation
+		$this->data['designation'] = getUserDesignation();
+
+		// Base Directory of medical records
 		$this->baseDir = './uploaded/medical_records/';
 	}
 
@@ -20,7 +27,7 @@ class Records extends BaseController
 	{
 		return  [
 			'medicalfile' => [
-				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,1024]|ext_in[medicalfile,pdf]',
+				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
 					'max_size' => 'File is too large.',
@@ -42,36 +49,18 @@ class Records extends BaseController
 	// -----------------------------------------------------------------
 	public function student()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
 		// Display page view
 		return view('components/records/student', $this->data);
 	}
 
 	public function faculty()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
 		// Display page view
 		return view('components/records/faculty', $this->data);
 	}
 
 	public function staff()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
 		// Display page view
 		return view('components/records/staff', $this->data);
 	}
@@ -194,14 +183,14 @@ class Records extends BaseController
 
 				if ($file->isValid() && !$file->hasMoved()) {
 					if (!file_exists($fileDirectory . '/' . $fileName)) {
-						$file->move($fileDirectory, $fileName);
+						$success1 = $file->move($fileDirectory, $fileName);
 
-						$success = $this->healthRecordsModel->save([
+						$success2 = $this->healthRecordsModel->save([
 							'id_no' => $lycean['id_no'],
 							'file_path' => $fileDirectory . '/' . $fileName
 						]);
 
-						if ($success) {
+						if ($success1 && $success2) {
 							session()->setFlashdata('success', "Successfully uploaded.");
 							session()->setFlashdata('postData', json_encode($_POST));
 						} else {

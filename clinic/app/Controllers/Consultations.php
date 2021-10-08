@@ -8,8 +8,15 @@ class Consultations extends BaseController
 {
 	public function __construct()
 	{
+		helper('useraccount');
 		// Page title
-		$this->data['page_title'] = 'Consultations';
+		$this->data['page_title'] = 'Dashboard';
+		// User firstname
+		$this->data['firstname'] = getUserFirstname();
+		// User designation
+		$this->data['designation'] = getUserDesignation();
+
+		// Base Directory of medical files
 		$this->baseDir = './uploaded/medical_files/';
 	}
 
@@ -57,8 +64,8 @@ class Consultations extends BaseController
 	private function getUploadRules()
 	{
 		return  [
-			'medical_files' => [
-				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfiles,1024]',
+			'medicalfiles' => [
+				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfiles,2048]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
 					'max_size' => 'File is too large.'
@@ -109,8 +116,8 @@ class Consultations extends BaseController
 				<div class=\"card\" style=\"width: 20rem;\">
 					<div class=\"card-body\">
 						<div>
-							<span class=\"card-title mb-2\" style=\"font-size: 12pt;\"> " . date('F d, Y h:m A', strtotime($value['created_at'])) . " </span>
-							<span class=\"d-inline float-right text-primary request-type\">Consultation</span>
+							<span class=\"card-title mb-2\" style=\"font-size: 10pt;\"> " . date('F d, Y h:m A', strtotime($value['created_at'])) . " </span>
+							<span class=\"d-inline float-right text-primary request-type\"> {$value['category']} </span>
 						</div>
 						<div class=\"card-text\"><span class=\"font-weight-bold\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </span></div>
 						<div class=\"card-text\"><span> {$lycean['id_no']} </span></div>
@@ -273,18 +280,26 @@ class Consultations extends BaseController
 									'file_path' => $fileDirectory . '/' . $fileName
 								]);
 
-								if ($success1 && $success2) {
+								$success3 = $this->consultationsModel
+									->where('consultation_no', $id)
+									->set([
+										'status' => 'done'
+									])->update();
+
+								if ($success1 && $success2 && $success3) {
 									session()->setFlashdata('success', "Successfully uploaded.");
 								} else {
 								}
 								break;
 							} else {
-								$fileName = explode('.', $file->getName())[0] . ' ('. $i .').' . $file->getExtension();
+								$fileName = explode('.', $file->getName())[0] . ' (' . $i . ').' . $file->getExtension();
 							}
 						}
 					}
 				}
 			} else {
+				session()->setFlashdata('upload_validation', $this->validator->getErrors());
+				session()->setFlashdata('consultationNo', $id);
 			}
 		}
 

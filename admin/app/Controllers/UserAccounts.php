@@ -8,8 +8,11 @@ class UserAccounts extends BaseController
 {
 	public function __construct()
 	{
-		// Page title
-		$this->data['page_title'] = 'User Accounts';
+		helper('useraccount');
+        // Page title
+        $this->data['page_title'] = 'Dashboard';
+        // User firstname
+        $this->data['adminName'] = getAdminName();
 	}
 
 

@@ -7,7 +7,7 @@
 
         <div class="mt-5 mb-5">
             <h1 class="d-inline">Good Day </h1>
-            <span class="d-inline font-weight-bold" style="font-size: 30pt;"> Vince</span>
+            <span class="d-inline font-weight-bold" style="font-size: 30pt;"> <?= $firstname ?> </span>
             <h2 class="d-inline" style="font-size: 30pt;">!</h2>
         </div>
 

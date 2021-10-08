@@ -39,7 +39,9 @@ class Filters extends BaseConfig
             'csrf' => [
                 'except' => [
                     'consultations/sendMedicalFilesById/*',
-                    'records/uploadRecord',
+                    'records/uploadStudentRecord', 
+                    'records/uploadFacultyRecord', 
+                    'records/uploadStaffRecord'
                 ]
             ],
         ],

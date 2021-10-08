@@ -17,7 +17,7 @@
             </div>
             <div class="info">
                 <a href="<?= base_url('profile') ?>">
-                    <span class="text-light" id="username"></span>
+                    <span class="text-light"> <?= $adminName ?> </span>
                 </a>
             </div>
         </div>
@@ -160,20 +160,3 @@
     </div>
     <!-- /.sidebar -->
 </aside>
-
-<script>
-    // Get profile firstname
-    $('document').ready(function() {
-        $.ajax({
-            type: 'get',
-            url: "<?= base_url('profile/getFirstname') ?>",
-            contentType: 'text/html; charset=UTF-8',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            success: function(response) {
-                $('#username').text(response);
-            }
-        });
-    });
-</script>

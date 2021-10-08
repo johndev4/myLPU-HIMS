@@ -8,11 +8,21 @@ class Profile extends BaseController
 {
     public function __construct()
     {
-        // Page title
-        $this->data['page_title'] = 'Profile';
+        helper('useraccount');
+		// Page title
+		$this->data['page_title'] = 'Dashboard';
+		// User firstname
+		$this->data['firstname'] = getUserFirstname();
+		// User designation
+		$this->data['designation'] = getUserDesignation();
+    }
 
-        // Array of Validation Rules
-        $this->rules = [
+
+    // VALIDATION RULES
+    // -----------------------------------------------------------------
+    private function getPasswordRules()
+    {
+        return [
             'current_password' => [
                 'rules' => 'required',
                 'errors' => [
@@ -42,16 +52,11 @@ class Profile extends BaseController
 
 
     // RETURN VIEWS
-	// -----------------------------------------------------------------
+    // -----------------------------------------------------------------
     public function index()
     {
-        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
-        $this->data['username'] = $user['username'];
+        // User email
+        $this->data['username'] = getUserEmail();
 
         // Display page view
         return view('components/profile', $this->data);
@@ -59,7 +64,7 @@ class Profile extends BaseController
 
 
     // UPDATE PASSWORD
-	// -----------------------------------------------------------------
+    // -----------------------------------------------------------------
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -74,7 +79,7 @@ class Profile extends BaseController
                 session()->setFlashdata('postData', $_POST);
             }
 
-            if ($this->validate($this->rules)) {
+            if ($this->validate($this->getPasswordRules())) {
                 if ($user) {
                     $data = [
                         'password' => hash("sha256", $_POST['password'])

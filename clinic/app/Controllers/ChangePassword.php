@@ -10,9 +10,14 @@ class ChangePassword extends BaseController
     {
         // Page title
         $this->data['page_title'] = 'Change Password';
+    }
 
-        // Array of Validation Rules
-        $this->rules = [
+
+    // VALIDATION RULES
+    // -----------------------------------------------------------------
+    private function getPasswordRules()
+    {
+        return [
             'password' => [
                 'rules' => 'required|matches[confirm_password]|valid_password[{field}]',
                 'errors' => [
@@ -39,12 +44,12 @@ class ChangePassword extends BaseController
     // -----------------------------------------------------------------
     public function index()
     {
-        $credentials = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-
-        if ($credentials != []) {
-            $user = $this->userModel->find($credentials['id_no']);
+        // Change Password Filter
+        $user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        if ($user != []) {
+            $userInfo = $this->userModel->find($user['id_no']);
             if (
-                $credentials['password'] !== hash('sha256', strtoupper($user['last_name'])) &&
+                $user['password'] !== hash('sha256', strtoupper($userInfo['last_name'])) &&
                 session()->get('logged_in') == TRUE
             ) {
                 return redirect()->to('dashboard');
@@ -66,7 +71,7 @@ class ChangePassword extends BaseController
                 ->where('password', session()->get('pwd'))
                 ->first();
 
-            if ($this->validate($this->rules)) {
+            if ($this->validate($this->getPasswordRules())) {
                 if ($user) {
                     $data = [
                         'password' => hash("sha256", $_POST['password'])
