@@ -98,12 +98,15 @@
                         </div>
                         <div class="form-group">
                             <!-- <label for="FormControlTextarea" class="font-weight-normal mb-2" style="font-size: 18pt; color: rgb(116, 116, 116);">Tell the doctor your health concern.</label> -->
-                            <textarea class="form-control txtarea border-0" id="FormControlTextarea" rows="5" placeholder="Tell us here..." maxlength="100"></textarea>
-                            <div class="mb-2" id="count" align="right">
-                                <span id="current">0</span>
-                                <span id="maximum">/ 100</span>
-                            </div>
-                            <button type="submit" class="btn btn-block btn-default p-2">Send Request Now<i class="far fa-paper-plane ml-2"></i></button>
+                            <form action="<?= base_url('consultation/sendConsultation') ?>" method="post" id="">
+                                <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+                                <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Tell us here..." maxlength="100" required="required"></textarea>
+                                <div class="mb-2" id="count" align="right">
+                                    <span id="current">0</span>
+                                    <span id="maximum">/ 100</span>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-default p-2" id="sendBtn_consultation">Send Request Now<i class="far fa-paper-plane ml-2"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -334,9 +337,22 @@
 
 <script>
     $(document).ready(function() {
+        <?php if (session()->get('success') !== null) : ?>
+            // Sweet Alert for success staus
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->get('success'); ?>'
+            });
+        <?php endif; ?>
+
         //For Textarea character count
         $('textarea').keyup(function() {
-
             var characterCount = $(this).val().length,
                 current = $('#current'),
                 maximum = $('#maximum'),
@@ -355,9 +371,13 @@
                 maximum.css('color', '#666');
                 theCount.css('font-weight', 'normal');
             }
-
         });
 
+        // Disable "consultation request" when there is pending request of specific lycean
+        <?php if (!empty(session()->get('sendBtn_disabled')) && !empty(session()->get('message_disabled'))) : ?>
+            <?= session()->get('sendBtn_disabled') ?>
+            <?= session()->get('message_disabled') ?>
+        <?php endif; ?>
     });
 </script>
 

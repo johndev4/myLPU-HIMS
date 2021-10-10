@@ -31,3 +31,12 @@ function getUserEmail()
 
     return $user['username'];
 }
+
+function getIdNo()
+{
+    $userAccountModel = model('App\Models\LyceansAccountModel');
+
+    $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+
+    return $user['id_no'];
+}
