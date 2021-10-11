@@ -13,6 +13,8 @@ class Help extends BaseController
 		$this->data['page_title'] = 'Help Menu';
 		// User fullname
 		$this->data['fullname'] = getUserFullname();
+		// User ID No.
+        $this->data['idNo'] = getIdNo();
 	}
 
 

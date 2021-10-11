@@ -13,6 +13,8 @@ class MentalWellness extends BaseController
         $this->data['page_title'] = 'Mental Wellness';
         // User fullname
         $this->data['fullname'] = getUserFullname();
+        // User ID No.
+        $this->data['idNo'] = getIdNo();
     }
 
 

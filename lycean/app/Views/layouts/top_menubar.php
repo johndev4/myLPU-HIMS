@@ -45,7 +45,7 @@
                         <i class="far fa-bell fa-lg text-light"></i>
                         <span class="text-white ml-1 notification">Notification</span>
                         <!-- Notification Badge-->
-                        <span class="badge badge-danger navbar-badge">15</span>
+                        <span class="badge badge-danger navbar-badge" id="notificationCount"></span>
                         <!-- /Notification Badge-->
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -70,3 +70,35 @@
     </div>
 </nav>
 <!-- /.navbar -->
+
+
+<script>
+    $('document').ready(function() {
+        // Fetch Pending Consultation
+        var requestCount;
+        $.ajax({
+            url: '<?= base_url('notifications/fetchAllNotifications/'.$idNo) ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#notificationList').html(response['result']);
+                $('#notificationCount').html(response['unreadCount']);
+                requestCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('notifications/fetchAllNotifications/'.$idNo) ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != requestCount) {
+                        $('#notificationList').html(response['result']);
+                        $('#notificationCount').html(response['unreadCount']);
+                        requestCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
+    });
+</script>

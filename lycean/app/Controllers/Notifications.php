@@ -19,11 +19,14 @@ class Notifications extends BaseController
 		$notifications = $this->lyceansNotificationModel
 			->where('id_no', $id)
 			->findAll();
+		$unreadNotifications = $this->lyceansNotificationModel
+			->where('id_no', $id)->where('status', 'unread')
+			->findAll();
 
 		$result = "";
 		foreach ($notifications as $notification) {
 			$timeInterval = time_elapsed_string($notification['created_at']);
-			$status = $notification['status'] == "read"? "strong" : "normal";
+			$status = $notification['status'] == "unread" ? "bold" : "normal";
 
 			$data = "
 			<div class=\"dropdown-divider\"></div>
@@ -35,8 +38,8 @@ class Notifications extends BaseController
 			$result .= $data;
 		}
 
-		// return json_encode(['result' => $result, 'count' => count($consultations)]);
-		echo $result;
+		return json_encode(['result' => $result, 'count' => count($notifications), 'unreadCount' => count($unreadNotifications)]);
+		// echo $result;
 	}
 
 
