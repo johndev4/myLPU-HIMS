@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2021 at 09:11 AM
+-- Generation Time: Oct 11, 2021 at 08:34 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -52,7 +52,7 @@ INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`) 
 
 DROP TABLE IF EXISTS `consultations`;
 CREATE TABLE `consultations` (
-  `consultation_no` int(11) NOT NULL,
+  `consultation_no` varchar(16) NOT NULL,
   `queue_no` int(11) DEFAULT NULL,
   `status` varchar(45) NOT NULL,
   `category` varchar(45) NOT NULL,
@@ -71,10 +71,10 @@ CREATE TABLE `consultations` (
 --
 
 INSERT INTO `consultations` (`consultation_no`, `queue_no`, `status`, `category`, `message`, `personnel_id_no`, `lycean_id_no`, `meeting_schedule`, `meeting_link`, `rejection_message`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'pending', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', NULL, '2018-2-03248', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
-(2, NULL, 'pending', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', NULL, '2018-2-02181', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
-(3, 1, 'active', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', '2016-3-3456', '2018-2-01763', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
-(4, 1, 'active', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2018-2-01509', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-10-06 23:35:01');
+('agEI9m0vJAbkhUq5', NULL, 'pending', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', NULL, '2018-2-02181', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
+('jYUVg7t3uyw201vp', 1, 'active', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', '2016-3-3456', '2018-2-01763', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
+('KPUxE6RgFp1eYWzr', NULL, 'pending', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', NULL, '2018-2-03248', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
+('RJugrqo1NmsYEdht', 1, 'active', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2018-2-01509', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00');
 
 -- --------------------------------------------------------
 
@@ -122,8 +122,8 @@ CREATE TABLE `health_personnels_account` (
 --
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locked`) VALUES
-('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', 0),
-('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', 0),
+('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL),
+('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL),
 ('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8', NULL),
 ('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839', NULL),
 ('2016-3-9012', 'kwak.kwak@lpu.edu.ph', '9e166b2660994213ac25eb570995d53aca1736c2cda1e36f7342991f9423cdfc', NULL);
@@ -175,8 +175,7 @@ INSERT INTO `lyceans` (`id_no`, `first_name`, `middle_name`, `last_name`, `role`
 ('2018-2-01509', 'Chris Jover', 'A', 'De Leon', 'student', 'COECSA', '1999-11-06', 'Male', NULL, NULL, NULL),
 ('2018-2-01763', 'Rick Vincent Jeffrey', 'P', 'Dela Cruz', 'student', 'COECSA', '1999-10-19', 'Male', NULL, NULL, NULL),
 ('2018-2-02181', 'John Rafael', 'P', 'Mistica', 'student', 'COECSA', '1998-07-04', 'Male', NULL, NULL, NULL),
-('2018-2-03248', 'Jade Anne Kristel', 'J', 'Vale', 'student', 'COECSA', '2000-10-14', 'Female', NULL, NULL, NULL),
-('id_no', 'first_name', 'middle_name', 'last_name', 'role', 'department', '0000-00-00', 'gender', 'hei', 'wei', 'blo');
+('2018-2-03248', 'Jade Anne Kristel', 'J', 'Vale', 'student', 'COECSA', '2000-10-14', 'Female', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -202,9 +201,8 @@ INSERT INTO `lyceans_account` (`id_no`, `username`, `password`, `locked`) VALUES
 ('2015-2-09696', 'momo.hirai@lpunetwork.edu.ph', '00bd50b4eead991214bef23eb367a8837fd062bc657c5c74b8f24c095f91875a', NULL),
 ('2018-2-01509', 'chris.deleon@lpunetwork.edu.ph', '15b3530e61aa540e86b8f9b4f3d88245fd4fe81ea411cdbb84a5da52f75255b6', NULL),
 ('2018-2-01763', 'rick.delacruz@lpunetwork.edu.ph', '32c0230638a1a851c38d5f223e94a0e9ac9b55bae7747233b6edc358aa72c23a', NULL),
-('2018-2-02181', 'john.mistica@lpunetwork.edu.ph', '918f24ab2bacdffde0f9cc096f5d02d37a5b89d68a8bed1320cf4868f16d2301', 0),
-('2018-2-03248', 'jade.vale@lpunetwork.edu.ph', '278d3872d86a41fd8ea83b5ef0c7118ecc6a445e6d0da818b08ac7c689d53f6d', 0),
-('id_no', 'username', 'password', 0);
+('2018-2-02181', 'john.mistica@lpunetwork.edu.ph', '918f24ab2bacdffde0f9cc096f5d02d37a5b89d68a8bed1320cf4868f16d2301', NULL),
+('2018-2-03248', 'jade.vale@lpunetwork.edu.ph', '278d3872d86a41fd8ea83b5ef0c7118ecc6a445e6d0da818b08ac7c689d53f6d', NULL);
 
 -- --------------------------------------------------------
 
@@ -215,8 +213,25 @@ INSERT INTO `lyceans_account` (`id_no`, `username`, `password`, `locked`) VALUES
 DROP TABLE IF EXISTS `medical_files`;
 CREATE TABLE `medical_files` (
   `file_id` int(11) NOT NULL,
-  `consultation_no` int(11) NOT NULL,
+  `consultation_no` varchar(16) NOT NULL,
   `file_path` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notifications`
+--
+
+DROP TABLE IF EXISTS `notifications`;
+CREATE TABLE `notifications` (
+  `notification_id` int(11) NOT NULL,
+  `id_no` varchar(45) NOT NULL,
+  `info` varchar(45) NOT NULL,
+  `status` varchar(45) NOT NULL,
+  `consultation_link` varchar(2086) NOT NULL,
+  `created_at` varchar(45) NOT NULL,
+  `updated_at` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -272,8 +287,15 @@ ALTER TABLE `lyceans_account`
 -- Indexes for table `medical_files`
 --
 ALTER TABLE `medical_files`
-  ADD PRIMARY KEY (`file_id`),
-  ADD KEY `fk_medical_documents_consultations1` (`consultation_no`);
+  ADD PRIMARY KEY (`file_id`,`consultation_no`),
+  ADD KEY `fk_medical_files_consultations1` (`consultation_no`);
+
+--
+-- Indexes for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`notification_id`),
+  ADD KEY `fk_notifications_copy1_lyceans1` (`id_no`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -286,22 +308,16 @@ ALTER TABLE `administrators`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `consultations`
---
-ALTER TABLE `consultations`
-  MODIFY `consultation_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `health_records`
 --
 ALTER TABLE `health_records`
-  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `medical_files`
 --
 ALTER TABLE `medical_files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -336,7 +352,13 @@ ALTER TABLE `lyceans_account`
 -- Constraints for table `medical_files`
 --
 ALTER TABLE `medical_files`
-  ADD CONSTRAINT `fk_medical_documents_consultations1` FOREIGN KEY (`consultation_no`) REFERENCES `consultations` (`consultation_no`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_medical_files_consultations1` FOREIGN KEY (`consultation_no`) REFERENCES `consultations` (`consultation_no`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD CONSTRAINT `fk_notifications_copy1_lyceans1` FOREIGN KEY (`id_no`) REFERENCES `lyceans` (`id_no`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

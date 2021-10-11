@@ -9,7 +9,7 @@ class ConsultationsModel extends Model
     protected $DBGroup              = 'default';
     protected $table                = 'consultations';
     protected $primaryKey           = 'consultation_no';
-    protected $useAutoIncrement     = true;
+    protected $useAutoIncrement     = false;
     protected $insertID             = 0;
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
@@ -18,11 +18,9 @@ class ConsultationsModel extends Model
         'consultation_no',
         'queue_no',
         'status',
-        'personnel_id_no',
-        'lycean_id_no',
-        'meeting_schedule',
-        'meeting_link',
-        'rejection_message'
+        'category',
+        'message',
+        'lycean_id_no'
     ];
 
     // Dates
