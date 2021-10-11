@@ -72,7 +72,7 @@ class Consultation extends BaseController
     public function fetchActiveConsultation()
     {
         $consultations = $this->consultationsModel
-            ->where('lycean_id_no', getIdNo())->where('status', 'active')
+            ->where('lycean_id_no', getIdNo())->where('status', 'active')->where('category', 'Consultation')
             ->findAll();
 
         $result = "";
@@ -111,7 +111,7 @@ class Consultation extends BaseController
     public function fetchPendingConsultation()
     {
         $consultations = $this->consultationsModel
-            ->where('lycean_id_no', getIdNo())->where('status', 'pending')
+            ->where('lycean_id_no', getIdNo())->where('status', 'pending')->where('category', 'Consultation')
             ->findAll();
 
         $result = "";
@@ -146,7 +146,7 @@ class Consultation extends BaseController
     public function fetchRejectedConsultation()
     {
         $consultations = $this->consultationsModel
-            ->where('lycean_id_no', getIdNo())->where('status', 'rejected')
+            ->where('lycean_id_no', getIdNo())->where('status', 'rejected')->where('category', 'Consultation')
             ->findAll();
 
         $result = "";
@@ -181,7 +181,7 @@ class Consultation extends BaseController
     public function fetchDoneConsultation()
     {
         $consultations = $this->consultationsModel
-            ->where('lycean_id_no', getIdNo())->where('status', 'active')
+            ->where('lycean_id_no', getIdNo())->where('status', 'active')->where('category', 'Consultation')
             ->findAll();
 
         $result = "";
