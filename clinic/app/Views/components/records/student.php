@@ -70,42 +70,42 @@
                                                             <div class="col-md-12">
                                                                 <label class="text-secondary">Birthday</label><br>
                                                             </div>
-                                                            <div class="col-md-6 mt-n2">
+                                                            <div class="col-md-12 mt-n2">
                                                                 <span class="h5" id="birthdate"></span>
                                                             </div>
 
                                                             <div class="col-md-12 mt-2">
                                                                 <label class="text-secondary">Age</label><br>
                                                             </div>
-                                                            <div class="col-md-6 mt-n2">
+                                                            <div class="col-md-12 mt-n2">
                                                                 <span class="h5" id="age"></span>
                                                             </div>
 
                                                             <div class="col-md-12 mt-2">
                                                                 <label class="text-secondary">Gender</label><br>
                                                             </div>
-                                                            <div class="col-md-6 mt-n2">
+                                                            <div class="col-md-12 mt-n2">
                                                                 <span class="h5" id="gender"></span>
                                                             </div>
 
                                                             <div class="col-md-12 mt-2">
                                                                 <label class="text-secondary">Blood type</label><br>
                                                             </div>
-                                                            <div class="col-md-6 mt-n2">
+                                                            <div class="col-md-12 mt-n2">
                                                                 <span class="h5" id="bloodtype"></span>
                                                             </div>
 
                                                             <div class="col-md-12 mt-2">
                                                                 <label class="text-secondary">Height</label><br>
                                                             </div>
-                                                            <div class="col-md-6 mt-n2">
+                                                            <div class="col-md-12 mt-n2">
                                                                 <span class="h5" id="height"></span>
                                                             </div>
 
                                                             <div class="col-md-12 mt-2">
                                                                 <label class="text-secondary">Weight</label><br>
                                                             </div>
-                                                            <div class="col-md-6 mt-n2">
+                                                            <div class="col-md-12 mt-n2">
                                                                 <span class="h5" id="weight"></span>
                                                             </div>
                                                         </div>
