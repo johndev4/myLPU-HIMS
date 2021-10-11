@@ -64,8 +64,8 @@ class Filters extends BaseConfig
      */
     public $filters = [
 		'loggedin' => [
-			'before' => ['dashboard', 'profile', 'consultation', 'mentalwellness', 'changepassword'],
-			'after' => ['dashboard', 'profile', 'consultation', 'mentalwellness']
+			'before' => ['dashboard', 'profile', 'consultation/*', 'mentalwellness/*', 'changepassword'],
+			'after' => ['dashboard', 'profile', 'consultation/*', 'mentalwellness/*']
 		],
 		'notloggedin' => [
 			'before' => ['/', 'login', 'forgotpassword'],
