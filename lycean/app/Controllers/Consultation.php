@@ -77,11 +77,11 @@ class Consultation extends BaseController
 
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
-                <div class=\"float-left\">
+                <div class=\"\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
-                        <span class=\"text-dark\">Time: </span><span> {$schedule_time} </span>
-                        <span class=\"text-dark ml-5\">Date: </span><span> {$schedule_date} </span>
+                        <span class=\"text-dark time\">Time: {$schedule_time}</span>
+                        <span class=\"text-dark date float-right\">Date: {$schedule_date}</span>
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
@@ -115,11 +115,11 @@ class Consultation extends BaseController
         foreach ($consultations as $consultation) {
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
-                <div class=\"float-left\">
+                <div class=\"\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
-                        <span class=\"text-dark\">Time: </span><span> --- </span>
-                        <span class=\"text-dark ml-5\">Date: </span><span> --- </span>
+                        <span class=\"text-dark time\">Time: ---</span>
+                        <span class=\"text-dark date float-right\">Date: ---</span>
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
@@ -152,11 +152,11 @@ class Consultation extends BaseController
         $result = "";
         foreach ($consultations as $consultation) {
             $data = "<div class=\"col-md-12\" style=\"border:1px solid none\">
-            <div class=\"float-left\">
+            <div class=\"\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
-                        <span class=\"text-dark\">Time: </span><span> --- </span>
-                        <span class=\"text-dark ml-5\">Date: </span><span> --- </span>
+                        <span class=\"text-dark time\">Time: ---</span>
+                        <span class=\"text-dark date float-right\">Date: ---</span>
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
@@ -192,11 +192,11 @@ class Consultation extends BaseController
 
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
-                <div class=\"float-left\">
+                <div class=\"\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
-                        <span class=\"text-dark\">Time: </span><span> {$schedule_time} </span>
-                        <span class=\"text-dark ml-5\">Date: </span><span> {$schedule_date} </span>
+                        <span class=\"text-dark time\">Time: {$schedule_time}</span>
+                        <span class=\"text-dark date float-right\">Date: {$schedule_date}</span>
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
