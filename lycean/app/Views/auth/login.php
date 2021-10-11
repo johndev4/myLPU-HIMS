@@ -33,15 +33,6 @@
         </div>
 
         <div class="card-body login-card-body shadow">
-            <!-- Invalid login display -->
-            <span class="text-danger">
-                <?php if (isset($error)) : ?>
-                    <em class="form-control text-danger" style="border-color:rgb(255, 180, 180); background-color:rgb(255, 180, 180); border-radius:6px;">
-                        <?php echo $error ?>
-                    </em>
-                <?php endif ?>
-            </span>
-
             <div class="row pt-1">
                 <div class="col-lg-6 border-line">
                     <h4 class="mb-4 font-weight-bold text-secondary">Login</h4>
