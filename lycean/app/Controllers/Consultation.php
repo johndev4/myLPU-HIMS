@@ -10,7 +10,7 @@ class Consultation extends BaseController
     {
         helper(['useraccount', 'consultation']);
         // Page title
-        $this->data['page_title'] = 'Dashboard';
+        $this->data['page_title'] = 'Consultation';
         // User fullname
         $this->data['fullname'] = getUserFullname();
     }
@@ -73,8 +73,9 @@ class Consultation extends BaseController
             $schedule_date = date('F d, Y', strtotime($consultation['meeting_schedule']));
 
 
-            $data = "<div class=\"col-md-12\" style=\"border:1px solid none\">
-            <div class=\"float-left\">
+            $data = "
+            <div class=\"col-md-12\" style=\"border:1px solid none\">
+                <div class=\"float-left\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
                         <span class=\"text-dark\">Time: </span><span> {$schedule_time} </span>
@@ -85,14 +86,16 @@ class Consultation extends BaseController
                         <a href=\"{$consultation['meeting_link']}\"> {$consultation['meeting_link']} </a>
                     </div>
                 </div>
-            </div>
-            <div class=\"col-lg-12\" style=\"border:1px solid none\">
-                <div class=\"float-right\">
-                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
-            </div>
+                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                    <div class=\"float-right\">
+                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                    </div>
+                </div>
 
-            <hr class=\"text-danger\" width=\"100%\">";
+                <hr class=\"text-danger\" width=\"100%\">
+            </div>
+            ";
 
             $result .= $data;
         }
@@ -108,8 +111,9 @@ class Consultation extends BaseController
 
         $result = "";
         foreach ($consultations as $consultation) {
-            $data = "<div class=\"col-md-12\" style=\"border:1px solid none\">
-            <div class=\"float-left\">
+            $data = "
+            <div class=\"col-md-12\" style=\"border:1px solid none\">
+                <div class=\"float-left\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
                         <span class=\"text-dark\">Time: </span><span> --- </span>
@@ -120,14 +124,16 @@ class Consultation extends BaseController
                         <a> --- </a>
                     </div>
                 </div>
-            </div>
-            <div class=\"col-lg-12\" style=\"border:1px solid none\">
-                <div class=\"float-right\">
-                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
-            </div>
+                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                    <div class=\"float-right\">
+                        <a href=\"" . base_url('mentalwellness/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                    </div>
+                </div>
 
-            <hr class=\"text-danger\" width=\"100%\">";
+                <hr class=\"text-danger\" width=\"100%\">
+            </div>
+            ";
 
             $result .= $data;
         }
@@ -173,7 +179,7 @@ class Consultation extends BaseController
     public function fetchDoneConsultation()
     {
         $consultations = $this->consultationsModel
-            ->where('lycean_id_no', getIdNo())->where('status', 'active')->where('category', 'Consultation')
+            ->where('lycean_id_no', getIdNo())->where('status', 'done')->where('category', 'Consultation')
             ->findAll();
 
         $result = "";
@@ -182,8 +188,9 @@ class Consultation extends BaseController
             $schedule_date = date('F d, Y', strtotime($consultation['meeting_schedule']));
 
 
-            $data = "<div class=\"col-md-12\" style=\"border:1px solid none\">
-            <div class=\"float-left\">
+            $data = "
+            <div class=\"col-md-12\" style=\"border:1px solid none\">
+                <div class=\"float-left\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
                         <span class=\"text-dark\">Time: </span><span> {$schedule_time} </span>
@@ -194,14 +201,16 @@ class Consultation extends BaseController
                         <a href=\"{$consultation['meeting_link']}\"> {$consultation['meeting_link']} </a>
                     </div>
                 </div>
-            </div>
-            <div class=\"col-lg-12\" style=\"border:1px solid none\">
-                <div class=\"float-right\">
-                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
-            </div>
+                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                    <div class=\"float-right\">
+                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                    </div>
+                </div>
 
-            <hr class=\"text-danger\" width=\"100%\">";
+                <hr class=\"text-danger\" width=\"100%\">
+            </div>
+            ";
 
             $result .= $data;
         }

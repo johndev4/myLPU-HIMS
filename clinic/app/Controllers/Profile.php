@@ -10,7 +10,7 @@ class Profile extends BaseController
     {
         helper('useraccount');
 		// Page title
-		$this->data['page_title'] = 'Dashboard';
+		$this->data['page_title'] = 'Profile';
 		// User firstname
 		$this->data['firstname'] = getUserFirstname();
 		// User designation
