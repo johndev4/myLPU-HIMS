@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/consultation.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/navbar.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/consultation.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/profile.css') ?>">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -75,7 +76,7 @@
         <?= $this->renderSection('content') ?>
 
         <!-- Footer -->
-        <footer class="main-footer" style="text-align: center;">
+        <footer class="main-footer fixed-bottom" style="text-align: center;">
             <strong>Copyright &copy;<?= date('Y') ?></strong>
             All rights reserved.
         </footer>

@@ -1,0 +1,15 @@
+@media screen and (max-width:585px) {
+    h1.m-0.font-weight-bold.text-dark{
+        font-size: 24pt !important;
+    }
+    i.fas.fa-chevron-left.fa-2x.font-weight-normal{
+        font-size: 17pt !important;
+    }
+    span.font-weight-normal.ml-1{
+        font-size: 20pt !important;
+    }
+    i.fas.fa-user-circle.fa-5x.nav-icon.text-secondary::before{
+        font-size: 50pt !important;
+    }
+} 
+
