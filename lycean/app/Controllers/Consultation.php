@@ -96,7 +96,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                    <button type=\"submit\" class=\"btn btn-default p-2\">view all</button>
+                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -105,7 +105,7 @@ class Consultation extends BaseController
             $result .= $data;
         }
 
-        return $result;
+        return json_encode(['result' => $result, 'count' => count($consultations)]);
     }
 
     public function fetchPendingConsultation()
@@ -131,7 +131,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                    <button type=\"submit\" class=\"btn btn-default p-2\">view all</button>
+                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -140,7 +140,7 @@ class Consultation extends BaseController
             $result .= $data;
         }
 
-        return $result;
+        return json_encode(['result' => $result, 'count' => count($consultations)]);
     }
 
     public function fetchRejectedConsultation()
@@ -166,7 +166,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                    <button type=\"submit\" class=\"btn btn-default p-2\">view all</button>
+                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -175,7 +175,7 @@ class Consultation extends BaseController
             $result .= $data;
         }
 
-        return $result;
+        return json_encode(['result' => $result, 'count' => count($consultations)]);
     }
 
     public function fetchDoneConsultation()
@@ -205,7 +205,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                    <button type=\"submit\" class=\"btn btn-default p-2\">view all</button>
+                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -214,7 +214,7 @@ class Consultation extends BaseController
             $result .= $data;
         }
 
-        return $result;
+        return json_encode(['result' => $result, 'count' => count($consultations)]);
     }
 
 

@@ -193,7 +193,6 @@
                 }
             });
         }, 500);
-
         // Fetch All Scheduled Consultations
         var scheduledCount;
         $.ajax({
@@ -218,7 +217,7 @@
                 }
             });
         }, 500);
-
+        
         //For Textarea character count
         $('textarea').keyup(function() {
 

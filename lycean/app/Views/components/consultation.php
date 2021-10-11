@@ -138,188 +138,32 @@
                         <div class="tab-content" id="custom-tabs-four-tabContent">
                             <!-- Active Tab -->
                             <div class="tab-pane fade show active" id="custom-tabs-four-active" role="tabpanel" aria-labelledby="custom-tabs-four-active-tab">
-                                <div class="row">
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>8:30 am</span>
-                                                <span class="text-dark ml-5">Date: </span><span>10-07-2021</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">http://localhost/myLPU-HIMS/lycean/public/consultation</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
+                                <div class="row" id="activeTab">
+                                    <!-- ACTIVE CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Active Tab -->
 
                             <!-- Pending tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-pending" role="tabpanel" aria-labelledby="custom-tabs-four-pending-tab">
-                                <div class="row">
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>---</span>
-                                                <span class="text-dark ml-5">Date: </span><span>---</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">---</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
+                                <div class="row" id="pendingTab">
+                                    <!-- PENDING CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Pending tab -->
 
                             <!-- Rejected Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
-                                <div class="row">
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>---</span>
-                                                <span class="text-dark ml-5">Date: </span><span>---</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">---</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
-
-                                    <hr class="text-danger" width="100%">
-
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>---</span>
-                                                <span class="text-dark ml-5">Date: </span><span>---</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">---</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
-
-                                    <hr class="text-danger" width="100%">
-
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>---</span>
-                                                <span class="text-dark ml-5">Date: </span><span>---</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">---</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
-
-                                    <hr class="text-danger" width="100%">
+                                <div class="row" id="rejectedTab">
+                                    <!-- REJECTED CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Rejected Tab -->
 
                             <!-- Done Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-done" role="tabpanel" aria-labelledby="custom-tabs-four-done-tab">
-                                <div class="row">
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>8:30 am</span>
-                                                <span class="text-dark ml-5">Date: </span><span>10-07-2021</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">http://localhost/myLPU-HIMS/lycean/public/consultation</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
-
-                                    <hr class="text-danger" width="100%">
-
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>8:30 am</span>
-                                                <span class="text-dark ml-5">Date: </span><span>10-07-2021</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">http://localhost/myLPU-HIMS/lycean/public/consultation</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
-
-                                    <hr class="text-danger" width="100%">
-
-                                    <div class="col-md-12" style="border:1px solid none">
-                                        <div class="float-left">
-                                            <label class="d-block text-secondary mt-n1">Schedule</label>
-                                            <div class="mt-n2 mb-2">
-                                                <span class="text-dark">Time: </span><span>8:30 am</span>
-                                                <span class="text-dark ml-5">Date: </span><span>10-07-2021</span>
-                                            </div>
-                                            <label class="d-block text-secondary">Meeting Link</label>
-                                            <div class="mt-n2">
-                                                <a href="">http://localhost/myLPU-HIMS/lycean/public/consultation</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12" style="border:1px solid none">
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-default p-2">view all</button>
-                                        </div>
-                                    </div>
-
-                                    <hr class="text-danger" width="100%">
+                                <div class="row" id="doneTab">
+                                    <!-- DONE CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Done Tab -->
@@ -378,6 +222,103 @@
             <?= session()->get('sendBtn_disabled') ?>
             <?= session()->get('message_disabled') ?>
         <?php endif; ?>
+
+        // Fetch Active Consultation
+        var requestCount;
+        $.ajax({
+            url: '<?= base_url('consultation/fetchActiveConsultation') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#activeTab').html(response['result']);
+                requestCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultation/fetchActiveConsultation') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != requestCount) {
+                        $('#activeTab').html(response['result']);
+                        requestCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
+        // Fetch Pending Consultation
+        var requestCount;
+        $.ajax({
+            url: '<?= base_url('consultation/fetchPendingConsultation') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#pendingTab').html(response['result']);
+                requestCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultation/fetchPendingConsultation') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != requestCount) {
+                        $('#pendingTab').html(response['result']);
+                        requestCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
+        // Fetch Rejected Consultation
+        var requestCount;
+        $.ajax({
+            url: '<?= base_url('consultation/fetchRejectedConsultation') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#rejectedTab').html(response['result']);
+                requestCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultation/fetchRejectedConsultation') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != requestCount) {
+                        $('#rejectedTab').html(response['result']);
+                        requestCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
+        // Fetch Done Consultation
+        var requestCount;
+        $.ajax({
+            url: '<?= base_url('consultation/fetchDoneConsultation') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#doneTab').html(response['result']);
+                requestCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultation/fetchDoneConsultation') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != requestCount) {
+                        $('#doneTab').html(response['result']);
+                        requestCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
     });
 </script>
 
