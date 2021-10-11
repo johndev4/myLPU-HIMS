@@ -8,7 +8,7 @@ class Consultation extends BaseController
 {
     public function __construct()
     {
-        helper('useraccount');
+        helper(['useraccount', 'consultation']);
         // Page title
         $this->data['page_title'] = 'Dashboard';
         // User fullname
@@ -36,15 +36,7 @@ class Consultation extends BaseController
     // -----------------------------------------------------------------
     public function index()
     {
-        $pending_consultation = $this->consultationsModel
-            ->where('lycean_id_no', getIdNo())->where('status', 'pending')
-            ->find();
-
-        $active_consultation = $this->consultationsModel
-            ->where('lycean_id_no', getIdNo())->where('status', 'active')
-            ->find();
-
-        if ($pending_consultation || $active_consultation) {
+        if (hasActive() || hasPending()) {
             session()->setFlashdata('sendBtn_disabled', "$('#sendBtn_consultation').prop('disabled', 'disabled');");
             session()->setFlashdata('message_disabled', "$('#message_consultation').prop('disabled', 'disabled');");
         }
@@ -96,7 +88,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -131,7 +123,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -166,7 +158,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -205,7 +197,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                <a href=\"".base_url('consultation/details/'.$consultation['consultation_no'])."\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -225,15 +217,7 @@ class Consultation extends BaseController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($this->validate($this->getMessageRules())) {
-                $pending_consultation = $this->consultationsModel
-                    ->where('lycean_id_no', getIdNo())->where('status', 'pending')
-                    ->find();
-
-                $active_consultation = $this->consultationsModel
-                    ->where('lycean_id_no', getIdNo())->where('status', 'active')
-                    ->find();
-
-                if (!$pending_consultation && !$active_consultation) {
+                if (!hasActive() && !hasPending()) {
                     while (true) {
                         $consultation_no = random_string('alnum', 16);
                         if (!$this->consultationsModel->find($consultation_no)) {
