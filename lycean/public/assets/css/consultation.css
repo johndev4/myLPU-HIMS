@@ -104,14 +104,8 @@ a#custom-tabs-four-done-tab.nav-link{
     }
 }
 
-
 /* Consultation Tab */
-
-
-/* Consultation Tab */
-
-/* Consultation Details */
-@media screen and (max-width:985px) {
+@media screen and (max-width:400px) {
     span.text-dark.time{
         display: block !important;
     }
@@ -120,6 +114,18 @@ a#custom-tabs-four-done-tab.nav-link{
         float: none !important;
     }
 }
+/* Consultation Tab */
+
+/* Consultation Details */
+/* @media screen and (max-width:985px) {
+    span.text-dark.time{
+        display: block !important;
+    }
+    span.text-dark.date.float-right{
+        display: block !important;
+        float: none !important;
+    }
+} */
 /* Consultation Details */
 
 

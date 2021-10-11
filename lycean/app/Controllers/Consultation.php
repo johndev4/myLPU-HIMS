@@ -75,7 +75,7 @@ class Consultation extends BaseController
 
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
-                <div class=\"float-left\">
+                <div class=\"\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
                         <span class=\"text-dark time\">Time: {$schedule_time}</span>
@@ -113,7 +113,7 @@ class Consultation extends BaseController
         foreach ($consultations as $consultation) {
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
-                <div class=\"float-left\">
+                <div class=\"\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
                         <span class=\"text-dark time\">Time: ---</span>
@@ -190,7 +190,7 @@ class Consultation extends BaseController
 
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
-                <div class=\"float-left\">
+                <div class=\"\">
                     <label class=\"d-block text-secondary mt-n1\">Schedule</label>
                     <div class=\"mt-n2 mb-2\">
                         <span class=\"text-dark time\">Time: {$schedule_time}</span>
