@@ -67,13 +67,11 @@ class Notifications extends BaseController
 	{
 		$success = $this->lyceansNotificationModel->where('id_no', getIdNo())->delete();
 
-		if ($success) {
-			// SUCCESS
-		} else {
-			// ERROR
+		if ($success) {// SUCCESS
+		} else {// ERROR
 		}
 
-		return redirect()->to('');
+		return redirect()->to($_SERVER['HTTP_REFERER']);
 	}
 
 
