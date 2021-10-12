@@ -129,6 +129,36 @@ a#custom-tabs-four-done-tab.nav-link{
 /* Consultation Details */
 
 
+/* VIEW ALL */
+
+/* Details Tab */
+a#custom-tabs-four-details-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-details-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+}
+
+/* Documents Tab */
+a#custom-tabs-four-documents-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-documents-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+}
+
+
+
+
+
 
 
 
