@@ -44,23 +44,14 @@
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell fa-lg text-light"></i>
                         <span class="text-white ml-1 notification">Notification</span>
-                        <!-- Notification Badge-->
-                        <span class="badge badge-danger navbar-badge" id="notificationCount"></span>
-                        <!-- /Notification Badge-->
+                        <span class="badge badge-danger navbar-badge" id="notificationBadge"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-header">12 Notifications</span>
+                        <span class="dropdown-header">
+                            <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
+                        </span>
                         <div id="notificationList">
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
-                                <i class="fas fa-comment-medical mr-2"></i><span>4 Mental wellness request</span>
-                                <span class="float-right text-muted text-sm">3 mins</span>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
-                                <i class="fas fa-stethoscope mr-2"></i> <span>8 Consultation requests</span>
-                                <span class="float-right text-muted text-sm">12 hours</span>
-                            </a>
+                            <!-- NOTIFICATIONS HERE -->
                         </div>
                     </div>
                 </li>
@@ -74,31 +65,44 @@
 
 <script>
     $('document').ready(function() {
-        // Fetch Pending Consultation
+        // Fetch All Notifications
         var requestCount;
         $.ajax({
-            url: '<?= base_url('notifications/fetchAllNotifications/'.$idNo) ?>',
+            url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#notificationList').html(response['result']);
-                $('#notificationCount').html(response['unreadCount']);
+                $('#notificationBadge').text(response['unreadCount']);
                 requestCount = response['count'];
+                badgeVisibility()
             }
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('notifications/fetchAllNotifications/'.$idNo) ?>',
+                url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
                     if (response['count'] != requestCount) {
                         $('#notificationList').html(response['result']);
-                        $('#notificationCount').html(response['unreadCount']);
                         requestCount = response['count'];
                     }
+                    if (response['unreadCount'] != 0) {
+                        $('#notificationBadge').text(response['unreadCount']);
+                    }
+                    badgeVisibility()
                 }
             });
-        }, 500);
+        }, 500);        
     });
+
+    // Hide or show notification badge depends on quantity
+    function badgeVisibility() {
+        if ($('#notificationBadge').text() == 0) {
+            $('#notificationBadge').hide();
+        } else {
+            $('#notificationBadge').show();
+        }
+    }
 </script>
