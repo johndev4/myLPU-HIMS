@@ -52,6 +52,11 @@
                         </span>
                         <div id="notificationList">
                             <!-- NOTIFICATIONS HERE -->
+                            <div class="dropdown-divider"></div>
+                            <a href="<?= base_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) ?>" class="dropdown-item">
+                                <i class="fas fa-comment-medical mr-2"></i> <span style="font-weight: bold">  </span>
+                                <span class="float-right text-muted text-sm"> </span>
+                            </a>
                         </div>
                     </div>
                 </li>
@@ -94,7 +99,7 @@
                     badgeVisibility()
                 }
             });
-        }, 500);        
+        }, 500);
     });
 
     // Hide or show notification badge depends on quantity
