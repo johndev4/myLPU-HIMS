@@ -54,10 +54,7 @@ class Notifications extends BaseController
 			}
 		} else {
 			$result = "
-			<div class=\"dropdown-divider\"></div>
-			<div class=\"dropdown-item\" align=\"center\">
-				<span> No notifications. </span>
-			</div>
+			<p class=\"text-center\" style=\"margin: 190px auto; color: #444444\"> No notifications. </p>
 			";
 		}
 
