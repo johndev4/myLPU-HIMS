@@ -52,8 +52,8 @@
                             <!-- NOTIFICATIONS HERE -->
                             <a class="dropdown-item" href="#">
                                 <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text">
-                                        <p>The doctor has approved your request</p>
+                                    <div class="text" style="width: 100%;">
+                                        <p>You have received a medical document</p>
                                         <p class="text-right">2 mins ago</p>
                                     </div>
                                 </div>
