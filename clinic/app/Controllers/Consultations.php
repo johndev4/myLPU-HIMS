@@ -230,9 +230,9 @@ class Consultations extends BaseController
 					->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
 					->first();
 
-				$scheduledConsultations = $this->consultationsModel
-					->where('status', 'active')->where('personnel_id_no', $user['id_no'])
-					->orderBy('queue_no', 'asc')->findAll();
+				// $scheduledConsultations = $this->consultationsModel
+				// 	->where('status', 'active')->where('personnel_id_no', $user['id_no'])
+				// 	->orderBy('queue_no', 'asc')->findAll();
 
 				$data = [
 					'status' => 'rejected',
