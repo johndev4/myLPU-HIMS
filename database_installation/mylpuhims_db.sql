@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2021 at 05:16 PM
+-- Generation Time: Oct 15, 2021 at 11:03 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -72,6 +72,7 @@ CREATE TABLE `consultations` (
 
 INSERT INTO `consultations` (`consultation_no`, `queue_no`, `status`, `category`, `message`, `personnel_id_no`, `lycean_id_no`, `meeting_schedule`, `meeting_link`, `rejection_message`, `created_at`, `updated_at`) VALUES
 ('agEI9m0vJAbkhUq5', NULL, 'pending', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', NULL, '2018-2-02181', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
+('iJgG7t3uy5d01vp6', 2, 'active', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2015-2-06969', '2021-10-13 10:15:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
 ('jYUVg7t3uyw201vp', 1, 'active', 'Mental Wellness', 'Doc, capstone is killing me. what should i do? UwU', '2016-3-3456', '2018-2-01763', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
 ('KPUxE6RgFp1eYWzr', NULL, 'pending', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', NULL, '2018-2-03248', NULL, NULL, NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00'),
 ('RJugrqo1NmsYEdht', 1, 'active', 'Consultation', 'Doc, I have dry cough. ough ough ough!!!', '2016-3-1234', '2018-2-01509', '2021-10-30 11:00:00', 'https://www.facebook.com/', NULL, '2021-09-29 14:46:00', '2021-09-29 14:46:00');
