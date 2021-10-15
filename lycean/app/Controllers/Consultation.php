@@ -53,11 +53,42 @@ class Consultation extends BaseController
     public function details($id)
     {
         $consultation = $this->consultationsModel->find($id);
-        $healthPersonnel = $this->healthPersonnelsModel->find($consultation['personnel_id_no']);
-        $lycean = $this->userModel->find($consultation['lycean_id_no']);
+        // $healthPersonnel = $this->healthPersonnelsModel->find($consultation['personnel_id_no']);
+        // $lycean = $this->userModel->find($consultation['lycean_id_no']);
+
+        $this->data['details'] = [
+            'consultation_id' => $id,
+            'time' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('h:i a') : '---',
+            'date' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('F d, Y') : '---',
+            'meeting_link' => [
+                'href' => $consultation['meeting_link'] != '' ? "href=\"{$consultation['meeting_link']}\"" : '',
+                'text' => $consultation['meeting_link'] != '' ? "<u>{$consultation['meeting_link']}</u>" : '---'
+            ],
+            'concern_message' => $consultation['message'] != '' ? $consultation['message'] : '---',
+            'rejection_message' => $consultation['rejection_message'] != '' ? $consultation['rejection_message'] : '---',
+        ];
+
+        $medical_files = $this->medicalFilesModel->where('consultation_no', $id)->findAll();
+
+        $this->data['files'] = "";
+        if ($medical_files) {
+            foreach ($medical_files as $key => $medical_file) {
+                $filename = explode('/', $medical_file['file_path'])[4];
+                $key+=1;
+                $href = str_replace('lycean/public', 'clinic/public', site_url($medical_file['file_path']));
+                $this->data['files'] .= "
+                    <tr>
+                        <td> {$key} </td>
+                        <td><a href=\"{$href}\" target=\"_blank\"> {$filename} </a></td>
+                    </tr>
+                    ";
+            }
+        }
 
         // Display page view
         return view('components/consultation_details', $this->data);
+
+        // echo $href;
     }
 
 

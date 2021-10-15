@@ -178,42 +178,40 @@
                     <div class="card-body" style="height: 400px; overflow-y:auto">
 
                         <div class="tab-content" id="custom-tabs-four-tabContent">
-                            <!-- Active Tab -->
+                            <!-- Consultation Details -->
                             <div class="tab-pane fade show active" id="custom-tabs-four-details" role="tabpanel" aria-labelledby="custom-tabs-four-details-tab">
                                 <div class="row" id="detailsTab">
 
                                     <div class="col-sm-12 col-md-12" style="border:1px solid none">
                                         <label class="d-block text-secondary">Consultation ID</label>
                                         <div class="mt-n2 mb-2">
-                                            <span>jYUVg7t3uyw201vp</span>
+                                            <span> <?= $details['consultation_id'] ?> </span>
                                         </div>
                                         <label class="d-block text-secondary">Schedule</label>
                                         <div class="mt-n2 mb-2">
-                                            <span class="text-dark time">Time: 8:30 am</span>
-                                            <span class="text-dark date float-right">Date: October 11, 2021</span>
+                                            <span class="text-dark time">Time: <?= $details['time'] ?> </span>
+                                            <span class="text-dark date float-right">Date: <?= $details['date'] ?> </span>
                                         </div>
                                         <label class="d-block text-secondary">Meeting Link</label>
                                         <div class="mt-n2 mb-2">
-                                            <a href="" class="text-dark"><u>http://localhost/myLPU-HIMS/lycean/</u></a>
+                                            <a <?= $details['meeting_link']['href'] ?> class="text-dark"> <?= $details['meeting_link']['text'] ?> </a>
                                         </div>
                                         <hr>
                                         <label class="d-block text-secondary">Concern</label>
                                         <p class="mt-n2 mb-2">
-                                            Lorem ipsum abdul jakul bulbul Some quick example text to build
-                                            on the card title and make up the bulk of the card's content.
+                                            <?= $details['concern_message'] ?>
                                         </p>
                                         <label class="d-block text-secondary">Denial of Service</label>
                                         <p class="mt-n2 mb-2">
-                                            Lorem ipsum abdul jakul bulbul Some quick example text to build
-                                            on the card title and make up the bulk of the card's content.
+                                            <?= $details['rejection_message'] ?>
                                         </p>
                                     </div>
 
                                 </div>
                             </div>
-                            <!-- /Active Tab -->
+                            <!-- /Consultation Details -->
 
-                            <!-- Pending tab -->
+                            <!-- Medical Documents -->
                             <div class="tab-pane fade" id="custom-tabs-four-documents" role="tabpanel" aria-labelledby="custom-tabs-four-documents-tab">
                                 <div class="row" id="documentsTab">
 
@@ -223,24 +221,18 @@
                                                 <tr>
                                                     <th class="text-dark">#</th>
                                                     <th class="text-dark">File Name</th>
-                                                    <th class="text-dark">Date Added</th>
-                                                    <th></th>
+                                                    <!-- <th class="text-dark">Date Added</th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td><a href="">http://localhost/myLPU-HIMS/lycean/</a></td>
-                                                    <td> 10-11-2021</td>
-                                                    <td class="text-danger text-center">Delete</td>
-                                                </tr>
+                                                <?= $files ?>
                                             </tbody>
                                         </table>
                                     </div>
 
                                 </div>
                             </div>
-                            <!-- /Pending tab -->
+                            <!-- /Medical Documents -->
                         </div>
                     </div>
                     <!-- /.card -->
