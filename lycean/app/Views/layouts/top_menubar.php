@@ -46,20 +46,115 @@
                         <span class="text-white ml-1 notification">Notification</span>
                         <span class="badge badge-danger navbar-badge" id="notificationBadge"></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right">
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <div id="notificationList overflow-auto" style="height: 410px; overflow-y:auto">
+                            <!-- NOTIFICATIONS HERE -->
+                            <a class="dropdown-item" href="#">
+                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
+                                    <div class="text">
+                                        <p>The doctor has approved your request</p>
+                                        <p class="text-right">2 mins ago</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item" href="#">
+                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
+                                    <div class="text">
+                                        <p>You have received a medical document</p>
+                                        <p class="text-right">10 mins ago</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item" href="#">
+                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
+                                    <div class="text">
+                                        <p>You have received a medical document</p>
+                                        <p class="text-right">10 mins ago</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item" href="#">
+                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
+                                    <div class="text">
+                                        <p>You have received a medical document</p>
+                                        <p class="text-right">10 mins ago</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="dropdown-item" href="#">
+                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
+                                    <div class="text">
+                                        <p>You have received a medical document</p>
+                                        <p class="text-right">10 mins ago</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
                         <span class="dropdown-header">
                             <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
                         </span>
-                        <div id="notificationList">
-                            <!-- NOTIFICATIONS HERE -->
-                            <div class="dropdown-divider"></div>
-                            <a href="<?= base_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) ?>" class="dropdown-item">
-                                <i class="fas fa-comment-medical mr-2"></i> <span style="font-weight: bold">  </span>
-                                <span class="float-right text-muted text-sm"> </span>
-                            </a>
-                        </div>
                     </div>
                 </li>
+
+
+
+
+                <!-- Test -->
+
+                <!-- <li class="nav-item dropdown dpst">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+
+
+                        <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+
+                            <span class="dropdown-header">
+                                <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
+                            </span>
+
+
+                            <a class="dropdown-item" href="#">
+                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
+                                    <div class="text">
+                                        <p>The doctor has approved your request</p>
+                                        <p class="text-right">2 mins ago</p>
+                                    </div>
+                                </div>
+                            </a>
+
+
+                            <a class="dropdown-item" href="#">
+                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
+                                    <div class="text">
+                                        <p>You have received a medical document</p>
+                                        <p class="text-right">10 mins ago</p>
+                                    </div>
+                                </div>
+                            </a>
+
+
+
+
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </li> -->
+
+                <!-- Test -->
+
+
+
+
             </ul>
 
         </div>
@@ -68,7 +163,7 @@
 <!-- /.navbar -->
 
 
-<script>
+<!-- <script>
     $('document').ready(function() {
         // Fetch All Notifications
         var requestCount;
@@ -110,4 +205,4 @@
             $('#notificationBadge').show();
         }
     }
-</script>
+</script> -->
