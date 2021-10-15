@@ -30,6 +30,7 @@ class Notifications extends BaseController
 				$timeInterval = time_elapsed_string($notification['created_at']);
 				// Define notification status
 				$status = $notification['status'] == "unread" ? "bold" : "normal";
+				$status1 = $notification['status'] == "unread" ? "#E5E5E5" : "white";
 				// Define notification category icon
 				$consultation_no = explode('/', $notification['link'])[8];
 				$consultatation = $this->consultationsModel->find($consultation_no);
@@ -41,7 +42,7 @@ class Notifications extends BaseController
 
 				$data = "
 				<div class=\"dropdown-divider\"></div>
-				<a href=\"" . base_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) . "\" class=\"dropdown-item\">
+				<a href=\"" . base_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) . "\" class=\"dropdown-item\" style=\"background-color: {$status1}\">
 					{$icon} <span style=\"font-weight: {$status}\"> {$notification['info']} </span>
 					<span class=\"float-right text-muted text-sm\"> $timeInterval </span>
 				</a>
