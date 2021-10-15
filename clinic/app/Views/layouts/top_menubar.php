@@ -10,31 +10,21 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown dpst">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-bell"></i>
-                <span class="badge badge-warning navbar-badge bg-danger">15</span>
+                <i class="far fa-bell fa-lg text-light"></i>
+                <span class="text-white ml-1 notification">Notification</span>
+                <span class="badge badge-danger navbar-badge" id="notificationBadge"></span>
             </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">11 Notifications</span>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-users mr-2"></i> 8 Consultation requests
-                    <span class="float-right text-muted text-sm">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-file mr-2"></i> 3 new reports
-                    <span class="float-right text-muted text-sm">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">Clear Notifications</a>
+            <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right">
+                <div id="notificationList" style="height: 410px; overflow-y:auto">
+                    <!-- NOTIFICATIONS HERE -->
+                </div>
+
+                <span class="dropdown-header">
+                    <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
+                </span>
             </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                <i class="fas fa-expand-arrows-alt"></i>
-            </a>
         </li>
     </ul>
 </nav>
