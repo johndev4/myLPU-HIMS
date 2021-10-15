@@ -48,53 +48,8 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right">
                         <!-- <div class="dropdown-divider"></div> -->
-                        <div id="notificationList overflow-auto" style="height: 410px; overflow-y:auto">
+                        <div id="notificationList" style="height: 410px; overflow-y:auto">
                             <!-- NOTIFICATIONS HERE -->
-                            <a class="dropdown-item" href="#">
-                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text" style="width: 100%;">
-                                        <p>You have received a medical document</p>
-                                        <p class="text-right">2 mins ago</p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a class="dropdown-item" href="#">
-                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text">
-                                        <p>You have received a medical document</p>
-                                        <p class="text-right">10 mins ago</p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a class="dropdown-item" href="#">
-                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text">
-                                        <p>You have received a medical document</p>
-                                        <p class="text-right">10 mins ago</p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a class="dropdown-item" href="#">
-                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text">
-                                        <p>You have received a medical document</p>
-                                        <p class="text-right">10 mins ago</p>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a class="dropdown-item" href="#">
-                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text">
-                                        <p>You have received a medical document</p>
-                                        <p class="text-right">10 mins ago</p>
-                                    </div>
-                                </div>
-                            </a>
-
                         </div>
 
                         <span class="dropdown-header">
@@ -118,7 +73,7 @@
                         <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right" aria-labelledby="dropdownMenuButton">
 
                             <span class="dropdown-header">
-                                <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
+                                <a href="">Clear all</a>
                             </span>
 
 
@@ -163,7 +118,7 @@
 <!-- /.navbar -->
 
 
-<!-- <script>
+<script>
     $('document').ready(function() {
         // Fetch All Notifications
         var requestCount;
@@ -205,4 +160,4 @@
             $('#notificationBadge').show();
         }
     }
-</script> -->
+</script>
