@@ -29,22 +29,25 @@ class Notifications extends BaseController
 				// Define notification time interval from current time
 				$timeInterval = time_elapsed_string($notification['created_at']);
 				// Define notification status
-				$status = $notification['status'] == "unread" ? "bold" : "normal";
-				$status1 = $notification['status'] == "unread" ? "#E5E5E5" : "white";
+				$status1 = $notification['status'] == "unread" ? "bold" : "normal";
+				$status2 = $notification['status'] == "unread" ? "text-primary" : "text-secondary";
 				// Define notification category icon
 				$consultation_no = explode('/', $notification['link'])[8];
 				$consultatation = $this->consultationsModel->find($consultation_no);
 				if ($consultatation['category'] == 'Consultation') {
-					$icon = '<i class="fas fa-comment-medical mr-2"></i>';
+					$icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
 				} else if ($notification['category'] == 'Mental Wellness') {
-					$icon = '<i class="fas fa-brain"></i>';
+					$icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
 				}
 
 				$data = "
-				<div class=\"dropdown-divider\"></div>
-				<a href=\"" . base_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) . "\" class=\"dropdown-item\" style=\"background-color: {$status1}\">
-					{$icon} <span style=\"font-weight: {$status}\"> {$notification['info']} </span>
-					<span class=\"float-right text-muted text-sm\"> $timeInterval </span>
+				<a href=\"" . base_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) . "\" class=\"dropdown-item\">
+					<div class=\"notifications-item\">{$icon}
+						<div class=\"text\" style=\"width: 100%;\">
+							<p style=\"font-weight: {$status1}; color: #444444\"> {$notification['info']} </p>
+							<p class=\"text-right {$status2}\"> $timeInterval </p>
+						</div>
+					</div>
 				</a>
 				";
 				$result .= $data;
