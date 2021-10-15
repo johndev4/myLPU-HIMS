@@ -13,6 +13,8 @@ class Dashboard extends BaseController
 		$this->data['page_title'] = 'Dashboard';
 		// User firstname
 		$this->data['firstname'] = getUserFirstname();
+		// User ID No.
+        $this->data['idNo'] = getIdNo();
 		// User designation
 		$this->data['designation'] = getUserDesignation();
 	}

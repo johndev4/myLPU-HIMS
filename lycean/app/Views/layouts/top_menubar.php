@@ -14,7 +14,7 @@
 
             <!-- Right navbar links navbar-no-expand -->
             <ul class="order-1 order-md-3 navbar-nav ml-auto">
-                <!-- Dropdown Modal -->
+                <!-- Profile Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fas fa-user-circle fa-2x text-light mt-n1"></i>
@@ -47,7 +47,6 @@
                         <span class="badge badge-danger navbar-badge" id="notificationBadge"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right">
-                        <!-- <div class="dropdown-divider"></div> -->
                         <div id="notificationList" style="height: 410px; overflow-y:auto">
                             <!-- NOTIFICATIONS HERE -->
                         </div>
@@ -118,6 +117,7 @@
 <!-- /.navbar -->
 
 
+<!-- Script -->
 <script>
     $('document').ready(function() {
         // Fetch All Notifications

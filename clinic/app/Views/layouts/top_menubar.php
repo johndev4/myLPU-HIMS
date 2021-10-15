@@ -29,3 +29,49 @@
     </ul>
 </nav>
 <!-- /.navbar -->
+
+
+<!-- Script -->
+<script>
+    $('document').ready(function() {
+        // Fetch All Notifications
+        var requestCount;
+        $.ajax({
+            url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#notificationList').html(response['result']);
+                $('#notificationBadge').text(response['unreadCount']);
+                requestCount = response['count'];
+                badgeVisibility()
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != requestCount) {
+                        $('#notificationList').html(response['result']);
+                        requestCount = response['count'];
+                    }
+                    if (response['unreadCount'] != 0) {
+                        $('#notificationBadge').text(response['unreadCount']);
+                    }
+                    badgeVisibility()
+                }
+            });
+        }, 500);
+    });
+
+    // Hide or show notification badge depends on quantity
+    function badgeVisibility() {
+        if ($('#notificationBadge').text() == 0) {
+            $('#notificationBadge').hide();
+        } else {
+            $('#notificationBadge').show();
+        }
+    }
+</script>

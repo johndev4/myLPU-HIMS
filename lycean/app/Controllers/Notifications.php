@@ -16,10 +16,10 @@ class Notifications extends BaseController
 	// -----------------------------------------------------------------
 	public function fetchAllNotifications($id)
 	{
-		$notifications = $this->lyceansNotificationModel
+		$notifications = $this->notificationModel
 			->where('id_no', $id)
 			->findAll();
-		$unreadNotifications = $this->lyceansNotificationModel
+		$unreadNotifications = $this->notificationModel
 			->where('id_no', $id)->where('status', 'unread')
 			->findAll();
 
@@ -66,7 +66,7 @@ class Notifications extends BaseController
 	// -----------------------------------------------------------------
 	public function clearAll()
 	{
-		$success = $this->lyceansNotificationModel->where('id_no', getIdNo())->delete();
+		$success = $this->notificationModel->where('id_no', getIdNo())->delete();
 
 		if ($success) {// SUCCESS
 		} else {// ERROR
@@ -80,11 +80,11 @@ class Notifications extends BaseController
 	// -----------------------------------------------------------------
 	public function redirectToConsultationDetails($id)
 	{
-		$success = $this->lyceansNotificationModel
+		$success = $this->notificationModel
 			->where('notification_id', $id)
 			->set(['status' => 'read'])
 			->update();
-		$notification = $this->lyceansNotificationModel->find($id);
+		$notification = $this->notificationModel->find($id);
 
 		if ($success && $notification) {
 			return redirect()->to($notification['link']);
