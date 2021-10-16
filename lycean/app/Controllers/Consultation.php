@@ -53,8 +53,6 @@ class Consultation extends BaseController
     public function details($id)
     {
         $consultation = $this->consultationsModel->find($id);
-        // $healthPersonnel = $this->healthPersonnelsModel->find($consultation['personnel_id_no']);
-        // $lycean = $this->userModel->find($consultation['lycean_id_no']);
 
         $this->data['details'] = [
             'consultation_id' => $id,
