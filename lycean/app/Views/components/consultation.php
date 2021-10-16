@@ -226,14 +226,14 @@
         <?php endif; ?>
 
         // Fetch Active Consultation
-        var requestCount;
+        var requestCountA;
         $.ajax({
             url: '<?= base_url('consultation/fetchActiveConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#activeTab').html(response['result']);
-                requestCount = response['count'];
+                requestCountA = response['count'];
             }
         });
         setInterval(function() {
@@ -242,22 +242,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
+                    if (response['count'] != requestCountA) {
                         $('#activeTab').html(response['result']);
-                        requestCount = response['count'];
+                        requestCountA = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Pending Consultation
-        var requestCount;
+        var requestCountP;
         $.ajax({
             url: '<?= base_url('consultation/fetchPendingConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#pendingTab').html(response['result']);
-                requestCount = response['count'];
+                requestCountP = response['count'];
             }
         });
         setInterval(function() {
@@ -266,22 +266,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
+                    if (response['count'] != requestCountP) {
                         $('#pendingTab').html(response['result']);
-                        requestCount = response['count'];
+                        requestCountP = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Rejected Consultation
-        var requestCount;
+        var requestCountR;
         $.ajax({
             url: '<?= base_url('consultation/fetchRejectedConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#rejectedTab').html(response['result']);
-                requestCount = response['count'];
+                requestCountR = response['count'];
             }
         });
         setInterval(function() {
@@ -290,22 +290,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
+                    if (response['count'] != requestCountR) {
                         $('#rejectedTab').html(response['result']);
-                        requestCount = response['count'];
+                        requestCountR = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Done Consultation
-        var requestCount;
+        var requestCountD;
         $.ajax({
             url: '<?= base_url('consultation/fetchDoneConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#doneTab').html(response['result']);
-                requestCount = response['count'];
+                requestCountD = response['count'];
             }
         });
         setInterval(function() {
@@ -314,9 +314,9 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
+                    if (response['count'] != requestCountD) {
                         $('#doneTab').html(response['result']);
-                        requestCount = response['count'];
+                        requestCountD = response['count'];
                     }
                 }
             });
