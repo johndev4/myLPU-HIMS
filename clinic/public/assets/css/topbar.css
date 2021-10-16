@@ -1,0 +1,21 @@
+/* Test Notification DD*/
+.notifications-item {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 6px 9px;
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+  i.fas.noti-icon.fa-lg::before{
+    display: block !important;
+    width: 50px !important;
+    height: 50px !important;
+    margin-right: 9px !important;
+    border-radius: 50% !important;
+    margin-top: 12px !important;
+    /* color: grey !important; */
+  }
+  
+  a.dropdown-item:hover{
+    background-color: rgb(243, 243, 243) !important;
+  }
