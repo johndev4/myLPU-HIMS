@@ -183,22 +183,19 @@
                                 <div class="row" id="detailsTab">
 
                                     <div class="col-sm-12 col-md-12" style="border:1px solid none">
-
-
-
-
-                                    <label class="d-block text-secondary">Date of Request: </label>
-                                        <div class="mt-n2 mb-2">
-                                            <span> October 30, 2021 </span>
+                                        <div class="d-block">
+                                            <label class="d-inline text-secondary">Consultation ID:</label>
+                                            <div class="mt-n2 mb-2 d-inline">
+                                                <span> <?= $details['consultation_id'] ?> </span>
+                                            </div>
                                         </div>
-
-
-
-
-                                        <label class="d-block text-secondary">Consultation ID</label>
-                                        <div class="mt-n2 mb-2">
-                                            <span> <?= $details['consultation_id'] ?> </span>
+                                        <div class="d-block">
+                                            <label class="d-inline text-secondary">Date of Request:</label>
+                                            <div class="mt-n2 mb-2 d-inline">
+                                                <span> October 19, 2021 </span>
+                                            </div>
                                         </div>
+                                        <hr>
                                         <label class="d-block text-secondary">Schedule</label>
                                         <div class="mt-n2 mb-2">
                                             <span class="text-dark time">Time: <?= $details['time'] ?> </span>

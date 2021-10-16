@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2021-10-15 23:17:25 --> Undefined variable $idNo
 #0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\layouts\top_menubar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 40)
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
@@ -1996,6 +1997,10 @@ CRITICAL - 2021-10-15 23:25:28 --> Call to undefined function App\Controllers\ti
 #4 {main}
 CRITICAL - 2021-10-15 23:25:28 --> Call to undefined function App\Controllers\time_elapsed_string()
 #0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+=======
+CRITICAL - 2021-10-15 23:56:16 --> Call to undefined function App\Controllers\getIdNo()
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->clearAll()
+>>>>>>> a7ce5c50282297422ed6536f3aea17c1ed78c5a6
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
 #2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()

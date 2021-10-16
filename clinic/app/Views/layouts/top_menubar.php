@@ -12,9 +12,8 @@
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown dpst">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-bell fa-lg text-light"></i>
-                <span class="text-white ml-1 notification">Notification</span>
-                <span class="badge badge-danger navbar-badge" id="notificationBadge"></span>
+                <i class="far fa-bell fa-lg text-secondary"></i>
+                <span class="badge badge-danger navbar-badge" id="notificationBadge">15</span>
             </a>
             <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right">
                 <div id="notificationList" style="height: 410px; overflow-y:auto">
@@ -25,6 +24,11 @@
                     <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
                 </span>
             </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
         </li>
     </ul>
 </nav>
