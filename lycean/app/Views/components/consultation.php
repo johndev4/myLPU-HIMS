@@ -226,14 +226,14 @@
         <?php endif; ?>
 
         // Fetch Active Consultation
-        var requestCountA;
+        var activeCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchActiveConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#activeTab').html(response['result']);
-                requestCountA = response['count'];
+                activeCount = response['count'];
             }
         });
         setInterval(function() {
@@ -242,22 +242,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountA) {
+                    if (response['count'] != activeCount) {
                         $('#activeTab').html(response['result']);
-                        requestCountA = response['count'];
+                        activeCount = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Pending Consultation
-        var requestCountP;
+        var pendingCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchPendingConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#pendingTab').html(response['result']);
-                requestCountP = response['count'];
+                pendingCount = response['count'];
             }
         });
         setInterval(function() {
@@ -266,22 +266,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountP) {
+                    if (response['count'] != pendingCount) {
                         $('#pendingTab').html(response['result']);
-                        requestCountP = response['count'];
+                        pendingCount = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Rejected Consultation
-        var requestCountR;
+        var rejectCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchRejectedConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#rejectedTab').html(response['result']);
-                requestCountR = response['count'];
+                rejectCount = response['count'];
             }
         });
         setInterval(function() {
@@ -290,22 +290,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountR) {
+                    if (response['count'] != rejectCount) {
                         $('#rejectedTab').html(response['result']);
-                        requestCountR = response['count'];
+                        rejectCount = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Done Consultation
-        var requestCountD;
+        var doneCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchDoneConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#doneTab').html(response['result']);
-                requestCountD = response['count'];
+                doneCount = response['count'];
             }
         });
         setInterval(function() {
@@ -314,9 +314,9 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountD) {
+                    if (response['count'] != doneCount) {
                         $('#doneTab').html(response['result']);
-                        requestCountD = response['count'];
+                        doneCount = response['count'];
                     }
                 }
             });

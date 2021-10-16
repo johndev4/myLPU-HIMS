@@ -58,6 +58,7 @@ class Consultation extends BaseController
 
         $this->data['details'] = [
             'consultation_id' => $id,
+            'date_of_request' => date_create($consultation['created_at'])->format('d-m-Y H:i'),
             'time' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('h:i a') : '---',
             'date' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('F d, Y') : '---',
             'meeting_link' => [

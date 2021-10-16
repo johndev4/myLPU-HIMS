@@ -192,7 +192,7 @@
                                         <div class="d-block">
                                             <label class="d-inline text-secondary">Date of Request:</label>
                                             <div class="mt-n2 mb-2 d-inline">
-                                                <span> October 19, 2021 </span>
+                                                <span> <?= $details['date_of_request'] ?> </span>
                                             </div>
                                         </div>
                                         <hr>
