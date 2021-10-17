@@ -100,7 +100,7 @@
                         </div>
                         <div class="form-group">
                             <!-- <label for="FormControlTextarea" class="font-weight-normal mb-2" style="font-size: 18pt; color: rgb(116, 116, 116);">Tell the doctor your health concern.</label> -->
-                            <form action="<?= base_url('consultation/sendConsultation') ?>" method="post" id="">
+                            <form action="<?= base_url('mentalwellness/sendConsultation') ?>" method="post" id="">
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                                 <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Tell us here..." maxlength="100" required="required"></textarea>
                                 <div class="mb-2" id="count" align="right">
@@ -123,7 +123,7 @@
                     <div class="card-header p-0 border-bottom-0">
                         <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="custom-tabs-four-active-tab" data-toggle="pill" href="#custom-tabs-four-active" role="tab" aria-controls="custom-tabs-four-active" aria-selected="true">Active</a>
+                                <a class="nav-link" id="custom-tabs-four-active-tab" data-toggle="pill" href="#custom-tabs-four-active" role="tab" aria-controls="custom-tabs-four-active" aria-selected="true">Active</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="custom-tabs-four-pending-tab" data-toggle="pill" href="#custom-tabs-four-pending" role="tab" aria-controls="custom-tabs-four-pending" aria-selected="false">Pending</a>
@@ -139,8 +139,8 @@
                     <div class="card-body" style="height: 400px; overflow-y:auto">
                         <div class="tab-content" id="custom-tabs-four-tabContent">
                             <!-- Active Tab -->
-                            <div class="tab-pane fade show active" id="custom-tabs-four-active" role="tabpanel" aria-labelledby="custom-tabs-four-active-tab">
-                                <div class="row" id="activeTab">
+                            <div class="tab-pane fade" id="custom-tabs-four-active" role="tabpanel" aria-labelledby="custom-tabs-four-active-tab">
+                                <div class="row" id="activeContent">
                                     <!-- ACTIVE MENTAL WELLNESS HERE -->
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
 
                             <!-- Pending tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-pending" role="tabpanel" aria-labelledby="custom-tabs-four-pending-tab">
-                                <div class="row" id="pendingTab">
+                                <div class="row" id="pendingContent">
                                     <!-- PENDING MENTAL WELLNESS HERE -->
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
 
                             <!-- Rejected Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
-                                <div class="row" id="rejectedTab">
+                                <div class="row" id="rejectedContent">
                                     <!-- REJECTED MENTAL WELLNESS HERE -->
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
 
                             <!-- Done Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-done" role="tabpanel" aria-labelledby="custom-tabs-four-done-tab">
-                                <div class="row" id="doneTab">
+                                <div class="row" id="doneContent">
                                     <!-- DONE MENTAL WELLNESS HERE -->
                                 </div>
                             </div>
@@ -181,22 +181,36 @@
     </div>
 </body>
 
-<script>
-    $(document).ready(function() {
-        <?php if (session()->get('success') !== null) : ?>
-            // Sweet Alert for success staus
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-            Toast.fire({
-                icon: 'success',
-                title: '<?= session()->get('success'); ?>'
-            });
-        <?php endif; ?>
 
+
+<!-- Script -->
+<script>
+    <?php if (session()->get('success') !== null) : ?>
+        // Sweet Alert for success staus
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        Toast.fire({
+            icon: 'success',
+            title: '<?= session()->get('success'); ?>'
+        });
+    <?php elseif (session()->get('error') !== null) : ?>
+        // Sweet Alert for error staus
+        var Toast = Swal.mixin({
+            toast: false,
+            position: 'center',
+            showConfirmButton: true,
+        });
+        Toast.fire({
+            icon: 'warning',
+            title: '<?= session()->get('error'); ?>'
+        });
+    <?php endif; ?>
+
+    $(document).ready(function() {
         //For Textarea character count
         $('textarea').keyup(function() {
             var characterCount = $(this).val().length,
@@ -219,21 +233,23 @@
             }
         });
 
-        // Disable "consultation request" when there is pending request of specific lycean
-        <?php if (!empty(session()->get('sendBtn_disabled')) && !empty(session()->get('message_disabled'))) : ?>
-            <?= session()->get('sendBtn_disabled') ?>
-            <?= session()->get('message_disabled') ?>
-        <?php endif; ?>
-
         // Fetch Active Mental Wellness
-        var requestCount;
+        var activeCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchActiveConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#activeTab').html(response['result']);
-                requestCount = response['count'];
+                $('#activeContent').html(response['result']);
+                activeCount = response['count'];
+
+                if (activeCount != 0) {
+                    $('#custom-tabs-four-pending-tab').trigger('click');
+                }
+
+                if (activeCount == 0 && pendingCount == 0) {
+                    $('#custom-tabs-four-done-tab').trigger('click');
+                }
             }
         });
         setInterval(function() {
@@ -242,22 +258,38 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
-                        $('#activeTab').html(response['result']);
-                        requestCount = response['count'];
+                    if (response['count'] != activeCount) {
+                        $('#activeContent').html(response['result']);
+                        activeCount = response['count'];
+
+                        if (activeCount != 0) {
+                            $('#custom-tabs-four-pending-tab').trigger('click');
+                        }
+
+                        if (activeCount == 0 && pendingCount == 0) {
+                            $('#custom-tabs-four-done-tab').trigger('click');
+                        }
                     }
                 }
             });
         }, 500);
         // Fetch Pending Mental Wellness
-        var requestCount;
+        var pendingCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchPendingConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#pendingTab').html(response['result']);
-                requestCount = response['count'];
+                $('#pendingContent').html(response['result']);
+                pendingCount = response['count'];
+
+                if (pendingCount != 0) {
+                    $('#custom-tabs-four-pending-tab').trigger('click');
+                }
+
+                if (activeCount == 0 && pendingCount == 0) {
+                    $('#custom-tabs-four-done-tab').trigger('click');
+                }
             }
         });
         setInterval(function() {
@@ -266,22 +298,30 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
-                        $('#pendingTab').html(response['result']);
-                        requestCount = response['count'];
+                    if (response['count'] != pendingCount) {
+                        $('#pendingContent').html(response['result']);
+                        pendingCount = response['count'];
+
+                        if (pendingCount != 0) {
+                            $('#custom-tabs-four-pending-tab').trigger('click');
+                        }
+
+                        if (activeCount == 0 && pendingCount == 0) {
+                            $('#custom-tabs-four-done-tab').trigger('click');
+                        }
                     }
                 }
             });
         }, 500);
         // Fetch Rejected Mental Wellness
-        var requestCount;
+        var rejectedCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchRejectedConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#rejectedTab').html(response['result']);
-                requestCount = response['count'];
+                $('#rejectedContent').html(response['result']);
+                rejectedCount = response['count'];
             }
         });
         setInterval(function() {
@@ -290,22 +330,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
-                        $('#rejectedTab').html(response['result']);
-                        requestCount = response['count'];
+                    if (response['count'] != rejectedCount) {
+                        $('#rejectedContent').html(response['result']);
+                        rejectedCount = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Done Mental Wellness
-        var requestCount;
+        var doneCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchDoneConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#doneTab').html(response['result']);
-                requestCount = response['count'];
+                $('#doneContent').html(response['result']);
+                doneCount = response['count'];
             }
         });
         setInterval(function() {
@@ -314,9 +354,9 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCount) {
-                        $('#doneTab').html(response['result']);
-                        requestCount = response['count'];
+                    if (response['count'] != doneCount) {
+                        $('#doneContent').html(response['result']);
+                        doneCount = response['count'];
                     }
                 }
             });

@@ -106,7 +106,7 @@ class Consultations extends BaseController
 		$pendingConsultations = $this->consultationsModel
 			->where('status', 'pending')
 			->where('category', $category)
-			->findAll();
+			->orderBy('created_at', 'asc')->findAll();
 		$result = "";
 
 		foreach ($pendingConsultations as $key => $value) {

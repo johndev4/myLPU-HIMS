@@ -38,11 +38,6 @@ class Consultation extends BaseController
     // -----------------------------------------------------------------
     public function index()
     {
-        if (hasActive() || hasPending()) {
-            session()->setFlashdata('sendBtn_disabled', "$('#sendBtn_consultation').prop('disabled', 'disabled');");
-            session()->setFlashdata('message_disabled', "$('#message_consultation').prop('disabled', 'disabled');");
-        }
-
         // Display page view
         return view('components/consultation', $this->data);
     }
@@ -73,7 +68,7 @@ class Consultation extends BaseController
         if ($medical_files) {
             foreach ($medical_files as $key => $medical_file) {
                 $filename = explode('/', $medical_file['file_path'])[4];
-                $key+=1;
+                $key += 1;
                 $href = str_replace('lycean/public', 'clinic/public', site_url($medical_file['file_path']));
                 $this->data['files'] .= "
                     <tr>
@@ -86,8 +81,6 @@ class Consultation extends BaseController
 
         // Display page view
         return view('components/consultation_details', $this->data);
-
-        // echo $href;
     }
 
 
@@ -159,7 +152,7 @@ class Consultation extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . base_url('mentalwellness/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                     </div>
                 </div>
 
@@ -266,7 +259,6 @@ class Consultation extends BaseController
                         }
                     }
 
-                    // print_r($data);
                     $data = [
                         'consultation_no' => $consultation_no,
                         'status' => 'pending',
@@ -281,6 +273,7 @@ class Consultation extends BaseController
                         session()->setFlashdata('success', 'Sent');
                     }
                 } else {
+                    session()->setFlashdata('error', 'You have unfinished consultation request.');
                 }
             } else {
             }
