@@ -1,3 +1,6 @@
+body {
+    background: linear-gradient(110deg, #ffffff 60%, #e4e4e4 60%);
+}
 .login-box-msg{
     align-content: left;
     font-size: 20px;   

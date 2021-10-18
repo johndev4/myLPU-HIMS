@@ -18,7 +18,7 @@
 }
 
 .card-txtarea{
-    border-radius: 10px !important;
+    border-radius: 6px !important;
 }
 
 .card.card-txtarea{
@@ -154,9 +154,6 @@ a#custom-tabs-four-documents-tab.nav-link{
     color: rgb(155, 155, 155) !important;
     border-radius: 3px !important;
 }
-
-
-
 
 
 

@@ -95,18 +95,41 @@
                         <span class="font-weight-bold" style="font-size:18pt">What's your concern?</span>
                     </div> -->
                     <div class="card-body">
-                        <div class="form-group text-center py-1">
-                            <span class="font-weight-bold text-secondary" style="font-size:18pt">What's your concern?</span>
+                        <div class="form-group text-center">
+                            <span class="font-weight-bold text-secondary" style="font-size:18pt">Consultation Request</span>
                         </div>
                         <div class="form-group">
                             <!-- <label for="FormControlTextarea" class="font-weight-normal mb-2" style="font-size: 18pt; color: rgb(116, 116, 116);">Tell the doctor your health concern.</label> -->
                             <form action="<?= base_url('consultation/sendConsultation') ?>" method="post" id="">
+
+
+
+                                <div class="form-group mb-4" style="border:1px solid none">
+                                    <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
+                                    <select class="form-control" id="select_doctor" name="doctor" required="required">
+                                        <option value="" selected="selected">---Choose from the available doctors---</option>
+                                        <option value="">Dr. Lyn Deslate</option>
+                                        <option value="">Dr. Angelu Vasquez</option>
+                                    </select>
+                                </div>
+
+
+
+
+
+
+                                <label class="col-form-label required text-secondary">Tell us your concern</label>
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                                <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Tell us here..." maxlength="100" required="required"></textarea>
+                                <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Write it here..." maxlength="100" required="required"></textarea>
                                 <div class="mb-2" id="count" align="right">
                                     <span id="current">0</span>
                                     <span id="maximum">/ 100</span>
                                 </div>
+
+
+
+
+
                                 <button type="submit" class="btn btn-block btn-default p-2" id="sendBtn_consultation">Send Request Now<i class="far fa-paper-plane ml-2"></i></button>
                             </form>
                         </div>
