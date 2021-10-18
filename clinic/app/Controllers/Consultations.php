@@ -317,7 +317,7 @@ class Consultations extends BaseController
 			$success = $this->userAccountModel
 				->where('id_no', getIdNo())
 				->set([
-					'last_activity' => date('Y-m-d h:i:s')
+					'last_activity' => date('Y-m-d h:i')
 				])->update();
 
 			if ($success) {

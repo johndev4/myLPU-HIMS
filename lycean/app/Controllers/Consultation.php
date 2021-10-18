@@ -288,7 +288,7 @@ class Consultation extends BaseController
     public function fetchOnlinePersonnels()
     {
         $healthPersonnels = $this->healthPersonnelsAccountModel
-            ->where('last_activity', date('Y-m-d h:i:s'))
+            ->where('last_activity', date('Y-m-d h:i'))
             ->find();
 
         $result = "";
