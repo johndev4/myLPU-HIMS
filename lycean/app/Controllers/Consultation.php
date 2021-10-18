@@ -285,20 +285,24 @@ class Consultation extends BaseController
 
     // FETCH ONLINE HEALTH PERSONNELS
     // -----------------------------------------------------------------
-    public function fetchOnlinePersonnels()
+    public function fetchOnlineDoctors()
     {
         $healthPersonnels = $this->healthPersonnelsAccountModel
             ->where('last_activity', date('Y-m-d h:i'))
             ->find();
 
-        $result = "";
+        $result = "<option value=\"\" selected=\"selected\">---Choose from the available doctors---</option>";
+        $count = 0;
         if ($healthPersonnels) {
             foreach ($healthPersonnels as $healthPersonnel) {
                 $healthPersonnelsInfo = $this->healthPersonnelsModel->find($healthPersonnel['id_no']);
-                $result .= "{$healthPersonnelsInfo['first_name']}";
+                if ($healthPersonnelsInfo['designation'] == "Doctor") {
+                    $result .= "<option value=\"{$healthPersonnel['id_no']}\">Dr. {$healthPersonnelsInfo['first_name']} {$healthPersonnelsInfo['last_name']}</option>";
+                    $count += 1;
+                }
             }
         }
 
-        return json_encode(['result' => $result]);
+        return json_encode(['result' => $result, 'count' => $count]);
     }
 }

@@ -106,10 +106,11 @@
 
                                 <div class="form-group mb-4" style="border:1px solid none">
                                     <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
-                                    <select class="form-control" id="select_doctor" name="doctor" required="required">
-                                        <option value="" selected="selected">---Choose from the available doctors---</option>
+                                    <select class="form-control" id="online_doctors" name="doctor" required="required">
+                                        <!-- ONLINE DOCTORS HERE -->
+                                        <!-- <option value="" selected="selected">---Choose from the available doctors---</option>
                                         <option value="">Dr. Lyn Deslate</option>
-                                        <option value="">Dr. Angelu Vasquez</option>
+                                        <option value="">Dr. Angelu Vasquez</option> -->
                                     </select>
                                 </div>
 
@@ -378,6 +379,31 @@
                     if (response['count'] != doneCount) {
                         $('#doneContent').html(response['result']);
                         doneCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
+
+        // Fetch all online doctors
+        var onlineCount;
+        $.ajax({
+            url: '<?= base_url('consultation/fetchOnlineDoctors') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#online_doctors').html(response['result']);
+                onlineCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultation/fetchOnlineDoctors') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != onlineCount) {
+                        $('#online_doctors').html(response['result']);
+                        onlineCount = response['count'];
                     }
                 }
             });
