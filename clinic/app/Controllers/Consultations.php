@@ -321,6 +321,7 @@ class Consultations extends BaseController
 				])->update();
 
 			if ($success) {
+				
 			}
 		}
 	}
