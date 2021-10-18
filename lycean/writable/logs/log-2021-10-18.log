@@ -1,0 +1,14 @@
+ERROR - 2021-10-18 17:18:59 --> Table 'mylpuhims_db.health_personnels_accounts' doesn't exist
+CRITICAL - 2021-10-18 17:18:59 --> Table 'mylpuhims_db.health_personnels_accounts' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(145): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(523): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Consultation.php(292): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultation->fetchOnlinePersonnels()
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultation))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}

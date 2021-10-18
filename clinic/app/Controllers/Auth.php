@@ -29,7 +29,8 @@ class Auth extends BaseController
 				session()->set([
 					'uid' => $credentials['username'],
 					'pwd' => $credentials['password'],
-					'logged_in' => TRUE
+					'logged_in' => TRUE,
+					'available' => TRUE
 				]);
 				$this->userAccountModel
 					->where('username', session()->get('uid'))

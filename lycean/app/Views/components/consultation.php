@@ -146,7 +146,7 @@
                     <div class="card-header p-0 border-bottom-0">
                         <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="custom-tabs-four-active-tab" data-toggle="pill" href="#custom-tabs-four-active" role="tab" aria-controls="custom-tabs-four-active" aria-selected="true">Active</a>
+                                <a class="nav-link" id="custom-tabs-four-active-tab" data-toggle="pill" href="#custom-tabs-four-active" role="tab" aria-controls="custom-tabs-four-active" aria-selected="true">Active</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="custom-tabs-four-pending-tab" data-toggle="pill" href="#custom-tabs-four-pending" role="tab" aria-controls="custom-tabs-four-pending" aria-selected="false">Pending</a>
@@ -162,8 +162,8 @@
                     <div class="card-body" style="height: 400px; overflow-y:auto">
                         <div class="tab-content" id="custom-tabs-four-tabContent">
                             <!-- Active Tab -->
-                            <div class="tab-pane fade show active" id="custom-tabs-four-active" role="tabpanel" aria-labelledby="custom-tabs-four-active-tab">
-                                <div class="row" id="activeTab">
+                            <div class="tab-pane fade" id="custom-tabs-four-active" role="tabpanel" aria-labelledby="custom-tabs-four-active-tab">
+                                <div class="row" id="activeContent">
                                     <!-- ACTIVE CONSULTATION HERE -->
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
 
                             <!-- Pending tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-pending" role="tabpanel" aria-labelledby="custom-tabs-four-pending-tab">
-                                <div class="row" id="pendingTab">
+                                <div class="row" id="pendingContent">
                                     <!-- PENDING CONSULTATION HERE -->
                                 </div>
                             </div>
@@ -179,7 +179,7 @@
 
                             <!-- Rejected Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
-                                <div class="row" id="rejectedTab">
+                                <div class="row" id="rejectedContent">
                                     <!-- REJECTED CONSULTATION HERE -->
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
 
                             <!-- Done Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-done" role="tabpanel" aria-labelledby="custom-tabs-four-done-tab">
-                                <div class="row" id="doneTab">
+                                <div class="row" id="doneContent">
                                     <!-- DONE CONSULTATION HERE -->
                                 </div>
                             </div>
@@ -204,22 +204,34 @@
     </div>
 </body>
 
+<!-- Script -->
 <script>
-    $(document).ready(function() {
-        <?php if (session()->get('success') !== null) : ?>
-            // Sweet Alert for success staus
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-            Toast.fire({
-                icon: 'success',
-                title: '<?= session()->get('success'); ?>'
-            });
-        <?php endif; ?>
+    <?php if (session()->get('success') !== null) : ?>
+        // Sweet Alert for success staus
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        Toast.fire({
+            icon: 'success',
+            title: '<?= session()->get('success'); ?>'
+        });
+    <?php elseif (session()->get('error') !== null) : ?>
+        // Sweet Alert for error staus
+        var Toast = Swal.mixin({
+            toast: false,
+            position: 'center',
+            showConfirmButton: true,
+        });
+        Toast.fire({
+            icon: 'warning',
+            title: '<?= session()->get('error'); ?>'
+        });
+    <?php endif; ?>
 
+    $(document).ready(function() {
         //For Textarea character count
         $('textarea').keyup(function() {
             var characterCount = $(this).val().length,
@@ -242,21 +254,23 @@
             }
         });
 
-        // Disable "consultation request" when there is pending request of specific lycean
-        <?php if (!empty(session()->get('sendBtn_disabled')) && !empty(session()->get('message_disabled'))) : ?>
-            <?= session()->get('sendBtn_disabled') ?>
-            <?= session()->get('message_disabled') ?>
-        <?php endif; ?>
-
         // Fetch Active Consultation
-        var requestCountA;
+        var activeCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchActiveConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#activeTab').html(response['result']);
-                requestCountA = response['count'];
+                $('#activeContent').html(response['result']);
+                activeCount = response['count'];
+
+                if (activeCount != 0) {
+                    $('#custom-tabs-four-active-tab').trigger('click');
+                }
+
+                if (activeCount == 0 && pendingCount == 0) {
+                    $('#custom-tabs-four-done-tab').trigger('click');
+                }
             }
         });
         setInterval(function() {
@@ -265,22 +279,38 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountA) {
-                        $('#activeTab').html(response['result']);
-                        requestCountA = response['count'];
+                    if (response['count'] != activeCount) {
+                        $('#activeContent').html(response['result']);
+                        activeCount = response['count'];
+
+                        if (activeCount != 0) {
+                            $('#custom-tabs-four-active-tab').trigger('click');
+                        }
+
+                        if (activeCount == 0 && pendingCount == 0) {
+                            $('#custom-tabs-four-done-tab').trigger('click');
+                        }
                     }
                 }
             });
         }, 500);
         // Fetch Pending Consultation
-        var requestCountP;
+        var pendingCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchPendingConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#pendingTab').html(response['result']);
-                requestCountP = response['count'];
+                $('#pendingContent').html(response['result']);
+                pendingCount = response['count'];
+
+                if (pendingCount != 0) {
+                    $('#custom-tabs-four-pending-tab').trigger('click');
+                }
+
+                if (activeCount == 0 && pendingCount == 0) {
+                    $('#custom-tabs-four-done-tab').trigger('click');
+                }
             }
         });
         setInterval(function() {
@@ -289,22 +319,30 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountP) {
-                        $('#pendingTab').html(response['result']);
-                        requestCountP = response['count'];
+                    if (response['count'] != pendingCount) {
+                        $('#pendingContent').html(response['result']);
+                        pendingCount = response['count'];
+
+                        if (pendingCount != 0) {
+                            $('#custom-tabs-four-pending-tab').trigger('click');
+                        }
+
+                        if (activeCount == 0 && pendingCount == 0) {
+                            $('#custom-tabs-four-done-tab').trigger('click');
+                        }
                     }
                 }
             });
         }, 500);
         // Fetch Rejected Consultation
-        var requestCountR;
+        var rejectCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchRejectedConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#rejectedTab').html(response['result']);
-                requestCountR = response['count'];
+                $('#rejectedContent').html(response['result']);
+                rejectCount = response['count'];
             }
         });
         setInterval(function() {
@@ -313,22 +351,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountR) {
-                        $('#rejectedTab').html(response['result']);
-                        requestCountR = response['count'];
+                    if (response['count'] != rejectCount) {
+                        $('#rejectedContent').html(response['result']);
+                        rejectCount = response['count'];
                     }
                 }
             });
         }, 500);
         // Fetch Done Consultation
-        var requestCountD;
+        var doneCount;
         $.ajax({
             url: '<?= base_url('consultation/fetchDoneConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#doneTab').html(response['result']);
-                requestCountD = response['count'];
+                $('#doneContent').html(response['result']);
+                doneCount = response['count'];
             }
         });
         setInterval(function() {
@@ -337,9 +375,9 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != requestCountD) {
-                        $('#doneTab').html(response['result']);
-                        requestCountD = response['count'];
+                    if (response['count'] != doneCount) {
+                        $('#doneContent').html(response['result']);
+                        doneCount = response['count'];
                     }
                 }
             });

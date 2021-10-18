@@ -14,7 +14,7 @@ class Consultations extends BaseController
 		// User firstname
 		$this->data['firstname'] = getUserFirstname();
 		// User ID No.
-        $this->data['idNo'] = getIdNo();
+		$this->data['idNo'] = getIdNo();
 		// User designation
 		$this->data['designation'] = getUserDesignation();
 
@@ -106,7 +106,7 @@ class Consultations extends BaseController
 		$pendingConsultations = $this->consultationsModel
 			->where('status', 'pending')
 			->where('category', $category)
-			->findAll();
+			->orderBy('created_at', 'asc')->findAll();
 		$result = "";
 
 		foreach ($pendingConsultations as $key => $value) {
@@ -309,9 +309,31 @@ class Consultations extends BaseController
 	}
 
 
-	// AVAILABLE TOGGLE
+	// RUN ONLINE STATE
 	// -----------------------------------------------------------------
-	public function availableToggle()
+	public function runOnlineState()
 	{
+		if (session()->get('available') === TRUE) {
+			$success = $this->userAccountModel
+				->where('id_no', getIdNo())
+				->set([
+					'last_activity' => date('Y-m-d h:i:s')
+				])->update();
+
+			if ($success) {
+			}
+		}
+	}
+
+
+	// SET USER ONLINE STATUS STATE
+	// -----------------------------------------------------------------
+	public function setOnlineStatusState($state)
+	{
+		if ($state == 'true') {
+			session()->set('available', TRUE);
+		} else {
+			session()->set('available', FALSE);
+		}
 	}
 }

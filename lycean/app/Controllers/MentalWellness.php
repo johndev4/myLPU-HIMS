@@ -38,11 +38,6 @@ class MentalWellness extends BaseController
     // -----------------------------------------------------------------
     public function index()
     {
-        if (hasActive() || hasPending()) {
-            session()->setFlashdata('sendBtn_disabled', "$('#sendBtn_consultation').prop('disabled', 'disabled');");
-            session()->setFlashdata('message_disabled', "$('#message_consultation').prop('disabled', 'disabled');");
-        }
-
         // Display page view
         return view('components/mental_wellness', $this->data);
     }
@@ -53,8 +48,36 @@ class MentalWellness extends BaseController
     public function details($id)
     {
         $consultation = $this->consultationsModel->find($id);
-        $healthPersonnel = $this->healthPersonnelsModel->find($consultation['personnel_id_no']);
-        $lycean = $this->userModel->find($consultation['lycean_id_no']);
+
+        $this->data['details'] = [
+            'consultation_id' => $id,
+            'date_of_request' => date_create($consultation['created_at'])->format('d-m-Y H:i'),
+            'time' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('h:i a') : '---',
+            'date' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('F d, Y') : '---',
+            'meeting_link' => [
+                'href' => $consultation['meeting_link'] != '' ? "href=\"{$consultation['meeting_link']}\"" : '',
+                'text' => $consultation['meeting_link'] != '' ? "<u>{$consultation['meeting_link']}</u>" : '---'
+            ],
+            'concern_message' => $consultation['message'] != '' ? $consultation['message'] : '---',
+            'rejection_message' => $consultation['rejection_message'] != '' ? $consultation['rejection_message'] : '---',
+        ];
+
+        $medical_files = $this->medicalFilesModel->where('consultation_no', $id)->findAll();
+
+        $this->data['files'] = "";
+        if ($medical_files) {
+            foreach ($medical_files as $key => $medical_file) {
+                $filename = explode('/', $medical_file['file_path'])[4];
+                $key += 1;
+                $href = str_replace('lycean/public', 'clinic/public', site_url($medical_file['file_path']));
+                $this->data['files'] .= "
+                    <tr>
+                        <td> {$key} </td>
+                        <td><a href=\"{$href}\" target=\"_blank\"> {$filename} </a></td>
+                    </tr>
+                    ";
+            }
+        }
 
         // Display page view
         return view('components/consultation_details', $this->data);
@@ -91,7 +114,7 @@ class MentalWellness extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . base_url('mentalwellness/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                     </div>
                 </div>
 
@@ -166,7 +189,7 @@ class MentalWellness extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . base_url('mentalwellness/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -206,7 +229,7 @@ class MentalWellness extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . base_url('mentalwellness/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                     </div>
                 </div>
 
@@ -236,11 +259,10 @@ class MentalWellness extends BaseController
                         }
                     }
 
-                    // print_r($data);
                     $data = [
                         'consultation_no' => $consultation_no,
                         'status' => 'pending',
-                        'category' => 'Consultation',
+                        'category' => 'Mental Wellness',
                         'message' => $_POST['consultation_message'],
                         'lycean_id_no' => getIdNo(),
                     ];
@@ -251,6 +273,7 @@ class MentalWellness extends BaseController
                         session()->setFlashdata('success', 'Sent');
                     }
                 } else {
+                    session()->setFlashdata('error', 'You have unfinished consultation request.');
                 }
             } else {
             }
