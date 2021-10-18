@@ -84,7 +84,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="" method="post" id="done_form" enctype="multipart/form-data">
-                    
+
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <div class="form-group files">
@@ -135,7 +135,7 @@
                             <label class="text-secondary">Available</label>
                         </div>
                         <label class="switch" style="border:1px solid none">
-                            <input id="available" type="checkbox">
+                            <input type="checkbox" id="available">
                             <span class="slider round"></span>
                         </label>
                     </div>
@@ -217,7 +217,7 @@
                 }
             });
         }, 500);
-        
+
         //For Textarea character count
         $('textarea').keyup(function() {
 
@@ -277,6 +277,28 @@
         });
         $('#doneModal').on('hidden.bs.modal', function(evt) {
             $('#done_medicalfiles').val("");
+        });
+
+        // Available Toggler State
+        <?php if (session()->get('available') == TRUE) : ?>
+            $('#available').prop('checked', true);
+        <?php elseif (session()->get('available') == FALSE) : ?>
+            $('#available').prop('checked', false);
+        <?php endif; ?>
+        
+        // Set online status state on input
+        $('#available').on('input', function() {
+            if ($('#available').prop('checked') == true) {
+                $.ajax({
+                    url: '<?= base_url('consultations/setOnlineStatusState') ?>/' + true,
+                    type: 'get'
+                });
+            } else {
+                $.ajax({
+                    url: '<?= base_url('consultations/setOnlineStatusState') ?>/' + false,
+                    type: 'get'
+                });
+            }
         });
     });
 

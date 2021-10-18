@@ -14,7 +14,7 @@ class HealthPersonnelsAccountModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id_no', 'username', 'password', 'locked'];
+	protected $allowedFields        = ['password', 'locked', 'last_activity'];
 
 	// Dates
 	protected $useTimestamps        = false;

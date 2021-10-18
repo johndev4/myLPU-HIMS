@@ -68,6 +68,14 @@
                 }
             });
         }, 500);
+
+        // Run or stop online state
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultations/runOnlineState') ?>',
+                type: 'get'
+            });
+        }, 500);
     });
 
     // Hide or show notification badge depends on quantity

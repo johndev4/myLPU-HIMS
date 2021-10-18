@@ -281,4 +281,24 @@ class Consultation extends BaseController
 
         return redirect()->to('consultation');
     }
+
+
+    // FETCH ONLINE HEALTH PERSONNELS
+    // -----------------------------------------------------------------
+    public function fetchOnlinePersonnels()
+    {
+        $healthPersonnels = $this->healthPersonnelsAccountModel
+            ->where('last_activity', date('Y-m-d h:i:s'))
+            ->find();
+
+        $result = "";
+        if ($healthPersonnels) {
+            foreach ($healthPersonnels as $healthPersonnel) {
+                $healthPersonnelsInfo = $this->healthPersonnelsModel->find($healthPersonnel['id_no']);
+                $result .= "{$healthPersonnelsInfo['first_name']}";
+            }
+        }
+
+        return json_encode(['result' => $result]);
+    }
 }
