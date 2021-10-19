@@ -264,12 +264,14 @@ class Consultation extends BaseController
                         'status' => 'pending',
                         'category' => 'Consultation',
                         'message' => $_POST['consultation_message'],
+                        'personnel_id_no' => $_POST['consultation_doctor'],
                         'lycean_id_no' => getIdNo(),
                     ];
 
                     $success = $this->consultationsModel->save($data);
 
                     if ($success) {
+                        // $this->setNotification($data);
                         session()->setFlashdata('success', 'Sent');
                     }
                 } else {
@@ -282,14 +284,21 @@ class Consultation extends BaseController
         return redirect()->to('consultation');
     }
 
+    private function setNotification($data)
+    {
+        $success = $this->healthPersonnelsNotificationModel->save([
+            '' => '',
+        ]);
+    }
+
 
     // FETCH ONLINE HEALTH PERSONNELS
     // -----------------------------------------------------------------
-    public function fetchOnlineDoctors()
+    public function fetchOnlineHealthPersonnels()
     {
         $healthPersonnels = $this->healthPersonnelsAccountModel
             ->where('last_activity', date('Y-m-d h:i'))
-            ->find();
+            ->findAll();
 
         $result = "<option value=\"\" selected=\"selected\">---Choose from the available doctors---</option>";
         $count = 0;
@@ -301,6 +310,10 @@ class Consultation extends BaseController
                     $count += 1;
                 }
             }
+        }
+
+        if ($count == 0) {
+            $result = "<option value=\"\" selected=\"selected\">---No available doctor---</option>";
         }
 
         return json_encode(['result' => $result, 'count' => $count]);

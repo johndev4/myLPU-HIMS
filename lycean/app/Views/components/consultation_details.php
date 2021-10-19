@@ -83,7 +83,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-12 default-nav">
-                        <a href="<?= base_url('dashboard') ?>">
+                        <a href="#null" onclick="javascript:history.back ();">
                             <div class="card shadow card2" style="max-width:32rem">
                                 <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-12 pt-2 mt-n2 pl-4" style="border:1px solid none">

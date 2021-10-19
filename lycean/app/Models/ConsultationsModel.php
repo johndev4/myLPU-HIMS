@@ -20,6 +20,7 @@ class ConsultationsModel extends Model
         'status',
         'category',
         'message',
+        'personnel_id_no',
         'lycean_id_no'
     ];
 

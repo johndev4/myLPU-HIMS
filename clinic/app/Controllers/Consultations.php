@@ -96,19 +96,12 @@ class Consultations extends BaseController
 	// -----------------------------------------------------------------
 	public function fetchAllRequestConsultations()
 	{
-		$user = $this->userAccountModel
-			->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
-			->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-
-		$category = $userInfo['designation'] == 'Guidance Counselor' ? 'Mental Wellness' : 'Consultation';
-
 		$pendingConsultations = $this->consultationsModel
 			->where('status', 'pending')
-			->where('category', $category)
+			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'asc')->findAll();
-		$result = "";
 
+		$result = "";
 		foreach ($pendingConsultations as $key => $value) {
 			$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 			$middle_init = $lycean['middle_name'];
@@ -142,15 +135,12 @@ class Consultations extends BaseController
 	// -----------------------------------------------------------------
 	public function fetchAllScheduledConsultations()
 	{
-		$user = $this->userAccountModel
-			->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
-			->first();
 		$scheduledConsultations = $this->consultationsModel
 			->where('status', 'active')
-			->where('personnel_id_no', $user['id_no'])
+			->where('personnel_id_no', getIdNo())
 			->orderBy('queue_no', 'asc')->findAll();
-		$result = "";
 
+		$result = "";
 		foreach ($scheduledConsultations as $key => $value) {
 			$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 			$middle_init = $lycean['middle_name'];
@@ -191,18 +181,13 @@ class Consultations extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getAcceptRules())) {
-				$user = $this->userAccountModel
-					->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
-					->first();
-
 				$scheduledConsultations = $this->consultationsModel
-					->where('status', 'active')->where('personnel_id_no', $user['id_no'])
+					->where('status', 'active')->where('personnel_id_no', getIdNo())
 					->orderBy('queue_no', 'asc')->findAll();
 
 				$data = [
 					'queue_no' => count($scheduledConsultations) + 1,
 					'status' => 'active',
-					'personnel_id_no' => $user['id_no'],
 					'meeting_schedule' => $_GET['meeting_date'] . " " . $_GET['meeting_time'],
 					'meeting_link' => $_GET['meeting_link']
 				];
@@ -228,17 +213,12 @@ class Consultations extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getRejectRules())) {
-				$user = $this->userAccountModel
-					->where('username', session()->get('uid'))->where('password', session()->get('pwd'))
-					->first();
-
 				// $scheduledConsultations = $this->consultationsModel
 				// 	->where('status', 'active')->where('personnel_id_no', $user['id_no'])
 				// 	->orderBy('queue_no', 'asc')->findAll();
 
 				$data = [
 					'status' => 'rejected',
-					'personnel_id_no' => $user['id_no'],
 					'rejection_message' => $_GET['rejection_message']
 				];
 
@@ -285,6 +265,7 @@ class Consultations extends BaseController
 								$success3 = $this->consultationsModel
 									->where('consultation_no', $id)
 									->set([
+										'queue_no' => null,
 										'status' => 'done'
 									])->update();
 
@@ -334,6 +315,12 @@ class Consultations extends BaseController
 			session()->set('available', TRUE);
 		} else {
 			session()->set('available', FALSE);
+			// Clear last activity
+			$this->userAccountModel
+				->where('id_no', getIdNo())
+				->set([
+					'last_activity' => ''
+				])->update();
 		}
 	}
 }

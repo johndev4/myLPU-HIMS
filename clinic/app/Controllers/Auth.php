@@ -8,6 +8,7 @@ class Auth extends BaseController
 {
 	public function __construct()
 	{
+		helper(['useraccount']);
 		// Page title
 		$this->data['page_title'] = 'Login';
 	}
@@ -67,6 +68,12 @@ class Auth extends BaseController
 	{
 		// Delete login session on client
 		session()->destroy();
+		// Clear last activity
+		$this->userAccountModel
+			->where('id_no', getIdNo())
+			->set([
+				'last_activity' => ''
+			])->update();
 		// Redirect to login page
 		return redirect()->to('login');
 	}
