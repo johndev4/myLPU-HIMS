@@ -102,22 +102,31 @@
                             <!-- <label for="FormControlTextarea" class="font-weight-normal mb-2" style="font-size: 18pt; color: rgb(116, 116, 116);">Tell the doctor your health concern.</label> -->
                             <form action="<?= base_url('mentalwellness/sendConsultation') ?>" method="post" id="">
 
+
+
                                 <div class="form-group mb-4" style="border:1px solid none">
-                                    <label for="select_doctor" class="col-form-label required text-secondary">Guidance Counselor</label>
-                                    <select class="form-control" id="select_doctor" name="doctor" required="required">
-                                        <option value="" selected="selected">---Choose from the available counselors---</option>
-                                        <option value="">Dr. Lyn Deslate</option>
-                                        <option value="">Dr. Angelu Vasquez</option>
+                                    <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
+                                    <select class="form-control" id="online_doctors" name="consultation_doctor" required="required">
+                                        <!-- ONLINE DOCTORS HERE -->
                                     </select>
                                 </div>
 
+
+
+
+
+
                                 <label class="col-form-label required text-secondary">Tell us your concern</label>
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                                <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Tell us here..." maxlength="100" required="required"></textarea>
+                                <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Write it here..." maxlength="100" required="required"></textarea>
                                 <div class="mb-2" id="count" align="right">
                                     <span id="current">0</span>
                                     <span id="maximum">/ 100</span>
                                 </div>
+
+
+
+
 
                                 <button type="submit" class="btn btn-block btn-default p-2" id="sendBtn_consultation">Send Request Now<i class="far fa-paper-plane ml-2"></i></button>
                             </form>
@@ -153,7 +162,7 @@
                             <!-- Active Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-active" role="tabpanel" aria-labelledby="custom-tabs-four-active-tab">
                                 <div class="row" id="activeContent">
-                                    <!-- ACTIVE MENTAL WELLNESS HERE -->
+                                    <!-- ACTIVE CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Active Tab -->
@@ -161,7 +170,7 @@
                             <!-- Pending tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-pending" role="tabpanel" aria-labelledby="custom-tabs-four-pending-tab">
                                 <div class="row" id="pendingContent">
-                                    <!-- PENDING MENTAL WELLNESS HERE -->
+                                    <!-- PENDING CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Pending tab -->
@@ -169,7 +178,7 @@
                             <!-- Rejected Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
                                 <div class="row" id="rejectedContent">
-                                    <!-- REJECTED MENTAL WELLNESS HERE -->
+                                    <!-- REJECTED CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Rejected Tab -->
@@ -177,7 +186,7 @@
                             <!-- Done Tab -->
                             <div class="tab-pane fade" id="custom-tabs-four-done" role="tabpanel" aria-labelledby="custom-tabs-four-done-tab">
                                 <div class="row" id="doneContent">
-                                    <!-- DONE MENTAL WELLNESS HERE -->
+                                    <!-- DONE CONSULTATION HERE -->
                                 </div>
                             </div>
                             <!-- /Done Tab -->
@@ -188,40 +197,13 @@
             </div>
             <!-- /Tabs -->
         </div>
-        <br><br><br>
+        <br><br><br><br>
 
     </div>
 </body>
 
-
-
 <!-- Script -->
 <script>
-    <?php if (session()->get('success') !== null) : ?>
-        // Sweet Alert for success staus
-        var Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000
-        });
-        Toast.fire({
-            icon: 'success',
-            title: '<?= session()->get('success'); ?>'
-        });
-    <?php elseif (session()->get('error') !== null) : ?>
-        // Sweet Alert for error staus
-        var Toast = Swal.mixin({
-            toast: false,
-            position: 'center',
-            showConfirmButton: true,
-        });
-        Toast.fire({
-            icon: 'warning',
-            title: '<?= session()->get('error'); ?>'
-        });
-    <?php endif; ?>
-
     $(document).ready(function() {
         //For Textarea character count
         $('textarea').keyup(function() {
@@ -245,7 +227,7 @@
             }
         });
 
-        // Fetch Active Mental Wellness
+        // Fetch Active Consultation
         var activeCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchActiveConsultation') ?>',
@@ -256,7 +238,7 @@
                 activeCount = response['count'];
 
                 if (activeCount != 0) {
-                    $('#custom-tabs-four-pending-tab').trigger('click');
+                    $('#custom-tabs-four-active-tab').trigger('click');
                 }
 
                 if (activeCount == 0 && pendingCount == 0) {
@@ -275,7 +257,7 @@
                         activeCount = response['count'];
 
                         if (activeCount != 0) {
-                            $('#custom-tabs-four-pending-tab').trigger('click');
+                            $('#custom-tabs-four-active-tab').trigger('click');
                         }
 
                         if (activeCount == 0 && pendingCount == 0) {
@@ -285,7 +267,7 @@
                 }
             });
         }, 500);
-        // Fetch Pending Mental Wellness
+        // Fetch Pending Consultation
         var pendingCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchPendingConsultation') ?>',
@@ -325,15 +307,15 @@
                 }
             });
         }, 500);
-        // Fetch Rejected Mental Wellness
-        var rejectedCount;
+        // Fetch Rejected Consultation
+        var rejectCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchRejectedConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
                 $('#rejectedContent').html(response['result']);
-                rejectedCount = response['count'];
+                rejectCount = response['count'];
             }
         });
         setInterval(function() {
@@ -342,14 +324,14 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    if (response['count'] != rejectedCount) {
+                    if (response['count'] != rejectCount) {
                         $('#rejectedContent').html(response['result']);
-                        rejectedCount = response['count'];
+                        rejectCount = response['count'];
                     }
                 }
             });
         }, 500);
-        // Fetch Done Mental Wellness
+        // Fetch Done Consultation
         var doneCount;
         $.ajax({
             url: '<?= base_url('mentalwellness/fetchDoneConsultation') ?>',
@@ -373,7 +355,57 @@
                 }
             });
         }, 500);
+
+        // Fetch all online doctors
+        var onlineCount;
+        $.ajax({
+            url: '<?= base_url('mentalwellness/fetchOnlineHealthPersonnels') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#online_doctors').html(response['result']);
+                onlineCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('mentalwellness/fetchOnlineHealthPersonnels') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != onlineCount) {
+                        $('#online_doctors').html(response['result']);
+                        onlineCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
     });
+
+    <?php if (session()->get('success') !== null) : ?>
+        // Sweet Alert for success staus
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        Toast.fire({
+            icon: 'success',
+            title: '<?= session()->get('success'); ?>'
+        });
+    <?php elseif (session()->get('error') !== null) : ?>
+        // Sweet Alert for error staus
+        var Toast = Swal.mixin({
+            toast: false,
+            position: 'center',
+            showConfirmButton: true,
+        });
+        Toast.fire({
+            icon: 'warning',
+            title: '<?= session()->get('error'); ?>'
+        });
+    <?php endif; ?>
 </script>
 
 <?= $this->endSection('content') ?>

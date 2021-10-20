@@ -104,10 +104,8 @@
 
                                 <div class="form-group mb-4" style="border:1px solid none">
                                     <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
-                                    <select class="form-control" id="select_doctor" name="doctor" required="required">
-                                        <option value="" selected="selected">---Choose from the available doctors---</option>
-                                        <option value="">Dr. Lyn Deslate</option>
-                                        <option value="">Dr. Angelu Vasquez</option>
+                                    <select class="form-control" id="online_doctors" name="consultation_doctor" required="required">
+                                        <!-- ONLINE DOCTORS HERE -->
                                     </select>
                                 </div>
 
@@ -333,7 +331,57 @@
                 }
             });
         }, 500);
+
+        // Fetch all online doctors
+        var onlineCount;
+        $.ajax({
+            url: '<?= base_url('consultation/fetchOnlineHealthPersonnels') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#online_doctors').html(response['result']);
+                onlineCount = response['count'];
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= base_url('consultation/fetchOnlineHealthPersonnels') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != onlineCount) {
+                        $('#online_doctors').html(response['result']);
+                        onlineCount = response['count'];
+                    }
+                }
+            });
+        }, 500);
     });
+
+    <?php if (session()->get('success') !== null) : ?>
+        // Sweet Alert for success staus
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        Toast.fire({
+            icon: 'success',
+            title: '<?= session()->get('success'); ?>'
+        });
+    <?php elseif (session()->get('error') !== null) : ?>
+        // Sweet Alert for error staus
+        var Toast = Swal.mixin({
+            toast: false,
+            position: 'center',
+            showConfirmButton: true,
+        });
+        Toast.fire({
+            icon: 'warning',
+            title: '<?= session()->get('error'); ?>'
+        });
+    <?php endif; ?>
 </script>
 
 <?= $this->endSection('content') ?>
