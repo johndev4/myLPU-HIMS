@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-12 default-nav">
                         <a href="<?= base_url('mentalwellness') ?>">
-                            <div class="card shadow card2" style="max-width:32rem; border:3px solid #CC6699">
+                            <div class="card shadow card2 actv2 active" style="max-width:32rem; border:3px solid none">
                                 <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                         <span class="font-weight-bold" style="font-size: 25pt; color: #CC6699">Mental Wellness</span>
@@ -102,19 +102,12 @@
                             <!-- <label for="FormControlTextarea" class="font-weight-normal mb-2" style="font-size: 18pt; color: rgb(116, 116, 116);">Tell the doctor your health concern.</label> -->
                             <form action="<?= base_url('mentalwellness/sendConsultation') ?>" method="post" id="">
 
-
-
                                 <div class="form-group mb-4" style="border:1px solid none">
                                     <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
                                     <select class="form-control" id="online_doctors" name="consultation_doctor" required="required">
                                         <!-- ONLINE DOCTORS HERE -->
                                     </select>
                                 </div>
-
-
-
-
-
 
                                 <label class="col-form-label required text-secondary">Tell us your concern</label>
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
@@ -123,10 +116,6 @@
                                     <span id="current">0</span>
                                     <span id="maximum">/ 100</span>
                                 </div>
-
-
-
-
 
                                 <button type="submit" class="btn btn-block btn-default p-2" id="sendBtn_consultation">Send Request Now<i class="far fa-paper-plane ml-2"></i></button>
                             </form>
