@@ -25,7 +25,7 @@
                 <div class="row border-outside">
                     <div class="col-12 default-nav">
                         <a href="<?= base_url('consultation') ?>">
-                            <div class="card shadow card2" style="max-width:32rem; border:3px solid #7687CD">
+                            <div class="card shadow card2 active" style="max-width:32rem; border:3px solid none">
                                 <div class="row p-3 default-nav">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                         <span class="font-weight-bold" style="font-size: 25pt; color: #7687CD">Consult</span>

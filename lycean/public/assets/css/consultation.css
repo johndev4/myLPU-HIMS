@@ -154,11 +154,24 @@ a#custom-tabs-four-documents-tab.nav-link{
     color: rgb(155, 155, 155) !important;
     border-radius: 3px !important;
 }
+/* Details Tab */
 
 
 
 
 
+
+/* Active Nav Testing Prototyrpe */
+div.card.shadow.card2.active{
+   border-color: #7687CD !important;
+   border-style: solid !important;
+   border-width: 3px !important;
+}
+div.card.shadow.card2.actv2.active{
+    border-color: #CC6699 !important;
+    border-style: solid !important;
+    border-width: 3px !important;
+}
 
 
 
