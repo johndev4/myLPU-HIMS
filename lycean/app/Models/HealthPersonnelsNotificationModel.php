@@ -7,17 +7,17 @@ use CodeIgniter\Model;
 class HealthPersonnelsNotificationModel extends Model
 {
     protected $DBGroup              = 'default';
-    protected $table                = 'healthpersonnelsnotifications';
+    protected $table                = 'health_personnels_notification';
     protected $primaryKey           = 'notification_id';
     protected $useAutoIncrement     = true;
     protected $insertID             = 0;
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = [];
+    protected $allowedFields        = ['id_no', 'consultation_no', 'info', 'status', 'link'];
 
     // Dates
-    protected $useTimestamps        = false;
+    protected $useTimestamps        = true;
     protected $dateFormat           = 'datetime';
     protected $createdField         = 'created_at';
     protected $updatedField         = 'updated_at';

@@ -13,7 +13,7 @@
         <li class="nav-item dropdown dpst">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-bell fa-lg text-secondary"></i>
-                <span class="badge badge-danger navbar-badge" id="notificationBadge">15</span>
+                <span class="badge badge-danger navbar-badge" id="notificationBadge"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right">
                 <div id="notificationList" style="height: 410px; overflow-y:auto">

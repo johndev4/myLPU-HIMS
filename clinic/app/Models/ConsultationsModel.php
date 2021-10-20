@@ -9,7 +9,7 @@ class ConsultationsModel extends Model
     protected $DBGroup              = 'default';
     protected $table                = 'consultations';
     protected $primaryKey           = 'consultation_no';
-    protected $useAutoIncrement     = true;
+    protected $useAutoIncrement     = false;
     protected $insertID             = 0;
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
