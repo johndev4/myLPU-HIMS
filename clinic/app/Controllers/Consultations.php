@@ -192,12 +192,16 @@ class Consultations extends BaseController
 					'meeting_link' => $_GET['meeting_link']
 				];
 
-				$success = $this->consultationsModel
+				$success1 = $this->consultationsModel
 					->where('consultation_no', $id)
 					->set($data)->update();
 
-				if ($success) {
-					session()->setFlashdata('success', 'Ok!');
+				$consultation = $this->consultationsModel->find($id);
+				$success2 = $this->setNotification($consultation, 'accept');
+
+				if ($success1 && $success2) {
+					session()->setFlashdata('success', 'Ok');
+				} else {
 				}
 			}
 		}
@@ -222,12 +226,16 @@ class Consultations extends BaseController
 					'rejection_message' => $_GET['rejection_message']
 				];
 
-				$success = $this->consultationsModel
+				$success1 = $this->consultationsModel
 					->where('consultation_no', $id)
 					->set($data)->update();
 
-				if ($success) {
-					session()->setFlashdata('success', 'Ok!');
+				$consultation = $this->consultationsModel->find($id);
+				$success2 = $this->setNotification($consultation, 'reject');
+
+				if ($success1 && $success2) {
+					session()->setFlashdata('success', 'Ok');
+				} else {
 				}
 			}
 
@@ -248,36 +256,43 @@ class Consultations extends BaseController
 				$files = $this->request->getFiles();
 				$consultation = $this->consultationsModel->find($id);
 
-				foreach ($files['medicalfiles'] as $file) {
+				foreach ($files['medicalfiles'] as $key => $file) {
 					$fileName = $file->getName();
 					$fileDirectory = $this->baseDir . $consultation['lycean_id_no'];
 
 					if ($file->isValid() && !$file->hasMoved()) {
 						for ($i = 0; true; $i += 1) {
 							if (!file_exists($fileDirectory . '/' . $fileName)) {
-								$success1 = $file->move($fileDirectory, $fileName);
+								$success1[$key] = $file->move($fileDirectory, $fileName);
 
-								$success2 = $this->medicalFilesModel->save([
+								$success2[$key] = $this->medicalFilesModel->save([
 									'consultation_no' => $id,
 									'file_path' => $fileDirectory . '/' . $fileName
 								]);
 
-								$success3 = $this->consultationsModel
+								$success3[$key] = $this->consultationsModel
 									->where('consultation_no', $id)
 									->set([
 										'queue_no' => null,
 										'status' => 'done'
 									])->update();
 
-								if ($success1 && $success2 && $success3) {
-									session()->setFlashdata('success', "Successfully uploaded.");
-								} else {
-								}
+
+
+
 								break;
 							} else {
 								$fileName = explode('.', $file->getName())[0] . ' (' . $i . ').' . $file->getExtension();
 							}
 						}
+					}
+				}
+
+				if ($this->isSuccess($success1) && $this->isSuccess($success2) && $this->isSuccess($success3)) {
+					$consultation = $this->consultationsModel->find($id);
+					$success4 = $this->setNotification($consultation, 'send');
+					if ($success4) {
+						session()->setFlashdata('success', 'Successfully uploaded');
 					}
 				}
 			} else {
@@ -287,6 +302,16 @@ class Consultations extends BaseController
 		}
 
 		return redirect()->to('consultations');
+	}
+
+	private function isSuccess($success)
+	{
+		foreach ($success as $succ) {
+			if (!$succ) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 
@@ -322,5 +347,33 @@ class Consultations extends BaseController
 					'last_activity' => ''
 				])->update();
 		}
+	}
+
+
+	// SET NOTIFICATION
+	// -----------------------------------------------------------------
+	private function setNotification($data, $type)
+	{
+		if ($data['category'] == 'Consultation') {
+			$personnel = 'doctor';
+		} else if ($data['category'] == 'Mental Wellness') {
+			$personnel = 'guidance counselor';
+		}
+
+		if ($type == 'accept') {
+			$info = "The {$personnel} accepted your request";
+		} else if ($type == 'reject') {
+			$info = 'The doctor rejected your request';
+		} else if ($type == 'send') {
+			$info = 'The documents are ready to view';
+		}
+
+		return $this->lyceansNotificationModel->save([
+			'id_no' => $data['lycean_id_no'],
+			'consultation_no' => $data['consultation_no'],
+			'info' => $info,
+			'status' => 'unread',
+			'link' => str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']. '?documents=1'))
+		]);
 	}
 }

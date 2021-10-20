@@ -145,7 +145,7 @@
 
                     <div class="col-4 text-center">
                         <a href="<?= base_url('consultation') ?>">
-                            <div class="card shadow card2 py-3" style="max-width:32rem; border:3px solid none">
+                            <div id="consultationNavMob" class="card shadow card2 py-3">
                                 <i class="fas fa-comment-medical fa-2x" style="color: #7687CD"></i>
                             </div>
                         </a>
@@ -153,7 +153,7 @@
 
                     <div class="col-4 text-center">
                         <a href="<?= base_url('mentalwellness') ?>">
-                            <div class="card shadow card2 py-3" style="max-width:32rem">
+                            <div id="mentalwellnessNavMob" class="card shadow card2 py-3">
                                 <i class="fas fa-brain fa-2x" style="color: #CC6699"></i>
                             </div>
                         </a>
@@ -266,9 +266,16 @@
         // For navigation
         if ('<?= $details['category'] ?>' == 'Consultation') {
             $('#consultationNav').addClass('active');
+            $('#consultationNavMob').addClass('active');
         } else if ('<?= $details['category'] ?>' == 'Mental Wellness') {
             $('#mentalwellnessNav').addClass('active');
+            $('#mentalwellnessNavMob').addClass('active');
         }
+
+        // Trigger medical documents tab on TRUE
+        <?php if (isset($_GET['documents']) && $_GET['documents'] == TRUE) : ?>
+            $('#custom-tabs-four-documents-tab').trigger('click');
+        <?php endif; ?>
     });
 </script>
 

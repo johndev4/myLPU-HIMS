@@ -1,0 +1,8 @@
+"id_no","first_name","middle_name","last_name","role","department","birth_date","gender","height","weight","blood_type"
+"2014-1-72634","Amanda","N","Menta","faculty","COECSA","1991-10-12","Female",NULL,NULL,NULL
+"2015-2-06969","Ji-eun","N","Lee","staff","CITHM","1993-05-16","Female",NULL,NULL,NULL
+"2015-2-09696","Momo","N","Hirai","staff","CAMS","1996-11-09","Female",NULL,NULL,NULL
+"2018-2-01509","Chris Jover","A","De Leon","student","COECSA","1999-11-06","Male",NULL,NULL,NULL
+"2018-2-01763","Rick Vincent Jeffrey","P","Dela Cruz","student","COECSA","1999-10-19","Male",NULL,NULL,NULL
+"2018-2-02181","John Rafael","P","Mistica","student","COECSA","1998-07-04","Male",NULL,NULL,NULL
+"2018-2-03248","Jade Anne Kristel","J","Vale","student","COECSA","2000-10-14","Female",NULL,NULL,NULL

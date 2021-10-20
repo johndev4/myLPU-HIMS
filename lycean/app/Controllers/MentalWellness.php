@@ -265,7 +265,7 @@ class MentalWellness extends BaseController
                         'status' => 'pending',
                         'category' => 'Mental Wellness',
                         'message' => $_POST['consultation_message'],
-                        'personnel_id_no' => $_POST['consultation_doctor'],
+                        'personnel_id_no' => $_POST['consultation_guidancecounselor'],
                         'lycean_id_no' => getIdNo(),
                     ];
 
@@ -290,9 +290,10 @@ class MentalWellness extends BaseController
     {
         return $this->healthPersonnelsNotificationModel->save([
             'id_no' => $data['personnel_id_no'],
-            'info' => '',
+            'consultation_no' => $data['consultation_no'],
+            'info' => 'You have new request from lycean',
             'status' => 'unread',
-            'link' => base_url('consultations')
+            'link' => str_replace('lycean', 'clinic', base_url('consultations'))
         ]);
     }
 

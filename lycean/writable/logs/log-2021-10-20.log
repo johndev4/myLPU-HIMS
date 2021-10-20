@@ -5609,3 +5609,1011 @@ CRITICAL - 2021-10-20 18:33:17 --> Table 'mylpuhims_db.lyceans_notification' doe
 #11 {main}
 =======
 >>>>>>> 17bd3334b017b51f0c347f8a9957298359ff1989
+ERROR - 2021-10-20 22:47:21 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 22:47:21 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 22:47:21 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 22:47:21 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 22:47:22 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 22:47:22 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 22:47:22 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 22:47:22 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 22:47:23 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 22:47:23 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 22:48:22 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 22:48:22 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/de...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+ERROR - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-01509')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:47 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-01509')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-01509')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:05:48 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:49 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:05:49 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-01509')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:05:49 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:05:49 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-01509')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+ERROR - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-01509')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:06:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+ERROR - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:10 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:08:11 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:12 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:08:12 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:13 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:08:13 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:08:14 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:08:14 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+ERROR - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:13 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultation/fe...', 'before')
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:55:14 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:15 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:55:15 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:16 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:55:16 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2021-10-20 23:55:17 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+CRITICAL - 2021-10-20 23:55:17 --> Table 'mylpuhims_db.lyceans_notification' doesn't exist
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-03248')
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
