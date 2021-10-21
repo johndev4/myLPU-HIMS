@@ -36,7 +36,7 @@ class Notifications extends BaseController
 				$consultatation = $this->consultationsModel->find($consultation_no);
 				if ($consultatation['category'] == 'Consultation') {
 					$icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
-				} else if ($notification['category'] == 'Mental Wellness') {
+				} else if ($consultatation['category'] == 'Mental Wellness') {
 					$icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
 				}
 
