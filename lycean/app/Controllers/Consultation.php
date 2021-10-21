@@ -292,7 +292,7 @@ class Consultation extends BaseController
         return $this->healthPersonnelsNotificationModel->save([
             'id_no' => $data['personnel_id_no'],
             'consultation_no' => $data['consultation_no'],
-            'info' => 'You have new request from lycean',
+            'info' => 'You have new consultation requests',
             'status' => 'unread',
             'link' => str_replace('lycean', 'clinic', base_url('consultations'))
         ]);

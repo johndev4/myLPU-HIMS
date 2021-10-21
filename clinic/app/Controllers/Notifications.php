@@ -18,7 +18,7 @@ class Notifications extends BaseController
 	{
 		$notifications = $this->notificationModel
 			->where('id_no', $id)
-			->findAll();
+			->orderBy('created_at', 'desc')->findAll();
 		$unreadNotifications = $this->notificationModel
 			->where('id_no', $id)->where('status', 'unread')
 			->findAll();
