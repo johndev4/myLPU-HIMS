@@ -91,7 +91,7 @@ class Consultation extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'active')->where('category', 'Consultation')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -133,7 +133,7 @@ class Consultation extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'pending')->where('category', 'Consultation')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -171,7 +171,7 @@ class Consultation extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'rejected')->where('category', 'Consultation')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -206,7 +206,7 @@ class Consultation extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'done')->where('category', 'Consultation')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
