@@ -25,7 +25,7 @@
                         <span class="info-box-icon add-record text-black-50"><i class="fas fa-plus"></i></span>
                         <span class="info-box-text text-black-50">Add Inventory</span>
                     </button>
-                </div>
+                </div>  
 
                 <!-- Batch Management -->
                 <div class="col-md-3 col-12 mb-3">

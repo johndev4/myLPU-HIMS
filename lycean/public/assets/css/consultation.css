@@ -173,6 +173,17 @@ div.card.shadow.card2.actv2.active{
     border-width: 3px !important;
 }
 
+/* Mobile nav Test */
+div.card.shadow.card2.py-3.active{
+    border-color: #7687CD !important;
+    border-style: solid !important;
+    border-width: 3px !important;
+ }
+ div.card.shadow.card2.py-3.actv2.active{
+     border-color: #CC6699 !important;
+     border-style: solid !important;
+     border-width: 3px !important;
+ }
 
 
 
