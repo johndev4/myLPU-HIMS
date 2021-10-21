@@ -35,7 +35,7 @@ class Consultations extends BaseController
 				]
 			],
 			'meeting_time' => [
-				'rules' => 'required',
+				'rules' => 'required|is_unique[consultations.date]',
 				'errors' => [
 					'required' => '- Required',
 				]
@@ -360,13 +360,11 @@ class Consultations extends BaseController
 			$personnel = 'guidance counselor';
 		}
 
-		if ($type == 'accept' || $type == 'reject') {
-			if ($type == 'accept') {
-				$info = "The {$personnel} accepted your request";
-			} else if ($type == 'reject') {
-				$info = 'The doctor rejected your request';
-			}
-
+		if ($type == 'accept') {
+			$info = "The {$personnel} accepted your request";
+			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']));
+		} else if ($type == 'reject') {
+			$info = 'The doctor rejected your request';
 			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']));
 		} else if ($type == 'send') {
 			$info = 'The documents are ready to view';
