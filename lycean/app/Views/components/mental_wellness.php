@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-12 default-nav">
                         <a href="<?= base_url('mentalwellness') ?>">
-                            <div class="card shadow card2 actv2 active" style="max-width:32rem; border:3px solid none">
+                            <div class="card shadow card2 active" style="max-width:32rem; border:3px solid none">
                                 <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                         <span class="font-weight-bold" style="font-size: 25pt; color: #CC6699">Mental Wellness</span>
@@ -71,7 +71,7 @@
 
                     <div class="col-4 text-center">
                         <a href="<?= base_url('consultation') ?>">
-                            <div class="card shadow card2 py-3" style="max-width:32rem; border:3px solid none">
+                            <div class="card shadow card2 py-3">
                                 <i class="fas fa-comment-medical fa-2x" style="color: #7687CD"></i>
                             </div>
                         </a>
@@ -79,7 +79,7 @@
 
                     <div class="col-4 text-center">
                         <a href="<?= base_url('mentalwellness') ?>">
-                            <div class="card shadow card2 py-3" style="max-width:32rem; border: 3px solid #CC6699">
+                            <div class="card shadow card2 py-3 active">
                                 <i class="fas fa-brain fa-2x" style="color: #CC6699"></i>
                             </div>
                         </a>
@@ -103,8 +103,8 @@
                             <form action="<?= base_url('mentalwellness/sendConsultation') ?>" method="post" id="">
 
                                 <div class="form-group mb-4" style="border:1px solid none">
-                                    <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
-                                    <select class="form-control" id="online_doctors" name="consultation_doctor" required="required">
+                                    <label for="select_doctor" class="col-form-label required text-secondary">Guidance Counselor</label>
+                                    <select class="form-control" id="online_guidanceCounselor" name="consultation_guidancecounselor" required="required">
                                         <!-- ONLINE DOCTORS HERE -->
                                     </select>
                                 </div>
@@ -190,6 +190,10 @@
 
     </div>
 </body>
+
+
+
+
 
 <!-- Script -->
 <script>
@@ -352,7 +356,7 @@
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#online_doctors').html(response['result']);
+                $('#online_guidanceCounselor').html(response['result']);
                 onlineCount = response['count'];
             }
         });
@@ -363,7 +367,7 @@
                 dataType: 'json',
                 success: function(response) {
                     if (response['count'] != onlineCount) {
-                        $('#online_doctors').html(response['result']);
+                        $('#online_guidanceCounselor').html(response['result']);
                         onlineCount = response['count'];
                     }
                 }

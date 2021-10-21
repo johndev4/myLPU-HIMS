@@ -7,7 +7,7 @@
         <!-- Back Button -->
         <!-- <div class="row mt-2 mb-2" style="border:1px solid none">
             <div class="col-sm-12">
-                <a href="<?= base_url('dashboard') ?>" class="back-btn">
+                <a href="" class="back-btn">
                     <i class="fas fa-chevron-left fa-2x font-weight-normal" style="font-size: 17pt; color: rgb(88, 88, 88); vertical-align:baseline"></i>
                     <span class="font-weight-normal ml-1" style="font-size: 20pt; color: rgb(88, 88, 88)">Back</span>
                 </a>
@@ -99,7 +99,7 @@
                 <div class="row border-outside">
                     <div class="col-12 default-nav">
                         <a href="<?= base_url('consultation') ?>">
-                            <div class="card shadow card2" style="max-width:32rem; border:3px solid none">
+                            <div id="consultationNav" class="card shadow card2" style="max-width:32rem; border:3px solid none">
                                 <div class="row p-3 default-nav">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                         <span class="font-weight-bold" style="font-size: 25pt; color: #7687CD">Consult</span>
@@ -116,7 +116,7 @@
                 <div class="row">
                     <div class="col-12 default-nav">
                         <a href="<?= base_url('mentalwellness') ?>">
-                            <div class="card shadow card2" style="max-width:32rem">
+                            <div id="mentalwellnessNav" class="card shadow card2" style="max-width:32rem">
                                 <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
                                         <span class="font-weight-bold" style="font-size: 25pt; color: #CC6699">Mental Wellness</span>
@@ -145,7 +145,7 @@
 
                     <div class="col-4 text-center">
                         <a href="<?= base_url('consultation') ?>">
-                            <div class="card shadow card2 py-3" style="max-width:32rem; border:3px solid none">
+                            <div id="consultationNavMob" class="card shadow card2 py-3">
                                 <i class="fas fa-comment-medical fa-2x" style="color: #7687CD"></i>
                             </div>
                         </a>
@@ -153,7 +153,7 @@
 
                     <div class="col-4 text-center">
                         <a href="<?= base_url('mentalwellness') ?>">
-                            <div class="card shadow card2 py-3" style="max-width:32rem">
+                            <div id="mentalwellnessNavMob" class="card shadow card2 py-3">
                                 <i class="fas fa-brain fa-2x" style="color: #CC6699"></i>
                             </div>
                         </a>
@@ -255,5 +255,28 @@
 
     </div>
 </body>
+
+
+
+
+
+<!-- Script -->
+<script>
+    $('document').ready(function() {
+        // For navigation
+        if ('<?= $details['category'] ?>' == 'Consultation') {
+            $('#consultationNav').addClass('active');
+            $('#consultationNavMob').addClass('active');
+        } else if ('<?= $details['category'] ?>' == 'Mental Wellness') {
+            $('#mentalwellnessNav').addClass('active');
+            $('#mentalwellnessNavMob').addClass('active');
+        }
+
+        // Trigger medical documents tab on TRUE
+        <?php if (isset($_GET['documents']) && $_GET['documents'] == TRUE) : ?>
+            $('#custom-tabs-four-documents-tab').trigger('click');
+        <?php endif; ?>
+    });
+</script>
 
 <?= $this->endSection('content') ?>

@@ -60,6 +60,7 @@ class MentalWellness extends BaseController
             ],
             'concern_message' => $consultation['message'] != '' ? $consultation['message'] : '---',
             'rejection_message' => $consultation['rejection_message'] != '' ? $consultation['rejection_message'] : '---',
+            'category' => $consultation['category']
         ];
 
         $medical_files = $this->medicalFilesModel->where('consultation_no', $id)->findAll();
@@ -264,18 +265,19 @@ class MentalWellness extends BaseController
                         'status' => 'pending',
                         'category' => 'Mental Wellness',
                         'message' => $_POST['consultation_message'],
-                        'personnel_id_no' => $_POST['consultation_doctor'],
+                        'personnel_id_no' => $_POST['consultation_guidancecounselor'],
                         'lycean_id_no' => getIdNo(),
                     ];
 
-                    $success = $this->consultationsModel->save($data);
+                    $success1 = $this->consultationsModel->save($data);
+                    $success2 = $this->setNotification($data);
 
-                    if ($success) {
-                        // $this->setNotification($data);
+                    if ($success1 && $success2) {
                         session()->setFlashdata('success', 'Sent');
+                    } else {
                     }
                 } else {
-                    session()->setFlashdata('error', 'You have unfinished consultation request.');
+                    session()->setFlashdata('error', 'You have an active or pending request.');
                 }
             } else {
             }
@@ -286,8 +288,12 @@ class MentalWellness extends BaseController
 
     private function setNotification($data)
     {
-        $success = $this->healthPersonnelsNotificationModel->save([
-            '' => '',
+        return $this->healthPersonnelsNotificationModel->save([
+            'id_no' => $data['personnel_id_no'],
+            'consultation_no' => $data['consultation_no'],
+            'info' => 'You have new request from lycean',
+            'status' => 'unread',
+            'link' => str_replace('lycean', 'clinic', base_url('consultations'))
         ]);
     }
 

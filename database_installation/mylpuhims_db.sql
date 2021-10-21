@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2021 at 06:52 PM
+-- Generation Time: Oct 20, 2021 at 12:34 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -124,8 +124,8 @@ CREATE TABLE `health_personnels_account` (
 --
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locked`, `last_activity`) VALUES
-('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, NULL),
-('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL, '2021-10-20 12:52:00'),
+('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, '2021-10-20 06:34:00'),
+('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL, NULL),
 ('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8', NULL, NULL),
 ('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839', NULL, NULL),
 ('2016-3-9012', 'kwak.kwak@lpu.edu.ph', '9e166b2660994213ac25eb570995d53aca1736c2cda1e36f7342991f9423cdfc', NULL, NULL);
@@ -140,6 +140,7 @@ DROP TABLE IF EXISTS `health_personnels_notification`;
 CREATE TABLE `health_personnels_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
+  `consultation_no` varchar(45) NOT NULL,
   `info` varchar(45) NOT NULL,
   `status` varchar(45) NOT NULL,
   `link` varchar(2048) NOT NULL,
@@ -151,8 +152,8 @@ CREATE TABLE `health_personnels_notification` (
 -- Dumping data for table `health_personnels_notification`
 --
 
-INSERT INTO `health_personnels_notification` (`notification_id`, `id_no`, `info`, `status`, `link`, `created_at`, `updated_at`) VALUES
-(1, '2016-3-1234', 'New request from lycean', 'unread', 'http://localhost/myLPU-HIMS/lycean/public/consultation/details/RJugrqo1NmsYEdht', '2021-10-16 21:31', '2021-10-16 21:31');
+INSERT INTO `health_personnels_notification` (`notification_id`, `id_no`, `consultation_no`, `info`, `status`, `link`, `created_at`, `updated_at`) VALUES
+(1, '2016-3-1234', 'RJugrqo1NmsYEdht', 'New request from lycean', 'unread', 'http://localhost/myLPU-HIMS/lycean/public/consultation/details/RJugrqo1NmsYEdht', '2021-10-16 21:31', '2021-10-16 21:31');
 
 -- --------------------------------------------------------
 
@@ -228,7 +229,7 @@ INSERT INTO `lyceans_account` (`id_no`, `username`, `password`, `locked`) VALUES
 ('2018-2-01509', 'chris.deleon@lpunetwork.edu.ph', '15b3530e61aa540e86b8f9b4f3d88245fd4fe81ea411cdbb84a5da52f75255b6', NULL),
 ('2018-2-01763', 'rick.delacruz@lpunetwork.edu.ph', '32c0230638a1a851c38d5f223e94a0e9ac9b55bae7747233b6edc358aa72c23a', NULL),
 ('2018-2-02181', 'john.mistica@lpunetwork.edu.ph', '918f24ab2bacdffde0f9cc096f5d02d37a5b89d68a8bed1320cf4868f16d2301', NULL),
-('2018-2-03248', 'jade.vale@lpunetwork.edu.ph', '278d3872d86a41fd8ea83b5ef0c7118ecc6a445e6d0da818b08ac7c689d53f6d', 0);
+('2018-2-03248', 'jade.vale@lpunetwork.edu.ph', '278d3872d86a41fd8ea83b5ef0c7118ecc6a445e6d0da818b08ac7c689d53f6d', NULL);
 
 -- --------------------------------------------------------
 
@@ -240,6 +241,7 @@ DROP TABLE IF EXISTS `lyceans_notification`;
 CREATE TABLE `lyceans_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
+  `consultation_no` varchar(45) NOT NULL,
   `info` varchar(45) NOT NULL,
   `status` varchar(45) NOT NULL,
   `link` varchar(2048) DEFAULT NULL,
@@ -251,8 +253,8 @@ CREATE TABLE `lyceans_notification` (
 -- Dumping data for table `lyceans_notification`
 --
 
-INSERT INTO `lyceans_notification` (`notification_id`, `id_no`, `info`, `status`, `link`, `created_at`, `updated_at`) VALUES
-(1, '2018-2-01509', 'The doctor accepted your request', 'unread', 'http://localhost/myLPU-HIMS/lycean/public/consultation/details/RJugrqo1NmsYEdht', '2021-10-12 18:41', '2021-10-12 18:41');
+INSERT INTO `lyceans_notification` (`notification_id`, `id_no`, `consultation_no`, `info`, `status`, `link`, `created_at`, `updated_at`) VALUES
+(1, '2018-2-01509', 'RJugrqo1NmsYEdht', 'The doctor accepted your request', 'unread', 'http://localhost/myLPU-HIMS/lycean/public/consultation/details/RJugrqo1NmsYEdht', '2021-10-12 18:41', '2021-10-12 18:41');
 
 -- --------------------------------------------------------
 
