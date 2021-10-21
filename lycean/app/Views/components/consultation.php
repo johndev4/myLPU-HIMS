@@ -103,7 +103,7 @@
                             <form action="<?= base_url('consultation/sendConsultation') ?>" method="post" id="">
 
                                 <div class="form-group mb-4" style="border:1px solid none">
-                                    <label for="select_doctor" class="col-form-label required text-secondary">Guidance Counselor</label>
+                                    <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
                                     <select class="form-control" id="online_doctor" name="consultation_doctor" required="required">
                                         <!-- ONLINE DOCTORS HERE -->
                                     </select>
