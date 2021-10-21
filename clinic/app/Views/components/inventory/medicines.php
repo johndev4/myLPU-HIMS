@@ -25,7 +25,18 @@
                         <span class="info-box-icon add-record text-black-50"><i class="fas fa-plus"></i></span>
                         <span class="info-box-text text-black-50">Add Inventory</span>
                     </button>
+                </div>  
+
+                <!-- Batch Management -->
+                <div class="col-md-3 col-12 mb-3">
+                    <button type="button" class="btn btn-block btn-default shadow p-3">
+                        <span class="info-box-icon text-black-50"><i class="fas fa-boxes"></i></span>
+                        <span class="info-box-text text-black-50">Batch</span>
+                    </button>
                 </div>
+
+
+
             </div>
 
             <!-- Modal -->
@@ -141,12 +152,32 @@
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="" value="50">
+                                        <input type="number" class="form-control" id="" name="" value="50" disabled>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Expiration Date</label>
                                         <input type="date" class="form-control" id="" name="" value="">
                                     </div>
+
+
+                                    <div class="col-6 form-group">
+                                        <label for="#add_username" class="col-form-label">Stock In</label>
+                                        <input type="number" class="form-control" id="" name="" value="0">
+                                    </div>
+
+                                    <div class="col-6 form-group">
+                                        <label for="#add_username" class="col-form-label">Stock Out</label>
+                                        <input type="number" class="form-control" id="" name="" value="0">
+                                    </div>
+
+
+
+
+
+
+
+
+
                                     <div class="col-12 form-group">
                                         <label for="add_department" class="col-form-label">Availability</label>
                                         <select class="form-control" id="" name="">
