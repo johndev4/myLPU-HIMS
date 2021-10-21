@@ -100,7 +100,7 @@
                         </div>
                         <div class="form-group">
                             <!-- <label for="FormControlTextarea" class="font-weight-normal mb-2" style="font-size: 18pt; color: rgb(116, 116, 116);">Tell the doctor your health concern.</label> -->
-                            <form action="<?= base_url('mentalwellness/sendConsultation') ?>" method="post" id="">
+                            <form action="<?= base_url('consultation/sendConsultation') ?>" method="post" id="">
 
                                 <div class="form-group mb-4" style="border:1px solid none">
                                     <label for="select_doctor" class="col-form-label required text-secondary">Guidance Counselor</label>
