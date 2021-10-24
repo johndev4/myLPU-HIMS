@@ -139,19 +139,20 @@ class Consultations extends BaseController
 		$scheduledConsultations = $this->consultationsModel
 			->where('status', 'active')
 			->where('personnel_id_no', getIdNo())
-			->orderBy('queue_no', 'asc')->findAll();
+			->orderBy('updated_at', 'asc')->findAll();
 
 		$result = "";
 		foreach ($scheduledConsultations as $key => $value) {
 			$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 			$middle_init = $lycean['middle_name'];
+			$key += 1;
 
 			$data = "
 			<div class=\"px-2\">
 				<div class=\"card\">
 					<!-- <div class=\"card-header bg-danger\"></div> -->
 					<div class=\"card-body sched\">
-						<h4 class=\"d-inline float-left text-secondary font-weight-light\">#{$value['queue_no']}</h4>
+						<h4 class=\"d-inline float-left text-secondary font-weight-light\">#{$key}</h4>
 						<span class=\"d-inline float-right text-primary request-type\"> {$value['category']} </span>
 						<br><br>
 						<div>
@@ -182,12 +183,7 @@ class Consultations extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getAcceptRules())) {
-				$scheduledConsultations = $this->consultationsModel
-					->where('status', 'active')->where('personnel_id_no', getIdNo())
-					->orderBy('queue_no', 'asc')->findAll();
-
 				$data = [
-					'queue_no' => count($scheduledConsultations) + 1,
 					'status' => 'active',
 					'meeting_schedule' => $_GET['meeting_date'] . " " . $_GET['meeting_time'],
 					'meeting_link' => $_GET['meeting_link']
