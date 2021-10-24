@@ -28,9 +28,22 @@ class Inventory extends BaseController
 		return view('components/inventory/medicines', $this->data);
 	}
 
+	public function batch_management()
+	{
+		// Display page view
+		return view('components/inventory/batch_management', $this->data);
+	}
+
+	public function stocks()
+	{
+		// Display page view
+		return view('components/inventory/stocks', $this->data);
+	}
+
 	public function equipments()
 	{
 		// Display page view
 		return view('components/inventory/equipments', $this->data);
 	}
+	
 }

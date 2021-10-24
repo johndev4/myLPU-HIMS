@@ -25,18 +25,7 @@
                         <span class="info-box-icon add-record text-black-50"><i class="fas fa-plus"></i></span>
                         <span class="info-box-text text-black-50">Add Inventory</span>
                     </button>
-                </div>  
-
-                <!-- Batch Management -->
-                <div class="col-md-3 col-12 mb-3">
-                    <button type="button" class="btn btn-block btn-default shadow p-3">
-                        <span class="info-box-icon text-black-50"><i class="fas fa-boxes"></i></span>
-                        <span class="info-box-text text-black-50">Batch</span>
-                    </button>
                 </div>
-
-
-
             </div>
 
             <!-- Modal -->
@@ -55,22 +44,26 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">SKU</label>
-                                        <input type="text" class="form-control" id="" name="id_no" value="">
+                                        <label for="add_productid" class="col-form-label">Product ID</label>
+                                        <input type="text" class="form-control" id="" name="productid" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_lastname" class="col-form-label">Manufacturer</label>
-                                        <input type="text" class="form-control" id="" name="last_name" value="">
+                                        <label for="add_productid" class="col-form-label">Manufacturer</label>
+                                        <input type="text" class="form-control" id="" name="productid" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_firstname" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="first_name" value="">
+                                        <label for="add_productid" class="col-form-label">Generic Name</label>
+                                        <input type="text" class="form-control" id="" name="productid" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_middleinit" class="col-form-label">Drug Class</label>
-                                        <input type="text" class="form-control" id="" name="middle_initial" value="" maxlength="1">
+                                        <label for="add_productid" class="col-form-label">Drug Class</label>
+                                        <input type="text" class="form-control" id="" name="productid" value="">
                                     </div>
-                                    <div class="col-6 form-group">
+                                    <div class="col-12 form-group">
+                                        <label for="add_dosage" class="col-form-label">Dosage</label>
+                                        <input type="text" class="form-control" id="" name="middle_dosage" value="">
+                                    </div>
+                                    <!-- <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock</label>
                                         <input type="number" class="form-control" id="" name="username" value="">
                                     </div>
@@ -85,7 +78,7 @@
                                             <option value="COECSA">Available</option>
                                             <option value="CITHM">Unavailable</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="footer float-right pb-3">
@@ -125,7 +118,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Inventory Details</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Medicine Details</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -135,7 +128,7 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">SKU</label>
+                                        <label for="add_idno" class="col-form-label">Product ID</label>
                                         <input type="text" class="form-control" id="" name="" value="A0001">
                                     </div>
                                     <div class="col-4 form-group">
@@ -144,13 +137,17 @@
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="add_firstname" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="" value="Cefuroxime 250mg">
+                                        <input type="text" class="form-control" id="" name="" value="Cefuroxime">
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="add_middleinit" class="col-form-label">Drug Class</label>
                                         <input type="text" class="form-control" id="" name="" maxlength="1" value="Antibacterial">
                                     </div>
-                                    <div class="col-6 form-group">
+                                    <div class="col-12 form-group">
+                                        <label for="add_dosage" class="col-form-label">Dosage</label>
+                                        <input type="text" class="form-control" id="" name="middle_dosage" value="250mg">
+                                    </div>
+                                    <!-- <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock</label>
                                         <input type="number" class="form-control" id="" name="" value="50" disabled>
                                     </div>
@@ -158,8 +155,6 @@
                                         <label for="#add_username" class="col-form-label">Expiration Date</label>
                                         <input type="date" class="form-control" id="" name="" value="">
                                     </div>
-
-
                                     <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock In</label>
                                         <input type="number" class="form-control" id="" name="" value="0">
@@ -169,15 +164,6 @@
                                         <label for="#add_username" class="col-form-label">Stock Out</label>
                                         <input type="number" class="form-control" id="" name="" value="0">
                                     </div>
-
-
-
-
-
-
-
-
-
                                     <div class="col-12 form-group">
                                         <label for="add_department" class="col-form-label">Availability</label>
                                         <select class="form-control" id="" name="">
@@ -185,7 +171,7 @@
                                             <option value="Available">Available</option>
                                             <option value="Unavailable">Unavailable</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="footer float-right pb-3">
@@ -210,16 +196,14 @@
                 </div>
 
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                    <table id="example1" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>SKU</th>
+                                <th>Product ID</th>
                                 <th>Manufacturer</th>
                                 <th>Generic Name</th>
+                                <th>Dosage</th>
                                 <th>Drug Class</th>
-                                <th>Stock</th>
-                                <th>Expiration</th>
-                                <th>Availability</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -227,11 +211,9 @@
                             <tr>
                                 <td>A0001</td>
                                 <td>RiteMed</td>
-                                <td>Cefuroxime 250mg</td>
+                                <td>Cefuroxime</td>
+                                <td>250mg</td>
                                 <td>Antibacterial</td>
-                                <td>50</td>
-                                <td>09/22/21</td>
-                                <td class="text-center"><span class="bg-danger p-1 rounded text-xs">Unavailable</span></td>
                                 <td align="center">
                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">Modify</button>
                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button>
@@ -240,17 +222,15 @@
                             <tr>
                                 <td>A0002</td>
                                 <td>Pfizer</td>
-                                <td>Biogesic 50mg</td>
+                                <td>Biogesic</td>
+                                <td>50mg</td>
                                 <td>Analgesic</td>
-                                <td>100</td>
-                                <td>09/22/21</td>
-                                <td class="text-center"><span class="bg-success p-1 rounded text-xs">Available</span></td>
                                 <td align="center">
                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">Modify</button>
                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button>
                                 </td>
                             </tr>
-                            </tfoot>
+                        </tbody>
                     </table>
                 </div>
 
@@ -277,8 +257,9 @@
         // For sidebar
         $("#mainInventoryNav").addClass('menu-open');
         $("#mainInventoryNav > a").addClass('active');
+        $("#invmngtNav > a").addClass('active');
+        $("#medicineNav").addClass('menu-open');
         $("#medicineNav > a").addClass('active');
-
 
     });
 </script>

@@ -106,12 +106,46 @@
                         <ul class="nav nav-treeview">
                             <!-- Medicines -->
                             <li id="medicineNav" class="nav-item">
-                                <a href="<?= base_url('inventory/medicines') ?>" class="nav-link selector">
+                                <a href="" class="nav-link selector">
                                     <i class="far fa-circle nav-icon text-light"></i>
                                     <p class="text-light">
                                         Medicines
+                                        <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
+
+                                <ul class="nav nav-treeview">
+                                    <!-- Inventory Management -->
+                                    <li id="invmngtNav" class="nav-item">
+                                        <a href="<?= base_url('inventory/medicines') ?>" class="nav-link selector">
+                                            <i class="fas fa-caret-right nav-icon text-light"></i>
+                                            <p class="text-light">
+                                                Inventory Management
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                    <!-- Batch Manaegement -->
+                                    <li id="batchNav" class="nav-item">
+                                        <a href="<?= base_url('inventory/batch_management') ?>" class="nav-link selector">
+                                            <i class="fas fa-caret-right nav-icon text-light"></i>
+                                            <p class="text-light">
+                                                Batch Management
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                    <!-- Stocks Management -->
+                                    <li id="stocksNav" class="nav-item">
+                                        <a href="<?= base_url('inventory/stocks') ?>" class="nav-link selector">
+                                            <i class="fas fa-caret-right nav-icon text-light"></i>
+                                            <p class="text-light">
+                                                Stocks
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+
                             </li>
 
                             <!-- Equipments -->
@@ -138,7 +172,7 @@
                 </li>
 
                 <!-- Logout -->
-                <li id="" class="nav-item selector logout mt-5">
+                <li id="" class="nav-item selector logout mt-5 mb-5">
                     <a href="<?= base_url('auth/logout') ?>" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon text-light"></i>
                         <p class="text-light">

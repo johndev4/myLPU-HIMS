@@ -1,0 +1,16 @@
+ERROR - 2021-10-24 12:43:49 --> Unknown column 'date' in 'where clause'
+CRITICAL - 2021-10-24 12:43:49 --> Unknown column 'date' in 'where clause'
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('SELECT 1\nFROM `...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('12:43', 'date', Array, NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('meeting_time', 'meeting_time', '12:43', Array, Array)
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(183): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->acceptRequestById('uE6yV2f3sSeCQZU...')
+#10 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#11 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
