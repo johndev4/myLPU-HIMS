@@ -4,6 +4,11 @@ namespace App\Validation;
 
 class CustomRules
 {
+	public function __construct()
+	{
+		helper('useraccount');
+	}
+
 	public function valid_password($str): bool
 	{
 		$password = trim($str);
@@ -32,6 +37,23 @@ class CustomRules
 
 		if (strlen($password) < 8) {
 			return false;
+		}
+
+		return true;
+	}
+
+	// For consultation schedule
+	public function is_unique_time($time): bool
+	{
+		$consultationsModel = model('App\Models\ConsultationsModel');
+		$consultations = $consultationsModel
+			->where('personnel_id_no', getIdNo())
+			->findAll();
+
+		foreach ($consultations as $consultation) {
+			if (date_create($consultation['meeting_schedule'])->format('H:i') == $time) {
+				return false;
+			}
 		}
 
 		return true;

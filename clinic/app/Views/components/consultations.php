@@ -116,6 +116,29 @@
         </div>
     </div>
     <!-- /Done Modal -->
+
+    <!-- Time Schedule Validation Error Modal -->
+    <?php if (!empty(session()->get('timeschedule_validation'))) : ?>
+        <div class="modal fade" id="timeScheduleErrorModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center mt-2">
+                            <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
+                            <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
+                            <div class="mt-1 font-weight-normal text-secondary"><?= session()->get('timeschedule_validation')->getError('meeting_time') ?></div>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $().ready(function() {
+                $('#timeScheduleErrorModal').modal('show');
+            });
+        </script>
+    <?php endif; ?>
+    <!-- /Time Schedule Validation Error Modal -->
     <!-- /Modal -->
 
     <!-- Main content -->
@@ -285,7 +308,7 @@
         <?php elseif (session()->get('available') == FALSE) : ?>
             $('#available').prop('checked', false);
         <?php endif; ?>
-        
+
         // Set online status state on input
         $('#available').on('input', function() {
             if ($('#available').prop('checked') == true) {
@@ -314,6 +337,19 @@
     function done(id) {
         $('#done_form').prop('action', "<?= base_url('consultations/sendMedicalFilesById') ?>/" + id);
     }
+
+    <?php if (!empty(session()->get('validation_error'))) : ?>
+        // Sweet Alert for validation error
+        var Toast = Swal.mixin({
+            toast: false,
+            position: 'center',
+            showConfirmButton: true,
+        });
+        Toast.fire({
+            icon: 'warning',
+            title: '<?= session()->get('validation_error'); ?>'
+        });
+    <?php endif; ?>
 </script>
 
 <?= $this->endSection('content') ?>

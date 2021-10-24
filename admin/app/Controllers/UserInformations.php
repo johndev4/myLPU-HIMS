@@ -15,7 +15,9 @@ class UserInformations extends BaseController
         $this->data['adminName'] = getAdminName();
 
         // Medical Records Directory
-        $this->medicalRecordsDir = $_SERVER['DOCUMENT_ROOT'] . 'myLPU-HIMS/clinic/public/uploaded/medical_records/';
+        $this->medicalRecordsDir = $_SERVER['DOCUMENT_ROOT'] . '/myLPU-HIMS/clinic/public/uploaded/medical_records/';
+        // Medical Files Directory
+        $this->medicalFilesDir = $_SERVER['DOCUMENT_ROOT'] . '/myLPU-HIMS/clinic/public/uploaded/medical_files/';
     }
 
 
@@ -171,16 +173,53 @@ class UserInformations extends BaseController
                 }
 
                 $success2 =  rmdir($this->medicalRecordsDir . $id);
+            } else {
+                $success2 = TRUE;
             }
 
-            $success3 = $this->lyceansModel->delete($id);
+            $success3 = $this->lyceansNotificationModel->where('id_no', $id)->delete();
+            $success4 = $this->deleteConsultationsById($id);
+            $success5 = $this->lyceansModel->delete($id);
 
-            if ($success1 && $success2 && $success3) {
+            if ($success1 && $success2 && $success3 && $success4 && $success5) {
                 // Create flashdata for database query status
                 session()->setFlashdata('success', 'Successfully deleted.');
             } else {
             }
         }
+    }
+
+    private function deleteConsultationsById($id)
+    {
+        $consultations = $this->consultationsModel->where('lycean_id_no', $id)->findAll();
+
+        foreach ($consultations as $consultation) {
+            $success1 = $this->medicalFilesModel
+                ->where('consultation_no', $consultation['consultation_no'])
+                ->delete();
+
+            // Delete directory
+            if (file_exists($this->medicalFilesDir . $id)) {
+                $files = glob($this->medicalFilesDir . $id . '/*');
+
+                foreach ($files as $file) {
+                    unlink($file);
+                }
+
+                $success2 =  rmdir($this->medicalFilesDir . $id);
+            } else {
+                $success2 = TRUE;
+            }
+
+            if (!$success1 || !$success2) {
+                return false;
+            }
+        }
+        $success3 = $this->consultationsModel->where('lycean_id_no', $id)->delete();
+        if (!$success3) {
+            return false;
+        }
+        return true;
     }
 
     public function deleteStudentInformation($id)
@@ -204,9 +243,15 @@ class UserInformations extends BaseController
     public function deleteHealthPersonnelInformation($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $success = $this->healthPersonnelsModel->delete($id);
+            $success1 = $this->healthPersonnelsNotificationModel->where('id_no', $id)->delete();
+            $success2 = $this->consultationsModel
+                ->where('personnel_id_no', $id)
+                ->set([
+                    'personnel_id_no' => null
+                ])->update();
+            $success3 = $this->healthPersonnelsModel->delete($id);
 
-            if ($success) {
+            if ($success1 && $success2 && $success3) {
                 // Create flashdata for database query status
                 session()->setFlashdata('success', 'Successfully deleted.');
             } else {
@@ -245,18 +290,55 @@ class UserInformations extends BaseController
                         }
 
                         $success2 =  rmdir($this->medicalRecordsDir . $id);
+                    } else {
+                        $success2 = TRUE;
                     }
                 }
 
-                $success3 = $this->lyceansModel->delete($lyceansId);
+                $success3 = $this->lyceansNotificationModel->whereIn('id_no', $lyceansId)->delete();
+                $success4 = $this->deleteConsultationsByIds($lyceansId);
+                $success5 = $this->lyceansModel->delete($lyceansId);
 
-                if ($success1 && $success2 && $success3) {
+                if ($success1 && $success2 && $success3 && $success4 && $success5) {
                     // Create flashdata for database query status
                     session()->setFlashdata('success', 'Successfully deleted.');
                 } else {
                 }
             }
         }
+    }
+
+    private function deleteConsultationsByIds($lyceansId)
+    {
+        $consultations = $this->consultationsModel->whereIn('lycean_id_no', $lyceansId)->findAll();
+
+        foreach ($consultations as $consultation) {
+            $success1 = $this->medicalFilesModel
+                ->where('consultation_no', $consultation['consultation_no'])
+                ->delete();
+
+            // Delete directory
+            if (file_exists($this->medicalFilesDir . $consultation['lycean_id_no'])) {
+                $files = glob($this->medicalFilesDir . $consultation['lycean_id_no'] . '/*');
+
+                foreach ($files as $file) {
+                    unlink($file);
+                }
+
+                $success2 =  rmdir($this->medicalFilesDir . $consultation['lycean_id_no']);
+            } else {
+                $success2 = TRUE;
+            }
+
+            if (!$success1 || !$success2) {
+                return false;
+            }
+        }
+        $success3 = $this->consultationsModel->whereIn('lycean_id_no', $lyceansId)->delete();
+        if (!$success3) {
+            return false;
+        }
+        return true;
     }
 
     public function deleteAllStudentInformations()
@@ -281,18 +363,23 @@ class UserInformations extends BaseController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $healthPersonnels = $this->healthPersonnelsModel->findAll();
-            $id = [];
+            $ids = [];
 
             foreach ($healthPersonnels as $key => $value) {
                 $healthPersonnelsAccount = $this->healthPersonnelsAccountModel->find($value['id_no']);
                 if (!$healthPersonnelsAccount) {
-                    $id[$key] = $value['id_no'];
+                    $ids[$key] = $value['id_no'];
                 }
             }
+            $success1 = $this->healthPersonnelsNotificationModel->whereIn('id_no', $ids)->delete();
+            $success2 = $this->consultationsModel
+                ->whereIn('personnel_id_no', $ids)
+                ->set([
+                    'personnel_id_no' => null
+                ])->update();
+            $success3 = $this->healthPersonnelsModel->delete($ids);
 
-            $success = $this->healthPersonnelsModel->delete($id);
-
-            if ($success) {
+            if ($success1 && $success2 && $success3) {
                 // Create flashdata for database query status
                 session()->setFlashdata('success', 'Successfully deleted.');
             } else {

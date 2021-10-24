@@ -35,9 +35,10 @@ class Consultations extends BaseController
 				]
 			],
 			'meeting_time' => [
-				'rules' => 'required|is_unique[consultations.date]',
+				'rules' => 'required|is_unique_time[{field}]',
 				'errors' => [
 					'required' => '- Required',
+					'is_unique_time' => 'The schedule is already occupied.'
 				]
 			],
 			'meeting_link' => [
@@ -111,7 +112,7 @@ class Consultations extends BaseController
 				<div class=\"card\" style=\"width: 20rem;\">
 					<div class=\"card-body\">
 						<div>
-							<span class=\"card-title mb-2\" style=\"font-size: 10pt;\"> " . date('F d, Y h:m A', strtotime($value['created_at'])) . " </span>
+							<span class=\"card-title mb-2\" style=\"font-size: 10pt;\"> " . date('F d, Y h:i A', strtotime($value['created_at'])) . " </span>
 							<span class=\"d-inline float-right text-primary request-type\"> {$value['category']} </span>
 						</div>
 						<div class=\"card-text\"><span class=\"font-weight-bold\"> {$lycean['first_name']} {$middle_init}. {$lycean['last_name']} </span></div>
@@ -158,7 +159,7 @@ class Consultations extends BaseController
 						</div>
 						<div class=\"text-secondary mb-2\"> {$lycean['id_no']} </div>
 						<span class=\"mb-2 text-secondary d-inline\" style=\"font-size: 12pt;\">
-							<span class=\"font-weight-bold d-inline\">Schedule:</span> " . date('F d, Y h:m A', strtotime($value['meeting_schedule'])) . "
+							<span class=\"font-weight-bold d-inline\">Schedule:</span> " . date('F d, Y h:i A', strtotime($value['meeting_schedule'])) . "
 						</span>
 
 						<a href=\"#\" class=\"btn text-primary d-block mt-3 accept-button\" data-target=\"#doneModal\" data-toggle=\"modal\" onclick=\"done('{$value['consultation_no']}')\">Done</a>
@@ -203,6 +204,8 @@ class Consultations extends BaseController
 					session()->setFlashdata('success', 'Ok');
 				} else {
 				}
+			} else {
+				session()->setFlashdata('timeschedule_validation', $this->validator);
 			}
 		}
 
@@ -217,10 +220,6 @@ class Consultations extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getRejectRules())) {
-				// $scheduledConsultations = $this->consultationsModel
-				// 	->where('status', 'active')->where('personnel_id_no', $user['id_no'])
-				// 	->orderBy('queue_no', 'asc')->findAll();
-
 				$data = [
 					'status' => 'rejected',
 					'rejection_message' => $_GET['rejection_message']
@@ -237,9 +236,8 @@ class Consultations extends BaseController
 					session()->setFlashdata('success', 'Ok');
 				} else {
 				}
+			} else {
 			}
-
-			print_r($_GET);
 		}
 
 		return redirect()->to('consultations');
