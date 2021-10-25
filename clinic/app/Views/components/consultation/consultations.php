@@ -89,7 +89,7 @@
                             <div class="col-md-12 form-group">
                                 <div class="form-group files">
                                     <label style="font-size: 16pt;">Upload File </label>
-                                    <input type="file" class="form-control" id="done_medicalfiles" name="medicalfiles[]" multiple="multiple" required="required">
+                                    <input type="file" class="form-control" id="done_medicalfiles" name="medicalfiles[]" multiple="multiple">
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                         <?php endif; ?>
 
                         <div class="footer float-right pb-3">
-                            <button type="submit" class="btn text-light swalDefaultSuccess button-color" data-target="#donepromptModal" data-toggle="modal">Done</button>
+                            <button type="button" class="btn text-light swalDefaultSuccess button-color" id="doneSubmit" data-toggle="modal">Done</button>
                         </div>
                     </form>
                 </div>
@@ -151,7 +151,7 @@
                         <div class="mt-1 font-weight-normal text-secondary">Proceed without sending any medical file</div>
                     </div><br>
                     <div class="float-right">
-                        <form action="" method="get" id="deleteModalForm">
+                        <form action="" method="get" id="done_form_prompt">
                             <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-light swalDefaultSuccess">Continue</button>
                         </form>
@@ -269,7 +269,6 @@
 
         //For Textarea character count
         $('textarea').keyup(function() {
-
             var characterCount = $(this).val().length,
                 current = $('#current'),
                 maximum = $('#maximum'),
@@ -349,6 +348,15 @@
                 });
             }
         });
+
+        // Done prompt on no file upload
+        $('#doneSubmit').click(function() {
+            if (document.getElementById("done_medicalfiles").files.length == 0) {
+                $('#donepromptModal').modal('show');
+            } else {
+                $('#done_form').submit();
+            }
+        });
     });
 
     // On accept new request, set action value
@@ -362,6 +370,7 @@
     // On done, set action value
     function done(id) {
         $('#done_form').prop('action', "<?= base_url('consultations/sendMedicalFilesById') ?>/" + id);
+        $('#done_form_prompt').prop('action', "<?= base_url('consultations/setConsultationToDone') ?>/" + id);
     }
 
     <?php if (!empty(session()->get('validation_error'))) : ?>

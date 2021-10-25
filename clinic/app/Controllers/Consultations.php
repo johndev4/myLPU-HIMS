@@ -240,8 +240,29 @@ class Consultations extends BaseController
 	}
 
 
-	// SEND MEDICAL FILES BY ID
+	// CONSULTATION DONE
 	// -----------------------------------------------------------------
+	public function setConsultationToDone($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$success1 = $this->consultationsModel
+				->where('consultation_no', $id)
+				->set([
+					'status' => 'done'
+				])->update();
+
+			if ($success1) {
+				$consultation = $this->consultationsModel->find($id);
+				$success2 = $this->setNotification($consultation, 'send');
+				if ($success2) {
+					session()->setFlashdata('success', 'Done');
+				}
+			}
+		}
+
+		return redirect()->to('consultations');
+	}
+
 	public function sendMedicalFilesById($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -267,12 +288,8 @@ class Consultations extends BaseController
 								$success3[$key] = $this->consultationsModel
 									->where('consultation_no', $id)
 									->set([
-										'queue_no' => null,
 										'status' => 'done'
 									])->update();
-
-
-
 
 								break;
 							} else {
@@ -286,7 +303,7 @@ class Consultations extends BaseController
 					$consultation = $this->consultationsModel->find($id);
 					$success4 = $this->setNotification($consultation, 'send');
 					if ($success4) {
-						session()->setFlashdata('success', 'Successfully uploaded');
+						session()->setFlashdata('success', 'Done');
 					}
 				}
 			} else {
