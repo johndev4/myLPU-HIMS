@@ -89,7 +89,7 @@ class Consultations extends BaseController
 		$this->data['designation'] = $userInfo['designation'];
 
 		// Display page view
-		return view('components/consultations', $this->data);
+		return view('components/consultation/consultations', $this->data);
 	}
 
 
@@ -372,5 +372,37 @@ class Consultations extends BaseController
 			'status' => 'unread',
 			'link' => $link
 		]);
+	}
+
+
+	// -----------------------------------------------------------------------------------------
+
+
+	// RETURN HISTORY VIEWS
+	// -----------------------------------------------------------------
+	public function history()
+	{
+		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+		$userInfo = $this->userModel->find($user['id_no']);
+		$this->data['firstname'] = $userInfo['first_name'];
+		// For guidance counselor permission on sidebar
+		$this->data['designation'] = $userInfo['designation'];
+
+		// Display page view
+		return view('components/consultation/history', $this->data);
+	}
+
+	// RETURN REPORT VIEWS
+	// -----------------------------------------------------------------
+	public function report()
+	{
+		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+		$userInfo = $this->userModel->find($user['id_no']);
+		$this->data['firstname'] = $userInfo['first_name'];
+		// For guidance counselor permission on sidebar
+		$this->data['designation'] = $userInfo['designation'];
+
+		// Display page view
+		return view('components/consultation/report', $this->data);
 	}
 }
