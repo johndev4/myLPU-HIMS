@@ -108,7 +108,7 @@
                         <?php endif; ?>
 
                         <div class="footer float-right pb-3">
-                            <button type="submit" class="btn text-light swalDefaultSuccess button-color">Send</button>
+                            <button type="submit" class="btn text-light swalDefaultSuccess button-color" data-target="#donepromptModal" data-toggle="modal">Done</button>
                         </div>
                     </form>
                 </div>
@@ -139,6 +139,28 @@
         </script>
     <?php endif; ?>
     <!-- /Time Schedule Validation Error Modal -->
+
+    <!-- Prompt for done w/o file -->
+    <div class="modal fade" id="donepromptModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center mt-2">
+                        <span class="info-box-icon text-warning"><i class="fas fa-3x fa-exclamation-circle"></i></span>
+                        <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
+                        <div class="mt-1 font-weight-normal text-secondary">Proceed without sending any medical file</div>
+                    </div><br>
+                    <div class="float-right">
+                        <form action="" method="get" id="deleteModalForm">
+                            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-light swalDefaultSuccess">Continue</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Prompt for done w/o file -->
     <!-- /Modal -->
 
     <!-- Main content -->
@@ -155,9 +177,9 @@
                     <!-- Switch -->
                     <div class="col-xl-6  mb-3 pt-1" align="right" style="border:1px solid none">
                         <div class="d-inline" style="border:1px solid none">
-                            <span class="d-inline" style="font-size: 12pt;"><a href="">History</a></span> 
+                            <span class="d-inline" style="font-size: 12pt;"><a href="<?= base_url('consultations/history') ?>">History</a></span>
                             <span class="text-secondary d-inline">/</span>
-                            <span class="d-inline" style="font-size: 12pt;"><a href="">Report</a></span>
+                            <span class="d-inline" style="font-size: 12pt;"><a href="<?= base_url('consultations/report') ?>">Report</a></span>
                             <span class="text-secondary mr-2 ml-2 d-inline">|</span>
                             <label class="text-secondary">Available</label>
                         </div>

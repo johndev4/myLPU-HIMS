@@ -1,8 +1,6 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<!-- CONTENT HERE -->
-<!-- CONTENT HERE -->
-<!-- CONTENT HERE -->
+<h1>His Story</h1>
 
 <?= $this->endSection('content') ?>
