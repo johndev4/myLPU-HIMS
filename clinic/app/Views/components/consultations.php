@@ -155,6 +155,10 @@
                     <!-- Switch -->
                     <div class="col-xl-6  mb-3 pt-1" align="right" style="border:1px solid none">
                         <div class="d-inline" style="border:1px solid none">
+                            <span class="d-inline" style="font-size: 12pt;"><a href="">History</a></span> 
+                            <span class="text-secondary d-inline">/</span>
+                            <span class="d-inline" style="font-size: 12pt;"><a href="">Report</a></span>
+                            <span class="text-secondary mr-2 ml-2 d-inline">|</span>
                             <label class="text-secondary">Available</label>
                         </div>
                         <label class="switch" style="border:1px solid none">
