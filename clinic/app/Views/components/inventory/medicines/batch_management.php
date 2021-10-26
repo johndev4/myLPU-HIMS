@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="batches_table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Batch ID</th>
@@ -162,26 +162,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>A0001</td>
-                                <td>RiteMed - Cefuroxime 250mg</td>
-                                <td>100</td>
-                                <td>10-23-2021</td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">Modify</button>
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>A0002</td>
-                                <td>Pfizer - Biogesic 50mg</td>
-                                <td>50</td>
-                                <td>10-23-2021</td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">Modify</button>
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                </td>
-                            </tr>
+                            <!-- DATA HERE -->
                         </tbody>
                     </table>
                 </div>
@@ -197,21 +178,34 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
-        // For datatable
-        $("#example1").DataTable({
-            responsive: true,
-            lengthChange: true,
-            autoWidth: true,
-            processing: true,
-            searching: true,
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
         // For sidebar
         $("#mainInventoryNav").addClass('menu-open');
         $("#mainInventoryNav > a").addClass('active');
         $("#batchNav > a").addClass('active');
         $("#medicineNav").addClass('menu-open');
         $("#medicineNav > a").addClass('active');
+
+        // For datatable
+        $("#batches_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            searching: true,
+            ajax: {
+                type: 'post',
+                url: '<?= base_url('inventory/fetchAllBatches') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
+
+
 
     });
 </script>
