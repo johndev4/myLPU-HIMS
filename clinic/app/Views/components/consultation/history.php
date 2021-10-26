@@ -136,7 +136,7 @@
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
 
                                 <!-- Table -->
-                                <table id="rejectedTable" class="table table-bordered table-hover">
+                                <table id="rejectedTable" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>ID Number</th>
