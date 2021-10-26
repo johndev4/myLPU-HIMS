@@ -4702,3 +4702,122 @@ CRITICAL - 2021-10-27 00:11:24 --> Trying to access array offset on value of typ
 #3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-10-27 00:11:25 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:26 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:27 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:27 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:27 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:28 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:29 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:30 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:31 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:32 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:34 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:34 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:35 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-10-27 00:11:35 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
