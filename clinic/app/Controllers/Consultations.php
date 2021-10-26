@@ -240,7 +240,7 @@ class Consultations extends BaseController
 	}
 
 
-	// CONSULTATION DONE
+	// CONSULTATION DONE WITH/WITHOUT FILE UPLOAD
 	// -----------------------------------------------------------------
 	public function setConsultationToDone($id)
 	{

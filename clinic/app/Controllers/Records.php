@@ -89,7 +89,7 @@ class Records extends BaseController
 			);
 		}
 
-		echo json_encode($result);
+		return json_encode($result);
 	}
 
 	public function fetchAllFaculty()
@@ -111,7 +111,7 @@ class Records extends BaseController
 			);
 		}
 
-		echo json_encode($result);
+		return json_encode($result);
 	}
 
 	public function fetchAllStaff()
@@ -133,7 +133,7 @@ class Records extends BaseController
 			);
 		}
 
-		echo json_encode($result);
+		return json_encode($result);
 	}
 
 

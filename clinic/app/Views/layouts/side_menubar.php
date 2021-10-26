@@ -117,7 +117,7 @@
                                 <ul class="nav nav-treeview">
                                     <!-- Inventory Management -->
                                     <li id="invmngtNav" class="nav-item">
-                                        <a href="<?= base_url('inventory/medicines') ?>" class="nav-link selector">
+                                        <a href="<?= base_url('inventory/medicines/items') ?>" class="nav-link selector">
                                             <i class="fas fa-caret-right nav-icon text-light"></i>
                                             <p class="text-light">
                                                 Inventory Management
@@ -127,7 +127,7 @@
 
                                     <!-- Batch Manaegement -->
                                     <li id="batchNav" class="nav-item">
-                                        <a href="<?= base_url('inventory/batch_management') ?>" class="nav-link selector">
+                                        <a href="<?= base_url('inventory/medicines/batches') ?>" class="nav-link selector">
                                             <i class="fas fa-caret-right nav-icon text-light"></i>
                                             <p class="text-light">
                                                 Batch Management
@@ -137,7 +137,7 @@
 
                                     <!-- Stocks Management -->
                                     <li id="stocksNav" class="nav-item">
-                                        <a href="<?= base_url('inventory/stocks') ?>" class="nav-link selector">
+                                        <a href="<?= base_url('inventory/medicines/stocks') ?>" class="nav-link selector">
                                             <i class="fas fa-caret-right nav-icon text-light"></i>
                                             <p class="text-light">
                                                 Stocks

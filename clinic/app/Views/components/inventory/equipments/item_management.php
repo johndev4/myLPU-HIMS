@@ -44,26 +44,22 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_productid" class="col-form-label">Product ID</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_idno" class="col-form-label">SKU</label>
+                                        <input type="text" class="form-control" id="" name="id_no" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_productid" class="col-form-label">Manufacturer</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_lastname" class="col-form-label">Manufacturer</label>
+                                        <input type="text" class="form-control" id="" name="last_name" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_productid" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_firstname" class="col-form-label">Generic Name</label>
+                                        <input type="text" class="form-control" id="" name="first_name" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_productid" class="col-form-label">Drug Class</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_middleinit" class="col-form-label">Drug Class</label>
+                                        <input type="text" class="form-control" id="" name="middle_initial" value="" maxlength="1">
                                     </div>
-                                    <div class="col-12 form-group">
-                                        <label for="add_dosage" class="col-form-label">Dosage</label>
-                                        <input type="text" class="form-control" id="" name="middle_dosage" value="">
-                                    </div>
-                                    <!-- <div class="col-6 form-group">
+                                    <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock</label>
                                         <input type="number" class="form-control" id="" name="username" value="">
                                     </div>
@@ -78,7 +74,7 @@
                                             <option value="COECSA">Available</option>
                                             <option value="CITHM">Unavailable</option>
                                         </select>
-                                    </div> -->
+                                    </div>
                                 </div>
 
                                 <div class="footer float-right pb-3">
@@ -118,7 +114,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Medicine Details</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Inventory Details</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -128,7 +124,7 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">Product ID</label>
+                                        <label for="add_idno" class="col-form-label">SKU</label>
                                         <input type="text" class="form-control" id="" name="" value="A0001">
                                     </div>
                                     <div class="col-4 form-group">
@@ -137,32 +133,19 @@
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="add_firstname" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="" value="Cefuroxime">
+                                        <input type="text" class="form-control" id="" name="" value="Cefuroxime 250mg">
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="add_middleinit" class="col-form-label">Drug Class</label>
                                         <input type="text" class="form-control" id="" name="" maxlength="1" value="Antibacterial">
                                     </div>
-                                    <div class="col-12 form-group">
-                                        <label for="add_dosage" class="col-form-label">Dosage</label>
-                                        <input type="text" class="form-control" id="" name="middle_dosage" value="250mg">
-                                    </div>
-                                    <!-- <div class="col-6 form-group">
+                                    <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="" value="50" disabled>
+                                        <input type="number" class="form-control" id="" name="" value="50">
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Expiration Date</label>
                                         <input type="date" class="form-control" id="" name="" value="">
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock In</label>
-                                        <input type="number" class="form-control" id="" name="" value="0">
-                                    </div>
-
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock Out</label>
-                                        <input type="number" class="form-control" id="" name="" value="0">
                                     </div>
                                     <div class="col-12 form-group">
                                         <label for="add_department" class="col-form-label">Availability</label>
@@ -171,7 +154,7 @@
                                             <option value="Available">Available</option>
                                             <option value="Unavailable">Unavailable</option>
                                         </select>
-                                    </div> -->
+                                    </div>
                                 </div>
 
                                 <div class="footer float-right pb-3">
@@ -196,40 +179,21 @@
                 </div>
 
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="equipments_table" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Product ID</th>
+                                <th>SKU</th>
                                 <th>Manufacturer</th>
                                 <th>Generic Name</th>
-                                <th>Dosage</th>
                                 <th>Drug Class</th>
+                                <th>Stock</th>
+                                <th>Expiration</th>
+                                <th>Availability</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>A0001</td>
-                                <td>RiteMed</td>
-                                <td>Cefuroxime</td>
-                                <td>250mg</td>
-                                <td>Antibacterial</td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">Modify</button>
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>A0002</td>
-                                <td>Pfizer</td>
-                                <td>Biogesic</td>
-                                <td>50mg</td>
-                                <td>Analgesic</td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">Modify</button>
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                </td>
-                            </tr>
+                            <!-- DATA HERE -->
                         </tbody>
                     </table>
                 </div>
@@ -245,21 +209,31 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
+        // For sidebar
+        $("#mainInventoryNav").addClass('menu-open');
+        $("#mainInventoryNav > a").addClass('active');
+        $("#equipmentNav > a").addClass('active');
+
         // For datatable
-        $("#example1").DataTable({
+        $("#equipments_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
             searching: true,
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            ajax: {
+                type: 'post',
+                url: '<?= base_url('inventory/fetchAllEquipments') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
 
-        // For sidebar
-        $("#mainInventoryNav").addClass('menu-open');
-        $("#mainInventoryNav > a").addClass('active');
-        $("#invmngtNav > a").addClass('active');
-        $("#medicineNav").addClass('menu-open');
-        $("#medicineNav > a").addClass('active');
 
     });
 </script>
