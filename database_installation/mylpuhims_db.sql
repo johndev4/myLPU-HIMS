@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2021 at 04:53 PM
+-- Generation Time: Oct 26, 2021 at 05:02 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -47,13 +47,27 @@ INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `batches`
+--
+
+DROP TABLE IF EXISTS `batches`;
+CREATE TABLE `batches` (
+  `batch_id` varchar(45) NOT NULL,
+  `product_id` varchar(45) NOT NULL,
+  `stock_in` int(11) DEFAULT NULL,
+  `stock_out` int(11) DEFAULT NULL,
+  `expiration_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `consultations`
 --
 
 DROP TABLE IF EXISTS `consultations`;
 CREATE TABLE `consultations` (
   `consultation_no` varchar(16) NOT NULL,
-  `queue_no` int(11) DEFAULT NULL,
   `status` varchar(45) NOT NULL,
   `category` varchar(45) NOT NULL,
   `message` text NOT NULL,
@@ -113,7 +127,7 @@ CREATE TABLE `health_personnels_account` (
 --
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locked`, `last_activity`) VALUES
-('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, '2021-10-23 10:52:00'),
+('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, '2021-10-26 11:01:00'),
 ('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL, NULL),
 ('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8', NULL, NULL),
 ('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839', NULL, NULL),
@@ -244,6 +258,21 @@ CREATE TABLE `medical_files` (
   `file_path` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medicines`
+--
+
+DROP TABLE IF EXISTS `medicines`;
+CREATE TABLE `medicines` (
+  `product_id` varchar(45) NOT NULL,
+  `manufacturer` varchar(45) DEFAULT NULL,
+  `generic_name` varchar(45) DEFAULT NULL,
+  `drug_class` varchar(45) DEFAULT NULL,
+  `dosage` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -253,6 +282,13 @@ CREATE TABLE `medical_files` (
 --
 ALTER TABLE `administrators`
   ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `batches`
+--
+ALTER TABLE `batches`
+  ADD PRIMARY KEY (`batch_id`),
+  ADD KEY `fk_batches_medicines1` (`product_id`);
 
 --
 -- Indexes for table `consultations`
@@ -315,6 +351,12 @@ ALTER TABLE `medical_files`
   ADD KEY `fk_medical_files_consultations1` (`consultation_no`);
 
 --
+-- Indexes for table `medicines`
+--
+ALTER TABLE `medicines`
+  ADD PRIMARY KEY (`product_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -351,6 +393,12 @@ ALTER TABLE `medical_files`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `batches`
+--
+ALTER TABLE `batches`
+  ADD CONSTRAINT `fk_batches_medicines1` FOREIGN KEY (`product_id`) REFERENCES `medicines` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `consultations`

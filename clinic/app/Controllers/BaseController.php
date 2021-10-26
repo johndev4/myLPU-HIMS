@@ -59,9 +59,11 @@ class BaseController extends Controller
 		$this->lyceansAccountModel = model('App\Models\LyceansAccountModel');
 		$this->lyceansNotificationModel = model('App\Models\LyceansNotificationModel');
 		$this->healthRecordsModel = model('App\Models\HealthRecordsModel');
-		
+
 		$this->consultationsModel = model('App\Models\ConsultationsModel');
 		$this->medicalFilesModel = model('App\Models\MedicalFilesModel');
-		
+
+		$this->medicinesModel = model('App\Models\MedicinesModel');
+		$this->batchesModel = model('App\Models\BatchesModel');
 	}
 }
