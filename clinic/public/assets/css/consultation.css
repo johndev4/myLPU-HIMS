@@ -159,3 +159,29 @@
     width: 100% !important;
   }
 }
+
+/* History Tab */
+/* Accepted Tab */
+a#custom-tabs-four-accepted-tab.nav-link.active{
+  border-top-color: rgb(49, 99, 173) !important;
+  border-radius: 3px !important;
+  color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-accepted-tab.nav-link{
+  color: rgb(155, 155, 155) !important;
+  border-radius: 3px !important;
+}
+
+/* Rejected Tab */
+a#custom-tabs-four-rejected-tab.nav-link.active{
+  border-top-color: rgb(49, 99, 173) !important;
+  border-radius: 3px !important;
+  color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-rejected-tab.nav-link{
+  color: rgb(155, 155, 155) !important;
+  border-radius: 3px !important;
+}
+/* History Tab */
