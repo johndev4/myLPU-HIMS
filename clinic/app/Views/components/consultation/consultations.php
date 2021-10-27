@@ -124,10 +124,15 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="text-center mt-2">
-                            <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
-                            <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
+                            <span class="info-box-icon text-warning"><i class="fas fa-3x fa-exclamation-circle"></i></span>
+                            <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Uh Oh!</div>
                             <div class="mt-1 font-weight-normal text-secondary"><?= session()->get('timeschedule_validation')->getError('meeting_time') ?></div>
                         </div><br>
+                        <div class="">
+                            <form action="" method="get" id="done_form_prompt">
+                                <button type="button" class="btn btn-light btn-block" data-dismiss="modal" style="border-color: rgb(223, 223, 223);">Ok</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,7 +158,7 @@
                     <div class="float-right">
                         <form action="" method="get" id="done_form_prompt">
                             <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-light swalDefaultSuccess">Continue</button>
+                            <button type="submit" class="btn btn-light swalDefaultSuccess" style="border-color: rgb(223, 223, 223);">Continue</button>
                         </form>
                     </div>
                 </div>

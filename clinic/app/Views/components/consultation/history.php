@@ -44,7 +44,7 @@
                                 <input type="hidden" name="role" value="">
                                 <div class="row">
                                     <div class="col-12 form-group mb-n1">
-                                        <span>Time range</span>
+                                        <span>Time range:</span>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="" class="col-form-label">From</label>
