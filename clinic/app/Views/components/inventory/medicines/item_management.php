@@ -194,7 +194,7 @@
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label for="modify_productid" class="col-form-label">Product ID</label>
-                                        <input type="text" class="form-control" id="mod_productid" name="product_id" value="">
+                                        <input type="text" class="form-control" id="mod_productid" name="product_id" value="" readonly="readonly">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('product_id')) : ?>
