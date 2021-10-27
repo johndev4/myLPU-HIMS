@@ -49,23 +49,26 @@
 
                                 <div class="row form-group d-inline">
                                     <span for="" class="ml-2">Year</span>
-                                    <select class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="" name="">
-                                        <option value="" selected="selected">---</option>
-                                        <option value="">2020</option>
-                                        <option value="">2021</option>
+                                    <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="dropdownYear">
+                                        <!-- <option value="" selected="selected">---</option> -->
                                     </select>
 
-                                    <span for="" class="">Month</span>
+                                    <span for="" class="month-label">Month</span>
                                     <select class="col-sm-12 col-md-2 form-control d-inline weekly-mnth" id="" name="">
                                         <option value="" selected="selected">---</option>
-                                        <option value="">january</option>
-                                        <option value="">February</option>
-                                        <option value="">September</option>
+                                        <option value='01'>January</option>
+                                        <option value='02'>February</option>
+                                        <option value='03'>March</option>
+                                        <option value='04'>April</option>
+                                        <option value='05'>May</option>
+                                        <option value='06'>June</option>
+                                        <option value='07'>July</option>
+                                        <option value='08'>August</option>
+                                        <option value='09'>September</option>
+                                        <option value='10'>October</option>
+                                        <option value='11'>November</option>
+                                        <option value='12'>December</option>
                                     </select>
-                                </div>
-
-                                <div class="form-group d-inline">
-                                
                                 </div>
                                 <br><br>
 
@@ -107,7 +110,17 @@
 
                             <!-- Monthly Table -->
                             <div class="tab-pane fade" id="custom-tabs-four-monthly" role="tabpanel" aria-labelledby="custom-tabs-four-monthly-tab">
-                                <h1>Monthly</h1>
+
+                                <span class="d-block mb-2" style="font-size: 10pt;">Filter by:</span>
+
+                                <div class="row form-group d-inline">
+                                    <span for="" class="ml-2">Year</span>
+                                    <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="mnthlydropdownYear">
+                                        <!-- <option value="" selected="selected">---</option> -->
+                                    </select>
+                                </div>
+                                <br><br>
+
                                 <!-- Table -->
                                 <table id="monthlyTable" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
@@ -146,7 +159,7 @@
 
                             <!-- Yearly Table -->
                             <div class="tab-pane fade" id="custom-tabs-four-yearly" role="tabpanel" aria-labelledby="custom-tabs-four-yearly-tab">
-                                <h1>Yearly</h1>
+
                                 <!-- Table -->
                                 <table id="yearlyTable" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
@@ -184,14 +197,6 @@
             </div>
             <!-- /Tabs -->
 
-
-
-
-
-
-
-
-
         </div>
     </section>
 </div>
@@ -226,6 +231,38 @@
 
         // For sidebar
         $("#consultationNav > a").addClass('active');
+
+        // For weekly year combobox
+        $('#dropdownYear').each(function() {
+            var year = (new Date()).getFullYear();
+            var current = year;
+            var x = "---";
+
+            for (var i = 0; i < 50; i++) {
+                if ((year + i) == current) {
+                    $(this).append('<option selected value="' + (x) + '">' + (x) + '</option>');
+                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
+                } else {
+                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
+                }
+            }
+        })
+
+        // For monthly year combobox
+        $('#mnthlydropdownYear').each(function() {
+            var year = (new Date()).getFullYear();
+            var current = year;
+            var x = "---";
+
+            for (var i = 0; i < 50; i++) {
+                if ((year + i) == current) {
+                    $(this).append('<option selected value="' + (x) + '">' + (x) + '</option>');
+                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
+                } else {
+                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
+                }
+            }
+        })
 
     });
 </script>

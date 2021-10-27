@@ -229,9 +229,12 @@ a#custom-tabs-four-weekly-tab.nav-link{
 /* Weekly Table Filter */
 @media screen and (min-width: 600px){
   select.col-sm-12.col-md-2.form-control.d-inline.weekly-yr{
-    width: 8% !important;
+    width: 90px !important;
   }
   select.col-sm-12.col-md-2.form-control.d-inline.weekly-mnth{
-    width: 12% !important;
+    width: 140px !important;
+  }
+  span.month-label{
+    margin-left: 8px !important;
   }
 }
