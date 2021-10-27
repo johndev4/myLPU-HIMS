@@ -178,13 +178,6 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
-        // For sidebar
-        $("#mainInventoryNav").addClass('menu-open');
-        $("#mainInventoryNav > a").addClass('active');
-        $("#batchNav > a").addClass('active');
-        $("#medicineNav").addClass('menu-open');
-        $("#medicineNav > a").addClass('active');
-
         // For datatable
         $("#batches_table").DataTable({
             responsive: true,
@@ -205,7 +198,26 @@
             }
         });
 
+        // For sidebar
+        $("#mainInventoryNav").addClass('menu-open');
+        $("#mainInventoryNav > a").addClass('active');
+        $("#batchNav > a").addClass('active');
+        $("#medicineNav").addClass('menu-open');
+        $("#medicineNav > a").addClass('active');
 
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
 
     });
 </script>

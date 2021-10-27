@@ -43,7 +43,7 @@ class Inventory extends BaseController
 	}
 
 
-	// FETCH ALL MEDICINE DATA
+	// FETCH ALL DATA
 	// ---------------------------------------------------------
 	public function fetchAllMedicines()
 	{
@@ -67,9 +67,6 @@ class Inventory extends BaseController
 		return json_encode($result);
 	}
 
-
-	// FETCH ALL BATCH DATA
-	// ---------------------------------------------------------
 	public function fetchAllBatches()
 	{
 		$result = array('data' => array());
@@ -94,10 +91,47 @@ class Inventory extends BaseController
 		return json_encode($result);
 	}
 
-
-	// FETCH STOCK MANAGEMENT
-	// ---------------------------------------------------------
 	public function fetchStockManagement()
 	{
+	}
+
+
+	// FETCH DATA BY ID
+	// ---------------------------------------------------------
+	public function fetchMedicineById($id)
+	{
+		$medicine = $this->medicinesModel->find($id);
+		$result = [];
+
+		if ($medicine) {
+			$result = [
+				'product_id' => $medicine['product_id'],
+				'manufacturer' => $medicine['manufacturer'],
+				'generic_name' => $medicine['generic_name'],
+				'drug_class' => $medicine['drug_class'],
+				'dosage' => $medicine['dosage'],
+			];
+		}
+
+		return json_encode($result);
+	}
+
+	public function fetchBatchById($id)
+	{
+		$batch = $this->batchesModel->find($id);
+		$result = [];
+
+		if ($batch) {
+			$medicine = $this->medicinesModel->find($batch['product_id']);
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$result = [
+				'batch_id' => $batch['batch_id'],
+				'product_name' => $product_name,
+				'stock_in' => $batch['stock_in'],
+				'expiration' => $batch['expiration'],
+			];
+		}
+
+		return json_encode($result);
 	}
 }
