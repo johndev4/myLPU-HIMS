@@ -28,17 +28,6 @@
             </div>
 
             <div class="row">
-                <!-- Consultation -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="info-box shadow p-3">
-                        <span class="info-box-icon dash-widgets"><i class="fas fa-list"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Scheduled Consultations</span>
-                            <span class="info-box-number">25</span>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Consultation Request -->
                 <div class="col-md-4 col-sm-6 col-12">
                     <div class="info-box shadow p-3">
@@ -46,6 +35,17 @@
                         <div class="info-box-content">
                             <span class="info-box-text">Requests</span>
                             <span class="info-box-number">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultation -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="info-box shadow p-3">
+                        <span class="info-box-icon dash-widgets"><i class="far fa-calendar-alt"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Scheduled Consultations</span>
+                            <span class="info-box-number">25</span>
                         </div>
                     </div>
                 </div>

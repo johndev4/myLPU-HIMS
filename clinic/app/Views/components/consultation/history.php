@@ -74,6 +74,91 @@
                 </div>
             </div>
             <!-- /Clear Modal -->
+
+            <!-- View Modal -->
+            <div class="modal fade" id="viewModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header font-weight-bold text-secondary">
+                            <div class="modal-title"> Consultation Details</div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="row" id="detailsTab">
+                                <div class="col-sm-12 col-md-12" style="border:1px solid none">
+                                    <div class="d-block">
+                                        <label class="d-inline text-secondary">Consultation ID:</label>
+                                        <div class="mt-n2 mb-2 d-inline">
+                                            <span> w1khTH6UOxEIeybL </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-block">
+                                        <label class="d-inline text-secondary">Date of Request:</label>
+                                        <div class="mt-n2 mb-2 d-inline">
+                                            <span> 27-10-2021 15:23 </span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <label class="d-block text-secondary">Schedule</label>
+                                    <div class="mt-n2 mb-2">
+                                        <span class="text-dark time">Time: 03:30 pm </span>
+                                        <span class="text-dark date float-right">Date: October 27, 2021 </span>
+                                    </div>
+                                    <label class="d-block text-secondary">Meeting Link</label>
+                                    <div class="mt-n2 mb-2">
+                                        <a href="" class="text-dark"><u>http://localhost/myLPU-HIMS/clinic/public/consultations</u></a>
+                                    </div>
+                                    <hr>
+                                    <label class="d-block text-secondary">Concern</label>
+                                    <p class="mt-n2 mb-2">
+                                        Doc, I have dry cough please help me. UwU
+                                    </p>
+                                    <!-- <label class="d-block text-secondary">Denial of Service</label>
+                                    <p class="mt-n2 mb-2">
+                                       
+                                    </p> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- /View Modal -->
+
             <!-- /Modal -->
 
             <!-- Tabs -->
@@ -113,7 +198,7 @@
                                             <td>COECSA</td>
                                             <td>10-26-2021</td>
                                             <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">view</button>
+                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -122,7 +207,7 @@
                                             <td>COECSA</td>
                                             <td>10-26-2021</td>
                                             <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">view</button>
+                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -153,7 +238,7 @@
                                             <td>COECSA</td>
                                             <td>10-26-2021</td>
                                             <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modifyModal">view</button>
+                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
                                             </td>
                                         </tr>
                                     </tbody>
