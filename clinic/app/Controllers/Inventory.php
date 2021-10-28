@@ -187,6 +187,29 @@ class Inventory extends BaseController
 
 	public function fetchStockManagement()
 	{
+		$result = array('data' => array());
+		$batches = $this->batchesModel->findAll();
+
+		foreach ($batches as $key => $value) {
+			$medicine = $this->medicinesModel->find($value['product_id']);
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$is_expired = $value['expiration_date'] < date('Y-m-d')? 'yes' : 'no';
+
+			$result['data'][$key] = array(
+				$value['batch_id'],
+				$product_name,
+				$value['stock_in'],
+				$value['stock_out'],
+				$is_expired,
+				$value['stock_in'] - $value['stock_out'],
+
+				"<div align=\"center\">
+					<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#stockoutModal\">Stock Out</button>
+				</div>"
+			);
+		}
+
+		return json_encode($result);
 	}
 
 
@@ -217,7 +240,6 @@ class Inventory extends BaseController
 
 		if ($batch) {
 			$medicine = $this->medicinesModel->find($batch['product_id']);
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
 			$result = [
 				'batch_id' => $batch['batch_id'],
 				'product_name' => $batch['product_id'],
@@ -291,7 +313,7 @@ class Inventory extends BaseController
 					'expiration_date' => htmlspecialchars($_GET['expiration_date'])
 				];
 
-				$success = $this->bacthesModel->save($data);
+				$success = $this->batchesModel->save($data);
 
 				if ($success) {
 					// Create flashdata for database query status
