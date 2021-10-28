@@ -71,6 +71,48 @@ class Inventory extends BaseController
 		];
 	}
 
+	private function getBatchRules($id = null)
+	{
+		if ($id !== null) {
+			$batch = $this->batchesModel->find($id);
+			$optional_idUnq = ',product_id,' . $batch['product_id'];
+		} else {
+			$optional_idUnq = "";
+		}
+
+		return  [
+			'batch_id' => [
+				'rules' => 'required|max_length[45]|is_unique[batches.batch_id' . $optional_idUnq . ']',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.',
+					'is_unique' => 'Product ID already exists.'
+				]
+			],
+			'product_name' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'stock_in' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'expiration_date' => [
+				'rules' => 'required|valid_date[Y-m-d]',
+				'errors' => [
+					'required' => '- Required',
+					'valid_date' => 'Invalid date format.'
+				]
+			]
+		];
+	}
+
 
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
@@ -134,8 +176,8 @@ class Inventory extends BaseController
 				$value['stock_in'],
 				date_create($value['expiration_date'])->format('M d, Y'),
 				"<div align=\"center\">
-					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
-					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
+					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
+					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
 				</div>"
 			);
 		}
@@ -178,10 +220,28 @@ class Inventory extends BaseController
 			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
 			$result = [
 				'batch_id' => $batch['batch_id'],
-				'product_name' => $product_name,
+				'product_name' => $batch['product_id'],
 				'stock_in' => $batch['stock_in'],
-				'expiration' => $batch['expiration'],
+				'expiration_date' => $batch['expiration_date'],
 			];
+		}
+
+		return json_encode($result);
+	}
+
+
+	// FETCH ALL MEDICINE'S PRODUCT NAME
+	// ---------------------------------------------------------
+	public function fetchAllMedicineProductName()
+	{
+		$medicines = $this->medicinesModel->findAll();
+		$result = "<option value=\"\" selected=\"selected\">---Select---</option>";
+
+		if ($medicines) {
+			foreach ($medicines as $medicine) {
+				$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+				$result .= "<option value=\"{$medicine['product_id']}\"> {$product_name} </option>";
+			}
 		}
 
 		return json_encode($result);
@@ -203,7 +263,7 @@ class Inventory extends BaseController
 					'dosage' => htmlspecialchars($_GET['dosage'])
 				];
 
-				$success = $this->medicinessModel->save($data);
+				$success = $this->medicinesModel->save($data);
 
 				if ($success) {
 					// Create flashdata for database query status
@@ -217,6 +277,34 @@ class Inventory extends BaseController
 		}
 
 		return redirect()->to('inventory/medicines/items');
+	}
+
+	public function addBatch()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getBatchRules())) {
+				$data = [
+					'batch_id' => htmlspecialchars($_GET['batch_id']),
+					'product_id' => htmlspecialchars($_GET['product_name']),
+					'stock_in' => htmlspecialchars($_GET['stock_in']),
+					'expiration_date' => htmlspecialchars($_GET['expiration_date'])
+				];
+
+				$success = $this->bacthesModel->save($data);
+
+				if ($success) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully added.');
+				} else {
+				}
+			} else {
+				session()->setFlashdata('add_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+			}
+		}
+
+		return redirect()->to('inventory/medicines/batches');
 	}
 
 
@@ -250,5 +338,68 @@ class Inventory extends BaseController
 		}
 
 		return redirect()->to('inventory/medicines/items');
+	}
+
+	public function modifyBatch($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getBatchRules($id))) {
+				$data = [
+					'product_id' => htmlspecialchars($_GET['product_name']),
+					'stock_in' => htmlspecialchars($_GET['stock_in']),
+					'expiration_date' => htmlspecialchars($_GET['expiration_date'])
+				];
+
+				$success = $this->batchesModel->where('batch_id', $id)
+					->set($data)->update();
+
+				if ($success) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully updated.');
+				} else {
+				}
+			} else {
+				session()->setFlashdata('mod_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+				session()->setFlashdata('product_id', $id);
+			}
+		}
+
+		return redirect()->to('inventory/medicines/batches');
+	}
+
+
+	// DELETE DATA
+	// ---------------------------------------------------------
+	public function deleteMedicine($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$success1 = $this->batchesModel->where('product_id', $id)->delete();
+			$success2 = $this->medicinesModel->delete($id);
+
+			if ($success1 && $success2) {
+				// Create flashdata for database query status
+				session()->setFlashdata('success', 'Successfully deleted.');
+			} else {
+			}
+		}
+
+		return redirect()->to('inventory/medicines/items');
+	}
+
+	public function deleteBatch($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$success = $this->batchesModel->delete($id);
+
+			if ($success) {
+				// Create flashdata for database query status
+				session()->setFlashdata('success', 'Successfully deleted.');
+			} else {
+			}
+		}
+
+		return redirect()->to('inventory/medicines/batches');
 	}
 }

@@ -14,7 +14,7 @@ class BatchesModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = [];
+    protected $allowedFields        = ['batch_id', 'product_id', 'stock_in', 'stock_out', 'expiration_date'];
 
     // Dates
     protected $useTimestamps        = false;

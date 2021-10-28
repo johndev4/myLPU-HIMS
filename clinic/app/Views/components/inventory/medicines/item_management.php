@@ -40,7 +40,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="add_form">
+                            <form action="<?= base_url('inventory/addMedicine') ?>" method="get" id="add_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
