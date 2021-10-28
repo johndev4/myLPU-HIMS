@@ -45,23 +45,88 @@
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label for="add_productid" class="col-form-label">Product ID</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <input type="text" class="form-control" id="add_productid" name="product_id" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('product_id')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('product_id'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_productid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_productid" class="col-form-label">Manufacturer</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_manufacturer" class="col-form-label">Manufacturer</label>
+                                        <input type="text" class="form-control" id="add_manufacturer" name="manufacturer" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('manufacturer')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('manufacturer'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_manufacturer').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_productid" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_genericname" class="col-form-label">Generic Name</label>
+                                        <input type="text" class="form-control" id="add_genericname" name="generic_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('generic_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('generic_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_genericname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_productid" class="col-form-label">Drug Class</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_drugclass" class="col-form-label">Drug Class</label>
+                                        <input type="text" class="form-control" id="add_drugclass" name="drug_class" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('drug_class')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('drug_class'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_drugclass').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
                                         <label for="add_dosage" class="col-form-label">Dosage</label>
-                                        <input type="text" class="form-control" id="" name="middle_dosage" value="">
+                                        <input type="text" class="form-control" id="add_dosage" name="dosage" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('dosage')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('dosage'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_dosage').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <!-- <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock</label>
@@ -102,7 +167,7 @@
                                 <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the medicine from the inventory</div>
                             </div><br>
                             <div class="float-right">
-                                <form action="" method="get" id="deleteModalForm">
+                                <form action="" method="get" id="delete_form">
                                     <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
                                 </form>
@@ -124,28 +189,93 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="add_form">
+                            <form action="" method="get" id="modify_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">Product ID</label>
-                                        <input type="text" class="form-control" id="" name="" value="A0001">
+                                        <label for="modify_productid" class="col-form-label">Product ID</label>
+                                        <input type="text" class="form-control" id="mod_productid" name="product_id" value="" readonly="readonly">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('product_id')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('product_id'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_productid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_lastname" class="col-form-label">Manufacturer</label>
-                                        <input type="text" class="form-control" id="" name="" value="RiteMed">
+                                        <label for="mod_manufacturer" class="col-form-label">Manufacturer</label>
+                                        <input type="text" class="form-control" id="mod_manufacturer" name="manufacturer" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('manufacturer')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('manufacturer'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_manufacturer').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_firstname" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="" value="Cefuroxime">
+                                        <label for="mod_genericname" class="col-form-label">Generic Name</label>
+                                        <input type="text" class="form-control" id="mod_genericname" name="generic_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('generic_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('generic_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_genericname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_middleinit" class="col-form-label">Drug Class</label>
-                                        <input type="text" class="form-control" id="" name="" maxlength="1" value="Antibacterial">
+                                        <label for="mod_drugclass" class="col-form-label">Drug Class</label>
+                                        <input type="text" class="form-control" id="mod_drugclass" name="drug_class" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('drug_class')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('drug_class'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_drugclass').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="add_dosage" class="col-form-label">Dosage</label>
-                                        <input type="text" class="form-control" id="" name="middle_dosage" value="250mg">
+                                        <label for="mod_dosage" class="col-form-label">Dosage</label>
+                                        <input type="text" class="form-control" id="mod_dosage" name="dosage" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('dosage')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('dosage'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_dosage').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <!-- <div class="col-6 form-group">
                                         <label for="#add_username" class="col-form-label">Stock</label>
@@ -224,13 +354,6 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
-        // For sidebar
-        $("#mainInventoryNav").addClass('menu-open');
-        $("#mainInventoryNav > a").addClass('active');
-        $("#invmngtNav > a").addClass('active');
-        $("#medicineNav").addClass('menu-open');
-        $("#medicineNav > a").addClass('active');
-
         // For datatable
         $("#medicines_table").DataTable({
             responsive: true,
@@ -251,9 +374,104 @@
             }
         });
 
+        // For sidebar
+        $("#mainInventoryNav").addClass('menu-open');
+        $("#mainInventoryNav > a").addClass('active');
+        $("#invmngtNav > a").addClass('active');
+        $("#medicineNav").addClass('menu-open');
+        $("#medicineNav > a").addClass('active');
 
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
 
+        // Add Validation Error
+        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+            $('#addModal').modal('show');
+            retrieveData('<?= session()->get('product_id') ?>', {
+                error: true,
+                modalType: "add"
+            });
+            $('#addModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Modify Validation Error
+        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+            $('#modifyModal').modal('show');
+            retrieveData('<?= session()->get('product_id') ?>', {
+                error: true,
+                modalType: "mod"
+            });
+            $('#modifyModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Reset add modal on close
+        $('#addModal').on('hidden.bs.modal', function(evt) {
+            $('#add_productid').val("");
+            $('#add_manufacturer').val("");
+            $('#add_genericname').val("");
+            $('#add_drugclass').val("");
+            $('#add_dosage').val("");
+        });
     });
+
+    // Retrieve data
+    function retrieveData(id, obj = {
+        error: false,
+        modalType: null
+    }) {
+        if (obj['error'] === true) {
+            var data = <?= session()->get('getData') ?>
+
+            $('#' + obj['modalType'] + '_productid').val(data['product_id']);
+            $('#' + obj['modalType'] + '_manufacturer').val(data['manufacturer']);
+            $('#' + obj['modalType'] + '_genericname').val(data['generic_name']);
+            $('#' + obj['modalType'] + '_drugclass').val(data['drug_class']);
+            $('#' + obj['modalType'] + '_dosage').val(data['dosage']);
+        } else {
+            $.ajax({
+                url: '<?= base_url('inventory/fetchMedicineById') ?>/' + id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    $('#mod_productid').val(response['product_id']);
+                    $('#mod_manufacturer').val(response['manufacturer']);
+                    $('#mod_genericname').val(response['generic_name']);
+                    $('#mod_drugclass').val(response['drug_class']);
+                    $('#mod_dosage').val(response['dosage']);
+
+                    resId = response['product_id'];
+                }
+            });
+        }
+
+        $('#modify_form').attr(
+            'action',
+            '<?= base_url('inventory/modifyMedicine') ?>/' + id
+        );
+        $('#delete_form').attr(
+            'action',
+            '<?= base_url('inventory/deleteMedicine') ?>/' + id
+        );
+    }
 </script>
 <!-- /Script -->
 
