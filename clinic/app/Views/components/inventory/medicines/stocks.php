@@ -31,24 +31,11 @@
             <!-- Modal -->
 
             <!-- Stock out Modal -->
-
-
-
-
-
-
-
-
-
-            <!-- Stock out Modal -->
-
-
-            <!-- Modify Modal -->
             <div class="modal fade" id="stockoutModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Stock Details</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Stock Management</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -61,6 +48,22 @@
                                         <label for="add_idno" class="col-form-label">Stock Out</label>
                                         <input type="number" class="form-control" id="" name="" value="0">
                                     </div>
+                                    <div class="col-6 form-group">
+                                        <label for="" class="col-form-label">Batch ID</label>
+                                        <select class="form-control" id="" name="">
+                                            <option value="" selected="selected">---</option>
+                                            <option value=''>B01</option>
+                                            <option value=''>B02</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label for="" class="col-form-label">Product Name</label>
+                                        <select class="form-control" id="" name="">
+                                            <option value="" selected="selected">---</option>
+                                            <option value=''>RiteMed - Cefuroxime 250mg</option>
+                                            <option value=''>Pfizer - Biogesic 500mg</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="footer float-right pb-3">
@@ -72,36 +75,107 @@
                     </div>
                 </div>
             </div>
-            <!-- /Modify Modal -->
+            <!-- Stock out Modal -->
             <!-- /Modal -->
 
             <!-- Table -->
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card-header inventory-header">
                     <h3 class="card-title">Stocks</h3>
                 </div>
 
                 <div class="card-body">
-                    <table id="stocks_table" class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Batch ID</th>
-                                <th>Product Name</th>
-                                <th>Stock In</th>
-                                <th>Stock Out</th>
-                                <th>Expired</th>
-                                <th>Stock Available</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- DATA HERE -->
-                        </tbody>
-                    </table>
+
                 </div>
 
-            </div>
+            </div> -->
             <!-- /Table -->
+
+            <!-- Tabs -->
+            <div class="col-sm-12 col-md-12">
+                <div class="card card-danger card-outline card-outline-tabs">
+                    <div class="card-header p-0 border-bottom-0">
+                        <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="custom-tabs-four-batch-tab" data-toggle="pill" href="#custom-tabs-four-batch" role="tab" aria-controls="custom-tabs-four-batch" aria-selected="true">Stocks by Batch</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-four-productname-tab" data-toggle="pill" href="#custom-tabs-four-productname" role="tab" aria-controls="custom-tabs-four-productname" aria-selected="false">Stocks by Product name</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body" style=" overflow-y:auto">
+
+                        <div class="tab-content" id="custom-tabs-four-tabContent">
+                            <!-- Batch Table -->
+                            <div class="tab-pane fade show active" id="custom-tabs-four-batch" role="tabpanel" aria-labelledby="custom-tabs-four-batch-tab">
+
+                                <!-- Table -->
+                                <table id="stocks_table" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Batch ID</th>
+                                            <th>Product Name</th>
+                                            <th>Stock In</th>
+                                            <th>Stock Out</th>
+                                            <th>Expired</th>
+                                            <th>Stock Available</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- DATA HERE -->
+                                    </tbody>
+                                </table>
+                                <!-- /Table -->
+
+                            </div>
+                            <!-- /Accepted Table -->
+
+                            <!-- Rejected Table -->
+                            <div class="tab-pane fade" id="custom-tabs-four-productname" role="tabpanel" aria-labelledby="custom-tabs-four-productname-tab">
+
+                                <!-- Table -->
+                                <table id="" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Stock In</th>
+                                            <th>Stock Out</th>
+                                            <th>Expired</th>
+                                            <th>Stock Available</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- DATA HERE -->
+                                    </tbody>
+                                </table>
+                                <!-- /Table -->
+
+                            </div>
+                            <!-- /Rejected Table -->
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <!-- /Tabs -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         </div>
