@@ -19,16 +19,30 @@
         <div class="container-fluid">
 
             <div class="row mb-5">
-                <!-- Add Inventory -->
-                <!-- <div class="col-md-3 col-12 mb-3">
-                    <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#addModal">
-                        <span class="info-box-icon add-record text-black-50"><i class="fas fa-boxes"></i></span>
-                        <span class="info-box-text text-black-50">Add Batch</span>
+                <!-- Stock out -->
+                <div class="col-md-3 col-12 mb-3">
+                    <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#stockoutModal">
+                        <span class="info-box-icon add-record text-black-50"><i class="fas fa-unlink"></i></span>
+                        <span class="info-box-text text-black-50">Stock Out</span>
                     </button>
-                </div> -->
+                </div>
             </div>
 
             <!-- Modal -->
+
+            <!-- Stock out Modal -->
+
+
+
+
+
+
+
+
+
+            <!-- Stock out Modal -->
+
+
             <!-- Modify Modal -->
             <div class="modal fade" id="stockoutModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

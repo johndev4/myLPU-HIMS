@@ -6,9 +6,9 @@
 
         <!-- Back Button -->
         <div class="row mt-2 mb-2" style="border:1px solid none">
-            <div class="col-sm-12">
+            <div class="col-sm-">
                 <a href="<?= base_url('dashboard') ?>" class="back-btn">
-                    <i class="fas fa-angle-left fa-2x font-weight-normal" style="font-size: 17pt; color: rgb(88, 88, 88); vertical-align:baseline"></i>
+                    <i class="fas fa-chevron-left fa-2x font-weight-normal" style="font-size: 17pt; color: rgb(88, 88, 88); vertical-align:baseline"></i>
                     <span class="font-weight-normal ml-1" style="font-size: 20pt; color: rgb(88, 88, 88)">Back</span>
                 </a>
             </div>
