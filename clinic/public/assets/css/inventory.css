@@ -10,3 +10,28 @@
 .button-color:hover{
     background-color: #1a5496 !important;
 }
+
+/* Stock Management*/
+/* Batch Tab */
+a#custom-tabs-four-batch-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+  }
+  
+  a#custom-tabs-four-batch-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+  }
+
+/* Product Name */
+a#custom-tabs-four-productname-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+  }
+  
+  a#custom-tabs-four-productname-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+  }

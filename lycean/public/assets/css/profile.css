@@ -2,7 +2,7 @@
     h1.m-0.font-weight-bold.text-dark{
         font-size: 24pt !important;
     }
-    i.fas.fa-angle-left.fa-2x.font-weight-normal{
+    i.fas.fa-chevron-left.fa-2x.font-weight-normal{
         font-size: 15pt !important;
     }
     span.font-weight-normal.ml-1{
@@ -20,5 +20,9 @@ a.back-btn:hover{
     padding: 10px 3px 4px 3px !important;
     border-radius: 5px !important; 
     border-width: 2px !important;
+}
+
+a.back-btn{
+    padding: 5px !important;
 }
 
