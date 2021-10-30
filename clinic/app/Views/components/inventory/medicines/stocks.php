@@ -135,7 +135,7 @@
                             <div class="tab-pane fade" id="custom-tabs-four-productname" role="tabpanel" aria-labelledby="custom-tabs-four-productname-tab">
 
                                 <!-- Table -->
-                                <table id="" class="table table-bordered table-hover">
+                                <table id="" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>Product Name</th>
