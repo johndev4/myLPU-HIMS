@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="stocks_table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Batch ID</th>
@@ -95,30 +95,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>A0001</td>
-                                <td>RiteMed - Cefuroxime 250mg</td>
-                                <td>100</td>
-                                <td>50</td>
-                                <td>0</td>
-                                <td>50</td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#stockoutModal">Stock Out</button>
-                                    <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button> -->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>A0002</td>
-                                <td>Pfizer - Biogesic 50mg</td>
-                                <td>50</td>
-                                <td>5</td>
-                                <td>0</td>
-                                <td>45</td>
-                                <td align="center">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#stockoutModal">Stock Out</button>
-                                    <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#deleteModal">Delete</button> -->
-                                </td>
-                            </tr>
+                            <!-- DATA HERE -->
                         </tbody>
                     </table>
                 </div>
@@ -135,13 +112,24 @@
 <script>
     $(document).ready(function() {
         // For datatable
-        $("#example1").DataTable({
+        $("#stocks_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
             searching: true,
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            ajax: {
+                type: 'post',
+                url: '<?= base_url('inventory/fetchStockManagement') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
 
         // For sidebar
         $("#mainInventoryNav").addClass('menu-open');

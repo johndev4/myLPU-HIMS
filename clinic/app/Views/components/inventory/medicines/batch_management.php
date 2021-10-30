@@ -40,28 +40,78 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="add_form">
+                            <form action="<?= base_url('inventory/addBatch') ?>" method="get" id="add_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_productid" class="col-form-label">Batch ID</label>
-                                        <input type="text" class="form-control" id="" name="productid" value="">
+                                        <label for="add_batchid" class="col-form-label">Batch ID</label>
+                                        <input type="text" class="form-control" id="add_batchid" name="batch_id" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('batch_id')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('batch_id'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_batchid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="add_department" class="col-form-label">Product Name</label>
-                                        <select class="form-control" id="add_department" name="department">
-                                            <option value="" selected="selected">---Select---</option>
-                                            <option value="">RiteMEd - Cefuroxime 250mg</option>
-                                            <option value="">Pfizer - Paracetamol 50mg</option>
+                                        <label for="add_productname" class="col-form-label">Product Name</label>
+                                        <select class="form-control" id="add_productname" name="product_name">
+                                            <!-- OPTIONS HERE -->
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('product_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('product_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_productname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_productid" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="productid" value="">
+                                        <label for="add_stockin" class="col-form-label">Stock</label>
+                                        <input type="number" class="form-control" id="add_stockin" name="stock_in" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('stock_in')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('stock_in'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_stockin').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_productid" class="col-form-label">Expiration</label>
-                                        <input type="Date" class="form-control" id="" name="productid" value="">
+                                        <label for="add_expirationdate" class="col-form-label">Expiration</label>
+                                        <input type="Date" class="form-control" id="add_expirationdate" name="expiration_date" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('expiration_date')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('expiration_date'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_expirationdate').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
 
@@ -85,28 +135,26 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="add_form">
+                            <form action="" method="get" id="modify_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">Batch ID</label>
-                                        <input type="text" class="form-control" id="" name="" value="A0001" disabled>
+                                        <label for="mod_batchid" class="col-form-label">Batch ID</label>
+                                        <input type="text" class="form-control" id="mod_batchid" name="batch_id" value="" readonly="readonly">
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label for="add_department" class="col-form-label">Product Name</label>
-                                        <select class="form-control" id="add_department" name="department" disabled>
-                                            <option value="" selected="selected">---Select---</option>
-                                            <option value="">RiteMEd - Cefuroxime 250mg</option>
-                                            <option value="">Pfizer - Paracetamol 50mg</option>
+                                        <label for="mod_productname" class="col-form-label">Product Name</label>
+                                        <select class="form-control" id="mod_productname" name="product_name">
+                                            <!-- OPTIONS HERE -->
                                         </select>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_firstname" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="" value="100">
+                                        <label for="mod_stockin" class="col-form-label">Stock</label>
+                                        <input type="number" class="form-control" id="mod_stockin" name="stock_in" value="">
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_middleinit" class="col-form-label">Expiration</label>
-                                        <input type="date" class="form-control" id="" name="" maxlength="1" value="Antibacterial">
+                                        <label for="mod_expirationdate" class="col-form-label">Expiration</label>
+                                        <input type="date" class="form-control" id="mod_expirationdate" name="expiration_date" maxlength="1" value="">
                                     </div>
                                 </div>
 
@@ -132,7 +180,7 @@
                                 <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the medicine from the inventory</div>
                             </div><br>
                             <div class="float-right">
-                                <form action="" method="get" id="deleteModalForm">
+                                <form action="" method="get" id="delete_form">
                                     <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
                                 </form>
@@ -219,7 +267,91 @@
             });
         <?php endif; ?>
 
+        // Add Validation Error
+        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+            $('#addModal').modal('show');
+            retrieveData('<?= session()->get('batch_id') ?>', {
+                error: true,
+                modalType: "add"
+            });
+            $('#addModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Modify Validation Error
+        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+            $('#modifyModal').modal('show');
+            retrieveData('<?= session()->get('batch_id') ?>', {
+                error: true,
+                modalType: "mod"
+            });
+            $('#modifyModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Fetch all medicine product name using ajax
+        $.ajax({
+            url: '<?= base_url('inventory/fetchAllMedicineProductName') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#add_productname').html(response);
+                $('#mod_productname').html(response);
+            }
+        });
+
+        // Reset add modal on close
+        $('#addModal').on('hidden.bs.modal', function(evt) {
+            $('#add_batchid').val("");
+            $('#add_productname').val("");
+            $('#add_stockin').val("");
+            $('#add_expirationdate').val("");
+        });
     });
+
+    // Retrieve data
+    function retrieveData(id, obj = {
+        error: false,
+        modalType: null
+    }) {
+        if (obj['error'] === true) {
+            var data = <?= session()->get('getData') ?>
+
+            $('#' + obj['modalType'] + '_batchid').val(data['batch_id']);
+            $('#' + obj['modalType'] + '_productname').val(data['product_name']);
+            $('#' + obj['modalType'] + '_stockin').val(data['stock_in']);
+            $('#' + obj['modalType'] + '_expirationdate').val(data['expiration_date']);
+        } else {
+            $.ajax({
+                url: '<?= base_url('inventory/fetchBatchById') ?>/' + id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    $('#mod_batchid').val(response['batch_id']);
+                    $('#mod_productname').val(response['product_name']);
+                    $('#mod_stockin').val(response['stock_in']);
+                    $('#mod_expirationdate').val(response['expiration_date']);
+
+                    resId = response['batch_id'];
+                }
+            });
+        }
+
+        $('#modify_form').attr(
+            'action',
+            '<?= base_url('inventory/modifyBatch') ?>/' + id
+        );
+        $('#delete_form').attr(
+            'action',
+            '<?= base_url('inventory/deleteBatch') ?>/' + id
+        );
+    }
 </script>
 <!-- /Script -->
 

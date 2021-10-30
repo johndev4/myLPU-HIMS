@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2021 at 05:02 PM
+-- Generation Time: Oct 28, 2021 at 04:57 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `mylpuhims_db`
 --
-CREATE DATABASE IF NOT EXISTS `mylpuhims_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `mylpuhims_db`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `mylpuhims_db`;
 -- Table structure for table `administrators`
 --
 
-DROP TABLE IF EXISTS `administrators`;
 CREATE TABLE `administrators` (
   `admin_id` int(11) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -50,14 +47,22 @@ INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`) 
 -- Table structure for table `batches`
 --
 
-DROP TABLE IF EXISTS `batches`;
 CREATE TABLE `batches` (
   `batch_id` varchar(45) NOT NULL,
   `product_id` varchar(45) NOT NULL,
-  `stock_in` int(11) DEFAULT NULL,
-  `stock_out` int(11) DEFAULT NULL,
-  `expiration_date` date DEFAULT NULL
+  `stock_in` int(11) NOT NULL,
+  `stock_out` int(11) NOT NULL,
+  `expiration_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `batches`
+--
+
+INSERT INTO `batches` (`batch_id`, `product_id`, `stock_in`, `stock_out`, `expiration_date`) VALUES
+('B01', 'A0001', 100, 0, '2022-05-23'),
+('B02', 'A0002', 50, 0, '2022-05-26'),
+('dasd', 'A0001', 213, 0, '2021-10-27');
 
 -- --------------------------------------------------------
 
@@ -65,7 +70,6 @@ CREATE TABLE `batches` (
 -- Table structure for table `consultations`
 --
 
-DROP TABLE IF EXISTS `consultations`;
 CREATE TABLE `consultations` (
   `consultation_no` varchar(16) NOT NULL,
   `status` varchar(45) NOT NULL,
@@ -86,7 +90,6 @@ CREATE TABLE `consultations` (
 -- Table structure for table `health_personnels`
 --
 
-DROP TABLE IF EXISTS `health_personnels`;
 CREATE TABLE `health_personnels` (
   `id_no` varchar(45) NOT NULL,
   `first_name` varchar(45) NOT NULL,
@@ -113,7 +116,6 @@ INSERT INTO `health_personnels` (`id_no`, `first_name`, `middle_name`, `last_nam
 -- Table structure for table `health_personnels_account`
 --
 
-DROP TABLE IF EXISTS `health_personnels_account`;
 CREATE TABLE `health_personnels_account` (
   `id_no` varchar(45) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -127,7 +129,7 @@ CREATE TABLE `health_personnels_account` (
 --
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locked`, `last_activity`) VALUES
-('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, '2021-10-26 11:01:00'),
+('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, '2021-10-28 10:57:00'),
 ('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL, NULL),
 ('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8', NULL, NULL),
 ('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839', NULL, NULL),
@@ -139,7 +141,6 @@ INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locke
 -- Table structure for table `health_personnels_notification`
 --
 
-DROP TABLE IF EXISTS `health_personnels_notification`;
 CREATE TABLE `health_personnels_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
@@ -157,7 +158,6 @@ CREATE TABLE `health_personnels_notification` (
 -- Table structure for table `health_records`
 --
 
-DROP TABLE IF EXISTS `health_records`;
 CREATE TABLE `health_records` (
   `record_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
@@ -172,7 +172,6 @@ CREATE TABLE `health_records` (
 -- Table structure for table `lyceans`
 --
 
-DROP TABLE IF EXISTS `lyceans`;
 CREATE TABLE `lyceans` (
   `id_no` varchar(45) NOT NULL,
   `first_name` varchar(45) NOT NULL,
@@ -206,7 +205,6 @@ INSERT INTO `lyceans` (`id_no`, `first_name`, `middle_name`, `last_name`, `role`
 -- Table structure for table `lyceans_account`
 --
 
-DROP TABLE IF EXISTS `lyceans_account`;
 CREATE TABLE `lyceans_account` (
   `id_no` varchar(45) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -233,7 +231,6 @@ INSERT INTO `lyceans_account` (`id_no`, `username`, `password`, `locked`) VALUES
 -- Table structure for table `lyceans_notification`
 --
 
-DROP TABLE IF EXISTS `lyceans_notification`;
 CREATE TABLE `lyceans_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
@@ -251,7 +248,6 @@ CREATE TABLE `lyceans_notification` (
 -- Table structure for table `medical_files`
 --
 
-DROP TABLE IF EXISTS `medical_files`;
 CREATE TABLE `medical_files` (
   `file_id` int(11) NOT NULL,
   `consultation_no` varchar(16) NOT NULL,
@@ -264,14 +260,21 @@ CREATE TABLE `medical_files` (
 -- Table structure for table `medicines`
 --
 
-DROP TABLE IF EXISTS `medicines`;
 CREATE TABLE `medicines` (
   `product_id` varchar(45) NOT NULL,
-  `manufacturer` varchar(45) DEFAULT NULL,
-  `generic_name` varchar(45) DEFAULT NULL,
-  `drug_class` varchar(45) DEFAULT NULL,
-  `dosage` varchar(45) DEFAULT NULL
+  `manufacturer` varchar(45) NOT NULL,
+  `generic_name` varchar(45) NOT NULL,
+  `drug_class` varchar(45) NOT NULL,
+  `dosage` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `medicines`
+--
+
+INSERT INTO `medicines` (`product_id`, `manufacturer`, `generic_name`, `drug_class`, `dosage`) VALUES
+('A0001', 'RiteMed', 'Cefuroxime', 'Anti-bacterial', '250mg'),
+('A0002', 'Pfizer', 'Biogesic', 'Analgesic', '500mg');
 
 --
 -- Indexes for dumped tables
