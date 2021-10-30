@@ -71,13 +71,13 @@
                     <table id="stocks_table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Batch ID</th>
+                                <!-- <th>Batch ID</th> -->
                                 <th>Product Name</th>
                                 <th>Stock In</th>
                                 <th>Stock Out</th>
                                 <th>Expired</th>
                                 <th>Stock Available</th>
-                                <th></th>
+                                <!-- <th></th> -->
                             </tr>
                         </thead>
                         <tbody>
