@@ -185,6 +185,29 @@ class Inventory extends BaseController
 		return json_encode($result);
 	}
 
+	public function fetchStockManagementByBatch()
+	{
+		$result = array('data' => array());
+		$batches = $this->batchesModel->findAll();
+
+		foreach ($batches as $key => $value) {
+			$medicines = $this->medicinesModel->find($value['product_id']);
+			$product_name = "{$medicines['manufacturer']} - {$medicines['generic_name']} {$medicines['dosage']}";
+			$is_expired = $value['expiration_date'] < date('Y-m-d') ? 'YES' : 'NO';
+
+			$result['data'][$key] = array(
+				$value['batch_id'],
+				$product_name,
+				$value['stock_in'],
+				$value['stock_out'],
+				$is_expired,
+				$value['stock_in'] - $value['stock_out']
+			);
+		}
+
+		return json_encode($result);
+	}
+
 	public function fetchStockManagement()
 	{
 		$result = array('data' => array());
@@ -217,29 +240,6 @@ class Inventory extends BaseController
 				// "<div align=\"center\">
 				// 	<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#stockoutModal\">Stock Out</button>
 				// </div>"
-			);
-		}
-
-		return json_encode($result);
-	}
-
-	public function fetchStockManagementByBatch()
-	{
-		$result = array('data' => array());
-		$batches = $this->batchesModel->findAll();
-
-		foreach ($batches as $key => $value) {
-			$medicines = $this->medicinesModel->find($value['product_id']);
-			$product_name = "{$medicines['manufacturer']} - {$medicines['generic_name']} {$medicines['dosage']}";
-			$is_expired = $value['expiration_date'] < date('Y-m-d') ? 'YES' : 'NO';
-
-			$result['data'][$key] = array(
-				$value['batch_id'],
-				$product_name,
-				$value['stock_in'],
-				$value['stock_out'],
-				$is_expired,
-				$value['stock_in'] - $value['stock_out']
 			);
 		}
 
