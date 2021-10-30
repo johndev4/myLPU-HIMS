@@ -85,7 +85,6 @@
                 </div>
 
                 <div class="card-body">
-
                 </div>
 
             </div> -->
@@ -111,7 +110,7 @@
                             <div class="tab-pane fade show active" id="custom-tabs-four-batch" role="tabpanel" aria-labelledby="custom-tabs-four-batch-tab">
 
                                 <!-- Table -->
-                                <table id="stocks_table" class="table table-bordered table-hover">
+                                <table id="stocksbybatch_table" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>Batch ID</th>
@@ -135,7 +134,7 @@
                             <div class="tab-pane fade" id="custom-tabs-four-productname" role="tabpanel" aria-labelledby="custom-tabs-four-productname-tab">
 
                                 <!-- Table -->
-                                <table id="" class="table table-bordered table-hover" style="width: 100%;">
+                                <table id="stocks_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>Product Name</th>
@@ -185,6 +184,26 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
+        // For datatable
+        $("#stocksbybatch_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            searching: true,
+            ajax: {
+                type: 'post',
+                url: '<?= base_url('inventory/fetchStockManagementByBatch') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
+
         // For datatable
         $("#stocks_table").DataTable({
             responsive: true,

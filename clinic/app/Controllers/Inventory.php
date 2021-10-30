@@ -185,15 +185,15 @@ class Inventory extends BaseController
 		return json_encode($result);
 	}
 
-	public function fetchStockManagement()
+	public function fetchStockManagementByBatch()
 	{
 		$result = array('data' => array());
 		$batches = $this->batchesModel->findAll();
 
 		foreach ($batches as $key => $value) {
-			$medicine = $this->medicinesModel->find($value['product_id']);
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
-			$is_expired = $value['expiration_date'] < date('Y-m-d')? 'yes' : 'no';
+			$medicines = $this->medicinesModel->find($value['product_id']);
+			$product_name = "{$medicines['manufacturer']} - {$medicines['generic_name']} {$medicines['dosage']}";
+			$is_expired = $value['expiration_date'] < date('Y-m-d') ? 'YES' : 'NO';
 
 			$result['data'][$key] = array(
 				$value['batch_id'],
@@ -201,11 +201,45 @@ class Inventory extends BaseController
 				$value['stock_in'],
 				$value['stock_out'],
 				$is_expired,
-				$value['stock_in'] - $value['stock_out'],
+				$value['stock_in'] - $value['stock_out']
+			);
+		}
 
-				"<div align=\"center\">
-					<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#stockoutModal\">Stock Out</button>
-				</div>"
+		return json_encode($result);
+	}
+
+	public function fetchStockManagement()
+	{
+		$result = array('data' => array());
+		$medicines = $this->medicinesModel->findAll();
+
+		foreach ($medicines as $key => $value) {
+			$batches = $this->batchesModel->where('product_id', $value['product_id'])->findAll();
+			$product_name = "{$value['manufacturer']} - {$value['generic_name']} {$value['dosage']}";
+			$stock_in = 0;
+			$stock_out = 0;
+			$expired_count = 0;
+
+			foreach ($batches as $batch) {
+				$stock_in += $batch['stock_in'];
+				$stock_out += $batch['stock_out'];
+				$stock_available = $batch['stock_in'] - $batch['stock_out'];
+
+				if ($batch['expiration_date'] < date('Y-m-d')) {
+					$expired_count += $stock_available > 0 ? $stock_available : 0;
+				}
+			}
+
+			$result['data'][$key] = array(
+				$product_name,
+				$stock_in,
+				$stock_out,
+				$expired_count,
+				$stock_in - ($stock_out + $expired_count)
+
+				// "<div align=\"center\">
+				// 	<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#stockoutModal\">Stock Out</button>
+				// </div>"
 			);
 		}
 
