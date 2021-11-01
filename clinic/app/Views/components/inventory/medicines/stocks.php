@@ -29,7 +29,6 @@
             </div>
 
             <!-- Modal -->
-
             <!-- Stock out Modal -->
             <div class="modal fade" id="stockoutModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -41,27 +40,62 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="stockout_form">
+                            <form action="<?= base_url('inventory/stockOut') ?>" method="get" id="stockout_form">
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label for="out_stockout" class="col-form-label">Stock Out</label>
                                         <input type="number" class="form-control" id="out_stockout" name="stock_out" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('out_validation')->hasError('stock_out')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('out_validation')->getError('stock_out'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#out_stockout').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="out_productname" class="col-form-label">Product Name</label>
                                         <select class="form-control" id="out_productname" name="product_name">
-                                            <!-- <option value="" selected="selected">---</option>
-                                            <option value=''>RiteMed - Cefuroxime 250mg</option>
-                                            <option value=''>Pfizer - Biogesic 500mg</option> -->
+                                            <!-- OPTIONS HERE -->
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('out_validation')->hasError('product_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('out_validation')->getError('product_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#out_productname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="" class="col-form-label">Batch ID</label>
                                         <select class="form-control" id="out_batchid" name="batch_id">
-                                            <!-- <option value="" selected="selected">---</option>
-                                            <option value=''>B01</option>
-                                            <option value=''>B02</option> -->
+                                            <!-- OPTIONS HERE -->
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('out_validation')->hasError('batch_id')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('out_validation')->getError('batch_id'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#out_batchid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
 
@@ -157,28 +191,13 @@
                 </div>
             </div>
             <!-- /Tabs -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </section>
 </div>
+
+
+
+
 
 <!-- Script -->
 <script>
@@ -228,6 +247,34 @@
         $("#medicineNav").addClass('menu-open');
         $("#medicineNav > a").addClass('active');
 
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
+
+        // Stock Out Validation Error
+        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
+            $('#stockoutModal').modal('show');
+            retrieveData('', {
+                error: true,
+                modalType: "out"
+            });
+            $('#stockoutModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
         // Reset stock out modal on close
         $('#stockoutModal').on('hidden.bs.modal', function(evt) {
             $('#out_stockout').val("");
@@ -271,6 +318,20 @@
             });
         });
     });
+
+    // Retrieve data
+    function retrieveData(id, obj = {
+        error: false,
+        modalType: null
+    }) {
+        if (obj['error'] === true) {
+            var data = <?= session()->get('getData') ?>
+
+            $('#' + obj['modalType'] + '_stockout').val(data['stock_out']);
+            $('#' + obj['modalType'] + '_productname').val(data['product_name']);
+            $('#' + obj['modalType'] + '_batchid').val(data['batch_id']);
+        }
+    }
 </script>
 <!-- /Script -->
 
