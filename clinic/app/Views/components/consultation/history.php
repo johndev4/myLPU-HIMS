@@ -152,7 +152,7 @@
                             <div class="tab-pane fade show active" id="custom-tabs-four-accepted" role="tabpanel" aria-labelledby="custom-tabs-four-accepted-tab">
 
                                 <!-- Table -->
-                                <table id="acceptedTable" class="table table-bordered table-hover">
+                                <table id="accepted_table" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>ID Number</th>
@@ -163,24 +163,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>2019-2-69266</td>
-                                            <td>John Rafael Mistica</td>
-                                            <td>COECSA</td>
-                                            <td>10-26-2021</td>
-                                            <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2019-2-0236</td>
-                                            <td>Jade Anne Kristel Vale</td>
-                                            <td>COECSA</td>
-                                            <td>10-26-2021</td>
-                                            <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
-                                            </td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -192,7 +175,7 @@
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
 
                                 <!-- Table -->
-                                <table id="rejectedTable" class="table table-bordered table-hover" style="width: 100%;">
+                                <table id="rejected_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>ID Number</th>
@@ -203,15 +186,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>2019-2-69266</td>
-                                            <td>John Rafael Mistica</td>
-                                            <td>COECSA</td>
-                                            <td>10-26-2021</td>
-                                            <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
-                                            </td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -238,23 +213,50 @@
 </div>
 <!-- /.container-fluid -->
 
+
+
+
+
+
+<!-- Script -->
 <script>
     $(document).ready(function() {
         // For datatable
-        $("#acceptedTable").DataTable({
+        $("#accepted_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
-            searching: false,
+            searching: true,
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('consultations/fetchAllDoneConsultations') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
         });
-
-        $("#rejectedTable").DataTable({
+        $("#rejected_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
-            searching: false,
+            searching: true,
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('consultations/fetchAllRejectedConsultations') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
         });
 
         // For sidebar

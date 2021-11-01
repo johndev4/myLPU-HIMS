@@ -247,41 +247,6 @@
         $("#medicineNav").addClass('menu-open');
         $("#medicineNav > a").addClass('active');
 
-        // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-            Toast.fire({
-                icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
-            });
-        <?php endif; ?>
-
-        // Stock Out Validation Error
-        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
-            $('#stockoutModal').modal('show');
-            retrieveData('', {
-                error: true,
-                modalType: "out"
-            });
-            $('#stockoutModal').on('hidden.bs.modal', function(evt) {
-                $('.error').addClass('d-none');
-                $('input.border').removeClass('border border-danger');
-                $('select.border').removeClass('border border-danger');
-            });
-        <?php endif; ?>
-
-        // Reset stock out modal on close
-        $('#stockoutModal').on('hidden.bs.modal', function(evt) {
-            $('#out_stockout').val("");
-            $('#out_batchid').val("");
-            $('#out_productname').val("");
-        });
-
         // Fetch all medicine product name using ajax
         $.ajax({
             url: '<?= base_url('inventory/fetchAllMedicineProductName') ?>',
@@ -316,6 +281,53 @@
                     $('#out_batchid').html(response);
                 }
             });
+        });
+
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
+
+        // Stock Out Validation Error
+        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
+            $('#stockoutModal').modal('show');
+            retrieveData('', {
+                error: true,
+                modalType: "out"
+            });
+            $('#stockoutModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Insufficient Stock
+        <?php if (!empty(session()->getFlashdata('insufficient_stock'))) : ?>
+            <?php if (session()->getFlashdata('insufficient_stock') == TRUE) : ?>
+                $('#stockoutModal').modal('show');
+                retrieveData('', {
+                    error: true,
+                    modalType: "out"
+                });
+                $('#insufficientStockModal').modal('show');
+            <?php endif; ?>
+        <?php endif; ?>
+
+        // Reset stock out modal on close
+        $('#stockoutModal').on('hidden.bs.modal', function(evt) {
+            $('#out_stockout').val("");
+            $('#out_batchid').val("");
+            $('#out_productname').val("");
         });
     });
 

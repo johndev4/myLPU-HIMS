@@ -528,7 +528,8 @@ class Inventory extends BaseController
 					} else {
 					}
 				} else {
-					session()->setFlashdata('insufficient_stock', 'Insufficient stock available.');
+					session()->setFlashdata('insufficient_stock', TRUE);
+					session()->setFlashdata('getData', json_encode($_GET));
 				}
 			} else {
 				session()->setFlashdata('out_validation', $this->validator);
