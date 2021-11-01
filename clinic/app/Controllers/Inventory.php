@@ -113,6 +113,33 @@ class Inventory extends BaseController
 		];
 	}
 
+	private function getStockManagementRules()
+	{
+		return  [
+			'stock_in' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+				],
+			'batch_id' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'product_name' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+		];
+	}
+
 
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
@@ -304,6 +331,23 @@ class Inventory extends BaseController
 	}
 
 
+	// FETCH BATCH BY PRODUCT ID
+	// ---------------------------------------------------------
+	public function fetchBatchByProductID($id)
+	{
+		$batches = $this->batchesModel->where('product_id', $id)->findAll();
+		$result = "<option value=\"\" selected=\"selected\">---Select---</option>";
+
+		if ($batches) {
+			foreach ($batches as $batch) {
+				$result .= "<option value=\"{$batch['batch_id']}\"> {$batch['batch_id']} </option>";
+			}
+		}
+
+		return json_encode($result);
+	}
+
+
 	// INSERT DATA
 	// ---------------------------------------------------------
 	public function addMedicine()
@@ -457,5 +501,34 @@ class Inventory extends BaseController
 		}
 
 		return redirect()->to('inventory/medicines/batches');
+	}
+
+	// STOCK OUT PRODUCT
+	// ---------------------------------------------------------
+	public function stockOut()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getStockManagementRules())) {
+				$data = [
+					'batch_id' => htmlspecialchars($_GET['batch_id']),
+					'product_id' => htmlspecialchars($_GET['product_name']),
+					'stock_out' => htmlspecialchars($_GET['stock_out'])
+				];
+
+				$success = $this->batchesModel->save($data);
+
+				if ($success) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully added.');
+				} else {
+				}
+			} else {
+				session()->setFlashdata('add_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+			}
+		}
+
+		return redirect()->to('inventory/medicines/stocks');
 	}
 }
