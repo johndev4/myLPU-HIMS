@@ -50,17 +50,17 @@
                                     <div class="col-6 form-group">
                                         <label for="out_productname" class="col-form-label">Product Name</label>
                                         <select class="form-control" id="out_productname" name="product_name">
-                                            <option value="" selected="selected">---</option>
+                                            <!-- <option value="" selected="selected">---</option>
                                             <option value=''>RiteMed - Cefuroxime 250mg</option>
-                                            <option value=''>Pfizer - Biogesic 500mg</option>
+                                            <option value=''>Pfizer - Biogesic 500mg</option> -->
                                         </select>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="" class="col-form-label">Batch ID</label>
                                         <select class="form-control" id="out_batchid" name="batch_id">
-                                            <option value="" selected="selected">---</option>
+                                            <!-- <option value="" selected="selected">---</option>
                                             <option value=''>B01</option>
-                                            <option value=''>B02</option>
+                                            <option value=''>B02</option> -->
                                         </select>
                                     </div>
                                 </div>
@@ -241,9 +241,34 @@
             type: 'get',
             dataType: 'json',
             success: function(response) {
-                $('#add_productname').html(response);
-                $('#mod_productname').html(response);
+                $('#out_productname').html(response);
             }
+        });
+
+        // Fetch batch by product id using ajax
+        $('#out_batchid').prop('disabled', true);
+        $.ajax({
+            url: '<?= base_url('inventory/fetchBatchByProductID') ?>/' + $('#out_productname').val(),
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#out_batchid').html(response);
+            }
+        });
+        $('#out_productname').on('input', function() {
+            if ($('#out_productname').val() == '') {
+                $('#out_batchid').prop('disabled', true);
+            } else {
+                $('#out_batchid').prop('disabled', false);
+            }
+            $.ajax({
+                url: '<?= base_url('inventory/fetchBatchByProductID') ?>/' + $('#out_productname').val(),
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    $('#out_batchid').html(response);
+                }
+            });
         });
     });
 </script>

@@ -333,7 +333,7 @@ class Inventory extends BaseController
 
 	// FETCH BATCH BY PRODUCT ID
 	// ---------------------------------------------------------
-	public function fetchBatchByProductID($id)
+	public function fetchBatchByProductID($id='')
 	{
 		$batches = $this->batchesModel->where('product_id', $id)->findAll();
 		$result = "<option value=\"\" selected=\"selected\">---Select---</option>";
