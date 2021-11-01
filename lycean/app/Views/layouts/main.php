@@ -76,9 +76,9 @@
 
         <!-- Footer -->
         <footer class="main-footer fixed-bottom" style="text-align: center;">
-            <span class="mr-1 ml-1 text-underlined"><a href="">Terms of Use</a></span>
-            <span class="mr-1 ml-1"><a href="">Privacy Policy</a></span>
-            <span class="mr-1 ml-1"><a href="">Help Menu</a></span>
+            <span class="mr-1 ml-1" style="font-size: 10pt;"><a href="">Terms of Use</a></span>
+            <span class="mr-1 ml-1" style="font-size: 10pt;"><a href="">Privacy Policy</a></span>
+            <span class="mr-1 ml-1" style="font-size: 10pt;"><a href="">Help Menu</a></span>
             <br>
             <strong>Copyright &copy;<?= date('Y') ?></strong>
             All rights reserved.
