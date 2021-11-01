@@ -41,27 +41,26 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="add_form">
-                                <input type="hidden" name="role" value="student">
+                            <form action="" method="get" id="stockout_form">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">Stock Out</label>
-                                        <input type="number" class="form-control" id="" name="" value="0">
+                                        <label for="out_stockout" class="col-form-label">Stock Out</label>
+                                        <input type="number" class="form-control" id="out_stockout" name="stock_out" value="">
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="" class="col-form-label">Batch ID</label>
-                                        <select class="form-control" id="" name="">
-                                            <option value="" selected="selected">---</option>
-                                            <option value=''>B01</option>
-                                            <option value=''>B02</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="" class="col-form-label">Product Name</label>
-                                        <select class="form-control" id="" name="">
+                                        <label for="out_productname" class="col-form-label">Product Name</label>
+                                        <select class="form-control" id="out_productname" name="product_name">
                                             <option value="" selected="selected">---</option>
                                             <option value=''>RiteMed - Cefuroxime 250mg</option>
                                             <option value=''>Pfizer - Biogesic 500mg</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label for="" class="col-form-label">Batch ID</label>
+                                        <select class="form-control" id="out_batchid" name="batch_id">
+                                            <option value="" selected="selected">---</option>
+                                            <option value=''>B01</option>
+                                            <option value=''>B02</option>
                                         </select>
                                     </div>
                                 </div>
@@ -203,8 +202,6 @@
                 }
             }
         });
-
-        // For datatable
         $("#stocks_table").DataTable({
             responsive: true,
             lengthChange: true,
@@ -231,6 +228,23 @@
         $("#medicineNav").addClass('menu-open');
         $("#medicineNav > a").addClass('active');
 
+        // Reset stock out modal on close
+        $('#stockoutModal').on('hidden.bs.modal', function(evt) {
+            $('#out_stockout').val("");
+            $('#out_batchid').val("");
+            $('#out_productname').val("");
+        });
+
+        // Fetch all medicine product name using ajax
+        $.ajax({
+            url: '<?= base_url('inventory/fetchAllMedicineProductName') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#add_productname').html(response);
+                $('#mod_productname').html(response);
+            }
+        });
     });
 </script>
 <!-- /Script -->
