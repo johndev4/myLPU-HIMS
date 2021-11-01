@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white py-3" style="background-color: #a62d38;">
+<nav class="main-header navbar navbar-expand-md navbar-light navbar-white py-3 fixed-top" style="background-color: #a62d38;">
     <div class="container">
         <div class="navbar-brand">
             <img src="<?= base_url('assets/images/icon 2.png') ?>" alt="myLPU Clinic Logo" class="brand-image" style="opacity: .8">
@@ -113,7 +113,7 @@
 
         </div>
     </div>
-</nav>
+</nav><br><br><br>
 <!-- /.navbar -->
 
 
