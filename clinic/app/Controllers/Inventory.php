@@ -510,18 +510,25 @@ class Inventory extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getStockManagementRules())) {
-				$data = [
-					'stock_out' => htmlspecialchars($_GET['stock_out']),
-					'batch_id' => htmlspecialchars($_GET['batch_id']),
-					'product_id' => htmlspecialchars($_GET['product_name'])
-				];
+				$batch = $this->batchesModel->find($_GET['batch_id']);
+				$stock_available = ($batch['stock_in'] - $batch['stock_out']);
 
-				$success = $this->batchesModel->save($data);
+				if ($stock_available >= $_GET['stock_out']) {
+					$data = [
+						'stock_out' => htmlspecialchars($_GET['stock_out']),
+						'batch_id' => htmlspecialchars($_GET['batch_id']),
+						'product_id' => htmlspecialchars($_GET['product_name'])
+					];
 
-				if ($success) {
-					// Create flashdata for database query status
-					session()->setFlashdata('success', 'Done!');
+					$success = $this->batchesModel->save($data);
+
+					if ($success) {
+						// Create flashdata for database query status
+						session()->setFlashdata('success', 'Done!');
+					} else {
+					}
 				} else {
+					session()->setFlashdata('insufficient_stock', 'Insufficient stock available.');
 				}
 			} else {
 				session()->setFlashdata('out_validation', $this->validator);
