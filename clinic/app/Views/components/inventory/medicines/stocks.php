@@ -30,7 +30,7 @@
 
             <!-- Modal -->
             <!-- Stock out Modal -->
-            <div class="modal fade" id="stockoutModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+            <div class="modal fade" id="stockoutModal" tabindex="-1" role="document" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -111,10 +111,25 @@
             <!-- Stock out Modal -->
 
             <!-- Insufficent stock Modal -->
-
-
-
-
+            <div class="modal fade" id="insufficientStockModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-center mt-2">
+                                <span class="info-box-icon text-warning"><i class="fas fa-3x fa-exclamation-circle"></i></span>
+                                <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Insuffient Stock</div>
+                                <div class="mt-3" style="font-size: 12pt;">The quantity you are trying to deduct is greater than the current stock available.</div>
+                                <div class="mt-1 font-weight-normal text-secondary"></div>
+                            </div><br>
+                            <div class="">
+                                <form action="" method="get" id="">
+                                    <button type="button" class="btn btn-light btn-block" data-dismiss="modal" style="border-color: rgb(223, 223, 223);">Ok</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- /Insufficent stock Modal -->
 
             <!-- /Modal -->
