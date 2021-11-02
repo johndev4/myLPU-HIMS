@@ -77,13 +77,36 @@ class Consultations extends BaseController
 		];
 	}
 
+	private function getClearHistoryRules()
+	{
+		return  [
+			'from_date_range' => [
+				'rules' => 'required|valid_date[Y-m-d]|differs[to_date_range]|date_less_than[to_date_range,from_date_range]',
+				'errors' => [
+					'required' => '- Required',
+					'valid_date' => 'Invalid date.',
+					'differs' => '"From" and "To" should not the same',
+					'date_less_than' => '"From" should less than "To"',
+				]
+			],
+			'to_date_range' => [
+				'rules' => 'required|valid_date[Y-m-d]|differs[from_date_range]|date_greater_than[to_date_range,from_date_range]',
+				'errors' => [
+					'required' => '- Required',
+					'valid_date' => 'Invalid date.',
+					'differs' => '"From" and "To" should not the same',
+					'date_greater_than' => '"To" should greater than "From"',
+				]
+			]
+		];
+	}
+
 
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
 	public function index()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
+		$userInfo = $this->userModel->find(getIdNo());
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
@@ -203,7 +226,7 @@ class Consultations extends BaseController
 	{
 		$result = array('data' => array());
 		$rejectedConsultations = $this->consultationsModel
-			->where('status', 'done')
+			->where('status', 'rejected')
 			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'asc')->findAll();
 
@@ -450,8 +473,7 @@ class Consultations extends BaseController
 	// -----------------------------------------------------------------
 	public function history()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
+		$userInfo = $this->userModel->find(getIdNo());
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
@@ -480,23 +502,33 @@ class Consultations extends BaseController
 	public function clearConsultationHistory()
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			if ($_GET['from_date_range'] !== '' && $_GET['to_date_range'] !== '') {
-				$fromDateRange = $_GET['from_date_range'];
-				$toDateRange = $_GET['to_date_range'];
+			if (!isset($_GET['clear_all_history'])) {
+				if ($this->validate($this->getClearHistoryRules())) {
+					$fromDateRange = $_GET['from_date_range'];
+					$toDateRange = $_GET['to_date_range'];
 
-				$success = $this->consultationsModel
-					->where('personnel_id_no', getIdNo())
-					->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
-					->delete();
+					$success = $this->consultationsModel
+						->where('personnel_id_no', getIdNo())
+						->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+						->delete();
+
+					if ($success) {
+						session()->setFlashdata('success', 'Successfully deleted.');
+					} else {
+					}
+				} else {
+					session()->setFlashdata('clear_validation', $this->validator);
+					session()->setFlashdata('getData', json_encode($_GET));
+				}
 			} else {
 				$success = $this->consultationsModel
 					->where('personnel_id_no', getIdNo())
 					->delete();
-			}
 
-			if ($success) {
-				session()->setFlashdata('success', 'Successfully deleted.');
-			} else {
+				if ($success) {
+					session()->setFlashdata('success', 'Successfully deleted.');
+				} else {
+				}
 			}
 		}
 

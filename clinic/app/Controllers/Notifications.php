@@ -33,10 +33,10 @@ class Notifications extends BaseController
 				$status2 = $notification['status'] == "unread" ? "text-primary" : "text-secondary";
 				// Define notification category icon
 				$consultation_no = $notification['consultation_no'];
-				$consultatation = $this->consultationsModel->find($consultation_no);
-				if ($consultatation['category'] == 'Consultation') {
+				$consultation = $this->consultationsModel->find($consultation_no);
+				if ($consultation['category'] == 'Consultation') {
 					$icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
-				} else if ($consultatation['category'] == 'Mental Wellness') {
+				} else if ($consultation['category'] == 'Mental Wellness') {
 					$icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
 				}
 
