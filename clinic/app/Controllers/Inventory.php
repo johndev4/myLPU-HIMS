@@ -116,14 +116,7 @@ class Inventory extends BaseController
 	private function getStockManagementRules()
 	{
 		return  [
-			'stock_in' => [
-				'rules' => 'required|max_length[45]',
-				'errors' => [
-					'required' => '- Required',
-					'max_length' => 'Max length exceeded.'
-				]
-				],
-			'batch_id' => [
+			'stock_out' => [
 				'rules' => 'required|max_length[45]',
 				'errors' => [
 					'required' => '- Required',
@@ -131,6 +124,13 @@ class Inventory extends BaseController
 				]
 			],
 			'product_name' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'batch_id' => [
 				'rules' => 'required|max_length[45]',
 				'errors' => [
 					'required' => '- Required',
@@ -333,7 +333,7 @@ class Inventory extends BaseController
 
 	// FETCH BATCH BY PRODUCT ID
 	// ---------------------------------------------------------
-	public function fetchBatchByProductID($id)
+	public function fetchBatchByProductID($id = '')
 	{
 		$batches = $this->batchesModel->where('product_id', $id)->findAll();
 		$result = "<option value=\"\" selected=\"selected\">---Select---</option>";
@@ -510,21 +510,29 @@ class Inventory extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getStockManagementRules())) {
-				$data = [
-					'batch_id' => htmlspecialchars($_GET['batch_id']),
-					'product_id' => htmlspecialchars($_GET['product_name']),
-					'stock_out' => htmlspecialchars($_GET['stock_out'])
-				];
+				$batch = $this->batchesModel->find($_GET['batch_id']);
+				$stock_available = ($batch['stock_in'] - $batch['stock_out']);
 
-				$success = $this->batchesModel->save($data);
+				if ($stock_available >= $_GET['stock_out']) {
+					$data = [
+						'stock_out' => htmlspecialchars($_GET['stock_out']),
+						'batch_id' => htmlspecialchars($_GET['batch_id']),
+						'product_id' => htmlspecialchars($_GET['product_name'])
+					];
 
-				if ($success) {
-					// Create flashdata for database query status
-					session()->setFlashdata('success', 'Successfully added.');
+					$success = $this->batchesModel->save($data);
+
+					if ($success) {
+						// Create flashdata for database query status
+						session()->setFlashdata('success', 'Done!');
+					} else {
+					}
 				} else {
+					session()->setFlashdata('insufficient_stock', TRUE);
+					session()->setFlashdata('getData', json_encode($_GET));
 				}
 			} else {
-				session()->setFlashdata('add_validation', $this->validator);
+				session()->setFlashdata('out_validation', $this->validator);
 				session()->setFlashdata('getData', json_encode($_GET));
 			}
 		}

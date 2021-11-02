@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2021-11-01 21:59:45 --> Trying to access array offset on value of type null
 #0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 52)
 #1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Auth.php(73): getIdNo()
@@ -14,3 +15,1070 @@ CRITICAL - 2021-11-01 21:59:58 --> Trying to access array offset on value of typ
 #4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 {main}
+=======
+CRITICAL - 2021-11-01 15:30:30 --> Too few arguments to function App\Controllers\Inventory::fetchBatchByProductID(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Inventory->fetchBatchByProductID()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-11-01 15:31:49 --> Too few arguments to function App\Controllers\Inventory::fetchBatchByProductID(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Inventory->fetchBatchByProductID()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-11-01 15:34:20 --> Too few arguments to function App\Controllers\Inventory::fetchBatchByProductID(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Inventory->fetchBatchByProductID()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-11-01 15:35:49 --> The action you requested is not allowed.
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Security\Security.php(222): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\CSRF.php(53): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('inventory/fetch...', 'before')
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2021-11-01 20:59:19 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2021-11-01 20:59:19 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-11-01 14:37:16 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(218): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(176): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(28): require('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2021-11-01 21:40:11 --> Error connecting to the database: Unknown database 'mylpuhims_db'
+CRITICAL - 2021-11-01 21:40:11 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'mylpuhims_db'
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2021-11-01 21:40:12 --> Error connecting to the database: Unknown database 'mylpuhims_db'
+CRITICAL - 2021-11-01 21:40:12 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'mylpuhims_db'
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\NotLoggedIn.php(14): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\NotLoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('/', 'before')
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-11-01 23:07:47 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:48 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:49 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:50 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:51 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:52 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:53 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:54 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:55 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:56 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:57 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:58 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:07:59 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:08:00 --> Cannot redeclare App\Controllers\Consultations::fetchAllScheduledConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-01 23:09:40 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:41 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:41 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:42 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:42 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:43 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:43 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:44 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:44 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:45 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:45 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:46 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:46 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:47 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:47 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:48 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:48 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:49 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:49 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:50 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:51 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:52 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:53 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:54 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:55 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:56 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:56 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:57 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:57 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:58 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:58 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:59 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:09:59 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:10:00 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:10:00 --> syntax error, unexpected token ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:44 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:45 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:46 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:47 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:48 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:49 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:50 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:51 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:52 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:53 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:54 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:55 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:56 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:57 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:58 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:16:59 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:17:00 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:17:01 --> syntax error, unexpected identifier "button", expecting ")"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:30 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:31 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:32 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:32 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:32 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:34 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:34 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:34 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:35 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:35 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:36 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:37 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:38 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:39 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:40 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:41 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:42 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:43 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:44 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:45 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:46 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:47 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:48 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:49 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:50 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:51 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:52 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:53 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:54 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:55 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:56 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:57 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:58 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:29:59 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:00 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:01 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:02 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:06 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:07 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:08 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:09 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:23 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:24 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:24 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:25 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:26 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:27 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:28 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:29 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:30 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:31 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:32 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:34 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:35 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:39 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:40 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:41 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:42 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:43 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:44 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:45 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:46 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:47 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:48 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:49 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:50 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:51 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:54 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:56 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:56 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:56 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:57 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:58 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:58 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:59 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:30:59 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:31:00 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:31:00 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:31:01 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:31:01 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-01 23:31:02 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2016-3-1234')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+>>>>>>> 6f2b961841f23d8f62b6cc00880e7abb23494631

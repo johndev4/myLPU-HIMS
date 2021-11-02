@@ -37,10 +37,8 @@
                         <div class="modal-header font-weight-bold text-secondary">
                             Consultation History
                         </div>
-
                         <div class="modal-body">
-
-                            <form action="" method="get" id="add_form">
+                            <form action="<?= base_url('consultations/clearConsultationHistory') ?>" method="get" id="">
                                 <input type="hidden" name="role" value="">
                                 <div class="row">
                                     <div class="col-12 form-group mb-n1">
@@ -48,16 +46,16 @@
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="" class="col-form-label">From</label>
-                                        <input type="date" class="form-control" id="" name="" value="">
+                                        <input type="date" class="form-control" id="fromDateRange" name="from_date_range" value="">
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="" class="col-form-label">To</label>
-                                        <input type="date" class="form-control" id="" name="" value="">
+                                        <input type="date" class="form-control" id="toDateRange" name="to_date_range" value="">
                                     </div>
                                     <div class="col-12 form-group mt-2">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <input class="form-check-input" type="checkbox" id="clearAllHistory">
+                                            <label class="form-check-label" for="clearAllHistory">
                                                 Clear all consultation history
                                             </label>
                                         </div>
@@ -152,7 +150,7 @@
                             <div class="tab-pane fade show active" id="custom-tabs-four-accepted" role="tabpanel" aria-labelledby="custom-tabs-four-accepted-tab">
 
                                 <!-- Table -->
-                                <table id="acceptedTable" class="table table-bordered table-hover">
+                                <table id="accepted_table" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>ID Number</th>
@@ -163,24 +161,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>2019-2-69266</td>
-                                            <td>John Rafael Mistica</td>
-                                            <td>COECSA</td>
-                                            <td>10-26-2021</td>
-                                            <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2019-2-0236</td>
-                                            <td>Jade Anne Kristel Vale</td>
-                                            <td>COECSA</td>
-                                            <td>10-26-2021</td>
-                                            <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
-                                            </td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -192,7 +173,7 @@
                             <div class="tab-pane fade" id="custom-tabs-four-rejected" role="tabpanel" aria-labelledby="custom-tabs-four-rejected-tab">
 
                                 <!-- Table -->
-                                <table id="rejectedTable" class="table table-bordered table-hover" style="width: 100%;">
+                                <table id="rejected_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>ID Number</th>
@@ -203,15 +184,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>2019-2-69266</td>
-                                            <td>John Rafael Mistica</td>
-                                            <td>COECSA</td>
-                                            <td>10-26-2021</td>
-                                            <td align="center">
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewModal">view</button>
-                                            </td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -225,41 +198,91 @@
             </div>
             <!-- /Tabs -->
 
-
-
-
-
-
-
-
-
         </div>
     </section>
 </div>
 <!-- /.container-fluid -->
 
+
+
+
+
+
+<!-- Script -->
 <script>
     $(document).ready(function() {
         // For datatable
-        $("#acceptedTable").DataTable({
+        $("#accepted_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
-            searching: false,
+            searching: true,
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('consultations/fetchAllDoneConsultations') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
         });
-
-        $("#rejectedTable").DataTable({
+        $("#rejected_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
-            searching: false,
+            searching: true,
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('consultations/fetchAllRejectedConsultations') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
         });
 
         // For sidebar
         $("#consultationNav > a").addClass('active');
 
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
+
+        // On checked of "Clear all consultation history"
+        if ($('#clearAllHistory').prop('checked') == true) {
+            $('#fromDateRange').prop('readOnly', true);
+            $('#toDateRange').prop('readOnly', true);
+        } else {
+            $('#fromDateRange').prop('readOnly', false);
+            $('#toDateRange').prop('readOnly', false);
+        }
+        $('#clearAllHistory').on('input', function() {
+            if ($('#clearAllHistory').prop('checked') == true) {
+                $('#fromDateRange').prop('readOnly', true);
+                $('#toDateRange').prop('readOnly', true);
+            } else {
+                $('#fromDateRange').prop('readOnly', false);
+                $('#toDateRange').prop('readOnly', false);
+            }
+        });
     });
 </script>
 <!-- /Script -->
