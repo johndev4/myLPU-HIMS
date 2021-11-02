@@ -37,10 +37,8 @@
                         <div class="modal-header font-weight-bold text-secondary">
                             Consultation History
                         </div>
-
                         <div class="modal-body">
-
-                            <form action="" method="get" id="add_form">
+                            <form action="<?= base_url('consultations/clearConsultationHistory') ?>" method="get" id="">
                                 <input type="hidden" name="role" value="">
                                 <div class="row">
                                     <div class="col-12 form-group mb-n1">
@@ -48,16 +46,16 @@
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="" class="col-form-label">From</label>
-                                        <input type="date" class="form-control" id="" name="" value="">
+                                        <input type="date" class="form-control" id="fromDateRange" name="from_date_range" value="">
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="" class="col-form-label">To</label>
-                                        <input type="date" class="form-control" id="" name="" value="">
+                                        <input type="date" class="form-control" id="toDateRange" name="to_date_range" value="">
                                     </div>
                                     <div class="col-12 form-group mt-2">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <input class="form-check-input" type="checkbox" id="clearAllHistory">
+                                            <label class="form-check-label" for="clearAllHistory">
                                                 Clear all consultation history
                                             </label>
                                         </div>
@@ -200,14 +198,6 @@
             </div>
             <!-- /Tabs -->
 
-
-
-
-
-
-
-
-
         </div>
     </section>
 </div>
@@ -262,6 +252,37 @@
         // For sidebar
         $("#consultationNav > a").addClass('active');
 
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
+
+        // On checked of "Clear all consultation history"
+        if ($('#clearAllHistory').prop('checked') == true) {
+            $('#fromDateRange').prop('readOnly', true);
+            $('#toDateRange').prop('readOnly', true);
+        } else {
+            $('#fromDateRange').prop('readOnly', false);
+            $('#toDateRange').prop('readOnly', false);
+        }
+        $('#clearAllHistory').on('input', function() {
+            if ($('#clearAllHistory').prop('checked') == true) {
+                $('#fromDateRange').prop('readOnly', true);
+                $('#toDateRange').prop('readOnly', true);
+            } else {
+                $('#fromDateRange').prop('readOnly', false);
+                $('#toDateRange').prop('readOnly', false);
+            }
+        });
     });
 </script>
 <!-- /Script -->

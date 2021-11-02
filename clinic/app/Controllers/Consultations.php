@@ -473,4 +473,33 @@ class Consultations extends BaseController
 		// Display page view
 		return view('components/consultation/report', $this->data);
 	}
+
+
+	// CLEAR CONSULTATION HISTORY
+	// -----------------------------------------------------------------
+	public function clearConsultationHistory()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			if ($_GET['from_date_range'] !== '' && $_GET['to_date_range'] !== '') {
+				$fromDateRange = $_GET['from_date_range'];
+				$toDateRange = $_GET['to_date_range'];
+
+				$success = $this->consultationsModel
+					->where('personnel_id_no', getIdNo())
+					->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+					->delete();
+			} else {
+				$success = $this->consultationsModel
+					->where('personnel_id_no', getIdNo())
+					->delete();
+			}
+
+			if ($success) {
+				session()->setFlashdata('success', 'Successfully deleted.');
+			} else {
+			}
+		}
+
+		return redirect()->to('consultations/history');
+	}
 }
