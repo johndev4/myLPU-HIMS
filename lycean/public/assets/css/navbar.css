@@ -89,3 +89,16 @@ i.fas.noti-icon.fa-lg::before{
 a.dropdown-item:hover{
   background-color: rgb(243, 243, 243) !important;
 }
+
+/* Adjust Margin mobile Nav Consult*/
+@media screen and (max-width: 585px) {
+  div.row.d-flex.justify-content-center{
+    margin-top: 50px !important;
+  }
+  div.col-md-6.hide{
+    margin-bottom: 15px !important;
+  }
+  div.row.consult-row{
+    margin-top: 50px !important;
+  }
+}

@@ -75,6 +75,14 @@
                 </div>
             </div>
             <!-- Stock out Modal -->
+
+            <!-- Insufficent stock Modal -->
+
+
+
+
+            <!-- /Insufficent stock Modal -->
+
             <!-- /Modal -->
 
             <!-- Table -->

@@ -4,7 +4,7 @@
 <body style="background: linear-gradient(250deg, #ffffff 60%, #e4e4e4 60%)">
     <div class="container">
 
-        <div class="row mt-5" style="border:1px solid none">
+        <div class="row consult-row" style="border:1px solid none; margin-top:80px">
             <!-- Navigation -->
             <div class="col-md-6">
                 <div class="row">
