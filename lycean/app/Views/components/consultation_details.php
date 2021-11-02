@@ -15,7 +15,7 @@
         </div> -->
         <!-- /Back Button -->
 
-        <div class="row d-flex justify-content-center mt-5" style="border:1px solid none">
+        <div class="row d-flex justify-content-center" style="border:1px solid none; margin-top:80px">
 
             <!-- <div class="col-sm-12 col-md-5" style="border:1px solid none">
                 <div class="card mt-3">

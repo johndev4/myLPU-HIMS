@@ -5,7 +5,7 @@
 <!-- <body> -->
 <div class="container">
 
-    <div class="mt-5 mb-5">
+    <div class=" mb-5" style="margin-top: 70px;">
         <h1 class="d-inline greeting">Good Day </h1>
         <span class="d-inline font-weight-bold" style="font-size: 30pt;"> <?= $firstname ?> </span>
         <h2 class="d-inline exclamation">!</h2>

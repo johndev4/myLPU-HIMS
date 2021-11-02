@@ -5,7 +5,7 @@
     <div class="container">
 
         <!-- Back Button -->
-        <div class="row mt-2 mb-2" style="border:1px solid none">
+        <div class="row mb-2" style="border:1px solid none; margin-top:35px">
             <div class="col-sm-">
                 <a href="<?= base_url('dashboard') ?>" class="back-btn">
                     <i class="fas fa-chevron-left fa-2x font-weight-normal" style="font-size: 17pt; color: rgb(88, 88, 88); vertical-align:baseline"></i>
@@ -15,7 +15,7 @@
         </div>
         <!-- /Back Button -->
 
-        <div class="row d-flex justify-content-center mb-5" style="border:1px solid none">
+        <div class="row d-flex justify-content-center" style="border:1px solid none; margin-bottom:70px">
             <!-- User Profile -->
             <div class="col-md-8 col-lg-6 col-12 my-2" style="border:1px solid none">
 
