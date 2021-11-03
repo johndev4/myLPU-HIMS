@@ -345,6 +345,17 @@
 
             $('#' + obj['modalType'] + '_fromdaterange').val(data['from_date_range']);
             $('#' + obj['modalType'] + '_todaterange').val(data['to_date_range']);
+        } else {
+            $.ajax({
+                url: '<?= base_url('useraccounts/details') ?>/' + id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    $('#').val(response['']);
+
+                    resId = response['id_no'];
+                }
+            });
         }
     }
 </script>

@@ -1,0 +1,23 @@
+CRITICAL - 2021-11-04 00:15:53 --> Undefined property: App\Controllers\Consultations::$vnalidator
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(546): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 546)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->clearConsultationHistory()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-04 00:32:24 --> Call to undefined method App\Models\ConsultationsModel::or_where
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(584): CodeIgniter\Model->__call('or_where', Array)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->clearConsultationHistory()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-04 00:37:43 --> whereIn() expects $values to be of type array or closure
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(706): CodeIgniter\Database\BaseBuilder->_whereIn('consultation_no', 'tJa30CwG1L2PS5V...', false, 'AND ', NULL)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(720): CodeIgniter\Database\BaseBuilder->whereIn('consultation_no', 'tJa30CwG1L2PS5V...')
+#2 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(519): CodeIgniter\Model->__call('whereIn', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->clearConsultationHistory()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

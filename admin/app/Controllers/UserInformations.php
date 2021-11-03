@@ -320,7 +320,7 @@ class UserInformations extends BaseController
             // Delete directory
             if (file_exists($this->medicalFilesDir . $consultation['lycean_id_no'])) {
                 $files = glob($this->medicalFilesDir . $consultation['lycean_id_no'] . '/*');
-
+                
                 foreach ($files as $file) {
                     unlink($file);
                 }
