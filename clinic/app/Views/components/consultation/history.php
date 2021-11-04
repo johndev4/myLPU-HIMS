@@ -111,34 +111,34 @@
 
                         <div class="modal-body">
 
-                            <div class="row" id="detailsTab">
+                            <div class="row" id="">
                                 <div class="col-sm-12 col-md-12" style="border:1px solid none">
                                     <div class="d-block">
                                         <label class="d-inline text-secondary">Consultation ID:</label>
                                         <div class="mt-n2 mb-2 d-inline">
-                                            <span> w1khTH6UOxEIeybL </span>
+                                            <span id="view_consultationid"></span>
                                         </div>
                                     </div>
                                     <div class="d-block">
                                         <label class="d-inline text-secondary">Date of Request:</label>
                                         <div class="mt-n2 mb-2 d-inline">
-                                            <span> 27-10-2021 15:23 </span>
+                                            <span id="view_dateofrequest"></span>
                                         </div>
                                     </div>
                                     <hr>
                                     <label class="d-block text-secondary">Schedule</label>
                                     <div class="mt-n2 mb-2">
-                                        <span class="text-dark time">Time: 03:30 pm </span>
-                                        <span class="text-dark date float-right">Date: October 27, 2021 </span>
+                                        <span class="text-dark time">Time: <span id="view_time"></span> </span>
+                                        <span class="text-dark date float-right">Date: <span id="view_date"></span> </span>
                                     </div>
                                     <label class="d-block text-secondary">Meeting Link</label>
                                     <div class="mt-n2 mb-2">
-                                        <a href="" class="text-dark"><u>http://localhost/myLPU-HIMS/clinic/public/consultations</u></a>
+                                        <a href="" class="text-dark" id="view_meetinglinkhref"><span id="view_meetinglinktext"></span></a>
                                     </div>
                                     <hr>
                                     <label class="d-block text-secondary">Concern</label>
                                     <p class="mt-n2 mb-2">
-                                        Doc, I have dry cough please help me. UwU
+                                        <span id="view_concernmessage"></span>
                                     </p>
                                     <!-- <label class="d-block text-secondary">Denial of Service</label>
                                     <p class="mt-n2 mb-2">
@@ -347,13 +347,17 @@
             $('#' + obj['modalType'] + '_todaterange').val(data['to_date_range']);
         } else {
             $.ajax({
-                url: '<?= base_url('useraccounts/details') ?>/' + id,
+                url: '<?= base_url('consultations/details') ?>/' + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    $('#').val(response['']);
-
-                    resId = response['id_no'];
+                    $('#view_consultationid').text(response['consultation_id']);
+                    $('#view_dateofrequest').text(response['date_of_request']);
+                    $('#view_time').text(response['time']);
+                    $('#view_date').text(response['date']);
+                    $('#view_meetinglinkhref').prop('href', response['meeting_link']['href']);
+                    $('#view_meetinglinktext').html(response['meeting_link']['text']);
+                    $('#view_concernmessage').text(response['concern_message']);
                 }
             });
         }
