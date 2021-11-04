@@ -85,8 +85,8 @@ class Consultations extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'valid_date' => 'Invalid date.',
-					'differs' => '"From" and "To" should not the same',
-					'date_less_than' => '"From" should less than "To"',
+					'differs' => '"From" and "To" should not be the same.',
+					'date_less_than' => '"From" should less than "To".',
 				]
 			],
 			'to_date_range' => [
@@ -94,8 +94,8 @@ class Consultations extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'valid_date' => 'Invalid date.',
-					'differs' => '"From" and "To" should not the same',
-					'date_greater_than' => '"To" should greater than "From"',
+					'differs' => '"From" and "To" should not be the same.',
+					'date_greater_than' => '"To" should greater than "From".',
 				]
 			]
 		];
@@ -484,20 +484,6 @@ class Consultations extends BaseController
 		return view('components/consultation/history', $this->data);
 	}
 
-	// RETURN REPORT VIEWS
-	// -----------------------------------------------------------------
-	public function report()
-	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
-		$this->data['firstname'] = $userInfo['first_name'];
-		// For guidance counselor permission on sidebar
-		$this->data['designation'] = $userInfo['designation'];
-
-		// Display page view
-		return view('components/consultation/report', $this->data);
-	}
-
 
 	// CLEAR CONSULTATION HISTORY
 	// -----------------------------------------------------------------
@@ -619,5 +605,61 @@ class Consultations extends BaseController
 		}
 
 		return json_encode($data);
+	}
+
+
+	// -----------------------------------------------------------------------------------------
+
+
+	// RETURN REPORT VIEWS
+	// -----------------------------------------------------------------
+	public function report()
+	{
+		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+		$userInfo = $this->userModel->find($user['id_no']);
+		$this->data['firstname'] = $userInfo['first_name'];
+		// For guidance counselor permission on sidebar
+		$this->data['designation'] = $userInfo['designation'];
+
+		// Display page view
+		return view('components/consultation/report', $this->data);
+	}
+
+
+	// FETCH YEAR ON CONSULTATIONS
+	// -----------------------------------------------------------------
+	public function fetchYearOnConsultations()
+	{
+		$result = "<option selected value=\"\"> --- </option>";
+		$consultations = $this->consultationsModel
+			->where('status', 'done')->orwhere('status', 'rejected')
+			->findAll();
+
+		foreach ($consultations as $consultation) {
+			if (!str_contains($result, "value=\"" . date_create($consultation['created_at'])->format('Y') . "\"")) {
+				$result .= "<option value=\"" . date_create($consultation['created_at'])->format('Y') . "\"> " . date_create($consultation['created_at'])->format('Y') . " </option>";
+			}
+		}
+
+		return $result;
+	}
+
+	
+	// FETCH MONTH ON CONSULTATIONS
+	// -----------------------------------------------------------------
+	public function fetchMonthOnConsultations()
+	{
+		$result = "<option selected value=\"\"> --- </option>";
+		$consultations = $this->consultationsModel
+			->where('status', 'done')->orwhere('status', 'rejected')
+			->findAll();
+
+		foreach ($consultations as $consultation) {
+			if (!str_contains($result, "value=\"" . date_create($consultation['created_at'])->format('m') . "\"")) {
+				$result .= "<option value=\"" . date_create($consultation['created_at'])->format('m') . "\"> " . date_create($consultation['created_at'])->format('M') . " </option>";
+			}
+		}
+
+		return $result;
 	}
 }

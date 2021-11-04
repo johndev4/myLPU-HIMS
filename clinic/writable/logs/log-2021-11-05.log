@@ -1,0 +1,27 @@
+CRITICAL - 2021-11-05 00:14:09 --> Cannot redeclare App\Controllers\Consultations::fetchYearOnConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-05 00:14:10 --> Cannot redeclare App\Controllers\Consultations::fetchYearOnConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-05 00:14:11 --> Cannot redeclare App\Controllers\Consultations::fetchYearOnConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-05 00:14:12 --> Cannot redeclare App\Controllers\Consultations::fetchYearOnConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-05 00:14:13 --> Cannot redeclare App\Controllers\Consultations::fetchYearOnConsultations()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-05 00:16:34 --> Call to a member function format() on bool
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Reports->fetchWeeklyReport()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reports))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-11-05 00:17:16 --> Call to a member function format() on bool
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Reports->fetchWeeklyReport()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reports))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
