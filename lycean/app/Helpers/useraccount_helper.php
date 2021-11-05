@@ -43,9 +43,9 @@ function getIdNo()
 
 function getUserInfo()
 {
-    $userAccountModel = model('App\Models\LyceansAccountModel');
+    $userModel = model('App\Models\LyceansModel');
 
-    $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+    $userInfo = $userModel->where('id_no', getIdNo())->first();
 
-    return $user;
+    return $userInfo;
 }
