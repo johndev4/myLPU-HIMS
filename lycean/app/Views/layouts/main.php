@@ -75,13 +75,16 @@
         <?= $this->renderSection('content') ?>
 
         <!-- Footer -->
-        <footer class="main-footer fixed-bottom" style="text-align: center;">
-            <strong>Copyright &copy;<?= date('Y') ?></strong>
-            All rights reserved.
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Terms of Use</a></span>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Privacy Policy</a></span>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Help</a></span>
-            <br>
+        <footer class="row main-footer fixed-bottom justify-content-center" style="text-align: center;">
+            <div> <strong>Copyright &copy;<?= date('Y') ?></strong>
+                All rights reserved.
+            </div>
+            <div>
+                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Terms of Use</a></span>
+                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Privacy Policy</a></span>
+                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Help</a></span>
+                <br>
+            </div>
         </footer>
         <!-- Footer -->
 
