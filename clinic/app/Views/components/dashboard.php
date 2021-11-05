@@ -34,7 +34,7 @@
                         <span class="info-box-icon dash-widgets"><i class="fas fa-clipboard-check"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Requests</span>
-                            <span class="info-box-number">1</span>
+                            <span class="info-box-number"> <?= $widget_counter['newRequestConsultations'] ?> </span>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                         <span class="info-box-icon dash-widgets"><i class="far fa-calendar-alt"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Scheduled Consultations</span>
-                            <span class="info-box-number">25</span>
+                            <span class="info-box-number"> <?= $widget_counter['scheduledConsultations'] ?> </span>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             <span class="info-box-icon dash-widgets"><i class="fas fa-file-medical"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Records</span>
-                                <span class="info-box-number"><?= $widget_counter['records'] ?></span>
+                                <span class="info-box-number"> <?= $widget_counter['records'] ?> </span>
                             </div>
                         </div>
                     </div>

@@ -48,12 +48,12 @@
                                 <span class="d-block mb-2" style="font-size: 10pt;">Filter by:</span>
 
                                 <div class="row form-group d-inline">
-                                    <span for="" class="ml-2">Year</span>
+                                    <span for="dropdownYear" class="ml-2">Year</span>
                                     <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="dropdownYear">
                                         <!-- OPTIONS HERE -->
                                     </select>
 
-                                    <span for="" class="month-label">Month</span>
+                                    <span for="dropdownMonth" class="month-label">Month</span>
                                     <select class="col-sm-12 col-md-2 form-control d-inline weekly-mnth" id="dropdownMonth" disabled="disabled">
                                         <!-- OPTIONS HERE -->
                                     </select>
@@ -83,7 +83,7 @@
                                 <span class="d-block mb-2" style="font-size: 10pt;">Filter by:</span>
 
                                 <div class="row form-group d-inline">
-                                    <span for="" class="ml-2">Year</span>
+                                    <span for="monthly_dropdownYear" class="ml-2">Year</span>
                                     <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="monthly_dropdownYear">
                                         <!-- OPTIONS HERE -->
                                     </select>
@@ -96,7 +96,7 @@
                                         <tr>
                                             <th>Accepted Consultations</th>
                                             <th>Rejected Consultations</th>
-                                            <th>Week</th>
+                                            <th>Month</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -120,21 +120,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>100</td>
-                                            <td>39</td>
-                                            <td>2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td>50</td>
-                                            <td>153</td>
-                                            <td>2020</td>
-                                        </tr>
-                                        <tr>
-                                            <td>125</td>
-                                            <td>15</td>
-                                            <td>2021</td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -155,7 +141,15 @@
 <script>
     $(document).ready(function() {
         // For datatable
-        $("#weekly_table").DataTable();
+        $("#weekly_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            paging: false,
+            searching: false,
+            order: [],
+        });
         $('#dropdownYear').on('input', function() {
             if ($('#dropdownYear').val() == '') {
                 $('#dropdownMonth').prop('disabled', true);
@@ -170,7 +164,39 @@
             fetchWeeklyData();
         });
 
-        $("#monthly_table").DataTable();
+        $("#monthly_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            paging: false,
+            searching: false,
+            order: [],
+        });
+        $('#monthly_dropdownYear').on('input', function() {
+            fetchMonthlyData();
+        });
+
+        $("#yearly_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            paging: true,
+            searching: false,
+            order: [],
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('reports/fetchYearlyReport') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
 
         // For sidebar
         $("#consultationNav > a").addClass('active');
@@ -205,14 +231,36 @@
             lengthChange: true,
             autoWidth: true,
             processing: true,
-            paging: true,
+            paging: false,
             searching: false,
-            order: [
-                [2, "asc"]
-            ],
+            order: [],
             ajax: {
                 type: 'get',
                 url: '<?= base_url('reports/fetchWeeklyReport') ?>' + '?year=' + $('#dropdownYear').val() + '&month=' + $('#dropdownMonth').val(),
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
+    }
+
+    function fetchMonthlyData() {
+        $("#monthly_table").DataTable().destroy();
+        $("#monthly_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            paging: false,
+            searching: false,
+            order: [],
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('reports/fetchMonthlyReport') ?>' + '?year=' + $('#monthly_dropdownYear').val(),
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
