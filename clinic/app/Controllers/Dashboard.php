@@ -14,7 +14,7 @@ class Dashboard extends BaseController
 		// User firstname
 		$this->data['firstname'] = getUserFirstname();
 		// User ID No.
-        $this->data['idNo'] = getIdNo();
+		$this->data['idNo'] = getIdNo();
 		// User designation
 		$this->data['designation'] = getUserDesignation();
 	}
@@ -26,6 +26,8 @@ class Dashboard extends BaseController
 	{
 		// Widget counter
 		$this->data['widget_counter'] = [
+			'newRequestConsultations' => $this->countNewRequestConsultations(),
+			'scheduledConsultations' => $this->countScheduledConsultations(),
 			'records' => $this->countLyceanRecords()
 		];
 
@@ -36,6 +38,24 @@ class Dashboard extends BaseController
 
 	// COUNT DATA FOR DASHBOARD
 	// ---------------------------------------------------------
+	private function countNewRequestConsultations()
+	{
+		$consultations = $this->consultationsModel
+			->where('status', 'pending')
+			->find();
+
+		return count($consultations);
+	}
+
+	private function countScheduledConsultations()
+	{
+		$consultations = $this->consultationsModel
+			->where('status', 'active')
+			->find();
+
+		return count($consultations);
+	}
+
 	private function countLyceanRecords()
 	{
 		return $this->lyceansModel->countAll();

@@ -14,7 +14,7 @@ class HealthPersonnelsNotificationModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['id_no', 'consultation_no', 'info', 'status', 'link'];
+    protected $allowedFields        = ['id_no', 'icon', 'info', 'status', 'link'];
 
     // Dates
     protected $useTimestamps        = true;

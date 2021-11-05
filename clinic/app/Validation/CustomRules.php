@@ -58,4 +58,24 @@ class CustomRules
 
 		return true;
 	}
+
+	// Date greater than other date
+	public function date_greater_than($date1, $date2): bool
+	{
+		if (date_create($date1) > date_create($date2)) {
+			return false;
+		}
+
+		return true;
+	}
+
+	// Date less than other date
+	public function date_less_than($date1, $date2): bool
+	{
+		if (date_create($date1) < date_create($date2)) {
+			return false;
+		}
+
+		return true;
+	}
 }

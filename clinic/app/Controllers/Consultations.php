@@ -77,13 +77,36 @@ class Consultations extends BaseController
 		];
 	}
 
+	private function getClearHistoryRules()
+	{
+		return  [
+			'from_date_range' => [
+				'rules' => 'required|valid_date[Y-m-d]|differs[to_date_range]',
+				'errors' => [
+					'required' => '- Required',
+					'valid_date' => 'Invalid date.',
+					'differs' => '"From" and "To" should not be the same.',
+					'date_less_than' => '"From" should less than "To".',
+				]
+			],
+			'to_date_range' => [
+				'rules' => 'required|valid_date[Y-m-d]|differs[from_date_range]',
+				'errors' => [
+					'required' => '- Required',
+					'valid_date' => 'Invalid date.',
+					'differs' => '"From" and "To" should not be the same.',
+					'date_greater_than' => '"To" should greater than "From".',
+				]
+			]
+		];
+	}
+
 
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
 	public function index()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
+		$userInfo = $this->userModel->find(getIdNo());
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
@@ -203,7 +226,7 @@ class Consultations extends BaseController
 	{
 		$result = array('data' => array());
 		$rejectedConsultations = $this->consultationsModel
-			->where('status', 'done')
+			->where('status', 'rejected')
 			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'asc')->findAll();
 
@@ -418,8 +441,10 @@ class Consultations extends BaseController
 	{
 		if ($data['category'] == 'Consultation') {
 			$personnel = 'doctor';
+			$icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
 		} else if ($data['category'] == 'Mental Wellness') {
 			$personnel = 'guidance counselor';
+			$icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
 		}
 
 		if ($type == 'accept') {
@@ -435,7 +460,7 @@ class Consultations extends BaseController
 
 		return $this->lyceansNotificationModel->save([
 			'id_no' => $data['lycean_id_no'],
-			'consultation_no' => $data['consultation_no'],
+			'icon' => $icon,
 			'info' => $info,
 			'status' => 'unread',
 			'link' => $link
@@ -450,8 +475,7 @@ class Consultations extends BaseController
 	// -----------------------------------------------------------------
 	public function history()
 	{
-		$user = $this->userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
-		$userInfo = $this->userModel->find($user['id_no']);
+		$userInfo = $this->userModel->find(getIdNo());
 		$this->data['firstname'] = $userInfo['first_name'];
 		// For guidance counselor permission on sidebar
 		$this->data['designation'] = $userInfo['designation'];
@@ -459,6 +483,133 @@ class Consultations extends BaseController
 		// Display page view
 		return view('components/consultation/history', $this->data);
 	}
+
+
+	// CLEAR CONSULTATION HISTORY
+	// -----------------------------------------------------------------
+	public function clearConsultationHistory()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			if (!isset($_GET['clear_all_history'])) {
+				if ($this->validate($this->getClearHistoryRules())) {
+					$fromDateRange = $_GET['from_date_range'];
+					$toDateRange = $_GET['to_date_range'];
+
+					$consultations = $this->consultationsModel
+						->where('personnel_id_no', getIdNo())
+						->where('status', 'done')->orwhere('status', 'rejected')
+						->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+						->find();
+					if ($consultations) {
+						foreach ($consultations as $consultation) {
+							$success1 = $this->medicalFilesModel->where('consultation_no', $consultation['consultation_no'])->delete();
+							// Delete directory
+							if (file_exists($this->baseDir . $consultation['lycean_id_no'])) {
+								$files = glob($this->baseDir . $consultation['lycean_id_no'] . '/*');
+
+								foreach ($files as $file) {
+									unlink($file);
+								}
+
+								$success2 =  rmdir($this->baseDir . $consultation['lycean_id_no']);
+							} else {
+								$success2 = TRUE;
+							}
+						}
+					} else {
+						$success1 = FALSE;
+						$success2 = FALSE;
+					}
+
+					$success3 = $this->consultationsModel
+						->where('personnel_id_no', getIdNo())
+						->where('status', 'done')->orwhere('status', 'rejected')
+						->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+						->delete();
+
+					if ($success1 && $success2 && $success3) {
+						session()->setFlashdata('success', 'Successfully deleted.');
+					} else {
+						session()->setFlashdata('success', 'No data was changed.');
+					}
+				} else {
+					session()->setFlashdata('clear_validation', $this->validator);
+					session()->setFlashdata('getData', json_encode($_GET));
+				}
+			} else {
+				$consultations = $this->consultationsModel
+					->where('personnel_id_no', getIdNo())
+					->where('status', 'done')->orwhere('status', 'rejected')
+					->find();
+				if ($consultations) {
+					foreach ($consultations as $consultation) {
+						$success1 = $this->medicalFilesModel
+							->where('consultation_no', $consultation['consultation_no'])
+							->delete();
+
+						// Delete directory
+						if (file_exists($this->baseDir . $consultation['lycean_id_no'])) {
+							$files = glob($this->baseDir . $consultation['lycean_id_no'] . '/*');
+
+							foreach ($files as $file) {
+								unlink($file);
+							}
+
+							$success2 =  rmdir($this->baseDir . $consultation['lycean_id_no']);
+						} else {
+							$success2 = TRUE;
+						}
+					}
+				} else {
+					$success1 = FALSE;
+					$success2 = FALSE;
+				}
+
+				$success3 = $this->consultationsModel
+					->where('personnel_id_no', getIdNo())
+					->where('status', 'done')->orwhere('status', 'rejected')
+					->delete();
+
+				if ($success1 && $success2 && $success3) {
+					session()->setFlashdata('success', 'Successfully deleted.');
+				} else {
+					session()->setFlashdata('success', 'No data was changed.');
+				}
+			}
+		}
+
+		return redirect()->to('consultations/history');
+	}
+
+	// CONSULTATION DETAILS MODEL
+	// -----------------------------------------------------------------
+	public function details($id)
+	{
+		$consultation = $this->consultationsModel->find($id);
+
+		if ($consultation) {
+			$data = [
+				'consultation_id' => $id,
+				'date_of_request' => date_create($consultation['created_at'])->format('d-m-Y H:i'),
+				'time' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('h:i a') : '---',
+				'date' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('F d, Y') : '---',
+				'meeting_link' => [
+					'href' => $consultation['meeting_link'] != '' ? "href=\"{$consultation['meeting_link']}\"" : '',
+					'text' => $consultation['meeting_link'] != '' ? "<u>{$consultation['meeting_link']}</u>" : '---'
+				],
+				'concern_message' => $consultation['message'] != '' ? $consultation['message'] : '---',
+				'rejection_message' => $consultation['rejection_message'] != '' ? $consultation['rejection_message'] : '---',
+				'category' => $consultation['category']
+			];
+		} else {
+		}
+
+		return json_encode($data);
+	}
+
+
+	// -----------------------------------------------------------------------------------------
+
 
 	// RETURN REPORT VIEWS
 	// -----------------------------------------------------------------
@@ -475,31 +626,40 @@ class Consultations extends BaseController
 	}
 
 
-	// CLEAR CONSULTATION HISTORY
+	// FETCH YEAR ON CONSULTATIONS
 	// -----------------------------------------------------------------
-	public function clearConsultationHistory()
+	public function fetchYearOnConsultations()
 	{
-		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			if ($_GET['from_date_range'] !== '' && $_GET['to_date_range'] !== '') {
-				$fromDateRange = $_GET['from_date_range'];
-				$toDateRange = $_GET['to_date_range'];
+		$result = "<option selected value=\"\"> --- </option>";
+		$consultations = $this->consultationsModel
+			->where('status', 'done')->orwhere('status', 'rejected')
+			->findAll();
 
-				$success = $this->consultationsModel
-					->where('personnel_id_no', getIdNo())
-					->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
-					->delete();
-			} else {
-				$success = $this->consultationsModel
-					->where('personnel_id_no', getIdNo())
-					->delete();
-			}
-
-			if ($success) {
-				session()->setFlashdata('success', 'Successfully deleted.');
-			} else {
+		foreach ($consultations as $consultation) {
+			if (!str_contains($result, "value=\"" . date_create($consultation['created_at'])->format('Y') . "\"")) {
+				$result .= "<option value=\"" . date_create($consultation['created_at'])->format('Y') . "\"> " . date_create($consultation['created_at'])->format('Y') . " </option>";
 			}
 		}
 
-		return redirect()->to('consultations/history');
+		return $result;
+	}
+
+	
+	// FETCH MONTH ON CONSULTATIONS
+	// -----------------------------------------------------------------
+	public function fetchMonthOnConsultations()
+	{
+		$result = "<option selected value=\"\"> --- </option>";
+		$consultations = $this->consultationsModel
+			->where('status', 'done')->orwhere('status', 'rejected')
+			->findAll();
+
+		foreach ($consultations as $consultation) {
+			if (!str_contains($result, "value=\"" . date_create($consultation['created_at'])->format('m') . "\"")) {
+				$result .= "<option value=\"" . date_create($consultation['created_at'])->format('m') . "\"> " . date_create($consultation['created_at'])->format('M') . " </option>";
+			}
+		}
+
+		return $result;
 	}
 }

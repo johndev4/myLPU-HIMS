@@ -48,32 +48,20 @@
                                 <span class="d-block mb-2" style="font-size: 10pt;">Filter by:</span>
 
                                 <div class="row form-group d-inline">
-                                    <span for="" class="ml-2">Year</span>
+                                    <span for="dropdownYear" class="ml-2">Year</span>
                                     <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="dropdownYear">
-                                        <!-- <option value="" selected="selected">---</option> -->
+                                        <!-- OPTIONS HERE -->
                                     </select>
 
-                                    <span for="" class="month-label">Month</span>
-                                    <select class="col-sm-12 col-md-2 form-control d-inline weekly-mnth" id="" name="">
-                                        <option value="" selected="selected">---</option>
-                                        <option value='01'>January</option>
-                                        <option value='02'>February</option>
-                                        <option value='03'>March</option>
-                                        <option value='04'>April</option>
-                                        <option value='05'>May</option>
-                                        <option value='06'>June</option>
-                                        <option value='07'>July</option>
-                                        <option value='08'>August</option>
-                                        <option value='09'>September</option>
-                                        <option value='10'>October</option>
-                                        <option value='11'>November</option>
-                                        <option value='12'>December</option>
+                                    <span for="dropdownMonth" class="month-label">Month</span>
+                                    <select class="col-sm-12 col-md-2 form-control d-inline weekly-mnth" id="dropdownMonth" disabled="disabled">
+                                        <!-- OPTIONS HERE -->
                                     </select>
                                 </div>
                                 <br><br>
 
                                 <!-- Table -->
-                                <table id="weeklyTable" class="table table-bordered table-hover" style="width: 100%;">
+                                <table id="weekly_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>Accepted Consultations</th>
@@ -82,26 +70,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>15</td>
-                                            <td>3</td>
-                                            <td>Week 1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>25</td>
-                                            <td>0</td>
-                                            <td>Week 2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>28</td>
-                                            <td>8</td>
-                                            <td>Week 3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>Week 4</td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -114,43 +83,24 @@
                                 <span class="d-block mb-2" style="font-size: 10pt;">Filter by:</span>
 
                                 <div class="row form-group d-inline">
-                                    <span for="" class="ml-2">Year</span>
-                                    <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="mnthlydropdownYear">
-                                        <!-- <option value="" selected="selected">---</option> -->
+                                    <span for="monthly_dropdownYear" class="ml-2">Year</span>
+                                    <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="monthly_dropdownYear">
+                                        <!-- OPTIONS HERE -->
                                     </select>
                                 </div>
                                 <br><br>
 
                                 <!-- Table -->
-                                <table id="monthlyTable" class="table table-bordered table-hover" style="width: 100%;">
+                                <table id="monthly_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>Accepted Consultations</th>
                                             <th>Rejected Consultations</th>
-                                            <th>Week</th>
+                                            <th>Month</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>8</td>
-                                            <td>0</td>
-                                            <td>January</td>
-                                        </tr>
-                                        <tr>
-                                            <td>8</td>
-                                            <td>5</td>
-                                            <td>February</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0</td>
-                                            <td>1</td>
-                                            <td>March</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>April</td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -161,7 +111,7 @@
                             <div class="tab-pane fade" id="custom-tabs-four-yearly" role="tabpanel" aria-labelledby="custom-tabs-four-yearly-tab">
 
                                 <!-- Table -->
-                                <table id="yearlyTable" class="table table-bordered table-hover" style="width: 100%;">
+                                <table id="yearly_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>Accepted Consultations</th>
@@ -170,21 +120,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>100</td>
-                                            <td>39</td>
-                                            <td>2019</td>
-                                        </tr>
-                                        <tr>
-                                            <td>50</td>
-                                            <td>153</td>
-                                            <td>2020</td>
-                                        </tr>
-                                        <tr>
-                                            <td>125</td>
-                                            <td>15</td>
-                                            <td>2021</td>
-                                        </tr>
+                                        <!-- DATA HERE -->
                                     </tbody>
                                 </table>
                                 <!-- /Table -->
@@ -205,66 +141,136 @@
 <script>
     $(document).ready(function() {
         // For datatable
-        $("#yearlyTable").DataTable({
+        $("#weekly_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
+            paging: false,
             searching: false,
+            order: [],
+        });
+        $('#dropdownYear').on('input', function() {
+            if ($('#dropdownYear').val() == '') {
+                $('#dropdownMonth').prop('disabled', true);
+                $('#dropdownMonth').val('');
+                fetchWeeklyData();
+
+            } else {
+                $('#dropdownMonth').prop('disabled', false);
+            }
+        });
+        $('#dropdownMonth').on('input', function() {
+            fetchWeeklyData();
         });
 
-        $("#monthlyTable").DataTable({
+        $("#monthly_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
+            paging: false,
             searching: false,
+            order: [],
+        });
+        $('#monthly_dropdownYear').on('input', function() {
+            fetchMonthlyData();
         });
 
-        $("#weeklyTable").DataTable({
+        $("#yearly_table").DataTable({
             responsive: true,
             lengthChange: true,
             autoWidth: true,
             processing: true,
+            paging: true,
             searching: false,
+            order: [],
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('reports/fetchYearlyReport') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
         });
 
         // For sidebar
         $("#consultationNav > a").addClass('active');
 
-        // For weekly year combobox
-        $('#dropdownYear').each(function() {
-            var year = (new Date()).getFullYear();
-            var current = year;
-            var x = "---";
-
-            for (var i = 0; i < 50; i++) {
-                if ((year + i) == current) {
-                    $(this).append('<option selected value="' + (x) + '">' + (x) + '</option>');
-                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
-                } else {
-                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
-                }
+        // For year combobox
+        $.ajax({
+            url: '<?= base_url('consultations/fetchYearOnConsultations') ?>/',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#dropdownYear').html(response);
+                $('#monthly_dropdownYear').html(response);
             }
-        })
+        });
 
-        // For monthly year combobox
-        $('#mnthlydropdownYear').each(function() {
-            var year = (new Date()).getFullYear();
-            var current = year;
-            var x = "---";
-
-            for (var i = 0; i < 50; i++) {
-                if ((year + i) == current) {
-                    $(this).append('<option selected value="' + (x) + '">' + (x) + '</option>');
-                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
-                } else {
-                    $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
-                }
+        // For month combobox
+        $.ajax({
+            url: '<?= base_url('consultations/fetchMonthOnConsultations') ?>/',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#dropdownMonth').html(response);
             }
-        })
+        });
 
     });
+
+    function fetchWeeklyData() {
+        $("#weekly_table").DataTable().destroy();
+        $("#weekly_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            paging: false,
+            searching: false,
+            order: [],
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('reports/fetchWeeklyReport') ?>' + '?year=' + $('#dropdownYear').val() + '&month=' + $('#dropdownMonth').val(),
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
+    }
+
+    function fetchMonthlyData() {
+        $("#monthly_table").DataTable().destroy();
+        $("#monthly_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            paging: false,
+            searching: false,
+            order: [],
+            ajax: {
+                type: 'get',
+                url: '<?= base_url('reports/fetchMonthlyReport') ?>' + '?year=' + $('#monthly_dropdownYear').val(),
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
+    }
 </script>
 <!-- /Script -->
 

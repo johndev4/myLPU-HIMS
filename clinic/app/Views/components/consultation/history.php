@@ -33,29 +33,54 @@
             <!-- Clear Modal -->
             <div class="modal fade" id="clearModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" style="height: 300px;">
+                    <div class="modal-content" style="height: 310px;">
                         <div class="modal-header font-weight-bold text-secondary">
                             Consultation History
                         </div>
                         <div class="modal-body">
                             <form action="<?= base_url('consultations/clearConsultationHistory') ?>" method="get" id="">
-                                <input type="hidden" name="role" value="">
                                 <div class="row">
                                     <div class="col-12 form-group mb-n1">
                                         <span>Time range:</span>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="" class="col-form-label">From</label>
-                                        <input type="date" class="form-control" id="fromDateRange" name="from_date_range" value="">
+                                        <label for="clear_fromdaterange" class="col-form-label">From</label>
+                                        <input type="date" class="form-control" id="clear_fromdaterange" name="from_date_range" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('clear_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('clear_validation')->hasError('from_date_range')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('clear_validation')->getError('from_date_range'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#clear_fromdaterange').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="" class="col-form-label">To</label>
-                                        <input type="date" class="form-control" id="toDateRange" name="to_date_range" value="">
+                                        <label for="clear_todaterange" class="col-form-label">To</label>
+                                        <input type="date" class="form-control" id="clear_todaterange" name="to_date_range" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('clear_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('clear_validation')->hasError('to_date_range')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('clear_validation')->getError('to_date_range'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#clear_todaterange').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group mt-2">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="clearAllHistory">
-                                            <label class="form-check-label" for="clearAllHistory">
+                                            <input class="form-check-input" type="checkbox" id="clear_clearallhistory" name="clear_all_history[]" value="true">
+                                            <label class="form-check-label" for="clear_clearallhistory">
                                                 Clear all consultation history
                                             </label>
                                         </div>
@@ -86,34 +111,34 @@
 
                         <div class="modal-body">
 
-                            <div class="row" id="detailsTab">
+                            <div class="row" id="">
                                 <div class="col-sm-12 col-md-12" style="border:1px solid none">
                                     <div class="d-block">
                                         <label class="d-inline text-secondary">Consultation ID:</label>
                                         <div class="mt-n2 mb-2 d-inline">
-                                            <span> w1khTH6UOxEIeybL </span>
+                                            <span id="view_consultationid"></span>
                                         </div>
                                     </div>
                                     <div class="d-block">
                                         <label class="d-inline text-secondary">Date of Request:</label>
                                         <div class="mt-n2 mb-2 d-inline">
-                                            <span> 27-10-2021 15:23 </span>
+                                            <span id="view_dateofrequest"></span>
                                         </div>
                                     </div>
                                     <hr>
                                     <label class="d-block text-secondary">Schedule</label>
                                     <div class="mt-n2 mb-2">
-                                        <span class="text-dark time">Time: 03:30 pm </span>
-                                        <span class="text-dark date float-right">Date: October 27, 2021 </span>
+                                        <span class="text-dark time">Time: <span id="view_time"></span> </span>
+                                        <span class="text-dark date float-right">Date: <span id="view_date"></span> </span>
                                     </div>
                                     <label class="d-block text-secondary">Meeting Link</label>
                                     <div class="mt-n2 mb-2">
-                                        <a href="" class="text-dark"><u>http://localhost/myLPU-HIMS/clinic/public/consultations</u></a>
+                                        <a href="" class="text-dark" id="view_meetinglinkhref"><span id="view_meetinglinktext"></span></a>
                                     </div>
                                     <hr>
                                     <label class="d-block text-secondary">Concern</label>
                                     <p class="mt-n2 mb-2">
-                                        Doc, I have dry cough please help me. UwU
+                                        <span id="view_concernmessage"></span>
                                     </p>
                                     <!-- <label class="d-block text-secondary">Denial of Service</label>
                                     <p class="mt-n2 mb-2">
@@ -266,24 +291,77 @@
             });
         <?php endif; ?>
 
+        // Clear History Validation Error
+        <?php if (!empty(session()->getFlashdata('clear_validation'))) : ?>
+            $('#clearModal').modal('show');
+            retrieveData('', {
+                error: true,
+                modalType: "clear"
+            });
+            $('#clearModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Reset stock out modal on close
+        $('#clearModal').on('hidden.bs.modal', function(evt) {
+            $('#clear_fromdaterange').val("");
+            $('#clear_todaterange').val("");
+            $('#clearAllHistory').prop('checked', false);
+        });
+
         // On checked of "Clear all consultation history"
-        if ($('#clearAllHistory').prop('checked') == true) {
-            $('#fromDateRange').prop('readOnly', true);
-            $('#toDateRange').prop('readOnly', true);
+        if ($('#clear_clearallhistory').prop('checked') == true) {
+            $('#clear_fromdaterange').prop('readOnly', true);
+            $('#clear_todaterange').prop('readOnly', true);
+            $('#clear_fromdaterange').val("");
+            $('#clear_todaterange').val("");
         } else {
-            $('#fromDateRange').prop('readOnly', false);
-            $('#toDateRange').prop('readOnly', false);
+            $('#clear_fromdaterange').prop('readOnly', false);
+            $('#clear_todaterange').prop('readOnly', false);
         }
-        $('#clearAllHistory').on('input', function() {
-            if ($('#clearAllHistory').prop('checked') == true) {
-                $('#fromDateRange').prop('readOnly', true);
-                $('#toDateRange').prop('readOnly', true);
+        $('#clear_clearallhistory').on('input', function() {
+            if ($('#clear_clearallhistory').prop('checked') == true) {
+                $('#clear_fromdaterange').prop('readOnly', true);
+                $('#clear_todaterange').prop('readOnly', true);
+                $('#clear_fromdaterange').val("");
+                $('#clear_todaterange').val("");
             } else {
-                $('#fromDateRange').prop('readOnly', false);
-                $('#toDateRange').prop('readOnly', false);
+                $('#clear_fromdaterange').prop('readOnly', false);
+                $('#clear_todaterange').prop('readOnly', false);
             }
         });
     });
+
+    // Retrieve data
+    function retrieveData(id, obj = {
+        error: false,
+        modalType: null
+    }) {
+        if (obj['error'] === true) {
+            var data = <?= session()->get('getData') ?>
+
+            $('#' + obj['modalType'] + '_fromdaterange').val(data['from_date_range']);
+            $('#' + obj['modalType'] + '_todaterange').val(data['to_date_range']);
+        } else {
+            $.ajax({
+                url: '<?= base_url('consultations/details') ?>/' + id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    $('#view_consultationid').text(response['consultation_id']);
+                    $('#view_dateofrequest').text(response['date_of_request']);
+                    $('#view_time').text(response['time']);
+                    $('#view_date').text(response['date']);
+                    $('#view_meetinglinkhref').prop('href', response['meeting_link']['href']);
+                    $('#view_meetinglinktext').html(response['meeting_link']['text']);
+                    $('#view_concernmessage').text(response['concern_message']);
+                }
+            });
+        }
+    }
 </script>
 <!-- /Script -->
 

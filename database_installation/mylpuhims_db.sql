@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2021 at 04:32 PM
+-- Generation Time: Nov 03, 2021 at 05:53 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,14 +58,6 @@ CREATE TABLE `batches` (
   `stock_out` int(11) NOT NULL,
   `expiration_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `batches`
---
-
-INSERT INTO `batches` (`batch_id`, `product_id`, `stock_in`, `stock_out`, `expiration_date`) VALUES
-('B01', 'A0001', 100, 0, '2022-05-23'),
-('B02', 'A0002', 50, 0, '2022-05-26');
 
 -- --------------------------------------------------------
 
@@ -135,7 +127,7 @@ CREATE TABLE `health_personnels_account` (
 --
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locked`, `last_activity`) VALUES
-('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', 0, '2021-10-30 10:02:00'),
+('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, NULL),
 ('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL, NULL),
 ('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8', NULL, NULL),
 ('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839', NULL, NULL),
@@ -151,7 +143,7 @@ DROP TABLE IF EXISTS `health_personnels_notification`;
 CREATE TABLE `health_personnels_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
-  `consultation_no` varchar(45) NOT NULL,
+  `icon` varchar(100) NOT NULL,
   `info` varchar(45) NOT NULL,
   `status` varchar(45) NOT NULL,
   `link` varchar(2048) NOT NULL,
@@ -245,10 +237,10 @@ DROP TABLE IF EXISTS `lyceans_notification`;
 CREATE TABLE `lyceans_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
-  `consultation_no` varchar(45) NOT NULL,
+  `icon` varchar(100) NOT NULL,
   `info` varchar(45) NOT NULL,
   `status` varchar(45) NOT NULL,
-  `link` varchar(2048) DEFAULT NULL,
+  `link` varchar(2048) NOT NULL,
   `created_at` varchar(45) NOT NULL,
   `updated_at` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -280,14 +272,6 @@ CREATE TABLE `medicines` (
   `drug_class` varchar(45) NOT NULL,
   `dosage` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `medicines`
---
-
-INSERT INTO `medicines` (`product_id`, `manufacturer`, `generic_name`, `drug_class`, `dosage`) VALUES
-('A0001', 'RiteMed', 'Cefuroxime', 'Anti-bacterial', '250mg'),
-('A0002', 'Pfizer', 'Biogesic', 'Analgesic', '500mg');
 
 --
 -- Indexes for dumped tables

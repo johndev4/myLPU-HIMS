@@ -49,39 +49,43 @@ class Consultation extends BaseController
     {
         $consultation = $this->consultationsModel->find($id);
 
-        $this->data['details'] = [
-            'consultation_id' => $id,
-            'date_of_request' => date_create($consultation['created_at'])->format('d-m-Y H:i'),
-            'time' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('h:i a') : '---',
-            'date' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('F d, Y') : '---',
-            'meeting_link' => [
-                'href' => $consultation['meeting_link'] != '' ? "href=\"{$consultation['meeting_link']}\"" : '',
-                'text' => $consultation['meeting_link'] != '' ? "<u>{$consultation['meeting_link']}</u>" : '---'
-            ],
-            'concern_message' => $consultation['message'] != '' ? $consultation['message'] : '---',
-            'rejection_message' => $consultation['rejection_message'] != '' ? $consultation['rejection_message'] : '---',
-            'category' => $consultation['category']
-        ];
+        if ($consultation) {
+            $this->data['details'] = [
+                'consultation_id' => $id,
+                'date_of_request' => date_create($consultation['created_at'])->format('d-m-Y H:i'),
+                'time' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('h:i a') : '---',
+                'date' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('F d, Y') : '---',
+                'meeting_link' => [
+                    'href' => $consultation['meeting_link'] != '' ? "href=\"{$consultation['meeting_link']}\"" : '',
+                    'text' => $consultation['meeting_link'] != '' ? "<u>{$consultation['meeting_link']}</u>" : '---'
+                ],
+                'concern_message' => $consultation['message'] != '' ? $consultation['message'] : '---',
+                'rejection_message' => $consultation['rejection_message'] != '' ? $consultation['rejection_message'] : '---',
+                'category' => $consultation['category']
+            ];
 
-        $medical_files = $this->medicalFilesModel->where('consultation_no', $id)->findAll();
+            $medical_files = $this->medicalFilesModel->where('consultation_no', $id)->findAll();
 
-        $this->data['files'] = "";
-        if ($medical_files) {
-            foreach ($medical_files as $key => $medical_file) {
-                $filename = explode('/', $medical_file['file_path'])[4];
-                $key += 1;
-                $href = str_replace('lycean/public', 'clinic/public', site_url($medical_file['file_path']));
-                $this->data['files'] .= "
-                    <tr>
-                        <td> {$key} </td>
-                        <td><a href=\"{$href}\" target=\"_blank\"> {$filename} </a></td>
-                    </tr>
-                    ";
+            $this->data['files'] = "";
+            if ($medical_files) {
+                foreach ($medical_files as $key => $medical_file) {
+                    $filename = explode('/', $medical_file['file_path'])[4];
+                    $key += 1;
+                    $href = str_replace('lycean/public', 'clinic/public', site_url($medical_file['file_path']));
+                    $this->data['files'] .= "
+                        <tr>
+                            <td> {$key} </td>
+                            <td><a href=\"{$href}\" target=\"_blank\"> {$filename} </a></td>
+                        </tr>
+                        ";
+                }
             }
-        }
 
-        // Display page view
-        return view('components/consultation_details', $this->data);
+            // Display page view
+            return view('components/consultation_details', $this->data);
+        } else {
+            echo "This page is not available.";
+        }
     }
 
 
@@ -289,9 +293,15 @@ class Consultation extends BaseController
 
     private function setNotification($data)
     {
+        if ($data['category'] == 'Consultation') {
+            $icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
+        } else if ($data['category'] == 'Mental Wellness') {
+            $icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
+        }
+
         return $this->healthPersonnelsNotificationModel->save([
             'id_no' => $data['personnel_id_no'],
-            'consultation_no' => $data['consultation_no'],
+            'icon' => $icon,
             'info' => 'You have new consultation requests',
             'status' => 'unread',
             'link' => str_replace('lycean', 'clinic', base_url('consultations'))
