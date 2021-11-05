@@ -91,6 +91,15 @@
                         <li>If you forgot your password, clik on the Forgot Password link for assistance.</li>
                     </ul>
                 </div>
+
+                <div class="col-lg-12 mt-3">
+                        <!-- <strong >Copyright &copy;<?= date('Y') ?></strong>
+                        All rights reserved. -->
+                        <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Terms of Use</a></span>
+                        <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Privacy Policy</a></span>
+                        <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Help</a></span>
+                        <br>
+                </div>
             </div>
         </div>
     </div>

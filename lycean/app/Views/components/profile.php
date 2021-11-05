@@ -15,19 +15,21 @@
         </div>
         <!-- /Back Button -->
 
-        <div class="row d-flex justify-content-center" style="border:1px solid none; margin-bottom:70px">
-            <!-- User Profile -->
-            <div class="col-md-8 col-lg-6 col-12 my-2" style="border:1px solid none">
+        <!-- <div class="row mb-2 mt-4">
+            <div class="col-sm-12 text-left">
+                <h2 class="m-0 font-weight-bold text-dark">Profile</h2>
+            </div>
+        </div> -->
+        <br>
+        <div class="row d-flex user-profile" style="border:1px solid none;">
+            <div class="card-body login-card-body shadow" style="border-radius: 15px;">
+                <div class="row">
 
-                <div class="row mb-2">
-                    <div class="col-sm-12 text-center">
-                        <h1 class="m-0 font-weight-bold text-dark">Profile</h1>
-                    </div>
-                </div>
+                    <div class="col-md-6 user-info" style="border-right: 1px solid #BDBDBD;">
+                        <div class="col-sm-12 text-center mb-2">
+                            <h2 class="m-0 font-weight-bold text-dark">Profile</h2>
+                        </div>
 
-                <!-- Profile Image -->
-                <div class="card card-outline shadow">
-                    <div class="card-body box-profile">
                         <div class="text-center">
                             <i class="fas fa-user-circle fa-5x nav-icon text-secondary"></i>
                         </div>
@@ -35,10 +37,22 @@
                         <h3 class="profile-username text-center"><?= $username ?></h3>
                         <p class="text-muted text-center">Username</p>
 
+
+                        <h3 class="profile-username text-center">Ji Eun</h3>
+                        <p class="text-muted text-center">First Name</p>
+
+                        <h3 class="profile-username text-center">Lee</h3>
+                        <p class="text-muted text-center">Last Name</p>
+
+                        <h3 class="profile-username text-center">2018-2-3695</h3>
+                        <p class="text-muted text-center">ID Number</p>
+                    </div>
+
+                    <div class="col-md-6 py-5 px-5">
+                        <label class="mb-3 text-dark" style="font-size: 14pt;">Change Password</label>
                         <form action="<?= base_url('profile/updatePassword') ?>" method="post">
                             <span class="p-2 d-block mb-2" style="background-color:rgb(223, 223, 223); border-radius:4px;">
                                 <b>Note:</b> You will be logged out after changing your password</span>
-
                             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                             <input type="password" class="form-control mb-2 mt-2" id="current_password" placeholder="Current Password" name="current_password">
                             <!-- Validation Error & Incorrect Current Password -->
@@ -69,7 +83,6 @@
                                     </script>
                                 <?php endif; ?>
                             <?php endif; ?>
-
 
                             <input type="password" class="form-control mb-2" id="password" placeholder="New Password" name="password">
                             <!-- Validation Error -->
@@ -110,7 +123,7 @@
                             </button>
                         </form>
                     </div>
-                    <!-- /.card-body -->
+
                 </div>
             </div>
         </div>
@@ -138,8 +151,6 @@
         </div>
         <!-- /Message Modal -->
         <!-- /Modal -->
-
-
 
     </div>
 </body>
