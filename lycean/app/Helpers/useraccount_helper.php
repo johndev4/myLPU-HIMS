@@ -40,3 +40,12 @@ function getIdNo()
 
     return $user['id_no'];
 }
+
+function getUserInfo()
+{
+    $userAccountModel = model('App\Models\LyceansAccountModel');
+
+    $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+
+    return $user;
+}
