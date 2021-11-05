@@ -1,5 +1,5 @@
 @media screen and (max-width:585px) {
-    h1.m-0.font-weight-bold.text-dark{
+    h2.m-0.font-weight-bold.text-dark{
         font-size: 24pt !important;
     }
     i.fas.fa-chevron-left.fa-2x.font-weight-normal{
@@ -26,3 +26,15 @@ a.back-btn{
     padding: 5px !important;
 }
 
+/* User Profile Card */
+@media screen and (max-width:1400px) {
+    div.row.d-flex.user-profile{
+        margin-bottom: 120px !important;
+    }
+}
+@media screen and (max-width:768px) {
+   div.col-md-6.user-info{
+       border-right: none !important;
+       border-bottom: 1px solid #EEEEEE !important;
+   }
+}

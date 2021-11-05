@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+CRITICAL - 2021-11-03 20:23:52 --> View themes, no current section.
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Views\auth\login.php(109): CodeIgniter\View\View->endSection('content')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('auth/login', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Auth.php(59): view('auth/login', Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+=======
 CRITICAL - 2021-11-03 00:00:15 --> Trying to access array offset on value of type null
 #0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 37)
 #1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-02181')
@@ -2075,3 +2088,4 @@ CRITICAL - 2021-11-03 21:58:44 --> Undefined variable $totalTime
 #5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(299): CodeIgniter\Events\Events::trigger('pre_system')
 #6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #7 {main}
+>>>>>>> 23a135945441b643f88c4a2dbaa52ae7800fd73b
