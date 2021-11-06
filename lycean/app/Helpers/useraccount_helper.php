@@ -40,3 +40,12 @@ function getIdNo()
 
     return $user['id_no'];
 }
+
+function getUserInfo()
+{
+    $userModel = model('App\Models\LyceansModel');
+
+    $userInfo = $userModel->where('id_no', getIdNo())->first();
+
+    return $userInfo;
+}

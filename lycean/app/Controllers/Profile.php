@@ -57,6 +57,7 @@ class Profile extends BaseController
     {
         // User email
         $this->data['username'] = getUserEmail();
+        $this->data['userInfo'] = getUserInfo();
         // Display page view
         return view('components/profile', $this->data);
     }

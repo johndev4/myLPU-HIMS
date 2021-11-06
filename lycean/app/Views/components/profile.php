@@ -34,17 +34,17 @@
                             <i class="fas fa-user-circle fa-5x nav-icon text-secondary"></i>
                         </div>
 
-                        <h3 class="profile-username text-center"><?= $username ?></h3>
+                        <h3 class="profile-username text-center"> <?= $username ?> </h3>
                         <p class="text-muted text-center">Username</p>
 
 
-                        <h3 class="profile-username text-center">Ji Eun</h3>
+                        <h3 class="profile-username text-center"> <?= $userInfo['first_name'] ?> </h3>
                         <p class="text-muted text-center">First Name</p>
 
-                        <h3 class="profile-username text-center">Lee</h3>
+                        <h3 class="profile-username text-center"> <?= $userInfo['last_name'] ?> </h3>
                         <p class="text-muted text-center">Last Name</p>
 
-                        <h3 class="profile-username text-center">2018-2-3695</h3>
+                        <h3 class="profile-username text-center"> <?= $userInfo['id_no'] ?> </h3>
                         <p class="text-muted text-center">ID Number</p>
                     </div>
 
