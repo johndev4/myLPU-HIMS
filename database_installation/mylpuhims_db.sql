@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2021 at 05:53 PM
+-- Generation Time: Nov 06, 2021 at 09:15 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -83,6 +83,21 @@ CREATE TABLE `consultations` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `equipments`
+--
+
+DROP TABLE IF EXISTS `equipments`;
+CREATE TABLE `equipments` (
+  `product_id` varchar(45) NOT NULL,
+  `product_name` varchar(45) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `health_personnels`
 --
 
@@ -127,7 +142,7 @@ CREATE TABLE `health_personnels_account` (
 --
 
 INSERT INTO `health_personnels_account` (`id_no`, `username`, `password`, `locked`, `last_activity`) VALUES
-('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, NULL),
+('2016-3-1234', 'krizel.luna@lpu.edu.ph', '66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623', NULL, '2021-11-06 04:15:00'),
 ('2016-3-3456', 'johnny.sins@lpu.edu.ph', '31fdef858dfff6ce48fe2a5171419099d7a0dd921a7f4e3214f29b1cf1a77b79', NULL, NULL),
 ('2016-3-5678', 'willy.ong@lpu.edu.ph', '385df8f5e89ff308a97bf848af40560763d6a17fd1b8701687c26fe4ac179ba8', NULL, NULL),
 ('2016-3-7890', 'liezel.sabucadalao@lpu.edu.ph', 'd473be41a44df8b7df725e1b81dcaedcaada57b9c977d36ad958c5e8c20bb839', NULL, NULL),
@@ -297,6 +312,12 @@ ALTER TABLE `consultations`
   ADD PRIMARY KEY (`consultation_no`),
   ADD KEY `fk_consultations_clinic_personnels1` (`personnel_id_no`),
   ADD KEY `fk_consultations_lyceans1` (`lycean_id_no`);
+
+--
+-- Indexes for table `equipments`
+--
+ALTER TABLE `equipments`
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `health_personnels`
