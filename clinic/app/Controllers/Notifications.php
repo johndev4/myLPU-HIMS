@@ -54,7 +54,12 @@ class Notifications extends BaseController
 			";
 		}
 
-		return json_encode(['result' => $result, 'count' => count($notifications), 'unreadCount' => count($unreadNotifications), 'notificationInfo' => $newNotification['info']]);
+		return json_encode([
+			'result' => $result,
+			'count' => count($notifications),
+			'unreadCount' => count($unreadNotifications),
+			'notificationInfo' => !empty($newNotification['info'])? $newNotification['info'] : false
+		]);
 	}
 
 

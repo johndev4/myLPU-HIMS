@@ -65,5 +65,6 @@ class BaseController extends Controller
 
 		$this->medicinesModel = model('App\Models\MedicinesModel');
 		$this->batchesModel = model('App\Models\BatchesModel');
+		$this->equipmentsModel = model('App\Models\EquipmentsModel');
 	}
 }
