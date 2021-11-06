@@ -142,6 +142,21 @@
                     if (response['count'] != requestCount) {
                         $('#notificationList').html(response['result']);
                         requestCount = response['count'];
+
+                        // Push Notification
+                        Push.Permission.request(function onGranted() {
+                            Push.create("myLPU Clinic", {
+                                body: response['notificationInfo'],
+                                icon: '<?= base_url('assets/images/appicon.png') ?>',
+                                timeout: 4000,
+                                onClick: function() {
+                                    window.focus();
+                                    this.close();
+                                }
+                            });
+                        }, function onDenied() {
+                            // onDenied
+                        });
                     }
                     if (response['unreadCount'] != 0) {
                         $('#notificationBadge').text(response['unreadCount']);

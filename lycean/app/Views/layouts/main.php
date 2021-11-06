@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <?= csrf_meta() ?>
-    <title>myLPU HIMS: <?= $page_title ?></title>
+    <title>myLPU Clinic: <?= $page_title ?></title>
 
     <!-- Webapp Icon -->
     <link rel="icon" href="<?= base_url('assets/images/appicon.png') ?>" type="image/png" sizes="16x16">
@@ -62,7 +62,8 @@
     <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/dist/js/adminlte.min.js') ?>"></script>
     <!-- Select2 -->
     <script src="<?= base_url('assets/plugins/select2/js/select2.full.min.js') ?>"></script>
-
+    <!-- Push.js -->
+    <script src="<?= base_url('assets/plugins/push.js-master/bin/push.min.js') ?>"></script>
 </head>
 
 <body class="hold-transition layout-top-nav layout-fixed">

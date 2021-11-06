@@ -23,6 +23,10 @@ class Notifications extends BaseController
 			->where('id_no', $id)->where('status', 'unread')
 			->findAll();
 
+		$newNotification = $this->notificationModel
+			->where('id_no', $id)
+			->orderBy('created_at', 'desc')->first();
+
 		$result = "";
 		if ($notifications) {
 			foreach ($notifications as $notification) {
@@ -50,7 +54,7 @@ class Notifications extends BaseController
 			";
 		}
 
-		return json_encode(['result' => $result, 'count' => count($notifications), 'unreadCount' => count($unreadNotifications)]);
+		return json_encode(['result' => $result, 'count' => count($notifications), 'unreadCount' => count($unreadNotifications), 'notificationInfo' => $newNotification['info']]);
 	}
 
 
@@ -60,8 +64,8 @@ class Notifications extends BaseController
 	{
 		$success = $this->notificationModel->where('id_no', getIdNo())->delete();
 
-		if ($success) {// SUCCESS
-		} else {// ERROR
+		if ($success) { // SUCCESS
+		} else { // ERROR
 		}
 
 		return redirect()->to($_SERVER['HTTP_REFERER']);
