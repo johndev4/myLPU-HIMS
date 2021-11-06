@@ -182,13 +182,10 @@
                     <table id="equipments_table" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>SKU</th>
-                                <th>Manufacturer</th>
-                                <th>Generic Name</th>
-                                <th>Drug Class</th>
-                                <th>Stock</th>
-                                <th>Expiration</th>
-                                <th>Availability</th>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Date of Purchase</th>
+                                <th>Quantity</th>
                                 <th></th>
                             </tr>
                         </thead>
