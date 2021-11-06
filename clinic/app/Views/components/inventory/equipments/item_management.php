@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 font-weight-bold text-black-50">Inventory</h1>
+                    <h1 class="m-0 font-weight-bold text-black-50">Equipments</h1>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="col-md-3 col-12 mb-3">
                     <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#addModal">
                         <span class="info-box-icon add-record text-black-50"><i class="fas fa-plus"></i></span>
-                        <span class="info-box-text text-black-50">Add Inventory</span>
+                        <span class="info-box-text text-black-50">Add Equipment</span>
                     </button>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Medicine</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Equipment</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -44,36 +44,16 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">SKU</label>
+                                        <label for="add_idno" class="col-form-label">Product ID</label>
                                         <input type="text" class="form-control" id="" name="id_no" value="">
                                     </div>
-                                    <div class="col-4 form-group">
-                                        <label for="add_lastname" class="col-form-label">Manufacturer</label>
+                                    <div class="col-8 form-group">
+                                        <label for="add_lastname" class="col-form-label">Product Name</label>
                                         <input type="text" class="form-control" id="" name="last_name" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_firstname" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="first_name" value="">
-                                    </div>
-                                    <div class="col-4 form-group">
-                                        <label for="add_middleinit" class="col-form-label">Drug Class</label>
-                                        <input type="text" class="form-control" id="" name="middle_initial" value="" maxlength="1">
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="username" value="">
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Expiration Date</label>
-                                        <input type="date" class="form-control" id="" name="username" value="">
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="add_department" class="col-form-label">Availability</label>
-                                        <select class="form-control" id="add_department" name="department">
-                                            <option value="" selected="selected">---Choose Status---</option>
-                                            <option value="COECSA">Available</option>
-                                            <option value="CITHM">Unavailable</option>
-                                        </select>
+                                        <label for="add_firstname" class="col-form-label">Quantity</label>
+                                        <input type="number" class="form-control" id="" name="first_name" value="">
                                     </div>
                                 </div>
 
@@ -95,7 +75,7 @@
                             <div class="text-center mt-2">
                                 <span class="info-box-icon text-danger"><i class="fas fa-3x fa-exclamation-circle"></i></span>
                                 <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
-                                <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the medicine from the inventory</div>
+                                <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the equipment from the inventory</div>
                             </div><br>
                             <div class="float-right">
                                 <form action="" method="get" id="deleteModalForm">
@@ -124,36 +104,16 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">SKU</label>
-                                        <input type="text" class="form-control" id="" name="" value="A0001">
+                                        <label for="add_idno" class="col-form-label">Product ID</label>
+                                        <input type="text" class="form-control" id="" name="id_no" value="">
+                                    </div>
+                                    <div class="col-8 form-group">
+                                        <label for="add_lastname" class="col-form-label">Product Name</label>
+                                        <input type="text" class="form-control" id="" name="last_name" value="">
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_lastname" class="col-form-label">Manufacturer</label>
-                                        <input type="text" class="form-control" id="" name="" value="RiteMed">
-                                    </div>
-                                    <div class="col-4 form-group">
-                                        <label for="add_firstname" class="col-form-label">Generic Name</label>
-                                        <input type="text" class="form-control" id="" name="" value="Cefuroxime 250mg">
-                                    </div>
-                                    <div class="col-4 form-group">
-                                        <label for="add_middleinit" class="col-form-label">Drug Class</label>
-                                        <input type="text" class="form-control" id="" name="" maxlength="1" value="Antibacterial">
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="" value="50">
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Expiration Date</label>
-                                        <input type="date" class="form-control" id="" name="" value="">
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="add_department" class="col-form-label">Availability</label>
-                                        <select class="form-control" id="" name="">
-                                            <option value="" selected="selected">---Choose Status---</option>
-                                            <option value="Available">Available</option>
-                                            <option value="Unavailable">Unavailable</option>
-                                        </select>
+                                        <label for="add_firstname" class="col-form-label">Quantity</label>
+                                        <input type="number" class="form-control" id="" name="first_name" value="">
                                     </div>
                                 </div>
 
@@ -184,13 +144,22 @@
                             <tr>
                                 <th>Product ID</th>
                                 <th>Product Name</th>
-                                <th>Date of Purchase</th>
                                 <th>Quantity</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- DATA HERE -->
+                            <tr>
+                                <td>PD001</td>
+                                <td>IKEA Folding Bed</td>
+                                <td>2</td>
+                                <td>
+                                    <div align="center">
+                                        <button type="button" class="btn btn-default" data-target="#modifyModal" data-toggle="modal">Modify</button>
+                                        <button type="button" class="btn btn-default" data-target="#deleteModal" data-toggle="modal">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -218,17 +187,17 @@
             autoWidth: true,
             processing: true,
             searching: true,
-            ajax: {
-                type: 'post',
-                url: '<?= base_url('inventory/fetchAllEquipments') ?>',
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                data: {
-                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
-                },
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            }
+            // ajax: {
+            //     type: 'post',
+            //     url: '<?= base_url('inventory/fetchAllEquipments') ?>',
+            //     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            //     data: {
+            //         <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+            //     },
+            //     headers: {
+            //         'X-Requested-With': 'XMLHttpRequest'
+            //     }
+            // }
         });
 
 
