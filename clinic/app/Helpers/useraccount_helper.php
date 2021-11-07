@@ -51,3 +51,14 @@ function getIdNo()
 
     return $user['id_no'];
 }
+
+function getDesignation()
+{
+    $userAccountModel = model('App\Models\HealthPersonnelsAccountModel');
+    $userModel = model('App\Models\HealthPersonnelsModel');
+
+    $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+    $userInfo = $userModel->where('id_no', $user['id_no'])->first();
+
+    return $userInfo['designation'];
+}
