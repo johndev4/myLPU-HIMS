@@ -68,8 +68,8 @@ class Filters extends BaseConfig
 			'after' => ['dashboard', 'profile', 'consultation/*', 'consultation', 'mentalwellness/*', 'mentalwellness', 'help']
 		],
 		'notloggedin' => [
-			'before' => ['/', 'login', 'forgotpassword', 'help'],
-			'after' => ['/', 'login', 'forgotpassword', 'help']
+			'before' => ['/', 'login', 'forgotpassword'],
+			'after' => ['/', 'login', 'forgotpassword']
 		]
 	];
 }
