@@ -6,6 +6,23 @@ use App\Controllers\BaseController;
 
 class Reports extends BaseController
 {
+    public function __construct()
+    {
+        helper('useraccount');
+    }
+
+    // GET CONSULTATION CATEGORY
+    // -----------------------------------------------------------------
+    private function getConsultationCategory()
+    {
+        if (getDesignation() == "Guidance Counselor") {
+            return "Mental Wellness";
+        } else {
+            return "Consultation";
+        }
+    }
+
+
     // FETCH REPORT DATA
     // -----------------------------------------------------------------
     public function fetchWeeklyReport()
@@ -14,53 +31,63 @@ class Reports extends BaseController
 
         if ($_GET['year'] !== '' && $_GET['month'] !== '') {
             $consultations['accepted'][0] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'done')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-01")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-07")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-08")->format('Y-m-d'))
                 ->find();
 
             $consultations['accepted'][1] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'done')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-08")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-14")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-15")->format('Y-m-d'))
                 ->find();
 
             $consultations['accepted'][2] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'done')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-15")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-22")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-23")->format('Y-m-d'))
                 ->find();
 
             $consultations['accepted'][3] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'done')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-23")->format('Y-m-d'))
                 ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-31")->format('Y-m-d'))
                 ->find();
 
+            // ----------------------------------
 
             $consultations['rejected'][0] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'rejected')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-01")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-07")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-08")->format('Y-m-d'))
                 ->find();
 
             $consultations['rejected'][1] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'rejected')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-08")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-14")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-15")->format('Y-m-d'))
                 ->find();
 
             $consultations['rejected'][2] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'rejected')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-15")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-22")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-23")->format('Y-m-d'))
                 ->find();
 
             $consultations['rejected'][3] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'rejected')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-23")->format('Y-m-d'))
                 ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-31")->format('Y-m-d'))
                 ->find();
+
 
             for ($i = 0; $i < 4; $i += 1) {
                 $result['data'][$i] = array(
@@ -81,6 +108,7 @@ class Reports extends BaseController
         if ($_GET['year'] !== '') {
             for ($i = 1; $i <= 12; $i += 1) {
                 $consultations['accepted'][$i - 1] = $this->consultationsModel
+                    ->where('category', $this->getConsultationCategory())
                     ->where('status', 'done')
                     ->where('created_at >=', date_create("{$_GET['year']}-{$i}-01")->format('Y-m-d'))
                     ->where('created_at <=', date_create("{$_GET['year']}-{$i}-31")->format('Y-m-d'))
@@ -89,6 +117,7 @@ class Reports extends BaseController
 
             for ($i = 1; $i <= 12; $i += 1) {
                 $consultations['rejected'][$i - 1] = $this->consultationsModel
+                    ->where('category', $this->getConsultationCategory())
                     ->where('status', 'rejected')
                     ->where('created_at >=', date_create("{$_GET['year']}-{$i}-01")->format('Y-m-d'))
                     ->where('created_at <=', date_create("{$_GET['year']}-{$i}-31")->format('Y-m-d'))
@@ -113,6 +142,7 @@ class Reports extends BaseController
         $result = array('data' => array());
 
         $consultations = $this->consultationsModel
+            ->where('category', $this->getConsultationCategory())
             ->where('status', 'done')->orwhere('status', 'rejected')
             ->findAll();
 
@@ -125,6 +155,7 @@ class Reports extends BaseController
 
         foreach ($years as $key => $value) {
             $consultations['accepted'][$key] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'done')
                 ->where('created_at >=', date_create("{$value}-01-01")->format('Y-m-d'))
                 ->where('created_at <=', date_create("{$value}-12-31")->format('Y-m-d'))
@@ -133,6 +164,7 @@ class Reports extends BaseController
 
         foreach ($years as $key => $value) {
             $consultations['rejected'][$key] = $this->consultationsModel
+                ->where('category', $this->getConsultationCategory())
                 ->where('status', 'rejected')
                 ->where('created_at >=', date_create("{$value}-01-01")->format('Y-m-d'))
                 ->where('created_at <=', date_create("{$value}-12-31")->format('Y-m-d'))

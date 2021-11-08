@@ -40,20 +40,59 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="add_form">
+                            <form action="<?= base_url('inventory/addEquipment') ?>" method="get" id="add_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">Product ID</label>
-                                        <input type="text" class="form-control" id="" name="id_no" value="">
+                                        <label for="add_productid" class="col-form-label">Product ID</label>
+                                        <input type="text" class="form-control" id="add_productid" name="product_id" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('product_id')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('product_id'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_productid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-8 form-group">
-                                        <label for="add_lastname" class="col-form-label">Product Name</label>
-                                        <input type="text" class="form-control" id="" name="last_name" value="">
+                                        <label for="add_productname" class="col-form-label">Product Name</label>
+                                        <input type="text" class="form-control" id="add_productname" name="product_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('product_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('product_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_productname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_firstname" class="col-form-label">Quantity</label>
-                                        <input type="number" class="form-control" id="" name="first_name" value="">
+                                        <label for="add_qty" class="col-form-label">Quantity</label>
+                                        <input type="number" class="form-control" id="add_qty" name="qty" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('qty')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('qty'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_qty').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
 
@@ -78,7 +117,7 @@
                                 <div class="mt-1 font-weight-normal text-secondary">This will permanently remove the equipment from the inventory</div>
                             </div><br>
                             <div class="float-right">
-                                <form action="" method="get" id="deleteModalForm">
+                                <form action="" method="get" id="delete_form">
                                     <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
                                 </form>
@@ -100,20 +139,59 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" id="add_form">
+                            <form action="" method="get" id="modify_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_idno" class="col-form-label">Product ID</label>
-                                        <input type="text" class="form-control" id="" name="id_no" value="">
+                                        <label for="mod_productid" class="col-form-label">Product ID</label>
+                                        <input type="text" class="form-control" id="mod_productid" name="product_id" value="" readonly="readonly">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('product_id')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('product_id'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_productid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-8 form-group">
-                                        <label for="add_lastname" class="col-form-label">Product Name</label>
-                                        <input type="text" class="form-control" id="" name="last_name" value="">
+                                        <label for="mod_productname" class="col-form-label">Product Name</label>
+                                        <input type="text" class="form-control" id="mod_productname" name="product_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('product_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('product_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_productname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
-                                        <label for="add_firstname" class="col-form-label">Quantity</label>
-                                        <input type="number" class="form-control" id="" name="first_name" value="">
+                                        <label for="mod_qty" class="col-form-label">Quantity</label>
+                                        <input type="number" class="form-control" id="mod_qty" name="qty" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('qty')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('qty'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_qty').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
 
@@ -149,17 +227,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>PD001</td>
-                                <td>IKEA Folding Bed</td>
-                                <td>2</td>
-                                <td>
-                                    <div align="center">
-                                        <button type="button" class="btn btn-default" data-target="#modifyModal" data-toggle="modal">Modify</button>
-                                        <button type="button" class="btn btn-default" data-target="#deleteModal" data-toggle="modal">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
+                            <!-- DATA HERE -->
                         </tbody>
                     </table>
                 </div>
@@ -175,11 +243,6 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
-        // For sidebar
-        $("#mainInventoryNav").addClass('menu-open');
-        $("#mainInventoryNav > a").addClass('active');
-        $("#equipmentNav > a").addClass('active');
-
         // For datatable
         $("#equipments_table").DataTable({
             responsive: true,
@@ -187,21 +250,109 @@
             autoWidth: true,
             processing: true,
             searching: true,
-            // ajax: {
-            //     type: 'post',
-            //     url: '<?= base_url('inventory/fetchAllEquipments') ?>',
-            //     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-            //     data: {
-            //         <?= csrf_token() ?>: '<?= csrf_hash() ?>'
-            //     },
-            //     headers: {
-            //         'X-Requested-With': 'XMLHttpRequest'
-            //     }
-            // }
+            ajax: {
+                type: 'post',
+                url: '<?= base_url('inventory/fetchAllEquipments') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
         });
 
+        // For sidebar
+        $("#mainInventoryNav").addClass('menu-open');
+        $("#mainInventoryNav > a").addClass('active');
+        $("#equipmentNav > a").addClass('active');
 
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
+
+        // Add Validation Error
+        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+            $('#addModal').modal('show');
+            retrieveData('<?= session()->get('product_id') ?>', {
+                error: true,
+                modalType: "add"
+            });
+            $('#addModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Modify Validation Error
+        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+            $('#modifyModal').modal('show');
+            retrieveData('<?= session()->get('product_id') ?>', {
+                error: true,
+                modalType: "mod"
+            });
+            $('#modifyModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Reset add modal on close
+        $('#addModal').on('hidden.bs.modal', function(evt) {
+            $('#add_productid').val("");
+            $('#add_productname').val("");
+            $('#add_qty').val("");
+        });
     });
+
+    // Retrieve data
+    function retrieveData(id, obj = {
+        error: false,
+        modalType: null
+    }) {
+        if (obj['error'] === true) {
+            var data = <?= session()->get('getData') ?>
+
+            $('#' + obj['modalType'] + '_productid').val(data['product_id']);
+            $('#' + obj['modalType'] + '_productname').val(data['product_name']);
+            $('#' + obj['modalType'] + '_qty').val(data['qty']);
+        } else {
+            $.ajax({
+                url: '<?= base_url('inventory/fetchEquipmentById') ?>/' + id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    $('#mod_productid').val(response['product_id']);
+                    $('#mod_productname').val(response['product_name']);
+                    $('#mod_qty').val(response['qty']);
+
+                    resId = response['product_id'];
+                }
+            });
+        }
+
+        $('#modify_form').attr(
+            'action',
+            '<?= base_url('inventory/modifyEquipment') ?>/' + id
+        );
+        $('#delete_form').attr(
+            'action',
+            '<?= base_url('inventory/deleteEquipment') ?>/' + id
+        );
+    }
 </script>
 <!-- /Script -->
 

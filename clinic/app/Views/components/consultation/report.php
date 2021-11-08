@@ -49,12 +49,12 @@
 
                                 <div class="row form-group d-inline">
                                     <span for="dropdownYear" class="ml-2">Year</span>
-                                    <select name="select" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="dropdownYear">
+                                    <select name="" class="col-sm-12 col-md-2 form-control d-inline weekly-yr" id="dropdownYear">
                                         <!-- OPTIONS HERE -->
                                     </select>
 
                                     <span for="dropdownMonth" class="month-label">Month</span>
-                                    <select class="col-sm-12 col-md-2 form-control d-inline weekly-mnth" id="dropdownMonth" disabled="disabled">
+                                    <select name="" class="col-sm-12 col-md-2 form-control d-inline weekly-mnth" id="dropdownMonth" disabled="disabled">
                                         <!-- OPTIONS HERE -->
                                     </select>
                                 </div>
@@ -80,7 +80,7 @@
                             <!-- Monthly Table -->
                             <div class="tab-pane fade" id="custom-tabs-four-monthly" role="tabpanel" aria-labelledby="custom-tabs-four-monthly-tab">
 
-                                <span class="d-block mb-2" style="font-size: 10pt;">Filter by:</span>
+                                <span name="" class="d-block mb-2" style="font-size: 10pt;">Filter by:</span>
 
                                 <div class="row form-group d-inline">
                                     <span for="monthly_dropdownYear" class="ml-2">Year</span>

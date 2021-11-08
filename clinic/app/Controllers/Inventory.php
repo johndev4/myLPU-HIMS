@@ -97,10 +97,10 @@ class Inventory extends BaseController
 				]
 			],
 			'stock_in' => [
-				'rules' => 'required|max_length[45]',
+				'rules' => 'required|numeric',
 				'errors' => [
 					'required' => '- Required',
-					'max_length' => 'Max length exceeded.'
+					'numeric' => 'Must only contain numeric values.'
 				]
 			],
 			'expiration_date' => [
@@ -117,10 +117,10 @@ class Inventory extends BaseController
 	{
 		return  [
 			'stock_out' => [
-				'rules' => 'required|max_length[45]',
+				'rules' => 'required|numeric',
 				'errors' => [
 					'required' => '- Required',
-					'max_length' => 'Max length exceeded.'
+					'numeric' => 'Must only contain numeric values.'
 				]
 			],
 			'product_name' => [
@@ -137,6 +137,41 @@ class Inventory extends BaseController
 					'max_length' => 'Max length exceeded.'
 				]
 			],
+		];
+	}
+
+	private function getEquipmentRules($id = null)
+	{
+		if ($id !== null) {
+			$equipment = $this->equipmentsModel->find($id);
+			$optional_idUnq = ',product_id,' . $equipment['product_id'];
+		} else {
+			$optional_idUnq = "";
+		}
+
+		return  [
+			'product_id' => [
+				'rules' => 'required|max_length[45]|is_unique[equipments.product_id' . $optional_idUnq . ']',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.',
+					'is_unique' => 'Product ID already exists.'
+				]
+			],
+			'product_name' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'qty' => [
+				'rules' => 'required|numeric',
+				'errors' => [
+					'required' => '- Required',
+					'numeric' => 'Must only contain numeric values.'
+				]
+			]
 		];
 	}
 
@@ -273,6 +308,26 @@ class Inventory extends BaseController
 		return json_encode($result);
 	}
 
+	public function fetchAllEquipments()
+	{
+		$result = array('data' => array());
+		$equipments = $this->equipmentsModel->findAll();
+
+		foreach ($equipments as $key => $value) {
+			$result['data'][$key] = array(
+				$value['product_id'],
+				$value['product_name'],
+				$value['qty'],
+				"<div align=\"center\">
+					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
+					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
+				</div>"
+			);
+		}
+
+		return json_encode($result);
+	}
+
 
 	// FETCH DATA BY ID
 	// ---------------------------------------------------------
@@ -306,6 +361,22 @@ class Inventory extends BaseController
 				'product_name' => $batch['product_id'],
 				'stock_in' => $batch['stock_in'],
 				'expiration_date' => $batch['expiration_date'],
+			];
+		}
+
+		return json_encode($result);
+	}
+
+	public function fetchEquipmentById($id)
+	{
+		$equipment = $this->equipmentsModel->find($id);
+		$result = [];
+
+		if ($equipment) {
+			$result = [
+				'product_id' => $equipment['product_id'],
+				'product_name' => $equipment['product_name'],
+				'qty' => $equipment['qty']
 			];
 		}
 
@@ -407,6 +478,33 @@ class Inventory extends BaseController
 		return redirect()->to('inventory/medicines/batches');
 	}
 
+	public function addEquipment()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getEquipmentRules())) {
+				$data = [
+					'product_id' => htmlspecialchars($_GET['product_id']),
+					'product_name' => htmlspecialchars($_GET['product_name']),
+					'qty' => htmlspecialchars($_GET['qty'])
+				];
+
+				$success = $this->equipmentsModel->save($data);
+
+				if ($success) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully added.');
+				} else {
+				}
+			} else {
+				session()->setFlashdata('add_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+			}
+		}
+
+		return redirect()->to('inventory/equipments');
+	}
+
 
 	// UPDATE DATA
 	// ---------------------------------------------------------
@@ -469,6 +567,34 @@ class Inventory extends BaseController
 		return redirect()->to('inventory/medicines/batches');
 	}
 
+	public function modifyEquipment($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getEquipmentRules($id))) {
+				$data = [
+					'product_name' => htmlspecialchars($_GET['product_name']),
+					'qty' => htmlspecialchars($_GET['qty'])
+				];
+
+				$success = $this->equipmentsModel->where('product_id', $id)
+					->set($data)->update();
+
+				if ($success) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully updated.');
+				} else {
+				}
+			} else {
+				session()->setFlashdata('mod_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+				session()->setFlashdata('product_id', $id);
+			}
+		}
+
+		return redirect()->to('inventory/equipments');
+	}
+
 
 	// DELETE DATA
 	// ---------------------------------------------------------
@@ -484,7 +610,7 @@ class Inventory extends BaseController
 			} else {
 			}
 		}
-
+		
 		return redirect()->to('inventory/medicines/items');
 	}
 
@@ -502,6 +628,22 @@ class Inventory extends BaseController
 
 		return redirect()->to('inventory/medicines/batches');
 	}
+
+	public function deleteEquipment($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$success = $this->equipmentsModel->delete($id);
+
+			if ($success) {
+				// Create flashdata for database query status
+				session()->setFlashdata('success', 'Successfully deleted.');
+			} else {
+			}
+		}
+
+		return redirect()->to('inventory/equipments');
+	}
+
 
 	// STOCK OUT PRODUCT
 	// ---------------------------------------------------------
