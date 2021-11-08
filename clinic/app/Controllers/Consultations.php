@@ -213,7 +213,7 @@ class Consultations extends BaseController
 					$lycean['department'],
 					date_create($value['created_at'])->format('F d, Y'),
 					"<div align=\"center\">
-						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">view</button>
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
 					</div>"
 				);
 			}
@@ -240,7 +240,7 @@ class Consultations extends BaseController
 					$lycean['department'],
 					date_create($value['created_at'])->format('F d, Y'),
 					"<div align=\"center\">
-						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">view</button>
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
 					</div>"
 				);
 			}
