@@ -11,10 +11,13 @@ class Help extends BaseController
 		helper('useraccount');
 		// Page title
 		$this->data['page_title'] = 'Help Menu';
-		// User fullname
-		$this->data['fullname'] = getUserFullname();
-		// User ID No.
-        $this->data['idNo'] = getIdNo();
+
+		if (!empty(session()->get('uid')) && !empty(session()->get('pwd'))) {
+			// User fullname
+			$this->data['fullname'] = getUserFullname();
+			// User ID No.
+			$this->data['idNo'] = getIdNo();
+		}
 	}
 
 
@@ -23,6 +26,10 @@ class Help extends BaseController
 	public function index()
 	{
 		// Display page view
-		return view('components/help_menu', $this->data);
+		if (!empty(session()->get('uid')) && !empty(session()->get('pwd'))) {
+			return view('components/help_menu', $this->data);
+		} else {
+			return view('help_menu', $this->data);
+		}
 	}
 }
