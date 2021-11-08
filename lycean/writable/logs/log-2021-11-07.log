@@ -1,0 +1,16 @@
+CRITICAL - 2021-11-07 20:05:01 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Helpers\useraccount_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Help.php(15): getUserFullname()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(779): App\Controllers\Help->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-07 20:05:11 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Helpers\useraccount_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Help.php(15): getUserFullname()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(779): App\Controllers\Help->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
