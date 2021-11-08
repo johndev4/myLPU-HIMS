@@ -55,7 +55,7 @@ class Reports extends BaseController
                 ->where('category', $this->getConsultationCategory())
                 ->where('status', 'done')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-23")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-31")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-31 23:59")->format('Y-m-d H:i'))
                 ->find();
 
             // ----------------------------------
@@ -85,7 +85,7 @@ class Reports extends BaseController
                 ->where('category', $this->getConsultationCategory())
                 ->where('status', 'rejected')
                 ->where('created_at >=', date_create("{$_GET['year']}-{$_GET['month']}-23")->format('Y-m-d'))
-                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-31")->format('Y-m-d'))
+                ->where('created_at <=', date_create("{$_GET['year']}-{$_GET['month']}-31 23:59")->format('Y-m-d H:i'))
                 ->find();
 
 
