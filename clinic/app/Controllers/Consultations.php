@@ -327,7 +327,7 @@ class Consultations extends BaseController
 
 			if ($success1) {
 				$consultation = $this->consultationsModel->find($id);
-				$success2 = $this->setNotification($consultation, 'send');
+				$success2 = $this->setNotification($consultation, 'consultationDone');
 				if ($success2) {
 					session()->setFlashdata('success', 'Done');
 				}
@@ -375,8 +375,9 @@ class Consultations extends BaseController
 
 				if ($this->isSuccess($success1) && $this->isSuccess($success2) && $this->isSuccess($success3)) {
 					$consultation = $this->consultationsModel->find($id);
-					$success4 = $this->setNotification($consultation, 'send');
-					if ($success4) {
+					$success4 = $this->setNotification($consultation, 'consultationDone');
+					$success5 = $this->setNotification($consultation, 'consultationSendFile');
+					if ($success4 && $success5) {
 						session()->setFlashdata('success', 'Done');
 					}
 				}
@@ -453,8 +454,11 @@ class Consultations extends BaseController
 		} else if ($type == 'reject') {
 			$info = 'The doctor rejected your request';
 			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']));
-		} else if ($type == 'send') {
+		} else if ($type == 'consultationSendFile') {
 			$info = 'The documents are ready to view';
+			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no'] . '?documents=1'));
+		} else if ($type == 'consultationDone') {
+			$info = 'Your consultation was done';
 			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no'] . '?documents=1'));
 		}
 
@@ -644,7 +648,7 @@ class Consultations extends BaseController
 		return $result;
 	}
 
-	
+
 	// FETCH MONTH ON CONSULTATIONS
 	// -----------------------------------------------------------------
 	public function fetchMonthOnConsultations()
