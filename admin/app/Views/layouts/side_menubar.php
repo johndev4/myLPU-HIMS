@@ -146,7 +146,7 @@
                 </li>
 
                 <!-- Logout -->
-                <li id="" class="nav-item selector logout mt-5">
+                <li id="" class="nav-item selector logout mt-5 mb-5">
                     <a href="<?= base_url('auth/logout') ?>" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon text-light"></i>
                         <p class="text-light">

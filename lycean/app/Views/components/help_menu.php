@@ -4,22 +4,24 @@
 <div class="container">
     <br><br>
     <div class="row">
-        <div class="col-12 col-md-2">
-            <ul style="list-style: none;">
-                <li><a href="<?= base_url('dashboard') ?>">Home</a></li>
-                <li> Sample2</li>
-                <li>Sample3</li>
+        <div class="col-md-12 col-lg-3">
+            <ul style="list-style: none; cursor: pointer;">
+                <li><a href="<?= base_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
+                <li><a id="1" style="color:rgb(0, 131, 253)">Change your Password</a></li>
+                <li><a id="2" style="color:rgb(0, 131, 253)">Request for Consultation</a></li>
+                <li><a id="3" style="color:rgb(0, 131, 253)">Consultation Status Tabs</a></li>
+                <li><a id="4" style="color:rgb(0, 131, 253)">View/Download Medical Files</a></li>
             </ul>
         </div>
 
-        <div class="col-12 col-md-10">
-            <h5 class="text-bold">Change your password</h5>
+        <div class="col-md-12 col-lg-9">
+            <h5 class="text-bold" id="first">Change your password</h5>
             <ol class="text-justify">
                 <li>
                     <p>Click the user icon on the top navigation bar and select Profile in the dropdown menu</p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/1.png') ?>" alt="1" class="shadow" width="300">
+                <img src="<?= base_url('assets/images/help_menu/1.png') ?>" alt="1" class="img-help-drpdwn shadow" width="300">
                 <br><br><br>
 
                 <li>
@@ -35,19 +37,19 @@
                     <p>Select Change Password</p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/2.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/2.png') ?>" alt="1" class="img-help shadow" width="500">
             </ol>
 
             <br><br><br>
 
-            <h5 class="text-bold">Request for Consultation</h5>
+            <h5 class="text-bold" id="second">Request for Consultation</h5>
             <ol>
                 <li>
                     <p>On your Home Page, you can either choose Consult or Mental Wellness.
                     </p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/3.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/3.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br><br>
                 <li>
                     <p>Once inside either of the modules, select from one of the available doctor/guidance counselors in the dropdown menu.
@@ -62,14 +64,14 @@
                     </p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/4.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/4.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br>
                 <p><b>Note:</b> You can’t send a request if you have an active or pending request.</p>
             </ol>
 
             <br><br><br>
 
-            <h5 class="text-bold">Consultation Status Tabs</h5>
+            <h5 class="text-bold" id="third">Consultation Status Tabs</h5>
 
             <p>There are 4 Status Tabs under each consultation modules: Active, Pending, Rejected, and Done.</p>
 
@@ -80,7 +82,7 @@
                     </p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/5.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/5.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br><br>
 
                 <li>
@@ -89,7 +91,7 @@
                     </p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/6.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/6.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br><br>
 
                 <li>
@@ -98,7 +100,7 @@
                     </p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/7.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/7.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br><br>
 
                 <li>
@@ -107,14 +109,14 @@
                     </p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br>
                 <p><b>Note:</b> The view all button under each status tab will allow you to view all the details on each status of your consultation.</p>
             </ul>
 
             <br><br><br>
 
-            <h5 class="text-bold">View/Download Medical Files</h5>
+            <h5 class="text-bold" id="fourth">View/Download Medical Files</h5>
             <ol>
                 <li>
                     <p>
@@ -127,12 +129,12 @@
                     </p>
                 </li>
 
-                <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br>
-                <img src="<?= base_url('assets/images/help_menu/9.png') ?>" alt="1" class="shadow" width="500">
+                <img src="<?= base_url('assets/images/help_menu/9.png') ?>" alt="1" class="img-help shadow" width="500">
             </ol>
 
-            
+
         </div>
     </div>
 
@@ -147,12 +149,68 @@
 
 <!-- Script -->
 <script>
-    $("a[href='#page-top']").click(function() {
-        $("html, body").animate({
-            scrollTop: 0
-        }, "slow");
-        return false;
-    });
+    // $("a[href='#page-top']").click(function() {
+    //     $("html, body").animate({
+    //         scrollTop: 0
+    //     }, "slow");
+    //     return false;
+    // });
+
+    $("#1").on("click", function() {
+        window.scroll(0, findPos(document.getElementById("first")));
+
+        function findPos(obj) {
+            var curtop = -90;
+            if (obj.offsetParent) {
+                do {
+                    curtop += obj.offsetTop;
+                } while (obj = obj.offsetParent);
+                return [curtop];
+            }
+        }
+    })
+
+    $("#2").on("click", function() {
+        window.scroll(0, findPos(document.getElementById("second")));
+
+        function findPos(obj) {
+            var curtop = -90;
+            if (obj.offsetParent) {
+                do {
+                    curtop += obj.offsetTop;
+                } while (obj = obj.offsetParent);
+                return [curtop];
+            }
+        }
+    })
+
+    $("#3").on("click", function() {
+        window.scroll(0, findPos(document.getElementById("third")));
+
+        function findPos(obj) {
+            var curtop = -90;
+            if (obj.offsetParent) {
+                do {
+                    curtop += obj.offsetTop;
+                } while (obj = obj.offsetParent);
+                return [curtop];
+            }
+        }
+    })
+
+    $("#4").on("click", function() {
+        window.scroll(0, findPos(document.getElementById("fourth")));
+
+        function findPos(obj) {
+            var curtop = -90;
+            if (obj.offsetParent) {
+                do {
+                    curtop += obj.offsetTop;
+                } while (obj = obj.offsetParent);
+                return [curtop];
+            }
+        }
+    })
 </script>
 
 

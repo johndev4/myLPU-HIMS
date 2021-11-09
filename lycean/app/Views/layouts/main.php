@@ -67,7 +67,7 @@
     <script src="<?= base_url('assets/plugins/push.js-master/bin/push.min.js') ?>"></script>
 </head>
 
-<body class="hold-transition layout-top-nav layout-fixed">
+<body class="hold-transition layout-top-nav layout-fixed" id="page-top">
     <div class="wrapper">
 
         <!-- Render top_menubar -->
