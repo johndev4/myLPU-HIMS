@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/navbar.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/consultation.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/profile.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/help-menu.css') ?>">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
