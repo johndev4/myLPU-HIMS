@@ -68,7 +68,7 @@ class Profile extends BaseController
     public function updatePassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $user = $this->userAccountsModel
+            $user = $this->userAccountModel
                 ->where('username', session()->get('uid'))
                 ->where('password', hash("sha256", $_POST['current_password']))
                 ->first();
