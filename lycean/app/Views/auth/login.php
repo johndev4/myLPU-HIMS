@@ -118,7 +118,7 @@
                         All rights reserved. -->
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Terms of Use</a></span>
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Privacy Policy</a></span>
-                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('assets/images/Help_Menu.pdf#toolbar=0') ?>" target="_blank">Help</a></span>
+                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('') ?>" target="_blank">Help</a></span>
                     <br>
                 </div>
             </div>

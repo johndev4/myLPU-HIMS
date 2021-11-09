@@ -1,45 +1,19 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<<<<<<< HEAD
-
-<br>
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-2  py-5">
-            <a href="">Home</a><br>
-            <a href="">Terms of Use</a><br>
-            <a href="">Privacy Policy</a>
-        </div>
-        <div class="col-md-10">
-            <iframe src="<?= base_url('assets/images/Help_Menu.pdf#toolbar=0') ?>" frameborder="0" width="100%" height="670px">
-            </iframe>
-        </div>
-    </div>
-</div> -->
-
-<a href="<?= base_url('dashboard') ?>" class="float">
-    <i class="fa fa-caret-left fa-2x my-float"></i>
-</a>
-
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe src="<?= base_url('assets/images/Help_Menu.pdf#toolbar=0') ?>" frameborder="0">
-    </iframe>
-</div>
-=======
 <div class="container">
     <br><br>
     <div class="row">
         <div class="col-12 col-md-2">
-            <ol>
-                <li>Sample1</li>
+            <ul style="list-style: none;">
+                <li><a href="<?= base_url('dashboard') ?>">Home</a></li>
                 <li> Sample2</li>
                 <li>Sample3</li>
-            </ol>
+            </ul>
         </div>
 
         <div class="col-12 col-md-10">
-            <h5>Change your password</h5>
+            <h5 class="text-bold">Change your password</h5>
             <ol class="text-justify">
                 <li>
                     <p>Click the user icon on the top navigation bar and select Profile in the dropdown menu</p>
@@ -65,14 +39,16 @@
             </ol>
 
             <br><br><br>
->>>>>>> 8b99f166302b4151df5c0da7dc789e4c4c242c93
 
-            <h5>Request for Consultation</h5>
+            <h5 class="text-bold">Request for Consultation</h5>
             <ol>
                 <li>
                     <p>On your Home Page, you can either choose Consult or Mental Wellness.
                     </p>
                 </li>
+
+                <img src="<?= base_url('assets/images/help_menu/3.png') ?>" alt="1" class="shadow" width="500">
+                <br><br><br>
                 <li>
                     <p>Once inside either of the modules, select from one of the available doctor/guidance counselors in the dropdown menu.
                     </p>
@@ -87,10 +63,97 @@
                 </li>
 
                 <img src="<?= base_url('assets/images/help_menu/4.png') ?>" alt="1" class="shadow" width="500">
+                <br><br>
+                <p><b>Note:</b> You can’t send a request if you have an active or pending request.</p>
             </ol>
+
+            <br><br><br>
+
+            <h5 class="text-bold">Consultation Status Tabs</h5>
+
+            <p>There are 4 Status Tabs under each consultation modules: Active, Pending, Rejected, and Done.</p>
+
+            <ul style="list-style: none;">
+                <li>
+                    <p>
+                        <b>Pending</b> – you have already requested but your request is not yet accepted.
+                    </p>
+                </li>
+
+                <img src="<?= base_url('assets/images/help_menu/5.png') ?>" alt="1" class="shadow" width="500">
+                <br><br><br>
+
+                <li>
+                    <p>
+                        <b>Active</b> – your request is already accepted, and the schedule is sent to you.
+                    </p>
+                </li>
+
+                <img src="<?= base_url('assets/images/help_menu/6.png') ?>" alt="1" class="shadow" width="500">
+                <br><br><br>
+
+                <li>
+                    <p>
+                        <b>Rejected</b> – your request is declined depending on the concern you sent.
+                    </p>
+                </li>
+
+                <img src="<?= base_url('assets/images/help_menu/7.png') ?>" alt="1" class="shadow" width="500">
+                <br><br><br>
+
+                <li>
+                    <p>
+                        <b>Done</b> – finished consultation will go here, and this is where you can view the medical files sent to you after the consultation (Ex. Prescription/Referral).
+                    </p>
+                </li>
+
+                <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="shadow" width="500">
+                <br><br>
+                <p><b>Note:</b> The view all button under each status tab will allow you to view all the details on each status of your consultation.</p>
+            </ul>
+
+            <br><br><br>
+
+            <h5 class="text-bold">View/Download Medical Files</h5>
+            <ol>
+                <li>
+                    <p>
+                        To view your medical files, go to Consultation/Mental Wellness module. Navigate to Consultation Tabs.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Go to Done > View all > Medical Documents tab.
+                    </p>
+                </li>
+
+                <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="shadow" width="500">
+                <br><br>
+                <img src="<?= base_url('assets/images/help_menu/9.png') ?>" alt="1" class="shadow" width="500">
+            </ol>
+
             
         </div>
     </div>
+
+    <br><br><br><br>
+
+    <!-- Scroll to Top Button-->
+    <a href="#page-top" class="float">
+        <i class="fa fa-angle-up my-float fa-lg"></i>
+    </a>
+
 </div>
+
+<!-- Script -->
+<script>
+    $("a[href='#page-top']").click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
+        return false;
+    });
+</script>
+
 
 <?= $this->endSection('content') ?>
