@@ -7,15 +7,16 @@
         <div class="col-md-12 col-lg-3">
             <ul style="list-style: none; cursor: pointer;">
                 <li><a href="<?= base_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
-                <li><a id="1" style="color:rgb(0, 131, 253)">Change your Password</a></li>
-                <li><a id="2" style="color:rgb(0, 131, 253)">Request for Consultation</a></li>
-                <li><a id="3" style="color:rgb(0, 131, 253)">Consultation Status Tabs</a></li>
-                <li><a id="4" style="color:rgb(0, 131, 253)">View/Download Medical Files</a></li>
+
+                <li><a id="link-1" style="color:rgb(0, 131, 253)">Change your Password</a></li>
+                <li><a id="link-2" style="color:rgb(0, 131, 253)">Request for Consultation</a></li>
+                <li><a id="link-3" style="color:rgb(0, 131, 253)">Consultation Status Tabs</a></li>
+                <li><a id="link-4" style="color:rgb(0, 131, 253)">View/Download Medical Files</a></li>
             </ul>
         </div>
 
         <div class="col-md-12 col-lg-9">
-            <h5 class="text-bold" id="first">Change your password</h5>
+            <h5 class="text-bold" id="section-1">Change your password</h5>
             <ol class="text-justify">
                 <li>
                     <p>Click the user icon on the top navigation bar and select Profile in the dropdown menu</p>
@@ -42,7 +43,7 @@
 
             <br><br><br>
 
-            <h5 class="text-bold" id="second">Request for Consultation</h5>
+            <h5 class="text-bold" id="section-2">Request for Consultation</h5>
             <ol>
                 <li>
                     <p>On your Home Page, you can either choose Consult or Mental Wellness.
@@ -71,7 +72,7 @@
 
             <br><br><br>
 
-            <h5 class="text-bold" id="third">Consultation Status Tabs</h5>
+            <h5 class="text-bold" id="section-3">Consultation Status Tabs</h5>
 
             <p>There are 4 Status Tabs under each consultation modules: Active, Pending, Rejected, and Done.</p>
 
@@ -116,7 +117,7 @@
 
             <br><br><br>
 
-            <h5 class="text-bold" id="fourth">View/Download Medical Files</h5>
+            <h5 class="text-bold" id="section-4">View/Download Medical Files</h5>
             <ol>
                 <li>
                     <p>
@@ -149,68 +150,63 @@
 
 <!-- Script -->
 <script>
-    // $("a[href='#page-top']").click(function() {
-    //     $("html, body").animate({
-    //         scrollTop: 0
-    //     }, "slow");
-    //     return false;
-    // });
+    $(document).ready(function() {
+        $("#link-1").on("click", function() {
+            window.scroll(0, findPos(document.getElementById("section-1")));
 
-    $("#1").on("click", function() {
-        window.scroll(0, findPos(document.getElementById("first")));
-
-        function findPos(obj) {
-            var curtop = -90;
-            if (obj.offsetParent) {
-                do {
-                    curtop += obj.offsetTop;
-                } while (obj = obj.offsetParent);
-                return [curtop];
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
             }
-        }
-    })
+        });
 
-    $("#2").on("click", function() {
-        window.scroll(0, findPos(document.getElementById("second")));
+        $("#link-2").on("click", function() {
+            window.scroll(0, findPos(document.getElementById("section-2")));
 
-        function findPos(obj) {
-            var curtop = -90;
-            if (obj.offsetParent) {
-                do {
-                    curtop += obj.offsetTop;
-                } while (obj = obj.offsetParent);
-                return [curtop];
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
             }
-        }
-    })
+        });
 
-    $("#3").on("click", function() {
-        window.scroll(0, findPos(document.getElementById("third")));
+        $("#link-3").on("click", function() {
+            window.scroll(0, findPos(document.getElementById("section-3")));
 
-        function findPos(obj) {
-            var curtop = -90;
-            if (obj.offsetParent) {
-                do {
-                    curtop += obj.offsetTop;
-                } while (obj = obj.offsetParent);
-                return [curtop];
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
             }
-        }
-    })
+        });
 
-    $("#4").on("click", function() {
-        window.scroll(0, findPos(document.getElementById("fourth")));
+        $("#link-4").on("click", function() {
+            window.scroll(0, findPos(document.getElementById("section-4")));
 
-        function findPos(obj) {
-            var curtop = -90;
-            if (obj.offsetParent) {
-                do {
-                    curtop += obj.offsetTop;
-                } while (obj = obj.offsetParent);
-                return [curtop];
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
             }
-        }
-    })
+        });
+    });
 </script>
 
 

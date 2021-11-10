@@ -42,7 +42,7 @@
             <p class="text-justify">Before you continue using our website, we advise you to read our <a href="<?= base_url('privacypolicy') ?>" style="text-decoration: underline; color: #000">privacy policy</a>
                 regarding our user data collection. It will help you better understand our practices.</p>
 
-            <h6 class="text-bold "id="section-3">Who can use the services?</h6>
+            <h6 class="text-bold " id="section-3">Who can use the services?</h6>
             <p class="text-justify">Non-Lycean are not allowed to access and use the services of MyLPU HIMS. If you are currently
                 employed or enrolled in the LPU Cavite, you have full access to this website by logging in to your respective credentials
                 given by the ICT Department.</p>
@@ -170,75 +170,200 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
-        $("#link-1").click(function() {
-            $(window).scrollTop(
-                $('#section-1').position().top
-            );
+        $("#link-1").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-1')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-2").click(function() {
-            $(window).scrollTop(
-                $('#section-2').position().top
-            );
+
+        $("#link-2").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-2')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-3").click(function() {
-            $(window).scrollTop(
-                $('#section-3').position().top
-            );
+
+        $("#link-3").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-3')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-4").click(function() {
-            $(window).scrollTop(
-                $('#section-4').position().top
-            );
+
+        $("#link-4").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-4')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-5").click(function() {
-            $(window).scrollTop(
-                $('#section-5').position().top
-            );
+
+        $("#link-5").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-5')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-6").click(function() {
-            $(window).scrollTop(
-                $('#section-6').position().top
-            );
+
+        $("#link-6").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-6')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-7").click(function() {
-            $(window).scrollTop(
-                $('#section-7').position().top
-            );
+
+        $("#link-7").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-7')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-8").click(function() {
-            $(window).scrollTop(
-                $('#section-8').position().top
-            );
+
+        $("#link-8").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-8')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-9").click(function() {
-            $(window).scrollTop(
-                $('#section-9').position().top
-            );
+
+        $("#link-9").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-9')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-10").click(function() {
-            $(window).scrollTop(
-                $('#section-10').position().top
-            );
+
+        $("#link-10").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-10')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-11").click(function() {
-            $(window).scrollTop(
-                $('#section-11').position().top
-            );
+
+        $("#link-11").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-11')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-12").click(function() {
-            $(window).scrollTop(
-                $('#section-12').position().top
-            );
+
+        $("#link-12").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-12')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-13").click(function() {
-            $(window).scrollTop(
-                $('#section-13').position().top
-            );
+
+        $("#link-13").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-13')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
-        $("#link-14").click(function() {
-            $(window).scrollTop(
-                $('#section-14').position().top
-            );
+
+        $("#link-14").on("click", function() {
+            window.scroll(0, findPos(document.getElementById('section-14')));
+
+            function findPos(obj) {
+                var curtop = -90;
+                if (obj.offsetParent) {
+                    do {
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curtop];
+                }
+            }
         });
     });
 </script>
