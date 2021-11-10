@@ -55,7 +55,7 @@
                         <div class="row d-inline text-left">
                             <div class="col-12 text-left ml-n2">
                                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#changepasswordModal">Change Password</button>
-                                <a href="<?= base_url('auth/logout') ?>"><button type="button" class="btn btn-light">Logout</button></a>
+                                <!-- <a href="<?= base_url('auth/logout') ?>"><button type="button" class="btn btn-light">Logout</button></a> -->
                             </div>
                         </div>
                     </div>
