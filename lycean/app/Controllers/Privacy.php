@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class TermsOfUse extends BaseController
+class Privacy extends BaseController
 {
     public function __construct()
 	{
@@ -27,9 +27,9 @@ class TermsOfUse extends BaseController
 	{
 		// Display page view
 		if (!empty(session()->get('uid')) && !empty(session()->get('pwd'))) {
-			return view('components/terms_of_use', $this->data);
+			return view('components/privacy_policy', $this->data);
 		} else {
-			return view('terms_of_use', $this->data);
+			return view('privacy_policy', $this->data);
 		}
 	}
 }

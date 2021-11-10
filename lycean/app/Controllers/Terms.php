@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class PrivacyPolicy extends BaseController
+class Terms extends BaseController
 {
     public function __construct()
 	{
@@ -27,9 +27,9 @@ class PrivacyPolicy extends BaseController
 	{
 		// Display page view
 		if (!empty(session()->get('uid')) && !empty(session()->get('pwd'))) {
-			return view('components/privacy_policy', $this->data);
+			return view('components/terms_and_conditions', $this->data);
 		} else {
-			return view('privacy_policy', $this->data);
+			return view('terms_and_conditions', $this->data);
 		}
 	}
 }
