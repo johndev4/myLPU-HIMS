@@ -1,0 +1,81 @@
+CRITICAL - 2021-11-10 08:05:36 --> Invalid file: components/terms_of_use.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('components/term...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/term...', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\TermsOfUse.php(30): view('components/term...', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\TermsOfUse->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TermsOfUse))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 08:06:44 --> Invalid file: components/terms_of_use.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('components/term...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/term...', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\TermsOfUse.php(30): view('components/term...', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\TermsOfUse->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TermsOfUse))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 08:06:46 --> Invalid file: components/terms_of_use.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('components/term...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/term...', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\TermsOfUse.php(30): view('components/term...', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\TermsOfUse->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TermsOfUse))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 08:06:47 --> Invalid file: components/terms_of_use.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('components/term...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/term...', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\TermsOfUse.php(30): view('components/term...', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\TermsOfUse->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TermsOfUse))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 08:06:58 --> Invalid file: components/terms_of_use.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('components/term...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/term...', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\TermsOfUse.php(30): view('components/term...', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\TermsOfUse->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TermsOfUse))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 08:15:44 --> Invalid file: components/terms_of_use.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('components/term...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/term...', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\TermsAndConditions.php(30): view('components/term...', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\TermsAndConditions->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TermsAndConditions))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 10:40:00 --> Invalid file: privacy_policy.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('privacy_policy....')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('privacy_policy', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\PrivacyPolicy.php(32): view('privacy_policy', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\PrivacyPolicy->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrivacyPolicy))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 10:40:03 --> Invalid file: privacy_policy.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('privacy_policy....')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('privacy_policy', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\PrivacyPolicy.php(32): view('privacy_policy', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\PrivacyPolicy->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrivacyPolicy))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-11-10 10:42:39 --> Invalid file: privacy_policy.php
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('privacy_policy....')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('privacy_policy', Array, true)
+#2 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Privacy.php(32): view('privacy_policy', Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Privacy->index()
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Privacy))
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

@@ -116,8 +116,8 @@
                 <div class="col-lg-12 mt-3">
                     <!-- <strong >Copyright &copy;<?= date('Y') ?></strong>
                         All rights reserved. -->
-                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Terms of Use</a></span>
-                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Privacy Policy</a></span>
+                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('terms') ?>">Terms of Use</a></span>
+                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('privacy') ?>">Privacy Policy</a></span>
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('help') ?>">Help</a></span>
                     <br>
                 </div>
