@@ -1,0 +1,45 @@
+div.card-footer.py-3.profile-footer{
+    border-bottom-right-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+}
+
+@media screen and (max-width:576px){
+    div.row.d-flex.justify-content-center.c-row{
+        padding: 15px !important;
+        margin-top: -25px !important;
+        margin-bottom: 100px !important;
+    }
+
+    div.col-sm-9.py-3{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    i.fas.fa-chevron-circle-left.fa-2x.py-2.text-secondary{
+        margin-left: 6px !important;
+    }
+}
+
+@media screen and (max-width:576px){
+    i.fas.fa-user-circle.py-2.text-secondary{
+        font-size: 50pt !important;
+    }
+    p.text-muted.d-block.mt-n1{
+        font-size: 12pt !important;
+    }
+    p.text-muted.text-left{
+        font-size: 12pt !important;
+    }
+    h2.text-left.mt-n2{
+        font-size: 20pt !important;
+    }
+    p.text-left.mt-n2{
+        font-size: 10pt !important;
+    }
+    div.row.profile-info p.text-left.text-muted{
+        font-size: 10pt !important;
+    }
+    div.row.profile-info p.text-left{
+        font-size: 10pt !important;
+    }
+}
