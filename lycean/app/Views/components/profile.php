@@ -6,10 +6,11 @@
 
         <!-- Back Button -->
         <div class="row mb-2" style="border:1px solid none; margin-top:35px">
-            <div class="col-sm-">
-                <a href="<?= base_url('dashboard') ?>" class="back-btn">
-                    <i class="fas fa-chevron-left fa-2x font-weight-normal" style="font-size: 17pt; color: rgb(88, 88, 88); vertical-align:baseline"></i>
-                    <span class="font-weight-normal ml-1" style="font-size: 20pt; color: rgb(88, 88, 88)">Back</span>
+            <div class="col-sm-12">
+                <a href="<?= base_url('dashboard') ?>">
+                    <!-- <i class="fas fa-chevron-left fa-2x font-weight-normal" style="font-size: 17pt; color: rgb(88, 88, 88); vertical-align:baseline"></i>
+                    <span class="font-weight-normal ml-1" style="font-size: 20pt; color: rgb(88, 88, 88)">Back</span> -->
+                    <i class="fas fa-chevron-circle-left fa-2x py-2 text-secondary"></i>
                 </a>
             </div>
         </div>
@@ -21,34 +22,85 @@
             </div>
         </div> -->
         <br>
-        <div class="row d-flex user-profile" style="border:1px solid none;">
-            <div class="card-body login-card-body shadow" style="border-radius: 15px;">
+        <div class="row d-flex justify-content-center c-row" style="border:1px solid none;">
+
+            <div class="card text-center shadow" style="width:610px; border-radius: 6px;">
                 <div class="row">
-
-                    <div class="col-md-6 user-info" style="border-right: 1px solid #BDBDBD;">
-                        <div class="col-sm-12 text-center mb-2">
-                            <h2 class="m-0 font-weight-bold text-dark">Profile</h2>
-                        </div>
-
-                        <div class="text-center">
-                            <i class="fas fa-user-circle fa-5x nav-icon text-secondary"></i>
-                        </div>
-
-                        <h3 class="profile-username text-center"> <?= $username ?> </h3>
-                        <p class="text-muted text-center">Username</p>
-
-
-                        <h3 class="profile-username text-center"> <?= $userInfo['first_name'] ?> </h3>
-                        <p class="text-muted text-center">First Name</p>
-
-                        <h3 class="profile-username text-center"> <?= $userInfo['last_name'] ?> </h3>
-                        <p class="text-muted text-center">Last Name</p>
-
-                        <h3 class="profile-username text-center"> <?= $userInfo['id_no'] ?> </h3>
-                        <p class="text-muted text-center">ID Number</p>
+                    <div class="col-sm-3 py-3">
+                        <i class="fas fa-user-circle py-2 text-secondary" style="font-size:54pt"></i>
+                        <p class="text-muted d-block mt-n1" style="font-size: 14pt;">Profile</p>
                     </div>
+                    <div class="col-sm-9 py-3">
+                        <p class="text-muted text-left" style="font-size: 16pt;">Name</p>
+                        <h2 class="text-left mt-n2"> <?= $userInfo['first_name'] ?> <?= $userInfo['last_name'] ?> </h2>
+                        <p class="text-left mt-n2" style="font-size: 12pt;">LYCEUM OF THE PHILIPPINES UNIVERSITY - CAVITE</p>
 
-                    <div class="col-md-6 py-5 px-5">
+                        <hr>
+
+                        <!-- <p class="text-left" style="font-size: 15pt;"><b class="text-muted" style="font-size: 10pt;">USERNAME: </b> <?= $username ?></p>
+                        <p class="text-left mt-n3" style="font-size: 15pt;"><b class="text-muted" style="font-size: 10pt;">ID NUMBER: </b> <?= $userInfo['id_no'] ?></p> -->
+
+                        <div class="row profile-info">
+                            <div class="col-3">
+                                <p class="text-left text-muted" style="font-size: 14pt;"><b>Username</b></p>
+                                <p class="text-left mt-n3 text-muted" style="font-size: 14pt;"><b>ID Number</b></p>
+                            </div>
+
+                            <div class="col-9">
+                                <p class="text-left" style="font-size: 14pt;"><?= $username ?></p>
+                                <p class="text-left mt-n3" style="font-size: 14pt;"><?= $userInfo['id_no'] ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row d-inline text-left">
+                            <div class="col-12 text-left ml-n2">
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#changepasswordModal">Change Password</button>
+                                <a href="<?= base_url('auth/logout') ?>"><button type="button" class="btn btn-light">Logout</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="card-footer py-3 profile-footer" style="background-color: #b13f48;">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal -->
+        <!-- Message Modal -->
+        <div class="modal fade" id="messageModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+                <div class="modal-content">
+                    <div class="modal-body p-4" align="center">
+                        <i class="fas fa-check-circle"></i>
+                        <label>
+                            <h5>Password changed successfully!</h5>
+                        </label><br>
+                        You will now be logged out.
+                        <br><br>
+                        <div align="center">
+                            <a href="<?= base_url('auth/logout') ?>">
+                                <button type="button" class="btn btn-danger swalDefaultSuccess" id="continueLogout">Continue</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Message Modal -->
+
+        <!-- Change password Modal -->
+        <div class="modal fade" id="changepasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body p-4" align="left">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <br>
                         <label class="mb-3 text-dark" style="font-size: 14pt;">Change Password</label>
                         <form action="<?= base_url('profile/updatePassword') ?>" method="post">
                             <span class="p-2 d-block mb-2" style="background-color:rgb(223, 223, 223); border-radius:4px;">
@@ -119,43 +171,21 @@
                             <?php endif; ?>
 
                             <button type="submit" class="btn btn-danger btn-block mt-3 swalDefaultSuccess">
-                                <b>Change Password</b>
+                                <b>Save Changes</b>
                             </button>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
-
-        <!-- Modal -->
-        <!-- Message Modal -->
-        <div class="modal fade" id="messageModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
-                <div class="modal-content">
-                    <div class="modal-body p-4" align="center">
-                        <i class="fas fa-check-circle"></i>
-                        <label>
-                            <h5>Password changed successfully!</h5>
-                        </label><br>
-                        You will now be logged out.
-                        <br><br>
-                        <div align="center">
-                            <a href="<?= base_url('auth/logout') ?>">
-                                <button type="button" class="btn btn-danger swalDefaultSuccess" id="continueLogout">Continue</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Message Modal -->
+        <!-- /Change password Modal -->
         <!-- /Modal -->
 
     </div>
+
 </body>
 
-<br>
+<br><br><br><br>
 
 
 <?= $this->endSection('content') ?>
