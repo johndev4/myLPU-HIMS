@@ -57,6 +57,7 @@ class Profile extends BaseController
     {
         // User email
         $this->data['username'] = getUserEmail();
+        // User info
         $this->data['userInfo'] = getUserInfo();
         // Display page view
         return view('components/profile', $this->data);
@@ -85,7 +86,7 @@ class Profile extends BaseController
                         'password' => hash("sha256", $_POST['password'])
                     ];
 
-                    $success = $this->userAccountsModel->update($user['id_no'], $data);
+                    $success = $this->userAccountModel->update($user['id_no'], $data);
 
                     if ($success) {
                         // Update username in login session

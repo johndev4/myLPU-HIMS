@@ -183,6 +183,38 @@
 
     </div>
 
+
+
+
+
+    <!-- Script -->
+    <script>
+        $(document).ready(function() {
+            // Bootstrap Modal for password changed status
+            <?php if (session()->getFlashdata('password_changed') == TRUE) : ?>
+                $("#messageModal").modal('show');
+            <?php endif; ?>
+
+            // Change Password Validation Error
+            <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
+                $('#changepasswordModal').modal('show');
+
+                $('#changepasswordModal').on('hidden.bs.modal', function(evt) {
+                    $('.error').addClass('d-none');
+                    $('input.border').removeClass('border border-danger');
+                    $('select.border').removeClass('border border-danger');
+                });
+            <?php endif; ?>
+
+            // Reset change password modal on close
+            $('#changepasswordModal').on('hidden.bs.modal', function(evt) {
+                $('#current_password').val("");
+                $('#password').val("");
+                $('#confirm_password').val("");
+            });
+        });
+    </script>
+
 </body>
 
 <br><br><br><br>

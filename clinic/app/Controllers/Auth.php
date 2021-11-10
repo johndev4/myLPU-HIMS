@@ -66,14 +66,15 @@ class Auth extends BaseController
 	// -----------------------------------------------------------------
 	public function logout()
 	{
-		// Delete login session on client
-		session()->destroy();
 		// Clear last activity
 		$this->userAccountModel
 			->where('id_no', getIdNo())
 			->set([
-				'last_activity' => ''
+				'last_activity' => null
 			])->update();
+
+		// Delete login session on client
+		session()->destroy();
 		// Redirect to login page
 		return redirect()->to('login');
 	}

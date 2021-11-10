@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-sm-9 py-3">
                             <p class="text-muted text-left" style="font-size: 16pt;">Name</p>
-                            <h2 class="text-left mt-n2"> Ji-eun Lee </h2>
+                            <h2 class="text-left mt-n2"> <?= $userInfo['first_name'] ?> <?= $userInfo['last_name'] ?> </h2>
                             <p class="text-left mt-n2" style="font-size: 12pt;">LYCEUM OF THE PHILIPPINES UNIVERSITY - CAVITE</p>
 
                             <hr>
@@ -40,8 +40,8 @@
                                 </div>
 
                                 <div class="col-9">
-                                    <p class="text-left" style="font-size: 14pt;">jieun.lee@lpunetwork.edu.ph</p>
-                                    <p class="text-left mt-n3" style="font-size: 14pt;">2015-2-06969</p>
+                                    <p class="text-left" style="font-size: 14pt;"><?= $username ?></p>
+                                    <p class="text-left mt-n3" style="font-size: 14pt;"><?= $userInfo['id_no'] ?></p>
                                 </div>
                             </div>
 
@@ -183,24 +183,28 @@
 <!-- Script -->
 <script>
     $('document').ready(function() {
-        // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-            Toast.fire({
-                icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
-            });
-        <?php endif; ?>
-
         // Bootstrap Modal for password changed status
         <?php if (session()->getFlashdata('password_changed') == TRUE) : ?>
             $("#messageModal").modal('show');
         <?php endif; ?>
+
+        // Change Password Validation Error
+        <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
+            $('#changepasswordModal').modal('show');
+
+            $('#changepasswordModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Reset change password modal on close
+        $('#changepasswordModal').on('hidden.bs.modal', function(evt) {
+            $('#current_password').val("");
+            $('#password').val("");
+            $('#confirm_password').val("");
+        });
     });
 </script>
 

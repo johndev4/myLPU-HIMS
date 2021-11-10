@@ -52,6 +52,15 @@ function getIdNo()
     return $user['id_no'];
 }
 
+function getUserInfo()
+{
+    $userModel = model('App\Models\HealthPersonnelsModel');
+
+    $userInfo = $userModel->where('id_no', getIdNo())->first();
+
+    return $userInfo;
+}
+
 function getDesignation()
 {
     $userAccountModel = model('App\Models\HealthPersonnelsAccountModel');
