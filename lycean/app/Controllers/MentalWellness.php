@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class MentalWellness extends BaseController
+class Mentalwellness extends BaseController
 {
     public function __construct()
     {

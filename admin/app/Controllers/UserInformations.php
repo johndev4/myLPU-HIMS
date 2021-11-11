@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class UserInformations extends BaseController
+class Userinformations extends BaseController
 {
     public function __construct()
     {
