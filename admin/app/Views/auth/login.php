@@ -26,7 +26,7 @@
     <div class="login-box">
         <div class="login-logo mb-3 mx-auto d-block">
             <a role="button">
-                <img src="<?= base_url('assets/images/Lpu_HIMS.png') ?>" class="img-fluid" alt="Logo" width="300" height="240" role="button">
+                <img src="<?= base_url('assets/images/mylpuhims-logo.png') ?>" class="img-fluid" alt="Logo" width="300" height="240" role="button">
                 <!--<b class="font-weight">myLPU HIMS</b>-->
             </a>
         </div>
