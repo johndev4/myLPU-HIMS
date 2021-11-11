@@ -459,7 +459,7 @@ class Consultations extends BaseController
 			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no'] . '?documents=1'));
 		} else if ($type == 'consultationDone') {
 			$info = 'Your consultation was done';
-			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no'] . '?documents=1'));
+			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']));
 		}
 
 		return $this->lyceansNotificationModel->save([
