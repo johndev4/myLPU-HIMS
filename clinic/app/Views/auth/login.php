@@ -23,6 +23,29 @@
 </head>
 
 <body class="hold-transition login-page">
+
+    <!-- Modal -->
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotpasswordModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center mt-2">
+                        <span class="info-box-icon text-secondary"><i class="fas fa-2x fa-user-cog"></i></span>
+                        <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Please contact ICTD</div>
+                        <div class="mt-1 font-weight-normal text-secondary"><i class="fas fa-phone-alt"></i> (+6346) 481 – 1424</div>
+                        <div class="mt-1 font-weight-normal text-secondary"><i class="fas fa-envelope"></i> servicedesk.ict@lpu.edu.ph</div>
+                    </div><br>
+                    <div class="">
+                        <button type="button" class="btn btn-light btn-block" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Forgot Password Modal -->
+    <!-- /Modal -->
+
     <div class="login-box">
         <div class="login-logo mb-3 mx-auto d-block">
             <a role="button">
@@ -71,7 +94,7 @@
                 <div class="row">
                     <div class="col-8 pt-2">
                         <label for="remember">
-                            <a class="forgot_password" href="<?= base_url('forgotpassword') ?>">Forgot Password?</a>
+                            <a class="forgot_password" href="" data-toggle="modal" data-target="#forgotpasswordModal">Forgot Password?</a>
                         </label>
                     </div>
                     <!-- /.col -->
