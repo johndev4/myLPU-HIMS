@@ -30,7 +30,7 @@ class Auth extends BaseController
 				session()->set([
 					'uid' => $credentials['username'],
 					'pwd' => $credentials['password'],
-					'logged_in' => TRUE,
+					'logged_in' => FALSE,
 					'available' => TRUE
 				]);
 				$this->userAccountModel

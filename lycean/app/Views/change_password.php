@@ -71,31 +71,6 @@
             </div>
             <!-- /.card-body -->
         </div>
-
-        <!-- Modal -->
-        <!-- Message Modal -->
-        <div class="modal fade" id="messageModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
-                <div class="modal-content">
-                    <div class="modal-body p-4" align="center">
-                        <i class="fas fa-check-circle"></i>
-                        <label>
-                            <h5>Password changed successfully!</h5>
-                        </label><br>
-                        You will now be logged out.
-                        <br><br>
-                        <div align="center">
-                            <a href="<?= base_url('auth/logout') ?>">
-                                <button type="button" class="btn btn-danger swalDefaultSuccess" id="continueLogout">Continue</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Message Modal -->
-        <!-- /Modal -->
-
     </div>
 
     <!-- jQuery -->
@@ -124,11 +99,6 @@
                     icon: 'success',
                     title: '<?= session()->getFlashdata('success'); ?>'
                 });
-            <?php endif; ?>
-
-            // Bootstrap Modal for password changed status
-            <?php if (session()->getFlashdata('password_changed') == TRUE) : ?>
-                $("#messageModal").modal('show');
             <?php endif; ?>
         });
     </script>

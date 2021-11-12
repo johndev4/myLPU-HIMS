@@ -26,3 +26,232 @@ Main connection [MySQLi]: No connection could be made because the target machine
 #8 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+ERROR - 2021-11-12 22:25:55 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-11-12 22:25:55 --> Call to a member function getFirstRow() on bool
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#1 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('changepassword', 'before')
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2021-11-12 22:25:56 --> Table 'mylpuhims_db.lyceans_account' doesn't exist
+CRITICAL - 2021-11-12 22:25:56 --> Call to a member function getFirstRow() on bool
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#1 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(15): CodeIgniter\BaseModel->first()
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('changepassword', 'before')
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-12 22:31:23 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:31:24 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:31:25 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:31:26 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:31:49 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:31:55 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:31:56 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:31:56 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:23 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:24 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:24 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:25 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:35 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:35 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:45 --> syntax error, unexpected integer "1"
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Filters\\Log...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(162): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Filters\\Log...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('dashboard', 'before')
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-12 22:32:48 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:49 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:49 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:49 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:32:50 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:35:10 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:35:12 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:35:13 --> Undefined array key "last_name"
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 30)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 22:56:35 --> Unclosed '{' on line 27 does not match ')'
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Filters\\Log...')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(162): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Filters\\Log...')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('changepassword', 'before')
+#4 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-12 23:02:55 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(32): getDefaultPassword()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 23:02:56 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(32): getDefaultPassword()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 23:02:57 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(32): getDefaultPassword()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 23:02:57 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(32): getDefaultPassword()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 23:03:18 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Filters\LoggedIn.php(32): getDefaultPassword()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-12 23:21:23 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

@@ -435,7 +435,7 @@ class Useraccounts extends BaseController
 				$data2 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => hash('sha256', strtoupper(htmlspecialchars($_GET['last_name']))),
+					'password' => hash('sha256', str_replace(' ', '', strtoupper($_GET['last_name']))),
 					'locked' => 0
 				];
 
@@ -489,7 +489,7 @@ class Useraccounts extends BaseController
 				$data2 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => hash('sha256', strtoupper(htmlspecialchars($_GET['last_name']))),
+					'password' => hash('sha256', str_replace(' ', '', strtoupper($_GET['last_name']))),
 					'locked' => 0
 				];
 
@@ -680,7 +680,7 @@ class Useraccounts extends BaseController
 			$success = $this->lyceansAccountModel
 				->where('id_no', $id)
 				->set([
-					'password' => hash('sha256', str_replace(' ', '', strtoupper(htmlspecialchars($lyceans['last_name'])))),
+					'password' => hash('sha256', str_replace(' ', '', strtoupper($lyceans['last_name']))),
 					'locked' => 0
 				])
 				->update();
@@ -714,16 +714,16 @@ class Useraccounts extends BaseController
 	public function resetHealthPersonnelAccount($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			$lyceans = $this->healthPersonnelsModel->find($id);
+			$healthPersonnels = $this->healthPersonnelsModel->find($id);
 			$success = $this->healthPersonnelsAccountModel
 				->where('id_no', $id)
 				->set([
-					'password' => hash('sha256', strtoupper(htmlspecialchars($lyceans['last_name']))),
+					'password' => hash('sha256', str_replace(' ', '', strtoupper($healthPersonnels['last_name']))),
 					'locked' => 0
 				])
 				->update();
 
-			if ($success and $lyceans) {
+			if ($success and $healthPersonnels) {
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully resetted.');
 			} else {
