@@ -49,7 +49,7 @@
                         </div>
                         <div class="modal-body">
                             <form action="<?= base_url('useraccounts/addFacultyAccount') ?>" method="get" id="add_form">
-                                <input type="hidden" name="role" value="student">
+                                <input type="hidden" name="role" value="faculty">
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label for="add_idno" class="col-form-label required">ID No.</label>
