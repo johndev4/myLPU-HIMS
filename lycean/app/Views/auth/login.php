@@ -27,13 +27,14 @@
     <!-- Modal -->
     <!-- Forgot Password Modal -->
     <div class="modal fade" id="forgotpasswordModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="text-center mt-2">
                         <span class="info-box-icon text-secondary"><i class="fas fa-2x fa-user-cog"></i></span>
                         <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Please contact ICTD</div>
-                        <div class="mt-1 font-weight-normal text-secondary">(+6346) 481 – 1424</div>
+                        <div class="mt-1 font-weight-normal text-secondary"><i class="fas fa-phone-alt"></i> (+6346) 481 – 1424</div>
+                        <div class="mt-1 font-weight-normal text-secondary"><i class="fas fa-envelope"></i> servicedesk.ict@lpu.edu.ph</div>
                     </div><br>
                     <div class="">
                         <button type="button" class="btn btn-light btn-block" data-dismiss="modal">Ok</button>
@@ -109,14 +110,14 @@
                     <label>Instructions</label>
                     <ul class="text-justify text-sm">
                         <li>To sign-in, specify your username and password and click on the Login button.</li>
-                        <li>If you forgot your password, clik on the Forgot Password link for assistance.</li>
+                        <li>If you forgot your password, click on the Forgot Password link for assistance.</li>
                     </ul>
                 </div>
 
                 <div class="col-lg-12 mt-3">
                     <!-- <strong >Copyright &copy;<?= date('Y') ?></strong>
                         All rights reserved. -->
-                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('terms') ?>">Terms of Use</a></span>
+                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('terms') ?>">Terms & Conditions</a></span>
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('privacy') ?>">Privacy Policy</a></span>
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('help') ?>">Help</a></span>
                     <br>

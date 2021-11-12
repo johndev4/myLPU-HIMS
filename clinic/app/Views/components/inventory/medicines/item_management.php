@@ -332,8 +332,8 @@
                                 <th>Product ID</th>
                                 <th>Manufacturer</th>
                                 <th>Generic Name</th>
-                                <th>Dosage</th>
                                 <th>Drug Class</th>
+                                <th>Dosage</th>
                                 <th></th>
                             </tr>
                         </thead>
