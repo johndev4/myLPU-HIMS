@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 font-weight-bold text-black-50">Inventory</h1>
+                    <h1 class="m-0 font-weight-bold text-black-50">Item Management</h1>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="col-md-3 col-12 mb-3">
                     <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#addModal">
                         <span class="info-box-icon add-record text-black-50"><i class="fas fa-plus"></i></span>
-                        <span class="info-box-text text-black-50">Add Inventory</span>
+                        <span class="info-box-text text-black-50">Add</span>
                     </button>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Medicine</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Item</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -183,7 +183,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Medicine Details</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Item Details</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -322,7 +322,7 @@
             <!-- Table -->
             <div class="card">
                 <div class="card-header inventory-header">
-                    <h3 class="card-title">Medicine</h3>
+                    <h3 class="card-title">Items</h3>
                 </div>
 
                 <div class="card-body">

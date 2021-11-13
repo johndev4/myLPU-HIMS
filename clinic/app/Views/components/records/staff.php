@@ -238,7 +238,7 @@
                 <div class="col-12 mb-5">
                     <div class="card">
                         <div class="card-header record-header">
-                            <h3 class="card-title">Faculty Records</h3>
+                            <h3 class="card-title">Staff Records</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

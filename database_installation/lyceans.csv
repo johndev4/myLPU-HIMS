@@ -1,13 +1,7 @@
-2014-1-72634,Amanda,N,Menta,faculty,COECSA,12/10/1991,Female,NULL,NULL,NULL
-2015-2-06969,Ji-eun,N,Lee,staff,Accounting,16/05/1993,Female,NULL,NULL,NULL
-2015-2-09696,Momo,N,Hirai,staff,Student Affairs ,09/11/1996,Female,NULL,NULL,NULL
-2018-2-01509,Chris Jover,A,De Leon,student,COECSA,06/11/1999,Male,NULL,NULL,NULL
-2018-2-01763,Rick Vincent Jeffrey,P,Dela Cruz,student,COECSA,19/10/1999,Male,NULL,NULL,NULL
-2018-2-02181,John Rafael,P,Mistica,student,COECSA,04/07/1998,Male,NULL,NULL,NULL
-2018-2-03248,Jade Anne Kristel,J,Vale,student,COECSA,14/10/2000,Female,NULL,NULL,NULL
-2018-2-66874,Juan,S, Dela Cruz,faculty,CAS,19/10/1999,Male,NULL,NULL,NULL
-2018-2-32894,Lhea,A,Ignacio,faculty,CAS,16/05/1993,Female,NULL,NULL,NULL
-2018-2-89637,Carol,F,Winlods,faculty,CBA,06/11/1999,Female,NULL,NULL,NULL
-2018-2-68778,Steve,S,Lorcaw,staff,Accounting,09/11/1996,Male,NULL,NULL,NULL
-2015-2-09396,Dave,A,Dee,staff,Student Affairs ,04/07/1998,Male,NULL,NULL,NULL
-2014-1-72652,Marquez,E,Brownlay,staff,Accounting,12/10/1991,Male,NULL,NULL,NULL
+2014-1-72634,Amanda,N,Menta,faculty,COECSA,1991-10-12,Female,NULL,NULL,NULL
+2015-2-06969,Ji-eun,N,Lee,staff,Accounting,1993-05-16,Female,NULL,NULL,NULL
+2015-2-09696,Momo,N,Hirai,staff,Student Affairs ,1996-11-09,Female,NULL,NULL,NULL
+2018-2-01509,Chris Jover,A,De Leon,student,COECSA,1999-11-06,Male,NULL,NULL,NULL
+2018-2-01763,Rick Vincent Jeffrey,P,Dela Cruz,student,COECSA,1999-10-19,Male,NULL,NULL,NULL
+2018-2-02181,John Rafael,P,Mistica,student,COECSA,1998-07-04,Male,NULL,NULL,NULL
+2018-2-03248,Jade Anne Kristel,J,Vale,student,COECSA,2000-10-14,Female,NULL,NULL,NULL

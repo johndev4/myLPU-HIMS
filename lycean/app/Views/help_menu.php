@@ -35,7 +35,7 @@
     <nav class="navbar navbar-light py-3 fixed-top" style="background-color: #a62d38;">
         <div class="container">
             <a class="navbar-brand">
-                <img src="<?= base_url('assets/images/icon 2.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="">
+                <img src="<?= base_url('assets/images/navlogo.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="">
                 <span class="brand-text font-weight-bold text-light">myLPU Clinic</span>
             </a>
         </div>
@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-3">
                 <ul style="list-style: none; cursor: pointer;">
-                    <li><a href="<?= base_url('auth/logout') ?>"><i class="fas fa-caret-left"></i> Login</a></li>
+                    <li><a href="<?= base_url('auth/logout') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
 
                     <li><a id="link-1" style="color:rgb(0, 131, 253)">Change your Password</a></li>
                     <li><a id="link-2" style="color:rgb(0, 131, 253)">Request for Consultation</a></li>
