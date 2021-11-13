@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('login', 'Auth::index', ['filter' => 'notloggedin']);
+$routes->get('login', 'Auth::index');
 $routes->post('login', 'Auth::index');
 
 // $routes->get('dashboard', 'Dashboard::index', ['filter' => 'loggedin']);
