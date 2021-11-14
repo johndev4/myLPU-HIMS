@@ -115,12 +115,12 @@
                                 </a>
 
                                 <ul class="nav nav-treeview">
-                                    <!-- Inventory Management -->
+                                    <!-- Item Management -->
                                     <li id="invmngtNav" class="nav-item">
                                         <a href="<?= base_url('inventory/medicines/items') ?>" class="nav-link selector">
                                             <i class="fas fa-caret-right nav-icon text-light"></i>
                                             <p class="text-light">
-                                                Inventory Management
+                                                Item Management
                                             </p>
                                         </a>
                                     </li>

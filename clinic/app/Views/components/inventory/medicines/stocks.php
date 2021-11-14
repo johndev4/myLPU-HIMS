@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 font-weight-bold text-black-50">Stock Management</h1>
+                    <h1 class="m-0 font-weight-bold text-black-50">Stocks</h1>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title font-weight-bold text-secondary" id="">Stock Management</h5>
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Stock</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
