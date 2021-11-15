@@ -183,9 +183,9 @@
                     <!-- Switch -->
                     <div class="col-xl-6  mb-3 pt-1" align="right" style="border:1px solid none">
                         <div class="d-inline" style="border:1px solid none">
-                            <span class="d-inline" style="font-size: 12pt;"><a href="<?= base_url('consultations/history') ?>">History</a></span>
+                            <span class="d-inline" style="font-size: 12pt;"><a href="<?= site_url('consultations/history') ?>">History</a></span>
                             <span class="text-secondary d-inline">/</span>
-                            <span class="d-inline" style="font-size: 12pt;"><a href="<?= base_url('consultations/report') ?>">Report</a></span>
+                            <span class="d-inline" style="font-size: 12pt;"><a href="<?= site_url('consultations/report') ?>">Report</a></span>
                             <span class="text-secondary mr-2 ml-2 d-inline">|</span>
                             <label class="text-secondary">Available</label>
                         </div>
@@ -227,7 +227,7 @@
         // Fetch All New Request Consultations
         var requestCount;
         $.ajax({
-            url: '<?= base_url('consultations/fetchAllRequestConsultations') ?>',
+            url: '<?= site_url('consultations/fetchAllRequestConsultations') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -237,7 +237,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultations/fetchAllRequestConsultations') ?>',
+                url: '<?= site_url('consultations/fetchAllRequestConsultations') ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -251,7 +251,7 @@
         // Fetch All Scheduled Consultations
         var scheduledCount;
         $.ajax({
-            url: '<?= base_url('consultations/fetchAllScheduledConsultations') ?>',
+            url: '<?= site_url('consultations/fetchAllScheduledConsultations') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -261,7 +261,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultations/fetchAllScheduledConsultations') ?>',
+                url: '<?= site_url('consultations/fetchAllScheduledConsultations') ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -344,12 +344,12 @@
         $('#available').on('input', function() {
             if ($('#available').prop('checked') == true) {
                 $.ajax({
-                    url: '<?= base_url('consultations/setOnlineStatusState') ?>/' + true,
+                    url: '<?= site_url('consultations/setOnlineStatusState') ?>/' + true,
                     type: 'get'
                 });
             } else {
                 $.ajax({
-                    url: '<?= base_url('consultations/setOnlineStatusState') ?>/' + false,
+                    url: '<?= site_url('consultations/setOnlineStatusState') ?>/' + false,
                     type: 'get'
                 });
             }
@@ -367,16 +367,16 @@
 
     // On accept new request, set action value
     function accept(id) {
-        $('#accept_form').prop('action', "<?= base_url('consultations/acceptRequestById') ?>/" + id);
+        $('#accept_form').prop('action', "<?= site_url('consultations/acceptRequestById') ?>/" + id);
     }
     // On reject new request, set action value
     function reject(id) {
-        $('#reject_form').prop('action', "<?= base_url('consultations/rejectRequestById') ?>/" + id);
+        $('#reject_form').prop('action', "<?= site_url('consultations/rejectRequestById') ?>/" + id);
     }
     // On done, set action value
     function done(id) {
-        $('#done_form').prop('action', "<?= base_url('consultations/sendMedicalFilesById') ?>/" + id);
-        $('#done_form_prompt').prop('action', "<?= base_url('consultations/setConsultationToDone') ?>/" + id);
+        $('#done_form').prop('action', "<?= site_url('consultations/sendMedicalFilesById') ?>/" + id);
+        $('#done_form_prompt').prop('action', "<?= site_url('consultations/setConsultationToDone') ?>/" + id);
     }
 
     <?php if (!empty(session()->get('validation_error'))) : ?>

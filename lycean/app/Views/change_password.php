@@ -27,7 +27,7 @@
         <div class="card card-outline shadow">
             <div class="card-body box-profile">
 
-                <form action="<?= base_url('changepassword/updatePassword') ?>" method="post">
+                <form action="<?= site_url('changepassword/updatePassword') ?>" method="post">
                     <span class="p-2 d-block mb-2" style="background-color:rgb(223, 223, 223); border-radius:4px;">
                         You are required to change the default password.</span>
 

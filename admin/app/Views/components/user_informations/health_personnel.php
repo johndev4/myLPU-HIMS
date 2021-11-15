@@ -129,7 +129,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('userinformations/fetchAllHealthPersonnel') ?>',
+                url: '<?= site_url('userinformations/fetchAllHealthPersonnel') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -162,14 +162,14 @@
         // Set Delete All Modal Form
         $('#deleteall_form').attr(
             'action',
-            '<?= base_url('userinformations/deleteAllHealthPersonnelInformations') ?>'
+            '<?= site_url('userinformations/deleteAllHealthPersonnelInformations') ?>'
         );
     });
 
     function retrieveData(id) {
         $('#delete_form').attr(
             'action',
-            '<?= base_url('userinformations/deleteHealthPersonnelInformation') ?>/' + id
+            '<?= site_url('userinformations/deleteHealthPersonnelInformation') ?>/' + id
         );
     }
 

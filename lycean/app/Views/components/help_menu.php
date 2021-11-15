@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12 col-lg-3">
             <ul style="list-style: none; cursor: pointer;">
-                <li><a href="<?= base_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
+                <li><a href="<?= site_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
 
                 <li><a id="link-1" style="color:rgb(0, 131, 253)">Change your Password</a></li>
                 <li><a id="link-2" style="color:rgb(0, 131, 253)">Request for Consultation</a></li>

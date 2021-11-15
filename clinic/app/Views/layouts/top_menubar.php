@@ -21,7 +21,7 @@
                 </div>
 
                 <span class="dropdown-header">
-                    <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
+                    <a href="<?= site_url('notifications/clearAll') ?>">Clear all</a>
                 </span>
             </div>
         </li>
@@ -41,7 +41,7 @@
         // Fetch All Notifications
         var requestCount;
         $.ajax({
-            url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
+            url: '<?= site_url('notifications/fetchAllNotifications/' . $idNo) ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -53,7 +53,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
+                url: '<?= site_url('notifications/fetchAllNotifications/' . $idNo) ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -89,7 +89,7 @@
         // Run or stop online state
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultations/runOnlineState') ?>',
+                url: '<?= site_url('consultations/runOnlineState') ?>',
                 type: 'get'
             });
         }, 500);

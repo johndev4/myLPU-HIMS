@@ -40,7 +40,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('inventory/addEquipment') ?>" method="get" id="add_form">
+                            <form action="<?= site_url('inventory/addEquipment') ?>" method="get" id="add_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
@@ -252,7 +252,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('inventory/fetchAllEquipments') ?>',
+                url: '<?= site_url('inventory/fetchAllEquipments') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -331,7 +331,7 @@
             $('#' + obj['modalType'] + '_qty').val(data['qty']);
         } else {
             $.ajax({
-                url: '<?= base_url('inventory/fetchEquipmentById') ?>/' + id,
+                url: '<?= site_url('inventory/fetchEquipmentById') ?>/' + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -346,11 +346,11 @@
 
         $('#modify_form').attr(
             'action',
-            '<?= base_url('inventory/modifyEquipment') ?>/' + id
+            '<?= site_url('inventory/modifyEquipment') ?>/' + id
         );
         $('#delete_form').attr(
             'action',
-            '<?= base_url('inventory/deleteEquipment') ?>/' + id
+            '<?= site_url('inventory/deleteEquipment') ?>/' + id
         );
     }
 </script>

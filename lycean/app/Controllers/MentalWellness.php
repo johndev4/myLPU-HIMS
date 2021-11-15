@@ -115,7 +115,7 @@ class Mentalwellness extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                     </div>
                 </div>
 
@@ -153,7 +153,7 @@ class Mentalwellness extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                     </div>
                 </div>
 
@@ -190,7 +190,7 @@ class Mentalwellness extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                 </div>
             </div>
 
@@ -230,7 +230,7 @@ class Mentalwellness extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . base_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
                     </div>
                 </div>
 
@@ -293,7 +293,7 @@ class Mentalwellness extends BaseController
             'consultation_no' => $data['consultation_no'],
             'info' => 'You have new consultation requests',
             'status' => 'unread',
-            'link' => str_replace('lycean', 'clinic', base_url('consultations'))
+            'link' => str_replace('lycean', 'clinic', site_url('consultations'))
         ]);
     }
 

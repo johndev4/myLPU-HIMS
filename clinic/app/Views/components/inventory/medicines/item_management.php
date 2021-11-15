@@ -40,7 +40,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('inventory/addMedicine') ?>" method="get" id="add_form">
+                            <form action="<?= site_url('inventory/addMedicine') ?>" method="get" id="add_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
@@ -363,7 +363,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('inventory/fetchAllMedicines') ?>',
+                url: '<?= site_url('inventory/fetchAllMedicines') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -448,7 +448,7 @@
             $('#' + obj['modalType'] + '_dosage').val(data['dosage']);
         } else {
             $.ajax({
-                url: '<?= base_url('inventory/fetchMedicineById') ?>/' + id,
+                url: '<?= site_url('inventory/fetchMedicineById') ?>/' + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -465,11 +465,11 @@
 
         $('#modify_form').attr(
             'action',
-            '<?= base_url('inventory/modifyMedicine') ?>/' + id
+            '<?= site_url('inventory/modifyMedicine') ?>/' + id
         );
         $('#delete_form').attr(
             'action',
-            '<?= base_url('inventory/deleteMedicine') ?>/' + id
+            '<?= site_url('inventory/deleteMedicine') ?>/' + id
         );
     }
 </script>

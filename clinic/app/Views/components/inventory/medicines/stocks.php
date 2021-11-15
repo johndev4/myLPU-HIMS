@@ -40,7 +40,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('inventory/stockOut') ?>" method="get" id="stockout_form">
+                            <form action="<?= site_url('inventory/stockOut') ?>" method="get" id="stockout_form">
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label for="out_stockout" class="col-form-label">Stock Out</label>
@@ -234,7 +234,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('inventory/fetchStockManagementByBatch') ?>',
+                url: '<?= site_url('inventory/fetchStockManagementByBatch') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -252,7 +252,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('inventory/fetchStockManagement') ?>',
+                url: '<?= site_url('inventory/fetchStockManagement') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -272,7 +272,7 @@
 
         // Fetch all medicine product name using ajax
         $.ajax({
-            url: '<?= base_url('inventory/fetchAllMedicineProductName') ?>',
+            url: '<?= site_url('inventory/fetchAllMedicineProductName') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -283,7 +283,7 @@
         // Fetch batch by product id using ajax
         $('#out_batchid').prop('disabled', true);
         $.ajax({
-            url: '<?= base_url('inventory/fetchBatchByProductID') ?>/' + $('#out_productname').val(),
+            url: '<?= site_url('inventory/fetchBatchByProductID') ?>/' + $('#out_productname').val(),
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -297,7 +297,7 @@
                 $('#out_batchid').prop('disabled', false);
             }
             $.ajax({
-                url: '<?= base_url('inventory/fetchBatchByProductID') ?>/' + $('#out_productname').val(),
+                url: '<?= site_url('inventory/fetchBatchByProductID') ?>/' + $('#out_productname').val(),
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {

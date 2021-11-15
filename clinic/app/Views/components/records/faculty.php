@@ -147,7 +147,7 @@
                                             <!-- Table -->
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <form action="<?= base_url('records/uploadFacultyRecord') ?>" method="post" enctype="multipart/form-data">
+                                                    <form action="<?= site_url('records/uploadFacultyRecord') ?>" method="post" enctype="multipart/form-data">
                                                         <input type="hidden" name="id_no">
                                                         <div class="row">
                                                             <div class="col-md-12" style="border:1px solid none;">
@@ -293,7 +293,7 @@
             buttons: ["copy", "excel", "pdf", "print"],
             ajax: {
                 type: 'post',
-                url: '<?= base_url('records/fetchAllFaculty') ?>',
+                url: '<?= site_url('records/fetchAllFaculty') ?>',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
                 },
@@ -349,7 +349,7 @@
     // Retrieve data with id
     function retrieveData(id) {
         $.ajax({
-            url: '<?= base_url('records/fetchLyceanById') ?>/' + id,
+            url: '<?= site_url('records/fetchLyceanById') ?>/' + id,
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -367,7 +367,7 @@
         });
 
         $.ajax({
-            url: '<?= base_url('records/fetchAllRecordsById') ?>/' + id,
+            url: '<?= site_url('records/fetchAllRecordsById') ?>/' + id,
             type: 'get',
             dataType: 'html',
             success: function(response) {
@@ -387,7 +387,7 @@
 
     // Set action form of deleteModalForm base on id
     function setDeleteActionForm(id) {
-        $('#deleteModalForm').prop('action', '<?= base_url('records/deleteFacultyRecord') ?>/' + id);
+        $('#deleteModalForm').prop('action', '<?= site_url('records/deleteFacultyRecord') ?>/' + id);
     }
 </script>
 

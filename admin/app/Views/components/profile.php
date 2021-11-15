@@ -32,7 +32,7 @@
                             <h3 class="profile-username text-center"><?= $username ?></h3>
                             <p class="text-muted text-center">Username</p>
 
-                            <form action="<?= base_url('profile/updateUsername') ?>" method="post">
+                            <form action="<?= site_url('profile/updateUsername') ?>" method="post">
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                                 <input type="text" class="form-control" id="p_username" placeholder="Username" name="username">
                                 <!-- Validation Error -->
@@ -52,7 +52,7 @@
                                     <b>Change Username</b></button>
                             </form>
 
-                            <form action="<?= base_url('profile/updatePassword') ?>" method="post">
+                            <form action="<?= site_url('profile/updatePassword') ?>" method="post">
                                 <span class="p-2 d-block mb-2" style="background-color:rgb(223, 223, 223); border-radius:4px;">
                                 <b>Note:</b> You will be logged out after changing your password</span>
 
@@ -144,7 +144,7 @@
                             You will now be logged out.
                             <br><br>
                             <div align="center">
-                                <a href="<?= base_url('auth/logout') ?>">
+                                <a href="<?= site_url('auth/logout') ?>">
                                     <button type="button" class="btn btn-danger swalDefaultSuccess" id="continueLogout">Continue</button>
                                 </a>
                             </div>

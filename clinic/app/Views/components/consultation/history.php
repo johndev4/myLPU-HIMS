@@ -8,7 +8,7 @@
             <div class="row mb-2">
                 <div class="col-md-12">
                     <h1 class="m-0 font-weight-normal text-black-50 d-inline">Consultation History |</h1>
-                    <span class="d-inline"><a href="<?= base_url('consultations') ?>">Back</a></span>
+                    <span class="d-inline"><a href="<?= site_url('consultations') ?>">Back</a></span>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                             Consultation History
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('consultations/clearConsultationHistory') ?>" method="get" id="">
+                            <form action="<?= site_url('consultations/clearConsultationHistory') ?>" method="get" id="">
                                 <div class="row">
                                     <div class="col-12 form-group mb-n1">
                                         <span>Time range:</span>
@@ -245,7 +245,7 @@
             searching: true,
             ajax: {
                 type: 'get',
-                url: '<?= base_url('consultations/fetchAllDoneConsultations') ?>',
+                url: '<?= site_url('consultations/fetchAllDoneConsultations') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -263,7 +263,7 @@
             searching: true,
             ajax: {
                 type: 'get',
-                url: '<?= base_url('consultations/fetchAllRejectedConsultations') ?>',
+                url: '<?= site_url('consultations/fetchAllRejectedConsultations') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -347,7 +347,7 @@
             $('#' + obj['modalType'] + '_todaterange').val(data['to_date_range']);
         } else {
             $.ajax({
-                url: '<?= base_url('consultations/details') ?>/' + id,
+                url: '<?= site_url('consultations/details') ?>/' + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {

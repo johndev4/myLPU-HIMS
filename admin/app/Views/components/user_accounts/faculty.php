@@ -48,7 +48,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('useraccounts/addFacultyAccount') ?>" method="get" id="add_form">
+                            <form action="<?= site_url('useraccounts/addFacultyAccount') ?>" method="get" id="add_form">
                                 <input type="hidden" name="role" value="faculty">
                                 <div class="row">
                                     <div class="col-12 form-group">
@@ -622,7 +622,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('useraccounts/fetchAllFaculty') ?>',
+                url: '<?= site_url('useraccounts/fetchAllFaculty') ?>',
                 contentType: ' application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -698,7 +698,7 @@
         // On ID No. Input
         $('#add_idno').on('input', function() {
             $.ajax({
-                url: '<?= base_url('useraccounts/fetchLyceanInfoById') ?>/' + $('#add_idno').val(),
+                url: '<?= site_url('useraccounts/fetchLyceanInfoById') ?>/' + $('#add_idno').val(),
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -718,7 +718,7 @@
         // Set Delete All Modal Form
         $('#deleteall_form').attr(
             'action',
-            '<?= base_url('useraccounts/deleteAllFacultyAccounts') ?>'
+            '<?= site_url('useraccounts/deleteAllFacultyAccounts') ?>'
         );
     });
 
@@ -743,7 +743,7 @@
             $('#' + obj['modalType'] + '_department').val(data['department']);
         } else {
             $.ajax({
-                url: '<?= base_url('useraccounts/fetchLyceanById') ?>/' + id,
+                url: '<?= site_url('useraccounts/fetchLyceanById') ?>/' + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -766,15 +766,15 @@
 
         $('#modify_form').attr(
             'action',
-            '<?= base_url('useraccounts/modifyFacultyAccount') ?>/' + id
+            '<?= site_url('useraccounts/modifyFacultyAccount') ?>/' + id
         );
         $('#delete_form').attr(
             'action',
-            '<?= base_url('useraccounts/deleteFacultyAccount') ?>/' + id
+            '<?= site_url('useraccounts/deleteFacultyAccount') ?>/' + id
         );
         $('#reset_form').attr(
             'action',
-            '<?= base_url('useraccounts/resetFacultyAccount') ?>/' + id
+            '<?= site_url('useraccounts/resetFacultyAccount') ?>/' + id
         );
     }
 </script>

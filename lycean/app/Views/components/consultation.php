@@ -9,7 +9,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-12 default-nav">
-                        <a href="<?= base_url('dashboard') ?>">
+                        <a href="<?= site_url('dashboard') ?>">
                             <div class="card shadow card2" style="max-width:32rem">
                                 <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-12 pt-2 mt-n2 pl-4" style="border:1px solid none">
@@ -24,7 +24,7 @@
 
                 <div class="row border-outside">
                     <div class="col-12 default-nav">
-                        <a href="<?= base_url('consultation') ?>">
+                        <a href="<?= site_url('consultation') ?>">
                             <div class="card shadow card2 active" style="max-width:32rem; border:3px solid none">
                                 <div class="row p-3 default-nav">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
@@ -41,7 +41,7 @@
 
                 <div class="row">
                     <div class="col-12 default-nav">
-                        <a href="<?= base_url('mentalwellness') ?>">
+                        <a href="<?= site_url('mentalwellness') ?>">
                             <div class="card shadow card2" style="max-width:32rem; border:3px solid none">
                                 <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
@@ -62,7 +62,7 @@
             <div class="col-md-6 hide">
                 <div class="row">
                     <div class="col-4 text-center">
-                        <a href="<?= base_url('dashboard') ?>">
+                        <a href="<?= site_url('dashboard') ?>">
                             <div class="card shadow card2 py-3" style="max-width:32rem">
                                 <i class="fas fa-chevron-left fa-2x" style="color: #999999"></i>
                             </div>
@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="col-4 text-center">
-                        <a href="<?= base_url('consultation') ?>">
+                        <a href="<?= site_url('consultation') ?>">
                             <div class="card shadow card2 py-3 active">
                                 <i class="fas fa-comment-medical fa-2x" style="color: #7687CD"></i>
                             </div>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="col-4 text-center">
-                        <a href="<?= base_url('mentalwellness') ?>">
+                        <a href="<?= site_url('mentalwellness') ?>">
                             <div class="card shadow card2 py-3">
                                 <i class="fas fa-brain fa-2x" style="color: #CC6699"></i>
                             </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="form-group">
                             <!-- <label for="FormControlTextarea" class="font-weight-normal mb-2" style="font-size: 18pt; color: rgb(116, 116, 116);">Tell the doctor your health concern.</label> -->
-                            <form action="<?= base_url('consultation/sendConsultation') ?>" method="post" id="">
+                            <form action="<?= site_url('consultation/sendConsultation') ?>" method="post" id="">
 
                                 <div class="form-group mb-4" style="border:1px solid none">
                                     <label for="select_doctor" class="col-form-label required text-secondary">Doctor</label>
@@ -223,7 +223,7 @@
         // Fetch Active Consultation
         var activeCount;
         $.ajax({
-            url: '<?= base_url('consultation/fetchActiveConsultation') ?>',
+            url: '<?= site_url('consultation/fetchActiveConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -241,7 +241,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultation/fetchActiveConsultation') ?>',
+                url: '<?= site_url('consultation/fetchActiveConsultation') ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -263,7 +263,7 @@
         // Fetch Pending Consultation
         var pendingCount;
         $.ajax({
-            url: '<?= base_url('consultation/fetchPendingConsultation') ?>',
+            url: '<?= site_url('consultation/fetchPendingConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -281,7 +281,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultation/fetchPendingConsultation') ?>',
+                url: '<?= site_url('consultation/fetchPendingConsultation') ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -303,7 +303,7 @@
         // Fetch Rejected Consultation
         var rejectCount;
         $.ajax({
-            url: '<?= base_url('consultation/fetchRejectedConsultation') ?>',
+            url: '<?= site_url('consultation/fetchRejectedConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -313,7 +313,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultation/fetchRejectedConsultation') ?>',
+                url: '<?= site_url('consultation/fetchRejectedConsultation') ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -327,7 +327,7 @@
         // Fetch Done Consultation
         var doneCount;
         $.ajax({
-            url: '<?= base_url('consultation/fetchDoneConsultation') ?>',
+            url: '<?= site_url('consultation/fetchDoneConsultation') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -337,7 +337,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultation/fetchDoneConsultation') ?>',
+                url: '<?= site_url('consultation/fetchDoneConsultation') ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -352,7 +352,7 @@
         // Fetch all online doctors
         var onlineCount;
         $.ajax({
-            url: '<?= base_url('consultation/fetchOnlineHealthPersonnels') ?>',
+            url: '<?= site_url('consultation/fetchOnlineHealthPersonnels') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -362,7 +362,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('consultation/fetchOnlineHealthPersonnels') ?>',
+                url: '<?= site_url('consultation/fetchOnlineHealthPersonnels') ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
