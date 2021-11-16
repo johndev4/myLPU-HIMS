@@ -148,12 +148,12 @@
 
                             </li>
 
-                            <!-- Equipments -->
+                            <!-- Equipment -->
                             <li id="equipmentNav" class="nav-item">
                                 <a href="<?= base_url('inventory/equipments') ?>" class="nav-link selector">
                                     <i class="far fa-circle nav-icon text-light"></i>
                                     <p class="text-light">
-                                        Equipments
+                                        Equipment
                                     </p>
                                 </a>
                             </li>

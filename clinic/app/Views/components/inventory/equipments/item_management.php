@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 font-weight-bold text-black-50">Equipments</h1>
+                    <h1 class="m-0 font-weight-bold text-black-50">Equipment</h1>
                 </div>
             </div>
         </div>
@@ -213,7 +213,7 @@
             <!-- Table -->
             <div class="card">
                 <div class="card-header inventory-header">
-                    <h3 class="card-title">Equipments</h3>
+                    <h3 class="card-title">Equipment</h3>
                 </div>
 
                 <div class="card-body">

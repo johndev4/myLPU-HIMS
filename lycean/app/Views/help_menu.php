@@ -69,6 +69,13 @@
                     <br><br><br>
 
                     <li>
+                        <p>Click Change Password in the Profile Card.</p>
+                    </li>
+
+                    <img src="<?= base_url('assets/images/help_menu/0.png') ?>" alt="1" class="img-help shadow" width="500">
+                    <br><br><br>
+
+                    <li>
                         <p>Type your Current Password</p>
                     </li>
                     <li>
@@ -164,13 +171,10 @@
                 <ol>
                     <li>
                         <p>
-                            To view your medical files, go to Consultation/Mental Wellness module. Navigate to Consultation Tabs.
-                        </p>
+                            To view your medical files, go to Consultation/Mental Wellness module.</p>
                     </li>
                     <li>
-                        <p>
-                            Go to Done > View all > Medical Documents tab.
-                        </p>
+                        <p>Navigate to Consultation Tabs, Go to Done > View all > Medical Documents tab.</p>
                     </li>
 
                     <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="img-help shadow" width="500">

@@ -67,6 +67,7 @@ div.card-footer.py-3.profile-footer{
     }
     p.text-muted.d-block.mt-n1{
         font-size: 12pt !important;
+        margin-bottom: -20px;
     }
     p.text-muted.text-left{
         font-size: 12pt !important;
@@ -91,3 +92,11 @@ div.card-footer.py-3.profile-footer{
     }
 }
 
+/* Back Button */
+i.fas.fa-chevron-circle-left.fa-2x.py-2.text-secondary:hover{
+    font-size: 26pt !important;
+}
+
+i.fas.fa-chevron-circle-left.fa-2x.py-2.text-secondary{
+    position: absolute !important;
+}

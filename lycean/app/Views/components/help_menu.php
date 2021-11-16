@@ -19,23 +19,30 @@
             <h5 class="text-bold" id="section-1">Change your password</h5>
             <ol class="text-justify">
                 <li>
-                    <p>Click the user icon on the top navigation bar and select Profile in the dropdown menu</p>
+                    <p>Click the user icon on the top navigation bar and select Profile in the dropdown menu.</p>
                 </li>
 
                 <img src="<?= base_url('assets/images/help_menu/1.png') ?>" alt="1" class="img-help-drpdwn shadow" width="300">
                 <br><br><br>
 
                 <li>
-                    <p>Type your Current Password</p>
+                    <p>Click Change Password in the Profile Card.</p>
+                </li>
+
+                <img src="<?= base_url('assets/images/help_menu/0.png') ?>" alt="1" class="img-help shadow" width="500">
+                <br><br><br>
+
+                <li>
+                    <p>Type your Current Password.</p>
                 </li>
                 <li>
                     <p>Type your New Password (Must have 8 or more characters with a mix of letters, numbers & symbols and must be different from the current one).</p>
                 </li>
                 <li>
-                    <p>Confirm your password</p>
+                    <p>Confirm your password.</p>
                 </li>
                 <li>
-                    <p>Select Change Password</p>
+                    <p>Select Change Password.</p>
                 </li>
 
                 <img src="<?= base_url('assets/images/help_menu/2.png') ?>" alt="1" class="img-help shadow" width="500">
@@ -53,16 +60,13 @@
                 <img src="<?= base_url('assets/images/help_menu/3.png') ?>" alt="1" class="img-help shadow" width="500">
                 <br><br><br>
                 <li>
-                    <p>Once inside either of the modules, select from one of the available doctor/guidance counselors in the dropdown menu.
-                    </p>
+                    <p>Once inside either of the modules, select from one of the available doctor/guidance counselors in the dropdown menu.</p>
                 </li>
                 <li>
-                    <p>Write your concern on the text box provided
-                    </p>
+                    <p>Write your concern on the text box provided.</p>
                 </li>
                 <li>
-                    <p>Select Send Request Now
-                    </p>
+                    <p>Select Send Request Now.</p>
                 </li>
 
                 <img src="<?= base_url('assets/images/help_menu/4.png') ?>" alt="1" class="img-help shadow" width="500">
@@ -121,13 +125,10 @@
             <ol>
                 <li>
                     <p>
-                        To view your medical files, go to Consultation/Mental Wellness module. Navigate to Consultation Tabs.
-                    </p>
+                        To view your medical files, go to Consultation/Mental Wellness module.</p>
                 </li>
                 <li>
-                    <p>
-                        Go to Done > View all > Medical Documents tab.
-                    </p>
+                    <p>Navigate to Consultation Tabs, Go to Done > View all > Medical Documents tab.</p>
                 </li>
 
                 <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="img-help shadow" width="500">
