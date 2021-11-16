@@ -68,7 +68,7 @@
                         <?php endif ?>
                     </span>
 
-                    <form action="<?= base_url('login') ?>" method="post" accept-charset="utf-8">
+                    <form action="<?= site_url('login') ?>" method="post" accept-charset="utf-8">
                         <?= csrf_field() ?>
                         <div class="input-group mb-3 mt-3">
                             <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off" style="border-radius: 10px 0px 0px 10px;" required="required">
@@ -117,9 +117,9 @@
                 <div class="col-lg-12 mt-3">
                     <!-- <strong >Copyright &copy;<?= date('Y') ?></strong>
                         All rights reserved. -->
-                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('terms') ?>">Terms & Conditions</a></span>
-                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('privacy') ?>">Privacy Policy</a></span>
-                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('help') ?>">Help</a></span>
+                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('terms') ?>">Terms & Conditions</a></span>
+                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('privacy') ?>">Privacy Policy</a></span>
+                    <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help') ?>">Help</a></span>
                     <br>
                 </div>
             </div>

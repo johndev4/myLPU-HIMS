@@ -9,12 +9,12 @@ class AdministratorsModel extends Model
 	protected $DBGroup              = 'default';
 	protected $table                = 'administrators';
 	protected $primaryKey           = 'admin_id';
-	protected $useAutoIncrement     = true;
+	protected $useAutoIncrement     = false;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['username', 'password'];
+	protected $allowedFields        = ['username', 'password', 'locked'];
 
 	// Dates
 	protected $useTimestamps        = false;

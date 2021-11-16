@@ -16,7 +16,7 @@
                 <i class="fas fa-user-circle fa-2x nav-icon text-light"></i>
             </div>
             <div class="info">
-                <a href="<?= base_url('profile') ?>">
+                <a href="<?= site_url('profile') ?>">
                     <span class="text-light"><?= $firstname ?></span>
                 </a>
             </div>
@@ -31,7 +31,7 @@
 
                 <!-- Dashboard -->
                 <li id="dashboardNav" class="nav-item">
-                    <a href="<?= base_url('dashboard') ?>" class="nav-link selector">
+                    <a href="<?= site_url('dashboard') ?>" class="nav-link selector">
                         <i class="fas fa-tachometer-alt nav-icon text-light"></i>
                         <p class="text-light">
                             Dashboard
@@ -52,7 +52,7 @@
                         <ul class="nav nav-treeview">
                             <!-- Student -->
                             <li id="studentRecordNav" class="nav-item">
-                                <a href="<?= base_url('records/student') ?>" class="nav-link selector">
+                                <a href="<?= site_url('records/student') ?>" class="nav-link selector">
                                     <i class="far fa-circle nav-icon text-light"></i>
                                     <p class="text-light">
                                         Student
@@ -62,7 +62,7 @@
 
                             <!-- Faculty -->
                             <li id="facultyRecordNav" class="nav-item">
-                                <a href="<?php echo base_url('records/faculty') ?>" class="nav-link selector">
+                                <a href="<?php echo site_url('records/faculty') ?>" class="nav-link selector">
                                     <i class="far fa-circle nav-icon text-light"></i>
                                     <p class="text-light">
                                         Faculty
@@ -72,7 +72,7 @@
 
                             <!-- Staff -->
                             <li id="staffRecordNav" class="nav-item">
-                                <a href="<?php echo base_url('records/staff') ?>" class="nav-link selector">
+                                <a href="<?php echo site_url('records/staff') ?>" class="nav-link selector">
                                     <i class="far fa-circle nav-icon text-light"></i>
                                     <p class="text-light">
                                         Staff
@@ -85,7 +85,7 @@
 
                 <!-- Consultation -->
                 <li id="consultationNav" class="nav-item">
-                    <a href="<?= base_url('consultations') ?>" class="nav-link selector">
+                    <a href="<?= site_url('consultations') ?>" class="nav-link selector">
                         <i class="fas fa-comment-medical nav-icon text-light"></i>
                         <p class="text-light">
                             Consultations
@@ -117,7 +117,7 @@
                                 <ul class="nav nav-treeview">
                                     <!-- Item Management -->
                                     <li id="invmngtNav" class="nav-item">
-                                        <a href="<?= base_url('inventory/medicines/items') ?>" class="nav-link selector">
+                                        <a href="<?= site_url('inventory/medicines/items') ?>" class="nav-link selector">
                                             <i class="fas fa-caret-right nav-icon text-light"></i>
                                             <p class="text-light">
                                                 Item Management
@@ -127,7 +127,7 @@
 
                                     <!-- Batch Manaegement -->
                                     <li id="batchNav" class="nav-item">
-                                        <a href="<?= base_url('inventory/medicines/batches') ?>" class="nav-link selector">
+                                        <a href="<?= site_url('inventory/medicines/batches') ?>" class="nav-link selector">
                                             <i class="fas fa-caret-right nav-icon text-light"></i>
                                             <p class="text-light">
                                                 Batch Management
@@ -137,7 +137,7 @@
 
                                     <!-- Stocks Management -->
                                     <li id="stocksNav" class="nav-item">
-                                        <a href="<?= base_url('inventory/medicines/stocks') ?>" class="nav-link selector">
+                                        <a href="<?= site_url('inventory/medicines/stocks') ?>" class="nav-link selector">
                                             <i class="fas fa-caret-right nav-icon text-light"></i>
                                             <p class="text-light">
                                                 Stocks
@@ -150,7 +150,7 @@
 
                             <!-- Equipment -->
                             <li id="equipmentNav" class="nav-item">
-                                <a href="<?= base_url('inventory/equipments') ?>" class="nav-link selector">
+                                <a href="<?= site_url('inventory/equipments') ?>" class="nav-link selector">
                                     <i class="far fa-circle nav-icon text-light"></i>
                                     <p class="text-light">
                                         Equipment
@@ -163,7 +163,7 @@
 
                 <!-- Help Menu -->
                 <li id="helpmenuNav" class="nav-item">
-                    <a href="<?= base_url('help') ?>" class="nav-link selector">
+                    <a href="<?= site_url('help') ?>" class="nav-link selector">
                         <i class="fas fa-info-circle nav-icon text-light"></i>
                         <p class="text-light">
                             Help Menu
@@ -173,7 +173,7 @@
 
                 <!-- Logout -->
                 <li id="" class="nav-item selector logout mt-5 mb-5">
-                    <a href="<?= base_url('auth/logout') ?>" class="nav-link">
+                    <a href="<?= site_url('auth/logout') ?>" class="nav-link">
                         <i class="fas fa-sign-out-alt nav-icon text-light"></i>
                         <p class="text-light">
                             Logout

@@ -245,7 +245,7 @@ class Records extends BaseController
 
 			$data = "<tr>
 			<td>" . $key + 1 . "</td>
-			<td><a href=\"" . base_url($value['file_path']) . "\" target=\"_blank\">" . $fileName . "</a></td>
+			<td><a href=\"" . site_url($value['file_path']) . "\" target=\"_blank\">" . $fileName . "</a></td>
 			<td>" . $value['created_at'] . "</td>
 			<td><button type=\"button\" class=\"btn text-danger\" onclick=\"setDeleteActionForm(" . $value['record_id'] . ")\" data-toggle=\"modal\" data-target=\"#tabledeleteModal\">Delete</button></td>
 			<tr>";

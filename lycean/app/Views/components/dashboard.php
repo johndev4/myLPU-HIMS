@@ -5,7 +5,7 @@
 <!-- <body> -->
 <div class="container">
 
-    <div class=" mb-5" style="margin-top: 70px;">
+    <div class="mb-5 greet-container" style="margin-top: 70px;">
         <h1 class="d-inline greeting">Good Day </h1>
         <span class="d-inline font-weight-bold" style="font-size: 30pt;"> <?= $firstname ?> </span>
         <h2 class="d-inline exclamation">!</h2>
@@ -15,7 +15,7 @@
     <div class="row mb-5">
         <!-- Consult -->
         <div class="col-md-6 d-flex justify-content-center" style="border:1px solid none">
-            <a href="<?= base_url('consultation') ?>" class="text-dark">
+            <a href="<?= site_url('consultation') ?>" class="text-dark">
                 <div class="card shadow card1" style="max-width:32rem">
 
                     <div class="row mt-5" style="border:1px solid none">
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <p class="card-text">Feeling unwell? schedule a consultation to one of our doctor, and wait for the schedule to be sent to you. </p>
                     </div>
-                    <a href="<?= base_url('consultation') ?>" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
+                    <a href="<?= site_url('consultation') ?>" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                 </div>
             </a>
         </div>
@@ -41,7 +41,7 @@
 
         <!-- Mental Wellnes -->
         <div class="col-md-6 d-flex justify-content-center" style="border:1px solid none">
-            <a href="<?= base_url('mentalwellness') ?>" class="text-dark">
+            <a href="<?= site_url('mentalwellness') ?>" class="text-dark">
                 <div class="card shadow card1" style="max-width:32rem">
 
                     <div class="row mt-5" style="border:1px solid none">
@@ -62,7 +62,7 @@
                             and wait for the schedule to be sent to you.
                         </p>
                     </div>
-                    <a href="<?= base_url('mentalwellness') ?>" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
+                    <a href="<?= site_url('mentalwellness') ?>" class="btn text-right"><i class="fas fa-chevron-circle-right fa-2x text-secondary"></i></a>
                 </div>
             </a>
         </div>

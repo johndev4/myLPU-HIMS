@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 05:26 PM
+-- Generation Time: Nov 16, 2021 at 09:28 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `mylpuhims_db`
 --
-CREATE DATABASE IF NOT EXISTS `mylpuhims_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `mylpuhims_db`;
 
 -- --------------------------------------------------------
 
@@ -29,20 +27,20 @@ USE `mylpuhims_db`;
 -- Table structure for table `administrators`
 --
 
-DROP TABLE IF EXISTS `administrators`;
 CREATE TABLE `administrators` (
   `admin_id` int(11) NOT NULL,
   `username` varchar(45) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `admin_name` varchar(45) NOT NULL
+  `admin_name` varchar(45) NOT NULL,
+  `locked` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `administrators`
 --
 
-INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`) VALUES
-(1, 'admin', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4', 'Administrator');
+INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`, `locked`) VALUES
+(20211116, 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'Administrator', 0);
 
 -- --------------------------------------------------------
 
@@ -50,7 +48,6 @@ INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`) 
 -- Table structure for table `batches`
 --
 
-DROP TABLE IF EXISTS `batches`;
 CREATE TABLE `batches` (
   `batch_id` varchar(45) NOT NULL,
   `product_id` varchar(45) NOT NULL,
@@ -65,7 +62,6 @@ CREATE TABLE `batches` (
 -- Table structure for table `consultations`
 --
 
-DROP TABLE IF EXISTS `consultations`;
 CREATE TABLE `consultations` (
   `consultation_no` varchar(16) NOT NULL,
   `status` varchar(45) NOT NULL,
@@ -86,7 +82,6 @@ CREATE TABLE `consultations` (
 -- Table structure for table `equipments`
 --
 
-DROP TABLE IF EXISTS `equipments`;
 CREATE TABLE `equipments` (
   `product_id` varchar(45) NOT NULL,
   `product_name` varchar(45) NOT NULL,
@@ -99,7 +94,6 @@ CREATE TABLE `equipments` (
 -- Table structure for table `health_personnels`
 --
 
-DROP TABLE IF EXISTS `health_personnels`;
 CREATE TABLE `health_personnels` (
   `id_no` varchar(45) NOT NULL,
   `first_name` varchar(45) NOT NULL,
@@ -115,7 +109,6 @@ CREATE TABLE `health_personnels` (
 -- Table structure for table `health_personnels_account`
 --
 
-DROP TABLE IF EXISTS `health_personnels_account`;
 CREATE TABLE `health_personnels_account` (
   `id_no` varchar(45) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -130,7 +123,6 @@ CREATE TABLE `health_personnels_account` (
 -- Table structure for table `health_personnels_notification`
 --
 
-DROP TABLE IF EXISTS `health_personnels_notification`;
 CREATE TABLE `health_personnels_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
@@ -148,7 +140,6 @@ CREATE TABLE `health_personnels_notification` (
 -- Table structure for table `health_records`
 --
 
-DROP TABLE IF EXISTS `health_records`;
 CREATE TABLE `health_records` (
   `record_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
@@ -163,7 +154,6 @@ CREATE TABLE `health_records` (
 -- Table structure for table `lyceans`
 --
 
-DROP TABLE IF EXISTS `lyceans`;
 CREATE TABLE `lyceans` (
   `id_no` varchar(45) NOT NULL,
   `first_name` varchar(45) NOT NULL,
@@ -184,7 +174,6 @@ CREATE TABLE `lyceans` (
 -- Table structure for table `lyceans_account`
 --
 
-DROP TABLE IF EXISTS `lyceans_account`;
 CREATE TABLE `lyceans_account` (
   `id_no` varchar(45) NOT NULL,
   `username` varchar(45) NOT NULL,
@@ -198,7 +187,6 @@ CREATE TABLE `lyceans_account` (
 -- Table structure for table `lyceans_notification`
 --
 
-DROP TABLE IF EXISTS `lyceans_notification`;
 CREATE TABLE `lyceans_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
@@ -216,7 +204,6 @@ CREATE TABLE `lyceans_notification` (
 -- Table structure for table `medical_files`
 --
 
-DROP TABLE IF EXISTS `medical_files`;
 CREATE TABLE `medical_files` (
   `file_id` int(11) NOT NULL,
   `consultation_no` varchar(16) NOT NULL,
@@ -229,7 +216,6 @@ CREATE TABLE `medical_files` (
 -- Table structure for table `medicines`
 --
 
-DROP TABLE IF EXISTS `medicines`;
 CREATE TABLE `medicines` (
   `product_id` varchar(45) NOT NULL,
   `manufacturer` varchar(45) NOT NULL,
@@ -330,12 +316,6 @@ ALTER TABLE `medicines`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `administrators`
---
-ALTER TABLE `administrators`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `health_personnels_notification`

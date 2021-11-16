@@ -40,7 +40,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('inventory/addBatch') ?>" method="get" id="add_form">
+                            <form action="<?= site_url('inventory/addBatch') ?>" method="get" id="add_form">
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
@@ -235,7 +235,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('inventory/fetchAllBatches') ?>',
+                url: '<?= site_url('inventory/fetchAllBatches') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -297,7 +297,7 @@
 
         // Fetch all medicine product name using ajax
         $.ajax({
-            url: '<?= base_url('inventory/fetchAllMedicineProductName') ?>',
+            url: '<?= site_url('inventory/fetchAllMedicineProductName') ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -329,7 +329,7 @@
             $('#' + obj['modalType'] + '_expirationdate').val(data['expiration_date']);
         } else {
             $.ajax({
-                url: '<?= base_url('inventory/fetchBatchById') ?>/' + id,
+                url: '<?= site_url('inventory/fetchBatchById') ?>/' + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -345,11 +345,11 @@
 
         $('#modify_form').attr(
             'action',
-            '<?= base_url('inventory/modifyBatch') ?>/' + id
+            '<?= site_url('inventory/modifyBatch') ?>/' + id
         );
         $('#delete_form').attr(
             'action',
-            '<?= base_url('inventory/deleteBatch') ?>/' + id
+            '<?= site_url('inventory/deleteBatch') ?>/' + id
         );
     }
 </script>

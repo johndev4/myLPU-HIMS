@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12 col-lg-3">
             <ul style="list-style: none; cursor: pointer;">
-                <li><a href="<?= base_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
+                <li><a href="<?= site_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
 
                 <li><a id="link-1" style="color:rgb(0, 131, 253)">Privacy policy</a></li>
                 <li><a id="link-2" style="color:rgb(0, 131, 253)">Collection of personal information</a></li>
@@ -29,7 +29,7 @@
             <h6 class="text-bold" id="section-1">Privacy policy</h6>
             <p class="text-justify">We respect your privacy and are committed to protecting it through our compliance with this privacy
                 policy (“Policy”). This Policy describes the types of information we may collect from you or that you may provide
-                (“Personal Information”) on the <a href="<?= base_url('') ?>" style="text-decoration: underline; color: #000">www.mylpuhims.com</a> website (“Website” or “Service”) and
+                (“Personal Information”) on the <a href="<?= site_url() ?>" style="text-decoration: underline; color: #000">www.mylpuhims.com</a> website (“Website” or “Service”) and
                 any of its related products and services (collectively, “Services”), and our practices for collecting, using, maintaining,
                 protecting, and disclosing that Personal Information. It also describes the choices available to you regarding our use of
                 your Personal Information and how you can access and update it.</p>

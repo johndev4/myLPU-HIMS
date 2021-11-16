@@ -21,11 +21,11 @@
                         <span class="text-white ml-1 uname"> <?= $fullname ?> </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                        <a href="<?= base_url('profile') ?>" class="dropdown-item">
+                        <a href="<?= site_url('profile') ?>" class="dropdown-item">
                             <i class="fas fa-user-cog mr-2"></i> Profile
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?= base_url('auth/logout') ?>" class="dropdown-item">
+                        <a href="<?= site_url('auth/logout') ?>" class="dropdown-item">
                             <i class="fas fa-sign-out-alt mr-2"></i> Logout
                         </a>
                     </div>
@@ -52,7 +52,7 @@
                         </div>
 
                         <span class="dropdown-header">
-                            <a href="<?= base_url('notifications/clearAll') ?>">Clear all</a>
+                            <a href="<?= site_url('notifications/clearAll') ?>">Clear all</a>
                         </span>
                     </div>
                 </li>
@@ -123,7 +123,7 @@
         // Fetch All Notifications
         var requestCount;
         $.ajax({
-            url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
+            url: '<?= site_url('notifications/fetchAllNotifications/' . $idNo) ?>',
             type: 'get',
             dataType: 'json',
             success: function(response) {
@@ -135,7 +135,7 @@
         });
         setInterval(function() {
             $.ajax({
-                url: '<?= base_url('notifications/fetchAllNotifications/' . $idNo) ?>',
+                url: '<?= site_url('notifications/fetchAllNotifications/' . $idNo) ?>',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {

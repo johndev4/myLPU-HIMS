@@ -48,7 +48,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url('useraccounts/addHealthPersonnelAccount') ?>" method="get" id="add_form">
+                            <form action="<?= site_url('useraccounts/addHealthPersonnelAccount') ?>" method="get" id="add_form">
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label for="add_idno" class="col-form-label required">ID No.</label>
@@ -419,7 +419,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= base_url('useraccounts/fetchAllHealthPersonnel') ?>',
+                url: '<?= site_url('useraccounts/fetchAllHealthPersonnel') ?>',
                 contentType: ' application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -490,7 +490,7 @@
         // On ID No. Input
         $('#add_idno').on('input', function() {
             $.ajax({
-                url: '<?= base_url('useraccounts/fetchHealthPersonnelInfoById') ?>/' + $('#add_idno').val(),
+                url: '<?= site_url('useraccounts/fetchHealthPersonnelInfoById') ?>/' + $('#add_idno').val(),
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -505,7 +505,7 @@
         // Set Delete All Modal Form
         $('#deleteall_form').attr(
             'action',
-            '<?= base_url('useraccounts/deleteAllHealthPersonnelAccounts') ?>'
+            '<?= site_url('useraccounts/deleteAllHealthPersonnelAccounts') ?>'
         );
     });
 
@@ -525,7 +525,7 @@
             $('#' + obj['modalType'] + '_designation').val(data['designation']);
         } else {
             $.ajax({
-                url: '<?= base_url('useraccounts/fetchHealthPersonnelById') ?>/' + id,
+                url: '<?= site_url('useraccounts/fetchHealthPersonnelById') ?>/' + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
@@ -543,15 +543,15 @@
 
         $('#modify_form').attr(
             'action',
-            '<?= base_url('useraccounts/modifyHealthPersonnelAccount') ?>/' + id
+            '<?= site_url('useraccounts/modifyHealthPersonnelAccount') ?>/' + id
         );
         $('#delete_form').attr(
             'action',
-            '<?= base_url('useraccounts/deleteHealthPersonnelAccount') ?>/' + id
+            '<?= site_url('useraccounts/deleteHealthPersonnelAccount') ?>/' + id
         );
         $('#reset_form').attr(
             'action',
-            '<?= base_url('useraccounts/resetHealthPersonnelAccount') ?>/' + id
+            '<?= site_url('useraccounts/resetHealthPersonnelAccount') ?>/' + id
         );
     }
 </script>

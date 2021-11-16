@@ -8,7 +8,7 @@
             <div class="row mb-2">
                 <div class="col-md-12">
                     <h1 class="m-0 font-weight-normal text-black-50 d-inline">Consultation Report |</h1>
-                    <span class="d-inline"><a href="<?= base_url('consultations') ?>">Back</a></span>
+                    <span class="d-inline"><a href="<?= site_url('consultations') ?>">Back</a></span>
                 </div>
             </div>
         </div>
@@ -187,7 +187,7 @@
             order: [],
             ajax: {
                 type: 'get',
-                url: '<?= base_url('reports/fetchYearlyReport') ?>',
+                url: '<?= site_url('reports/fetchYearlyReport') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -203,7 +203,7 @@
 
         // For year combobox
         $.ajax({
-            url: '<?= base_url('consultations/fetchYearOnConsultations') ?>/',
+            url: '<?= site_url('consultations/fetchYearOnConsultations') ?>/',
             type: 'get',
             dataType: 'html',
             success: function(response) {
@@ -214,7 +214,7 @@
 
         // For month combobox
         $.ajax({
-            url: '<?= base_url('consultations/fetchMonthOnConsultations') ?>/',
+            url: '<?= site_url('consultations/fetchMonthOnConsultations') ?>/',
             type: 'get',
             dataType: 'html',
             success: function(response) {
@@ -236,7 +236,7 @@
             order: [],
             ajax: {
                 type: 'get',
-                url: '<?= base_url('reports/fetchWeeklyReport') ?>' + '?year=' + $('#dropdownYear').val() + '&month=' + $('#dropdownMonth').val(),
+                url: '<?= site_url('reports/fetchWeeklyReport') ?>' + '?year=' + $('#dropdownYear').val() + '&month=' + $('#dropdownMonth').val(),
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -260,7 +260,7 @@
             order: [],
             ajax: {
                 type: 'get',
-                url: '<?= base_url('reports/fetchMonthlyReport') ?>' + '?year=' + $('#monthly_dropdownYear').val(),
+                url: '<?= site_url('reports/fetchMonthlyReport') ?>' + '?year=' + $('#monthly_dropdownYear').val(),
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'

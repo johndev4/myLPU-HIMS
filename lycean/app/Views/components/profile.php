@@ -7,7 +7,7 @@
         <!-- Back Button -->
         <div class="row mb-2" style="border:1px solid none; margin-top:35px">
             <div class="col-sm-12">
-                <a href="<?= base_url('dashboard') ?>">
+                <a href="<?= site_url('dashboard') ?>">
                     <!-- <i class="fas fa-chevron-left fa-2x font-weight-normal" style="font-size: 17pt; color: rgb(88, 88, 88); vertical-align:baseline"></i>
                     <span class="font-weight-normal ml-1" style="font-size: 20pt; color: rgb(88, 88, 88)">Back</span> -->
                     <i class="fas fa-chevron-circle-left fa-2x py-2 text-secondary"></i>
@@ -55,7 +55,7 @@
                         <div class="row d-inline text-left">
                             <div class="col-12 text-left ml-n2">
                                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#changepasswordModal">Change Password</button>
-                                <!-- <a href="<?= base_url('auth/logout') ?>"><button type="button" class="btn btn-light">Logout</button></a> -->
+                                <!-- <a href="<?= site_url('auth/logout') ?>"><button type="button" class="btn btn-light">Logout</button></a> -->
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                         You will now be logged out.
                         <br><br>
                         <div align="center">
-                            <a href="<?= base_url('auth/logout') ?>">
+                            <a href="<?= site_url('auth/logout') ?>">
                                 <button type="button" class="btn btn-danger swalDefaultSuccess" id="continueLogout">Continue</button>
                             </a>
                         </div>
@@ -102,7 +102,7 @@
                         </button>
                         <br>
                         <label class="mb-3 text-dark" style="font-size: 14pt;">Change Password</label>
-                        <form action="<?= base_url('profile/updatePassword') ?>" method="post">
+                        <form action="<?= site_url('profile/updatePassword') ?>" method="post">
                             <span class="p-2 d-block mb-2" style="background-color:rgb(223, 223, 223); border-radius:4px;">
                                 <b>Note:</b> You will be logged out after changing your password</span>
                             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />

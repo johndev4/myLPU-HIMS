@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-3">
                 <ul style="list-style: none; cursor: pointer;">
-                    <li><a href="<?= base_url('auth/logout') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
+                    <li><a href="<?= site_url('auth/logout') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
 
                     <li><a id="link-1" style="color:rgb(0, 131, 253)">Change your Password</a></li>
                     <li><a id="link-2" style="color:rgb(0, 131, 253)">Request for Consultation</a></li>
@@ -202,7 +202,7 @@
         <div>
             <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Terms of Use</a></span>
             <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Privacy Policy</a></span>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('help') ?>">Help</a></span>
+            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help') ?>">Help</a></span>
             <br>
         </div>
     </footer> -->
@@ -213,9 +213,9 @@
             All rights reserved.
         </div>
         <div>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('terms') ?>">Terms of Use</a></span>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('privacy') ?>">Privacy Policy</a></span>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= base_url('help') ?>">Help</a></span>
+            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('terms') ?>">Terms of Use</a></span>
+            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('privacy') ?>">Privacy Policy</a></span>
+            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help') ?>">Help</a></span>
             <br>
         </div>
     </footer>

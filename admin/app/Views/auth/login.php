@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url('assets/AdminLTE-3.1.0-rc/css/adminlte.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/AdminLTE-3.1.0-rc/dist/css/adminlte.min.css') ?>">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -52,7 +52,7 @@
             </span>
 
             <!-- Login Form -->
-            <form action="<?= base_url('login') ?>" method="post" accept-charset="utf-8">
+            <form action="<?= site_url('login') ?>" method="post" accept-charset="utf-8">
                 <?= csrf_field() ?>
                 <div class="input-group mb-3 mt-3">
                     <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" style="border-radius: 10px 0px 0px 10px;" required="required">
@@ -87,7 +87,7 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <!-- AdminLTE App -->
-    <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/js/adminlte.min.js') ?>"></script>
+    <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/dist/js/adminlte.min.js') ?>"></script>
 </body>
 
 </html>

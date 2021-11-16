@@ -98,7 +98,7 @@
 
                 <div class="row border-outside">
                     <div class="col-12 default-nav">
-                        <a href="<?= base_url('consultation') ?>">
+                        <a href="<?= site_url('consultation') ?>">
                             <div id="consultationNav" class="card shadow card2" style="max-width:32rem; border:3px solid none">
                                 <div class="row p-3 default-nav">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
@@ -115,7 +115,7 @@
 
                 <div class="row">
                     <div class="col-12 default-nav">
-                        <a href="<?= base_url('mentalwellness') ?>">
+                        <a href="<?= site_url('mentalwellness') ?>">
                             <div id="mentalwellnessNav" class="card shadow card2 actv2" style="max-width:32rem">
                                 <div class="row p-3 default-nav" style="border:1px solid none">
                                     <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
@@ -136,7 +136,7 @@
             <div class="col-md-6 hide">
                 <div class="row">
                     <div class="col-4 text-center">
-                        <a href="<?= base_url('dashboard') ?>">
+                        <a href="<?= site_url('dashboard') ?>">
                             <div class="card shadow card2 py-3" style="max-width:32rem">
                                 <i class="fas fa-chevron-left fa-2x" style="color: #999999"></i>
                             </div>
@@ -144,7 +144,7 @@
                     </div>
 
                     <div class="col-4 text-center">
-                        <a href="<?= base_url('consultation') ?>">
+                        <a href="<?= site_url('consultation') ?>">
                             <div id="consultationNavMob" class="card shadow card2 py-3">
                                 <i class="fas fa-comment-medical fa-2x" style="color: #7687CD"></i>
                             </div>
@@ -152,7 +152,7 @@
                     </div>
 
                     <div class="col-4 text-center">
-                        <a href="<?= base_url('mentalwellness') ?>">
+                        <a href="<?= site_url('mentalwellness') ?>">
                             <div id="mentalwellnessNavMob" class="card shadow card2 py-3 actv2">
                                 <i class="fas fa-brain fa-2x" style="color: #CC6699"></i>
                             </div>

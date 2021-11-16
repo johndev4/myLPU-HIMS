@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12 col-lg-3">
             <ul style="list-style: none; cursor: pointer;">
-                <li><a href="<?= base_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
+                <li><a href="<?= site_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
 
                 <li><a id="link-1" style="color:rgb(0, 131, 253)">Terms and conditions</a></li>
                 <li><a id="link-2" style="color:rgb(0, 131, 253)">Privacy Policy</a></li>
@@ -28,7 +28,7 @@
         <div class="col-md-12 col-lg-9">
             <h6 class="text-bold" id="section-1">Terms and conditions</h6>
             <p class="text-justify">These terms and conditions (“Agreement”) set forth the general terms and conditions of your use of
-                the <a href="<?= base_url() ?>" style="text-decoration: underline; color: #000">www.mylpuclinic.com</a> website(“Website” or “Service”) and any of its related products and
+                the <a href="<?= site_url() ?>" style="text-decoration: underline; color: #000">www.mylpuclinic.com</a> website(“Website” or “Service”) and any of its related products and
                 services (collectively, “Services”). This Agreement is legally binding between you (“User”, “you” or “your”) and this
                 Website operator (“Operator”, “we”, “us” or “our”). If you are entering into this agreement on behalf of a business or
                 other legal entity, you represent that you have the authority to bind such entity to this agreement, in which case the
@@ -39,7 +39,7 @@
                 it is electronic and is not physically signed by you, and it governs your use of the Website and Services.</p>
 
             <h6 class="text-bold" id="section-2">Privacy Policy</h6>
-            <p class="text-justify">Before you continue using our website, we advise you to read our <a href="<?= base_url('privacypolicy') ?>" style="text-decoration: underline; color: #000">privacy policy</a>
+            <p class="text-justify">Before you continue using our website, we advise you to read our <a href="<?= site_url('privacy') ?>" style="text-decoration: underline; color: #000">privacy policy</a>
                 regarding our user data collection. It will help you better understand our practices.</p>
 
             <h6 class="text-bold " id="section-3">Who can use the services?</h6>

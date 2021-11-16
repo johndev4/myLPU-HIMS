@@ -450,16 +450,16 @@ class Consultations extends BaseController
 
 		if ($type == 'accept') {
 			$info = "The {$personnel} accepted your request";
-			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']));
+			$link = str_replace('clinic', 'lycean', site_url('consultation/details/' . $data['consultation_no']));
 		} else if ($type == 'reject') {
 			$info = 'The doctor rejected your request';
-			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']));
+			$link = str_replace('clinic', 'lycean', site_url('consultation/details/' . $data['consultation_no']));
 		} else if ($type == 'consultationSendFile') {
 			$info = 'The documents are ready to view';
-			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no'] . '?documents=1'));
+			$link = str_replace('clinic', 'lycean', site_url('consultation/details/' . $data['consultation_no'] . '?documents=1'));
 		} else if ($type == 'consultationDone') {
 			$info = 'Your consultation was done';
-			$link = str_replace('clinic', 'lycean', base_url('consultation/details/' . $data['consultation_no']));
+			$link = str_replace('clinic', 'lycean', site_url('consultation/details/' . $data['consultation_no']));
 		}
 
 		return $this->lyceansNotificationModel->save([

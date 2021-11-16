@@ -37,7 +37,7 @@ class Notifications extends BaseController
 				$status2 = $notification['status'] == "unread" ? "text-primary" : "text-secondary";
 
 				$data = "
-				<a href=\"" . base_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) . "\" class=\"dropdown-item\">
+				<a href=\"" . site_url('notifications/redirectToConsultationDetails/' . $notification['notification_id']) . "\" class=\"dropdown-item\">
 					<div class=\"notifications-item\">{$notification['icon']}
 						<div class=\"text\" style=\"width: 100%;\">
 							<p style=\"font-weight: {$status1}; color: #444444\"> {$notification['info']} </p>
