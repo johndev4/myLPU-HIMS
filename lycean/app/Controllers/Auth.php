@@ -24,7 +24,7 @@ class Auth extends BaseController
 				->where('password', hash('sha256', $_POST['password']))
 				->first();
 
-			if ($credentials) {
+			if ($credentials && $user['locked'] < 2) {
 				// Create login session
 				session()->set([
 					'uid' => $credentials['username'],
