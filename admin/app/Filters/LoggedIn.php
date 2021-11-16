@@ -20,6 +20,15 @@ class LoggedIn implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // 
+        $userAccountModel = model('App\Models\AdministratorsModel');
+        
+        $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
+        if ($user != []) {
+            $default_password = hash('sha256', "123456");
+            // Change "!==" to "==="
+            if ($user['password'] === $default_password && session()->get('logged_in') == FALSE) {
+                return redirect()->to('changepassword');
+            }
+        }
     }
 }
