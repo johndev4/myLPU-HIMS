@@ -87,7 +87,7 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="<?= base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <!-- AdminLTE App -->
-    <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/js/adminlte.min.js') ?>"></script>
+    <script src="<?= base_url('assets/AdminLTE-3.1.0-rc/dist/js/adminlte.min.js') ?>"></script>
 </body>
 
 </html>
