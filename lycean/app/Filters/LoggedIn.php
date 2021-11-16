@@ -32,5 +32,11 @@ class LoggedIn implements FilterInterface
                 return redirect()->to('changepassword');
             }
         }
+        if ($user != [] && $user['locked'] >= 2) {
+            // Delete login session on client
+            session()->destroy();
+            // Redirect to login page
+            return redirect()->to('login');
+        }
     }
 }

@@ -1,0 +1,35 @@
+CRITICAL - 2021-11-17 00:34:39 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\LoggedIn.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 16)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(169): App\Filters\LoggedIn->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(374): CodeIgniter\Filters\Filters->run('consultations/r...', 'before')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-17 01:05:18 --> Undefined property: App\Filters\LoggedIn::$userAccountModel
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\LoggedIn.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 38)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-17 01:05:20 --> Undefined property: App\Filters\LoggedIn::$userAccountModel
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\LoggedIn.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 38)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-17 01:05:21 --> Undefined property: App\Filters\LoggedIn::$userAccountModel
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\LoggedIn.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 38)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-17 01:05:40 --> Undefined property: App\Filters\LoggedIn::$userAccountModel
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Filters\LoggedIn.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 38)
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Filters\Filters.php(192): App\Filters\LoggedIn->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(414): CodeIgniter\Filters\Filters->run('dashboard', 'after')
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
