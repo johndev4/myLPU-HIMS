@@ -84,7 +84,7 @@
                     badgeVisibility()
                 }
             });
-        }, 500);
+        }, 1000);
 
         // Run or stop online state
         setInterval(function() {
@@ -92,7 +92,7 @@
                 url: '<?= site_url('consultations/runOnlineState') ?>',
                 type: 'get'
             });
-        }, 500);
+        }, 1000);
     });
 
     // Hide or show notification badge depends on quantity
