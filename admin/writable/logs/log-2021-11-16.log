@@ -42,3 +42,7 @@ CRITICAL - 2021-11-16 15:35:05 --> There is no data to update.
 #5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #7 {main}
+ERROR - 2021-11-16 21:05:05 --> Unknown column 'locked' in 'field list'
+ERROR - 2021-11-16 21:05:22 --> Unknown column 'locked' in 'field list'
+ERROR - 2021-11-16 21:05:51 --> Unknown column 'locked' in 'field list'
+ERROR - 2021-11-16 21:06:08 --> Unknown column 'locked' in 'field list'

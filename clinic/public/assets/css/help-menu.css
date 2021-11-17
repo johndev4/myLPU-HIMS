@@ -1,0 +1,47 @@
+html {
+	scroll-behavior: smooth;
+}
+
+/* Responsive Page to Top & Image */
+@media screen and (max-width:576px) {
+	a.float{
+		right: 10px !important;
+		bottom: 90px !important;
+		width: 40px !important;
+		height: 40px !important;
+	}
+	.my-float{
+		margin-top: 13px !important;
+	}
+	img.img-help-drpdwn.shadow{
+		width: 60% !important;
+	}
+	img.img-help.shadow{
+		width: 100% !important;
+	}
+ }
+
+ /* Page to Top */
+.float{
+	position:fixed;
+	width:50px;
+	height:50px;
+	bottom:80px;
+	right:32px;
+	background-color:#a62d38;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	/* box-shadow: 2px 2px 3px #999; */
+}
+
+.my-float{
+	margin-top:18px;
+    margin-left: 1px;
+}
+
+a.float:hover{
+	background-color: #b13f48;
+	color: white !important;
+	text-decoration: none !important;
+}
