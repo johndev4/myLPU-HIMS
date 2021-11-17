@@ -133,7 +133,7 @@
                                     </div>
                                     <label class="d-block text-secondary">Meeting Link</label>
                                     <div class="mt-n2 mb-2">
-                                        <a href="" class="text-dark" id="view_meetinglinkhref"><span id="view_meetinglinktext"></span></a>
+                                        <a href="" class="text-dark" id="view_meetinglinkhref" target="_blank"><span id="view_meetinglinktext"></span></a>
                                     </div>
                                     <hr>
                                     <label class="d-block text-secondary">Concern</label>

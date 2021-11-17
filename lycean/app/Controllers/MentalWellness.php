@@ -109,7 +109,7 @@ class Mentalwellness extends BaseController
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
-                        <a href=\"{$consultation['meeting_link']}\"> {$consultation['meeting_link']} </a>
+                        <a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>
                     </div>
                 </div>
                 </div>
@@ -224,7 +224,7 @@ class Mentalwellness extends BaseController
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
-                        <a href=\"{$consultation['meeting_link']}\"> {$consultation['meeting_link']} </a>
+                        <a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>
                     </div>
                 </div>
                 </div>

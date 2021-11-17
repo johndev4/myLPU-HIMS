@@ -166,7 +166,7 @@
                     badgeVisibility()
                 }
             });
-        }, 1000);
+        }, 5000);
     });
 
     // Hide or show notification badge depends on quantity

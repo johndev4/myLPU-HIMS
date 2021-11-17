@@ -26,8 +26,8 @@ class Dashboard extends BaseController
 	{
 		// Widget counter
 		$this->data['widget_counter'] = [
-			'newRequestConsultations' => $this->countNewRequestConsultations(),
-			'scheduledConsultations' => $this->countScheduledConsultations(),
+			'newRequestConsultations' => $this->countNewRequestConsultations(getDesignation()),
+			'scheduledConsultations' => $this->countScheduledConsultations(getDesignation()),
 			'records' => $this->countLyceanRecords()
 		];
 
@@ -38,20 +38,40 @@ class Dashboard extends BaseController
 
 	// COUNT DATA FOR DASHBOARD
 	// ---------------------------------------------------------
-	private function countNewRequestConsultations()
+	private function countNewRequestConsultations($designation)
 	{
-		$consultations = $this->consultationsModel
-			->where('status', 'pending')
-			->find();
+		if ($designation == 'Guidance Counselor') {
+			$consultations = $this->consultationsModel
+				->where('status', 'pending')
+				->where('personnel_id_no', getIdNo())
+				->where('category', 'Mental Wellness')
+				->find();
+		} else {
+			$consultations = $this->consultationsModel
+				->where('status', 'pending')
+				->where('personnel_id_no', getIdNo())
+				->where('category', 'Consultation')
+				->find();
+		}
 
 		return count($consultations);
 	}
 
-	private function countScheduledConsultations()
+	private function countScheduledConsultations($designation)
 	{
-		$consultations = $this->consultationsModel
-			->where('status', 'active')
-			->find();
+		if ($designation == 'Guidance Counselor') {
+			$consultations = $this->consultationsModel
+				->where('status', 'active')
+				->where('personnel_id_no', getIdNo())
+				->where('category', 'Mental Wellness')
+				->find();
+		} else {
+			$consultations = $this->consultationsModel
+				->where('status', 'active')
+				->where('personnel_id_no', getIdNo())
+				->where('category', 'Consultation')
+				->find();
+		}
 
 		return count($consultations);
 	}
