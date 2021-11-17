@@ -71,7 +71,7 @@ class Consultation extends BaseController
                 foreach ($medical_files as $key => $medical_file) {
                     $filename = explode('/', $medical_file['file_path'])[4];
                     $key += 1;
-                    $href = str_replace('lycean/public', 'clinic/public', site_url($medical_file['file_path']));
+                    $href = str_replace('lycean/public', 'clinic/public', base_url($medical_file['file_path']));
                     $this->data['files'] .= "
                         <tr>
                             <td> {$key} </td>

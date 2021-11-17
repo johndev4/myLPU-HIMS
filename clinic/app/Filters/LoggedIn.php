@@ -32,5 +32,20 @@ class LoggedIn implements FilterInterface
                 return redirect()->to('changepassword');
             }
         }
+        if ($user != [] && $user['locked'] >= 2) {
+            helper('useraccount');
+            // Clear last activity
+            $userAccountModel
+                ->where('id_no', getIdNo())
+                ->set([
+                    'last_activity' => null
+                ])->update();
+
+            // Delete login session on client
+            session()->destroy();
+            // Redirect to login page
+            return redirect()->to('login');
+        }
+        session()->set('logged_in', TRUE);
     }
 }
