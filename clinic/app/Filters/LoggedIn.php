@@ -46,5 +46,6 @@ class LoggedIn implements FilterInterface
             // Redirect to login page
             return redirect()->to('login');
         }
+        session()->set('logged_in', TRUE);
     }
 }

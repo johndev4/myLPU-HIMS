@@ -22,7 +22,7 @@ class LoggedIn implements FilterInterface
     {
         $userAccountModel = model('App\Models\LyceansAccountModel');
         $userModel = model('App\Models\LyceansModel');
-        
+
         $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
         if ($user != []) {
             $userInfo = $userModel->find($user['id_no']);
@@ -38,5 +38,6 @@ class LoggedIn implements FilterInterface
             // Redirect to login page
             return redirect()->to('login');
         }
+        session()->set('logged_in', TRUE);
     }
 }
