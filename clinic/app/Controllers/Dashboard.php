@@ -24,13 +24,6 @@ class Dashboard extends BaseController
 	// -----------------------------------------------------------------
 	public function index()
 	{
-		// Widget counter
-		$this->data['widget_counter'] = [
-			'newRequestConsultations' => $this->countNewRequestConsultations(getDesignation()),
-			'scheduledConsultations' => $this->countScheduledConsultations(getDesignation()),
-			'records' => $this->countLyceanRecords()
-		];
-
 		// Display page view
 		return view('components/dashboard', $this->data);
 	}
@@ -38,9 +31,9 @@ class Dashboard extends BaseController
 
 	// COUNT DATA FOR DASHBOARD
 	// ---------------------------------------------------------
-	private function countNewRequestConsultations($designation)
+	public function countNewRequestConsultations()
 	{
-		if ($designation == 'Guidance Counselor') {
+		if (getDesignation() == 'Guidance Counselor') {
 			$consultations = $this->consultationsModel
 				->where('status', 'pending')
 				->where('personnel_id_no', getIdNo())
@@ -54,12 +47,12 @@ class Dashboard extends BaseController
 				->find();
 		}
 
-		return count($consultations);
+		echo count($consultations);
 	}
 
-	private function countScheduledConsultations($designation)
+	public function countScheduledConsultations()
 	{
-		if ($designation == 'Guidance Counselor') {
+		if (getDesignation() == 'Guidance Counselor') {
 			$consultations = $this->consultationsModel
 				->where('status', 'active')
 				->where('personnel_id_no', getIdNo())
@@ -73,11 +66,11 @@ class Dashboard extends BaseController
 				->find();
 		}
 
-		return count($consultations);
+		echo count($consultations);
 	}
 
-	private function countLyceanRecords()
+	public function countLyceanRecords()
 	{
-		return $this->lyceansModel->countAll();
+		echo $this->lyceansModel->countAll();
 	}
 }

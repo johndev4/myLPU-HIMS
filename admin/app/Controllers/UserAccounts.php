@@ -341,7 +341,7 @@ class Useraccounts extends BaseController
 		return json_encode($result);
 	}
 
-	public function fetchHealthPersonnelById($id)
+	public function fetchHealthPersonnelById($id='')
 	{
 		$healthPersonnels = $this->healthPersonnelsModel->find($id);
 		$healthPersonnelsAccount = $this->healthPersonnelsAccountModel->find($id);
@@ -367,7 +367,7 @@ class Useraccounts extends BaseController
 
 	// FETCH DATA BY ID WITHOUT ACCOUNT
 	// ---------------------------------------------------------
-	public function fetchLyceanInfoById($id)
+	public function fetchLyceanInfoById($id='')
 	{
 		$lyceans = $this->lyceansModel->find($id);
 		$lyceansAccount = $this->lyceansAccountModel->find($id);

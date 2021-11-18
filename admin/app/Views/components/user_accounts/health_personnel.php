@@ -494,10 +494,12 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    $('#add_lastname').val(response['last_name']);
-                    $('#add_firstname').val(response['first_name']);
-                    $('#add_middlename').val(response['middle_name']);
-                    $('#add_designation').val(response['designation']);
+                    if (response != '') {
+                        $('#add_lastname').val(response['last_name']);
+                        $('#add_firstname').val(response['first_name']);
+                        $('#add_middlename').val(response['middle_name']);
+                        $('#add_designation').val(response['designation']);
+                    }
                 }
             });
         });
