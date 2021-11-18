@@ -703,15 +703,17 @@
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
-                    $('#add_lastname').val(response['last_name']);
-                    $('#add_firstname').val(response['first_name']);
-                    $('#add_middlename').val(response['middle_name']);
-                    $('#add_gender').val(response['gender']);
-                    $('#add_birthdate').val(response['birth_date']);
-                    $('#add_height').val(response['height']);
-                    $('#add_weight').val(response['weight']);
-                    $('#add_bloodtype').val(response['blood_type']);
-                    $('#add_department').val(response['department']);
+                    if (response != '') {
+                        $('#add_lastname').val(response['last_name']);
+                        $('#add_firstname').val(response['first_name']);
+                        $('#add_middlename').val(response['middle_name']);
+                        $('#add_gender').val(response['gender']);
+                        $('#add_birthdate').val(response['birth_date']);
+                        $('#add_height').val(response['height']);
+                        $('#add_weight').val(response['weight']);
+                        $('#add_bloodtype').val(response['blood_type']);
+                        $('#add_department').val(response['department']);
+                    }
                 }
             });
         });

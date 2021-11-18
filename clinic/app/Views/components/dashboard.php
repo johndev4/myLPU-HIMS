@@ -34,7 +34,7 @@
                         <span class="info-box-icon dash-widgets"><i class="fas fa-clipboard-check"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Requests</span>
-                            <span class="info-box-number"> <?= $widget_counter['newRequestConsultations'] ?> </span>
+                            <span class="info-box-number" id="newRequestWidget"></span>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                         <span class="info-box-icon dash-widgets"><i class="far fa-calendar-alt"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Scheduled Consultations</span>
-                            <span class="info-box-number"> <?= $widget_counter['scheduledConsultations'] ?> </span>
+                            <span class="info-box-number" id="scheduledConsultationWidget"></span>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             <span class="info-box-icon dash-widgets"><i class="fas fa-file-medical"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Records</span>
-                                <span class="info-box-number"> <?= $widget_counter['records'] ?> </span>
+                                <span class="info-box-number" id="recordWidget"></span>
                             </div>
                         </div>
                     </div>
@@ -74,6 +74,66 @@
     $(document).ready(function() {
         // For sidebar
         $("#dashboardNav > a").addClass('active');
+
+        // Fetch "new request" widget count
+        $.ajax({
+            url: '<?= site_url('dashboard/countNewRequestConsultations') ?>',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#newRequestWidget').text(response);
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= site_url('dashboard/countNewRequestConsultations') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#newRequestWidget').text(response);
+                }
+            });
+        }, 5000);
+
+        // Fetch "scheduled consultation" widget count
+        $.ajax({
+            url: '<?= site_url('dashboard/countScheduledConsultations') ?>',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#scheduledConsultationWidget').text(response);
+            }
+        });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= site_url('dashboard/countScheduledConsultations') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#scheduledConsultationWidget').text(response);
+                }
+            });
+        }, 5000);
+
+        // Fetch "record" widget count
+        $.ajax({
+                url: '<?= site_url('dashboard/countLyceanRecords') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#recordWidget').text(response);
+                }
+            });
+        setInterval(function() {
+            $.ajax({
+                url: '<?= site_url('dashboard/countLyceanRecords') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#recordWidget').text(response);
+                }
+            });
+        }, 5000);
     });
 </script>
 
