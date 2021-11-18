@@ -34,7 +34,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-light py-3 fixed-top" style="background-color: #a62d38;">
         <div class="container">
-            <a class="navbar-brand">
+            <a href="<?= site_url('auth/logout') ?>" class="navbar-brand">
                 <img src="<?= base_url('assets/images/navlogo.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="">
                 <span class="brand-text font-weight-bold text-light">myLPU Clinic</span>
             </a>
@@ -213,7 +213,7 @@
             All rights reserved.
         </div>
         <div>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('terms') ?>">Terms of Use</a></span>
+            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('terms') ?>">Terms & Conditions</a></span>
             <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('privacy') ?>">Privacy Policy</a></span>
             <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help') ?>">Help</a></span>
             <br>
