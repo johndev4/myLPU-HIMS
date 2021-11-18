@@ -7,11 +7,11 @@ html {
 	a.float{
 		right: 10px !important;
 		bottom: 90px !important;
-		width: 40px !important;
-		height: 40px !important;
+		/* width: 40px !important;
+		height: 40px !important; */
 	}
 	.my-float{
-		margin-top: 13px !important;
+		margin-top: 16px !important;
 	}
 	img.img-help-drpdwn.shadow{
 		width: 60% !important;
