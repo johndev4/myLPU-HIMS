@@ -33,7 +33,7 @@
             <!-- Clear Modal -->
             <div class="modal fade" id="clearModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content" style="height: 310px;">
+                    <div class="modal-content" style="min-height: 310px;">
                         <div class="modal-header font-weight-bold text-secondary">
                             Consultation History
                         </div>
@@ -41,7 +41,7 @@
                             <form action="<?= site_url('consultations/clearConsultationHistory') ?>" method="get" id="">
                                 <div class="row">
                                     <div class="col-12 form-group mb-n1">
-                                        <span>Time range:</span>
+                                        <span>Date range:</span>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="clear_fromdaterange" class="col-form-label">From</label>
