@@ -210,7 +210,7 @@
                                         <p class="mt-n2 mb-2">
                                             <?= $details['concern_message'] ?>
                                         </p>
-                                        <label class="d-block text-secondary">Denial of Service</label>
+                                        <label class="d-block text-secondary">Reason for Denial</label>
                                         <p class="mt-n2 mb-2">
                                             <?= $details['rejection_message'] ?>
                                         </p>
