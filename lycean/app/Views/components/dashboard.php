@@ -73,4 +73,21 @@
 </div>
 <!-- </body> -->
 
+
+
+
+
+<!-- SCRIPT -->
+<script>
+    $(document).ready(function() {
+        if ('<?= date('H') ?>' >= 0 && '<?= date('H') ?>' <= 11) {
+            $('.greeting').text("Good morning ")
+        } else if ('<?= date('H') ?>' >= 12 && '<?= date('H') ?>' <= 17) {
+            $('.greeting').text("Good afternoon ")
+        } else if ('<?= date('H') ?>' >= 18 && '<?= date('H') ?>' <= 24) {
+            $('.greeting').text("Good evening ")
+        }
+    });
+</script>
+
 <?= $this->endSection('content') ?>
