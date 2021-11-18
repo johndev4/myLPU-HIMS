@@ -91,7 +91,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'active')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -109,7 +109,7 @@ class Mentalwellness extends BaseController
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
-                        <a href=\"{$consultation['meeting_link']}\"> {$consultation['meeting_link']} </a>
+                        <a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>
                     </div>
                 </div>
                 </div>
@@ -133,7 +133,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'pending')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -171,7 +171,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'rejected')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -206,7 +206,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'done')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -224,7 +224,7 @@ class Mentalwellness extends BaseController
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
-                        <a href=\"{$consultation['meeting_link']}\"> {$consultation['meeting_link']} </a>
+                        <a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>
                     </div>
                 </div>
                 </div>

@@ -259,7 +259,7 @@
                     }
                 }
             });
-        }, 500);
+        }, 5000);
         // Fetch Pending Consultation
         var pendingCount;
         $.ajax({
@@ -299,7 +299,7 @@
                     }
                 }
             });
-        }, 500);
+        }, 5000);
         // Fetch Rejected Consultation
         var rejectCount;
         $.ajax({
@@ -323,7 +323,7 @@
                     }
                 }
             });
-        }, 500);
+        }, 5000);
         // Fetch Done Consultation
         var doneCount;
         $.ajax({
@@ -347,7 +347,7 @@
                     }
                 }
             });
-        }, 500);
+        }, 5000);
 
         // Fetch all online doctors
         var onlineCount;
@@ -372,7 +372,7 @@
                     }
                 }
             });
-        }, 500);
+        }, 5000);
     });
 
     <?php if (session()->get('success') !== null) : ?>

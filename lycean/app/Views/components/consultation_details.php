@@ -203,7 +203,7 @@
                                         </div>
                                         <label class="d-block text-secondary">Meeting Link</label>
                                         <div class="mt-n2 mb-2">
-                                            <a <?= $details['meeting_link']['href'] ?> class="text-dark"> <?= $details['meeting_link']['text'] ?> </a>
+                                            <a <?= $details['meeting_link']['href'] ?> class="text-dark" target="_blank"> <?= $details['meeting_link']['text'] ?> </a>
                                         </div>
                                         <hr>
                                         <label class="d-block text-secondary">Concern</label>

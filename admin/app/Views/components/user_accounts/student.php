@@ -176,7 +176,7 @@
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="add_height" class="col-form-label">Height</label>
-                                        <input type="text" class="form-control" id="add_height" name="height" placeholder="in feet and inches">
+                                        <input type="text" class="form-control" id="add_height" name="height" placeholder="in feet or inches">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
                                             <?php if (session()->getFlashdata('add_validation')->hasError('height')) : ?>
@@ -238,11 +238,11 @@
                                     <div class="col-12 form-group">
                                         <label for="add_department" class="col-form-label required">Department</label>
                                         <select class="form-control" id="add_department" name="department">
-                                            <option value="" selected="selected">---Choose Department---</option>
                                             <option value="COECSA">COECSA</option>
                                             <option value="CITHM">CITHM</option>
                                             <option value="CAS">CAS</option>
                                             <option value="CAMS">CAMS</option>
+                                            <option value="CBA">CBA</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -408,7 +408,7 @@
                                     </div>
                                     <div class="col-4 form-group">
                                         <label for="mod_height" class="col-form-label">Height</label>
-                                        <input type="text" class="form-control" id="mod_height" name="height" placeholder="in feet and inches">
+                                        <input type="text" class="form-control" id="mod_height" name="height" placeholder="in feet or inches">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
                                             <?php if (session()->getFlashdata('mod_validation')->hasError('height')) : ?>
@@ -475,6 +475,7 @@
                                             <option value="CITHM">CITHM</option>
                                             <option value="CAS">CAS</option>
                                             <option value="CAMS">CAMS</option>
+                                            <option value="CBA">CBA</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
