@@ -6,7 +6,7 @@
 <div class="container">
 
     <div class="mb-5 greet-container" style="margin-top: 70px;">
-        <h1 class="d-inline greeting">Good Day </h1>
+        <h1 class="d-inline greeting"></h1>
         <span class="d-inline font-weight-bold" style="font-size: 30pt;"> <?= $firstname ?> </span>
         <h2 class="d-inline exclamation">!</h2>
     </div>
