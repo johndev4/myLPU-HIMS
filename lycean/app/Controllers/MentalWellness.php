@@ -91,7 +91,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'active')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -133,7 +133,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'pending')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -171,7 +171,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'rejected')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
@@ -206,7 +206,7 @@ class Mentalwellness extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'done')->where('category', 'Mental Wellness')
-            ->findAll();
+            ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
         foreach ($consultations as $consultation) {
