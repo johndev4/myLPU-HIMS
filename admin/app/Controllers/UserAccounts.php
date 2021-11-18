@@ -70,7 +70,7 @@ class Useraccounts extends BaseController
 				]
 			],
 			'gender' => [
-				'rules' => 'required|max_length[6]',
+				'rules' => 'required|max_length[10]',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
@@ -83,19 +83,19 @@ class Useraccounts extends BaseController
 				]
 			],
 			'height' => [
-				'rules' => 'max_length[3]',
+				'rules' => 'max_length[25]',
 				'errors' => [
 					'max_length' => 'Max length exceeded.',
 				]
 			],
 			'weight' => [
-				'rules' => 'max_length[3]',
+				'rules' => 'max_length[25]',
 				'errors' => [
 					'max_length' => 'Max length exceeded.',
 				]
 			],
 			'blood_type' => [
-				'rules' => 'max_length[3]',
+				'rules' => 'max_length[5]',
 				'errors' => [
 					'max_length' => 'Max length exceeded.',
 				]

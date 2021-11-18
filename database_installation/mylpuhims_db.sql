@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2021 at 09:28 AM
+-- Generation Time: Nov 18, 2021 at 06:32 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `administrators` (
 --
 
 INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`, `locked`) VALUES
-(20211116, 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'Administrator', 0);
+(20211116, 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'Administrator', NULL);
 
 -- --------------------------------------------------------
 
@@ -162,10 +162,10 @@ CREATE TABLE `lyceans` (
   `role` varchar(45) NOT NULL,
   `department` varchar(45) NOT NULL,
   `birth_date` date NOT NULL,
-  `gender` varchar(6) NOT NULL,
-  `height` varchar(3) DEFAULT NULL,
-  `weight` varchar(3) DEFAULT NULL,
-  `blood_type` varchar(3) DEFAULT NULL
+  `gender` varchar(10) NOT NULL,
+  `height` varchar(25) DEFAULT NULL,
+  `weight` varchar(25) DEFAULT NULL,
+  `blood_type` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
