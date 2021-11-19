@@ -62,6 +62,6 @@ html {
 	}
  } */
 
-Test{
-	color: rgb(0, 131, 253);
+#page-to-top{
+	visibility: hidden;
 }

@@ -227,24 +227,10 @@
         <br><br><br><br>
 
         <!-- Scroll to Top Button-->
-        <a href="#page-top" class="float">
+        <a href="#page-top" class="float" id="page-to-top">
             <i class="fa fa-angle-up my-float fa-lg"></i>
         </a>
     </div>
-
-    <!-- Footer -->
-    <!-- <footer class="row main-footer fixed-bottom justify-content-center" style="text-align: center;">
-        <div> <strong>Copyright &copy;<?= date('Y') ?></strong>
-            All rights reserved.
-        </div>
-        <div>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Terms of Use</a></span>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="">Privacy Policy</a></span>
-            <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help') ?>">Help</a></span>
-            <br>
-        </div>
-    </footer> -->
-
 
     <footer class="row page-footer fixed-bottom justify-content-center bg-light py-3" style="text-align: center;">
         <div class="text-secondary"> <strong>Copyright &copy;<?= date('Y') ?></strong>
@@ -259,12 +245,18 @@
     </footer>
     <!-- Footer -->
 
-
-
-
-
     <!-- Script -->
     <script>
+        // Hide & Show page-to-top button
+        window.onscroll = function() {
+            if (pageYOffset >= 300) {
+                document.getElementById('page-to-top').style.visibility = "visible"
+            } else {
+                document.getElementById('page-to-top').style.visibility = "hidden"
+            }
+        };
+
+        // Scroll to sections
         $(document).ready(function() {
             $("#link-1").on("click", function() {
                 window.scroll(0, findPos(document.getElementById('section-1')));

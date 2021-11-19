@@ -239,11 +239,21 @@
                                         <label for="add_department" class="col-form-label required">Department</label>
                                         <select class="form-control" id="add_department" name="department">
                                             <option value="" selected="selected">---Choose Department---</option>
-                                            <option value="COECSA">COECSA</option>
-                                            <option value="CITHM">CITHM</option>
-                                            <option value="CAS">CAS</option>
-                                            <option value="CAMS">CAMS</option>
-                                            <option value="CBA">CBA</option>
+                                            <optgroup label="International High School">
+                                                <option value="Junior High School">Junior High School (Grade 7-10)</option>
+                                                <option value="Senior High School">Senior High School (Grades 11-12) </option>
+                                            <optgroup label="Undergraduate School">
+                                                <option value="College of Allied Medical Sciences">College of Allied Medical Sciences</option>
+                                                <option value="College of Arts and Sciences">College of Arts and Sciences</option>
+                                                <option value="College of Business Administration">College of Business Administration</option>
+                                                <option value="College of Engineering, Computer Studies and Architecture">College of Engineering, Computer Studies and Architecture</option>
+                                                <option value="College of Fine Arts and Design">College of Fine Arts and Design</option>
+                                                <option value="College of International Tourism and Hospitality Management">College of International Tourism and Hospitality Management</option>
+                                                <option value="College of Nursing">College of Nursing</option>
+                                            <optgroup label="Law">
+                                                <option value="College of Law">College of Law</option>
+                                            <optgroup label="Graduate School">
+                                                <option value="Claro M. Recto Academy of Advanced Studies">Claro M. Recto Academy of Advanced Studies</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -472,11 +482,21 @@
                                         <label for="mod_department" class="col-form-label required">Department</label>
                                         <select class="form-control" id="mod_department" name="department">
                                             <option value="" selected="selected">---Choose Department---</option>
-                                            <option value="COECSA">COECSA</option>
-                                            <option value="CITHM">CITHM</option>
-                                            <option value="CAS">CAS</option>
-                                            <option value="CAMS">CAMS</option>
-                                            <option value="CBA">CBA</option>
+                                            <optgroup label="International High School">
+                                                <option value="Junior High School">Junior High School (Grade 7-10)</option>
+                                                <option value="Senior High School">Senior High School (Grades 11-12) </option>
+                                            <optgroup label="Undergraduate School">
+                                                <option value="College of Allied Medical Sciences">College of Allied Medical Sciences</option>
+                                                <option value="College of Arts and Sciences">College of Arts and Sciences</option>
+                                                <option value="College of Business Administration">College of Business Administration</option>
+                                                <option value="College of Engineering, Computer Studies and Architecture">College of Engineering, Computer Studies and Architecture</option>
+                                                <option value="College of Fine Arts and Design">College of Fine Arts and Design</option>
+                                                <option value="College of International Tourism and Hospitality Management">College of International Tourism and Hospitality Management</option>
+                                                <option value="College of Nursing">College of Nursing</option>
+                                            <optgroup label="Law">
+                                                <option value="College of Law">College of Law</option>
+                                            <optgroup label="Graduate School">
+                                                <option value="Claro M. Recto Academy of Advanced Studies">Claro M. Recto Academy of Advanced Studies</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -576,7 +596,7 @@
                 <div class="col-12 mb-5">
                     <div class="card">
                         <div class="card-header record-header">
-                            <h3 class="card-title">Faculty</h3>
+                            <h3 class="card-title">Faculties</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

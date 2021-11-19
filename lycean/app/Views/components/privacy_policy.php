@@ -184,19 +184,26 @@
     <br><br><br><br>
 
     <!-- Scroll to Top Button-->
-    <a href="#page-top" class="float">
+    <a href="#page-top" class="float" id="page-to-top">
         <i class="fa fa-angle-up my-float fa-lg"></i>
     </a>
 
 </div>
 
 
-
-
-
 <!-- Script -->
 <script>
     $(document).ready(function() {
+        // Hide & Show page-to-top button
+        window.onscroll = function() {
+            if (pageYOffset >= 300) {
+                document.getElementById('page-to-top').style.visibility = "visible"
+            } else {
+                document.getElementById('page-to-top').style.visibility = "hidden"
+            }
+        };
+
+        // Scroll to sections
         $("#link-1").on("click", function() {
             window.scroll(0, findPos(document.getElementById('section-1')));
 

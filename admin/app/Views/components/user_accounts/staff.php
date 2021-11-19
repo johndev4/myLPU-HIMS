@@ -239,11 +239,30 @@
                                         <label for="add_department" class="col-form-label required">Department</label>
                                         <select class="form-control" id="add_department" name="department">
                                             <option value="" selected="selected">---Choose Department---</option>
-                                            <option value="COECSA">COECSA</option>
-                                            <option value="CITHM">CITHM</option>
-                                            <option value="CAS">CAS</option>
-                                            <option value="CAMS">CAMS</option>
-                                            <option value="CBA">CBA</option>
+                                            <option value="Academic Resource Center">Academic Resource Center</option>
+                                            <option value="Accounting Department">Accounting Department</option>
+                                            <option value="Alumni Affairs Office">Alumni Affairs Office</option>
+                                            <option value="Arts and Cultural Affairs">Arts and Cultural Affairs</option>
+                                            <option value="Athletics Department">Athletics Department</option>
+                                            <option value="Bookstore">Bookstore</option>
+                                            <option value="Center for Technical Education">Center for Technical Education</option>
+                                            <option value="Center for Technology-Enabled Education">Center for Technology-Enabled Education</option>
+                                            <option value="Communications and Public Affairs Department">Communications and Public Affairs Department</option>
+                                            <option value="Community Outreach and Service Learning">Community Outreach and Service Learning</option>
+                                            <option value="Executive Office">Executive Office</option>
+                                            <option value="Global Relations and Strategic Partnerships">Global Relations and Strategic Partnerships</option>
+                                            <option value="Human Resource Department">Human Resource Department</option>
+                                            <option value="Information and Communication Technology Department">Information and Communication Technology Department</option>
+                                            <option value="Internal Auditor’s Office">Internal Auditor’s Office</option>
+                                            <option value="Office of the Executive Director for Academic Affairs">Office of the Executive Director for Academic Affairs</option>
+                                            <option value="Physical Plant and Facilities">Physical Plant and Facilities</option>
+                                            <option value="Property Office">Property Office</option>
+                                            <option value="Purchasing Office">Purchasing Office</option>
+                                            <option value="Quality Assurance Office | Office of Data Privacy">Quality Assurance Office | Office of Data Privacy</option>
+                                            <option value="Research and Publications Office">Research and Publications Office</option>
+                                            <option value="Security Office">Security Office</option>
+                                            <option value="Student Affairs Office">Student Affairs Office</option>
+                                            <option value="Student Records Management Department">Student Records Management Department</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -472,11 +491,30 @@
                                         <label for="mod_department" class="col-form-label required">Department</label>
                                         <select class="form-control" id="mod_department" name="department">
                                             <option value="" selected="selected">---Choose Department---</option>
-                                            <option value="COECSA">COECSA</option>
-                                            <option value="CITHM">CITHM</option>
-                                            <option value="CAS">CAS</option>
-                                            <option value="CAMS">CAMS</option>
-                                            <option value="CBA">CBA</option>
+                                            <option value="Academic Resource Center">Academic Resource Center</option>
+                                            <option value="Accounting Department">Accounting Department</option>
+                                            <option value="Alumni Affairs Office">Alumni Affairs Office</option>
+                                            <option value="Arts and Cultural Affairs">Arts and Cultural Affairs</option>
+                                            <option value="Athletics Department">Athletics Department</option>
+                                            <option value="Bookstore">Bookstore</option>
+                                            <option value="Center for Technical Education">Center for Technical Education</option>
+                                            <option value="Center for Technology-Enabled Education">Center for Technology-Enabled Education</option>
+                                            <option value="Communications and Public Affairs Department">Communications and Public Affairs Department</option>
+                                            <option value="Community Outreach and Service Learning">Community Outreach and Service Learning</option>
+                                            <option value="Executive Office">Executive Office</option>
+                                            <option value="Global Relations and Strategic Partnerships">Global Relations and Strategic Partnerships</option>
+                                            <option value="Human Resource Department">Human Resource Department</option>
+                                            <option value="Information and Communication Technology Department">Information and Communication Technology Department</option>
+                                            <option value="Internal Auditor’s Office">Internal Auditor’s Office</option>
+                                            <option value="Office of the Executive Director for Academic Affairs">Office of the Executive Director for Academic Affairs</option>
+                                            <option value="Physical Plant and Facilities">Physical Plant and Facilities</option>
+                                            <option value="Property Office">Property Office</option>
+                                            <option value="Purchasing Office">Purchasing Office</option>
+                                            <option value="Quality Assurance Office | Office of Data Privacy">Quality Assurance Office | Office of Data Privacy</option>
+                                            <option value="Research and Publications Office">Research and Publications Office</option>
+                                            <option value="Security Office">Security Office</option>
+                                            <option value="Student Affairs Office">Student Affairs Office</option>
+                                            <option value="Student Records Management Department">Student Records Management Department</option>
                                         </select>
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -575,7 +613,7 @@
                 <div class="col-12 mb-5">
                     <div class="card">
                         <div class="card-header record-header">
-                            <h3 class="card-title">Staff</h3>
+                            <h3 class="card-title">Staffs</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
