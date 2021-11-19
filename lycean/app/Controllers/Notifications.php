@@ -94,27 +94,38 @@ class Notifications extends BaseController
 	}
 
 
-	// REDIRECT NOTIFICATION TO CONSULTATION DETAILS
+	// SET SCHEDULE CONSULTATION
 	// -----------------------------------------------------------------
 	public function setScheduleNotification()
 	{
 		$activeConsultation = $this->consultationsModel
-			->where('id_no', getIdNo())
+			->where('lycean_id_no', getIdNo())
 			->where('status', 'active')
-			->first;
+			->first();
 
-		if ($activeConsultation['category'] == 'Consultation') {
-			$icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
-		} else if ($activeConsultation['category'] == 'Mental Wellness') {
-			$icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
+		if ($activeConsultation) {
+			$reminderNotification = $this->notificationModel
+				->where('id_no', getIdNo())
+				->where('info', "Reminder: Consultation at " . date_create($activeConsultation['meeting_schedule'])->format('F d, Y h:i A'))
+				->first();
+
+			if ($reminderNotification == []) {
+				if (date_create($activeConsultation['meeting_schedule'])->format('Y-m-d H:i') == date('Y-m-d H:i')) {
+					if ($activeConsultation['category'] == 'Consultation') {
+						$icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
+					} else if ($activeConsultation['category'] == 'Mental Wellness') {
+						$icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
+					}
+
+					$this->notificationModel->save([
+						'id_no' => getIdNo(),
+						'icon' => $icon,
+						'info' => "Reminder: Consultation at " . date_create($activeConsultation['meeting_schedule'])->format('F d, Y h:i A'),
+						'status' => 'unread',
+						'link' => site_url('consultation/details/' . $activeConsultation['consultation_no'])
+					]);
+				}
+			}
 		}
-
-		return $this->lyceansNotificationModel->save([
-			'id_no' => getIdNo(),
-			'icon' => $icon,
-			'info' => 'Alarm',
-			'status' => 'unread',
-			'link' => str_replace('lycean', 'clinic', site_url('consultations'))
-		]);
 	}
 }
