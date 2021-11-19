@@ -155,7 +155,7 @@ class Useraccounts extends BaseController
 				]
 			],
 			'middle_name' => [
-				'rules' => 'max_length[1]',
+				'rules' => 'max_length[45]',
 				'errors' => [
 					'max_length' => 'Max length exceeded.',
 				]
