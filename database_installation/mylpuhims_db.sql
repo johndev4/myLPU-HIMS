@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2021 at 06:32 AM
+-- Generation Time: Nov 19, 2021 at 04:56 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -127,7 +127,7 @@ CREATE TABLE `health_personnels_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
   `icon` varchar(100) NOT NULL,
-  `info` varchar(45) NOT NULL,
+  `info` varchar(100) NOT NULL,
   `status` varchar(45) NOT NULL,
   `link` varchar(2048) NOT NULL,
   `created_at` varchar(45) NOT NULL,
@@ -160,7 +160,7 @@ CREATE TABLE `lyceans` (
   `middle_name` varchar(45) NOT NULL,
   `last_name` varchar(45) NOT NULL,
   `role` varchar(45) NOT NULL,
-  `department` varchar(45) NOT NULL,
+  `department` varchar(100) NOT NULL,
   `birth_date` date NOT NULL,
   `gender` varchar(10) NOT NULL,
   `height` varchar(25) DEFAULT NULL,
@@ -191,7 +191,7 @@ CREATE TABLE `lyceans_notification` (
   `notification_id` int(11) NOT NULL,
   `id_no` varchar(45) NOT NULL,
   `icon` varchar(100) NOT NULL,
-  `info` varchar(45) NOT NULL,
+  `info` varchar(100) NOT NULL,
   `status` varchar(45) NOT NULL,
   `link` varchar(2048) NOT NULL,
   `created_at` varchar(45) NOT NULL,
