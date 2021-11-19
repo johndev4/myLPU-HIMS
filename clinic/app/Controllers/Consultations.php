@@ -128,7 +128,7 @@ class Consultations extends BaseController
 		$result = "";
 		foreach ($pendingConsultations as $key => $value) {
 			$lycean = $this->lyceansModel->find($value['lycean_id_no']);
-			$middle_init = $lycean['middle_name'];
+			$middle_init = substr($lycean['middle_name'], 0, 1);
 
 			$data = "
 			<div class=\"col-12 d-flex justify-content-center\">
@@ -164,7 +164,7 @@ class Consultations extends BaseController
 		$result = "";
 		foreach ($scheduledConsultations as $key => $value) {
 			$lycean = $this->lyceansModel->find($value['lycean_id_no']);
-			$middle_init = $lycean['middle_name'];
+			$middle_init = substr($lycean['middle_name'], 0, 1);
 			$key += 1;
 
 			$data = "
