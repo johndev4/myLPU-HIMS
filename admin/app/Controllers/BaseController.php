@@ -51,8 +51,9 @@ class BaseController extends Controller
 		parent::initController($request, $response, $logger);
 
 		// Initialized database models
+		// -------------------------------------------------------------
 		$this->userAccountModel = model('App\Models\AdministratorsModel');
-		
+
 		$this->lyceansModel = model('App\Models\LyceansModel');
 		$this->lyceansAccountModel = model('App\Models\LyceansAccountModel');
 		$this->lyceansNotificationModel = model('App\Models\LyceansNotificationModel');
@@ -64,5 +65,15 @@ class BaseController extends Controller
 
 		$this->consultationsModel = model('App\Models\ConsultationsModel');
 		$this->medicalFilesModel = model('App\Models\MedicalFilesModel');
+
+
+
+		// Initialize Directories
+		// -------------------------------------------------------------
+		
+		// Medical Records Directory
+		$this->medicalRecordsDir = $_SERVER['DOCUMENT_ROOT'] . '/myLPU-HIMS/clinic/public/uploaded/medical_records/';
+		// Medical Files Directory
+		$this->medicalFilesDir = $_SERVER['DOCUMENT_ROOT'] . '/myLPU-HIMS/clinic/public/uploaded/medical_files/';
 	}
 }

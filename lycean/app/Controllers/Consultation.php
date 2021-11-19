@@ -84,7 +84,7 @@ class Consultation extends BaseController
             // Display page view
             return view('components/consultation_details', $this->data);
         } else {
-            echo "This page is not available.";
+            echo view('errors/html/error_404');
         }
     }
 
@@ -119,7 +119,7 @@ class Consultation extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                 </div>
 
@@ -157,7 +157,7 @@ class Consultation extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                 </div>
 
@@ -194,7 +194,7 @@ class Consultation extends BaseController
             </div>
             <div class=\"col-lg-12\" style=\"border:1px solid none\">
                 <div class=\"float-right\">
-                <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                 </div>
             </div>
 
@@ -234,7 +234,7 @@ class Consultation extends BaseController
                 </div>
                 <div class=\"col-lg-12\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                 </div>
 
@@ -293,11 +293,7 @@ class Consultation extends BaseController
 
     private function setNotification($data)
     {
-        if ($data['category'] == 'Consultation') {
-            $icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
-        } else if ($data['category'] == 'Mental Wellness') {
-            $icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
-        }
+        $icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
 
         return $this->healthPersonnelsNotificationModel->save([
             'id_no' => $data['personnel_id_no'],

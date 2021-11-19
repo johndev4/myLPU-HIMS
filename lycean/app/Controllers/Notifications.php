@@ -92,4 +92,29 @@ class Notifications extends BaseController
 		} else {
 		}
 	}
+
+
+	// REDIRECT NOTIFICATION TO CONSULTATION DETAILS
+	// -----------------------------------------------------------------
+	public function setScheduleNotification()
+	{
+		$activeConsultation = $this->consultationsModel
+			->where('id_no', getIdNo())
+			->where('status', 'active')
+			->first;
+
+		if ($activeConsultation['category'] == 'Consultation') {
+			$icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
+		} else if ($activeConsultation['category'] == 'Mental Wellness') {
+			$icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
+		}
+
+		return $this->lyceansNotificationModel->save([
+			'id_no' => getIdNo(),
+			'icon' => $icon,
+			'info' => 'Alarm',
+			'status' => 'unread',
+			'link' => str_replace('lycean', 'clinic', site_url('consultations'))
+		]);
+	}
 }
