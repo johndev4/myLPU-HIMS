@@ -4,6 +4,30 @@
 <body style="background: linear-gradient(250deg, #ffffff 60%, #e4e4e4 60%)">
     <div class="container">
 
+        <!-- Modal -->
+        <!-- Cancel Request Modal -->
+        <div class="modal fade" id="cancelrequestModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="width:350px;">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center mt-2">
+                            <span class="info-box-icon text-warning"><i class="fas fa-3x fa-exclamation-circle"></i></span>
+                            <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Are you sure?</div>
+                            <div class="mt-1 font-weight-normal text-secondary">This will cancel your request</div>
+                        </div><br>
+                        <div class="float-right">
+                            <form action="" method="get" id="">
+                                <button type="button" class="btn" data-dismiss="modal">No</button>
+                                <button type="submit" class="btn btn-default swalDefaultSuccess ">Yes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Cancel Rewuest Modal -->
+        <!-- /Modal -->
+
         <div class="row consult-row" style="border:1px solid none; margin-top:80px">
             <!-- Navigation -->
             <div class="col-md-6">

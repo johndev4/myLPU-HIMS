@@ -94,12 +94,12 @@
                     </ul>
                 </li>
 
-                <!-- User Informations -->
+                <!-- Deleted Accounts -->
                 <li class="nav-item" id="mainUserInformationNav">
                     <a href="#" class="nav-link selector">
                         <i class="fa fa-file-alt nav-icon text-light"></i>
                         <p class="text-light">
-                            User Informations
+                            Deleted Accounts
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>

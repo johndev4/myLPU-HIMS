@@ -117,9 +117,12 @@ class Consultation extends BaseController
                     </div>
                 </div>
                 </div>
-                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                    </div>
+                    <div class=\"float-right mr-1\">
+                        <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
                     </div>
                 </div>
 
@@ -155,9 +158,12 @@ class Consultation extends BaseController
                     </div>
                 </div>
                 </div>
-                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                    </div>
+                    <div class=\"float-right mr-1\">
+                        <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
                     </div>
                 </div>
 
