@@ -13,11 +13,6 @@ class Userinformations extends BaseController
         $this->data['page_title'] = 'User Informations';
         // User firstname
         $this->data['adminName'] = getAdminName();
-
-        // Medical Records Directory
-        $this->medicalRecordsDir = $_SERVER['DOCUMENT_ROOT'] . '/myLPU-HIMS/clinic/public/uploaded/medical_records/';
-        // Medical Files Directory
-        $this->medicalFilesDir = $_SERVER['DOCUMENT_ROOT'] . '/myLPU-HIMS/clinic/public/uploaded/medical_files/';
     }
 
 

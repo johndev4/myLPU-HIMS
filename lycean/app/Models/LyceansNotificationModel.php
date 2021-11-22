@@ -14,7 +14,7 @@ class LyceansNotificationModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['status'];
+    protected $allowedFields        = ['status', 'id_no', 'icon', 'info', 'link'];
 
     // Dates
     protected $useTimestamps        = true;

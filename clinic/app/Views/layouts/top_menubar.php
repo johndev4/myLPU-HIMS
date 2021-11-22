@@ -84,7 +84,7 @@
                     badgeVisibility()
                 }
             });
-        }, 5000);
+        }, 500);
 
         // Run or stop online state
         setInterval(function() {

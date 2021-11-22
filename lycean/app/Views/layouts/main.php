@@ -82,9 +82,9 @@
                 All rights reserved.
             </div>
             <div>
-                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('terms')?>">Terms & Conditions</a></span>
-                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('privacy')?>">Privacy Policy</a></span>
-                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help')?>">Help</a></span>
+                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('terms') ?>">Terms & Conditions</a></span>
+                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('privacy') ?>">Privacy Policy</a></span>
+                <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help') ?>">Help</a></span>
                 <br>
             </div>
         </footer>
@@ -92,6 +92,24 @@
 
     </div>
     <!-- ./wrapper -->
+
+
+
+
+    <!-- SCRIPT -->
+    <script>
+        $(document).ready(function() {
+            // Notify user for scheduled consultation
+            setInterval(function() {
+                $.ajax({
+                    url: '<?= site_url('notifications/setScheduleNotification/') ?>',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+            }, 500);
+        });
+    </script>
 
 </body>
 

@@ -294,9 +294,11 @@ class Mentalwellness extends BaseController
 
     private function setNotification($data)
     {
+        $icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
+        
         return $this->healthPersonnelsNotificationModel->save([
             'id_no' => $data['personnel_id_no'],
-            'consultation_no' => $data['consultation_no'],
+            'icon' => $icon,
             'info' => 'You have new consultation requests',
             'status' => 'unread',
             'link' => str_replace('lycean', 'clinic', site_url('consultations'))

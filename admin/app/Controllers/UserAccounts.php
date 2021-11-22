@@ -101,7 +101,7 @@ class Useraccounts extends BaseController
 				]
 			],
 			'department' => [
-				'rules' => 'required|max_length[45]',
+				'rules' => 'required|max_length[100]',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
