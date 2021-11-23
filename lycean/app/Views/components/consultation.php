@@ -133,10 +133,10 @@
 
                                 <label class="col-form-label required text-secondary">Tell us your concern</label>
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                                <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Write it here..." maxlength="100" required="required"></textarea>
+                                <textarea class="form-control txtarea border-0" id="message_consultation" name="consultation_message" rows="5" placeholder="Write it here..." maxlength="250" required="required"></textarea>
                                 <div class="mb-2" id="count" align="right">
                                     <span id="current">0</span>
-                                    <span id="maximum">/ 100</span>
+                                    <span id="maximum">/ 250</span>
                                 </div>
 
                                 <button type="submit" class="btn btn-block btn-default p-2" id="sendBtn_consultation">Send Request Now<i class="far fa-paper-plane ml-2"></i></button>
@@ -239,11 +239,11 @@
                 theCount = $('#count');
 
             current.text(characterCount);
-            if (characterCount < 80) {
+            if (characterCount < 230) {
                 current.css('color', '#666');
             }
 
-            if (characterCount >= 80) {
+            if (characterCount >= 230) {
                 maximum.css('color', '#8f0001');
                 current.css('color', '#8f0001');
                 theCount.css('font-weight', 'bold');
