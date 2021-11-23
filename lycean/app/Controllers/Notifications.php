@@ -58,7 +58,7 @@ class Notifications extends BaseController
 			'result' => $result,
 			'count' => count($notifications),
 			'unreadCount' => count($unreadNotifications),
-			'notificationInfo' => !empty($newNotification['info']) ? $newNotification['info'] : false
+			'notificationInfo' => !empty($newNotification['info']) ? $newNotification['info'] : 'false'
 		]);
 	}
 

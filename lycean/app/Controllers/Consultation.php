@@ -24,7 +24,7 @@ class Consultation extends BaseController
     {
         return [
             'consultation_message' => [
-                'rules' => 'required|max_length[100]',
+                'rules' => 'required|max_length[250]',
                 'errors' => [
                     'required' => '- Required',
                     'max_length' => 'Too many characters.',
@@ -122,7 +122,7 @@ class Consultation extends BaseController
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                     <div class=\"float-right mr-1\">
-                        <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
+                        <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" onclick=\"$('#cancelYes').on('click', function() { cancelRequest('{$consultation['consultation_no']}') })\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
                     </div>
                 </div>
 
@@ -163,7 +163,7 @@ class Consultation extends BaseController
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                     <div class=\"float-right mr-1\">
-                        <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
+                    <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" onclick=\"$('#cancelYes').on('click', function() { cancelRequest('{$consultation['consultation_no']}') })\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
                     </div>
                 </div>
 
@@ -216,6 +216,48 @@ class Consultation extends BaseController
     {
         $consultations = $this->consultationsModel
             ->where('lycean_id_no', getIdNo())->where('status', 'done')->where('category', 'Consultation')
+            ->orderBy('created_at', 'desc')->findAll();
+
+        $result = "";
+        foreach ($consultations as $consultation) {
+            $schedule_time = date('h:i A', strtotime($consultation['meeting_schedule']));
+            $schedule_date = date('F d, Y', strtotime($consultation['meeting_schedule']));
+
+
+            $data = "
+            <div class=\"col-md-12\" style=\"border:1px solid none\">
+                <div class=\"\">
+                    <label class=\"d-block text-secondary mt-n1\">Schedule</label>
+                    <div class=\"mt-n2 mb-2\">
+                        <span class=\"text-dark time\">Time: {$schedule_time}</span>
+                        <span class=\"text-dark date float-right\">Date: {$schedule_date}</span>
+                    </div>
+                    <label class=\"d-block text-secondary\">Meeting Link</label>
+                    <div class=\"mt-n2\">
+                        <a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>
+                    </div>
+                </div>
+                </div>
+                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                    <div class=\"float-right\">
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
+                    </div>
+                </div>
+
+                <hr class=\"text-danger\" width=\"100%\">
+            </div>
+            ";
+
+            $result .= $data;
+        }
+
+        return json_encode(['result' => $result, 'count' => count($consultations)]);
+    }
+
+    public function fetchCancelledConsultation()
+    {
+        $consultations = $this->consultationsModel
+            ->where('lycean_id_no', getIdNo())->where('status', 'cancelled')->where('category', 'Consultation')
             ->orderBy('created_at', 'desc')->findAll();
 
         $result = "";
@@ -324,8 +366,10 @@ class Consultation extends BaseController
         if ($healthPersonnels) {
             foreach ($healthPersonnels as $healthPersonnel) {
                 $healthPersonnelsInfo = $this->healthPersonnelsModel->find($healthPersonnel['id_no']);
+                $title = 'Dr.';
+
                 if ($healthPersonnelsInfo['designation'] == "Doctor") {
-                    $result .= "<option value=\"{$healthPersonnel['id_no']}\">Dr. {$healthPersonnelsInfo['first_name']} {$healthPersonnelsInfo['last_name']}</option>";
+                    $result .= "<option value=\"{$healthPersonnel['id_no']}\">{$title} {$healthPersonnelsInfo['first_name']} {$healthPersonnelsInfo['last_name']}</option>";
                     $count += 1;
                 }
             }
@@ -336,5 +380,23 @@ class Consultation extends BaseController
         }
 
         return json_encode(['result' => $result, 'count' => $count]);
+    }
+
+
+    // CANCEL REQUEST
+    // -----------------------------------------------------------------
+    public function cancelRequest($id)
+    {
+        $success = $this->consultationsModel
+            ->where('consultation_no', $id)
+            ->set([
+                'status' => 'cancelled'
+            ])->update();
+
+        if ($success) {
+            session()->setFlashdata('success', 'Cancelled');
+        }
+
+        return redirect()->to('consultation');
     }
 }

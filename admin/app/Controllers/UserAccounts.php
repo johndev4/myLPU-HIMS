@@ -9,10 +9,10 @@ class Useraccounts extends BaseController
 	public function __construct()
 	{
 		helper('useraccount');
-        // Page title
-        $this->data['page_title'] = 'User Accounts';
-        // User firstname
-        $this->data['adminName'] = getAdminName();
+		// Page title
+		$this->data['page_title'] = 'User Accounts';
+		// User firstname
+		$this->data['adminName'] = getAdminName();
 	}
 
 
@@ -157,6 +157,13 @@ class Useraccounts extends BaseController
 			'middle_name' => [
 				'rules' => 'max_length[45]',
 				'errors' => [
+					'max_length' => 'Max length exceeded.',
+				]
+			],
+			'gender' => [
+				'rules' => 'required|max_length[10]',
+				'errors' => [
+					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
 				]
 			],
@@ -341,7 +348,7 @@ class Useraccounts extends BaseController
 		return json_encode($result);
 	}
 
-	public function fetchHealthPersonnelById($id='')
+	public function fetchHealthPersonnelById($id = '')
 	{
 		$healthPersonnels = $this->healthPersonnelsModel->find($id);
 		$healthPersonnelsAccount = $this->healthPersonnelsAccountModel->find($id);
@@ -352,7 +359,8 @@ class Useraccounts extends BaseController
 				'id_no' 		 => $healthPersonnels['id_no'],
 				'last_name' 	 => $healthPersonnels['last_name'],
 				'first_name' 	 => $healthPersonnels['first_name'],
-				'middle_name' => $healthPersonnels['middle_name'],
+				'middle_name' 	 => $healthPersonnels['middle_name'],
+				'gender' 	 	 => $healthPersonnels['gender'],
 				'designation' 	 => $healthPersonnels['designation']
 			];
 		}
@@ -367,7 +375,7 @@ class Useraccounts extends BaseController
 
 	// FETCH DATA BY ID WITHOUT ACCOUNT
 	// ---------------------------------------------------------
-	public function fetchLyceanInfoById($id='')
+	public function fetchLyceanInfoById($id = '')
 	{
 		$lyceans = $this->lyceansModel->find($id);
 		$lyceansAccount = $this->lyceansAccountModel->find($id);
@@ -402,7 +410,8 @@ class Useraccounts extends BaseController
 				'id_no' 		 => $healthPersonnels['id_no'],
 				'last_name' 	 => $healthPersonnels['last_name'],
 				'first_name' 	 => $healthPersonnels['first_name'],
-				'middle_name' => $healthPersonnels['middle_name'],
+				'middle_name' 	 => $healthPersonnels['middle_name'],
+				'gender' 	 	 => $healthPersonnels['gender'],
 				'designation' 	 => $healthPersonnels['designation']
 			];
 		}
@@ -482,6 +491,7 @@ class Useraccounts extends BaseController
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
+					// 'gender' 	 	 => htmlspecialchars($_GET['gender']),
 					'designation' => htmlspecialchars($_GET['designation']),
 					'department' => htmlspecialchars("HSD")
 				];
@@ -588,6 +598,7 @@ class Useraccounts extends BaseController
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
+					// 'gender' => htmlspecialchars($_GET['gender']),
 					'designation' => htmlspecialchars($_GET['designation']),
 				];
 

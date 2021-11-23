@@ -16,10 +16,8 @@
                             <div class="mt-1 font-weight-normal text-secondary">This will cancel your request</div>
                         </div><br>
                         <div class="float-right">
-                            <form action="" method="get" id="">
-                                <button type="button" class="btn" data-dismiss="modal">No</button>
-                                <button type="submit" class="btn btn-default swalDefaultSuccess ">Yes</button>
-                            </form>
+                            <button type="button" class="btn" data-dismiss="modal">No</button>
+                            <button type="button" class="btn btn-default swalDefaultSuccess" id="cancelYes" data-dismiss="modal">Yes</button>
                         </div>
                     </div>
                 </div>
@@ -129,7 +127,7 @@
                                 <div class="form-group mb-4" style="border:1px solid none">
                                     <label for="select_doctor" class="col-form-label required text-secondary">Guidance Counselor</label>
                                     <select class="form-control" id="online_guidanceCounselor" name="consultation_guidancecounselor" required="required">
-                                        <!-- ONLINE DOCTORS HERE -->
+                                        <!-- ONLINE GUIDANCE COUNSELOR HERE -->
                                     </select>
                                 </div>
 
@@ -263,27 +261,6 @@
                 }
             }
         });
-        setInterval(function() {
-            $.ajax({
-                url: '<?= site_url('mentalwellness/fetchActiveConsultation') ?>',
-                type: 'get',
-                dataType: 'json',
-                success: function(response) {
-                    if (response['count'] != activeCount) {
-                        $('#activeContent').html(response['result']);
-                        activeCount = response['count'];
-
-                        if (activeCount != 0) {
-                            $('#custom-tabs-four-active-tab').trigger('click');
-                        }
-
-                        if (activeCount == 0 && pendingCount == 0) {
-                            $('#custom-tabs-four-done-tab').trigger('click');
-                        }
-                    }
-                }
-            });
-        }, 5000);
         // Fetch Pending Consultation
         var pendingCount;
         $.ajax({
@@ -303,7 +280,64 @@
                 }
             }
         });
+        // Fetch Rejected Consultation
+        var rejectCount;
+        $.ajax({
+            url: '<?= site_url('mentalwellness/fetchRejectedConsultation') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#rejectedContent').html(response['result']);
+                rejectCount = response['count'];
+            }
+        });
+        // Fetch Done Consultation
+        var doneCount;
+        $.ajax({
+            url: '<?= site_url('mentalwellness/fetchDoneConsultation') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#doneContent').html(response['result']);
+                doneCount = response['count'];
+            }
+        });
+
+        // Fetch all online doctors
+        var onlineCount;
+        $.ajax({
+            url: '<?= site_url('mentalwellness/fetchOnlineHealthPersonnels') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#online_guidanceCounselor').html(response['result']);
+                onlineCount = response['count'];
+            }
+        });
+
+        // Set Interval
         setInterval(function() {
+            // Fetch Active Consultation
+            $.ajax({
+                url: '<?= site_url('mentalwellness/fetchActiveConsultation') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != activeCount) {
+                        $('#activeContent').html(response['result']);
+                        activeCount = response['count'];
+
+                        if (activeCount != 0) {
+                            $('#custom-tabs-four-active-tab').trigger('click');
+                        }
+
+                        if (activeCount == 0 && pendingCount == 0) {
+                            $('#custom-tabs-four-done-tab').trigger('click');
+                        }
+                    }
+                }
+            });
+            // Fetch Pending Consultation
             $.ajax({
                 url: '<?= site_url('mentalwellness/fetchPendingConsultation') ?>',
                 type: 'get',
@@ -323,19 +357,7 @@
                     }
                 }
             });
-        }, 5000);
-        // Fetch Rejected Consultation
-        var rejectCount;
-        $.ajax({
-            url: '<?= site_url('mentalwellness/fetchRejectedConsultation') ?>',
-            type: 'get',
-            dataType: 'json',
-            success: function(response) {
-                $('#rejectedContent').html(response['result']);
-                rejectCount = response['count'];
-            }
-        });
-        setInterval(function() {
+            // Fetch Rejected Consultation
             $.ajax({
                 url: '<?= site_url('mentalwellness/fetchRejectedConsultation') ?>',
                 type: 'get',
@@ -347,19 +369,7 @@
                     }
                 }
             });
-        }, 5000);
-        // Fetch Done Consultation
-        var doneCount;
-        $.ajax({
-            url: '<?= site_url('mentalwellness/fetchDoneConsultation') ?>',
-            type: 'get',
-            dataType: 'json',
-            success: function(response) {
-                $('#doneContent').html(response['result']);
-                doneCount = response['count'];
-            }
-        });
-        setInterval(function() {
+            // Fetch Done Consultation
             $.ajax({
                 url: '<?= site_url('mentalwellness/fetchDoneConsultation') ?>',
                 type: 'get',
@@ -371,20 +381,8 @@
                     }
                 }
             });
-        }, 5000);
 
-        // Fetch all online doctors
-        var onlineCount;
-        $.ajax({
-            url: '<?= site_url('mentalwellness/fetchOnlineHealthPersonnels') ?>',
-            type: 'get',
-            dataType: 'json',
-            success: function(response) {
-                $('#online_guidanceCounselor').html(response['result']);
-                onlineCount = response['count'];
-            }
-        });
-        setInterval(function() {
+            // Fetch all online doctors
             $.ajax({
                 url: '<?= site_url('mentalwellness/fetchOnlineHealthPersonnels') ?>',
                 type: 'get',
@@ -396,8 +394,29 @@
                     }
                 }
             });
-        }, 5000);
+        }, 3000);
     });
+
+    // On cancel request
+    function cancelRequest(id) {
+        $.ajax({
+            url: '<?= site_url('mentalwellness/cancelRequest/') ?>' + id,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        });
+        // Sweet Alert for success staus
+        var Toast = Swal.mixin({
+            toast: false,
+            position: 'center',
+            showConfirmButton: true,
+            timer: false
+        });
+        Toast.fire({
+            icon: 'success',
+            title: 'Cancelled'
+        });
+    }
 
     <?php if (session()->get('success') !== null) : ?>
         // Sweet Alert for success staus
@@ -417,6 +436,7 @@
             toast: false,
             position: 'center',
             showConfirmButton: true,
+            timer: 3000
         });
         Toast.fire({
             icon: 'warning',

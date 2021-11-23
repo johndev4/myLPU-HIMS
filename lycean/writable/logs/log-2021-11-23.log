@@ -1,0 +1,45 @@
+CRITICAL - 2021-11-23 00:29:03 --> Call to undefined function App\Controllers\siteurl()
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultation->fetchPendingConsultation()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultation))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-11-23 00:29:05 --> Call to undefined function App\Controllers\siteurl()
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultation->fetchPendingConsultation()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultation))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-11-23 00:29:34 --> Call to undefined function App\Controllers\siteurl()
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultation->fetchPendingConsultation()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultation))
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2021-11-23 16:28:24 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2021-11-23 16:28:24 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Helpers\useraccount_helper.php(39): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(102): getIdNo()
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->setScheduleNotification()
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#8 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2021-11-23 16:28:24 --> Error connecting to the database: MySQL server has gone away
+CRITICAL - 2021-11-23 16:28:24 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+#0 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(21): CodeIgniter\BaseModel->findAll()
+#5 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->fetchAllNotifications('2018-2-02181')
+#6 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#7 C:\xampp\htdocs\myLPU-HIMS\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
