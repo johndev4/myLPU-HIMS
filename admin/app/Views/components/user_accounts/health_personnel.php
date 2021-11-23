@@ -135,7 +135,28 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-12 form-group">
+                                    <div class="col-4 form-group">
+                                        <label for="add_gender" class="col-form-label required">Gender</label>
+                                        <select class="form-control" id="add_gender" name="gender">
+                                            <option value="" selected="selected">---Select Gender---</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('add_validation')->hasError('gender')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('add_validation')->getError('gender'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_gender').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-8 form-group">
                                         <label for="add_designation" class="col-form-label required">Designation</label>
                                         <select class="form-control" id="add_designation" name="designation">
                                             <option value="" selected="selected">---Choose Designation---</option>
@@ -267,7 +288,28 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="col-12 form-group">
+                                    <div class="col-4 form-group">
+                                        <label for="mod_gender" class="col-form-label required">Gender</label>
+                                        <select class="form-control" id="mod_gender" name="gender">
+                                            <option value="" selected="selected">---Select Gender---</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+                                            <?php if (session()->getFlashdata('mod_validation')->hasError('gender')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->getFlashdata('mod_validation')->getError('gender'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_gender').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-8 form-group">
                                         <label for="mod_designation" class="col-form-label required">Designation</label>
                                         <select class="form-control" id="mod_designation" name="designation">
                                             <option value="" selected="selected">---Choose Designation---</option>
