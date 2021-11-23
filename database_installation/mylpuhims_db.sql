@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 04:56 PM
+-- Generation Time: Nov 23, 2021 at 02:02 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -99,8 +99,9 @@ CREATE TABLE `health_personnels` (
   `first_name` varchar(45) NOT NULL,
   `middle_name` varchar(45) NOT NULL,
   `last_name` varchar(45) NOT NULL,
+  `gender` varchar(45) NOT NULL,
   `designation` varchar(45) NOT NULL,
-  `department` varchar(45) NOT NULL
+  `department` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
