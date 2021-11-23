@@ -198,7 +198,8 @@ class Consultation extends BaseController
                     </div>
                 </div>
             </div>
-            <div class=\"col-lg-12\" style=\"border:1px solid none\">
+            <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
+                <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
                 <div class=\"float-right\">
                 <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                 </div>
@@ -238,7 +239,8 @@ class Consultation extends BaseController
                     </div>
                 </div>
                 </div>
-                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
@@ -262,9 +264,9 @@ class Consultation extends BaseController
 
         $result = "";
         foreach ($consultations as $consultation) {
-            $schedule_time = $consultation['meeting_schedule'] != null? date('h:i A', strtotime($consultation['meeting_schedule'])) : '---';
-            $schedule_date = $consultation['meeting_schedule'] != null? date('F d, Y', strtotime($consultation['meeting_schedule'])) : '---';
-            $meeting_link = $consultation['meeting_link'] != null? "<a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>" : '---';
+            $schedule_time = $consultation['meeting_schedule'] != null ? date('h:i A', strtotime($consultation['meeting_schedule'])) : '---';
+            $schedule_date = $consultation['meeting_schedule'] != null ? date('F d, Y', strtotime($consultation['meeting_schedule'])) : '---';
+            $meeting_link = $consultation['meeting_link'] != null ? "<a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>" : '---';
 
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
@@ -280,7 +282,8 @@ class Consultation extends BaseController
                     </div>
                 </div>
                 </div>
-                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>

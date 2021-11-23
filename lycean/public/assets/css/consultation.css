@@ -91,6 +91,18 @@ a#custom-tabs-four-done-tab.nav-link{
     border-radius: 3px !important;
 }
 
+/* Cancelled */
+a#custom-tabs-four-cancelled-tab.nav-link.active{
+    border-top-color: rgb(49, 99, 173) !important;
+    border-radius: 3px !important;
+    color: rgb(49, 99, 173) !important;
+}
+
+a#custom-tabs-four-cancelled-tab.nav-link{
+    color: rgb(155, 155, 155) !important;
+    border-radius: 3px !important;
+}
+
 /* Tabs button */
 @media screen and (max-width:900px) {
     button.btn.btn-default.p-2{

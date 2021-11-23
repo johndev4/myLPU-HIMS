@@ -115,7 +115,7 @@ class Mentalwellness extends BaseController
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                     <div class=\"float-right mr-1\">
                         <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" onclick=\"$('#cancelYes').on('click', function() { cancelRequest('{$consultation['consultation_no']}') })\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
@@ -156,7 +156,7 @@ class Mentalwellness extends BaseController
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                     <div class=\"float-right mr-1\">
                         <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" onclick=\"$('#cancelYes').on('click', function() { cancelRequest('{$consultation['consultation_no']}') })\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
@@ -194,9 +194,10 @@ class Mentalwellness extends BaseController
                     </div>
                 </div>
             </div>
-            <div class=\"col-lg-12\" style=\"border:1px solid none\">
+            <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
+                <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
                 <div class=\"float-right\">
-                <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                 </div>
             </div>
 
@@ -234,9 +235,10 @@ class Mentalwellness extends BaseController
                     </div>
                 </div>
                 </div>
-                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View all</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
                 </div>
 
@@ -276,7 +278,8 @@ class Mentalwellness extends BaseController
                     </div>
                 </div>
                 </div>
-                <div class=\"col-lg-12\" style=\"border:1px solid none\">
+                <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
