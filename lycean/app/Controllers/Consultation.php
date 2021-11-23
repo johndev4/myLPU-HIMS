@@ -52,7 +52,7 @@ class Consultation extends BaseController
         if ($consultation) {
             $this->data['details'] = [
                 'consultation_id' => $id,
-                'date_of_request' => date_create($consultation['created_at'])->format('d-m-Y H:i'),
+                'date_of_request' => date_create($consultation['created_at'])->format('d-M-Y H:i'),
                 'time' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('h:i a') : '---',
                 'date' => $consultation['meeting_schedule'] != '' ? date_create($consultation['meeting_schedule'])->format('F d, Y') : '---',
                 'meeting_link' => [
@@ -199,7 +199,7 @@ class Consultation extends BaseController
                 </div>
             </div>
             <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
-                <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
+                <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">". date_create($consultation['created_at'])->format('d-M-Y H:i') ."</span>
                 <div class=\"float-right\">
                 <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                 </div>
@@ -240,7 +240,7 @@ class Consultation extends BaseController
                 </div>
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
-                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">". date_create($consultation['created_at'])->format('d-M-Y H:i') ."</span>
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
@@ -283,7 +283,7 @@ class Consultation extends BaseController
                 </div>
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
-                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">20-Jan-2021 22:29</span>
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">". date_create($consultation['created_at'])->format('d-M-Y H:i') ."</span>
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
@@ -372,10 +372,10 @@ class Consultation extends BaseController
 
         if ($type == 'sendConsultation') {
             $info = "You have new consultation requests";
-            $link = $this->clinicBasedUrl . '/consultations';
+            $link = $this->clinicBaseUrl . '/consultations';
         } else if ($type == 'cancelled') {
             $info = getUserFullname() . " cancelled the request";
-            $link = $this->clinicBasedUrl . '/consultations/history?id=' . $data['consultation_no'];
+            $link = $this->clinicBaseUrl . '/consultations/history?id=' . $data['consultation_no'];
         }
 
         return $this->healthPersonnelsNotificationModel->save([

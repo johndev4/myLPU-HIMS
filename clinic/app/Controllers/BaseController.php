@@ -66,5 +66,20 @@ class BaseController extends Controller
 		$this->medicinesModel = model('App\Models\MedicinesModel');
 		$this->batchesModel = model('App\Models\BatchesModel');
 		$this->equipmentsModel = model('App\Models\EquipmentsModel');
+		
+
+		// Initialize Directories
+		// -------------------------------------------------------------
+
+
+
+		
+		// Initialize External App Based URL
+		// -------------------------------------------------------------
+		
+		// Lycean App Base URL
+		$this->lyceanBaseUrl = str_replace('clinic', 'lycean', site_url()); // CUSTOMIZE THIS IN CASE OF 3 END USERS HAS DIFFERENT DOMAINS
+		// Admin App Base URL
+		$this->clinicBaseUrl = str_replace('clinic', 'admin', site_url()); // CUSTOMIZE THIS IN CASE OF 3 END USERS HAS DIFFERENT DOMAINS
 	}
 }
