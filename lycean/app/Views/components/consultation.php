@@ -166,6 +166,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="custom-tabs-four-done-tab" data-toggle="pill" href="#custom-tabs-four-done" role="tab" aria-controls="custom-tabs-four-done" aria-selected="false">Done</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-four-cancelled-tab" data-toggle="pill" href="#custom-tabs-four-cancelled" role="tab" aria-controls="custom-tabs-four-cancelled" aria-selected="false">Cancelled</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="card-body" style="height: 400px; overflow-y:auto">
@@ -201,6 +204,14 @@
                                 </div>
                             </div>
                             <!-- /Done Tab -->
+
+                            <!-- Cancelled Tab -->
+                            <div class="tab-pane fade" id="custom-tabs-four-cancelled" role="tabpanel" aria-labelledby="custom-tabs-four-cancelled-tab">
+                                <div class="row" id="cancelledContent">
+                                    <!-- Cancelled CONSULTATION HERE -->
+                                </div>
+                            </div>
+                            <!-- /Cancelled Tab -->
                         </div>
                     </div>
                     <!-- /.card -->
@@ -302,6 +313,17 @@
                 doneCount = response['count'];
             }
         });
+        // Fetch Cancelled Consultation
+        var cancelledCount;
+        $.ajax({
+            url: '<?= site_url('consultation/fetchCancelledConsultation') ?>',
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                $('#cancelledContent').html(response['result']);
+                cancelledCount = response['count'];
+            }
+        });
 
         // Fetch all online doctors
         var onlineCount;
@@ -378,6 +400,18 @@
                     if (response['count'] != doneCount) {
                         $('#doneContent').html(response['result']);
                         doneCount = response['count'];
+                    }
+                }
+            });
+            // Fetch Cancelled Consultation
+            $.ajax({
+                url: '<?= site_url('consultation/fetchCancelledConsultation') ?>',
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    if (response['count'] != doneCount) {
+                        $('#cancelledContent').html(response['result']);
+                        cancelledCount = response['count'];
                     }
                 }
             });

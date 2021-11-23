@@ -262,9 +262,9 @@ class Consultation extends BaseController
 
         $result = "";
         foreach ($consultations as $consultation) {
-            $schedule_time = date('h:i A', strtotime($consultation['meeting_schedule']));
-            $schedule_date = date('F d, Y', strtotime($consultation['meeting_schedule']));
-
+            $schedule_time = $consultation['meeting_schedule'] != null? date('h:i A', strtotime($consultation['meeting_schedule'])) : '---';
+            $schedule_date = $consultation['meeting_schedule'] != null? date('F d, Y', strtotime($consultation['meeting_schedule'])) : '---';
+            $meeting_link = $consultation['meeting_link'] != null? "<a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>" : '---';
 
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
@@ -276,7 +276,7 @@ class Consultation extends BaseController
                     </div>
                     <label class=\"d-block text-secondary\">Meeting Link</label>
                     <div class=\"mt-n2\">
-                        <a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>
+                        {$meeting_link}
                     </div>
                 </div>
                 </div>

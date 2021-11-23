@@ -480,10 +480,11 @@
         // Reset add modal on close
         $('#addModal').on('hidden.bs.modal', function(evt) {
             $('#add_idno').val("");
+            $('#add_username').val("");
             $('#add_lastname').val("");
             $('#add_firstname').val("");
             $('#add_middlename').val("");
-            $('#add_username').val("");
+            $('#add_gender').val("");
             $('#add_designation').val("");
         });
 
@@ -498,6 +499,7 @@
                         $('#add_lastname').val(response['last_name']);
                         $('#add_firstname').val(response['first_name']);
                         $('#add_middlename').val(response['middle_name']);
+                        $('#add_gender').val(response['gender']);
                         $('#add_designation').val(response['designation']);
                     }
                 }
@@ -520,10 +522,11 @@
             var data = <?= session()->get('getData') ?>
 
             $('#' + obj['modalType'] + '_idno').val(data['id_no']);
+            $('#' + obj['modalType'] + '_username').val(data['username']);
             $('#' + obj['modalType'] + '_lastname').val(data['last_name']);
             $('#' + obj['modalType'] + '_firstname').val(data['first_name']);
             $('#' + obj['modalType'] + '_middlename').val(data['middle_name']);
-            $('#' + obj['modalType'] + '_username').val(data['username']);
+            $('#' + obj['modalType'] + '_gender').val(data['gender']);
             $('#' + obj['modalType'] + '_designation').val(data['designation']);
         } else {
             $.ajax({
@@ -532,10 +535,11 @@
                 dataType: 'json',
                 success: function(response) {
                     $('#mod_idno').val(response['id_no']);
+                    $('#mod_username').val(response['username']);
                     $('#mod_lastname').val(response['last_name']);
                     $('#mod_firstname').val(response['first_name']);
                     $('#mod_middlename').val(response['middle_name']);
-                    $('#mod_username').val(response['username']);
+                    $('#mod_gender').val(response['gender']);
                     $('#mod_designation').val(response['designation']);
 
                     resId = response['id_no'];
