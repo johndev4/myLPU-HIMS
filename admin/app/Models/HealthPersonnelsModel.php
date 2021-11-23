@@ -14,7 +14,7 @@ class HealthPersonnelsModel extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDeletes       = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['id_no', 'first_name', 'middle_initial', 'last_name', 'designation', 'department'];
+	protected $allowedFields        = ['id_no', 'first_name', 'middle_initial', 'last_name', 'gender', 'designation', 'department'];
 
 	// Dates
 	protected $useTimestamps        = false;

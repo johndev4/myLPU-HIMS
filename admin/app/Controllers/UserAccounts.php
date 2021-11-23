@@ -491,7 +491,7 @@ class Useraccounts extends BaseController
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
-					// 'gender' 	 	 => htmlspecialchars($_GET['gender']),
+					'gender' 	 	 => htmlspecialchars($_GET['gender']),
 					'designation' => htmlspecialchars($_GET['designation']),
 					'department' => htmlspecialchars("HSD")
 				];
@@ -598,7 +598,7 @@ class Useraccounts extends BaseController
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
-					// 'gender' => htmlspecialchars($_GET['gender']),
+					'gender' => htmlspecialchars($_GET['gender']),
 					'designation' => htmlspecialchars($_GET['designation']),
 				];
 
