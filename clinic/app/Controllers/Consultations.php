@@ -195,60 +195,6 @@ class Consultations extends BaseController
 		return json_encode(['result' => $result, 'count' => count($scheduledConsultations)]);
 	}
 
-	public function fetchAllDoneConsultations()
-	{
-		$result = array('data' => array());
-		$doneConsultations = $this->consultationsModel
-			->where('status', 'done')
-			->where('personnel_id_no', getIdNo())
-			->orderBy('created_at', 'asc')->findAll();
-
-		if ($doneConsultations) {
-			foreach ($doneConsultations as $key => $value) {
-				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
-
-				$result['data'][$key] = array(
-					$lycean['id_no'],
-					"{$lycean['first_name']} {$lycean['last_name']}",
-					$lycean['department'],
-					date_create($value['created_at'])->format('F d, Y'),
-					"<div align=\"center\">
-						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
-					</div>"
-				);
-			}
-		}
-
-		return json_encode($result);
-	}
-
-	public function fetchAllRejectedConsultations()
-	{
-		$result = array('data' => array());
-		$rejectedConsultations = $this->consultationsModel
-			->where('status', 'rejected')
-			->where('personnel_id_no', getIdNo())
-			->orderBy('created_at', 'asc')->findAll();
-
-		if ($rejectedConsultations) {
-			foreach ($rejectedConsultations as $key => $value) {
-				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
-
-				$result['data'][$key] = array(
-					$lycean['id_no'],
-					"{$lycean['first_name']} {$lycean['last_name']}",
-					$lycean['department'],
-					date_create($value['created_at'])->format('F d, Y'),
-					"<div align=\"center\">
-						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
-					</div>"
-				);
-			}
-		}
-
-		return json_encode($result);
-	}
-
 
 	// ACCEPT NEW REQUEST BY ID
 	// -----------------------------------------------------------------
@@ -486,6 +432,90 @@ class Consultations extends BaseController
 
 		// Display page view
 		return view('components/consultation/history', $this->data);
+	}
+
+
+	// FETCH ALL HISTORY DATA
+	// -----------------------------------------------------------------
+	public function fetchAllDoneConsultations()
+	{
+		$result = array('data' => array());
+		$doneConsultations = $this->consultationsModel
+			->where('status', 'done')
+			->where('personnel_id_no', getIdNo())
+			->orderBy('created_at', 'asc')->findAll();
+
+		if ($doneConsultations) {
+			foreach ($doneConsultations as $key => $value) {
+				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+
+				$result['data'][$key] = array(
+					$lycean['id_no'],
+					"{$lycean['first_name']} {$lycean['last_name']}",
+					$lycean['department'],
+					date_create($value['created_at'])->format('F d, Y'),
+					"<div align=\"center\">
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
+					</div>"
+				);
+			}
+		}
+
+		return json_encode($result);
+	}
+
+	public function fetchAllRejectedConsultations()
+	{
+		$result = array('data' => array());
+		$rejectedConsultations = $this->consultationsModel
+			->where('status', 'rejected')
+			->where('personnel_id_no', getIdNo())
+			->orderBy('created_at', 'asc')->findAll();
+
+		if ($rejectedConsultations) {
+			foreach ($rejectedConsultations as $key => $value) {
+				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+
+				$result['data'][$key] = array(
+					$lycean['id_no'],
+					"{$lycean['first_name']} {$lycean['last_name']}",
+					$lycean['department'],
+					date_create($value['created_at'])->format('F d, Y'),
+					"<div align=\"center\">
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
+					</div>"
+				);
+			}
+		}
+
+		return json_encode($result);
+	}
+
+	public function fetchAllCancelledConsultations()
+	{
+		$result = array('data' => array());
+		$rejectedConsultations = $this->consultationsModel
+			->where('status', 'rejected')
+			->where('personnel_id_no', getIdNo())
+			->orderBy('created_at', 'asc')->findAll();
+
+		if ($rejectedConsultations) {
+			foreach ($rejectedConsultations as $key => $value) {
+				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+
+				$result['data'][$key] = array(
+					$lycean['id_no'],
+					"{$lycean['first_name']} {$lycean['last_name']}",
+					$lycean['department'],
+					date_create($value['created_at'])->format('F d, Y'),
+					"<div align=\"center\">
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
+					</div>"
+				);
+			}
+		}
+
+		return json_encode($result);
 	}
 
 

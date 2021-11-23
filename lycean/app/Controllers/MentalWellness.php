@@ -318,7 +318,7 @@ class Mentalwellness extends BaseController
                     ];
 
                     $success1 = $this->consultationsModel->save($data);
-                    $success2 = $this->setNotification($data);
+                    $success2 = $this->setNotification($data, 'sendConsultation');
 
                     if ($success1 && $success2) {
                         session()->setFlashdata('success', 'Sent');
@@ -334,16 +334,48 @@ class Mentalwellness extends BaseController
         return redirect()->to('mentalwellness');
     }
 
-    private function setNotification($data)
+
+    // CANCEL REQUEST
+    // -----------------------------------------------------------------
+    public function cancelRequest($id)
     {
-        $icon = '<i class="fas fa-brain fa-lg noti-icon" style="color: #CC6699"></i>';
+        $data = $this->consultationsModel->find($id);
+
+        $success1 = $this->consultationsModel
+            ->where('consultation_no', $id)
+            ->set([
+                'status' => 'cancelled'
+            ])->update();
+        $success2 = $this->setNotification($data, 'cancelled');
+
+        if ($success1 && $success2) {
+            session()->setFlashdata('success', 'Cancelled');
+        }
+
+        return redirect()->to('consultation');
+    }
+
+
+    // SET NOTIFICATION
+    // -----------------------------------------------------------------
+    private function setNotification($data, $type)
+    {
+        $icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
+
+        if ($type == 'sendConsultation') {
+            $info = "You have new consultation requests";
+            $link = $this->clinicBasedUrl . '/consultations';
+        } else if ($type == 'cancelled') {
+            $info = getUserFullname() . " cancelled the request";
+            $link = $this->clinicBasedUrl . '/consultations/history?id=' . $data['consultation_no'];
+        }
 
         return $this->healthPersonnelsNotificationModel->save([
             'id_no' => $data['personnel_id_no'],
             'icon' => $icon,
-            'info' => 'You have new consultation requests',
+            'info' => $info,
             'status' => 'unread',
-            'link' => str_replace('lycean', 'clinic', site_url('consultations'))
+            'link' => $link
         ]);
     }
 
@@ -375,23 +407,5 @@ class Mentalwellness extends BaseController
         }
 
         return json_encode(['result' => $result, 'count' => $count]);
-    }
-
-
-    // CANCEL REQUEST
-    // -----------------------------------------------------------------
-    public function cancelRequest($id)
-    {
-        $success = $this->consultationsModel
-            ->where('consultation_no', $id)
-            ->set([
-                'status' => 'cancelled'
-            ])->update();
-
-        if ($success) {
-            session()->setFlashdata('success', 'Cancelled');
-        }
-
-        return redirect()->to('consultation');
     }
 }

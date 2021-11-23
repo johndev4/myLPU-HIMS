@@ -50,7 +50,9 @@ class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
-		// Initialized database models
+		// Initialize database models
+		// -------------------------------------------------------------
+		
 		$this->userModel = model('App\Models\LyceansModel');
 		$this->userAccountModel = model('App\Models\LyceansAccountModel');
 		$this->notificationModel = model('App\Models\LyceansNotificationModel');
@@ -66,5 +68,15 @@ class BaseController extends Controller
 		// Initialize Directories
 		// -------------------------------------------------------------
 
+
+
+		
+		// Initialize External App Based URL
+		// -------------------------------------------------------------
+		
+		// Clinic App Base URL
+		$this->clinicBasedUrl = str_replace('lycean', 'clinic', site_url()); // CUSTOMIZE THIS IN CASE OF 3 END USERS HAS DIFFERENT DOMAINS
+		// Admin App Base URL
+		$this->clinicBasedUrl = str_replace('lycean', 'admin', site_url()); // CUSTOMIZE THIS IN CASE OF 3 END USERS HAS DIFFERENT DOMAINS
 	}
 }

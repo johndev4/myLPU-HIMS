@@ -262,9 +262,9 @@ class Consultation extends BaseController
 
         $result = "";
         foreach ($consultations as $consultation) {
-            $schedule_time = $consultation['meeting_schedule'] != null? date('h:i A', strtotime($consultation['meeting_schedule'])) : '---';
-            $schedule_date = $consultation['meeting_schedule'] != null? date('F d, Y', strtotime($consultation['meeting_schedule'])) : '---';
-            $meeting_link = $consultation['meeting_link'] != null? "<a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>" : '---';
+            $schedule_time = $consultation['meeting_schedule'] != null ? date('h:i A', strtotime($consultation['meeting_schedule'])) : '---';
+            $schedule_date = $consultation['meeting_schedule'] != null ? date('F d, Y', strtotime($consultation['meeting_schedule'])) : '---';
+            $meeting_link = $consultation['meeting_link'] != null ? "<a href=\"{$consultation['meeting_link']}\" target=\"_blank\"> {$consultation['meeting_link']} </a>" : '---';
 
             $data = "
             <div class=\"col-md-12\" style=\"border:1px solid none\">
@@ -322,7 +322,7 @@ class Consultation extends BaseController
                     ];
 
                     $success1 = $this->consultationsModel->save($data);
-                    $success2 = $this->setNotification($data);
+                    $success2 = $this->setNotification($data, 'sendConsultation');
 
                     if ($success1 && $success2) {
                         session()->setFlashdata('success', 'Sent');
@@ -339,16 +339,48 @@ class Consultation extends BaseController
         return redirect()->to('consultation');
     }
 
-    private function setNotification($data)
+
+    // CANCEL REQUEST
+    // -----------------------------------------------------------------
+    public function cancelRequest($id)
+    {
+        $data = $this->consultationsModel->find($id);
+
+        $success1 = $this->consultationsModel
+            ->where('consultation_no', $id)
+            ->set([
+                'status' => 'cancelled'
+            ])->update();
+        $success2 = $this->setNotification($data, 'cancelled');
+
+        if ($success1 && $success2) {
+            session()->setFlashdata('success', 'Cancelled');
+        }
+
+        return redirect()->to('consultation');
+    }
+
+
+    // SET NOTIFICATION
+    // -----------------------------------------------------------------
+    private function setNotification($data, $type)
     {
         $icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
+
+        if ($type == 'sendConsultation') {
+            $info = "You have new consultation requests";
+            $link = $this->clinicBasedUrl . '/consultations';
+        } else if ($type == 'cancelled') {
+            $info = getUserFullname() . " cancelled the request";
+            $link = $this->clinicBasedUrl . '/consultations/history?id=' . $data['consultation_no'];
+        }
 
         return $this->healthPersonnelsNotificationModel->save([
             'id_no' => $data['personnel_id_no'],
             'icon' => $icon,
-            'info' => 'You have new consultation requests',
+            'info' => $info,
             'status' => 'unread',
-            'link' => str_replace('lycean', 'clinic', site_url('consultations'))
+            'link' => $link
         ]);
     }
 
@@ -380,23 +412,5 @@ class Consultation extends BaseController
         }
 
         return json_encode(['result' => $result, 'count' => $count]);
-    }
-
-
-    // CANCEL REQUEST
-    // -----------------------------------------------------------------
-    public function cancelRequest($id)
-    {
-        $success = $this->consultationsModel
-            ->where('consultation_no', $id)
-            ->set([
-                'status' => 'cancelled'
-            ])->update();
-
-        if ($success) {
-            session()->setFlashdata('success', 'Cancelled');
-        }
-
-        return redirect()->to('consultation');
     }
 }
