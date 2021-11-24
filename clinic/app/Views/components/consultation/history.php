@@ -166,6 +166,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="custom-tabs-four-rejected-tab" data-toggle="pill" href="#custom-tabs-four-rejected" role="tab" aria-controls="custom-tabs-four-rejected" aria-selected="false">Rejected</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-four-cancelled-tab" data-toggle="pill" href="#custom-tabs-four-cancelled" role="tab" aria-controls="custom-tabs-four-cancelled" aria-selected="false">Cancelled</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="card-body" style=" overflow-y:auto">
@@ -216,6 +219,32 @@
 
                             </div>
                             <!-- /Rejected Table -->
+
+                            <!-- Cancelled Table -->
+                            <div class="tab-pane fade" id="custom-tabs-four-cancelled" role="tabpanel" aria-labelledby="custom-tabs-four-cancelled-tab">
+
+                                <!-- Table -->
+                                <table id="cancelled_table" class="table table-bordered table-hover" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Number</th>
+                                            <th>Student Name</th>
+                                            <th>Department</th>
+                                            <th>Consultation Date</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- DATA HERE -->
+                                    </tbody>
+                                </table>
+                                <!-- /Table -->
+
+                            </div>
+
+
+                            <!-- /Cancelled Table -->
+
                         </div>
                     </div>
                     <!-- /.card -->

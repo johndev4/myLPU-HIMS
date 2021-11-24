@@ -66,6 +66,7 @@
                                         <tr>
                                             <th>Accepted Consultations</th>
                                             <th>Rejected Consultations</th>
+                                            <th>Cancelled Consultations</th>
                                             <th>Week</th>
                                         </tr>
                                     </thead>
@@ -96,6 +97,7 @@
                                         <tr>
                                             <th>Accepted Consultations</th>
                                             <th>Rejected Consultations</th>
+                                            <th>Cancelled Consultations</th>
                                             <th>Month</th>
                                         </tr>
                                     </thead>
@@ -116,6 +118,7 @@
                                         <tr>
                                             <th>Accepted Consultations</th>
                                             <th>Rejected Consultations</th>
+                                            <th>Cancelled Consultations</th>
                                             <th>Year</th>
                                         </tr>
                                     </thead>
