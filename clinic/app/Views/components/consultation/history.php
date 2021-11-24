@@ -241,10 +241,7 @@
                                 <!-- /Table -->
 
                             </div>
-
-
                             <!-- /Cancelled Table -->
-
                         </div>
                     </div>
                     <!-- /.card -->
