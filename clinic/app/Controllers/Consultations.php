@@ -440,13 +440,13 @@ class Consultations extends BaseController
 	public function fetchAllDoneConsultations()
 	{
 		$result = array('data' => array());
-		$doneConsultations = $this->consultationsModel
+		$consultations = $this->consultationsModel
 			->where('status', 'done')
 			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'asc')->findAll();
 
-		if ($doneConsultations) {
-			foreach ($doneConsultations as $key => $value) {
+		if ($consultations) {
+			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 
 				$result['data'][$key] = array(
@@ -467,13 +467,13 @@ class Consultations extends BaseController
 	public function fetchAllRejectedConsultations()
 	{
 		$result = array('data' => array());
-		$rejectedConsultations = $this->consultationsModel
+		$consultations = $this->consultationsModel
 			->where('status', 'rejected')
 			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'asc')->findAll();
 
-		if ($rejectedConsultations) {
-			foreach ($rejectedConsultations as $key => $value) {
+		if ($consultations) {
+			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 
 				$result['data'][$key] = array(
@@ -494,13 +494,13 @@ class Consultations extends BaseController
 	public function fetchAllCancelledConsultations()
 	{
 		$result = array('data' => array());
-		$rejectedConsultations = $this->consultationsModel
-			->where('status', 'rejected')
+		$consultations = $this->consultationsModel
+			->where('status', 'cancelled')
 			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'asc')->findAll();
 
-		if ($rejectedConsultations) {
-			foreach ($rejectedConsultations as $key => $value) {
+		if ($consultations) {
+			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 
 				$result['data'][$key] = array(
@@ -666,7 +666,7 @@ class Consultations extends BaseController
 	{
 		$result = "<option selected value=\"\"> --- </option>";
 		$consultations = $this->consultationsModel
-			->where('status', 'done')->orwhere('status', 'rejected')
+			->where('status', 'done')->orwhere('status', 'rejected')->orwhere('status', 'cancelled')
 			->findAll();
 
 		foreach ($consultations as $consultation) {
@@ -685,7 +685,7 @@ class Consultations extends BaseController
 	{
 		$result = "<option selected value=\"\"> --- </option>";
 		$consultations = $this->consultationsModel
-			->where('status', 'done')->orwhere('status', 'rejected')
+		->where('status', 'done')->orwhere('status', 'rejected')->orwhere('status', 'cancelled')
 			->findAll();
 
 		foreach ($consultations as $consultation) {

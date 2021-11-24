@@ -299,6 +299,24 @@
                 }
             }
         });
+        $("#cancelled_table").DataTable({
+            responsive: true,
+            lengthChange: true,
+            autoWidth: true,
+            processing: true,
+            searching: true,
+            ajax: {
+                type: 'get',
+                url: '<?= site_url('consultations/fetchAllCancelledConsultations') ?>',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            }
+        });
 
         // For sidebar
         $("#consultationNav > a").addClass('active');
