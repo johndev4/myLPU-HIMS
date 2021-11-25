@@ -25,7 +25,7 @@ class Paths
      *
      * @var string
      */
-    public $systemDirectory = __DIR__ . '/../../../codeigniter/system';
+    public $systemDirectory = __DIR__ . '/../../../vendor/codeigniter/system';
 
     /**
      * ---------------------------------------------------------------
