@@ -95,7 +95,7 @@ class Mentalwellness extends BaseController
 
         $result = "";
         foreach ($consultations as $consultation) {
-            $schedule_time = date('h:m A', strtotime($consultation['meeting_schedule']));
+            $schedule_time = date('h:i A', strtotime($consultation['meeting_schedule']));
             $schedule_date = date('F d, Y', strtotime($consultation['meeting_schedule']));
 
 
@@ -217,7 +217,7 @@ class Mentalwellness extends BaseController
 
         $result = "";
         foreach ($consultations as $consultation) {
-            $schedule_time = date('h:m A', strtotime($consultation['meeting_schedule']));
+            $schedule_time = date('h:i A', strtotime($consultation['meeting_schedule']));
             $schedule_date = date('F d, Y', strtotime($consultation['meeting_schedule']));
 
 

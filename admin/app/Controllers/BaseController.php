@@ -50,7 +50,7 @@ class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
-		// Initialized database models
+		// Initialize database models
 		// -------------------------------------------------------------
 		$this->userAccountModel = model('App\Models\AdministratorsModel');
 

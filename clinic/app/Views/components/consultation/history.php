@@ -424,9 +424,11 @@
 
     // View specific consultation request from notification
     <?php if (isset($_GET['cID'])) : ?>
-        $('#custom-tabs-four-cancelled-tab').trigger('click');
-        $('#viewModal').modal('show');
-        retrieveData('<?= $_GET['cID'] ?>');
+        setTimeout(function() {
+            $('#custom-tabs-four-cancelled-tab').trigger('click');
+            retrieveData('<?= $_GET['cID'] ?>');
+            $('#viewModal').modal('show');
+        }, 500);
     <?php endif; ?>
 </script>
 <!-- /Script -->

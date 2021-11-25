@@ -76,7 +76,5 @@ class BaseController extends Controller
 		
 		// Clinic App Base URL
 		$this->clinicBaseUrl = str_replace('lycean', 'clinic', site_url()); // CUSTOMIZE THIS IN CASE OF 3 END USERS HAS DIFFERENT DOMAINS
-		// Admin App Base URL
-		$this->clinicBaseUrl = str_replace('lycean', 'admin', site_url()); // CUSTOMIZE THIS IN CASE OF 3 END USERS HAS DIFFERENT DOMAINS
 	}
 }
