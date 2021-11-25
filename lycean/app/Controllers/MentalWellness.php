@@ -370,7 +370,7 @@ class Mentalwellness extends BaseController
             $link = $this->clinicBaseUrl . '/consultations';
         } else if ($type == 'cancelled') {
             $info = getUserFullname() . " cancelled the request";
-            $link = $this->clinicBaseUrl . '/consultations/history?id=' . $data['consultation_no'];
+            $link = $this->clinicBaseUrl . '/consultations/history?cID=' . $data['consultation_no'];
         }
 
         return $this->healthPersonnelsNotificationModel->save([

@@ -181,10 +181,11 @@
                                 <table id="accepted_table" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID Number</th>
+                                            <th>Consultation No.</th>
+                                            <th>Date of Request</th>
+                                            <th>Student No.</th>
                                             <th>Student Name</th>
                                             <th>Department</th>
-                                            <th>Consultation Date</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -204,10 +205,11 @@
                                 <table id="rejected_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
-                                            <th>ID Number</th>
+                                            <th>Consultation No.</th>
+                                            <th>Date of Request</th>
+                                            <th>Student No.</th>
                                             <th>Student Name</th>
                                             <th>Department</th>
-                                            <th>Consultation Date</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -227,10 +229,11 @@
                                 <table id="cancelled_table" class="table table-bordered table-hover" style="width: 100%;">
                                     <thead>
                                         <tr>
-                                            <th>ID Number</th>
+                                            <th>Consultation No.</th>
+                                            <th>Date of Request</th>
+                                            <th>Student No.</th>
                                             <th>Student Name</th>
                                             <th>Department</th>
-                                            <th>Consultation Date</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -268,7 +271,11 @@
             lengthChange: true,
             autoWidth: true,
             processing: true,
+            paging: false,
             searching: true,
+            order: [
+                [1, 'desc']
+            ],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('consultations/fetchAllDoneConsultations') ?>',
@@ -286,7 +293,11 @@
             lengthChange: true,
             autoWidth: true,
             processing: true,
+            paging: false,
             searching: true,
+            order: [
+                [1, 'desc']
+            ],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('consultations/fetchAllRejectedConsultations') ?>',
@@ -304,7 +315,11 @@
             lengthChange: true,
             autoWidth: true,
             processing: true,
+            paging: false,
             searching: true,
+            order: [
+                [1, 'desc']
+            ],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('consultations/fetchAllCancelledConsultations') ?>',
@@ -320,34 +335,6 @@
 
         // For sidebar
         $("#consultationNav > a").addClass('active');
-
-        // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-            Toast.fire({
-                icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
-            });
-        <?php endif; ?>
-
-        // Clear History Validation Error
-        <?php if (!empty(session()->getFlashdata('clear_validation'))) : ?>
-            $('#clearModal').modal('show');
-            retrieveData('', {
-                error: true,
-                modalType: "clear"
-            });
-            $('#clearModal').on('hidden.bs.modal', function(evt) {
-                $('.error').addClass('d-none');
-                $('input.border').removeClass('border border-danger');
-                $('select.border').removeClass('border border-danger');
-            });
-        <?php endif; ?>
 
         // Reset stock out modal on close
         $('#clearModal').on('hidden.bs.modal', function(evt) {
@@ -406,6 +393,41 @@
             });
         }
     }
+
+    // Sweet Alert for success staus
+    <?php if (session()->getFlashdata('success') !== null) : ?>
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        Toast.fire({
+            icon: 'success',
+            title: '<?= session()->getFlashdata('success'); ?>'
+        });
+    <?php endif; ?>
+
+    // Clear History Validation Error
+    <?php if (!empty(session()->getFlashdata('clear_validation'))) : ?>
+        $('#clearModal').modal('show');
+        retrieveData('', {
+            error: true,
+            modalType: "clear"
+        });
+        $('#clearModal').on('hidden.bs.modal', function(evt) {
+            $('.error').addClass('d-none');
+            $('input.border').removeClass('border border-danger');
+            $('select.border').removeClass('border border-danger');
+        });
+    <?php endif; ?>
+
+    // View specific consultation request from notification
+    <?php if (isset($_GET['cID'])) : ?>
+        $('#custom-tabs-four-cancelled-tab').trigger('click');
+        $('#viewModal').modal('show');
+        retrieveData('<?= $_GET['cID'] ?>');
+    <?php endif; ?>
 </script>
 <!-- /Script -->
 

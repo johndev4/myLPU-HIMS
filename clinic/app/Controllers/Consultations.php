@@ -450,10 +450,11 @@ class Consultations extends BaseController
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 
 				$result['data'][$key] = array(
+					$value['consultation_no'],
+					date_create($value['created_at'])->format('d-M-Y H:i'),
 					$lycean['id_no'],
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
-					date_create($value['created_at'])->format('F d, Y'),
 					"<div align=\"center\">
 						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
 					</div>"
@@ -477,10 +478,11 @@ class Consultations extends BaseController
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 
 				$result['data'][$key] = array(
+					$value['consultation_no'],
+					date_create($value['created_at'])->format('d-M-Y H:i'),
 					$lycean['id_no'],
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
-					date_create($value['created_at'])->format('F d, Y'),
 					"<div align=\"center\">
 						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
 					</div>"
@@ -504,10 +506,11 @@ class Consultations extends BaseController
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
 
 				$result['data'][$key] = array(
+					$value['consultation_no'],
+					date_create($value['created_at'])->format('d-M-Y H:i'),
 					$lycean['id_no'],
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
-					date_create($value['created_at'])->format('F d, Y'),
 					"<div align=\"center\">
 						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
 					</div>"
@@ -685,7 +688,7 @@ class Consultations extends BaseController
 	{
 		$result = "<option selected value=\"\"> --- </option>";
 		$consultations = $this->consultationsModel
-		->where('status', 'done')->orwhere('status', 'rejected')->orwhere('status', 'cancelled')
+			->where('status', 'done')->orwhere('status', 'rejected')->orwhere('status', 'cancelled')
 			->findAll();
 
 		foreach ($consultations as $consultation) {
