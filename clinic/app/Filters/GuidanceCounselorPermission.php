@@ -6,7 +6,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-class UserPermission implements FilterInterface
+class GuidanceCounselorPermission implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {

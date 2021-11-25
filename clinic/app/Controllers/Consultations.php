@@ -399,13 +399,13 @@ class Consultations extends BaseController
 			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		} else if ($type == 'reject') {
 			$info = 'The doctor rejected your request';
-			$link = $this->lyceanBaseUrl . 'consultation/details/' . $data['consultation_no'];
+			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		} else if ($type == 'consultationSendFile') {
 			$info = 'The documents are ready to view';
-			$link = $this->lyceanBaseUrl . 'consultation/details/' . $data['consultation_no'] . '?documents=1';
+			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'] . '?documents=1';
 		} else if ($type == 'consultationDone') {
 			$info = 'Your consultation was done';
-			$link = $this->lyceanBaseUrl . 'consultation/details/' . $data['consultation_no'];
+			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		}
 
 		return $this->lyceansNotificationModel->save([

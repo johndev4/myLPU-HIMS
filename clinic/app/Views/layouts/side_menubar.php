@@ -86,6 +86,7 @@
                 <?php endif; ?>
 
                 <!-- Consultation -->
+                <?php if ($designation !== 'Nurse') : ?>
                 <li id="consultationNav" class="nav-item">
                     <a href="<?= site_url('consultations') ?>" class="nav-link selector">
                         <i class="fas fa-comment-medical nav-icon text-light"></i>
@@ -94,6 +95,7 @@
                         </p>
                     </a>
                 </li>
+                <?php endif; ?>
 
                 <!-- Inventory -->
                 <?php if ($designation !== 'Guidance Counselor') : ?>

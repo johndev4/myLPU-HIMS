@@ -28,27 +28,29 @@
             </div>
 
             <div class="row">
-                <!-- Consultation Request -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="info-box shadow p-3">
-                        <span class="info-box-icon dash-widgets"><i class="fas fa-clipboard-check"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Requests</span>
-                            <span class="info-box-number" id="newRequestWidget"></span>
+                <?php if ($designation !== 'Nurse') : ?>
+                    <!-- New Request -->
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <div class="info-box shadow p-3">
+                            <span class="info-box-icon dash-widgets"><i class="fas fa-clipboard-check"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Requests</span>
+                                <span class="info-box-number" id="newRequestWidget"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Consultation -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="info-box shadow p-3">
-                        <span class="info-box-icon dash-widgets"><i class="far fa-calendar-alt"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Scheduled Consultations</span>
-                            <span class="info-box-number" id="scheduledConsultationWidget"></span>
+                    <!-- Scheduled Consultation -->
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <div class="info-box shadow p-3">
+                            <span class="info-box-icon dash-widgets"><i class="far fa-calendar-alt"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Scheduled Consultations</span>
+                                <span class="info-box-number" id="scheduledConsultationWidget"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php endif; ?>
 
                 <!-- Records -->
                 <?php if ($designation !== 'Guidance Counselor') : ?>
@@ -117,13 +119,13 @@
 
         // Fetch "record" widget count
         $.ajax({
-                url: '<?= site_url('dashboard/countLyceanRecords') ?>',
-                type: 'get',
-                dataType: 'html',
-                success: function(response) {
-                    $('#recordWidget').text(response);
-                }
-            });
+            url: '<?= site_url('dashboard/countLyceanRecords') ?>',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#recordWidget').text(response);
+            }
+        });
         setInterval(function() {
             $.ajax({
                 url: '<?= site_url('dashboard/countLyceanRecords') ?>',
