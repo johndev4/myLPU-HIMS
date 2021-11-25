@@ -375,10 +375,12 @@ class Useraccounts extends BaseController
 
 	// FETCH DATA BY ID WITHOUT ACCOUNT
 	// ---------------------------------------------------------
-	public function fetchLyceanInfoById($id = '')
+	public function fetchLyceanInfoById($id = '', $role)
 	{
-		$lyceans = $this->lyceansModel->find($id);
-		$lyceansAccount = $this->lyceansAccountModel->find($id);
+		$lyceans = $this->lyceansModel
+			->where('id_no', $id)->where('role', $role)
+			->first();
+		$lyceansAccount = $this->lyceansAccountModel->find($lyceans['id_no']);
 		$result = [];
 
 		if ($lyceans and !$lyceansAccount) {

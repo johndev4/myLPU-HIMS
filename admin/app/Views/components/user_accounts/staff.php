@@ -737,7 +737,7 @@
         // On ID No. Input
         $('#add_idno').on('input', function() {
             $.ajax({
-                url: '<?= site_url('useraccounts/fetchLyceanInfoById') ?>/' + $('#add_idno').val(),
+                url: '<?= site_url('useraccounts/fetchLyceanInfoById') ?>/' + $('#add_idno').val() + '/staff',
                 type: 'get',
                 dataType: 'json',
                 success: function(response) {
