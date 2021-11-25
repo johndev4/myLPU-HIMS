@@ -105,7 +105,7 @@
                         <li>Change of password</li>
                         <li>Consultation request</li>
                         <li>Receive Schedule for consultation</li>
-                        <li>Receive Clearance, Referral, Prescription</li>
+                        <li>Receive Clearance, Referral, or Prescription</li>
                     </ul>
                     <label>Instructions</label>
                     <ul class="text-justify text-sm">
