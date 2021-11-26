@@ -1,0 +1,42 @@
+CRITICAL - 2021-11-26 16:43:09 --> syntax error, unexpected single-quoted string "is_unique_datetime", expecting "]"
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/f...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/f...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-26 16:43:09 --> syntax error, unexpected single-quoted string "is_unique_datetime", expecting "]"
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-26 16:43:09 --> syntax error, unexpected single-quoted string "is_unique_datetime", expecting "]"
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/f...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/f...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-26 16:43:10 --> syntax error, unexpected single-quoted string "is_unique_datetime", expecting "]"
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/r...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/r...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-26 16:43:10 --> syntax error, unexpected single-quoted string "is_unique_datetime", expecting "]"
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/f...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/f...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-11-26 16:43:10 --> syntax error, unexpected single-quoted string "is_unique_datetime", expecting "]"
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Router\Router.php(160): CodeIgniter\Router\Router->autoRoute('consultations/f...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(702): CodeIgniter\Router\Router->handle('consultations/f...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -126,8 +126,7 @@
                         <div class="text-center mt-2">
                             <span class="info-box-icon text-warning"><i class="fas fa-3x fa-exclamation-circle"></i></span>
                             <div class="mt-3 font-weight-bold" style="font-size: 14pt;">Uh Oh!</div>
-                            <div class="mt-3" style="font-size: 12pt;">This schedule is already occupied.</div>
-                            <!-- <div class="mt-1 font-weight-normal text-secondary"><?= session()->get('timeschedule_validation')->getError('meeting_time') ?></div> -->
+                            <div class="mt-3" style="font-size: 12pt;"><?= session()->get('timeschedule_validation')->getError('meeting_time') ?></div>
                         </div><br>
                         <div class="">
                             <form action="" method="get" id="done_form_prompt">

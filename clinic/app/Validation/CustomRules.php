@@ -42,18 +42,33 @@ class CustomRules
 		return true;
 	}
 
-	// For consultation schedule
-	public function is_unique_time($time): bool
+	// Unique schedule datetime
+	public function is_unique_datetime(): bool
 	{
 		$consultationsModel = model('App\Models\ConsultationsModel');
 		$consultations = $consultationsModel
+			->where('status', 'active')
 			->where('personnel_id_no', getIdNo())
 			->findAll();
 
+		$datetime = $_GET['meeting_date'] . " " . $_GET['meeting_time'];
+
 		foreach ($consultations as $consultation) {
-			if (date_create($consultation['meeting_schedule'])->format('H:i') == $time) {
+			if (date_create($consultation['meeting_schedule'])->format('Y-m-d H:i') == $datetime) {
 				return false;
 			}
+		}
+
+		return true;
+	}
+
+	// Future schedule datetime
+	public function is_future_datetime(): bool
+	{
+		$datetime = $_GET['meeting_date'] . " " . $_GET['meeting_time'];
+
+		if (date_create($datetime)->format('Y-m-d H:i') <= date('Y-m-d H:i')) {
+			return false;
 		}
 
 		return true;

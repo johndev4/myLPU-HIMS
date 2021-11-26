@@ -657,7 +657,7 @@ class Inventory extends BaseController
 
 				if ($stock_available >= $_GET['stock_out']) {
 					$data = [
-						'stock_out' => htmlspecialchars($_GET['stock_out']),
+						'stock_out' => ($batch['stock_out'] + $_GET['stock_out']),
 						'batch_id' => htmlspecialchars($_GET['batch_id']),
 						'product_id' => htmlspecialchars($_GET['product_name'])
 					];
