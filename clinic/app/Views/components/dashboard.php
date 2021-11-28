@@ -119,6 +119,7 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        <hr>
                                     </ul>
                                 </div>
 
@@ -157,6 +158,7 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        <hr>
                                     </ul>
                                 </div>
 
@@ -188,17 +190,6 @@
                 $('#newRequestWidget').text(response);
             }
         });
-        setInterval(function() {
-            $.ajax({
-                url: '<?= site_url('dashboard/countNewRequestConsultations') ?>',
-                type: 'get',
-                dataType: 'html',
-                success: function(response) {
-                    $('#newRequestWidget').text(response);
-                }
-            });
-        }, 5000);
-
         // Fetch "scheduled consultation" widget count
         $.ajax({
             url: '<?= site_url('dashboard/countScheduledConsultations') ?>',
@@ -208,17 +199,17 @@
                 $('#scheduledConsultationWidget').text(response);
             }
         });
-        // Fetch "record" widget count
-        $.ajax({
-            url: '<?= site_url('dashboard/countLyceanRecords') ?>',
-            type: 'get',
-            dataType: 'html',
-            success: function(response) {
-                $('#recordWidget').text(response);
-            }
-        });
 
         setInterval(function() {
+            // Fetch "new request consultation" widget count
+            $.ajax({
+                url: '<?= site_url('dashboard/countNewRequestConsultations') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#newRequestWidget').text(response);
+                }
+            });
             // Fetch "scheduled consultation" widget count
             $.ajax({
                 url: '<?= site_url('dashboard/countScheduledConsultations') ?>',
@@ -226,15 +217,6 @@
                 dataType: 'html',
                 success: function(response) {
                     $('#scheduledConsultationWidget').text(response);
-                }
-            });
-            // Fetch "record" widget count
-            $.ajax({
-                url: '<?= site_url('dashboard/countLyceanRecords') ?>',
-                type: 'get',
-                dataType: 'html',
-                success: function(response) {
-                    $('#recordWidget').text(response);
                 }
             });
         }, 5000);

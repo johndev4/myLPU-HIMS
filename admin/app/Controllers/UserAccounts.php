@@ -375,7 +375,7 @@ class Useraccounts extends BaseController
 
 	// FETCH DATA BY ID WITHOUT ACCOUNT
 	// ---------------------------------------------------------
-	public function fetchLyceanInfoById($id = '', $role)
+	public function fetchLyceanInfoById($id = '', $role='')
 	{
 		$lyceans = $this->lyceansModel
 			->where('id_no', $id)->where('role', $role)

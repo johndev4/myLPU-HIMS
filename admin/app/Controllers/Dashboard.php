@@ -109,7 +109,7 @@ class Dashboard extends BaseController
 			}
 		}
 
-		return $this->healthPersonnelsAccountModel->countAll();
+		return $count;
 	}
 
 	// Deleted Accounts
@@ -179,6 +179,6 @@ class Dashboard extends BaseController
 			}
 		}
 
-		return $this->healthPersonnelsAccountModel->countAll();
+		return $count;
 	}
 }

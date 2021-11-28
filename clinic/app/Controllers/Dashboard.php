@@ -74,7 +74,7 @@ class Dashboard extends BaseController
 	// ---------------------------------------------------------
 	public function fetchExpiredMedicine()
 	{
-		// $result = array('data' => array());
+		$result = "";
 		$medicines = $this->medicinesModel->findAll();
 
 		foreach ($medicines as $key => $value) {
@@ -95,9 +95,21 @@ class Dashboard extends BaseController
 			}
 
 			if ($expired_count !== 0) {
-				// $product_name
+				$result = "<li>
+							<div class=\"row\">
+								<div class=\"col-9\">
+									<p>{$product_name}</p>
+								</div>
+								<div class=\"col-3 text-center\">
+									<span class=\"badge badge-danger\">50</span>
+								</div>
+							</div>
+						</li>
+						<hr>";
 			}
 		}
+
+		return $result;
 	}
 
 	public function fetchLowStockMedicine()

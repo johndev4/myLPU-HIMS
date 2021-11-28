@@ -90,8 +90,8 @@
                         <span class="info-box-icon"><i class="far fa-user-graduate fa-lg" style="color:#a62d38"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text font-weight-bold">Student</span>
-                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['student'] ?></span>
-                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $active_widget_counter['student'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: <?= $deleted_widget_counter['student'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -101,8 +101,8 @@
                         <span class="info-box-icon"><i class="far fa-chalkboard-teacher fa-lg" style="color:#a62d38"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text font-weight-bold">Faculty</span>
-                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['faculty'] ?></span>
-                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $active_widget_counter['faculty'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: <?= $deleted_widget_counter['faculty'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -112,8 +112,8 @@
                         <span class="info-box-icon"><i class="far fa-user-tie fa-lg" style="color:#a62d38"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text font-weight-bold">Staff</span>
-                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['staff'] ?></span>
-                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $active_widget_counter['staff'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: <?= $deleted_widget_counter['staff'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -123,8 +123,8 @@
                         <span class="info-box-icon"><i class="far fa-user-md fa-lg" style="color:#a62d38"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text font-weight-bold">Health Personnel</span>
-                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['health_personnel'] ?></span>
-                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $active_widget_counter['health_personnel'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: <?= $deleted_widget_counter['health_personnel'] ?></span>
                         </div>
                     </div>
                 </div>
