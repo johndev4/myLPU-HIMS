@@ -72,19 +72,6 @@ class Dashboard extends BaseController
 
 	// FETCH DATA FOR DASHBOARD
 	// ---------------------------------------------------------
-	// public function fetchActiveConsultations()
-	// {
-	// 	$consultations = $this->consultationsModel
-	// 		->where('status', 'done')->where('personnel_id_no', getIdNo())
-	// 		->findAll();
-
-	// 	foreach ($consultations as $consultation) {
-	// 		$scheduleDate = date_create($consultation['meeting_schedule'])->format('d-M-Y');
-	// 		$scheduleTimeFrom = date_create($consultation['meeting_schedule'])->format('H:i');
-	// 		$scheduleTimeTo = date('H:i', strtotime($consultation['meeting_schedule']) + 1800);
-	// 	}
-	// }
-
 	public function fetchExpiredMedicine()
 	{
 		$result = array('data' => array());
@@ -117,6 +104,19 @@ class Dashboard extends BaseController
 	{
 		// $batches = $this->batchesModel->w
 	}
+
+	// public function fetchActiveConsultations()
+	// {
+	// 	$consultations = $this->consultationsModel
+	// 		->where('status', 'done')->where('personnel_id_no', getIdNo())
+	// 		->findAll();
+
+	// 	foreach ($consultations as $consultation) {
+	// 		$scheduleDate = date_create($consultation['meeting_schedule'])->format('d-M-Y');
+	// 		$scheduleTimeFrom = date_create($consultation['meeting_schedule'])->format('H:i');
+	// 		$scheduleTimeTo = date('H:i', strtotime($consultation['meeting_schedule']) + 1800);
+	// 	}
+	// }
 
 
 
