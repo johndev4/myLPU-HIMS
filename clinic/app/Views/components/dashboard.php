@@ -84,48 +84,14 @@
                             <div class="row">
                                 <div class="col-lg-6 medicine-hr" style="border-right: 1px solid rgb(201, 201, 201);">
                                     <span class="font-weight-bold">Expired</span>
-                                    <ul class="mt-2 ml-n4" style="list-style: none;">
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <p>Pfizer Paracetamol 250mg</p>
-                                                </div>
-                                                <div class="col-3 text-center">
-                                                    <span class="badge badge-danger">12501</span>
-                                                </div>
-                                            </div>
-
-                                            <!-- <p>Pfizer Paracetamol 250mg <span class="badge badge-danger ml-1">10</span></p> -->
-                                        </li>
-                                        <hr>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <p>Unilab Mefanamic Acid 100mg</p>
-                                                </div>
-                                                <div class="col-3 text-center">
-                                                    <span class="badge badge-danger">251</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <hr>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <p>Pfizer Ascorbic Acid 250mg</p>
-                                                </div>
-                                                <div class="col-3 text-center">
-                                                    <span class="badge badge-danger">50</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <hr>
+                                    <ul class="mt-2 ml-n4" style="list-style: none;" id="expiredMedicineWidget">
+                                        <!-- EXPIRED MEDICINE HERE -->
                                     </ul>
                                 </div>
 
                                 <div class="col-lg-6 justify-content-center">
                                     <span class="font-weight-bold low-stock">Low Stock</span>
-                                    <ul class="mt-2 ml-n4" style="list-style: none;">
+                                    <ul class="mt-2 ml-n4" style="list-style: none;" id="lowStockMedicineWidget">
                                         <li>
                                             <div class="row">
                                                 <div class="col-9">
@@ -199,6 +165,27 @@
                 $('#scheduledConsultationWidget').text(response);
             }
         });
+
+        // Fetch "expired medicine" widget list
+        $.ajax({
+            url: '<?= site_url('dashboard/fetchExpiredMedicine') ?>',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#expiredMedicineWidget').html(response);
+            }
+        });
+
+        // Fetch "low stock medicine" widget list
+        $.ajax({
+            url: '<?= site_url('dashboard/fetchLowStockMedicine') ?>',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#lowStockMedicineWidget').html(response);
+            }
+        });
+
 
         setInterval(function() {
             // Fetch "new request consultation" widget count

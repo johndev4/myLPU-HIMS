@@ -101,7 +101,7 @@ class Dashboard extends BaseController
 									<p>{$product_name}</p>
 								</div>
 								<div class=\"col-3 text-center\">
-									<span class=\"badge badge-danger\">50</span>
+									<span class=\"badge badge-danger\">{$expired_count}</span>
 								</div>
 							</div>
 						</li>
@@ -114,7 +114,38 @@ class Dashboard extends BaseController
 
 	public function fetchLowStockMedicine()
 	{
-		// $batches = $this->batchesModel->w
+		$result = "";
+		$medicines = $this->medicinesModel->findAll();
+
+		foreach ($medicines as $key => $value) {
+			$batches = $this->batchesModel->where('product_id', $value['product_id'])->findAll();
+			$product_name = "{$value['manufacturer']} - {$value['generic_name']} {$value['dosage']}";
+			$stock_in = 0;
+			$stock_out = 0;
+			$expired_count = 0;
+
+			foreach ($batches as $batch) {
+				$stock_in += $batch['stock_in'];
+				$stock_out += $batch['stock_out'];
+			}
+
+			$stock_available = ($stock_in - ($stock_out + $expired_count));
+			if ($stock_available < ($stock_in * 0.15)) {
+				$result = "<li>
+							<div class=\"row\">
+								<div class=\"col-9\">
+									<p>{$product_name}</p>
+								</div>
+								<div class=\"col-3 text-center\">
+									<span class=\"badge badge-warning\">{$stock_available}</span>
+								</div>
+							</div>
+						</li>
+						<hr>";
+			}
+		}
+
+		return $result;
 	}
 
 	// public function fetchActiveConsultations()
