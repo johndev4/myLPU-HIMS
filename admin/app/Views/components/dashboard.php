@@ -37,7 +37,7 @@
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-graduate"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Student</span>
-                            <span class="info-box-number"><?= $widget_counter['student'] ?></span>
+                            <span class="info-box-number"><?= $active_widget_counter['student'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                         <span class="info-box-icon dash-widgets"><i class="fas fa-chalkboard-teacher"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Faculty</span>
-                            <span class="info-box-number"><?= $widget_counter['faculty'] ?></span>
+                            <span class="info-box-number"><?= $active_widget_counter['faculty'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-tie"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Staff</span>
-                            <span class="info-box-number"><?= $widget_counter['staff'] ?></span>
+                            <span class="info-box-number"><?= $active_widget_counter['staff'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-md"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Health Personnel</span>
-                            <span class="info-box-number"><?= $widget_counter['health_personnel'] ?></span>
+                            <span class="info-box-number"><?= $active_widget_counter['health_personnel'] ?></span>
                         </div>
                     </div>
                 </div>

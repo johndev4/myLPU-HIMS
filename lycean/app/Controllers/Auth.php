@@ -40,7 +40,7 @@ class Auth extends BaseController
 			} else if ($user && $user['locked'] >= 3) {
 				$this->data['error'] = 'Your account is locked.';
 			} else {
-				$this->data['error'] = "Invalid login, please try again. Attempt " . ($user['locked'] + 1);
+				$this->data['error'] = "Invalid login, please try again.";
 
 				// On 3 login attempts account will be locked
 				$user = $this->userAccountModel->where('username', $_POST['username'])->first();
@@ -51,9 +51,12 @@ class Auth extends BaseController
 						->set([
 							'locked' => $user['locked']
 						])->update();
+
+					$this->data['error'] = "Invalid login, please try again. Attempt " . ($user['locked']);
 				}
 
-				if ($user['locked'] == 3) {
+				// 3rd attempt locked
+				if ($user && $user['locked'] == 3) {
 					$this->data['error'] = "Invalid login. Your account is locked.";
 				}
 			}

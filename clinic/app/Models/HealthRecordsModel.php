@@ -41,10 +41,10 @@ class HealthRecordsModel extends Model
 	protected $afterDelete          = [];
 
 
-	public function countAll()
-	{
-		$db = \Config\Database::connect();
-		$lyceans = $db->table($this->table);
-		return $lyceans->countAllResults();
-	}
+	// public function countAll()
+	// {
+	// 	$db = \Config\Database::connect();
+	// 	$lyceans = $db->table($this->table);
+	// 	return $lyceans->countAllResults();
+	// }
 }

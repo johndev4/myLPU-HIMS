@@ -399,7 +399,7 @@ class Consultations extends BaseController
 			$info = "The {$personnel} accepted your request";
 			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		} else if ($type == 'reject') {
-			$info = 'The {$personnel} rejected your request';
+			$info = "The {$personnel} rejected your request";
 			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		} else if ($type == 'consultationSendFile') {
 			$info = 'The documents are ready to view';
