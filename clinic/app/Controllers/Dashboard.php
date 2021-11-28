@@ -148,7 +148,7 @@ class Dashboard extends BaseController
 		return $result;
 	}
 
-	// public function fetchActiveConsultations()
+	// public function fetchOccupiedSchedule()
 	// {
 	// 	$consultations = $this->consultationsModel
 	// 		->where('status', 'done')->where('personnel_id_no', getIdNo())
