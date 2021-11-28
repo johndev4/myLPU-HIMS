@@ -92,42 +92,9 @@
                                 <div class="col-md-6 justify-content-center">
                                     <span class="font-weight-bold low-stock">Low Stock</span>
                                     <ul class="mt-2 ml-n4" style="list-style: none;" id="lowStockMedicineWidget">
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <p>Pfizer Paracetamol 250mg</p>
-                                                </div>
-                                                <div class="col-3 text-center">
-                                                    <span class="badge badge-warning">2</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <hr>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <p>Unilab Mefanamic Acid 500mg</p>
-                                                </div>
-                                                <div class="col-3 text-center">
-                                                    <span class="badge badge-warning">10</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <hr>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <p>Unilab Paracetamol 50mg</p>
-                                                </div>
-                                                <div class="col-3 text-center">
-                                                    <span class="badge badge-warning">10</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <hr>
+                                        <!-- LOW STOCK MEDICINE HERE -->
                                     </ul>
                                 </div>
-
                             </div>
                             <br>
                             <a href="<?= site_url('inventory/medicines/stocks') ?>" class="float-right">Go to Stocks &gt</a>

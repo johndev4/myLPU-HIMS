@@ -79,5 +79,10 @@ class BaseController extends Controller
 		
 		// Lycean App Base URL
 		$this->lyceanBaseUrl = str_replace('clinic', 'lycean', site_url()); // CUSTOMIZE THIS IN CASE OF 3 END USERS HAS DIFFERENT DOMAINS
+
+
+		// Initialize Constant Variables
+		// -------------------------------------------------------------
+		$this->lowStockPercentage = (15/100); //15 percent 
 	}
 }

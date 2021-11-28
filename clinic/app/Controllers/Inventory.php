@@ -260,7 +260,7 @@ class Inventory extends BaseController
 			// Check low stock
 			if ($is_expired) {
 				$stockBadge = " <span class=\"badge badge-warning\">EXPIRED!</span>";
-			} else if (($value['stock_in'] - $value['stock_out']) < ($value['stock_in'] * 0.15)) {
+			} else if (($value['stock_in'] - $value['stock_out']) < ($value['stock_in'] * $this->lowStockPercentage)) {
 				$stockBadge = " <span class=\"badge badge-warning\">LOW!</span>";
 			} else {
 				$stockBadge = "";
@@ -300,8 +300,10 @@ class Inventory extends BaseController
 				}
 			}
 
+			$stock_available = ($stock_in - ($stock_out + $expired_count));
+
 			// Check low stock
-			if (($stock_in - ($stock_out + $expired_count)) < ($stock_in * 0.15)) {
+			if ($stock_available < ($stock_in * $this->lowStockPercentage)) {
 				$stockBadge = " <span class=\"badge badge-warning\">LOW!</span>";
 			} else {
 				$stockBadge = "";

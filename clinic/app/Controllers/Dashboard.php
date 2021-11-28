@@ -130,7 +130,7 @@ class Dashboard extends BaseController
 			}
 
 			$stock_available = ($stock_in - ($stock_out + $expired_count));
-			if ($stock_available < ($stock_in * 0.15)) {
+			if ($stock_available < ($stock_in * $this->lowStockPercentage)) {
 				$result = "<li>
 							<div class=\"row\">
 								<div class=\"col-9\">
