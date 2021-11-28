@@ -136,7 +136,7 @@
             <div class="col-md-6 hide">
                 <div class="row">
                     <div class="col-4 text-center">
-                        <a href="<?= site_url('dashboard') ?>">
+                        <a href="#null" onclick="javascript:history.back ();">
                             <div class="card shadow card2 py-3" style="max-width:32rem">
                                 <i class="fas fa-chevron-left fa-2x" style="color: #999999"></i>
                             </div>

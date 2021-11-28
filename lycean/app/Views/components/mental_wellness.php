@@ -416,7 +416,7 @@
                 }
             });
 
-            // Fetch all online doctors
+            // Fetch all online guidance counselor
             $.ajax({
                 url: '<?= site_url('mentalwellness/fetchOnlineHealthPersonnels') ?>',
                 type: 'get',

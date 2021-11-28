@@ -93,24 +93,6 @@
     </div>
     <!-- ./wrapper -->
 
-
-
-
-    <!-- SCRIPT -->
-    <script>
-        $(document).ready(function() {
-            // Notify user for scheduled consultation
-            setInterval(function() {
-                $.ajax({
-                    url: '<?= site_url('notifications/setScheduleNotification/') ?>',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                });
-            }, 500);
-        });
-    </script>
-
 </body>
 
 </html>

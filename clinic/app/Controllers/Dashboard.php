@@ -69,8 +69,64 @@ class Dashboard extends BaseController
 		echo count($consultations);
 	}
 
-	public function countLyceanRecords()
+
+	// FETCH DATA FOR DASHBOARD
+	// ---------------------------------------------------------
+	public function fetchExpiredMedicine()
 	{
-		echo $this->lyceansModel->countAll();
+		$result = array('data' => array());
+		$medicines = $this->medicinesModel->findAll();
+
+		foreach ($medicines as $key => $value) {
+			$batches = $this->batchesModel->where('product_id', $value['product_id'])->findAll();
+			$product_name = "{$value['manufacturer']} - {$value['generic_name']} {$value['dosage']}";
+			$stock_in = 0;
+			$stock_out = 0;
+			$expired_count = 0;
+
+			foreach ($batches as $batch) {
+				$stock_in += $batch['stock_in'];
+				$stock_out += $batch['stock_out'];
+				$stock_available = ($batch['stock_in'] - $batch['stock_out']);
+
+				if ($batch['expiration_date'] < date('Y-m-d')) {
+					$expired_count += $stock_available > 0 ? $stock_available : 0;
+				}
+			}
+
+			if ($expired_count !== 0) {
+				// $product_name
+			}
+		}
 	}
+
+	public function fetchLowStockMedicine()
+	{
+		// $batches = $this->batchesModel->w
+	}
+
+	// public function fetchActiveConsultations()
+	// {
+	// 	$consultations = $this->consultationsModel
+	// 		->where('status', 'done')->where('personnel_id_no', getIdNo())
+	// 		->findAll();
+
+	// 	foreach ($consultations as $consultation) {
+	// 		$scheduleDate = date_create($consultation['meeting_schedule'])->format('d-M-Y');
+	// 		$scheduleTimeFrom = date_create($consultation['meeting_schedule'])->format('H:i');
+	// 		$scheduleTimeTo = date('H:i', strtotime($consultation['meeting_schedule']) + 1800);
+	// 	}
+	// }
+
+
+
+
+
+
+
+
+
+
+
+	// public function countLyceanRecords(){echo $this->lyceansModel->countAll();}
 }

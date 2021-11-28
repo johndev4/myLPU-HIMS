@@ -69,7 +69,6 @@
             </div>
 
             <div class="row">
-
                 <div class="col-md-12 col-lg-12">
                     <div class="card shadow-none">
                         <div class="card-header dash-widgets">
@@ -167,51 +166,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="col-md-4">
-                    <div class="card shadow-none">
-                        <div class="card-header dash-widgets">
-                            <h3 class="card-title">Consultation Schedule</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus text-light"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <ul style="list-style: none;">
-                                        <li>
-                                            <p>December 26, 2021 8:30am</p>
-                                        </li>
-                                        <li>
-                                            <p>December 26, 2021 9:00am</p>
-                                        </li>
-                                        <li>
-                                            <p>December 26, 2021 9:30am</p>
-                                        </li>
-                                        <li>
-                                            <p>December 26, 2021 10:00am</p>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>  -->
-
-
-
-
-
             </div>
-
-
-
-
 
         </div><!-- /.container-fluid -->
     </section>

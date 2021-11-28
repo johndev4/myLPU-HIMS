@@ -173,7 +173,6 @@
                                             <th>Product Name</th>
                                             <th>Stock In</th>
                                             <th>Stock Out</th>
-                                            <th>Expired</th>
                                             <th>Stock Available</th>
                                         </tr>
                                     </thead>

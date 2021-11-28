@@ -4,7 +4,8 @@ namespace Config;
 
 use App\Filters\LoggedIn;
 use App\Filters\NotLoggedIn;
-use App\Filters\UserPermission;
+use App\Filters\GuidanceCounselorPermission;
+use App\Filters\NursePermission;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -19,12 +20,13 @@ class Filters extends BaseConfig
      * @var array
      */
     public $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'loggedin'      => LoggedIn::class,
-        'notloggedin'   => NotLoggedIn::class,
-        'user_permission'   => UserPermission::class
+        'csrf'                          => CSRF::class,
+        'toolbar'                       => DebugToolbar::class,
+        'honeypot'                      => Honeypot::class,
+        'loggedin'                      => LoggedIn::class,
+        'notloggedin'                   => NotLoggedIn::class,
+        'guidancecounselor_permission'  => GuidanceCounselorPermission::class,
+        'nurse_permission'              => NursePermission::class
     ];
 
     /**
@@ -39,8 +41,8 @@ class Filters extends BaseConfig
             'csrf' => [
                 'except' => [
                     'consultations/sendMedicalFilesById/*',
-                    'records/uploadStudentRecord', 
-                    'records/uploadFacultyRecord', 
+                    'records/uploadStudentRecord',
+                    'records/uploadFacultyRecord',
                     'records/uploadStaffRecord'
                 ]
             ],
@@ -73,16 +75,20 @@ class Filters extends BaseConfig
      */
     public $filters = [
         'loggedin' => [
-            'before' => ['dashboard', 'profile', 'records/*', 'consultations', 'consultations/*','inventory/equipments', 'inventory/medicines/*', 'help', 'changepassword'],
-            'after' => ['dashboard', 'profile', 'records/*', 'consultations', 'consultations/*','inventory/equipments', 'inventory/medicines/*', 'help']
+            'before' => ['dashboard', 'profile', 'records/*', 'consultations', 'consultations/*', 'inventory/equipments', 'inventory/medicines/*', 'help', 'changepassword'],
+            'after' => ['dashboard', 'profile', 'records/*', 'consultations', 'consultations/*', 'inventory/equipments', 'inventory/medicines/*', 'help']
         ],
         'notloggedin' => [
             'before' => ['/', 'login', 'forgotpassword'],
             'after' => ['/', 'login', 'forgotpassword']
         ],
-        'user_permission' => [
+        'guidancecounselor_permission' => [
             'before' => ['inventory/*', 'records/*'],
             'after' => ['inventory/*', 'records/*']
+        ],
+        'nurse_permission' => [
+            'before' => ['consultations', 'consultations/*'],
+            'after' => ['consultations', 'consultations/*']
         ]
     ];
 }

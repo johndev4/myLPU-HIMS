@@ -236,7 +236,7 @@ class Inventory extends BaseController
 				$value['batch_id'],
 				$product_name,
 				$value['stock_in'],
-				date_create($value['expiration_date'])->format('M d, Y'),
+				date_create($value['expiration_date'])->format('d-M-Y'),
 				"<div align=\"center\">
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
@@ -255,15 +255,23 @@ class Inventory extends BaseController
 		foreach ($batches as $key => $value) {
 			$medicines = $this->medicinesModel->find($value['product_id']);
 			$product_name = "{$medicines['manufacturer']} - {$medicines['generic_name']} {$medicines['dosage']}";
-			$is_expired = $value['expiration_date'] < date('Y-m-d') ? 'YES' : 'NO';
+			$is_expired = strtotime($value['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
+
+			// Check low stock
+			if ($is_expired) {
+				$stockBadge = " <span class=\"badge badge-warning\">EXPIRED!</span>";
+			} else if (($value['stock_in'] - $value['stock_out']) < ($value['stock_in'] * 0.15)) {
+				$stockBadge = " <span class=\"badge badge-warning\">LOW!</span>";
+			} else {
+				$stockBadge = "";
+			}
 
 			$result['data'][$key] = array(
 				$value['batch_id'],
 				$product_name,
 				$value['stock_in'],
 				$value['stock_out'],
-				$is_expired,
-				$value['stock_in'] - $value['stock_out']
+				($value['stock_in'] - $value['stock_out']) . $stockBadge
 			);
 		}
 
@@ -285,11 +293,18 @@ class Inventory extends BaseController
 			foreach ($batches as $batch) {
 				$stock_in += $batch['stock_in'];
 				$stock_out += $batch['stock_out'];
-				$stock_available = $batch['stock_in'] - $batch['stock_out'];
+				$stock_available = ($batch['stock_in'] - $batch['stock_out']);
 
 				if ($batch['expiration_date'] < date('Y-m-d')) {
 					$expired_count += $stock_available > 0 ? $stock_available : 0;
 				}
+			}
+
+			// Check low stock
+			if (($stock_in - ($stock_out + $expired_count)) < ($stock_in * 0.15)) {
+				$stockBadge = " <span class=\"badge badge-warning\">LOW!</span>";
+			} else {
+				$stockBadge = "";
 			}
 
 			$result['data'][$key] = array(
@@ -297,7 +312,7 @@ class Inventory extends BaseController
 				$stock_in,
 				$stock_out,
 				$expired_count,
-				$stock_in - ($stock_out + $expired_count)
+				$stock_in - ($stock_out + $expired_count) . $stockBadge
 
 				// "<div align=\"center\">
 				// 	<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#stockoutModal\">Stock Out</button>
@@ -610,7 +625,7 @@ class Inventory extends BaseController
 			} else {
 			}
 		}
-		
+
 		return redirect()->to('inventory/medicines/items');
 	}
 
@@ -657,7 +672,7 @@ class Inventory extends BaseController
 
 				if ($stock_available >= $_GET['stock_out']) {
 					$data = [
-						'stock_out' => htmlspecialchars($_GET['stock_out']),
+						'stock_out' => ($batch['stock_out'] + $_GET['stock_out']),
 						'batch_id' => htmlspecialchars($_GET['batch_id']),
 						'product_id' => htmlspecialchars($_GET['product_name'])
 					];

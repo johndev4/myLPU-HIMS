@@ -92,6 +92,21 @@
     </div>
     <!-- ./wrapper -->
 
+
+
+    <!-- Script -->
+    <script>
+        $(document).ready(function() {
+            // Run or stop online state
+            setInterval(function() {
+                $.ajax({
+                    url: '<?= site_url('consultations/runOnlineState') ?>',
+                    type: 'get'
+                });
+            }, 1000);
+        });
+    </script>
+
 </body>
 
 </html>

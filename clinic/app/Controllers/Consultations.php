@@ -35,10 +35,11 @@ class Consultations extends BaseController
 				]
 			],
 			'meeting_time' => [
-				'rules' => 'required|is_unique_time[{field}]',
+				'rules' => 'required|is_future_datetime|is_unique_datetime',
 				'errors' => [
 					'required' => '- Required',
-					'is_unique_time' => 'The schedule is already occupied.'
+					'is_future_datetime' => 'The schedule must be ahead from the date today.',
+					'is_unique_datetime' => 'This schedule is already occupied.'
 				]
 			],
 			'meeting_link' => [
@@ -398,14 +399,14 @@ class Consultations extends BaseController
 			$info = "The {$personnel} accepted your request";
 			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		} else if ($type == 'reject') {
-			$info = 'The doctor rejected your request';
-			$link = $this->lyceanBaseUrl . 'consultation/details/' . $data['consultation_no'];
+			$info = "The {$personnel} rejected your request";
+			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		} else if ($type == 'consultationSendFile') {
 			$info = 'The documents are ready to view';
-			$link = $this->lyceanBaseUrl . 'consultation/details/' . $data['consultation_no'] . '?documents=1';
+			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'] . '?documents=1';
 		} else if ($type == 'consultationDone') {
 			$info = 'Your consultation was done';
-			$link = $this->lyceanBaseUrl . 'consultation/details/' . $data['consultation_no'];
+			$link = $this->lyceanBaseUrl . '/consultation/details/' . $data['consultation_no'];
 		}
 
 		return $this->lyceansNotificationModel->save([
