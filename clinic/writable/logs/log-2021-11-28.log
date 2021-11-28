@@ -1,0 +1,120 @@
+CRITICAL - 2021-11-28 20:49:11 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 20:49:11 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 20:49:11 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 20:49:24 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 20:49:24 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 20:49:24 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:09:28 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:09:28 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:09:28 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:22:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:22:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:22:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:22:38 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:22:38 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-11-28 21:22:38 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Dashboard.php(15): getUserFirstname()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Dashboard->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

@@ -27,7 +27,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767.5px) {
     .medicine-hr{
         border-right: none !important;
         border-bottom: solid !important;
@@ -36,3 +36,11 @@
         margin-bottom: 20px !important;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .medicine-hr{
+        border-right: solid !important;
+        border-width: 1px !important;
+        border-right-color: rgb(201, 201, 201) !important;
+    }
+  } 

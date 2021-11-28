@@ -82,7 +82,7 @@
 
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-6 medicine-hr" style="border-right: 1px solid rgb(201, 201, 201);">
+                                <div class="col-md-6 medicine-hr">
                                     <span class="font-weight-bold">Expired</span>
                                     <ul class="mt-2 ml-n4" style="list-style: none;">
                                         <li>
@@ -122,7 +122,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-lg-6 justify-content-center">
+                                <div class="col-md-6 justify-content-center">
                                     <span class="font-weight-bold low-stock">Low Stock</span>
                                     <ul class="mt-2 ml-n4" style="list-style: none;">
                                         <li>
