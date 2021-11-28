@@ -283,6 +283,39 @@
 
 <!-- Script -->
 <script>
+    setTimeout(function() {
+        <?php if (session()->get('success') !== null) : ?>
+            // Sweet Alert for success staus
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->get('success'); ?>'
+            });
+
+            // Re-show view modal with data after upload and delete medical records
+            <?php if (!empty(session()->get('postData'))) : ?>
+                var data = <?= session()->get('postData') ?>;
+                retrieveData(data['id_no']);
+                $('#viewModal').modal('show');
+            <?php endif ?>
+        <?php endif; ?>
+
+        // File Upload Validation Error
+        <?php if (!empty(session()->get('upload_validation'))) : ?>
+            retrieveData2();
+            $('#viewModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+            });
+            $('#viewModal').modal('show');
+        <?php endif; ?>
+    }, 500);
+
     $(document).ready(function() {
         $("#records_table").DataTable({
             responsive: true,
@@ -307,37 +340,6 @@
         $("#mainUserRecordNav").addClass('menu-open');
         $("#mainUserRecordNav > a").addClass('active');
         $("#facultyRecordNav > a").addClass('active');
-
-        <?php if (session()->get('success') !== null) : ?>
-            // Sweet Alert for success staus
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-            Toast.fire({
-                icon: 'success',
-                title: '<?= session()->get('success'); ?>'
-            });
-
-            // Re-show view modal with data after upload and delete medical records
-            <?php if (!empty(session()->get('postData'))) : ?>
-                $('#viewModal').modal('show');
-                var data = <?= session()->get('postData') ?>;
-                retrieveData(data['id_no']);
-            <?php endif ?>
-        <?php endif; ?>
-
-        // File Upload Validation Error
-        <?php if (!empty(session()->get('upload_validation'))) : ?>
-            $('#viewModal').modal('show');
-            retrieveData2();
-            $('#viewModal').on('hidden.bs.modal', function(evt) {
-                $('.error').addClass('d-none');
-                $('input.border').removeClass('border border-danger');
-            });
-        <?php endif; ?>
 
         // Reset add modal on close
         $('#viewModal').on('hidden.bs.modal', function(evt) {

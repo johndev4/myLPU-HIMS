@@ -74,7 +74,7 @@ class Dashboard extends BaseController
 	// ---------------------------------------------------------
 	public function fetchExpiredMedicine()
 	{
-		$result = array('data' => array());
+		// $result = array('data' => array());
 		$medicines = $this->medicinesModel->findAll();
 
 		foreach ($medicines as $key => $value) {
