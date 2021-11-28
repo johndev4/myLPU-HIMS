@@ -26,3 +26,13 @@
         font-size: 18pt;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .medicine-hr{
+        border-right: none !important;
+        border-bottom: solid !important;
+        border-width: 1px !important;
+        border-bottom-color: rgb(201, 201, 201) !important;
+        margin-bottom: 20px !important;
+    }
+  }

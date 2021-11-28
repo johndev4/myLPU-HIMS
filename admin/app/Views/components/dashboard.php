@@ -27,12 +27,13 @@
                 </div>
             </div>
 
+            <!-- Active Accounts -->
             <div class="row">
-                <div class="col-12">
+                <!-- <div class="col-12">
                     <label class="text-secondary">Accounts</label>
-                </div>
+                </div> -->
                 <!-- Student Accounts -->
-                <div class="col-md-3 col-sm-6 col-12">
+                <!-- <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-graduate"></i></span>
                         <div class="info-box-content">
@@ -40,10 +41,10 @@
                             <span class="info-box-number"><?= $widget_counter['student'] ?></span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Faculty Accounts -->
-                <div class="col-md-3 col-sm-6 col-12">
+                <!-- <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-chalkboard-teacher"></i></span>
                         <div class="info-box-content">
@@ -51,10 +52,10 @@
                             <span class="info-box-number"><?= $widget_counter['faculty'] ?></span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Staff Accounts -->
-                <div class="col-md-3 col-sm-6 col-12">
+                <!-- <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-tie"></i></span>
                         <div class="info-box-content">
@@ -62,10 +63,10 @@
                             <span class="info-box-number"><?= $widget_counter['staff'] ?></span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Clinic staff Accounts -->
-                <div class="col-md-3 col-sm-6 col-12">
+                <!-- <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box shadow p-3">
                         <span class="info-box-icon dash-widgets"><i class="fas fa-user-md"></i></span>
                         <div class="info-box-content">
@@ -73,25 +74,76 @@
                             <span class="info-box-number"><?= $widget_counter['health_personnel'] ?></span>
                         </div>
                     </div>
+                </div> -->
+            </div>
+
+
+
+            <!-- New User Accounts Design -->
+            <div class="row">
+                <div class="col-12">
+                    <label class="text-secondary">Accounts</label>
+                </div>
+                <!-- Student Accounts -->
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box shadow" style="border: 2px solid none">
+                        <span class="info-box-icon"><i class="far fa-user-graduate fa-lg" style="color:#a62d38"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text font-weight-bold">Student</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['student'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box shadow" style="border: 2px solid none">
+                        <span class="info-box-icon"><i class="far fa-chalkboard-teacher fa-lg" style="color:#a62d38"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text font-weight-bold">Faculty</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['faculty'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box shadow" style="border: 2px solid none">
+                        <span class="info-box-icon"><i class="far fa-user-tie fa-lg" style="color:#a62d38"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text font-weight-bold">Staff</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['staff'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box shadow" style="border: 2px solid none">
+                        <span class="info-box-icon"><i class="far fa-user-md fa-lg" style="color:#a62d38"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text font-weight-bold">Health Personnel</span>
+                            <span class="info-box-number font-weight-normal">Active: <?= $widget_counter['health_personnel'] ?></span>
+                            <span class="info-box-number font-weight-normal">Deleted: 0</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-            <!-- Weather widget -->
-            <!-- <div class="weather">
-                <a class="weatherwidget-io" href="https://forecast7.com/en/14d32120d91/general-trias/" data-label_1="GEN. TRIAS" data-label_2="WEATHER" data-theme="clear">GEN. TRIAS WEATHER</a>
-                <script>
-                    ! function(d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = 'https://weatherwidget.io/js/widget.min.js';
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, 'script', 'weatherwidget-io-js');
-                </script>
-            </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         </div><!-- /.container-fluid -->

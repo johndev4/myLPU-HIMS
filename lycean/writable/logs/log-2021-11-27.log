@@ -1,0 +1,8 @@
+CRITICAL - 2021-11-27 14:10:57 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Helpers\useraccount_helper.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 41)
+#1 C:\xampp\htdocs\myLPU-HIMS\lycean\app\Controllers\Notifications.php(102): getIdNo()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Notifications->setScheduleNotification()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Notifications))
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\lycean\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

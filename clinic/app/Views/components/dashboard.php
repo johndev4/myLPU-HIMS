@@ -29,29 +29,33 @@
 
             <div class="row">
                 <!-- Consultation Request -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="info-box shadow p-3">
-                        <span class="info-box-icon dash-widgets"><i class="fas fa-clipboard-check"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Requests</span>
-                            <span class="info-box-number" id="newRequestWidget"></span>
+                <div class="col-md-6 col-sm-6 col-12">
+                    <a href="<?= site_url('consultations') ?>" class="text-dark">
+                        <div class="info-box shadow p-3">
+                            <span class="info-box-icon dash-widgets"><i class="fas fa-clipboard-check"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Requests</span>
+                                <span class="info-box-number" id="newRequestWidget"></span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- Consultation -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="info-box shadow p-3">
-                        <span class="info-box-icon dash-widgets"><i class="far fa-calendar-alt"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Scheduled Consultations</span>
-                            <span class="info-box-number" id="scheduledConsultationWidget"></span>
+                <!-- Scheduled Consultation -->
+                <div class="col-md-6 col-sm-6 col-12">
+                    <a href="<?= site_url('consultations') ?>" class="text-dark">
+                        <div class="info-box shadow p-3">
+                            <span class="info-box-icon dash-widgets"><i class="far fa-calendar-alt"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Scheduled Consultations</span>
+                                <span class="info-box-number" id="scheduledConsultationWidget"></span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Records -->
-                <?php if ($designation !== 'Guidance Counselor') : ?>
+                <!-- <?php if ($designation !== 'Guidance Counselor') : ?>
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="info-box shadow p-3">
                             <span class="info-box-icon dash-widgets"><i class="fas fa-file-medical"></i></span>
@@ -61,8 +65,153 @@
                             </div>
                         </div>
                     </div>
-                <?php endif; ?>
+                <?php endif; ?> -->
             </div>
+
+            <div class="row">
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="card shadow-none">
+                        <div class="card-header dash-widgets">
+                            <h3 class="card-title">Medicines</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus text-light"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6 medicine-hr" style="border-right: 1px solid rgb(201, 201, 201);">
+                                    <span class="font-weight-bold">Expired</span>
+                                    <ul class="mt-2 ml-n4" style="list-style: none;">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <p>Pfizer Paracetamol 250mg</p>
+                                                </div>
+                                                <div class="col-3 text-center">
+                                                    <span class="badge badge-danger">12501</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- <p>Pfizer Paracetamol 250mg <span class="badge badge-danger ml-1">10</span></p> -->
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <p>Unilab Mefanamic Acid 100mg</p>
+                                                </div>
+                                                <div class="col-3 text-center">
+                                                    <span class="badge badge-danger">251</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <p>Pfizer Ascorbic Acid 250mg</p>
+                                                </div>
+                                                <div class="col-3 text-center">
+                                                    <span class="badge badge-danger">50</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-lg-6 justify-content-center">
+                                    <span class="font-weight-bold low-stock">Low Stock</span>
+                                    <ul class="mt-2 ml-n4" style="list-style: none;">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <p>Pfizer Paracetamol 250mg</p>
+                                                </div>
+                                                <div class="col-3 text-center">
+                                                    <span class="badge badge-warning">2</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <p>Unilab Mefanamic Acid 500mg</p>
+                                                </div>
+                                                <div class="col-3 text-center">
+                                                    <span class="badge badge-warning">10</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <p>Unilab Paracetamol 50mg</p>
+                                                </div>
+                                                <div class="col-3 text-center">
+                                                    <span class="badge badge-warning">10</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <br>
+                            <a href="<?= site_url('inventory/medicines/stocks') ?>" class="float-right">Go to Stocks &gt</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md-4">
+                    <div class="card shadow-none">
+                        <div class="card-header dash-widgets">
+                            <h3 class="card-title">Consultation Schedule</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus text-light"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul style="list-style: none;">
+                                        <li>
+                                            <p>December 26, 2021 8:30am</p>
+                                        </li>
+                                        <li>
+                                            <p>December 26, 2021 9:00am</p>
+                                        </li>
+                                        <li>
+                                            <p>December 26, 2021 9:30am</p>
+                                        </li>
+                                        <li>
+                                            <p>December 26, 2021 10:00am</p>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  -->
+
+
+
+
+
+            </div>
+
+
+
+
 
         </div><!-- /.container-fluid -->
     </section>
@@ -117,13 +266,13 @@
 
         // Fetch "record" widget count
         $.ajax({
-                url: '<?= site_url('dashboard/countLyceanRecords') ?>',
-                type: 'get',
-                dataType: 'html',
-                success: function(response) {
-                    $('#recordWidget').text(response);
-                }
-            });
+            url: '<?= site_url('dashboard/countLyceanRecords') ?>',
+            type: 'get',
+            dataType: 'html',
+            success: function(response) {
+                $('#recordWidget').text(response);
+            }
+        });
         setInterval(function() {
             $.ajax({
                 url: '<?= site_url('dashboard/countLyceanRecords') ?>',
