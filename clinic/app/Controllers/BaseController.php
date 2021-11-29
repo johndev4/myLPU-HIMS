@@ -83,6 +83,6 @@ class BaseController extends Controller
 
 		// Initialize Constant Variables
 		// -------------------------------------------------------------
-		$this->lowStockPercentage = (15/100); //15 percent 
+		$this->lowStockPercentage = 0.15; //15 percent 
 	}
 }
