@@ -380,15 +380,18 @@
 
     <?php if (!empty(session()->get('validation_error'))) : ?>
         // Sweet Alert for validation error
-        var Toast = Swal.mixin({
-            toast: false,
-            position: 'center',
-            showConfirmButton: true,
-        });
-        Toast.fire({
-            icon: 'warning',
-            title: '<?= session()->get('validation_error'); ?>'
-        });
+        setTimeout(function() {
+            var Toast = Swal.mixin({
+                toast: false,
+                position: 'center',
+                showConfirmButton: true,
+            });
+            Toast.fire({
+                icon: 'warning',
+                title: '<?= session()->get('validation_error'); ?>'
+            });
+        }, 2000);
+
     <?php endif; ?>
 </script>
 
