@@ -44,7 +44,7 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="add_productid" class="col-form-label">Product ID</label>
+                                        <label for="add_productid" class="col-form-label">Item ID</label>
                                         <input type="text" class="form-control" id="add_productid" name="product_id" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -193,7 +193,7 @@
                                 <input type="hidden" name="role" value="student">
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label for="modify_productid" class="col-form-label">Product ID</label>
+                                        <label for="modify_productid" class="col-form-label">Item ID</label>
                                         <input type="text" class="form-control" id="mod_productid" name="product_id" value="" readonly="readonly">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
@@ -329,7 +329,7 @@
                     <table id="medicines_table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Product ID</th>
+                                <th>Item ID</th>
                                 <th>Manufacturer</th>
                                 <th>Generic Name</th>
                                 <th>Drug Class</th>

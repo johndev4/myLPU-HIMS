@@ -155,7 +155,7 @@
                                 <a class="nav-link active" id="custom-tabs-four-batch-tab" data-toggle="pill" href="#custom-tabs-four-batch" role="tab" aria-controls="custom-tabs-four-batch" aria-selected="true">Stocks by Batch</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-four-productname-tab" data-toggle="pill" href="#custom-tabs-four-productname" role="tab" aria-controls="custom-tabs-four-productname" aria-selected="false">Stocks by Product name</a>
+                                <a class="nav-link" id="custom-tabs-four-productname-tab" data-toggle="pill" href="#custom-tabs-four-productname" role="tab" aria-controls="custom-tabs-four-productname" aria-selected="false">Stocks by Item</a>
                             </li>
                         </ul>
                     </div>
