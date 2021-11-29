@@ -21,13 +21,15 @@
             <div class="row">
                 <div class="col-md-12 col-lg-3">
                     <ul style="list-style: none; cursor: pointer;">
-                        <!-- <li><a href="<?= site_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li> -->
-
                         <li><a id="link-1" style="color:rgb(0, 131, 253)">Change your Password</a></li>
                         <li><a id="link-2" style="color:rgb(0, 131, 253)">Dashboard Widgets</a></li>
-                        <li><a id="link-3" style="color:rgb(0, 131, 253)">Records</a></li>
+                        <?php if ($designation != 'Guidance Counselor') : ?>
+                            <li><a id="link-3" style="color:rgb(0, 131, 253)">Records</a></li>
+                        <?php endif; ?>
                         <li><a id="link-4" style="color:rgb(0, 131, 253)">Consultation</a></li>
-                        <li><a id="link-5" style="color:rgb(0, 131, 253)">Inventory</a></li>
+                        <?php if ($designation != 'Guidance Counselor') : ?>
+                            <li><a id="link-5" style="color:rgb(0, 131, 253)">Inventory</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
 
@@ -84,62 +86,65 @@
 
                     <br><br><br>
 
-                    <h5 class="text-bold" id="section-3">Records</h5>
-                    <ul>
-                        <li>
-                            <h5>View Records</h5>
-                        </li>
-                    </ul>
-                    <ol>
-                        <li>
-                            <p>On the side navigation bar, Click Records to see the dropdown menu.</p>
-                        </li>
-                        <li>
-                            <p>Select either Student, Faculty or Staff to view the list under each records module.</p>
-                        </li>
+                    <?php if ($designation != 'Guidance Counselor') : ?>
+                        <h5 class="text-bold" id="section-3">Records</h5>
+                        <ul>
+                            <li>
+                                <h5>View Records</h5>
+                            </li>
+                        </ul>
+                        <ol>
+                            <li>
+                                <p>On the side navigation bar, Click Records to see the dropdown menu.</p>
+                            </li>
+                            <li>
+                                <p>Select either Student, Faculty or Staff to view the list under each records module.</p>
+                            </li>
 
-                        <img src="<?= base_url('assets/images/help_menu/4.png') ?>" alt="1" class="img-help-drpdwn shadow" width="300">
-                        <br><br>
+                            <img src="<?= base_url('assets/images/help_menu/4.png') ?>" alt="1" class="img-help-drpdwn shadow" width="300">
+                            <br><br>
 
-                        <li>
-                            <p>Once inside the records module, you can see the list of records.</p>
-                        </li>
+                            <li>
+                                <p>Once inside the records module, you can see the list of records.</p>
+                            </li>
 
-                        <img src="<?= base_url('assets/images/help_menu/5.png') ?>" alt="1" class="img-help shadow" width="500">
-                        <br><br>
+                            <img src="<?= base_url('assets/images/help_menu/5.png') ?>" alt="1" class="img-help shadow" width="500">
+                            <br><br>
 
-                        <li>
-                            <p>To fully view their records, click View.</p>
-                        </li>
+                            <li>
+                                <p>To fully view their records, click View.</p>
+                            </li>
 
-                        <img src="<?= base_url('assets/images/help_menu/6.0.png') ?>" alt="1" class="img-help shadow" width="500">
-                        <p><b>Note:</b> You can use search to easily find an entity.</p>
-                    </ol>
+                            <img src="<?= base_url('assets/images/help_menu/6.0.png') ?>" alt="1" class="img-help shadow" width="500">
+                            <p><b>Note:</b> You can use search to easily find an entity.</p>
+                        </ol>
 
-                    <br><br><br>
+                        <br><br><br>
 
-                    <ul>
-                        <li>
-                            <h5>Add Medical Documents</h5>
-                        </li>
-                    </ul>
-                    <ol>
-                        <li>
-                            <p>Go to Records module, select an entity and click view.</p>
-                        </li>
+                        <ul>
+                            <li>
+                                <h5>Add Medical Documents</h5>
+                            </li>
+                        </ul>
+                        <ol>
+                            <li>
+                                <p>Go to Records module, select an entity and click view.</p>
+                            </li>
 
-                        <img src="<?= base_url('assets/images/help_menu/6.1.png') ?>" alt="1" class="img-help shadow" width="500">
-                        <br><br>
+                            <img src="<?= base_url('assets/images/help_menu/6.1.png') ?>" alt="1" class="img-help shadow" width="500">
+                            <br><br>
 
-                        <li>
-                            <p>Select Upload File to add Medical Documents.</p>
-                        </li>
-                        <li>
-                            <p>You can set a custon name to the your chosen file or just directly save it.</p>
-                        </li>
-                    </ol>
+                            <li>
+                                <p>Select Upload File to add Medical Documents.</p>
+                            </li>
+                            <li>
+                                <p>You can set a custon name to the your chosen file or just directly save it.</p>
+                            </li>
+                        </ol>
 
-                    <br><br><br>
+
+                        <br><br><br>
+                    <?php endif; ?>
 
                     <h5 class="text-bold" id="section-4">Consultation</h5>
                     <p>In the Consultations module, you can find here the New Requests, Scheduled Consultations, History and Report.</p>
@@ -208,126 +213,129 @@
                         <img src="<?= base_url('assets/images/help_menu/11.png') ?>" alt="1" class="img-help shadow" width="500">
                     </ul>
 
-                    <br><br><br>
+                    <?php if ($designation != 'Guidance Counselor') : ?>
+                        <br><br><br>
 
-                    <h5 class="text-bold" id="section-5">Inventory</h5>
-                    <h5>Medicines: Item management</h5>
-                    <ul>
-                        <li>
-                            <p><u>Add Item</u></p>
-                            <ol>
-                                <li>
-                                    <p>To add a medicine to the inventory, select Inventory > Medicines > Item Management in the side navigation bar.</p>
-                                </li>
+                        <h5 class="text-bold" id="section-5">Inventory</h5>
+                        <h5>Medicines: Item management</h5>
+                        <ul>
+                            <li>
+                                <p><u>Add Item</u></p>
+                                <ol>
+                                    <li>
+                                        <p>To add a medicine to the inventory, select Inventory > Medicines > Item Management in the side navigation bar.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/13.png') ?>" alt="1" class="img-help-drpdwn shadow" width="300">
-                                <br><br><br>
+                                    <img src="<?= base_url('assets/images/help_menu/13.png') ?>" alt="1" class="img-help-drpdwn shadow" width="300">
+                                    <br><br><br>
 
-                                <li>
-                                    <p>Click the Add button inside the module. A field will appear where you can add the details</p>
-                                </li>
-                                <li>
-                                    <p>After filling the needed details, click Save.</p>
-                                </li>
+                                    <li>
+                                        <p>Click the Add button inside the module. A field will appear where you can add the details</p>
+                                    </li>
+                                    <li>
+                                        <p>After filling the needed details, click Save.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/14.png') ?>" alt="1" class="img-help shadow" width="500">
-                                <br><br><br>
-                            </ol>
+                                    <img src="<?= base_url('assets/images/help_menu/14.png') ?>" alt="1" class="img-help shadow" width="500">
+                                    <br><br><br>
+                                </ol>
 
-                            <p><u>Modify Item</u></p>
-                            <ol>
-                                <li>
-                                    <p>To modify an item, select the desired item you want to edit then click Modify.</p>
-                                </li>
-                                <li>
-                                    <p>After filling the needed details, click Save.</p>
-                                </li>
+                                <p><u>Modify Item</u></p>
+                                <ol>
+                                    <li>
+                                        <p>To modify an item, select the desired item you want to edit then click Modify.</p>
+                                    </li>
+                                    <li>
+                                        <p>After filling the needed details, click Save.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/15.png') ?>" alt="1" class="img-help shadow" width="500">
-                                <br><br><br>
-                            </ol>
-                        </li>
-                    </ul>
+                                    <img src="<?= base_url('assets/images/help_menu/15.png') ?>" alt="1" class="img-help shadow" width="500">
+                                    <br><br><br>
+                                </ol>
+                            </li>
+                        </ul>
 
-                    <h5>Medicines: Batch management</h5>
-                    <ul>
-                        <li>
-                            <p><u>Add Batch</u></p>
-                            <ol>
-                                <li>
-                                    <p>Go to Batch Management > Add. A field will appear where you can add the details.</p>
-                                </li>
-                                <li>
-                                    <p>After filling the needed details, click Save.</p>
-                                </li>
+                        <h5>Medicines: Batch management</h5>
+                        <ul>
+                            <li>
+                                <p><u>Add Batch</u></p>
+                                <ol>
+                                    <li>
+                                        <p>Go to Batch Management > Add. A field will appear where you can add the details.</p>
+                                    </li>
+                                    <li>
+                                        <p>After filling the needed details, click Save.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/16.png') ?>" alt="1" class="img-help shadow" width="500">
-                                <br><br><br>
-                            </ol>
+                                    <img src="<?= base_url('assets/images/help_menu/16.png') ?>" alt="1" class="img-help shadow" width="500">
+                                    <br><br><br>
+                                </ol>
 
-                            <p><u>Modify Batch</u></p>
-                            <ol>
-                                <li>
-                                    <p>To modify a batch, select the desired batch you want to edit then click Modify.</p>
-                                </li>
-                                <li>
-                                    <p>After filling the needed details, click Save.</p>
-                                </li>
+                                <p><u>Modify Batch</u></p>
+                                <ol>
+                                    <li>
+                                        <p>To modify a batch, select the desired batch you want to edit then click Modify.</p>
+                                    </li>
+                                    <li>
+                                        <p>After filling the needed details, click Save.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/17.png') ?>" alt="1" class="img-help shadow" width="500">
-                                <br><br><br>
-                            </ol>
-                        </li>
-                    </ul>
+                                    <img src="<?= base_url('assets/images/help_menu/17.png') ?>" alt="1" class="img-help shadow" width="500">
+                                    <br><br><br>
+                                </ol>
+                            </li>
+                        </ul>
 
-                    <h5>Medicines: Stocks</h5>
-                    <ul>
-                        <li>
-                            <p><u>Stock Out</u></p>
-                            <ol>
-                                <li>
-                                    <p>Go to Stocks > Stock Out. A field will appear where you can input the details.</p>
-                                </li>
-                                <li>
-                                    <p>After filling the needed details, click Save.</p>
-                                </li>
+                        <h5>Medicines: Stocks</h5>
+                        <ul>
+                            <li>
+                                <p><u>Stock Out</u></p>
+                                <ol>
+                                    <li>
+                                        <p>Go to Stocks > Stock Out. A field will appear where you can input the details.</p>
+                                    </li>
+                                    <li>
+                                        <p>After filling the needed details, click Save.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/18.png') ?>" alt="1" class="img-help shadow" width="500">
-                                <br><br><br>
-                            </ol>
-                        </li>
-                    </ul>
+                                    <img src="<?= base_url('assets/images/help_menu/18.png') ?>" alt="1" class="img-help shadow" width="500">
+                                    <br><br><br>
+                                </ol>
+                            </li>
+                        </ul>
 
-                    <h5>Equipment</h5>
-                    <ul>
-                        <li>
-                            <p><u>Add Equipment</u></p>
-                            <ol>
-                                <li>
-                                    <p>Go to Equipment > Add. A field will appear where you can add the details.</p>
-                                </li>
-                                <li>
-                                    <p>After filling the needed details, click Save.</p>
-                                </li>
+                        <h5>Equipment</h5>
+                        <ul>
+                            <li>
+                                <p><u>Add Equipment</u></p>
+                                <ol>
+                                    <li>
+                                        <p>Go to Equipment > Add. A field will appear where you can add the details.</p>
+                                    </li>
+                                    <li>
+                                        <p>After filling the needed details, click Save.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/19.png') ?>" alt="1" class="img-help shadow" width="500">
-                                <br><br><br>
-                            </ol>
+                                    <img src="<?= base_url('assets/images/help_menu/19.png') ?>" alt="1" class="img-help shadow" width="500">
+                                    <br><br><br>
+                                </ol>
 
-                            <p><u>Modify Equipment</u></p>
-                            <ol>
-                                <li>
-                                    <p>To modify an Equipment, select the desired equipment you want to edit then click Modify.</p>
-                                </li>
-                                <li>
-                                    <p>After filling the needed details, click Save.</p>
-                                </li>
+                                <p><u>Modify Equipment</u></p>
+                                <ol>
+                                    <li>
+                                        <p>To modify an Equipment, select the desired equipment you want to edit then click Modify.</p>
+                                    </li>
+                                    <li>
+                                        <p>After filling the needed details, click Save.</p>
+                                    </li>
 
-                                <img src="<?= base_url('assets/images/help_menu/20.png') ?>" alt="1" class="img-help shadow" width="500">
-                                <br><br><br>
-                            </ol>
-                        </li>
-                    </ul>
+                                    <img src="<?= base_url('assets/images/help_menu/20.png') ?>" alt="1" class="img-help shadow" width="500">
+                                    <br><br><br>
+                                </ol>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
+                    
                 </div>
             </div>
         </div>
