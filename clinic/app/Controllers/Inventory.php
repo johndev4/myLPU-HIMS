@@ -252,26 +252,26 @@ class Inventory extends BaseController
 		$result = array('data' => array());
 		$batches = $this->batchesModel->findAll();
 
-		foreach ($batches as $key => $value) {
-			$medicines = $this->medicinesModel->find($value['product_id']);
-			$product_name = "{$medicines['manufacturer']} - {$medicines['generic_name']} {$medicines['dosage']}";
-			$is_expired = strtotime($value['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
+		foreach ($batches as $key => $batch) {
+			$medicine = $this->medicinesModel->find($batch['product_id']);
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$is_expired = strtotime($batch['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
 
 			// Check low stock
 			if ($is_expired) {
 				$stockBadge = " <span class=\"badge badge-warning\">EXPIRED!</span>";
-			} else if (($value['stock_in'] - $value['stock_out']) < ($value['stock_in'] * $this->lowStockPercentage)) {
+			} else if (($batch['stock_in'] - $batch['stock_out']) < ($batch['stock_in'] * $this->lowStockPercentage)) {
 				$stockBadge = " <span class=\"badge badge-warning\">LOW!</span>";
 			} else {
 				$stockBadge = "";
 			}
 
 			$result['data'][$key] = array(
-				$value['batch_id'],
+				$batch['batch_id'],
 				$product_name,
-				$value['stock_in'],
-				$value['stock_out'],
-				($value['stock_in'] - $value['stock_out']) . $stockBadge
+				$batch['stock_in'],
+				$batch['stock_out'],
+				($batch['stock_in'] - $batch['stock_out']) . $stockBadge
 			);
 		}
 
@@ -283,20 +283,19 @@ class Inventory extends BaseController
 		$result = array('data' => array());
 		$medicines = $this->medicinesModel->findAll();
 
-		foreach ($medicines as $key => $value) {
-			$batches = $this->batchesModel->where('product_id', $value['product_id'])->findAll();
-			$product_name = "{$value['manufacturer']} - {$value['generic_name']} {$value['dosage']}";
+		foreach ($medicines as $key => $medicine) {
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			
+			$batches = $this->batchesModel->where('product_id', $medicine['product_id'])->findAll();
 			$stock_in = 0;
 			$stock_out = 0;
 			$expired_count = 0;
-
 			foreach ($batches as $batch) {
 				$stock_in += $batch['stock_in'];
 				$stock_out += $batch['stock_out'];
-				$stock_available = ($batch['stock_in'] - $batch['stock_out']);
 
 				if ($batch['expiration_date'] < date('Y-m-d')) {
-					$expired_count += $stock_available > 0 ? $stock_available : 0;
+					$expired_count += ($batch['stock_in'] - $batch['stock_out']);
 				}
 			}
 
@@ -315,10 +314,6 @@ class Inventory extends BaseController
 				$stock_out,
 				$expired_count,
 				$stock_in - ($stock_out + $expired_count) . $stockBadge
-
-				// "<div align=\"center\">
-				// 	<button type=\"button\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#stockoutModal\">Stock Out</button>
-				// </div>"
 			);
 		}
 

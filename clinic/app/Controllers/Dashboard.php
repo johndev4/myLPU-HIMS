@@ -77,9 +77,9 @@ class Dashboard extends BaseController
 		$result = "";
 		$medicines = $this->medicinesModel->findAll();
 
-		foreach ($medicines as $key => $value) {
-			$batches = $this->batchesModel->where('product_id', $value['product_id'])->findAll();
-			$product_name = "{$value['manufacturer']} - {$value['generic_name']} {$value['dosage']}";
+		foreach ($medicines as $medicine) {
+			$batches = $this->batchesModel->where('product_id', $medicine['product_id'])->findAll();
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
 			$stock_in = 0;
 			$stock_out = 0;
 			$expired_count = 0;
@@ -95,7 +95,7 @@ class Dashboard extends BaseController
 			}
 
 			if ($expired_count !== 0) {
-				$result = "<li>
+				$result .= "<li>
 							<div class=\"row\">
 								<div class=\"col-9\">
 									<p>{$product_name}</p>
@@ -117,21 +117,26 @@ class Dashboard extends BaseController
 		$result = "";
 		$medicines = $this->medicinesModel->findAll();
 
-		foreach ($medicines as $key => $value) {
-			$batches = $this->batchesModel->where('product_id', $value['product_id'])->findAll();
-			$product_name = "{$value['manufacturer']} - {$value['generic_name']} {$value['dosage']}";
+		foreach ($medicines as $medicine) {
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+
+			$batches = $this->batchesModel->where('product_id', $medicine['product_id'])->findAll();
 			$stock_in = 0;
 			$stock_out = 0;
 			$expired_count = 0;
-
 			foreach ($batches as $batch) {
 				$stock_in += $batch['stock_in'];
 				$stock_out += $batch['stock_out'];
+
+				if ($batch['expiration_date'] < date('Y-m-d')) {
+					$expired_count += ($batch['stock_in'] - $batch['stock_out']);
+				}
 			}
 
 			$stock_available = ($stock_in - ($stock_out + $expired_count));
+
 			if ($stock_available < ($stock_in * $this->lowStockPercentage)) {
-				$result = "<li>
+				$result .= "<li>
 							<div class=\"row\">
 								<div class=\"col-9\">
 									<p>{$product_name}</p>

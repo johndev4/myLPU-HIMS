@@ -142,7 +142,6 @@
                 $('#expiredMedicineWidget').html(response);
             }
         });
-
         // Fetch "low stock medicine" widget list
         $.ajax({
             url: '<?= site_url('dashboard/fetchLowStockMedicine') ?>',
@@ -171,6 +170,25 @@
                 dataType: 'html',
                 success: function(response) {
                     $('#scheduledConsultationWidget').text(response);
+                }
+            });
+
+            // Fetch "expired medicine" widget list
+            $.ajax({
+                url: '<?= site_url('dashboard/fetchExpiredMedicine') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#expiredMedicineWidget').html(response);
+                }
+            });
+            // Fetch "low stock medicine" widget list
+            $.ajax({
+                url: '<?= site_url('dashboard/fetchLowStockMedicine') ?>',
+                type: 'get',
+                dataType: 'html',
+                success: function(response) {
+                    $('#lowStockMedicineWidget').html(response);
                 }
             });
         }, 5000);

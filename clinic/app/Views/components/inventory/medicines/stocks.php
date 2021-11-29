@@ -321,27 +321,35 @@
 
         // Stock Out Validation Error
         <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
-            $('#stockoutModal').modal('show');
-            retrieveData('', {
-                error: true,
-                modalType: "out"
-            });
-            $('#stockoutModal').on('hidden.bs.modal', function(evt) {
-                $('.error').addClass('d-none');
-                $('input.border').removeClass('border border-danger');
-                $('select.border').removeClass('border border-danger');
-            });
+            setTimeout(function() {
+                retrieveData('', {
+                    error: true,
+                    modalType: "out"
+                });
+
+                $('#stockoutModal').modal('show');
+                $('#stockoutModal').on('hidden.bs.modal', function(evt) {
+                    $('.error').addClass('d-none');
+                    $('input.border').removeClass('border border-danger');
+                    $('select.border').removeClass('border border-danger');
+                });
+            }, 500);
         <?php endif; ?>
 
         // Insufficient Stock
         <?php if (!empty(session()->getFlashdata('insufficient_stock'))) : ?>
             <?php if (session()->getFlashdata('insufficient_stock') == TRUE) : ?>
-                $('#stockoutModal').modal('show');
-                retrieveData('', {
-                    error: true,
-                    modalType: "out"
-                });
-                $('#insufficientStockModal').modal('show');
+                setTimeout(function() {
+                    retrieveData('', {
+                        error: true,
+                        modalType: "out"
+                    });
+
+                    $('#stockoutModal').modal('show');
+                    setTimeout(function() {
+                        $('#insufficientStockModal').modal('show');
+                    }, 500);
+                }, 500);
             <?php endif; ?>
         <?php endif; ?>
 
@@ -363,7 +371,18 @@
 
             $('#' + obj['modalType'] + '_stockout').val(data['stock_out']);
             $('#' + obj['modalType'] + '_productname').val(data['product_name']);
-            $('#' + obj['modalType'] + '_batchid').val(data['batch_id']);
+            $('#out_batchid').prop('disabled', false);
+            $.ajax({
+                url: '<?= site_url('inventory/fetchBatchByProductID') ?>/' + $('#out_productname').val(),
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    $('#out_batchid').html(response);
+                }
+            });
+            setTimeout(function() {
+                $('#' + obj['modalType'] + '_batchid').val(data['batch_id']);
+            }, 500);
         }
     }
 </script>
