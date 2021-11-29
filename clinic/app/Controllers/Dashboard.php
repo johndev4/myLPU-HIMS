@@ -95,7 +95,7 @@ class Dashboard extends BaseController
 			}
 
 			if ($expired_count !== 0) {
-				$result = "<li>
+				$result .= "<li>
 							<div class=\"row\">
 								<div class=\"col-9\">
 									<p>{$product_name}</p>
@@ -134,9 +134,9 @@ class Dashboard extends BaseController
 			}
 
 			$stock_available = ($stock_in - ($stock_out + $expired_count));
-			
+
 			if ($stock_available < ($stock_in * $this->lowStockPercentage)) {
-				$result = "<li>
+				$result .= "<li>
 							<div class=\"row\">
 								<div class=\"col-9\">
 									<p>{$product_name}</p>
