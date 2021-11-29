@@ -171,7 +171,7 @@
                                 <a class="nav-link active" id="custom-tabs-four-details-tab" data-toggle="pill" href="#custom-tabs-four-details" role="tab" aria-controls="custom-tabs-four-details" aria-selected="true">Consultation Details</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-four-documents-tab" data-toggle="pill" href="#custom-tabs-four-documents" role="tab" aria-controls="custom-tabs-four-documents" aria-selected="false">Medical Documents</a>
+                                <a class="nav-link" id="custom-tabs-four-documents-tab" data-toggle="pill" href="#custom-tabs-four-documents" role="tab" aria-controls="custom-tabs-four-documents" aria-selected="false">Files</a>
                             </li>
                         </ul>
                     </div>
