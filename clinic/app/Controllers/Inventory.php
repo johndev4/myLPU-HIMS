@@ -256,11 +256,12 @@ class Inventory extends BaseController
 			$medicine = $this->medicinesModel->find($batch['product_id']);
 			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
 			$is_expired = strtotime($batch['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
+			$stock_available = ($batch['stock_in'] - $batch['stock_out']);
 
 			// Check low stock
 			if ($is_expired) {
 				$stockBadge = " <span class=\"badge badge-warning\">EXPIRED!</span>";
-			} else if (($batch['stock_in'] - $batch['stock_out']) < ($batch['stock_in'] * $this->lowStockPercentage)) {
+			} else if ($stock_available < ($batch['stock_in'] * $this->lowStockPercentage)) {
 				$stockBadge = " <span class=\"badge badge-warning\">LOW!</span>";
 			} else {
 				$stockBadge = "";
@@ -271,7 +272,7 @@ class Inventory extends BaseController
 				$product_name,
 				$batch['stock_in'],
 				$batch['stock_out'],
-				($batch['stock_in'] - $batch['stock_out']) . $stockBadge
+				$stock_available . $stockBadge
 			);
 		}
 
