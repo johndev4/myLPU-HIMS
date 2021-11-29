@@ -107,8 +107,7 @@
                         </p>
                     </li>
                     <li>
-                        <p>Write your concern on the text box provided
-                        </p>
+                        <p>Write your concern on the text box provided (Limited to 250 characters only).</p>
                     </li>
                     <li>
                         <p>Select Send Request Now
@@ -163,26 +162,33 @@
                     <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="img-help shadow" width="500">
                     <br><br>
                     <p><b>Note:</b> The view all button under each status tab will allow you to view all the details on each status of your consultation.</p>
+                    <br>
+
+                    <li>
+                        <p>
+                            <b>Cancelled</b> – your cancelled request will go in this tab section.
+                        </p>
+                    </li>
+
+                    <img src="<?= base_url('assets/images/help_menu/9.png') ?>" alt="1" class="img-help shadow" width="500">
                 </ul>
 
                 <br><br><br>
 
-                <h5 class="text-bold" id="section-4">View/Download Medical Files</h5>
+                <h5 class="text-bold" id="section-4">View/Download Files</h5>
                 <ol>
                     <li>
                         <p>
-                            To view your medical files, go to Consultation/Mental Wellness module.</p>
+                            To view the files sent to you, go to Consultation/Mental Wellness module.</p>
                     </li>
                     <li>
-                        <p>Navigate to Consultation Tabs, Go to Done > View all > Medical Documents tab.</p>
+                        <p>Navigate to Consultation Tabs, Go to Done > View > Files tab.</p>
                     </li>
 
                     <img src="<?= base_url('assets/images/help_menu/8.png') ?>" alt="1" class="img-help shadow" width="500">
                     <br><br>
-                    <img src="<?= base_url('assets/images/help_menu/9.png') ?>" alt="1" class="img-help shadow" width="500">
+                    <img src="<?= base_url('assets/images/help_menu/10.png') ?>" alt="1" class="img-help shadow" width="500">
                 </ol>
-
-
             </div>
         </div>
 

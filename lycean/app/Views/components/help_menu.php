@@ -144,8 +144,6 @@
                 <br><br>
                 <img src="<?= base_url('assets/images/help_menu/10.png') ?>" alt="1" class="img-help shadow" width="500">
             </ol>
-
-
         </div>
     </div>
 
