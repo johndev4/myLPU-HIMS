@@ -375,7 +375,7 @@ class Useraccounts extends BaseController
 
 	// FETCH DATA BY ID WITHOUT ACCOUNT
 	// ---------------------------------------------------------
-	public function fetchLyceanInfoById($id = '', $role='')
+	public function fetchLyceanInfoById($id = '', $role = '')
 	{
 		$lyceans = $this->lyceansModel
 			->where('id_no', $id)->where('role', $role)
@@ -684,21 +684,21 @@ class Useraccounts extends BaseController
 	}
 
 
-	// RESET ACCOUNT
+	// RESET ACCOUNT BY ID
 	// ---------------------------------------------------------
 	private function resetLyceanAccount($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			$lyceans = $this->lyceansModel->find($id);
+			$lycean = $this->lyceansModel->find($id);
 			$success = $this->lyceansAccountModel
 				->where('id_no', $id)
 				->set([
-					'password' => hash('sha256', str_replace(' ', '', strtoupper($lyceans['last_name']))),
+					'password' => hash('sha256', str_replace(' ', '', strtoupper($lycean['last_name']))),
 					'locked' => 0
 				])
 				->update();
 
-			if ($success and $lyceans) {
+			if ($success and $lycean) {
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully resetted.');
 			} else {
@@ -740,6 +740,74 @@ class Useraccounts extends BaseController
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully resetted.');
 			} else {
+			}
+
+			return redirect()->to('useraccounts/healthpersonnel');
+		}
+	}
+
+
+	// RESET ALL ACCOUNT
+	// ---------------------------------------------------------
+	private function resetAllLyceanAccount($role)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$lyceans = $this->lyceansModel->where('role', $role)->findAll();
+
+			foreach ($lyceans as $lycean) {
+				$success = $this->lyceansAccountModel
+					->where('id_no', $lycean['id_no'])
+					->set([
+						'password' => hash('sha256', str_replace(' ', '', strtoupper($lycean['last_name']))),
+						'locked' => 0
+					]);
+
+				if ($success and $lycean) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully resetted.');
+				} else {
+				}
+			}
+		}
+	}
+
+	public function resetAllStudentAccount()
+	{
+		$this->resetAllLyceanAccount('student');
+		return redirect()->to('useraccounts/student');
+	}
+
+	public function resetAllFacultyAccount()
+	{
+		$this->resetAllLyceanAccount('faculty');
+		return redirect()->to('useraccounts/faculty');
+	}
+
+	public function resetAllStaffAccount()
+	{
+		$this->resetAllLyceanAccount('staff');
+		return redirect()->to('useraccounts/staff');
+	}
+
+	public function resetAllHealthPersonnelAccount()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$healthPersonnels = $this->healthPersonnelsModel->findAll();
+
+			foreach ($healthPersonnels as $healthPersonnel) {
+				$success = $this->healthPersonnelsAccountModel
+					->where('id_no', $healthPersonnel['id_no'])
+					->set([
+						'password' => hash('sha256', str_replace(' ', '', strtoupper($healthPersonnel['last_name']))),
+						'locked' => 0
+					])
+					->update();
+
+				if ($success and $healthPersonnel) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully resetted.');
+				} else {
+				}
 			}
 
 			return redirect()->to('useraccounts/healthpersonnel');
