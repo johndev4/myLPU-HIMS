@@ -695,8 +695,7 @@ class Useraccounts extends BaseController
 				->set([
 					'password' => hash('sha256', str_replace(' ', '', strtoupper($lycean['last_name']))),
 					'locked' => 0
-				])
-				->update();
+				])->update();
 
 			if ($success and $lycean) {
 				// Create flashdata for database query status
@@ -733,8 +732,7 @@ class Useraccounts extends BaseController
 				->set([
 					'password' => hash('sha256', str_replace(' ', '', strtoupper($healthPersonnels['last_name']))),
 					'locked' => 0
-				])
-				->update();
+				])->update();
 
 			if ($success and $healthPersonnels) {
 				// Create flashdata for database query status
@@ -760,12 +758,14 @@ class Useraccounts extends BaseController
 					->set([
 						'password' => hash('sha256', str_replace(' ', '', strtoupper($lycean['last_name']))),
 						'locked' => 0
-					]);
+					])->update();
 
 				if ($success and $lycean) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully resetted.');
 				} else {
+					break;
+					session()->setFlashdata('success', 'ERROR ON RESET');
 				}
 			}
 		}
@@ -800,13 +800,14 @@ class Useraccounts extends BaseController
 					->set([
 						'password' => hash('sha256', str_replace(' ', '', strtoupper($healthPersonnel['last_name']))),
 						'locked' => 0
-					])
-					->update();
+					])->update();
 
 				if ($success and $healthPersonnel) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully resetted.');
 				} else {
+					break;
+					session()->setFlashdata('success', 'ERROR ON RESET');
 				}
 			}
 
