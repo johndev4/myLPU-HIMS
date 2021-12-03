@@ -14,7 +14,7 @@ class Records extends BaseController
 		// User firstname
 		$this->data['firstname'] = getUserFirstname();
 		// User ID No.
-        $this->data['idNo'] = getIdNo();
+		$this->data['idNo'] = getIdNo();
 		// User designation
 		$this->data['designation'] = getUserDesignation();
 
@@ -41,6 +41,40 @@ class Records extends BaseController
 				'errors' => [
 					'max_length' => 'Filename max length exceeded.',
 					'alpha_dash' => 'Filename may only contain alphanumeric, underscore, and dash characters.'
+				]
+			]
+		];
+	}
+
+	private function getInformationRules()
+	{
+		return  [
+			'gender' => [
+				'rules' => 'max_length[10]',
+				'errors' => [
+					'max_length' => 'Max length exceeded.',
+				]
+			],
+			'birth_date' => [
+				'rules' => '',
+				'errors' => []
+			],
+			'height' => [
+				'rules' => 'max_length[25]',
+				'errors' => [
+					'max_length' => 'Max length exceeded.',
+				]
+			],
+			'weight' => [
+				'rules' => 'max_length[25]',
+				'errors' => [
+					'max_length' => 'Max length exceeded.',
+				]
+			],
+			'blood_type' => [
+				'rules' => 'max_length[5]',
+				'errors' => [
+					'max_length' => 'Max length exceeded.',
 				]
 			]
 		];
@@ -152,9 +186,9 @@ class Records extends BaseController
 				'first_name' 	 => $lyceans['first_name'],
 				'department' 	 => $lyceans['department'],
 
-				'birth_date' 	 => date('F d, Y', strtotime($lyceans['birth_date'])),
-				'age' 			 => date_diff(date_create($lyceans['birth_date']), date_create(date("d-m-Y")))->format('%y'),
-				'gender' 	 	 => $lyceans['gender'],
+				'birth_date' 	 => $lyceans['birth_date'] == ""? "---" : date('F d, Y', strtotime($lyceans['birth_date'])),
+				'age' 			 => $lyceans['birth_date'] == ""? "---" : date_diff(date_create($lyceans['birth_date']), date_create(date("d-m-Y")))->format('%y'),
+				'gender' 	 	 => $lyceans['gender'] == ""? "---" : $lyceans['gender'],
 				'blood_type' 	 => ($lyceans['blood_type'] == "") ? "---" : $lyceans['blood_type'],
 				'height' 	 	 => ($lyceans['height'] == "") ? "---" : $lyceans['height'],
 				'weight' 	 	 => ($lyceans['weight'] == "") ? "---" : $lyceans['weight']
@@ -300,6 +334,58 @@ class Records extends BaseController
 	public function deleteStaffRecord($id)
 	{
 		$this->deleteRecord($id);
+		return redirect()->to('records/staff');
+	}
+
+
+	// MODIFY INFORMATION
+	// ---------------------------------------------------------
+	private function modifyInformation($id)
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getInformationRules())) {
+				$data = [
+					'birth_date' => htmlspecialchars(date($_GET['birth_date'])),
+					'gender' => htmlspecialchars($_GET['gender']),
+					'height' => htmlspecialchars($_GET['height']),
+					'weight' => htmlspecialchars($_GET['weight']),
+					'blood_type' => htmlspecialchars($_GET['blood_type']),
+				];
+
+				$success = $this->lyceansModel
+					->where('id_no', $id)
+					->set($data)
+					->update();
+
+				if ($success) {
+					// Create flashdata for database query status
+					session()->setFlashdata('success', 'Successfully updated.');
+				} else {
+				}
+			} else {
+				session()->setFlashdata('mod_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+				session()->setFlashdata('id_no', $id);
+			}
+		}
+	}
+
+	public function modifyStudentInformation($id)
+	{
+		$this->modifyInformation($id);
+		return redirect()->to('records/student');
+	}
+
+	public function modifyFacultyInformation($id)
+	{
+		$this->modifyInformation($id);
+		return redirect()->to('records/faculty');
+	}
+
+	public function modifyStaffInformation($id)
+	{
+		$this->modifyInformation($id);
 		return redirect()->to('records/staff');
 	}
 }

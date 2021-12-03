@@ -70,18 +70,17 @@ class Useraccounts extends BaseController
 				]
 			],
 			'gender' => [
-				'rules' => 'required|max_length[10]',
+				'rules' => 'max_length[10]',
 				'errors' => [
-					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
 				]
 			],
-			'birth_date' => [
-				'rules' => 'required',
-				'errors' => [
-					'required' => '- Required'
-				]
-			],
+			// 'birth_date' => [
+			// 	'rules' => '',
+			// 	'errors' => [
+			// 		'' => '',
+			// 	]
+			// ],
 			'height' => [
 				'rules' => 'max_length[25]',
 				'errors' => [
@@ -375,27 +374,28 @@ class Useraccounts extends BaseController
 
 	// FETCH DATA BY ID WITHOUT ACCOUNT
 	// ---------------------------------------------------------
-	public function fetchLyceanInfoById($id = '', $role = '')
+	public function fetchLyceanInfoById($id)
 	{
-		$lyceans = $this->lyceansModel
-			->where('id_no', $id)->where('role', $role)
-			->first();
-		$lyceansAccount = $this->lyceansAccountModel->find($lyceans['id_no']);
+		$lyceans = $this->lyceansModel->where('id_no', $id)->first();
 		$result = [];
 
-		if ($lyceans and !$lyceansAccount) {
-			$result = [
-				'id_no' 		 => $lyceans['id_no'],
-				'last_name' 	 => $lyceans['last_name'],
-				'first_name' 	 => $lyceans['first_name'],
-				'middle_name' 	 => $lyceans['middle_name'],
-				'gender' 		 => $lyceans['gender'],
-				'birth_date' 	 => date($lyceans['birth_date']),
-				'height' 		 => $lyceans['height'],
-				'weight' 		 => $lyceans['weight'],
-				'blood_type' 	 => $lyceans['blood_type'],
-				'department' 	 => $lyceans['department']
-			];
+		if ($lyceans) {
+			$lyceansAccount = $this->lyceansAccountModel->find($lyceans['id_no']);
+
+			if ($lyceans and !$lyceansAccount) {
+				$result = [
+					'id_no' 		 => $lyceans['id_no'],
+					'last_name' 	 => $lyceans['last_name'],
+					'first_name' 	 => $lyceans['first_name'],
+					'middle_name' 	 => $lyceans['middle_name'],
+					'gender' 		 => $lyceans['gender'],
+					'birth_date' 	 => date($lyceans['birth_date']),
+					'height' 		 => $lyceans['height'],
+					'weight' 		 => $lyceans['weight'],
+					'blood_type' 	 => $lyceans['blood_type'],
+					'department' 	 => $lyceans['department']
+				];
+			}
 		}
 
 		return json_encode($result);
