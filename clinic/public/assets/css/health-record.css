@@ -26,3 +26,11 @@ input[type=file]::file-selector-button {
 .details-size{
     font-size:13pt;
 }
+
+i.far.fa-edit.text-secondary.float-right.mr-4:hover{
+    font-size: 18px;
+}
+
+/* .button-width{
+    width: 120px;
+} */

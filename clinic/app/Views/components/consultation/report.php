@@ -151,8 +151,9 @@
             processing: true,
             paging: false,
             searching: false,
+            buttons: ["csv", "excel", "pdf"],
             order: [],
-        });
+        }).buttons().container().appendTo('#weekly_table_wrapper .col-md-6:eq(0)');
         $('#dropdownYear').on('input', function() {
             if ($('#dropdownYear').val() == '') {
                 $('#dropdownMonth').prop('disabled', true);
@@ -174,8 +175,9 @@
             processing: true,
             paging: false,
             searching: false,
+            buttons: ["csv", "excel", "pdf"],
             order: [],
-        });
+        }).buttons().container().appendTo('#monthly_table_wrapper .col-md-6:eq(0)');
         $('#monthly_dropdownYear').on('input', function() {
             fetchMonthlyData();
         });
@@ -187,6 +189,7 @@
             processing: true,
             paging: true,
             searching: false,
+            buttons: ["csv", "excel", "pdf"],
             order: [],
             ajax: {
                 type: 'get',
@@ -199,7 +202,7 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        });
+        }).buttons().container().appendTo('#yearly_table_wrapper .col-md-6:eq(0)');
 
         // For sidebar
         $("#consultationNav > a").addClass('active');
@@ -236,6 +239,7 @@
             processing: true,
             paging: false,
             searching: false,
+            buttons: ["csv", "excel", "pdf"],
             order: [],
             ajax: {
                 type: 'get',
@@ -248,7 +252,7 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        });
+        }).buttons().container().appendTo('#weekly_table_wrapper .col-md-6:eq(0)');
     }
 
     function fetchMonthlyData() {
@@ -261,6 +265,7 @@
             paging: false,
             searching: false,
             order: [],
+            buttons: ["csv", "excel", "pdf"],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('reports/fetchMonthlyReport') ?>' + '?year=' + $('#monthly_dropdownYear').val(),
@@ -272,7 +277,7 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        });
+        }).buttons().container().appendTo('#monthly_table_wrapper .col-md-6:eq(0)');
     }
 </script>
 <!-- /Script -->

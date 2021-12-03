@@ -137,7 +137,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_gender" class="col-form-label required">Gender</label>
+                                        <label for="add_gender" class="col-form-label">Gender</label>
                                         <select class="form-control" id="add_gender" name="gender">
                                             <option value="" selected="selected">---Select Gender---</option>
                                             <option value="Male">Male</option>
@@ -158,7 +158,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="add_birthdate" class="col-form-label required">Date of Birth</label>
+                                        <label for="add_birthdate" class="col-form-label">Date of Birth</label>
                                         <input type="date" class="form-control" id="add_birthdate" name="birth_date" value="">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
@@ -380,7 +380,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="mod_gender" class="col-form-label required">Gender</label>
+                                        <label for="mod_gender" class="col-form-label">Gender</label>
                                         <select class="form-control" id="mod_gender" name="gender">
                                             <option value="" selected="selected">---Select Gender---</option>
                                             <option value="Male" selected="selected">Male</option>
@@ -401,7 +401,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="mod_birthdate" class="col-form-label required">Date of Birth</label>
+                                        <label for="mod_birthdate" class="col-form-label">Date of Birth</label>
                                         <input type="date" class="form-control" id="mod_birthdate" name="birth_date">
                                         <!-- Validation Error -->
                                         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
