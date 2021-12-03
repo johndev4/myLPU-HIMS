@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2021-12-03 15:23:36 --> Trying to access array offset on value of type null
 #0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(382): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 382)
 #1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById('2018-2-00837', 'student')
@@ -1093,6 +1094,11 @@ CRITICAL - 2021-12-03 18:54:22 --> Undefined variable $result
 CRITICAL - 2021-12-03 18:55:45 --> Trying to access array offset on value of type null
 #0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(383): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 383)
 #1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById('2014-1-6273')
+=======
+CRITICAL - 2021-12-03 14:14:11 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\UserAccounts.php(383): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 383)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById('2015-2-09696', 'student')
+>>>>>>> 116baf69031c30887e116b22892d844070323a94
 #2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
 #3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()

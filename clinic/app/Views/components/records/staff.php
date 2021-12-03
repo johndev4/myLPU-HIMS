@@ -61,52 +61,54 @@
 
                                 <!-- Details -->
                                 <div class="col-lg-4">
-                                    <div class="card overflow-auto" style="height: 455px;">
-                                        <h5 class="card-header text-danger">Details</h5>
+                                    <div class="card overflow-auto" style="height: 454px;">
+                                        <h6 class="card-header text-danger text-bold" style="padding: 14.2px 0px 14.2px 20px">Details
+                                            <i class="far fa-edit text-secondary float-right mr-4" data-toggle="modal" data-target="#modifyModal"></i>
+                                        </h6>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <label class="text-secondary">Birthday</label><br>
+                                                            <label class="text-secondary">Date of Birth</label><br>
                                                         </div>
                                                         <div class="col-md-12 mt-n2">
-                                                            <span class="h5" id="birthdate"></span>
+                                                            <span class="h6" id="birthdate"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Age</label><br>
                                                         </div>
                                                         <div class="col-md-12 mt-n2">
-                                                            <span class="h5" id="age"></span>
+                                                            <span class="h6" id="age"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Gender</label><br>
                                                         </div>
                                                         <div class="col-md-12 mt-n2">
-                                                            <span class="h5" id="gender"></span>
+                                                            <span class="h6" id="gender"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Blood type</label><br>
                                                         </div>
                                                         <div class="col-md-12 mt-n2">
-                                                            <span class="h5" id="bloodtype"></span>
+                                                            <span class="h6" id="bloodtype"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Height</label><br>
                                                         </div>
                                                         <div class="col-md-12 mt-n2">
-                                                            <span class="h5" id="height"></span>
+                                                            <span class="h6" id="height"></span>
                                                         </div>
 
                                                         <div class="col-md-12 mt-2">
                                                             <label class="text-secondary">Weight</label><br>
                                                         </div>
                                                         <div class="col-md-12 mt-n2">
-                                                            <span class="h5" id="weight"></span>
+                                                            <span class="h6" id="weight"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -209,6 +211,66 @@
                 </div>
             </div>
             <!-- /View Modal -->
+
+            <!-- Details Modify modal -->
+            <div class="modal fade" id="modifyModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document" style="min-width:250px">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Details</h5>
+                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button> -->
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="get" id="modify_form">
+                                <div class="row">
+                                    <div class="col-6 form-group">
+                                        <label for="mod_birthdate" class="col-form-label">Date of Birth</label>
+                                        <input type="date" class="form-control" id="mod_birthdate" name="birth_date">
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <label for="mod_gender" class="col-form-label">Gender</label>
+                                        <select class="form-control" id="mod_gender" name="gender">
+                                            <option value="" selected="selected">---Select Gender---</option>
+                                            <option value="Male" selected="selected">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="mod_bloodtype" class="col-form-label">Blood-type</label>
+                                        <select class="form-control" id="mod_bloodtype" name="blood_type">
+                                            <option value="" selected="selected">---Blood Type---</option>
+                                            <option value="A+" selected="selected">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="mod_height" class="col-form-label">Height</label>
+                                        <input type="text" class="form-control" id="mod_height" name="height" placeholder="in feet or inches">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label for="mod_weight" class="col-form-label">Weight</label>
+                                        <input type="text" class="form-control" id="mod_weight" name="weight" placeholder="in pounds">
+                                    </div>
+                                </div>
+
+                                <div class="footer pb-3 float-right">
+                                    <button type="button" class="btn button-width" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn text-light swalDefaultSuccess button-color">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Details Modify modal -->
 
             <!-- Table Delete Modal -->
             <div class="modal fade" id="tabledeleteModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
