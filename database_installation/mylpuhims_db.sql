@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2021 at 09:03 AM
+-- Generation Time: Dec 04, 2021 at 07:02 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -34,13 +34,6 @@ CREATE TABLE `administrators` (
   `admin_name` varchar(45) NOT NULL,
   `locked` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `administrators`
---
-
-INSERT INTO `administrators` (`admin_id`, `username`, `password`, `admin_name`, `locked`) VALUES
-(20211116, 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'Administrator', NULL);
 
 -- --------------------------------------------------------
 
@@ -163,7 +156,7 @@ CREATE TABLE `lyceans` (
   `role` varchar(45) NOT NULL,
   `department` varchar(100) NOT NULL,
   `birth_date` date NOT NULL,
-  `gender` varchar(10) NOT NULL,
+  `gender` varchar(10) DEFAULT NULL,
   `height` varchar(25) DEFAULT NULL,
   `weight` varchar(25) DEFAULT NULL,
   `blood_type` varchar(5) DEFAULT NULL
@@ -240,15 +233,15 @@ ALTER TABLE `administrators`
 --
 ALTER TABLE `batches`
   ADD PRIMARY KEY (`batch_id`),
-  ADD KEY `fk_batches_medicines1` (`product_id`);
+  ADD KEY `fk_batches_medicines1_idx` (`product_id`);
 
 --
 -- Indexes for table `consultations`
 --
 ALTER TABLE `consultations`
   ADD PRIMARY KEY (`consultation_no`),
-  ADD KEY `fk_consultations_clinic_personnels1` (`personnel_id_no`),
-  ADD KEY `fk_consultations_lyceans1` (`lycean_id_no`);
+  ADD KEY `fk_consultations_clinic_personnels1_idx` (`personnel_id_no`),
+  ADD KEY `fk_consultations_lyceans1_idx` (`lycean_id_no`);
 
 --
 -- Indexes for table `equipments`
@@ -266,21 +259,23 @@ ALTER TABLE `health_personnels`
 -- Indexes for table `health_personnels_account`
 --
 ALTER TABLE `health_personnels_account`
-  ADD PRIMARY KEY (`id_no`);
+  ADD PRIMARY KEY (`id_no`),
+  ADD KEY `fk_clinic_personnels_credentials_clinic_personnels_idx` (`id_no`);
 
 --
 -- Indexes for table `health_personnels_notification`
 --
 ALTER TABLE `health_personnels_notification`
   ADD PRIMARY KEY (`notification_id`),
-  ADD KEY `fk_notifications_copy1_health_personnels1` (`id_no`);
+  ADD KEY `fk_notifications_copy1_health_personnels1_idx` (`id_no`);
 
 --
 -- Indexes for table `health_records`
 --
 ALTER TABLE `health_records`
   ADD PRIMARY KEY (`record_id`,`id_no`),
-  ADD KEY `fk_health_record_lyceans1` (`id_no`);
+  ADD UNIQUE KEY `file_path_UNIQUE` (`file_path`),
+  ADD KEY `fk_health_record_lyceans1_idx` (`id_no`);
 
 --
 -- Indexes for table `lyceans`
@@ -292,21 +287,22 @@ ALTER TABLE `lyceans`
 -- Indexes for table `lyceans_account`
 --
 ALTER TABLE `lyceans_account`
-  ADD PRIMARY KEY (`id_no`);
+  ADD PRIMARY KEY (`id_no`),
+  ADD KEY `fk_lycean_credentials_lyceans1_idx` (`id_no`);
 
 --
 -- Indexes for table `lyceans_notification`
 --
 ALTER TABLE `lyceans_notification`
   ADD PRIMARY KEY (`notification_id`),
-  ADD KEY `fk_notifications_copy1_lyceans1` (`id_no`);
+  ADD KEY `fk_notifications_copy1_lyceans1_idx` (`id_no`);
 
 --
 -- Indexes for table `medical_files`
 --
 ALTER TABLE `medical_files`
   ADD PRIMARY KEY (`file_id`),
-  ADD KEY `fk_medical_files_consultations1` (`consultation_no`);
+  ADD KEY `fk_medical_files_consultations1_idx` (`consultation_no`);
 
 --
 -- Indexes for table `medicines`
