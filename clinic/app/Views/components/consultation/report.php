@@ -145,6 +145,7 @@
     $(document).ready(function() {
         // For datatable
         $("#weekly_table").DataTable({
+            dom: 'Bfrtip',
             responsive: true,
             lengthChange: true,
             autoWidth: true,
@@ -169,6 +170,7 @@
         });
 
         $("#monthly_table").DataTable({
+            dom: 'Bfrtip',
             responsive: true,
             lengthChange: true,
             autoWidth: true,
@@ -183,6 +185,7 @@
         });
 
         $("#yearly_table").DataTable({
+            dom: 'Bfrtip',
             responsive: true,
             lengthChange: true,
             autoWidth: true,
@@ -233,6 +236,7 @@
     function fetchWeeklyData() {
         $("#weekly_table").DataTable().destroy();
         $("#weekly_table").DataTable({
+            dom: 'Bfrtip',
             responsive: true,
             lengthChange: true,
             autoWidth: true,
@@ -258,6 +262,7 @@
     function fetchMonthlyData() {
         $("#monthly_table").DataTable().destroy();
         $("#monthly_table").DataTable({
+            dom: 'Bfrtip',
             responsive: true,
             lengthChange: true,
             autoWidth: true,

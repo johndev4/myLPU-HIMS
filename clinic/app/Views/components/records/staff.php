@@ -444,24 +444,24 @@
 
         // Modify Validation Error
         <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                retrieveData('<?= session()->get('id_no') ?>');
-                $('#viewModal').on('hidden.bs.modal', function(evt) {
+            retrieveData('<?= session()->get('id_no') ?>');
+            $('#viewModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+            });
+            $('#viewModal').modal('show');
+            setTimeout(function() {
+                constructModifyModal('<?= session()->get('id_no') ?>', {
+                    error: true
+                });
+                $('#modifyModal').on('hidden.bs.modal', function(evt) {
                     $('.error').addClass('d-none');
                     $('input.border').removeClass('border border-danger');
+                    $('select.border').removeClass('border border-danger');
                 });
-                $('#viewModal').modal('show');
-                setTimeout(function() {
-                    constructModifyModal('<?= session()->get('id_no') ?>', {
-                        error: true
-                    });
-                    $('#modifyModal').on('hidden.bs.modal', function(evt) {
-                        $('.error').addClass('d-none');
-                        $('input.border').removeClass('border border-danger');
-                        $('select.border').removeClass('border border-danger');
-                    });
-                    $('#modifyModal').modal('show');
-                }, 500);
-            <?php endif; ?>
+                $('#modifyModal').modal('show');
+            }, 500);
+        <?php endif; ?>
     }, 500);
 
     $(document).ready(function() {
@@ -546,8 +546,8 @@
     }) {
         $('#modifyModalForm').prop('action', '<?= site_url('records/modifyStaffInformation') ?>/' + id);
         if (obj['error'] == false) {
-            $('#mod_birthdate').val(formatDate($('#birthdate').text()));
-            $('#mod_gender').val($('#gender').text());
+            $('#mod_birthdate').val($('#birthdate').text() == '---' ? '' : formatDate($('#birthdate').text()));
+            $('#mod_gender').val($('#gender').text() == '---' ? '' : $('#gender').text());
             $('#mod_height').val($('#height').text() == '---' ? '' : $('#height').text());
             $('#mod_weight').val($('#weight').text() == '---' ? '' : $('#weight').text());
             $('#mod_bloodtype').val($('#bloodtype').text() == '---' ? '' : $('#bloodtype').text());

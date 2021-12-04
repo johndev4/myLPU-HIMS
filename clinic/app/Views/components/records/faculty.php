@@ -546,8 +546,8 @@
     }) {
         $('#modifyModalForm').prop('action', '<?= site_url('records/modifyFacultyInformation') ?>/' + id);
         if (obj['error'] == false) {
-            $('#mod_birthdate').val(formatDate($('#birthdate').text()));
-            $('#mod_gender').val($('#gender').text());
+            $('#mod_birthdate').val($('#birthdate').text() == '---' ? '' : formatDate($('#birthdate').text()));
+            $('#mod_gender').val($('#gender').text() == '---' ? '' : $('#gender').text());
             $('#mod_height').val($('#height').text() == '---' ? '' : $('#height').text());
             $('#mod_weight').val($('#weight').text() == '---' ? '' : $('#weight').text());
             $('#mod_bloodtype').val($('#bloodtype').text() == '---' ? '' : $('#bloodtype').text());
