@@ -47,10 +47,10 @@
                                         <label for="add_batchid" class="col-form-label">Batch ID</label>
                                         <input type="text" class="form-control" id="add_batchid" name="batch_id" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('batch_id')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('batch_id')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('batch_id'); ?>
+                                                    <?= session()->get('add_validation')->getError('batch_id'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -66,10 +66,10 @@
                                             <!-- OPTIONS HERE -->
                                         </select>
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('product_name')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('product_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('product_name'); ?>
+                                                    <?= session()->get('add_validation')->getError('product_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -83,10 +83,10 @@
                                         <label for="add_stockin" class="col-form-label">Stock</label>
                                         <input type="number" class="form-control" id="add_stockin" name="stock_in" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('stock_in')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('stock_in')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('stock_in'); ?>
+                                                    <?= session()->get('add_validation')->getError('stock_in'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -100,10 +100,10 @@
                                         <label for="add_expirationdate" class="col-form-label">Expiration</label>
                                         <input type="Date" class="form-control" id="add_expirationdate" name="expiration_date" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('expiration_date')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('expiration_date')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('expiration_date'); ?>
+                                                    <?= session()->get('add_validation')->getError('expiration_date'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {

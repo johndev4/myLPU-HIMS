@@ -46,10 +46,10 @@
                                         <label for="out_stockout" class="col-form-label">Stock Out</label>
                                         <input type="number" class="form-control" id="out_stockout" name="stock_out" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('out_validation')->hasError('stock_out')) : ?>
+                                        <?php if (!empty(session()->get('out_validation'))) : ?>
+                                            <?php if (session()->get('out_validation')->hasError('stock_out')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('out_validation')->getError('stock_out'); ?>
+                                                    <?= session()->get('out_validation')->getError('stock_out'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -65,10 +65,10 @@
                                             <!-- OPTIONS HERE -->
                                         </select>
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('out_validation')->hasError('product_name')) : ?>
+                                        <?php if (!empty(session()->get('out_validation'))) : ?>
+                                            <?php if (session()->get('out_validation')->hasError('product_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('out_validation')->getError('product_name'); ?>
+                                                    <?= session()->get('out_validation')->getError('product_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -84,10 +84,10 @@
                                             <!-- OPTIONS HERE -->
                                         </select>
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('out_validation')->hasError('batch_id')) : ?>
+                                        <?php if (!empty(session()->get('out_validation'))) : ?>
+                                            <?php if (session()->get('out_validation')->hasError('batch_id')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('out_validation')->getError('batch_id'); ?>
+                                                    <?= session()->get('out_validation')->getError('batch_id'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -306,7 +306,7 @@
         });
 
         // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
+        <?php if (session()->get('success') !== null) : ?>
             var Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -315,12 +315,12 @@
             });
             Toast.fire({
                 icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
+                title: '<?= session()->get('success'); ?>'
             });
         <?php endif; ?>
 
         // Stock Out Validation Error
-        <?php if (!empty(session()->getFlashdata('out_validation'))) : ?>
+        <?php if (!empty(session()->get('out_validation'))) : ?>
             setTimeout(function() {
                 retrieveData('', {
                     error: true,
@@ -337,8 +337,8 @@
         <?php endif; ?>
 
         // Insufficient Stock
-        <?php if (!empty(session()->getFlashdata('insufficient_stock'))) : ?>
-            <?php if (session()->getFlashdata('insufficient_stock') == TRUE) : ?>
+        <?php if (!empty(session()->get('insufficient_stock'))) : ?>
+            <?php if (session()->get('insufficient_stock') == TRUE) : ?>
                 setTimeout(function() {
                     retrieveData('', {
                         error: true,

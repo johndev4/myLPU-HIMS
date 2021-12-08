@@ -47,10 +47,10 @@
                                         <label for="add_productid" class="col-form-label">Item ID</label>
                                         <input type="text" class="form-control" id="add_productid" name="product_id" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('product_id')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('product_id')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('product_id'); ?>
+                                                    <?= session()->get('add_validation')->getError('product_id'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -64,10 +64,10 @@
                                         <label for="add_manufacturer" class="col-form-label">Manufacturer</label>
                                         <input type="text" class="form-control" id="add_manufacturer" name="manufacturer" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('manufacturer')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('manufacturer')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('manufacturer'); ?>
+                                                    <?= session()->get('add_validation')->getError('manufacturer'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -81,10 +81,10 @@
                                         <label for="add_genericname" class="col-form-label">Generic Name</label>
                                         <input type="text" class="form-control" id="add_genericname" name="generic_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('generic_name')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('generic_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('generic_name'); ?>
+                                                    <?= session()->get('add_validation')->getError('generic_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -98,10 +98,10 @@
                                         <label for="add_drugclass" class="col-form-label">Drug Class</label>
                                         <input type="text" class="form-control" id="add_drugclass" name="drug_class" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('drug_class')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('drug_class')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('drug_class'); ?>
+                                                    <?= session()->get('add_validation')->getError('drug_class'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -115,10 +115,10 @@
                                         <label for="add_dosage" class="col-form-label">Dosage</label>
                                         <input type="text" class="form-control" id="add_dosage" name="dosage" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('dosage')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('dosage')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('dosage'); ?>
+                                                    <?= session()->get('add_validation')->getError('dosage'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -196,10 +196,10 @@
                                         <label for="modify_productid" class="col-form-label">Item ID</label>
                                         <input type="text" class="form-control" id="mod_productid" name="product_id" value="" readonly="readonly">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('product_id')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('product_id')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('product_id'); ?>
+                                                    <?= session()->get('mod_validation')->getError('product_id'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -213,10 +213,10 @@
                                         <label for="mod_manufacturer" class="col-form-label">Manufacturer</label>
                                         <input type="text" class="form-control" id="mod_manufacturer" name="manufacturer" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('manufacturer')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('manufacturer')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('manufacturer'); ?>
+                                                    <?= session()->get('mod_validation')->getError('manufacturer'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -230,10 +230,10 @@
                                         <label for="mod_genericname" class="col-form-label">Generic Name</label>
                                         <input type="text" class="form-control" id="mod_genericname" name="generic_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('generic_name')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('generic_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('generic_name'); ?>
+                                                    <?= session()->get('mod_validation')->getError('generic_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -247,10 +247,10 @@
                                         <label for="mod_drugclass" class="col-form-label">Drug Class</label>
                                         <input type="text" class="form-control" id="mod_drugclass" name="drug_class" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('drug_class')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('drug_class')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('drug_class'); ?>
+                                                    <?= session()->get('mod_validation')->getError('drug_class'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -264,10 +264,10 @@
                                         <label for="mod_dosage" class="col-form-label">Dosage</label>
                                         <input type="text" class="form-control" id="mod_dosage" name="dosage" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('dosage')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('dosage')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('dosage'); ?>
+                                                    <?= session()->get('mod_validation')->getError('dosage'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -382,7 +382,7 @@
         $("#medicineNav > a").addClass('active');
 
         // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
+        <?php if (session()->get('success') !== null) : ?>
             var Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -391,12 +391,12 @@
             });
             Toast.fire({
                 icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
+                title: '<?= session()->get('success'); ?>'
             });
         <?php endif; ?>
 
         // Add Validation Error
-        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+        <?php if (!empty(session()->get('add_validation'))) : ?>
             $('#addModal').modal('show');
             retrieveData('<?= session()->get('product_id') ?>', {
                 error: true,
@@ -410,7 +410,7 @@
         <?php endif; ?>
 
         // Modify Validation Error
-        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+        <?php if (!empty(session()->get('mod_validation'))) : ?>
             $('#modifyModal').modal('show');
             retrieveData('<?= session()->get('product_id') ?>', {
                 error: true,

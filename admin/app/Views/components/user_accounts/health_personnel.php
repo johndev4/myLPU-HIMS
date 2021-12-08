@@ -54,10 +54,10 @@
                                         <label for="add_idno" class="col-form-label required">ID No.</label>
                                         <input type="text" class="form-control" id="add_idno" name="id_no" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('id_no')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('id_no')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('id_no'); ?>
+                                                    <?= session()->get('add_validation')->getError('id_no'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -71,10 +71,10 @@
                                         <label for="#add_username" class="col-form-label required">Username</label>
                                         <input type="text" class="form-control" id="add_username" name="username" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('username')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('username')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('username'); ?>
+                                                    <?= session()->get('add_validation')->getError('username'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -88,10 +88,10 @@
                                         <label for="add_lastname" class="col-form-label required">Last Name</label>
                                         <input type="text" class="form-control" id="add_lastname" name="last_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('last_name')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('last_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('last_name'); ?>
+                                                    <?= session()->get('add_validation')->getError('last_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -105,10 +105,10 @@
                                         <label for="add_firstname" class="col-form-label required">First Name</label>
                                         <input type="text" class="form-control" id="add_firstname" name="first_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('first_name')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('first_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('first_name'); ?>
+                                                    <?= session()->get('add_validation')->getError('first_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -122,10 +122,10 @@
                                         <label for="add_middlename" class="col-form-label required">Middle Name</label>
                                         <input type="text" class="form-control" id="add_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('middle_name')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('middle_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('middle_name'); ?>
+                                                    <?= session()->get('add_validation')->getError('middle_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -143,10 +143,10 @@
                                             <option value="Female">Female</option>
                                         </select>
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('gender')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('gender')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('gender'); ?>
+                                                    <?= session()->get('add_validation')->getError('gender'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -165,10 +165,10 @@
                                             <option value="Guidance Counselor">Guidance Counselor</option>
                                         </select>
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('add_validation')->hasError('designation')) : ?>
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('designation')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('add_validation')->getError('designation'); ?>
+                                                    <?= session()->get('add_validation')->getError('designation'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -207,10 +207,10 @@
                                         <label for="mod_idno" class="col-form-label required">ID No.</label>
                                         <input type="text" class="form-control" id="mod_idno" name="id_no" value="" readonly="readonly">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('id_no')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('id_no')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('id_no'); ?>
+                                                    <?= session()->get('mod_validation')->getError('id_no'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -224,10 +224,10 @@
                                         <label for="#mod_username" class="col-form-label required">Username</label>
                                         <input type="text" class="form-control" id="mod_username" name="username" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('username')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('username')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('username'); ?>
+                                                    <?= session()->get('mod_validation')->getError('username'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -241,10 +241,10 @@
                                         <label for="mod_lastname" class="col-form-label required">Last Name</label>
                                         <input type="text" class="form-control" id="mod_lastname" name="last_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('last_name')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('last_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('last_name'); ?>
+                                                    <?= session()->get('mod_validation')->getError('last_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -258,10 +258,10 @@
                                         <label for="mod_firstname" class="col-form-label required">First Name</label>
                                         <input type="text" class="form-control" id="mod_firstname" name="first_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('first_name')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('first_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('first_name'); ?>
+                                                    <?= session()->get('mod_validation')->getError('first_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -275,10 +275,10 @@
                                         <label for="mod_middlename" class="col-form-label required">Middle Name</label>
                                         <input type="text" class="form-control" id="mod_middlename" name="middle_name" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('middle_name')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('middle_name')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('middle_name'); ?>
+                                                    <?= session()->get('mod_validation')->getError('middle_name'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -296,10 +296,10 @@
                                             <option value="Female">Female</option>
                                         </select>
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('gender')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('gender')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('gender'); ?>
+                                                    <?= session()->get('mod_validation')->getError('gender'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -318,10 +318,10 @@
                                             <option value="Guidance Counselor">Guidance Counselor</option>
                                         </select>
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('mod_validation')->hasError('designation')) : ?>
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('designation')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('mod_validation')->getError('designation'); ?>
+                                                    <?= session()->get('mod_validation')->getError('designation'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -478,7 +478,7 @@
         $("#healthpersonnelAccountNav > a").addClass('active');
 
         // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
+        <?php if (session()->get('success') !== null) : ?>
             var Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -487,12 +487,12 @@
             });
             Toast.fire({
                 icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
+                title: '<?= session()->get('success'); ?>'
             });
         <?php endif; ?>
 
         // Add Validation Error
-        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+        <?php if (!empty(session()->get('add_validation'))) : ?>
             $('#addModal').modal('show');
             retrieveData('<?= session()->get('id_no') ?>', {
                 error: true,
@@ -506,7 +506,7 @@
         <?php endif; ?>
 
         // Modify Validation Error
-        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+        <?php if (!empty(session()->get('mod_validation'))) : ?>
             $('#modifyModal').modal('show');
             retrieveData('<?= session()->get('id_no') ?>', {
                 error: true,

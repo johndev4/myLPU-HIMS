@@ -49,24 +49,27 @@ class Useraccounts extends BaseController
 				]
 			],
 			'last_name' => [
-				'rules' => 'required|max_length[45]',
+				'rules' => 'required|max_length[45]|alpha_space',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
+					'alpha_space' => 'Last name may only contain alphabetical characters and spaces.',
 				]
 			],
 			'first_name' => [
-				'rules' => 'required',
+				'rules' => 'required|max_length[45]|alpha_space',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
+					'alpha_space' => 'First name may only contain alphabetical characters and spaces.',
 				]
 			],
 			'middle_name' => [
-				'rules' => 'required|max_length[45]',
+				'rules' => 'required|max_length[45]|alpha_space',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
+					'alpha_space' => 'Middle name may only contain alphabetical characters and spaces.',
 				]
 			],
 			'gender' => [
@@ -140,23 +143,27 @@ class Useraccounts extends BaseController
 				]
 			],
 			'last_name' => [
-				'rules' => 'required|max_length[45]',
+				'rules' => 'required|max_length[45]|alpha_space',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
+					'alpha_space' => 'Last name may only contain alphabetical characters and spaces.',
 				]
 			],
 			'first_name' => [
-				'rules' => 'required',
+				'rules' => 'required|max_length[45]|alpha_space',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
+					'alpha_space' => 'First name may only contain alphabetical characters and spaces.',
 				]
 			],
 			'middle_name' => [
-				'rules' => 'max_length[45]',
+				'rules' => 'required|max_length[45]|alpha_space',
 				'errors' => [
+					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
+					'alpha_space' => 'Middle name may only contain alphabetical characters and spaces.',
 				]
 			],
 			'gender' => [
