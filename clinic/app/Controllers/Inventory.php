@@ -255,7 +255,7 @@ class Inventory extends BaseController
 		foreach ($batches as $key => $batch) {
 			$medicine = $this->medicinesModel->find($batch['product_id']);
 			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
-			
+
 			$is_expired = strtotime($batch['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
 			$stock_available = ($batch['stock_in'] - $batch['stock_out']);
 
@@ -287,7 +287,7 @@ class Inventory extends BaseController
 
 		foreach ($medicines as $key => $medicine) {
 			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
-			
+
 			$batches = $this->batchesModel->where('product_id', $medicine['product_id'])->findAll();
 			$stock_in = 0;
 			$stock_out = 0;
@@ -369,7 +369,7 @@ class Inventory extends BaseController
 		$result = [];
 
 		if ($batch) {
-			$medicine = $this->medicinesModel->find($batch['product_id']);
+			// $medicine = $this->medicinesModel->find($batch['product_id']);
 			$result = [
 				'batch_id' => $batch['batch_id'],
 				'product_name' => $batch['product_id'],
@@ -425,7 +425,12 @@ class Inventory extends BaseController
 
 		if ($batches) {
 			foreach ($batches as $batch) {
-				$result .= "<option value=\"{$batch['batch_id']}\"> {$batch['batch_id']} </option>";
+				$stock_available = ($batch['stock_in'] - $batch['stock_out']);
+				$is_expired = strtotime($batch['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
+
+				if (!$is_expired) {
+					$result .= "<option value=\"{$batch['batch_id']}\"> {$batch['batch_id']} ({$stock_available}) </option>";
+				}
 			}
 		}
 

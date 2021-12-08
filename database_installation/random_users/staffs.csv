@@ -1,10 +1,12 @@
-"2014-1-62735","Elizabeth","n/a","Nsubuga","faculty","College of Engineering, Computer Studies and Architecture","1989-06-17","Female",,,
-"2014-1-72634","Amanda","n/a","Menta","faculty","College of Engineering, Computer Studies and Architecture","1991-10-12","Female",,,
-"2015-2-06969","Ji-eun","n/a","Lee","staff","Accounting Department","1993-05-16","Female",,,
-"2015-2-09696","Momo","n/a","Hirai","staff","Student Affairs Office","1996-11-09","Female",NULL,NULL,NULL
-"2015-2-11725","Arnel","n/a","Mag-usara","faculty","College of Arts and Sciences","1983-06-07","Male",,,
-"2016-4-72653","Rothessa","n/a","Caringal","faculty","College of Allied Medical Sciences","1978-05-17","Female",,,
-"2313-1-15021","Mark","n/a","Guinto","staff","Information and Communication Technology Department","1976-03-02","Male",,,
-"3239-9-82430","Danny","n/a","Layug","staff","Information and Communication Technology Department","1976-07-07","Male",,,
-"5971-9-60572","Jericho ","n/a","Guinto","staff","Information and Communication Technology Department","1976-04-30","Male",,,
-"8659-7-63374","Jira","n/a","Latagan","staff","Information and Communication Technology Department","1976-03-02","Male",,,
+2020-1-0001,Elizabeth,Tosdevin,Eich,faculty,"College of Engineering, Computer Studies and Architecture",1989-06-17,Female,5'5,1.42,O-
+2020-1-0002,Amanda,Beadles,Neate,faculty,"College of Engineering, Computer Studies and Architecture",1991-10-12,Female,5'6,25.35,A+
+2020-1-0003,Ji-eun,Windrum,Lee,faculty,College of Arts and Sciences,1993-05-16,Female,5'9,27.45,O+
+2020-1-0004,Momo,Wathell,Hirai,faculty,College of Allied Medical Sciences,1996-11-09,Female,5'4,7.51,B+
+2020-1-0005,Arnel,Rydings,Abry,faculty,College of Arts and Sciences,1983-06-07,Male,5'5,94.63,A+
+2020-1-0006,Rothessa,Longforth,Scrinage,faculty,College of Allied Medical Sciences,1978-05-17,Female,5'6,59.96,O-
+2020-1-0007,Mark,Ovenden,Legon,staff,Information and Communication Technology Department,1976-03-02,Male,5'9,81.87,A+
+2020-1-0008,Danny,Dollen,Hardisty,staff,Information and Communication Technology Department,1976-07-07,Male,5'4,48.93,O+
+2020-1-0009,Jericho ,Brunsden,Clericoates,staff,Information and Communication Technology Department,1976-04-30,Male,5'5,57.05,B+
+2020-1-0010,Jira,Adcock,Cavill,staff,Information and Communication Technology Department,1976-03-02,Male,5'5,57.05,B+
+2020-1-0011,Yuna,Hebblethwaite,Taira,staff,Accounting Department,1986-08-07,Female,5'6,92.1,O-
+2020-1-0012,Mordacai,Trevenu,Berick,staff,Student Affairs Office,1999-11-01,Female,5'9,34.46,A+
