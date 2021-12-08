@@ -31,12 +31,12 @@ class Useraccounts extends BaseController
 
 		return  [
 			'id_no' => [
-				'rules' => 'required|max_length[45]|is_unique[lyceans_account.id_no' . $optional_idUnq . ']',
+				'rules' => 'required|max_length[45]|is_unique[lyceans_account.id_no' . $optional_idUnq . ']|valid_idno[{field}]',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'is_unique' => 'ID No. already exists.'
-
+					'is_unique' => 'ID No. already exists.',
+					'valid_idno' => 'Must only contain numeric characters and dashes.'
 				]
 			],
 			'username' => [
@@ -53,7 +53,7 @@ class Useraccounts extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'alpha_space' => 'Last name may only contain alphabetical characters and spaces.',
+					'alpha_space' => 'Must only contain alphabetical characters and spaces.',
 				]
 			],
 			'first_name' => [
@@ -61,7 +61,7 @@ class Useraccounts extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'alpha_space' => 'First name may only contain alphabetical characters and spaces.',
+					'alpha_space' => 'Must only contain alphabetical characters and spaces.',
 				]
 			],
 			'middle_name' => [
@@ -69,7 +69,7 @@ class Useraccounts extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'alpha_space' => 'Middle name may only contain alphabetical characters and spaces.',
+					'alpha_space' => 'Must only contain alphabetical characters and spaces.',
 				]
 			],
 			'gender' => [
@@ -125,12 +125,12 @@ class Useraccounts extends BaseController
 
 		return  [
 			'id_no' => [
-				'rules' => 'required|max_length[45]|is_unique[health_personnels_account.id_no' . $optional_idUnq . ']',
+				'rules' => 'required|max_length[45]|is_unique[health_personnels_account.id_no' . $optional_idUnq . ']|valid_idno[{field}]',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'is_unique' => 'ID No. already exists.'
-
+					'is_unique' => 'ID No. already exists.',
+					'valid_idno' => 'Must only contain numeric characters and dashes.'
 				]
 			],
 			'username' => [
@@ -147,7 +147,7 @@ class Useraccounts extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'alpha_space' => 'Last name may only contain alphabetical characters and spaces.',
+					'alpha_space' => 'Must only contain alphabetical characters and spaces.',
 				]
 			],
 			'first_name' => [
@@ -155,7 +155,7 @@ class Useraccounts extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'alpha_space' => 'First name may only contain alphabetical characters and spaces.',
+					'alpha_space' => 'Must only contain alphabetical characters and spaces.',
 				]
 			],
 			'middle_name' => [
@@ -163,7 +163,7 @@ class Useraccounts extends BaseController
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.',
-					'alpha_space' => 'Middle name may only contain alphabetical characters and spaces.',
+					'alpha_space' => 'Must only contain alphabetical characters and spaces.',
 				]
 			],
 			'gender' => [

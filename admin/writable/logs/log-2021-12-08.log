@@ -1,0 +1,42 @@
+CRITICAL - 2021-12-08 21:08:52 --> Too few arguments to function App\Controllers\Useraccounts::fetchLyceanInfoById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-08 21:10:29 --> Too few arguments to function App\Controllers\Useraccounts::fetchLyceanInfoById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-08 21:14:39 --> Too few arguments to function App\Controllers\Useraccounts::fetchLyceanInfoById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-08 21:14:47 --> Too few arguments to function App\Controllers\Useraccounts::fetchLyceanInfoById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-08 21:24:57 --> foreach() argument must be of type array|object, string given
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Validation\CustomRules.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp\\htdocs...', 42)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Validation\Validation.php(277): App\Validation\CustomRules->valid_idno('2-', '{field}', Array, NULL)
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('id_no', 'id_no', '2-', Array, Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#4 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(438): CodeIgniter\Controller->validate(Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(477): App\Controllers\Useraccounts->addLyceanAccount()
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->addStudentAccount()
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#8 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-12-08 21:26:25 --> Too few arguments to function App\Controllers\Useraccounts::fetchLyceanInfoById(), 0 passed in C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php on line 802 and exactly 1 expected
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->fetchLyceanInfoById()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

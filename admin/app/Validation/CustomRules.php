@@ -36,4 +36,14 @@ class CustomRules
 
 		return true;
 	}
+
+	public function valid_idno($str): bool
+	{
+		for ($i = 0; $i < strlen($str); $i += 1) {
+			if (!is_numeric($str[$i]) && $str[$i] != "-") {
+				return false;
+			}
+		}
+		return true;
+	}
 }
