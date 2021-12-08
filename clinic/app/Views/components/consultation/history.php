@@ -47,10 +47,10 @@
                                         <label for="clear_fromdaterange" class="col-form-label">From</label>
                                         <input type="date" class="form-control" id="clear_fromdaterange" name="from_date_range" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('clear_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('clear_validation')->hasError('from_date_range')) : ?>
+                                        <?php if (!empty(session()->get('clear_validation'))) : ?>
+                                            <?php if (session()->get('clear_validation')->hasError('from_date_range')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('clear_validation')->getError('from_date_range'); ?>
+                                                    <?= session()->get('clear_validation')->getError('from_date_range'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -64,10 +64,10 @@
                                         <label for="clear_todaterange" class="col-form-label">To</label>
                                         <input type="date" class="form-control" id="clear_todaterange" name="to_date_range" value="">
                                         <!-- Validation Error -->
-                                        <?php if (!empty(session()->getFlashdata('clear_validation'))) : ?>
-                                            <?php if (session()->getFlashdata('clear_validation')->hasError('to_date_range')) : ?>
+                                        <?php if (!empty(session()->get('clear_validation'))) : ?>
+                                            <?php if (session()->get('clear_validation')->hasError('to_date_range')) : ?>
                                                 <span class="error text-danger">
-                                                    <?= session()->getFlashdata('clear_validation')->getError('to_date_range'); ?>
+                                                    <?= session()->get('clear_validation')->getError('to_date_range'); ?>
                                                 </span>
                                                 <script>
                                                     $().ready(function() {
@@ -273,9 +273,7 @@
             processing: true,
             paging: false,
             searching: true,
-            order: [
-                [1, 'desc']
-            ],
+            order: [],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('consultations/fetchAllDoneConsultations') ?>',
@@ -295,9 +293,7 @@
             processing: true,
             paging: false,
             searching: true,
-            order: [
-                [1, 'desc']
-            ],
+            order: [],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('consultations/fetchAllRejectedConsultations') ?>',
@@ -317,9 +313,7 @@
             processing: true,
             paging: false,
             searching: true,
-            order: [
-                [1, 'desc']
-            ],
+            order: [],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('consultations/fetchAllCancelledConsultations') ?>',

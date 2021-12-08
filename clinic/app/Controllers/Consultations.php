@@ -444,7 +444,7 @@ class Consultations extends BaseController
 		$consultations = $this->consultationsModel
 			->where('status', 'done')
 			->where('personnel_id_no', getIdNo())
-			->orderBy('created_at', 'asc')->findAll();
+			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
@@ -472,7 +472,7 @@ class Consultations extends BaseController
 		$consultations = $this->consultationsModel
 			->where('status', 'rejected')
 			->where('personnel_id_no', getIdNo())
-			->orderBy('created_at', 'asc')->findAll();
+			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
@@ -500,7 +500,7 @@ class Consultations extends BaseController
 		$consultations = $this->consultationsModel
 			->where('status', 'cancelled')
 			->where('personnel_id_no', getIdNo())
-			->orderBy('created_at', 'asc')->findAll();
+			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
