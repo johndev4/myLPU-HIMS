@@ -6,9 +6,9 @@ class CustomRules
 {
 	public function __construct()
 	{
-		helper('useraccount');
 	}
 
+	// Valid password
 	public function valid_password($str): bool
 	{
 		$password = trim($str);

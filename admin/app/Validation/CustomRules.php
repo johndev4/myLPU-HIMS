@@ -4,6 +4,11 @@ namespace App\Validation;
 
 class CustomRules
 {
+	public function __construct()
+	{
+	}
+
+	// Valid password
 	public function valid_password($str): bool
 	{
 		$password = trim($str);
@@ -37,6 +42,7 @@ class CustomRules
 		return true;
 	}
 
+	// Valid ID No.
 	public function valid_idno($str): bool
 	{
 		for ($i = 0; $i < strlen($str); $i += 1) {
