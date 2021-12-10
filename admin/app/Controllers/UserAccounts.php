@@ -11,7 +11,7 @@ class Useraccounts extends BaseController
 		helper('useraccount');
 		// Page title
 		$this->data['page_title'] = 'User Accounts';
-		// User firstname
+		// User admin name
 		$this->data['adminName'] = getAdminName();
 	}
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2021 at 12:01 PM
+-- Generation Time: Dec 10, 2021 at 09:48 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -46,7 +46,9 @@ CREATE TABLE `batches` (
   `product_id` varchar(45) NOT NULL,
   `stock_in` int(11) NOT NULL,
   `stock_out` int(11) NOT NULL,
-  `expiration_date` date NOT NULL
+  `expiration_date` date NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -78,7 +80,9 @@ CREATE TABLE `consultations` (
 CREATE TABLE `equipments` (
   `product_id` varchar(45) NOT NULL,
   `product_name` varchar(45) NOT NULL,
-  `qty` int(11) NOT NULL
+  `qty` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -156,8 +160,8 @@ CREATE TABLE `lyceans` (
   `role` varchar(45) NOT NULL,
   `department` varchar(100) NOT NULL,
   `birth_date` date NOT NULL,
-  `gender` datetime DEFAULT NULL,
-  `height` datetime DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `height` varchar(25) DEFAULT NULL,
   `weight` varchar(25) DEFAULT NULL,
   `blood_type` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -214,6 +218,7 @@ CREATE TABLE `medicines` (
   `product_id` varchar(45) NOT NULL,
   `manufacturer` varchar(45) NOT NULL,
   `generic_name` varchar(100) NOT NULL,
+  `brand_name` varchar(45) NOT NULL,
   `drug_class` varchar(100) NOT NULL,
   `dosage` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -232,9 +237,10 @@ CREATE TABLE `system_logs` (
   `app_type` varchar(45) NOT NULL,
   `type` varchar(45) NOT NULL,
   `sub_type` varchar(45) NOT NULL,
-  `action` varchar(45) NOT NULL,
-  `http_referrer` varchar(45) NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
+  `action` varchar(300) NOT NULL,
+  `http_referer` varchar(100) NOT NULL,
+  `remote_address` varchar(45) NOT NULL,
+  `server_address` varchar(45) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -367,6 +373,12 @@ ALTER TABLE `lyceans_notification`
 --
 ALTER TABLE `medical_files`
   MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `system_logs`
+--
+ALTER TABLE `system_logs`
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

@@ -17,7 +17,7 @@ class BatchesModel extends Model
     protected $allowedFields        = ['batch_id', 'product_id', 'stock_in', 'stock_out', 'expiration_date'];
 
     // Dates
-    protected $useTimestamps        = false;
+    protected $useTimestamps        = true;
     protected $dateFormat           = 'datetime';
     protected $createdField         = 'created_at';
     protected $updatedField         = 'updated_at';

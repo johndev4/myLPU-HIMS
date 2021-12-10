@@ -11,8 +11,8 @@ class Consultations extends BaseController
 		helper('useraccount');
 		// Page title
 		$this->data['page_title'] = 'Consultations';
-		// User firstname
-		$this->data['firstname'] = getUserFirstname();
+		// User fullname
+        $this->data['fullname'] = getUserFullname();
 		// User ID No.
 		$this->data['idNo'] = getIdNo();
 		// User designation
@@ -443,17 +443,17 @@ class Consultations extends BaseController
 		$result = array('data' => array());
 		$consultations = $this->consultationsModel
 			->where('status', 'done')
-			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+				$health_personnel = $this->userModel->find($value['personnel_id_no']);
 
 				$result['data'][$key] = array(
 					$value['consultation_no'],
 					date_create($value['created_at'])->format('d-M-Y H:i'),
-					$lycean['id_no'],
+					"{$health_personnel['first_name']} {$health_personnel['last_name']}",
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
@@ -471,17 +471,17 @@ class Consultations extends BaseController
 		$result = array('data' => array());
 		$consultations = $this->consultationsModel
 			->where('status', 'rejected')
-			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+				$health_personnel = $this->userModel->find($value['personnel_id_no']);
 
 				$result['data'][$key] = array(
 					$value['consultation_no'],
 					date_create($value['created_at'])->format('d-M-Y H:i'),
-					$lycean['id_no'],
+					"{$health_personnel['first_name']} {$health_personnel['last_name']}",
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
@@ -499,17 +499,17 @@ class Consultations extends BaseController
 		$result = array('data' => array());
 		$consultations = $this->consultationsModel
 			->where('status', 'cancelled')
-			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+				$health_personnel = $this->userModel->find($value['personnel_id_no']);
 
 				$result['data'][$key] = array(
 					$value['consultation_no'],
 					date_create($value['created_at'])->format('d-M-Y H:i'),
-					$lycean['id_no'],
+					"{$health_personnel['first_name']} {$health_personnel['last_name']}",
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
@@ -533,13 +533,12 @@ class Consultations extends BaseController
 					$fromDateRange = $_GET['from_date_range'];
 					$toDateRange = $_GET['to_date_range'];
 
-					$consultations = $this->consultationsModel
-						->where('personnel_id_no', getIdNo())
-						->where('status', 'done')->orwhere('status', 'rejected')
+					$toDeleteConsultations = $this->consultationsModel
 						->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+						->where('status', 'done')->orwhere('status', 'cancelled')
 						->find();
-					if ($consultations) {
-						foreach ($consultations as $consultation) {
+					if ($toDeleteConsultations) {
+						foreach ($toDeleteConsultations as $consultation) {
 							$success1 = $this->medicalFilesModel->where('consultation_no', $consultation['consultation_no'])->delete();
 							// Delete directory
 							if (file_exists($this->baseDir . $consultation['lycean_id_no'])) {
@@ -560,9 +559,16 @@ class Consultations extends BaseController
 					}
 
 					$success3 = $this->consultationsModel
-						->where('personnel_id_no', getIdNo())
-						->where('status', 'done')->orwhere('status', 'rejected')
 						->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+						->where('status', 'done')
+						->delete();
+					$success3 = $this->consultationsModel
+						->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+						->where('status', 'rejected')
+						->delete();
+					$success3 = $this->consultationsModel
+						->where('created_at >=', $fromDateRange)->where('created_at <=', $toDateRange)
+						->where('status', 'cancelled')
 						->delete();
 
 					if ($success1 && $success2 && $success3) {
@@ -575,12 +581,11 @@ class Consultations extends BaseController
 					session()->setFlashdata('getData', json_encode($_GET));
 				}
 			} else {
-				$consultations = $this->consultationsModel
-					->where('personnel_id_no', getIdNo())
-					->where('status', 'done')->orwhere('status', 'rejected')
+				$toDeleteConsultation = $this->consultationsModel
+					->where('status', 'done')->orwhere('status', 'rejected')->orwhere('status', 'cancelled')
 					->find();
-				if ($consultations) {
-					foreach ($consultations as $consultation) {
+				if ($toDeleteConsultation) {
+					foreach ($toDeleteConsultation as $consultation) {
 						$success1 = $this->medicalFilesModel
 							->where('consultation_no', $consultation['consultation_no'])
 							->delete();
@@ -604,8 +609,7 @@ class Consultations extends BaseController
 				}
 
 				$success3 = $this->consultationsModel
-					->where('personnel_id_no', getIdNo())
-					->where('status', 'done')->orwhere('status', 'rejected')
+					->where('status', 'done')->orwhere('status', 'rejected')->orwhere('status', 'cancelled')
 					->delete();
 
 				if ($success1 && $success2 && $success3) {

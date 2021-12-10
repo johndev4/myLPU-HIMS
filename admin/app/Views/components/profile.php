@@ -36,9 +36,9 @@
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                                 <input type="text" class="form-control" id="p_username" placeholder="Username" name="username">
                                 <!-- Validation Error -->
-                                <?php if (!empty(session()->getFlashdata('u_validation'))) : ?>
+                                <?php if (!empty(session()->get('u_validation'))) : ?>
                                     <span class="error text-danger">
-                                        <?= session()->getFlashdata('u_validation')->getError('username'); ?>
+                                        <?= session()->get('u_validation')->getError('username'); ?>
                                     </span>
                                     <script>
                                         $().ready(function() {
@@ -59,10 +59,10 @@
                                 <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                                 <input type="password" class="form-control mb-2 mt-2" id="current_password" placeholder="Current Password" name="current_password">
                                 <!-- Validation Error & Incorrect Current Password -->
-                                <?php if (!empty(session()->getFlashdata('p_validation')) or !empty(session()->getFlashdata('invalid_password'))) : ?>
-                                    <?php if (!empty(session()->getFlashdata('p_validation')) && session()->getFlashdata('p_validation')->hasError('current_password')) : ?>
+                                <?php if (!empty(session()->get('p_validation')) or !empty(session()->get('invalid_password'))) : ?>
+                                    <?php if (!empty(session()->get('p_validation')) && session()->get('p_validation')->hasError('current_password')) : ?>
                                         <span class="error text-danger">
-                                            <?= session()->getFlashdata('p_validation')->getError('current_password'); ?>
+                                            <?= session()->get('p_validation')->getError('current_password'); ?>
                                         </span>
                                         <script>
                                             $().ready(function() {
@@ -72,9 +72,9 @@
                                                 $('#confirm_password').val('<?= session()->get('postData')['confirm_password'] ?>');
                                             });
                                         </script>
-                                    <?php elseif (!empty(session()->getFlashdata('invalid_password'))) : ?>
+                                    <?php elseif (!empty(session()->get('invalid_password'))) : ?>
                                         <span class="error text-danger">
-                                            <?= session()->getFlashdata('invalid_password') ?>
+                                            <?= session()->get('invalid_password') ?>
                                         </span>
                                         <script>
                                             $().ready(function() {
@@ -90,10 +90,10 @@
 
                                 <input type="password" class="form-control mb-2" id="password" placeholder="New Password" name="password">
                                 <!-- Validation Error -->
-                                <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
-                                    <?php if (session()->getFlashdata('p_validation')->hasError('password')) : ?>
+                                <?php if (!empty(session()->get('p_validation'))) : ?>
+                                    <?php if (session()->get('p_validation')->hasError('password')) : ?>
                                         <span class="error text-danger">
-                                            <?= session()->getFlashdata('p_validation')->getError('password'); ?>
+                                            <?= session()->get('p_validation')->getError('password'); ?>
                                         </span>
                                         <script>
                                             $().ready(function() {
@@ -107,10 +107,10 @@
 
                                 <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" name="confirm_password">
                                 <!-- Validation Error -->
-                                <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
-                                    <?php if (session()->getFlashdata('p_validation')->hasError('confirm_password')) : ?>
+                                <?php if (!empty(session()->get('p_validation'))) : ?>
+                                    <?php if (session()->get('p_validation')->hasError('confirm_password')) : ?>
                                         <span class="error text-danger">
-                                            <?= session()->getFlashdata('p_validation')->getError('confirm_password'); ?>
+                                            <?= session()->get('p_validation')->getError('confirm_password'); ?>
                                         </span>
                                         <script>
                                             $().ready(function() {
@@ -163,7 +163,7 @@
 <script>
     $('document').ready(function() {
         // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
+        <?php if (session()->get('success') !== null) : ?>
             var Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -172,12 +172,12 @@
             });
             Toast.fire({
                 icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
+                title: '<?= session()->get('success'); ?>'
             });
         <?php endif; ?>
 
         // Bootstrap Modal for password changed status
-        <?php if (session()->getFlashdata('password_changed') == TRUE) : ?>
+        <?php if (session()->get('password_changed') == TRUE) : ?>
             $("#messageModal").modal('show');
         <?php endif; ?>
     });

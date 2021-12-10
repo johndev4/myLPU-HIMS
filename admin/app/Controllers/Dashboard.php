@@ -11,7 +11,7 @@ class Dashboard extends BaseController
 		helper('useraccount');
 		// Page title
 		$this->data['page_title'] = 'Dashboard';
-		// User firstname
+		// User admin name
 		$this->data['adminName'] = getAdminName();
 	}
 

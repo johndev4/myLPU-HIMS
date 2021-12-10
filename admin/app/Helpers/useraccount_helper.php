@@ -15,7 +15,7 @@ function getAdminEmail()
 
     $user = $userAccountModel->where('username', session()->get('uid'))->where('password', session()->get('pwd'))->first();
 
-    return $user['admin_name'];
+    return $user['username'];
 }
 
 function getAdminId()

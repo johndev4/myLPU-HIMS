@@ -305,6 +305,13 @@
             });
         });
 
+        // Reset stock out modal on close
+        $('#stockoutModal').on('hidden.bs.modal', function(evt) {
+            $('#out_stockout').val("");
+            $('#out_batchid').val("");
+            $('#out_productname').val("");
+        });
+
         // Sweet Alert for success staus
         <?php if (session()->get('success') !== null) : ?>
             var Toast = Swal.mixin({
@@ -326,14 +333,13 @@
                     error: true,
                     modalType: "out"
                 });
-
-                $('#stockoutModal').modal('show');
-                $('#stockoutModal').on('hidden.bs.modal', function(evt) {
-                    $('.error').addClass('d-none');
-                    $('input.border').removeClass('border border-danger');
-                    $('select.border').removeClass('border border-danger');
-                });
             }, 500);
+            $('#stockoutModal').modal('show');
+            $('#stockoutModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
         <?php endif; ?>
 
         // Insufficient Stock
@@ -344,21 +350,13 @@
                         error: true,
                         modalType: "out"
                     });
-
-                    $('#stockoutModal').modal('show');
-                    setTimeout(function() {
-                        $('#insufficientStockModal').modal('show');
-                    }, 500);
+                }, 500);
+                $('#stockoutModal').modal('show');
+                setTimeout(function() {
+                    $('#insufficientStockModal').modal('show');
                 }, 500);
             <?php endif; ?>
         <?php endif; ?>
-
-        // Reset stock out modal on close
-        $('#stockoutModal').on('hidden.bs.modal', function(evt) {
-            $('#out_stockout').val("");
-            $('#out_batchid').val("");
-            $('#out_productname').val("");
-        });
     });
 
     // Retrieve data

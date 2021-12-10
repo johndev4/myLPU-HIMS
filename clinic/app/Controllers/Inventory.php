@@ -11,8 +11,8 @@ class Inventory extends BaseController
 		helper('useraccount');
 		// Page title
 		$this->data['page_title'] = 'Inventory';
-		// User firstname
-		$this->data['firstname'] = getUserFirstname();
+		// User fullname
+        $this->data['fullname'] = getUserFullname();
 		// User ID No.
 		$this->data['idNo'] = getIdNo();
 		// User designation
@@ -49,6 +49,13 @@ class Inventory extends BaseController
 			],
 			'generic_name' => [
 				'rules' => 'required|max_length[100]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'brand_name' => [
+				'rules' => 'required|max_length[45]',
 				'errors' => [
 					'required' => '- Required',
 					'max_length' => 'Max length exceeded.'
@@ -175,6 +182,26 @@ class Inventory extends BaseController
 		];
 	}
 
+	private function getReturnRules()
+	{
+		return  [
+			'product_name' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'qty' => [
+				'rules' => 'required|numeric',
+				'errors' => [
+					'required' => '- Required',
+					'numeric' => 'Must only contain numeric values.'
+				]
+			]
+		];
+	}
+
 
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
@@ -211,6 +238,7 @@ class Inventory extends BaseController
 				$value['product_id'],
 				$value['manufacturer'],
 				$value['generic_name'],
+				$value['brand_name'],
 				$value['drug_class'],
 				$value['dosage'],
 				"<div align=\"center\">
@@ -230,13 +258,13 @@ class Inventory extends BaseController
 
 		foreach ($batches as $key => $value) {
 			$medicine = $this->medicinesModel->find($value['product_id']);
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 
 			$result['data'][$key] = array(
 				$value['batch_id'],
 				$product_name,
-				$value['stock_in'],
 				date_create($value['expiration_date'])->format('d-M-Y'),
+				date_create($value['created_at'])->format('d-M-Y'),
 				"<div align=\"center\">
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
@@ -254,7 +282,7 @@ class Inventory extends BaseController
 
 		foreach ($batches as $key => $batch) {
 			$medicine = $this->medicinesModel->find($batch['product_id']);
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 
 			$is_expired = strtotime($batch['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
 			$stock_available = ($batch['stock_in'] - $batch['stock_out']);
@@ -286,7 +314,7 @@ class Inventory extends BaseController
 		$medicines = $this->medicinesModel->findAll();
 
 		foreach ($medicines as $key => $medicine) {
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 
 			$batches = $this->batchesModel->where('product_id', $medicine['product_id'])->findAll();
 			$stock_in = 0;
@@ -332,6 +360,7 @@ class Inventory extends BaseController
 				$value['product_id'],
 				$value['product_name'],
 				$value['qty'],
+				date_create($value['created_at'])->format('d-M-Y'),
 				"<div align=\"center\">
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
@@ -355,6 +384,7 @@ class Inventory extends BaseController
 				'product_id' => $medicine['product_id'],
 				'manufacturer' => $medicine['manufacturer'],
 				'generic_name' => $medicine['generic_name'],
+				'brand_name' => $medicine['brand_name'],
 				'drug_class' => $medicine['drug_class'],
 				'dosage' => $medicine['dosage'],
 			];
@@ -407,7 +437,7 @@ class Inventory extends BaseController
 
 		if ($medicines) {
 			foreach ($medicines as $medicine) {
-				$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+				$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 				$result .= "<option value=\"{$medicine['product_id']}\"> {$product_name} </option>";
 			}
 		}
@@ -438,6 +468,23 @@ class Inventory extends BaseController
 	}
 
 
+	// FETCH ALL EQUIPMENT'S PRODUCT NAME
+	// ---------------------------------------------------------
+	public function fetchAllEquipmentProductName()
+	{
+		$equipments = $this->equipmentsModel->findAll();
+		$result = "<option value=\"\" selected=\"selected\">---Select---</option>";
+
+		if ($equipments) {
+			foreach ($equipments as $equipment) {
+				$result .= "<option value=\"{$equipment['product_id']}\"> {$equipment['product_name']} </option>";
+			}
+		}
+
+		return json_encode($result);
+	}
+
+
 	// INSERT DATA
 	// ---------------------------------------------------------
 	public function addMedicine()
@@ -449,6 +496,7 @@ class Inventory extends BaseController
 					'product_id' => htmlspecialchars($_GET['product_id']),
 					'manufacturer' => htmlspecialchars($_GET['manufacturer']),
 					'generic_name' => htmlspecialchars($_GET['generic_name']),
+					'brand_name' => htmlspecialchars($_GET['brand_name']),
 					'drug_class' => htmlspecialchars($_GET['drug_class']),
 					'dosage' => htmlspecialchars($_GET['dosage'])
 				];
@@ -535,6 +583,7 @@ class Inventory extends BaseController
 				$data = [
 					'manufacturer' => htmlspecialchars($_GET['manufacturer']),
 					'generic_name' => htmlspecialchars($_GET['generic_name']),
+					'brand_name' => htmlspecialchars($_GET['brand_name']),
 					'drug_class' => htmlspecialchars($_GET['drug_class']),
 					'dosage' => htmlspecialchars($_GET['dosage'])
 				];
@@ -579,7 +628,7 @@ class Inventory extends BaseController
 			} else {
 				session()->setFlashdata('mod_validation', $this->validator);
 				session()->setFlashdata('getData', json_encode($_GET));
-				session()->setFlashdata('product_id', $id);
+				session()->setFlashdata('batch_id', $id);
 			}
 		}
 
@@ -699,5 +748,39 @@ class Inventory extends BaseController
 		}
 
 		return redirect()->to('inventory/medicines/stocks');
+	}
+
+
+	// RETURN EQUIPMENT
+	// ---------------------------------------------------------
+	public function returnEquipment()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getReturnRules())) {
+				$equipment = $this->equipmentsModel->find($_GET['product_name']);
+
+				if ($equipment['qty'] >= $_GET['qty']) {
+					$success = $this->equipmentsModel->where('product_id', $_GET['product_name'])
+						->set([
+							'qty' => $equipment['qty'] - $_GET['qty']
+						])->update();
+
+					if ($success) {
+						// Create flashdata for database query status
+						session()->setFlashdata('success', 'Done!');
+					} else {
+					}
+				} else {
+					session()->setFlashdata('insufficient_quantity', TRUE);
+					session()->setFlashdata('getData', json_encode($_GET));
+				}
+			} else {
+				session()->setFlashdata('return_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+			}
+		}
+
+		return redirect()->to('inventory/equipments');
 	}
 }
