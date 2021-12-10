@@ -26,6 +26,14 @@
                         <span class="info-box-text text-black-50">Add</span>
                     </button>
                 </div>
+
+                <!-- Return -->
+                <div class="col-md-3 col-12 mb-3">
+                    <button type="button" class="btn btn-block btn-default shadow p-3" data-toggle="modal" data-target="#returnModal">
+                        <span class="info-box-icon add-record text-black-50"><i class="fas fa-undo-alt"></i></span>
+                        <span class="info-box-text text-black-50">Return</span>
+                    </button>
+                </div>
             </div>
 
             <!-- Modal -->
@@ -206,7 +214,41 @@
             </div>
             <!-- /Modify Modal -->
 
+            <!-- Return Modal -->
+            <div class="modal fade" id="returnModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title font-weight-bold text-secondary" id="">Return</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="get" id="">
+                                <div class="row">
+                                    <div class="col-md-8 form-group">
+                                        <label for="mod_productname" class="col-form-label">Product Name</label>
+                                        <select class="form-control" id="" name="product_name">
+                                            <!-- OPTIONS HERE -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="mod_qty" class="col-form-label">Quantity</label>
+                                        <input type="number" class="form-control" id="mod_qty" name="qty" value="">
+                                    </div>
+                                </div>
 
+                                <div class="footer float-right pb-3">
+                                    <button type="submit" class="btn text-light swalDefaultSuccess button-color">Save</button>
+                                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Return Modal -->
 
             <!-- /Modal -->
 
@@ -223,6 +265,7 @@
                                 <th>Product ID</th>
                                 <th>Product Name</th>
                                 <th>Quantity</th>
+                                <th>Date Added</th>
                                 <th></th>
                             </tr>
                         </thead>
