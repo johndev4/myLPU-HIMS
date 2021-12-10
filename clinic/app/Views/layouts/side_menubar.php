@@ -19,7 +19,7 @@
             </div>
             <div class="info">
                 <a href="<?= site_url('profile') ?>">
-                    <span class="text-light"><?= $firstname ?></span>
+                    <span class="text-light"><?= $fullname ?></span>
                 </a>
             </div>
         </div>

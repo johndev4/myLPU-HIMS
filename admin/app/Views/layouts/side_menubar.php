@@ -148,7 +148,7 @@
 
                 <!-- System Logs -->
                 <li id="systemlogsNav" class="nav-item">
-                    <a href="<?= site_url('') ?>" class="nav-link selector">
+                    <a href="<?= site_url('systemlogs') ?>" class="nav-link selector">
                         <i class="fas fa-file-signature nav-icon text-light"></i>
                         <p class="text-light">
                             System Logs

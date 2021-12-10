@@ -11,8 +11,8 @@ class Consultations extends BaseController
 		helper('useraccount');
 		// Page title
 		$this->data['page_title'] = 'Consultations';
-		// User firstname
-		$this->data['firstname'] = getUserFirstname();
+		// User fullname
+        $this->data['fullname'] = getUserFullname();
 		// User ID No.
 		$this->data['idNo'] = getIdNo();
 		// User designation

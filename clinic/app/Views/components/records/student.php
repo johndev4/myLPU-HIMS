@@ -241,10 +241,10 @@
                                             <label for="mod_birthdate" class="col-form-label">Date of Birth</label>
                                             <input type="date" class="form-control" id="mod_birthdate" name="birth_date">
                                             <!-- Validation Error -->
-                                            <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                                <?php if (session()->getFlashdata('mod_validation')->hasError('birth_date')) : ?>
+                                            <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                                <?php if (session()->get('mod_validation')->hasError('birth_date')) : ?>
                                                     <span class="error text-danger">
-                                                        <?= session()->getFlashdata('mod_validation')->getError('birth_date'); ?>
+                                                        <?= session()->get('mod_validation')->getError('birth_date'); ?>
                                                     </span>
                                                     <script>
                                                         $().ready(function() {
@@ -262,10 +262,10 @@
                                                 <option value="Female">Female</option>
                                             </select>
                                             <!-- Validation Error -->
-                                            <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                                <?php if (session()->getFlashdata('mod_validation')->hasError('gender')) : ?>
+                                            <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                                <?php if (session()->get('mod_validation')->hasError('gender')) : ?>
                                                     <span class="error text-danger">
-                                                        <?= session()->getFlashdata('mod_validation')->getError('gender'); ?>
+                                                        <?= session()->get('mod_validation')->getError('gender'); ?>
                                                     </span>
                                                     <script>
                                                         $().ready(function() {
@@ -289,10 +289,10 @@
                                                 <option value="O-">O-</option>
                                             </select>
                                             <!-- Validation Error -->
-                                            <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                                <?php if (session()->getFlashdata('mod_validation')->hasError('blood_type')) : ?>
+                                            <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                                <?php if (session()->get('mod_validation')->hasError('blood_type')) : ?>
                                                     <span class="error text-danger">
-                                                        <?= session()->getFlashdata('mod_validation')->getError('blood_type'); ?>
+                                                        <?= session()->get('mod_validation')->getError('blood_type'); ?>
                                                     </span>
                                                     <script>
                                                         $().ready(function() {
@@ -306,10 +306,10 @@
                                             <label for="mod_height" class="col-form-label">Height</label>
                                             <input type="text" class="form-control" id="mod_height" name="height" placeholder="in feet or inches">
                                             <!-- Validation Error -->
-                                            <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                                <?php if (session()->getFlashdata('mod_validation')->hasError('height')) : ?>
+                                            <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                                <?php if (session()->get('mod_validation')->hasError('height')) : ?>
                                                     <span class="error text-danger">
-                                                        <?= session()->getFlashdata('mod_validation')->getError('height'); ?>
+                                                        <?= session()->get('mod_validation')->getError('height'); ?>
                                                     </span>
                                                     <script>
                                                         $().ready(function() {
@@ -323,10 +323,10 @@
                                             <label for="mod_weight" class="col-form-label">Weight</label>
                                             <input type="text" class="form-control" id="mod_weight" name="weight" placeholder="in pounds">
                                             <!-- Validation Error -->
-                                            <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-                                                <?php if (session()->getFlashdata('mod_validation')->hasError('weight')) : ?>
+                                            <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                                <?php if (session()->get('mod_validation')->hasError('weight')) : ?>
                                                     <span class="error text-danger">
-                                                        <?= session()->getFlashdata('mod_validation')->getError('weight'); ?>
+                                                        <?= session()->get('mod_validation')->getError('weight'); ?>
                                                     </span>
                                                     <script>
                                                         $().ready(function() {
@@ -451,7 +451,7 @@
             <?php endif; ?>
 
             // Modify Validation Error
-            <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+            <?php if (!empty(session()->get('mod_validation'))) : ?>
                 retrieveData('<?= session()->get('id_no') ?>');
                 $('#viewModal').on('hidden.bs.modal', function(evt) {
                     $('.error').addClass('d-none');
