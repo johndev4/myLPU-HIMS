@@ -182,6 +182,26 @@ class Inventory extends BaseController
 		];
 	}
 
+	private function getReturnRules()
+	{
+		return  [
+			'product_name' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
+			'qty' => [
+				'rules' => 'required|numeric',
+				'errors' => [
+					'required' => '- Required',
+					'numeric' => 'Must only contain numeric values.'
+				]
+			]
+		];
+	}
+
 
 	// RETURN VIEWS
 	// -----------------------------------------------------------------
@@ -238,7 +258,7 @@ class Inventory extends BaseController
 
 		foreach ($batches as $key => $value) {
 			$medicine = $this->medicinesModel->find($value['product_id']);
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 
 			$result['data'][$key] = array(
 				$value['batch_id'],
@@ -262,7 +282,7 @@ class Inventory extends BaseController
 
 		foreach ($batches as $key => $batch) {
 			$medicine = $this->medicinesModel->find($batch['product_id']);
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 
 			$is_expired = strtotime($batch['expiration_date']) <= strtotime('now') ? TRUE : FALSE;
 			$stock_available = ($batch['stock_in'] - $batch['stock_out']);
@@ -294,7 +314,7 @@ class Inventory extends BaseController
 		$medicines = $this->medicinesModel->findAll();
 
 		foreach ($medicines as $key => $medicine) {
-			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+			$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 
 			$batches = $this->batchesModel->where('product_id', $medicine['product_id'])->findAll();
 			$stock_in = 0;
@@ -417,7 +437,7 @@ class Inventory extends BaseController
 
 		if ($medicines) {
 			foreach ($medicines as $medicine) {
-				$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} {$medicine['dosage']}";
+				$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} ({$medicine['dosage']})";
 				$result .= "<option value=\"{$medicine['product_id']}\"> {$product_name} </option>";
 			}
 		}
@@ -441,6 +461,23 @@ class Inventory extends BaseController
 				if (!$is_expired) {
 					$result .= "<option value=\"{$batch['batch_id']}\"> {$batch['batch_id']} ({$stock_available}) </option>";
 				}
+			}
+		}
+
+		return json_encode($result);
+	}
+
+
+	// FETCH ALL EQUIPMENT'S PRODUCT NAME
+	// ---------------------------------------------------------
+	public function fetchAllEquipmentProductName()
+	{
+		$equipments = $this->equipmentsModel->findAll();
+		$result = "<option value=\"\" selected=\"selected\">---Select---</option>";
+
+		if ($equipments) {
+			foreach ($equipments as $equipment) {
+				$result .= "<option value=\"{$equipment['product_id']}\"> {$equipment['product_name']} </option>";
 			}
 		}
 
@@ -591,7 +628,7 @@ class Inventory extends BaseController
 			} else {
 				session()->setFlashdata('mod_validation', $this->validator);
 				session()->setFlashdata('getData', json_encode($_GET));
-				session()->setFlashdata('product_id', $id);
+				session()->setFlashdata('batch_id', $id);
 			}
 		}
 
@@ -711,5 +748,39 @@ class Inventory extends BaseController
 		}
 
 		return redirect()->to('inventory/medicines/stocks');
+	}
+
+
+	// RETURN EQUIPMENT
+	// ---------------------------------------------------------
+	public function returnEquipment()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+			if ($this->validate($this->getReturnRules())) {
+				$equipment = $this->equipmentsModel->find($_GET['product_name']);
+
+				if ($equipment['qty'] >= $_GET['qty']) {
+					$success = $this->equipmentsModel->where('product_id', $_GET['product_name'])
+						->set([
+							'qty' => $equipment['qty'] - $_GET['qty']
+						])->update();
+
+					if ($success) {
+						// Create flashdata for database query status
+						session()->setFlashdata('success', 'Done!');
+					} else {
+					}
+				} else {
+					session()->setFlashdata('insufficient_quantity', TRUE);
+					session()->setFlashdata('getData', json_encode($_GET));
+				}
+			} else {
+				session()->setFlashdata('return_validation', $this->validator);
+				session()->setFlashdata('getData', json_encode($_GET));
+			}
+		}
+
+		return redirect()->to('inventory/equipments');
 	}
 }

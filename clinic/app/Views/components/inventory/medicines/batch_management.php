@@ -141,20 +141,72 @@
                                     <div class="col-12 form-group">
                                         <label for="mod_batchid" class="col-form-label">Batch ID</label>
                                         <input type="text" class="form-control" id="mod_batchid" name="batch_id" value="" readonly="readonly">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('batch_id')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->get('mod_validation')->getError('batch_id'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_batchid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-12 form-group">
                                         <label for="mod_productname" class="col-form-label">Product Name</label>
                                         <select class="form-control" id="mod_productname" name="product_name">
                                             <!-- OPTIONS HERE -->
                                         </select>
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('product_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->get('mod_validation')->getError('product_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_productname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="mod_stockin" class="col-form-label">Stock</label>
                                         <input type="number" class="form-control" id="mod_stockin" name="stock_in" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('stock_in')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->get('mod_validation')->getError('stock_in'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_stockin').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
                                         <label for="mod_expirationdate" class="col-form-label">Expiration</label>
                                         <input type="date" class="form-control" id="mod_expirationdate" name="expiration_date" maxlength="1" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('expiration_date')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->get('mod_validation')->getError('expiration_date'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_expirationdate').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
 
@@ -253,48 +305,6 @@
         $("#medicineNav").addClass('menu-open');
         $("#medicineNav > a").addClass('active');
 
-        // Sweet Alert for success staus
-        <?php if (session()->getFlashdata('success') !== null) : ?>
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-            Toast.fire({
-                icon: 'success',
-                title: '<?= session()->getFlashdata('success'); ?>'
-            });
-        <?php endif; ?>
-
-        // Add Validation Error
-        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
-            $('#addModal').modal('show');
-            retrieveData('<?= session()->get('batch_id') ?>', {
-                error: true,
-                modalType: "add"
-            });
-            $('#addModal').on('hidden.bs.modal', function(evt) {
-                $('.error').addClass('d-none');
-                $('input.border').removeClass('border border-danger');
-                $('select.border').removeClass('border border-danger');
-            });
-        <?php endif; ?>
-
-        // Modify Validation Error
-        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
-            $('#modifyModal').modal('show');
-            retrieveData('<?= session()->get('batch_id') ?>', {
-                error: true,
-                modalType: "mod"
-            });
-            $('#modifyModal').on('hidden.bs.modal', function(evt) {
-                $('.error').addClass('d-none');
-                $('input.border').removeClass('border border-danger');
-                $('select.border').removeClass('border border-danger');
-            });
-        <?php endif; ?>
-
         // Fetch all medicine product name using ajax
         $.ajax({
             url: '<?= site_url('inventory/fetchAllMedicineProductName') ?>',
@@ -313,6 +323,50 @@
             $('#add_stockin').val("");
             $('#add_expirationdate').val("");
         });
+
+        // Sweet Alert for success staus
+        <?php if (session()->getFlashdata('success') !== null) : ?>
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            Toast.fire({
+                icon: 'success',
+                title: '<?= session()->getFlashdata('success'); ?>'
+            });
+        <?php endif; ?>
+
+        // Add Validation Error
+        <?php if (!empty(session()->getFlashdata('add_validation'))) : ?>
+            retrieveData('<?= session()->get('batch_id') ?>', {
+                error: true,
+                modalType: "add"
+            });
+            $('#addModal').modal('show');
+            $('#addModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
+
+        // Modify Validation Error
+        <?php if (!empty(session()->getFlashdata('mod_validation'))) : ?>
+            setTimeout(function() {
+                retrieveData('<?= session()->get('batch_id') ?>', {
+                    error: true,
+                    modalType: "mod"
+                });
+            }, 500);
+            $('#modifyModal').modal('show');
+            $('#modifyModal').on('hidden.bs.modal', function(evt) {
+                $('.error').addClass('d-none');
+                $('input.border').removeClass('border border-danger');
+                $('select.border').removeClass('border border-danger');
+            });
+        <?php endif; ?>
     });
 
     // Retrieve data
