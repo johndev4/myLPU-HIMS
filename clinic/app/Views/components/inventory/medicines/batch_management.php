@@ -204,8 +204,8 @@
                             <tr>
                                 <th>Batch ID</th>
                                 <th>Product Name</th>
-                                <th>Stock</th>
                                 <th>Expiration</th>
+                                <th>Date Added</th>
                                 <th></th>
                             </tr>
                         </thead>

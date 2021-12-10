@@ -57,6 +57,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-xl-12 col-md-12 mb-2 mr-n5">
+                                        <div class="card  h-80 w-100 py-0" style="border-left: 7px solid rgb(190, 190, 190); border-radius:6px">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Department</div>
+                                                        <div class="h5 mb-0 font-weight-normal text-dark" id="rec_department"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!-- /View Info -->
 
                                     <!-- Details -->
