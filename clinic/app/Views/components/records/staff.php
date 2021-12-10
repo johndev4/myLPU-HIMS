@@ -589,6 +589,13 @@
 
         return [year, month, day].join('-');
     }
+
+    // Multiple modal scroll
+    $('body').on('hidden.bs.modal', function() {
+        if ($('.modal.show').length > 0) {
+            $('body').addClass('modal-open');
+        }
+    });
 </script>
 
 <?= $this->endSection('content') ?>

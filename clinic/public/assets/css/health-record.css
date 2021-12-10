@@ -31,6 +31,6 @@ i.far.fa-edit.text-secondary.float-right.mr-4:hover{
     font-size: 18px;
 }
 
-/* .button-width{
-    width: 120px;
-} */
+.far.fa-edit.text-secondary.float-right.mr-4{
+    cursor: pointer;
+}

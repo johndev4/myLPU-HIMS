@@ -226,7 +226,7 @@
 
                 <!-- Details Modify modal -->
                 <div class="modal fade" id="modifyModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document" style="min-width:250px">
+                    <div class="modal-dialog modal-dialog-centered" role="document" style="min-width:250px;">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title font-weight-bold text-secondary" id="">Details</h5>
@@ -585,6 +585,13 @@
 
             return [year, month, day].join('-');
         }
+
+        // Multiple modal scroll
+        $('body').on('hidden.bs.modal', function() {
+            if ($('.modal.show').length > 0) {
+                $('body').addClass('modal-open');
+            }
+        });
     </script>
 
     <?= $this->endSection('content') ?>

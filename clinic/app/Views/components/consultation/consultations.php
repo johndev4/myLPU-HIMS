@@ -390,6 +390,13 @@
             title: '<?= session()->get('validation_error'); ?>'
         });
     <?php endif; ?>
+
+    // Multiple modal scroll
+    $('body').on('hidden.bs.modal', function() {
+        if ($('.modal.show').length > 0) {
+            $('body').addClass('modal-open');
+        }
+    });
 </script>
 
 <?= $this->endSection('content') ?>
