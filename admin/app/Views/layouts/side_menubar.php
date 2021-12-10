@@ -97,7 +97,7 @@
                 <!-- Deleted Accounts -->
                 <li class="nav-item" id="mainUserInformationNav">
                     <a href="#" class="nav-link selector">
-                        <i class="fa fa-file-alt nav-icon text-light"></i>
+                        <i class="fa fa-user-times nav-icon text-light"></i>
                         <p class="text-light">
                             Deleted Accounts
                             <i class="right fas fa-angle-left"></i>
@@ -143,8 +143,17 @@
                                 </p>
                             </a>
                         </li>
-
                     </ul>
+                </li>
+
+                <!-- System Logs -->
+                <li id="systemlogsNav" class="nav-item">
+                    <a href="<?= site_url('') ?>" class="nav-link selector">
+                        <i class="fas fa-file-signature nav-icon text-light"></i>
+                        <p class="text-light">
+                            System Logs
+                        </p>
+                    </a>
                 </li>
 
                 <!-- Logout -->

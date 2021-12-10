@@ -95,6 +95,23 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
+                                        <label for="add_manufacturer" class="col-form-label">Brand Name</label>
+                                        <input type="text" class="form-control" id="add_brandname" name="brand_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->get('add_validation'))) : ?>
+                                            <?php if (session()->get('add_validation')->hasError('brand_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->get('add_validation')->getError('brand_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#add_brandname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-12 form-group">
                                         <label for="add_drugclass" class="col-form-label">Drug Class</label>
                                         <input type="text" class="form-control" id="add_drugclass" name="drug_class" value="">
                                         <!-- Validation Error -->
@@ -244,6 +261,23 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-4 form-group">
+                                        <label for="mod_genericname" class="col-form-label">Brand Name</label>
+                                        <input type="text" class="form-control" id="mod_brandname" name="brand_name" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->get('mod_validation'))) : ?>
+                                            <?php if (session()->get('mod_validation')->hasError('brand_name')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->get('mod_validation')->getError('brand_name'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#mod_brandname').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-12 form-group">
                                         <label for="mod_drugclass" class="col-form-label">Drug Class</label>
                                         <input type="text" class="form-control" id="mod_drugclass" name="drug_class" value="">
                                         <!-- Validation Error -->
@@ -332,6 +366,7 @@
                                 <th>Item ID</th>
                                 <th>Manufacturer</th>
                                 <th>Generic Name</th>
+                                <th>Brand Name</th>
                                 <th>Drug Class</th>
                                 <th>Dosage</th>
                                 <th></th>

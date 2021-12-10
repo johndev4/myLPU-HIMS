@@ -183,7 +183,7 @@
                                         <tr>
                                             <th>Consultation No.</th>
                                             <th>Date of Request</th>
-                                            <th>Student No.</th>
+                                            <th>Physician</th>
                                             <th>Student Name</th>
                                             <th>Department</th>
                                             <th></th>
