@@ -443,17 +443,17 @@ class Consultations extends BaseController
 		$result = array('data' => array());
 		$consultations = $this->consultationsModel
 			->where('status', 'done')
-			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+				$health_personnel = $this->healthPersonnelsModel->find($value['personnel_id_no']);
 
 				$result['data'][$key] = array(
 					$value['consultation_no'],
 					date_create($value['created_at'])->format('d-M-Y H:i'),
-					$lycean['id_no'],
+					"{$health_personnel['first_name']} {$health_personnel['last_name']}",
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
@@ -471,17 +471,17 @@ class Consultations extends BaseController
 		$result = array('data' => array());
 		$consultations = $this->consultationsModel
 			->where('status', 'rejected')
-			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+				$health_personnel = $this->healthPersonnelsModel->find($value['personnel_id_no']);
 
 				$result['data'][$key] = array(
 					$value['consultation_no'],
 					date_create($value['created_at'])->format('d-M-Y H:i'),
-					$lycean['id_no'],
+					"{$health_personnel['first_name']} {$health_personnel['last_name']}",
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
@@ -499,17 +499,17 @@ class Consultations extends BaseController
 		$result = array('data' => array());
 		$consultations = $this->consultationsModel
 			->where('status', 'cancelled')
-			->where('personnel_id_no', getIdNo())
 			->orderBy('created_at', 'desc')->findAll();
 
 		if ($consultations) {
 			foreach ($consultations as $key => $value) {
 				$lycean = $this->lyceansModel->find($value['lycean_id_no']);
+				$health_personnel = $this->healthPersonnelsModel->find($value['personnel_id_no']);
 
 				$result['data'][$key] = array(
 					$value['consultation_no'],
 					date_create($value['created_at'])->format('d-M-Y H:i'),
-					$lycean['id_no'],
+					"{$health_personnel['first_name']} {$health_personnel['last_name']}",
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">

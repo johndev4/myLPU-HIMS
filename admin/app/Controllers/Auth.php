@@ -10,6 +10,7 @@ class Auth extends BaseController
 	{
 		// Page title
 		$this->data['page_title'] = 'Login';
+		helper(['systemlogs']);
 	}
 
 	public function index()
@@ -34,6 +35,13 @@ class Auth extends BaseController
 					->where('password', session()->get('pwd'))
 					->set(['locked' => 0])->update();
 
+				// if (createLog(
+				// 	['admin_id' => $credentials['admin_id']],
+				// 	'ADMIN',
+				// 	'Login',
+				// 	'UserLogin',
+				// 	"User \"{$credentials['admin_id']}\" login to the system"
+				// ))
 				return redirect()->to('dashboard');
 			} else if ($user && $user['locked'] >= 3) {
 				$this->data['error'] = 'Your account is locked.';

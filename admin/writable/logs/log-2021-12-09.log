@@ -4,3 +4,72 @@ CRITICAL - 2021-12-09 19:04:50 --> Too few arguments to function App\Controllers
 #2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 {main}
+CRITICAL - 2021-12-09 20:13:52 --> Required parameter $app_type follows optional parameter $user
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(638): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Required parame...', 'C:\\xampp\\htdocs...', 3)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(638): include_once()
+#2 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Auth.php(13): helper(Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Auth->__construct()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-12-09 20:13:54 --> Required parameter $app_type follows optional parameter $user
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(638): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Required parame...', 'C:\\xampp\\htdocs...', 3)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(638): include_once()
+#2 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Auth.php(13): helper(Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Auth->__construct()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-12-09 20:14:01 --> Required parameter $app_type follows optional parameter $user
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(638): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Required parame...', 'C:\\xampp\\htdocs...', 3)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(638): include_once()
+#2 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Auth.php(13): helper(Array)
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Auth->__construct()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-12-09 20:14:59 --> Undefined array key "HTTP_REFERRER"
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Helpers\systemlogs_helper.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Auth.php(38): createLog(Array, 's', 's', 's', 's')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2021-12-09 20:21:44 --> Duplicate entry '0' for key 'PRIMARY'
+CRITICAL - 2021-12-09 20:21:44 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('INSERT INTO `sy...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sy...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sy...')
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sy...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\myLPU-HIMS\admin\app\Helpers\systemlogs_helper.php(20): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Auth.php(38): createLog(Array, 's', 's', 's', 's')
+#10 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
+#11 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#12 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2021-12-09 20:23:09 --> Duplicate entry '0' for key 'PRIMARY'
+CRITICAL - 2021-12-09 20:23:09 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('INSERT INTO `sy...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sy...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sy...')
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sy...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\myLPU-HIMS\admin\app\Helpers\systemlogs_helper.php(20): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Auth.php(38): createLog(Array, 's', 's', 's', 's')
+#10 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
+#11 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#12 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}

@@ -5,7 +5,6 @@ namespace Config;
 use App\Filters\LoggedIn;
 use App\Filters\NotLoggedIn;
 use App\Filters\GuidanceCounselorPermission;
-use App\Filters\NursePermission;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -25,8 +24,7 @@ class Filters extends BaseConfig
         'honeypot'                      => Honeypot::class,
         'loggedin'                      => LoggedIn::class,
         'notloggedin'                   => NotLoggedIn::class,
-        'guidancecounselor_permission'  => GuidanceCounselorPermission::class,
-        'nurse_permission'              => NursePermission::class
+        'guidancecounselor_permission'  => GuidanceCounselorPermission::class
     ];
 
     /**
@@ -85,10 +83,6 @@ class Filters extends BaseConfig
         'guidancecounselor_permission' => [
             'before' => ['inventory/*', 'records/*'],
             'after' => ['inventory/*', 'records/*']
-        ],
-        'nurse_permission' => [
-            'before' => ['consultations', 'consultations/*'],
-            'after' => ['consultations', 'consultations/*']
         ]
     ];
 }

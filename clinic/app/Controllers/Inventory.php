@@ -235,8 +235,8 @@ class Inventory extends BaseController
 			$result['data'][$key] = array(
 				$value['batch_id'],
 				$product_name,
-				$value['stock_in'],
 				date_create($value['expiration_date'])->format('d-M-Y'),
+				date_create($value['created_at'])->format('d-M-Y'),
 				"<div align=\"center\">
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['batch_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
@@ -332,6 +332,7 @@ class Inventory extends BaseController
 				$value['product_id'],
 				$value['product_name'],
 				$value['qty'],
+				date_create($value['created_at'])->format('d-M-Y'),
 				"<div align=\"center\">
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['product_id'] . "')\" data-target=\"#deleteModal\" data-toggle=\"modal\">Delete</button>
