@@ -428,6 +428,7 @@
             $('#add_productid').val("");
             $('#add_manufacturer').val("");
             $('#add_genericname').val("");
+            $('#add_brandname').val("");
             $('#add_drugclass').val("");
             $('#add_dosage').val("");
         });
@@ -444,6 +445,7 @@
             $('#' + obj['modalType'] + '_productid').val(data['product_id']);
             $('#' + obj['modalType'] + '_manufacturer').val(data['manufacturer']);
             $('#' + obj['modalType'] + '_genericname').val(data['generic_name']);
+            $('#' + obj['modalType'] + '_brandname').val(data['brand_name']);
             $('#' + obj['modalType'] + '_drugclass').val(data['drug_class']);
             $('#' + obj['modalType'] + '_dosage').val(data['dosage']);
         } else {
@@ -455,6 +457,7 @@
                     $('#mod_productid').val(response['product_id']);
                     $('#mod_manufacturer').val(response['manufacturer']);
                     $('#mod_genericname').val(response['generic_name']);
+                    $('#mod_brandname').val(response['brand_name']);
                     $('#mod_drugclass').val(response['drug_class']);
                     $('#mod_dosage').val(response['dosage']);
 

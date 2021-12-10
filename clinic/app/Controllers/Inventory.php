@@ -54,6 +54,13 @@ class Inventory extends BaseController
 					'max_length' => 'Max length exceeded.'
 				]
 			],
+			'brand_name' => [
+				'rules' => 'required|max_length[45]',
+				'errors' => [
+					'required' => '- Required',
+					'max_length' => 'Max length exceeded.'
+				]
+			],
 			'drug_class' => [
 				'rules' => 'required|max_length[100]',
 				'errors' => [
@@ -211,6 +218,7 @@ class Inventory extends BaseController
 				$value['product_id'],
 				$value['manufacturer'],
 				$value['generic_name'],
+				$value['brand_name'],
 				$value['drug_class'],
 				$value['dosage'],
 				"<div align=\"center\">
@@ -356,6 +364,7 @@ class Inventory extends BaseController
 				'product_id' => $medicine['product_id'],
 				'manufacturer' => $medicine['manufacturer'],
 				'generic_name' => $medicine['generic_name'],
+				'brand_name' => $medicine['brand_name'],
 				'drug_class' => $medicine['drug_class'],
 				'dosage' => $medicine['dosage'],
 			];
@@ -408,7 +417,7 @@ class Inventory extends BaseController
 
 		if ($medicines) {
 			foreach ($medicines as $medicine) {
-				$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['dosage']}";
+				$product_name = "{$medicine['manufacturer']} - {$medicine['generic_name']} {$medicine['brand_name']} {$medicine['dosage']}";
 				$result .= "<option value=\"{$medicine['product_id']}\"> {$product_name} </option>";
 			}
 		}
@@ -450,6 +459,7 @@ class Inventory extends BaseController
 					'product_id' => htmlspecialchars($_GET['product_id']),
 					'manufacturer' => htmlspecialchars($_GET['manufacturer']),
 					'generic_name' => htmlspecialchars($_GET['generic_name']),
+					'brand_name' => htmlspecialchars($_GET['brand_name']),
 					'drug_class' => htmlspecialchars($_GET['drug_class']),
 					'dosage' => htmlspecialchars($_GET['dosage'])
 				];
@@ -536,6 +546,7 @@ class Inventory extends BaseController
 				$data = [
 					'manufacturer' => htmlspecialchars($_GET['manufacturer']),
 					'generic_name' => htmlspecialchars($_GET['generic_name']),
+					'brand_name' => htmlspecialchars($_GET['brand_name']),
 					'drug_class' => htmlspecialchars($_GET['drug_class']),
 					'dosage' => htmlspecialchars($_GET['dosage'])
 				];

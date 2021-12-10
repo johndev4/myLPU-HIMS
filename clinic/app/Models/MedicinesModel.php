@@ -14,7 +14,7 @@ class MedicinesModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['product_id', 'manufacturer', 'generic_name', 'drug_class', 'dosage'];
+    protected $allowedFields        = ['product_id', 'manufacturer', 'generic_name', 'brand_name', 'drug_class', 'dosage'];
 
     // Dates
     protected $useTimestamps        = false;
