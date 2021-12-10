@@ -501,6 +501,7 @@
                 success: function(response) {
                     $('#rec_idno').text(response['id_no']);
                     $('#rec_fullname').text(`${response['last_name']}, ${response['first_name']}`);
+                    $('#rec_department').text(response['department']);
                     $('input[name=id_no]').val(response['id_no']);
 
                     $('#birthdate').text(response['birth_date']);
