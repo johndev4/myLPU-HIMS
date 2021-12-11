@@ -267,7 +267,7 @@ class Userdata extends BaseController
                         getAdminId(),
                         'ADMIN',
                         'Deleted Accounts',
-                        'Delete LY User',
+                        'Delete ALl LY User',
                         "User \"" . getAdminId() . "\" deleted all the user data"
                     );
                 } else {
@@ -356,7 +356,7 @@ class Userdata extends BaseController
                     getAdminId(),
                     'ADMIN',
                     'Deleted Accounts',
-                    'Delete HP User',
+                    'Delete All HP User',
                     "User \"" . getAdminId() . "\" deleted all the user data"
                 );
             } else {

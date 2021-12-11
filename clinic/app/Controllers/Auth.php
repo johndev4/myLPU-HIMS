@@ -38,6 +38,14 @@ class Auth extends BaseController
 					->where('password', session()->get('pwd'))
 					->set(['locked' => 0])->update();
 
+				// CREATE ACTIVITY LOG
+				createLog(
+					getIdNo(),
+					'ADMIN',
+					'Auth',
+					'User Login',
+					"User \"" . getAdminId() . "\" login to the system"
+				);
 				return redirect()->to('dashboard');
 			} else if ($user && $user['locked'] >= 3) {
 				$this->data['error'] = 'Your account is locked.';
@@ -80,8 +88,17 @@ class Auth extends BaseController
 				'last_activity' => null
 			])->update();
 
+		$userID = getIdNo();
 		// Delete login session on client
 		session()->destroy();
+		// CREATE ACTIVITY LOG
+		createLog(
+			$userID,
+			'ADMIN',
+			'Auth',
+			'User Logout',
+			"User \"" . $userID . "\" logout from the system"
+		);
 		// Redirect to login page
 		return redirect()->to('login');
 	}

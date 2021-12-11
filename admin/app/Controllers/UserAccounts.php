@@ -901,7 +901,7 @@ class Useraccounts extends BaseController
 						getAdminId(),
 						'ADMIN',
 						'User Accounts',
-						'Delete All LY User',
+						'Reset All LY User',
 						"User \"" . getAdminId() . "\" reset all the accounts"
 					);
 				} else {
@@ -952,7 +952,7 @@ class Useraccounts extends BaseController
 						getAdminId(),
 						'ADMIN',
 						'User Accounts',
-						'Delete All HP User',
+						'Reset All HP User',
 						"User \"" . getAdminId() . "\" reset all the accounts"
 					);
 				} else {
