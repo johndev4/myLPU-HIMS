@@ -81,12 +81,18 @@ CRITICAL - 2021-12-11 20:05:29 --> Undefined property: App\Controllers\Systemlog
 #3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+<<<<<<< HEAD
+CRITICAL - 2021-12-11 22:05:52 --> Call to undefined function App\Controllers\createLog()
+=======
 CRITICAL - 2021-12-11 21:51:15 --> Call to undefined function App\Controllers\createLog()
+>>>>>>> dceaf870bae02af3699769ba99b1dd8bd9cafc21
 #0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
 #1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
 #2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 {main}
+<<<<<<< HEAD
+=======
 CRITICAL - 2021-12-11 21:53:25 --> Call to a member function save() on null
 #0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Changepassword.php(95): createLog('202100001', 'ADMIN', 'Password', 'Change Password', 'User "202100001...')
 #1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->updatePassword()
@@ -104,6 +110,7 @@ CRITICAL - 2021-12-11 22:00:47 --> There is no data to update.
 #6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 {main}
+<<<<<<< HEAD
 CRITICAL - 2021-12-11 22:15:31 --> Undefined property: App\Controllers\Useraccounts::$lyceansAccountsModel
 #0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(503): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 503)
 #1 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(569): App\Controllers\Useraccounts->modifyLyceanAccount('312321')
@@ -112,3 +119,6 @@ CRITICAL - 2021-12-11 22:15:31 --> Undefined property: App\Controllers\Useraccou
 #4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #5 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 {main}
+=======
+>>>>>>> dceaf870bae02af3699769ba99b1dd8bd9cafc21
+>>>>>>> 919619b618bf0199b749952f84b31e629dc0f135
