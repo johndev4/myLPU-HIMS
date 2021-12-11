@@ -66,7 +66,7 @@ class BaseController extends Controller
 		$this->consultationsModel = model('App\Models\ConsultationsModel');
 		$this->medicalFilesModel = model('App\Models\MedicalFilesModel');
 
-		$this->systemLogsModel = model('App\Models\SystemLogsModel');
+		$this->activityLogsModel = model('App\Models\ActivityLogsModel');
 
 
 

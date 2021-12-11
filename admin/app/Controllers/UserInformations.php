@@ -8,7 +8,7 @@ class Userinformations extends BaseController
 {
     public function __construct()
     {
-        helper('useraccount');
+        helper(['useraccount', 'activitylogs']);
         // Page title
         $this->data['page_title'] = 'User Informations';
         // User admin name

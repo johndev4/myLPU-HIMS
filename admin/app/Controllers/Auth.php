@@ -10,7 +10,7 @@ class Auth extends BaseController
 	{
 		// Page title
 		$this->data['page_title'] = 'Login';
-		helper(['useraccount','systemlogs']);
+		helper(['useraccount','activitylogs']);
 	}
 
 	public function index()
@@ -39,7 +39,7 @@ class Auth extends BaseController
 				createLog(
 					getAdminId(),
 					'ADMIN',
-					'Login',
+					'Auth',
 					'User Login',
 					"User \"" . getAdminId() . "\" login to the system"
 				);
@@ -82,7 +82,7 @@ class Auth extends BaseController
 		createLog(
 			$userID,
 			'ADMIN',
-			'Logout',
+			'Auth',
 			'User Logout',
 			"User \"" . $userID . "\" logout from the system"
 		);

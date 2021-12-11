@@ -8,7 +8,7 @@ class Useraccounts extends BaseController
 {
 	public function __construct()
 	{
-		helper('useraccount');
+		helper(['useraccount', 'activitylogs']);
 		// Page title
 		$this->data['page_title'] = 'User Accounts';
 		// User admin name
@@ -407,6 +407,15 @@ class Useraccounts extends BaseController
 				if ($success1 && $success2) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully added.');
+
+					// SYSTEM LOG
+					createLog(
+						getAdminId(),
+						'ADMIN',
+						'User Accounts',
+						'Add User',
+						"User \"" . getAdminId() . "\" added user account of {$data1['id_no']}"
+					);
 				} else {
 				}
 			} else {
@@ -462,6 +471,15 @@ class Useraccounts extends BaseController
 				if ($success1 && $success2) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully added.');
+
+					// SYSTEM LOG
+					createLog(
+						getAdminId(),
+						'ADMIN',
+						'User Accounts',
+						'Add User',
+						"User \"" . getAdminId() . "\" added user account of {$data1['id_no']}"
+					);
 				} else {
 				}
 			} else {
@@ -481,9 +499,7 @@ class Useraccounts extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getLyceanRules($id))) {
-				$lyceansAccount = $this->lyceansAccountModel->find($id);
 				$data1 = [
-					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
@@ -494,24 +510,34 @@ class Useraccounts extends BaseController
 					'weight' => htmlspecialchars($_GET['weight']),
 					'blood_type' => htmlspecialchars($_GET['blood_type']),
 				];
-
 				$data2 = [
-					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => $lyceansAccount['password'],
 					'locked' => 0
 				];
 
-				$success1 = $this->lyceansAccountModel->delete($id);
-				$success2 = $this->lyceansModel
+				$success1 = $this->lyceansModel
 					->where('id_no', $id)
 					->set($data1)
 					->update();
-				$success3 = $this->lyceansAccountModel->save($data2);
+				$success2 = $this->lyceansAccountModel
+					->where('id_no', $id)
+					->set($data2)
+					->update();
 
-				if ($success1 && $success2 && $success3) {
+				if ($success1 && $success2) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully updated.');
+
+					// foreach ($data1 as $key => $value) {
+					// 	// SYSTEM LOG
+					// 	createLog(
+					// 		getAdminId(),
+					// 		'ADMIN',
+					// 		'User Accounts',
+					// 		'Modify User',
+					// 		"User \"" . getAdminId() . "\" added user account of {$data1['id_no']}"
+					// 	);
+					// }
 				} else {
 				}
 			} else {
@@ -545,31 +571,28 @@ class Useraccounts extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getHealthPersonnelRules($id))) {
-				$healthPersonnelsAccount = $this->healthPersonnelsAccountModel->find($id);
 				$data1 = [
-					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
 					'last_name' => htmlspecialchars($_GET['last_name']),
 					'gender' => htmlspecialchars($_GET['gender']),
 					'designation' => htmlspecialchars($_GET['designation']),
 				];
-
 				$data2 = [
-					'id_no' => htmlspecialchars($_GET['id_no']),
 					'username' => htmlspecialchars($_GET['username']),
-					'password' => $healthPersonnelsAccount['password'],
 					'locked' => 0
 				];
 
-				$success1 = $this->healthPersonnelsAccountModel->delete($id);
-				$success2 = $this->healthPersonnelsModel
+				$success1 = $this->healthPersonnelsModel
 					->where('id_no', $id)
 					->set($data1)
 					->update();
-				$success3 = $this->healthPersonnelsAccountModel->save($data2);
+				$success2 = $this->healthPersonnelsAccountModel
+					->where('id_no', $id)
+					->set($data2)
+					->update();
 
-				if ($success1 && $success2 && $success3) {
+				if ($success1 && $success2) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully updated.');
 				} else {
