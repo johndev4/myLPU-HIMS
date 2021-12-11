@@ -101,7 +101,7 @@ class Profile extends BaseController
                     // Create flashdata for database query status
                     session()->setFlashdata('success', "Successfully updated.");
 
-                    // SYSTEM LOG
+                    // CREATE ACTIVITY LOG
                     createLog(
                         getAdminId(),
                         'ADMIN',
@@ -152,7 +152,7 @@ class Profile extends BaseController
                         // Create flashdata for database query status
                         session()->setFlashdata('password_changed', TRUE);
 
-                        // SYSTEM LOG
+                        // CREATE ACTIVITY LOG
                         createLog(
                             getAdminId(),
                             'ADMIN',

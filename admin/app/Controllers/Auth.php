@@ -35,7 +35,7 @@ class Auth extends BaseController
 					->where('password', session()->get('pwd'))
 					->set(['locked' => 0])->update();
 
-				// SYSTEM LOG
+				// CREATE ACTIVITY LOG
 				createLog(
 					getAdminId(),
 					'ADMIN',
@@ -78,7 +78,7 @@ class Auth extends BaseController
 		$userID = getAdminId();
 		// Delete login session on client
 		session()->destroy();
-		// SYSTEM LOG
+		// CREATE ACTIVITY LOG
 		createLog(
 			$userID,
 			'ADMIN',

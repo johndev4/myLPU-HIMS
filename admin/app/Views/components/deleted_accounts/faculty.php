@@ -130,7 +130,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= site_url('userinformations/fetchAllLycean/faculty') ?>',
+                url: '<?= site_url('userdata/fetchAllLycean/faculty') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -163,14 +163,14 @@
         // Set Delete All Modal Form
         $('#deleteall_form').attr(
             'action',
-            '<?= site_url('userinformations/deleteAllFacultyInformations') ?>'
+            '<?= site_url('userdata/deleteAllFacultyData') ?>'
         );
     });
 
     function retrieveData(id) {
         $('#delete_form').attr(
             'action',
-            '<?= site_url('userinformations/deleteFacultyInformation') ?>/' + id
+            '<?= site_url('userdata/deleteFacultyData') ?>/' + id
         );
     }
 

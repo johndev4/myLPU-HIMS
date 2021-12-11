@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class Userinformations extends BaseController
+class Userdata extends BaseController
 {
     public function __construct()
     {
         helper(['useraccount', 'activitylogs']);
         // Page title
-        $this->data['page_title'] = 'User Informations';
+        $this->data['page_title'] = 'Deleted Accounts';
         // User admin name
         $this->data['adminName'] = getAdminName();
     }
@@ -21,25 +21,25 @@ class Userinformations extends BaseController
     public function student()
     {
         // Display page view
-        return view('components/user_informations/student', $this->data);
+        return view('components/deleted_accounts/student', $this->data);
     }
 
     public function faculty()
     {
         // Display page view
-        return view('components/user_informations/faculty', $this->data);
+        return view('components/deleted_accounts/faculty', $this->data);
     }
 
     public function staff()
     {
         // Display page view
-        return view('components/user_informations/staff', $this->data);
+        return view('components/deleted_accounts/staff', $this->data);
     }
 
     public function healthPersonnel()
     {
         // Display page view
-        return view('components/user_informations/health_personnel', $this->data);
+        return view('components/deleted_accounts/health_personnel', $this->data);
     }
 
 
@@ -100,7 +100,7 @@ class Userinformations extends BaseController
 
     // DELETE DATA
     // ---------------------------------------------------------
-    private function deleteLyceanInformation($id)
+    private function deleteLyceanData($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $success1 = $this->healthRecordsModel->delete($id);
@@ -125,6 +125,15 @@ class Userinformations extends BaseController
             if ($success1 && $success2 && $success3 && $success4 && $success5) {
                 // Create flashdata for database query status
                 session()->setFlashdata('success', 'Successfully deleted.');
+
+                // CREATE ACTIVITY LOG
+                createLog(
+                    getAdminId(),
+                    'ADMIN',
+                    'Deleted Accounts',
+                    'Delete LY User',
+                    "User \"" . getAdminId() . "\" deleted the data of user \"{id}\""
+                );
             } else {
             }
         }
@@ -163,25 +172,25 @@ class Userinformations extends BaseController
         return true;
     }
 
-    public function deleteStudentInformation($id)
+    public function deleteStudentData($id)
     {
-        $this->deleteLyceanInformation($id);
+        $this->deleteLyceanData($id);
         return redirect()->to('userinformations/student');
     }
 
-    public function deleteFacultyInformation($id)
+    public function deleteFacultyData($id)
     {
-        $this->deleteLyceanInformation($id);
+        $this->deleteLyceanData($id);
         return redirect()->to('userinformations/faculty');
     }
 
-    public function deleteStaffInformation($id)
+    public function deleteStaffData($id)
     {
-        $this->deleteLyceanInformation($id);
+        $this->deleteLyceanData($id);
         return redirect()->to('userinformations/staff');
     }
 
-    public function deleteHealthPersonnelInformation($id)
+    public function deleteHealthPersonnelData($id)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $success1 = $this->healthPersonnelsNotificationModel->where('id_no', $id)->delete();
@@ -195,6 +204,15 @@ class Userinformations extends BaseController
             if ($success1 && $success2 && $success3) {
                 // Create flashdata for database query status
                 session()->setFlashdata('success', 'Successfully deleted.');
+
+                // CREATE ACTIVITY LOG
+                createLog(
+                    getAdminId(),
+                    'ADMIN',
+                    'Deleted Accounts',
+                    'Delete HP User',
+                    "User \"" . getAdminId() . "\" deleted the data of user \"{id}\""
+                );
             } else {
             }
         }
@@ -205,7 +223,7 @@ class Userinformations extends BaseController
 
     // DELETE ALL ACCOUNT
     // ---------------------------------------------------------
-    public function deleteAllInformations()
+    private function deleteAllLyceanData()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $lyceans = $this->lyceansModel->where('role', $_GET['role'])->findAll();
@@ -243,6 +261,15 @@ class Userinformations extends BaseController
                 if ($success1 && $success2 && $success3 && $success4 && $success5) {
                     // Create flashdata for database query status
                     session()->setFlashdata('success', 'Successfully deleted.');
+
+                    // CREATE ACTIVITY LOG
+                    createLog(
+                        getAdminId(),
+                        'ADMIN',
+                        'Deleted Accounts',
+                        'Delete LY User',
+                        "User \"" . getAdminId() . "\" deleted all the user data"
+                    );
                 } else {
                 }
             }
@@ -261,7 +288,7 @@ class Userinformations extends BaseController
             // Delete directory
             if (file_exists($this->medicalFilesDir . $consultation['lycean_id_no'])) {
                 $files = glob($this->medicalFilesDir . $consultation['lycean_id_no'] . '/*');
-                
+
                 foreach ($files as $file) {
                     unlink($file);
                 }
@@ -282,25 +309,25 @@ class Userinformations extends BaseController
         return true;
     }
 
-    public function deleteAllStudentInformations()
+    public function deleteAllStudentData()
     {
-        $this->deleteAllInformations();
+        $this->deleteAllLyceanData();
         return redirect()->to('userinformations/student');
     }
 
-    public function deleteAllFacultyInformations()
+    public function deleteAllFacultyData()
     {
-        $this->deleteAllInformations();
+        $this->deleteAllLyceanData();
         return redirect()->to('userinformations/faculty');
     }
 
-    public function deleteAllStaffInformations()
+    public function deleteAllStaffData()
     {
-        $this->deleteAllInformations();
+        $this->deleteAllLyceanData();
         return redirect()->to('userinformations/staff');
     }
 
-    public function deleteAllHealthPersonnelInformations()
+    public function deleteAllHealthPersonnelData()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $healthPersonnels = $this->healthPersonnelsModel->findAll();
@@ -323,6 +350,15 @@ class Userinformations extends BaseController
             if ($success1 && $success2 && $success3) {
                 // Create flashdata for database query status
                 session()->setFlashdata('success', 'Successfully deleted.');
+
+                // CREATE ACTIVITY LOG
+                createLog(
+                    getAdminId(),
+                    'ADMIN',
+                    'Deleted Accounts',
+                    'Delete HP User',
+                    "User \"" . getAdminId() . "\" deleted all the user data"
+                );
             } else {
             }
         }

@@ -408,13 +408,13 @@ class Useraccounts extends BaseController
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully added.');
 
-					// SYSTEM LOG
+					// CREATE ACTIVITY LOG
 					createLog(
 						getAdminId(),
 						'ADMIN',
 						'User Accounts',
-						'Add User',
-						"User \"" . getAdminId() . "\" added user account of {$data1['id_no']}"
+						'Add LY User',
+						"User \"" . getAdminId() . "\" added user account of \"{$data1['id_no']}\""
 					);
 				} else {
 				}
@@ -472,13 +472,13 @@ class Useraccounts extends BaseController
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully added.');
 
-					// SYSTEM LOG
+					// CREATE ACTIVITY LOG
 					createLog(
 						getAdminId(),
 						'ADMIN',
 						'User Accounts',
-						'Add User',
-						"User \"" . getAdminId() . "\" added user account of {$data1['id_no']}"
+						'Add HP User',
+						"User \"" . getAdminId() . "\" added user account of \"{$data1['id_no']}\""
 					);
 				} else {
 				}
@@ -499,6 +499,10 @@ class Useraccounts extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getLyceanRules($id))) {
+				// TEMP DATA FOR ACTIVITY LOG
+				$tempData1 = $this->lyceansModel->find($id);
+				$tempData2 = $this->lyceansAccountModel->find($id);
+
 				$data1 = [
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
@@ -528,16 +532,29 @@ class Useraccounts extends BaseController
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully updated.');
 
-					// foreach ($data1 as $key => $value) {
-					// 	// SYSTEM LOG
-					// 	createLog(
-					// 		getAdminId(),
-					// 		'ADMIN',
-					// 		'User Accounts',
-					// 		'Modify User',
-					// 		"User \"" . getAdminId() . "\" added user account of {$data1['id_no']}"
-					// 	);
-					// }
+					// CREATE ACTIVITY LOG
+					foreach ($data1 as $key => $value) {
+						if ($tempData1[$key] != $value) {
+							createLog(
+								getAdminId(),
+								'ADMIN',
+								'User Accounts',
+								'Modify LY User',
+								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+							);
+						}
+					}
+					foreach ($data2 as $key => $value) {
+						if ($tempData2[$key] != $value) {
+							createLog(
+								getAdminId(),
+								'ADMIN',
+								'User Accounts',
+								'Modify LY User',
+								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+							);
+						}
+					}
 				} else {
 				}
 			} else {
@@ -571,6 +588,10 @@ class Useraccounts extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getHealthPersonnelRules($id))) {
+				// TEMP DATA FOR ACTIVITY LOG
+				$tempData1 = $this->healthPersonnelModel->find($id);
+				$tempData2 = $this->healthPersonnelsAccountModel->find($id);
+
 				$data1 = [
 					'first_name' => htmlspecialchars($_GET['first_name']),
 					'middle_name' => htmlspecialchars($_GET['middle_name']),
@@ -595,6 +616,30 @@ class Useraccounts extends BaseController
 				if ($success1 && $success2) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully updated.');
+
+					// CREATE ACTIVITY LOG
+					foreach ($data1 as $key => $value) {
+						if ($tempData1[$key] != $value) {
+							createLog(
+								getAdminId(),
+								'ADMIN',
+								'User Accounts',
+								'Modify HP User',
+								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+							);
+						}
+					}
+					foreach ($data2 as $key => $value) {
+						if ($tempData2[$key] != $value) {
+							createLog(
+								getAdminId(),
+								'ADMIN',
+								'User Accounts',
+								'Modify HP User',
+								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+							);
+						}
+					}
 				} else {
 				}
 			} else {
@@ -619,6 +664,15 @@ class Useraccounts extends BaseController
 			if ($success) {
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully deleted.');
+
+				// CREATE ACTIVITY LOG
+				createLog(
+					getAdminId(),
+					'ADMIN',
+					'User Accounts',
+					'Delete LY User',
+					"User \"" . getAdminId() . "\" deleted the account of \"{$id}\""
+				);
 			} else {
 			}
 		}
@@ -650,11 +704,101 @@ class Useraccounts extends BaseController
 			if ($success) {
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully deleted.');
+
+				// CREATE ACTIVITY LOG
+				createLog(
+					getAdminId(),
+					'ADMIN',
+					'User Accounts',
+					'Delete HP User',
+					"User \"" . getAdminId() . "\" deleted the account of \"{$id}\""
+				);
 			} else {
 			}
 
 			return redirect()->to('useraccounts/healthpersonnel');
 		}
+	}
+
+
+	// DELETE ALL DATA
+	// ---------------------------------------------------------
+	private function deleteAllAccounts()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$lyceans = $this->lyceansModel->where('role', $_GET['role'])->findAll();
+			$id = [];
+
+			foreach ($lyceans as $key => $value) {
+				$id[$key] = $value['id_no'];
+			}
+
+			$success = $this->lyceansAccountModel->delete($id);
+
+			if ($success) {
+				// Create flashdata for database query status
+				session()->setFlashdata('success', 'Successfully deleted.');
+
+				// CREATE ACTIVITY LOG
+				createLog(
+					getAdminId(),
+					'ADMIN',
+					'User Accounts',
+					'Delete All LY User',
+					"User \"" . getAdminId() . "\" deleted all the accounts"
+				);
+			} else {
+			}
+		}
+	}
+
+	public function deleteAllStudentAccounts()
+	{
+		$this->deleteAllAccounts();
+		return redirect()->to('useraccounts/student');
+	}
+
+	public function deleteAllFacultyAccounts()
+	{
+		$this->deleteAllAccounts();
+		return redirect()->to('useraccounts/faculty');
+	}
+
+	public function deleteAllStaffAccounts()
+	{
+		$this->deleteAllAccounts();
+		return redirect()->to('useraccounts/staff');
+	}
+
+	public function deleteAllHealthPersonnelAccounts()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$healthPersonnels = $this->healthPersonnelsModel->findAll();
+			$id = [];
+
+			foreach ($healthPersonnels as $key => $value) {
+				$id[$key] = $value['id_no'];
+			}
+
+			$success = $this->healthPersonnelsAccountModel->delete($id);
+
+			if ($success) {
+				// Create flashdata for database query status
+				session()->setFlashdata('success', 'Successfully deleted.');
+
+				// CREATE ACTIVITY LOG
+				createLog(
+					getAdminId(),
+					'ADMIN',
+					'User Accounts',
+					'Delete All HP User',
+					"User \"" . getAdminId() . "\" deleted all the accounts"
+				);
+			} else {
+			}
+		}
+
+		return redirect()->to('useraccounts/healthpersonnel');
 	}
 
 
@@ -673,7 +817,16 @@ class Useraccounts extends BaseController
 
 			if ($success and $lycean) {
 				// Create flashdata for database query status
-				session()->setFlashdata('success', 'Successfully resetted.');
+				session()->setFlashdata('success', 'Successfully reset.');
+
+				// CREATE ACTIVITY LOG
+				createLog(
+					getAdminId(),
+					'ADMIN',
+					'User Accounts',
+					'Reset LY Account',
+					"User \"" . getAdminId() . "\" reset the account of \"{$id}\""
+				);
 			} else {
 			}
 		}
@@ -710,7 +863,16 @@ class Useraccounts extends BaseController
 
 			if ($success and $healthPersonnels) {
 				// Create flashdata for database query status
-				session()->setFlashdata('success', 'Successfully resetted.');
+				session()->setFlashdata('success', 'Successfully reset.');
+
+				// CREATE ACTIVITY LOG
+				createLog(
+					getAdminId(),
+					'ADMIN',
+					'User Accounts',
+					'Reset HP Account',
+					"User \"" . getAdminId() . "\" reset the account of \"{$id}\""
+				);
 			} else {
 			}
 
@@ -737,6 +899,15 @@ class Useraccounts extends BaseController
 				if ($success and $lycean) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully resetted.');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getAdminId(),
+						'ADMIN',
+						'User Accounts',
+						'Delete All LY User',
+						"User \"" . getAdminId() . "\" reset all the accounts"
+					);
 				} else {
 					break;
 					session()->setFlashdata('success', 'ERROR ON RESET');
@@ -779,6 +950,15 @@ class Useraccounts extends BaseController
 				if ($success and $healthPersonnel) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully resetted.');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getAdminId(),
+						'ADMIN',
+						'User Accounts',
+						'Delete All HP User',
+						"User \"" . getAdminId() . "\" reset all the accounts"
+					);
 				} else {
 					break;
 					session()->setFlashdata('success', 'ERROR ON RESET');
@@ -787,68 +967,5 @@ class Useraccounts extends BaseController
 
 			return redirect()->to('useraccounts/healthpersonnel');
 		}
-	}
-
-
-	// DELETE ALL ACCOUNT
-	// ---------------------------------------------------------
-	private function deleteAllAccounts()
-	{
-		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			$lyceans = $this->lyceansModel->where('role', $_GET['role'])->findAll();
-			$id = [];
-
-			foreach ($lyceans as $key => $value) {
-				$id[$key] = $value['id_no'];
-			}
-
-			$success = $this->lyceansAccountModel->delete($id);
-
-			if ($success) {
-				// Create flashdata for database query status
-				session()->setFlashdata('success', 'Successfully deleted.');
-			} else {
-			}
-		}
-	}
-
-	public function deleteAllStudentAccounts()
-	{
-		$this->deleteAllAccounts();
-		return redirect()->to('useraccounts/student');
-	}
-
-	public function deleteAllFacultyAccounts()
-	{
-		$this->deleteAllAccounts();
-		return redirect()->to('useraccounts/faculty');
-	}
-
-	public function deleteAllStaffAccounts()
-	{
-		$this->deleteAllAccounts();
-		return redirect()->to('useraccounts/staff');
-	}
-
-	public function deleteAllHealthPersonnelAccounts()
-	{
-		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-			$healthPersonnels = $this->healthPersonnelsModel->findAll();
-			$id = [];
-
-			foreach ($healthPersonnels as $key => $value) {
-				$id[$key] = $value['id_no'];
-			}
-
-			$success = $this->healthPersonnelsAccountModel->delete($id);
-
-			if ($success) {
-				// Create flashdata for database query status
-				session()->setFlashdata('success', 'Successfully deleted.');
-			} else {
-			}
-		}
-
-		return redirect()->to('useraccounts/healthpersonnel');
 	}
 }

@@ -62,7 +62,7 @@
                                 <div class="mt-1 font-weight-normal text-secondary">This will permanently wipe out all of the users' information from the system, including health records</div>
                             </div><br>
                             <form action="" method="get" id="deleteall_form">
-                                <input type="hidden" name="role" value="staff">
+                                <input type="hidden" name="role" value="student">
                                 <div class="float-right mt-1">
                                     <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                                     <button type="submit" class="btn btn-danger swalDefaultSuccess ">Delete</button>
@@ -80,7 +80,7 @@
                 <div class="col-12 mb-5">
                     <div class="card">
                         <div class="card-header record-header">
-                            <h3 class="card-title">Staffs</h3>
+                            <h3 class="card-title">Students</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -130,7 +130,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= site_url('userinformations/fetchAllLycean/staff') ?>',
+                url: '<?= site_url('userdata/fetchAllLycean/student') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
@@ -144,7 +144,7 @@
         // For sidebar
         $("#mainUserInformationNav").addClass('menu-open');
         $("#mainUserInformationNav > a").addClass('active');
-        $("#staffInformationNav > a").addClass('active');
+        $("#studentInformationNav > a").addClass('active');
 
         // Sweet Alert for success staus
         <?php if (session()->getFlashdata('success') !== null) : ?>
@@ -163,14 +163,14 @@
         // Set Delete All Modal Form
         $('#deleteall_form').attr(
             'action',
-            '<?= site_url('userinformations/deleteAllStaffInformations') ?>'
+            '<?= site_url('userdata/deleteAllStudentData') ?>'
         );
     });
 
     function retrieveData(id) {
         $('#delete_form').attr(
             'action',
-            '<?= site_url('userinformations/deleteStaffInformation') ?>/' + id
+            '<?= site_url('userdata/deleteStudentData') ?>/' + id
         );
     }
 

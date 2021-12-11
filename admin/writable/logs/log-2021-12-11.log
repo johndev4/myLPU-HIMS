@@ -104,3 +104,11 @@ CRITICAL - 2021-12-11 22:00:47 --> There is no data to update.
 #6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 {main}
+CRITICAL - 2021-12-11 22:15:31 --> Undefined property: App\Controllers\Useraccounts::$lyceansAccountsModel
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(503): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 503)
+#1 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(569): App\Controllers\Useraccounts->modifyLyceanAccount('312321')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->modifyStudentAccount('312321')
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

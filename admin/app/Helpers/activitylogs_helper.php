@@ -19,7 +19,3 @@ function createLog($enduser_id, $enduser_type, $type, $action, $description)
     if ($success) return TRUE;
     else return FALSE;
 }
-
-function defineUser($admin, $healthPersonnel, $lycean)
-{
-}

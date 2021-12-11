@@ -86,7 +86,7 @@ class Changepassword extends BaseController
                         // Set logged_in status to TRUE
                         session()->set('logged_in', TRUE);
 
-                        // SYSTEM LOG
+                        // CREATE ACTIVITY LOG
                         createLog(
                             getAdminId(),
                             'ADMIN',
