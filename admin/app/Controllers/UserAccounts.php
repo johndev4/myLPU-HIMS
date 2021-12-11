@@ -213,22 +213,22 @@ class Useraccounts extends BaseController
 
 	// FETCH ALL DATA
 	// -----------------------------------------------------------------
-	public function fetchAllStudent()
+	public function fetchAllLycean($role)
 	{
 		$result = array('data' => array());
 		$lyceans = $this->lyceansModel
-			->where('role', 'student')
+			->where('role', $role)
 			->findAll();
 
 		$count = 0;
-		foreach ($lyceans as $value) {
-			$lyceansAccount = $this->lyceansAccountModel->find($value['id_no']);
+		foreach ($lyceans as $lycean) {
+			$lyceansAccount = $this->lyceansAccountModel->find($lycean['id_no']);
 			if ($lyceansAccount) {
 				$result['data'][$count] = array(
-					$value['id_no'],
-					$value['first_name'],
-					$value['last_name'],
-					$value['department'],
+					$lycean['id_no'],
+					$lycean['first_name'],
+					$lycean['last_name'],
+					$lycean['department'],
 					"<div align=\"center\">
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $lyceansAccount['id_no'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
 					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $lyceansAccount['id_no'] . "')\" data-target=\"#resetModal\" data-toggle=\"modal\">Reset</button>
@@ -238,63 +238,7 @@ class Useraccounts extends BaseController
 			}
 		}
 
-		echo json_encode($result);
-	}
-
-	public function fetchAllFaculty()
-	{
-		$result = array('data' => array());
-		$lyceans = $this->lyceansModel
-			->where('role', 'faculty')
-			->findAll();
-
-		$count = 0;
-		foreach ($lyceans as $value) {
-			$lyceansAccount = $this->lyceansAccountModel->find($value['id_no']);
-			if ($lyceansAccount) {
-				$result['data'][$count] = array(
-					$value['id_no'],
-					$value['first_name'],
-					$value['last_name'],
-					$value['department'],
-					"<div align=\"center\">
-					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $lyceansAccount['id_no'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
-					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $lyceansAccount['id_no'] . "')\" data-target=\"#resetModal\" data-toggle=\"modal\">Reset</button>
-					</div>"
-				);
-				$count += 1;
-			}
-		}
-
-		echo json_encode($result);
-	}
-
-	public function fetchAllStaff()
-	{
-		$result = array('data' => array());
-		$lyceans = $this->lyceansModel
-			->where('role', 'staff')
-			->findAll();
-
-		$count = 0;
-		foreach ($lyceans as $value) {
-			$lyceansAccount = $this->lyceansAccountModel->find($value['id_no']);
-			if ($lyceansAccount) {
-				$result['data'][$count] = array(
-					$value['id_no'],
-					$value['first_name'],
-					$value['last_name'],
-					$value['department'],
-					"<div align=\"center\">
-					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $lyceansAccount['id_no'] . "')\" data-target=\"#modifyModal\" data-toggle=\"modal\">Modify</button>
-					<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $lyceansAccount['id_no'] . "')\" data-target=\"#resetModal\" data-toggle=\"modal\">Reset</button>
-					</div>"
-				);
-				$count += 1;
-			}
-		}
-
-		echo json_encode($result);
+		return json_encode($result);
 	}
 
 	public function fetchAllHealthPersonnel()
@@ -320,7 +264,7 @@ class Useraccounts extends BaseController
 			}
 		}
 
-		echo json_encode($result);
+		return json_encode($result);
 	}
 
 

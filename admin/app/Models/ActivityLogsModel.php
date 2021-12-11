@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class SystemLogsModel extends Model
 {
     protected $DBGroup              = 'default';
-    protected $table                = 'system_logs';
+    protected $table                = 'activity_logs';
     protected $primaryKey           = 'log_id';
     protected $useAutoIncrement     = true;
     protected $insertID             = 0;
@@ -15,13 +15,11 @@ class SystemLogsModel extends Model
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
     protected $allowedFields        = [
-        'admin_id',
-        'healthpersonnel_id_no',
-        'lycean_id_no',
-        'app_type',
+        'enduser_id',
+        'enduser_type',
         'type',
-        'sub_type',
         'action',
+        'description',
         'user_agent',
         'remote_address',
         'server_address',
