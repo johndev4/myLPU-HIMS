@@ -175,19 +175,19 @@ class Userdata extends BaseController
     public function deleteStudentData($id)
     {
         $this->deleteLyceanData($id);
-        return redirect()->to('userinformations/student');
+        return redirect()->to('userdata/student');
     }
 
     public function deleteFacultyData($id)
     {
         $this->deleteLyceanData($id);
-        return redirect()->to('userinformations/faculty');
+        return redirect()->to('userdata/faculty');
     }
 
     public function deleteStaffData($id)
     {
         $this->deleteLyceanData($id);
-        return redirect()->to('userinformations/staff');
+        return redirect()->to('userdata/staff');
     }
 
     public function deleteHealthPersonnelData($id)
@@ -217,7 +217,7 @@ class Userdata extends BaseController
             }
         }
 
-        return redirect()->to('userinformations/healthpersonnel');
+        return redirect()->to('userdata/healthpersonnel');
     }
 
 
@@ -312,19 +312,19 @@ class Userdata extends BaseController
     public function deleteAllStudentData()
     {
         $this->deleteAllLyceanData();
-        return redirect()->to('userinformations/student');
+        return redirect()->to('userdata/student');
     }
 
     public function deleteAllFacultyData()
     {
         $this->deleteAllLyceanData();
-        return redirect()->to('userinformations/faculty');
+        return redirect()->to('userdata/faculty');
     }
 
     public function deleteAllStaffData()
     {
         $this->deleteAllLyceanData();
-        return redirect()->to('userinformations/staff');
+        return redirect()->to('userdata/staff');
     }
 
     public function deleteAllHealthPersonnelData()
@@ -363,6 +363,6 @@ class Userdata extends BaseController
             }
         }
 
-        return redirect()->to('userinformations/healthpersonnel');
+        return redirect()->to('userdata/healthpersonnel');
     }
 }

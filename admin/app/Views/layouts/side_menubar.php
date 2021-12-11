@@ -106,7 +106,7 @@
                     <ul class="nav nav-treeview">
                         <!-- Student -->
                         <li id="studentInformationNav" class="nav-item">
-                            <a href="<?= site_url('userinformations/student') ?>" class="nav-link selector">
+                            <a href="<?= site_url('userdata/student') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
                                     Student
@@ -116,7 +116,7 @@
 
                         <!-- Faculty -->
                         <li id="facultyInformationNav" class="nav-item">
-                            <a href="<?php echo site_url('userinformations/faculty') ?>" class="nav-link selector">
+                            <a href="<?php echo site_url('userdata/faculty') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
                                     Faculty
@@ -126,7 +126,7 @@
 
                         <!-- Staff -->
                         <li id="staffInformationNav" class="nav-item">
-                            <a href="<?php echo site_url('userinformations/staff') ?>" class="nav-link selector">
+                            <a href="<?php echo site_url('userdata/staff') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
                                     Staff
@@ -136,7 +136,7 @@
 
                         <!-- Health Personnel -->
                         <li id="healthpersonnelInformationNav" class="nav-item">
-                            <a href="<?php echo site_url('userinformations/healthPersonnel') ?>" class="nav-link selector">
+                            <a href="<?php echo site_url('userdata/healthPersonnel') ?>" class="nav-link selector">
                                 <i class="far fa-circle nav-icon text-light"></i>
                                 <p class="text-light">
                                     Health Personnel
@@ -147,8 +147,8 @@
                 </li>
 
                 <!-- Activity Logs -->
-                <li id="systemlogsNav" class="nav-item">
-                    <a href="<?= site_url('systemlogs') ?>" class="nav-link selector">
+                <li id="activitylogsNav" class="nav-item">
+                    <a href="<?= site_url('activitylogs') ?>" class="nav-link selector">
                         <i class="fas fa-file-signature nav-icon text-light"></i>
                         <p class="text-light">
                             Activity Logs

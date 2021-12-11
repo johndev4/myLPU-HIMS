@@ -8,7 +8,7 @@ class Profile extends BaseController
 {
     public function __construct()
     {
-        helper('useraccount');
+        helper(['useraccount', 'activitylogs']);
 		// Page title
 		$this->data['page_title'] = 'Profile';
 		// User fullname

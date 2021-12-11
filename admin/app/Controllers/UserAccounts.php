@@ -414,7 +414,7 @@ class Useraccounts extends BaseController
 						'ADMIN',
 						'User Accounts',
 						'Add LY User',
-						"User \"" . getAdminId() . "\" added user account of \"{$data1['id_no']}\""
+						"User \"" . getAdminId() . "\" added user account with id: \"{$data1['id_no']}\""
 					);
 				} else {
 				}
@@ -478,7 +478,7 @@ class Useraccounts extends BaseController
 						'ADMIN',
 						'User Accounts',
 						'Add HP User',
-						"User \"" . getAdminId() . "\" added user account of \"{$data1['id_no']}\""
+						"User \"" . getAdminId() . "\" added user account with id: \"{$data1['id_no']}\""
 					);
 				} else {
 				}
@@ -671,7 +671,7 @@ class Useraccounts extends BaseController
 					'ADMIN',
 					'User Accounts',
 					'Delete LY User',
-					"User \"" . getAdminId() . "\" deleted the account of \"{$id}\""
+					"User \"" . getAdminId() . "\" deleted the account of user \"{$id}\""
 				);
 			} else {
 			}
@@ -711,7 +711,7 @@ class Useraccounts extends BaseController
 					'ADMIN',
 					'User Accounts',
 					'Delete HP User',
-					"User \"" . getAdminId() . "\" deleted the account of \"{$id}\""
+					"User \"" . getAdminId() . "\" deleted the account of user \"{$id}\""
 				);
 			} else {
 			}
@@ -727,13 +727,11 @@ class Useraccounts extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 			$lyceans = $this->lyceansModel->where('role', $_GET['role'])->findAll();
-			$id = [];
 
-			foreach ($lyceans as $key => $value) {
-				$id[$key] = $value['id_no'];
+			$success = FALSE;
+			foreach ($lyceans as $lycean) {
+				$success = $this->lyceansAccountModel->delete($lycean['id_no']);
 			}
-
-			$success = $this->lyceansAccountModel->delete($id);
 
 			if ($success) {
 				// Create flashdata for database query status
@@ -774,13 +772,11 @@ class Useraccounts extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 			$healthPersonnels = $this->healthPersonnelsModel->findAll();
-			$id = [];
-
-			foreach ($healthPersonnels as $key => $value) {
-				$id[$key] = $value['id_no'];
+			
+			$success = FALSE;
+			foreach ($healthPersonnels as $healthPersonnel) {
+				$success = $this->healthPersonnelsAccountModel->delete($healthPersonnel['id_no']);
 			}
-
-			$success = $this->healthPersonnelsAccountModel->delete($id);
 
 			if ($success) {
 				// Create flashdata for database query status
@@ -825,7 +821,7 @@ class Useraccounts extends BaseController
 					'ADMIN',
 					'User Accounts',
 					'Reset LY Account',
-					"User \"" . getAdminId() . "\" reset the account of \"{$id}\""
+					"User \"" . getAdminId() . "\" reset the account of user \"{$id}\""
 				);
 			} else {
 			}
@@ -871,7 +867,7 @@ class Useraccounts extends BaseController
 					'ADMIN',
 					'User Accounts',
 					'Reset HP Account',
-					"User \"" . getAdminId() . "\" reset the account of \"{$id}\""
+					"User \"" . getAdminId() . "\" reset the account of user \"{$id}\""
 				);
 			} else {
 			}

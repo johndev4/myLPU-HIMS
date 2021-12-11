@@ -8,7 +8,7 @@ class Reports extends BaseController
 {
     public function __construct()
     {
-        helper('useraccount');
+        helper(['useraccount']);
     }
 
     // GET CONSULTATION CATEGORY
