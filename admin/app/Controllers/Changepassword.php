@@ -10,7 +10,7 @@ class Changepassword extends BaseController
     {
         // Page title
         $this->data['page_title'] = 'Change Password';
-        helper(['useraccount', 'systemlogs']);
+        helper(['useraccount', 'activitylogs']);
     }
 
 

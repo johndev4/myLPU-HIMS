@@ -2,7 +2,7 @@
 
 function createLog($enduser_id, $enduser_type, $type, $action, $description)
 {
-    $systemLogsModel = model('App\Models\SystemLogsModel');
+    $activityLogsModel = model('App\Models\ActivityLogsModel');
 
     $data = [
         'enduser_id' => $enduser_id,
@@ -15,7 +15,7 @@ function createLog($enduser_id, $enduser_type, $type, $action, $description)
         'server_address' => $_SERVER['SERVER_ADDR'],
     ];
 
-    $success = $systemLogsModel->save($data);
+    $success = $activityLogsModel->save($data);
     if ($success) return TRUE;
     else return FALSE;
 }

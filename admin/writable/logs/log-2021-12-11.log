@@ -81,3 +81,26 @@ CRITICAL - 2021-12-11 20:05:29 --> Undefined property: App\Controllers\Systemlog
 #3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-12-11 21:51:15 --> Call to undefined function App\Controllers\createLog()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-11 21:53:25 --> Call to a member function save() on null
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Changepassword.php(95): createLog('202100001', 'ADMIN', 'Password', 'Change Password', 'User "202100001...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->updatePassword()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-12-11 22:00:47 --> There is no data to update.
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(646): CodeIgniter\BaseModel->update(NULL, Array)
+#2 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(532): CodeIgniter\Model->update()
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Useraccounts.php(560): App\Controllers\Useraccounts->modifyLyceanAccount('312321')
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Useraccounts->modifyStudentAccount('312321')
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Useraccounts))
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
