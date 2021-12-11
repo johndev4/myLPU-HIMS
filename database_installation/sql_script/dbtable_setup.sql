@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2021 at 09:48 AM
+-- Generation Time: Dec 11, 2021 at 02:05 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `mylpuhims_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activity_logs`
+--
+
+CREATE TABLE `activity_logs` (
+  `log_id` int(11) NOT NULL,
+  `enduser_id` varchar(45) NOT NULL,
+  `enduser_type` varchar(45) NOT NULL,
+  `type` varchar(45) NOT NULL,
+  `action` varchar(45) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  `user_agent` varchar(100) NOT NULL,
+  `remote_address` varchar(45) NOT NULL,
+  `server_address` varchar(45) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -223,31 +243,15 @@ CREATE TABLE `medicines` (
   `dosage` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `system_logs`
---
-
-CREATE TABLE `system_logs` (
-  `log_id` int(11) NOT NULL,
-  `admin_id` varchar(45) DEFAULT NULL,
-  `healthpersonnel_id_no` varchar(45) DEFAULT NULL,
-  `lycean_id_no` varchar(45) DEFAULT NULL,
-  `app_type` varchar(45) NOT NULL,
-  `type` varchar(45) NOT NULL,
-  `sub_type` varchar(45) NOT NULL,
-  `action` varchar(300) NOT NULL,
-  `http_referer` varchar(100) NOT NULL,
-  `remote_address` varchar(45) NOT NULL,
-  `server_address` varchar(45) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activity_logs`
+--
+ALTER TABLE `activity_logs`
+  ADD PRIMARY KEY (`log_id`);
 
 --
 -- Indexes for table `administrators`
@@ -338,17 +342,14 @@ ALTER TABLE `medicines`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `system_logs`
---
-ALTER TABLE `system_logs`
-  ADD PRIMARY KEY (`log_id`),
-  ADD KEY `fk_system_logs_lyceans1_idx` (`lycean_id_no`),
-  ADD KEY `fk_system_logs_health_personnels1_idx` (`healthpersonnel_id_no`),
-  ADD KEY `fk_system_logs_administrators1_idx` (`admin_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `activity_logs`
+--
+ALTER TABLE `activity_logs`
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `health_personnels_notification`
@@ -373,12 +374,6 @@ ALTER TABLE `lyceans_notification`
 --
 ALTER TABLE `medical_files`
   MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `system_logs`
---
-ALTER TABLE `system_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -432,14 +427,6 @@ ALTER TABLE `lyceans_notification`
 --
 ALTER TABLE `medical_files`
   ADD CONSTRAINT `fk_medical_files_consultations1` FOREIGN KEY (`consultation_no`) REFERENCES `consultations` (`consultation_no`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `system_logs`
---
-ALTER TABLE `system_logs`
-  ADD CONSTRAINT `fk_system_logs_administrators1` FOREIGN KEY (`admin_id`) REFERENCES `administrators` (`admin_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_system_logs_health_personnels1` FOREIGN KEY (`healthpersonnel_id_no`) REFERENCES `health_personnels` (`id_no`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_system_logs_lyceans1` FOREIGN KEY (`lycean_id_no`) REFERENCES `lyceans` (`id_no`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

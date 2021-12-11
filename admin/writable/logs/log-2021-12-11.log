@@ -1,0 +1,83 @@
+CRITICAL - 2021-12-11 19:47:33 --> Call to undefined function App\Controllers\getIdNo()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-11 19:47:52 --> Call to undefined function App\Controllers\createLog()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-11 19:48:39 --> Call to undefined function App\Controllers\getIdNo()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-11 19:49:32 --> Call to undefined function App\Controllers\getIdNo()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-11 19:49:33 --> Call to undefined function App\Controllers\getIdNo()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-11 19:49:35 --> Call to undefined function App\Controllers\getIdNo()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-12-11 19:50:43 --> Call to undefined function App\Controllers\getIdNo()
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Auth->index()
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2021-12-11 19:52:11 --> Unknown column 'user_agent' in 'field list'
+CRITICAL - 2021-12-11 19:52:11 --> Unknown column 'user_agent' in 'field list'
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('INSERT INTO `sy...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sy...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sy...')
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sy...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\myLPU-HIMS\admin\app\Helpers\systemlogs_helper.php(18): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Changepassword.php(65): createLog('202100001', 'ADMIN', 'Login', 'UserLogin', 'User "202100001...')
+#10 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->index()
+#11 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#12 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+ERROR - 2021-12-11 19:52:13 --> Unknown column 'user_agent' in 'field list'
+CRITICAL - 2021-12-11 19:52:13 --> Unknown column 'user_agent' in 'field list'
+#0 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\MySQLi\Connection.php(280): mysqli->query('INSERT INTO `sy...')
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(663): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sy...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseConnection.php(591): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sy...')
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sy...', Array, false)
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\myLPU-HIMS\admin\app\Helpers\systemlogs_helper.php(18): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Changepassword.php(65): createLog('202100001', 'ADMIN', 'Login', 'UserLogin', 'User "202100001...')
+#10 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Changepassword->index()
+#11 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Changepassword))
+#12 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2021-12-11 20:05:29 --> Undefined property: App\Controllers\Systemlogs::$sytemLogsModel
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Systemlogs.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 33)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Systemlogs->fetchAllLogs()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Systemlogs))
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

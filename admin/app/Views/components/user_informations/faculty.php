@@ -130,7 +130,7 @@
             searching: true,
             ajax: {
                 type: 'post',
-                url: '<?= site_url('userinformations/fetchAllFaculty') ?>',
+                url: '<?= site_url('userinformations/fetchAllLycean/faculty') ?>',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'

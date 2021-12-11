@@ -100,6 +100,15 @@ class Profile extends BaseController
                     ]);
                     // Create flashdata for database query status
                     session()->setFlashdata('success', "Successfully updated.");
+
+                    // SYSTEM LOG
+                    createLog(
+                        getAdminId(),
+                        'ADMIN',
+                        'Username',
+                        'Change Username',
+                        "User \"" . getAdminId() . "\" changed the username"
+                    );
                 }
             } else {
                 session()->setFlashdata('u_validation', $this->validator);
@@ -142,6 +151,15 @@ class Profile extends BaseController
                         ]);
                         // Create flashdata for database query status
                         session()->setFlashdata('password_changed', TRUE);
+
+                        // SYSTEM LOG
+                        createLog(
+                            getAdminId(),
+                            'ADMIN',
+                            'Password',
+                            'Change Password',
+                            "User \"" . getAdminId() . "\" changed the password"
+                        );
                     } else {
                     }
                 } else {

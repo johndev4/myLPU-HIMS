@@ -10,6 +10,7 @@ class Changepassword extends BaseController
     {
         // Page title
         $this->data['page_title'] = 'Change Password';
+        helper(['useraccount', 'systemlogs']);
     }
 
 
@@ -54,7 +55,6 @@ class Changepassword extends BaseController
                 return redirect()->to('dashboard');
             }
         }
-
         // Display page view
         return view('change_password', $this->data);
     }
@@ -85,6 +85,15 @@ class Changepassword extends BaseController
                         ]);
                         // Set logged_in status to TRUE
                         session()->set('logged_in', TRUE);
+
+                        // SYSTEM LOG
+                        createLog(
+                            getAdminId(),
+                            'ADMIN',
+                            'Password',
+                            'Change Password',
+                            "User \"" . getAdminId() . "\" change the password"
+                        );
                     } else {
                     }
                 } else {

@@ -661,7 +661,7 @@
             searching: true,
             ajax: {
                 type: 'get',
-                url: '<?= site_url('useraccounts/fetchAllStaff') ?>',
+                url: '<?= site_url('useraccounts/fetchAllLycean/staff') ?>',
                 contentType: ' application/x-www-form-urlencoded; charset=UTF-8',
                 data: {
                     <?= csrf_token() ?>: '<?= csrf_hash() ?>'
