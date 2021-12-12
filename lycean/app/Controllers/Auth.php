@@ -8,6 +8,7 @@ class Auth extends BaseController
 {
 	public function __construct()
 	{
+		helper(['useraccount', 'activitylogs']);
 		// Page title
 		$this->data['page_title'] = 'Login';
 	}
@@ -36,6 +37,14 @@ class Auth extends BaseController
 					->where('password', session()->get('pwd'))
 					->set(['locked' => 0])->update();
 
+				// CREATE ACTIVITY LOG
+				createLog(
+					getIdNo(),
+					'LYCEAN',
+					'Auth',
+					'User Login',
+					"User \"" . getIdNo() . "\" login to the myLPU Clinic"
+				);
 				return redirect()->to('dashboard');
 			} else if ($user && $user['locked'] >= 3) {
 				$this->data['error'] = 'Your account is locked.';
@@ -71,8 +80,17 @@ class Auth extends BaseController
 	// -----------------------------------------------------------------
 	public function logout()
 	{
+		$userID = getIdNo();
 		// Delete login session on client
 		session()->destroy();
+		// CREATE ACTIVITY LOG
+		createLog(
+			$userID,
+			'LYCEAN',
+			'Auth',
+			'User Logout',
+			"User \"" . $userID . "\" logout from the myLPU Clinic"
+		);
 		// Redirect to login page
 		return redirect()->to('login');
 	}

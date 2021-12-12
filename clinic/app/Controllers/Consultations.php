@@ -12,14 +12,11 @@ class Consultations extends BaseController
 		// Page title
 		$this->data['page_title'] = 'Consultations';
 		// User fullname
-        $this->data['fullname'] = getUserFullname();
+		$this->data['fullname'] = getUserFullname();
 		// User ID No.
 		$this->data['idNo'] = getIdNo();
 		// User designation
 		$this->data['designation'] = getUserDesignation();
-
-		// Base Directory of medical files
-		$this->baseDir = './uploaded/medical_files/';
 	}
 
 
@@ -197,9 +194,9 @@ class Consultations extends BaseController
 	}
 
 
-	// ACCEPT NEW REQUEST BY ID
+	// ACCEPT NEW REQUEST CONSULTATION BY ID
 	// -----------------------------------------------------------------
-	public function acceptRequestById($id)
+	public function acceptConsultationById($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
@@ -219,6 +216,15 @@ class Consultations extends BaseController
 
 				if ($success1 && $success2) {
 					session()->setFlashdata('success', 'Ok');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getIdNo(),
+						'CLINIC',
+						'Consultations',
+						'Accept Consultation',
+						"User \"" . getIdNo() . "\" accepted the consultation \"{$id}\""
+					);
 				} else {
 				}
 			} else {
@@ -230,9 +236,9 @@ class Consultations extends BaseController
 	}
 
 
-	// REJECT NEW REQUEST BY ID
+	// REJECT NEW REQUEST CONSULTATION BY ID
 	// -----------------------------------------------------------------
-	public function rejectRequestById($id)
+	public function rejectConsultationById($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
@@ -251,6 +257,15 @@ class Consultations extends BaseController
 
 				if ($success1 && $success2) {
 					session()->setFlashdata('success', 'Ok');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getIdNo(),
+						'CLINIC',
+						'Consultations',
+						'Reject Consultation',
+						"User \"" . getIdNo() . "\" rejected the consultation \"{$id}\""
+					);
 				} else {
 				}
 			} else {
@@ -278,13 +293,22 @@ class Consultations extends BaseController
 				if ($success2) {
 					session()->setFlashdata('success', 'Done');
 				}
+
+				// CREATE ACTIVITY LOG
+				createLog(
+					getIdNo(),
+					'CLINIC',
+					'Consultations',
+					'Done Consultation',
+					"User \"" . getIdNo() . "\" set consultation \"{$id}\" to done"
+				);
 			}
 		}
 
 		return redirect()->to('consultations');
 	}
 
-	public function sendMedicalFilesById($id)
+	public function uploadMedicalFilesById($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -294,24 +318,26 @@ class Consultations extends BaseController
 
 				foreach ($files['medicalfiles'] as $key => $file) {
 					$fileName = $file->getName();
-					$fileDirectory = $this->baseDir . $consultation['lycean_id_no'];
+					$fileDirectory = $this->baseDir['medical_files'] . $consultation['lycean_id_no'] . '/';
 
 					if ($file->isValid() && !$file->hasMoved()) {
 						for ($i = 0; true; $i += 1) {
-							if (!file_exists($fileDirectory . '/' . $fileName)) {
+							if (!file_exists($fileDirectory . $fileName)) {
 								$success1[$key] = $file->move($fileDirectory, $fileName);
 
 								$success2[$key] = $this->medicalFilesModel->save([
 									'consultation_no' => $id,
-									'file_path' => $fileDirectory . '/' . $fileName
+									'file_path' => $fileDirectory . $fileName
 								]);
 
-								$success3[$key] = $this->consultationsModel
-									->where('consultation_no', $id)
-									->set([
-										'status' => 'done'
-									])->update();
-
+								// CREATE ACTIVITY LOG
+								createLog(
+									getIdNo(),
+									'CLINIC',
+									'Consultations',
+									'Upload File',
+									"User \"" . getIdNo() . "\" uploaded a file: \"{$fileName}\" for consultation \"{$id}\""
+								);
 								break;
 							} else {
 								$fileName = explode('.', $file->getName())[0] . ' (' . $i . ').' . $file->getExtension();
@@ -320,7 +346,13 @@ class Consultations extends BaseController
 					}
 				}
 
-				if ($this->isSuccess($success1) && $this->isSuccess($success2) && $this->isSuccess($success3)) {
+				$success3 = $this->consultationsModel
+					->where('consultation_no', $id)
+					->set([
+						'status' => 'done'
+					])->update();
+
+				if ($this->isSuccess($success1) && $this->isSuccess($success2) && $success3) {
 					$consultation = $this->consultationsModel->find($id);
 					$success4 = $this->setNotification($consultation, 'consultationDone');
 					$success5 = $this->setNotification($consultation, 'consultationSendFile');
@@ -345,41 +377,6 @@ class Consultations extends BaseController
 			}
 		}
 		return true;
-	}
-
-
-	// RUN ONLINE STATE
-	// -----------------------------------------------------------------
-	public function runOnlineState()
-	{
-		if (session()->get('available') === TRUE) {
-			$success = $this->userAccountModel
-				->where('id_no', getIdNo())
-				->set([
-					'last_activity' => date('Y-m-d h:i')
-				])->update();
-
-			if ($success) {
-			}
-		}
-	}
-
-
-	// SET USER ONLINE STATUS STATE
-	// -----------------------------------------------------------------
-	public function setOnlineStatusState($state)
-	{
-		if ($state == 'true') {
-			session()->set('available', TRUE);
-		} else {
-			session()->set('available', FALSE);
-			// Clear last activity
-			$this->userAccountModel
-				->where('id_no', getIdNo())
-				->set([
-					'last_activity' => ''
-				])->update();
-		}
 	}
 
 
@@ -416,6 +413,41 @@ class Consultations extends BaseController
 			'status' => 'unread',
 			'link' => $link
 		]);
+	}
+
+
+	// SET USER ONLINE STATUS STATE
+	// -----------------------------------------------------------------
+	public function setOnlineStatusState($state)
+	{
+		if ($state == 'true') {
+			session()->set('available', TRUE);
+		} else {
+			session()->set('available', FALSE);
+			// Clear last activity
+			$this->userAccountModel
+				->where('id_no', getIdNo())
+				->set([
+					'last_activity' => ''
+				])->update();
+		}
+	}
+
+
+	// RUN ONLINE STATE
+	// -----------------------------------------------------------------
+	public function runOnlineState()
+	{
+		if (session()->get('available') === TRUE) {
+			$success = $this->userAccountModel
+				->where('id_no', getIdNo())
+				->set([
+					'last_activity' => date('Y-m-d h:i')
+				])->update();
+
+			if ($success) {
+			}
+		}
 	}
 
 
@@ -541,14 +573,14 @@ class Consultations extends BaseController
 						foreach ($toDeleteConsultations as $consultation) {
 							$success1 = $this->medicalFilesModel->where('consultation_no', $consultation['consultation_no'])->delete();
 							// Delete directory
-							if (file_exists($this->baseDir . $consultation['lycean_id_no'])) {
-								$files = glob($this->baseDir . $consultation['lycean_id_no'] . '/*');
+							if (file_exists($this->baseDir['medical_files'] . $consultation['lycean_id_no'])) {
+								$files = glob($this->baseDir['medical_files'] . $consultation['lycean_id_no'] . '/*');
 
 								foreach ($files as $file) {
 									unlink($file);
 								}
 
-								$success2 =  rmdir($this->baseDir . $consultation['lycean_id_no']);
+								$success2 =  rmdir($this->baseDir['medical_files'] . $consultation['lycean_id_no']);
 							} else {
 								$success2 = TRUE;
 							}
@@ -573,6 +605,15 @@ class Consultations extends BaseController
 
 					if ($success1 && $success2 && $success3) {
 						session()->setFlashdata('success', 'Successfully deleted.');
+
+						// CREATE ACTIVITY LOG
+						createLog(
+							getIdNo(),
+							'CLINIC',
+							'Consultations',
+							'Clear History',
+							"User \"" . getIdNo() . "\" cleared the consultation history from \"{$fromDateRange}\" to \"{$toDateRange}\""
+						);
 					} else {
 						session()->setFlashdata('success', 'No data was changed.');
 					}
@@ -591,14 +632,14 @@ class Consultations extends BaseController
 							->delete();
 
 						// Delete directory
-						if (file_exists($this->baseDir . $consultation['lycean_id_no'])) {
-							$files = glob($this->baseDir . $consultation['lycean_id_no'] . '/*');
+						if (file_exists($this->baseDir['medical_files'] . $consultation['lycean_id_no'])) {
+							$files = glob($this->baseDir['medical_files'] . $consultation['lycean_id_no'] . '/*');
 
 							foreach ($files as $file) {
 								unlink($file);
 							}
 
-							$success2 =  rmdir($this->baseDir . $consultation['lycean_id_no']);
+							$success2 =  rmdir($this->baseDir['medical_files'] . $consultation['lycean_id_no']);
 						} else {
 							$success2 = TRUE;
 						}
@@ -614,6 +655,15 @@ class Consultations extends BaseController
 
 				if ($success1 && $success2 && $success3) {
 					session()->setFlashdata('success', 'Successfully deleted.');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getIdNo(),
+						'CLINIC',
+						'Consultations',
+						'Clear History',
+						"User \"" . getIdNo() . "\" cleared all the consultation history"
+					);
 				} else {
 					session()->setFlashdata('success', 'No data was changed.');
 				}

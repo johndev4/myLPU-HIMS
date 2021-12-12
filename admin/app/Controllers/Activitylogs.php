@@ -30,12 +30,12 @@ class Activitylogs extends BaseController
     public function fetchAllLogs()
     {
         $result = array('data' => array());
-        $logs = $this->systemLogsModel->findAll();
+        $logs = $this->activityLogsModel->findAll();
 
         foreach ($logs as $key => $log) {
             $result['data'][$key] = array(
-                $log['log_id'],
-                $log['enduser_id'],
+                // $log['log_id'],
+                // $log['enduser_id'],
                 $log['enduser_type'],
                 $log['type'],
                 $log['action'],

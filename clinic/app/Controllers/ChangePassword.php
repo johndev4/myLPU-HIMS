@@ -87,6 +87,15 @@ class Changepassword extends BaseController
                         ]);
                         // Set logged_in status to TRUE
                         session()->set('logged_in', TRUE);
+
+                        // CREATE ACTIVITY LOG
+                        createLog(
+                            getIdNo(),
+                            'CLINIC',
+                            'Password',
+                            'Change Password',
+                            "User \"" . getIdNo() . "\" changed the password"
+                        );
                     } else {
                     }
                 } else {

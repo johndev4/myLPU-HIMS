@@ -9,14 +9,14 @@ class Profile extends BaseController
     public function __construct()
     {
         helper(['useraccount', 'activitylogs']);
-		// Page title
-		$this->data['page_title'] = 'Profile';
-		// User fullname
+        // Page title
+        $this->data['page_title'] = 'Profile';
+        // User fullname
         $this->data['fullname'] = getUserFullname();
         // User ID No.
         $this->data['idNo'] = getIdNo();
-		// User designation
-		$this->data['designation'] = getUserDesignation();
+        // User designation
+        $this->data['designation'] = getUserDesignation();
     }
 
 
@@ -97,6 +97,15 @@ class Profile extends BaseController
                         ]);
                         // Create flashdata for database query status
                         session()->setFlashdata('password_changed', TRUE);
+
+                        // CREATE ACTIVITY LOG
+                        createLog(
+                            getIdNo(),
+                            'CLINIC',
+                            'Password',
+                            'Change Password',
+                            "User \"" . getIdNo() . "\" changed the password"
+                        );
                     } else {
                     }
                 } else {

@@ -41,10 +41,10 @@ class Auth extends BaseController
 				// CREATE ACTIVITY LOG
 				createLog(
 					getIdNo(),
-					'ADMIN',
+					'CLINIC',
 					'Auth',
 					'User Login',
-					"User \"" . getAdminId() . "\" login to the system"
+					"User \"" . getIdNo() . "\" login to the myLPU HIMS"
 				);
 				return redirect()->to('dashboard');
 			} else if ($user && $user['locked'] >= 3) {
@@ -94,10 +94,10 @@ class Auth extends BaseController
 		// CREATE ACTIVITY LOG
 		createLog(
 			$userID,
-			'ADMIN',
+			'CLINIC',
 			'Auth',
 			'User Logout',
-			"User \"" . $userID . "\" logout from the system"
+			"User \"" . $userID . "\" logout from the myLPU HIMS"
 		);
 		// Redirect to login page
 		return redirect()->to('login');

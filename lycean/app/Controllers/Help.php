@@ -8,7 +8,7 @@ class Help extends BaseController
 {
 	public function __construct()
 	{
-		helper('useraccount');
+		helper(['useraccount']);
 		// Page title
 		$this->data['page_title'] = 'Help Menu';
 

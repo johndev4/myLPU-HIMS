@@ -184,7 +184,7 @@
                                             <th>Consultation No.</th>
                                             <th>Date of Request</th>
                                             <th>Physician</th>
-                                            <th>Student Name</th>
+                                            <th>Student</th>
                                             <th>Department</th>
                                             <th></th>
                                         </tr>

@@ -18,7 +18,7 @@ class Useraccounts extends BaseController
 
 	// VALIDATION RULES
 	// -----------------------------------------------------------------
-	private function getLyceanRules($id = null)
+	private function getLyceanDataRules($id = null)
 	{
 		if ($id !== null) {
 			$lyceansAccount = $this->lyceansAccountModel->find($id);
@@ -112,7 +112,7 @@ class Useraccounts extends BaseController
 		];
 	}
 
-	private function getHealthPersonnelRules($id = null)
+	private function getHealthPersonnelDataRules($id = null)
 	{
 		if ($id !== null) {
 			$healthPersonnelsAccount = $this->healthPersonnelsAccountModel->find($id);
@@ -379,7 +379,7 @@ class Useraccounts extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-			if ($this->validate($this->getLyceanRules())) {
+			if ($this->validate($this->getLyceanDataRules())) {
 				$data1 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
@@ -414,7 +414,7 @@ class Useraccounts extends BaseController
 						'ADMIN',
 						'User Accounts',
 						'Add LY User',
-						"User \"" . getAdminId() . "\" added user account with id: \"{$data1['id_no']}\""
+						"User \"" . getAdminId() . "\" added a user account with id_no: \"{$data1['id_no']}\""
 					);
 				} else {
 				}
@@ -447,7 +447,7 @@ class Useraccounts extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-			if ($this->validate($this->getHealthPersonnelRules())) {
+			if ($this->validate($this->getHealthPersonnelDataRules())) {
 				$data1 = [
 					'id_no' => htmlspecialchars($_GET['id_no']),
 					'first_name' => htmlspecialchars($_GET['first_name']),
@@ -478,7 +478,7 @@ class Useraccounts extends BaseController
 						'ADMIN',
 						'User Accounts',
 						'Add HP User',
-						"User \"" . getAdminId() . "\" added user account with id: \"{$data1['id_no']}\""
+						"User \"" . getAdminId() . "\" added a user account with id_no: \"{$data1['id_no']}\""
 					);
 				} else {
 				}
@@ -498,7 +498,7 @@ class Useraccounts extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-			if ($this->validate($this->getLyceanRules($id))) {
+			if ($this->validate($this->getLyceanDataRules($id))) {
 				// TEMP DATA FOR ACTIVITY LOG
 				$tempData1 = $this->lyceansModel->find($id);
 				$tempData2 = $this->lyceansAccountModel->find($id);
@@ -540,7 +540,7 @@ class Useraccounts extends BaseController
 								'ADMIN',
 								'User Accounts',
 								'Modify LY User',
-								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+								"User \"" . getAdminId() . "\" set {$key} field to \"{$value}\" of user \"{$id}\""
 							);
 						}
 					}
@@ -551,7 +551,7 @@ class Useraccounts extends BaseController
 								'ADMIN',
 								'User Accounts',
 								'Modify LY User',
-								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+								"User \"" . getAdminId() . "\" set {$key} field to \"{$value}\" of user \"{$id}\""
 							);
 						}
 					}
@@ -587,7 +587,7 @@ class Useraccounts extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-			if ($this->validate($this->getHealthPersonnelRules($id))) {
+			if ($this->validate($this->getHealthPersonnelDataRules($id))) {
 				// TEMP DATA FOR ACTIVITY LOG
 				$tempData1 = $this->healthPersonnelModel->find($id);
 				$tempData2 = $this->healthPersonnelsAccountModel->find($id);
@@ -625,7 +625,7 @@ class Useraccounts extends BaseController
 								'ADMIN',
 								'User Accounts',
 								'Modify HP User',
-								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+								"User \"" . getAdminId() . "\" set {$key} field to \"{$value}\" of user \"{$id}\""
 							);
 						}
 					}
@@ -636,7 +636,7 @@ class Useraccounts extends BaseController
 								'ADMIN',
 								'User Accounts',
 								'Modify HP User',
-								"User \"" . getAdminId() . "\" changed {$key} field to \"{$value}\""
+								"User \"" . getAdminId() . "\" set {$key} field to \"{$value}\" of user \"{$id}\""
 							);
 						}
 					}

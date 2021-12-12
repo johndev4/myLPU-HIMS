@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\LyceansModel;
 
 class Records extends BaseController
 {
@@ -12,7 +13,7 @@ class Records extends BaseController
 		// Page title
 		$this->data['page_title'] = 'Records';
 		// User fullname
-        $this->data['fullname'] = getUserFullname();
+		$this->data['fullname'] = getUserFullname();
 		// User ID No.
 		$this->data['idNo'] = getIdNo();
 		// User designation
@@ -43,7 +44,7 @@ class Records extends BaseController
 		];
 	}
 
-	private function getInformationRules()
+	private function getLyceanDataRules()
 	{
 		return  [
 			'gender' => [
@@ -200,6 +201,34 @@ class Records extends BaseController
 	}
 
 
+	// FETCH RECORDS BY ID
+	// ---------------------------------------------------------
+	public function fetchAllRecordsById($id)
+	{
+		$healthRecord = $this->healthRecordsModel->where('id_no', $id)->findAll();
+		$result = "";
+
+		foreach ($healthRecord as $key => $value) {
+			$fileName = explode("/", $value['file_path'])[4];
+
+			$data = "<tr>
+			<td>" . $key + 1 . "</td>
+			<td><a href=\"" . base_url($value['file_path']) . "\" target=\"_blank\">" . $fileName . "</a></td>
+			<td>" . $value['created_at'] . "</td>
+			<td><button type=\"button\" class=\"btn text-danger\" onclick=\"setDeleteActionForm(" . $value['record_id'] . ")\" data-toggle=\"modal\" data-target=\"#tabledeleteModal\">Delete</button></td>
+			<tr>";
+
+			$result .= $data;
+		}
+
+		if ($result === "") {
+			$result = "<tr><td></td><td><h5 class=\"text-gray\" style=\"margin: 65px 0 0 180px;\">No medical records to display.</h5></td><td></td><td></td></tr>";
+		}
+
+		return $result;
+	}
+
+
 	// UPLOAD RECORD
 	// ---------------------------------------------------------
 	private function uploadRecord()
@@ -209,23 +238,32 @@ class Records extends BaseController
 
 			if ($this->validate($this->getRecordRules())) {
 				$file = $this->request->getFile('medicalfile');
-				$lyceanName = $lycean['last_name'] . ", " . $lycean['first_name'];
-				$tempFileName = $_POST['filename'] != "" ? $_POST['filename'] : str_replace('.pdf', '', $file->getName());
-				$fileName = $lyceanName . " - " . $tempFileName . "." . $file->getExtension();
-				$fileDirectory = $this->baseDir . $lycean['id_no'];
+				$fileName = $_POST['filename'] != "" ?
+					$_POST['filename'] . "." . $file->getExtension() : $file->getName();
+				$fileDirectory = $this->baseDir['medical_record'] . $lycean['id_no'];
 
 				if ($file->isValid() && !$file->hasMoved()) {
 					if (!file_exists($fileDirectory . '/' . $fileName)) {
 						$success1 = $file->move($fileDirectory, $fileName);
 
-						$success2 = $this->healthRecordsModel->save([
+						$data = [
 							'id_no' => $lycean['id_no'],
 							'file_path' => $fileDirectory . '/' . $fileName
-						]);
+						];
+						$success2 = $this->healthRecordsModel->save($data);
 
 						if ($success1 && $success2) {
 							session()->setFlashdata('success', "Successfully uploaded.");
 							session()->setFlashdata('postData', json_encode($_POST));
+
+							// CREATE ACTIVITY LOG
+							createLog(
+								getIdNo(),
+								'CLINIC',
+								'Records',
+								'Upload Record',
+								"User \"" . getIdNo() . "\" uploaded a medical record: \"{$fileName}\" for {$lycean['role']} \"{$lycean['id_no']}\""
+							);
 						} else {
 						}
 					} else {
@@ -264,40 +302,14 @@ class Records extends BaseController
 	}
 
 
-	// FETCH RECORDS BY ID
-	// ---------------------------------------------------------
-	public function fetchAllRecordsById($id)
-	{
-		$healthRecord = $this->healthRecordsModel->where('id_no', $id)->findAll();
-		$result = "";
-
-		foreach ($healthRecord as $key => $value) {
-			$fileName = explode("/", $value['file_path'])[4];
-
-			$data = "<tr>
-			<td>" . $key + 1 . "</td>
-			<td><a href=\"" . base_url($value['file_path']) . "\" target=\"_blank\">" . $fileName . "</a></td>
-			<td>" . $value['created_at'] . "</td>
-			<td><button type=\"button\" class=\"btn text-danger\" onclick=\"setDeleteActionForm(" . $value['record_id'] . ")\" data-toggle=\"modal\" data-target=\"#tabledeleteModal\">Delete</button></td>
-			<tr>";
-
-			$result .= $data;
-		}
-
-		if ($result === "") {
-			$result = "<tr><td></td><td><h5 class=\"text-gray\" style=\"margin: 65px 0 0 180px;\">No medical records to display.</h5></td><td></td><td></td></tr>";
-		}
-
-		return $result;
-	}
-
-
 	// DELETE RECORD
 	// ---------------------------------------------------------
 	private function deleteRecord($id)
 	{
 		$healthRecord = $this->healthRecordsModel->find($id);
+		$lycean = $this->lyceansModel->find($healthRecord['id_no']);
 		$filePath = $healthRecord['file_path'];
+		$fileName = explode('/', $healthRecord['file_path'])[4];
 
 		if (file_exists($filePath)) {
 			$success1 = $this->healthRecordsModel->delete($id);
@@ -311,6 +323,15 @@ class Records extends BaseController
 			session()->setFlashdata('success', "Successfully deleted.");
 			$_POST['id_no'] = $healthRecord['id_no'];
 			session()->setFlashdata('postData', json_encode($_POST));
+
+			// CREATE ACTIVITY LOG
+			createLog(
+				getIdNo(),
+				'CLINIC',
+				'Records',
+				'Delete Record',
+				"User \"" . getIdNo() . "\" deleted a medical record: \"{$fileName}\" for {$lycean['role']} \"{$lycean['id_no']}\""
+			);
 		}
 
 		return redirect()->to('records/student');
@@ -335,13 +356,16 @@ class Records extends BaseController
 	}
 
 
-	// MODIFY INFORMATION
+	// MODIFY DATA
 	// ---------------------------------------------------------
-	private function modifyInformation($id)
+	private function modifyData($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-			if ($this->validate($this->getInformationRules())) {
+			if ($this->validate($this->getLyceanDataRules())) {
+				// TEMP DATA FOR ACTIVITY LOG
+				$tempData = $this->lyceansModel->find($id);
+
 				$data = [
 					'birth_date' => htmlspecialchars(date($_GET['birth_date'])),
 					'gender' => htmlspecialchars($_GET['gender']),
@@ -360,6 +384,19 @@ class Records extends BaseController
 					session()->setFlashdata('success', 'Successfully updated.');
 					$_POST['id_no'] = $id;
 					session()->setFlashdata('postData', json_encode($_POST));
+
+					// CREATE ACTIVITY LOG
+					foreach ($data as $key => $value) {
+						if ($tempData[$key] != $value) {
+							createLog(
+								getIdNo(),
+								'CLINIC',
+								'Records',
+								'Modify Data',
+								"User \"" . getIdNo() . "\" set {$key} field to \"{$value}\" of {$tempData['role']} \"{$id}\""
+							);
+						}
+					}
 				} else {
 				}
 			} else {
@@ -370,21 +407,21 @@ class Records extends BaseController
 		}
 	}
 
-	public function modifyStudentInformation($id)
+	public function modifyStudentData($id)
 	{
-		$this->modifyInformation($id);
+		$this->modifyData($id);
 		return redirect()->to('records/student');
 	}
 
-	public function modifyFacultyInformation($id)
+	public function modifyFacultyData($id)
 	{
-		$this->modifyInformation($id);
+		$this->modifyData($id);
 		return redirect()->to('records/faculty');
 	}
 
-	public function modifyStaffInformation($id)
+	public function modifyStaffData($id)
 	{
-		$this->modifyInformation($id);
+		$this->modifyData($id);
 		return redirect()->to('records/staff');
 	}
 }

@@ -557,7 +557,7 @@
     function constructModifyModal(id, obj = {
         error: false
     }) {
-        $('#modifyModalForm').prop('action', '<?= site_url('records/modifyStaffInformation') ?>/' + id);
+        $('#modifyModalForm').prop('action', '<?= site_url('records/modifyStaffData') ?>/' + id);
         if (obj['error'] == false) {
             $('#mod_birthdate').val($('#birthdate').text() == '---' ? '' : formatDate($('#birthdate').text()));
             $('#mod_gender').val($('#gender').text() == '---' ? '' : $('#gender').text());

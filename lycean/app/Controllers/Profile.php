@@ -8,7 +8,7 @@ class Profile extends BaseController
 {
     public function __construct()
     {
-        helper('useraccount');
+        helper(['useraccount', 'activitylogs']);
         // Page title
         $this->data['page_title'] = 'Profile';
         // User fullname
@@ -95,6 +95,15 @@ class Profile extends BaseController
                         ]);
                         // Create flashdata for database query status
                         session()->setFlashdata('password_changed', TRUE);
+
+                        // CREATE ACTIVITY LOG
+                        createLog(
+                            getIdNo(),
+                            'LYCEAN',
+                            'Password',
+                            'Change Password',
+                            "User \"" . getIdNo() . "\" changed the password"
+                        );
                     } else {
                     }
                 } else {

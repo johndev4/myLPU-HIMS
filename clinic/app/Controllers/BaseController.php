@@ -74,7 +74,9 @@ class BaseController extends Controller
 		// -------------------------------------------------------------
 
 		// Base Directory of medical records
-		$this->baseDir = './uploaded/medical_records/';
+		$this->baseDir['medical_records'] = './uploaded/medical_records/';
+		// Base Directory of medical files
+		$this->baseDir['medical_files'] = './uploaded/medical_files/';
 
 
 		

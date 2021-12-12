@@ -38,7 +38,7 @@ class Filters extends BaseConfig
             // 'honeypot',
             'csrf' => [
                 'except' => [
-                    'consultations/sendMedicalFilesById/*',
+                    'consultations/uploadMedicalFilesById/*',
                     'records/uploadStudentRecord',
                     'records/uploadFacultyRecord',
                     'records/uploadStaffRecord'

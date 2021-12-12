@@ -11,6 +11,7 @@ class Reports extends BaseController
         helper(['useraccount']);
     }
 
+    
     // GET CONSULTATION CATEGORY
     // -----------------------------------------------------------------
     private function getConsultationCategory()

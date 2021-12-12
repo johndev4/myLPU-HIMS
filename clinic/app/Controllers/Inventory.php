@@ -12,7 +12,7 @@ class Inventory extends BaseController
 		// Page title
 		$this->data['page_title'] = 'Inventory';
 		// User fullname
-        $this->data['fullname'] = getUserFullname();
+		$this->data['fullname'] = getUserFullname();
 		// User ID No.
 		$this->data['idNo'] = getIdNo();
 		// User designation
@@ -506,6 +506,15 @@ class Inventory extends BaseController
 				if ($success) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully added.');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getIdNo(),
+						'CLINIC',
+						'Inventory',
+						'Add Medicine',
+						"User \"" . getIdNo() . "\" added a medicine with product_id: \"{$data['product_id']}\""
+					);
 				} else {
 				}
 			} else {
@@ -534,6 +543,15 @@ class Inventory extends BaseController
 				if ($success) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully added.');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getIdNo(),
+						'CLINIC',
+						'Inventory',
+						'Add Batch',
+						"User \"" . getIdNo() . "\" added a batch of medicine \"{$data['product_id']}\" with batch_id: \"{$data['batch_id']}\""
+					);
 				} else {
 				}
 			} else {
@@ -561,6 +579,15 @@ class Inventory extends BaseController
 				if ($success) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully added.');
+
+					// CREATE ACTIVITY LOG
+					createLog(
+						getIdNo(),
+						'CLINIC',
+						'Inventory',
+						'Add Equipment',
+						"User \"" . getIdNo() . "\" added an equipment with product_id: \"{$data['product_id']}\""
+					);
 				} else {
 				}
 			} else {
@@ -580,6 +607,9 @@ class Inventory extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getMedicineRules($id))) {
+				// TEMP DATA FOR ACTIVITY LOG
+				$tempData = $this->medicinesModel->find($id);
+
 				$data = [
 					'manufacturer' => htmlspecialchars($_GET['manufacturer']),
 					'generic_name' => htmlspecialchars($_GET['generic_name']),
@@ -594,6 +624,19 @@ class Inventory extends BaseController
 				if ($success) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully updated.');
+
+					// CREATE ACTIVITY LOG
+					foreach ($data as $key => $value) {
+						if ($tempData[$key] != $value) {
+							createLog(
+								getIdNo(),
+								'CLINIC',
+								'Inventory',
+								'Modify Medicine',
+								"User \"" . getIdNo() . "\" set {$key} field to \"{$value}\" of medicine \"{$id}\""
+							);
+						}
+					}
 				} else {
 				}
 			} else {
@@ -611,6 +654,9 @@ class Inventory extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getBatchRules($id))) {
+				// TEMP DATA FOR ACTIVITY LOG
+				$tempData = $this->batchesModel->find($id);
+
 				$data = [
 					'product_id' => htmlspecialchars($_GET['product_name']),
 					'stock_in' => htmlspecialchars($_GET['stock_in']),
@@ -623,6 +669,19 @@ class Inventory extends BaseController
 				if ($success) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully updated.');
+
+					// CREATE ACTIVITY LOG
+					foreach ($data as $key => $value) {
+						if ($tempData[$key] != $value) {
+							createLog(
+								getIdNo(),
+								'CLINIC',
+								'Inventory',
+								'Modify Batch',
+								"User \"" . getIdNo() . "\" set {$key} field to \"{$value}\" of batch \"{$id}\" of medicine \"{$data['product_id']}\""
+							);
+						}
+					}
 				} else {
 				}
 			} else {
@@ -640,6 +699,9 @@ class Inventory extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 			if ($this->validate($this->getEquipmentRules($id))) {
+				// TEMP DATA FOR ACTIVITY LOG
+				$tempData = $this->equipmentsModel->find($id);
+
 				$data = [
 					'product_name' => htmlspecialchars($_GET['product_name']),
 					'qty' => htmlspecialchars($_GET['qty'])
@@ -651,6 +713,19 @@ class Inventory extends BaseController
 				if ($success) {
 					// Create flashdata for database query status
 					session()->setFlashdata('success', 'Successfully updated.');
+
+					// CREATE ACTIVITY LOG
+					foreach ($data as $key => $value) {
+						if ($tempData[$key] != $value) {
+							createLog(
+								getIdNo(),
+								'CLINIC',
+								'Inventory',
+								'Modify Equipment',
+								"User \"" . getIdNo() . "\" set {$key} field to \"{$value}\" of equipment \"{$id}\""
+							);
+						}
+					}
 				} else {
 				}
 			} else {
@@ -675,6 +750,14 @@ class Inventory extends BaseController
 			if ($success1 && $success2) {
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully deleted.');
+
+				createLog(
+					getIdNo(),
+					'CLINIC',
+					'Inventory',
+					'Delete Medicine',
+					"User \"" . getIdNo() . "\" deleted the medicine \"{$id}\""
+				);
 			} else {
 			}
 		}
@@ -685,11 +768,20 @@ class Inventory extends BaseController
 	public function deleteBatch($id)
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+			$batch = $this->batchesModel->find($id); // FOR ACTIVITY LOGS
 			$success = $this->batchesModel->delete($id);
 
 			if ($success) {
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully deleted.');
+
+				createLog(
+					getIdNo(),
+					'CLINIC',
+					'Inventory',
+					'Delete Batch',
+					"User \"" . getIdNo() . "\" deleted the batch \"{$id}\" of medicine \"{$batch['product_id']}\""
+				);
 			} else {
 			}
 		}
@@ -705,6 +797,14 @@ class Inventory extends BaseController
 			if ($success) {
 				// Create flashdata for database query status
 				session()->setFlashdata('success', 'Successfully deleted.');
+
+				createLog(
+					getIdNo(),
+					'CLINIC',
+					'Inventory',
+					'Delete Equipment',
+					"User \"" . getIdNo() . "\" deleted the equipment \"{$id}\""
+				);
 			} else {
 			}
 		}
@@ -713,7 +813,7 @@ class Inventory extends BaseController
 	}
 
 
-	// STOCK OUT PRODUCT
+	// STOCK OUT THE MEDICINE
 	// ---------------------------------------------------------
 	public function stockOut()
 	{
@@ -735,6 +835,14 @@ class Inventory extends BaseController
 					if ($success) {
 						// Create flashdata for database query status
 						session()->setFlashdata('success', 'Done!');
+
+						createLog(
+							getIdNo(),
+							'CLINIC',
+							'Inventory',
+							'Stock Out',
+							"User \"" . getIdNo() . "\" stocked out {$_GET['stock_out']} from batch \"{$batch['batch_id']}\" of medicine \"{$data['product_id']}\""
+						);
 					} else {
 					}
 				} else {
@@ -769,6 +877,14 @@ class Inventory extends BaseController
 					if ($success) {
 						// Create flashdata for database query status
 						session()->setFlashdata('success', 'Done!');
+
+						createLog(
+							getIdNo(),
+							'CLINIC',
+							'Inventory',
+							'Return Equipment',
+							"User \"" . getIdNo() . "\" returned {$_GET['qty']} from equipment \"{$equipment['product_id']}\""
+						);
 					} else {
 					}
 				} else {

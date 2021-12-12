@@ -356,25 +356,24 @@
 
         // Done prompt on no file upload
         $('#doneSubmit').click(function() {
-            if (document.getElementById("done_medicalfiles").files.length == 0) {
+            if (document.getElementById("done_medicalfiles").files.length == 0)
                 $('#donepromptModal').modal('show');
-            } else {
+            else
                 $('#done_form').submit();
-            }
         });
     });
 
     // On accept new request, set action value
     function accept(id) {
-        $('#accept_form').prop('action', "<?= site_url('consultations/acceptRequestById') ?>/" + id);
+        $('#accept_form').prop('action', "<?= site_url('consultations/acceptConsultationById') ?>/" + id);
     }
     // On reject new request, set action value
     function reject(id) {
-        $('#reject_form').prop('action', "<?= site_url('consultations/rejectRequestById') ?>/" + id);
+        $('#reject_form').prop('action', "<?= site_url('consultations/rejectConsultationById') ?>/" + id);
     }
     // On done, set action value
     function done(id) {
-        $('#done_form').prop('action', "<?= site_url('consultations/sendMedicalFilesById') ?>/" + id);
+        $('#done_form').prop('action', "<?= site_url('consultations/uploadMedicalFilesById') ?>/" + id);
         $('#done_form_prompt').prop('action', "<?= site_url('consultations/setConsultationToDone') ?>/" + id);
     }
 

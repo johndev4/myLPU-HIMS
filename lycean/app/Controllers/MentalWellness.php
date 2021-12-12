@@ -8,7 +8,7 @@ class Mentalwellness extends BaseController
 {
     public function __construct()
     {
-        helper(['useraccount', 'consultation']);
+        helper(['useraccount', 'consultation', 'activitylogs']);
         // Page title
         $this->data['page_title'] = 'Consultation';
         // User fullname
@@ -195,7 +195,7 @@ class Mentalwellness extends BaseController
                 </div>
             </div>
             <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
-                <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">". date_create($consultation['created_at'])->format('d-M-Y H:i') ."</span>
+                <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">" . date_create($consultation['created_at'])->format('d-M-Y H:i') . "</span>
                 <div class=\"float-right\">
                 <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                 </div>
@@ -236,7 +236,7 @@ class Mentalwellness extends BaseController
                 </div>
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
-                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">". date_create($consultation['created_at'])->format('d-M-Y H:i') ."</span>
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">" . date_create($consultation['created_at'])->format('d-M-Y H:i') . "</span>
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
@@ -279,7 +279,7 @@ class Mentalwellness extends BaseController
                 </div>
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
-                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">". date_create($consultation['created_at'])->format('d-M-Y H:i') ."</span>
+                    <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">" . date_create($consultation['created_at'])->format('d-M-Y H:i') . "</span>
                     <div class=\"float-right\">
                         <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
                     </div>
@@ -293,93 +293,6 @@ class Mentalwellness extends BaseController
         }
 
         return json_encode(['result' => $result, 'count' => count($consultations)]);
-    }
-
-
-    // SEND CONSULTATION TO CLINIC
-    // -----------------------------------------------------------------
-    public function sendConsultation()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            if ($this->validate($this->getMessageRules())) {
-                if (!hasActive() && !hasPending()) {
-                    while (true) {
-                        $consultation_no = random_string('alnum', 16);
-                        if (!$this->consultationsModel->find($consultation_no)) {
-                            break;
-                        }
-                    }
-
-                    $data = [
-                        'consultation_no' => $consultation_no,
-                        'status' => 'pending',
-                        'category' => 'Mental Wellness',
-                        'message' => $_POST['consultation_message'],
-                        'personnel_id_no' => $_POST['consultation_guidancecounselor'],
-                        'lycean_id_no' => getIdNo(),
-                    ];
-
-                    $success1 = $this->consultationsModel->save($data);
-                    $success2 = $this->setNotification($data, 'sendConsultation');
-
-                    if ($success1 && $success2) {
-                        session()->setFlashdata('success', 'Sent');
-                    } else {
-                    }
-                } else {
-                    session()->setFlashdata('error', 'You have an active or pending request.');
-                }
-            } else {
-            }
-        }
-
-        return redirect()->to('mentalwellness');
-    }
-
-
-    // CANCEL REQUEST
-    // -----------------------------------------------------------------
-    public function cancelRequest($id)
-    {
-        $data = $this->consultationsModel->find($id);
-
-        $success1 = $this->consultationsModel
-            ->where('consultation_no', $id)
-            ->set([
-                'status' => 'cancelled'
-            ])->update();
-        $success2 = $this->setNotification($data, 'cancelled');
-
-        if ($success1 && $success2) {
-            session()->setFlashdata('success', 'Cancelled');
-        }
-
-        return redirect()->to('consultation');
-    }
-
-
-    // SET NOTIFICATION
-    // -----------------------------------------------------------------
-    private function setNotification($data, $type)
-    {
-        $icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
-
-        if ($type == 'sendConsultation') {
-            $info = "You have new consultation requests";
-            $link = $this->clinicBaseUrl . '/consultations';
-        } else if ($type == 'cancelled') {
-            $info = getUserFullname() . " cancelled the request";
-            $link = $this->clinicBaseUrl . '/consultations/history?cID=' . $data['consultation_no'];
-        }
-
-        return $this->healthPersonnelsNotificationModel->save([
-            'id_no' => $data['personnel_id_no'],
-            'icon' => $icon,
-            'info' => $info,
-            'status' => 'unread',
-            'link' => $link
-        ]);
     }
 
 
@@ -410,5 +323,110 @@ class Mentalwellness extends BaseController
         }
 
         return json_encode(['result' => $result, 'count' => $count]);
+    }
+
+
+    // SEND CONSULTATION REQUEST TO GUIDANCE COUNSELOR
+    // -----------------------------------------------------------------
+    public function sendConsultation()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            if ($this->validate($this->getMessageRules())) {
+                if (!hasActive() && !hasPending()) {
+                    while (true) {
+                        $consultation_no = random_string('alnum', 16);
+                        if (!$this->consultationsModel->find($consultation_no)) {
+                            break;
+                        }
+                    }
+
+                    $data = [
+                        'consultation_no' => $consultation_no,
+                        'status' => 'pending',
+                        'category' => 'Mental Wellness',
+                        'message' => $_POST['consultation_message'],
+                        'personnel_id_no' => $_POST['consultation_guidancecounselor'],
+                        'lycean_id_no' => getIdNo(),
+                    ];
+
+                    $success1 = $this->consultationsModel->save($data);
+                    $success2 = $this->setNotification($data, 'sendConsultation');
+
+                    if ($success1 && $success2) {
+                        session()->setFlashdata('success', 'Sent');
+
+                        // CREATE ACTIVITY LOG
+                        createLog(
+                            getIdNo(),
+                            'LYCEAN',
+                            'Mental Wellness',
+                            'Request Consultation',
+                            "User \"" . getIdNo() . "\" sent a consultation request to guidance counselor \"{$data['personnel_id_no']}\" with consultation_no: \"{$data['consultation_no']}\""
+                        );
+                    } else {
+                    }
+                } else {
+                    session()->setFlashdata('error', 'You have an active or pending request.');
+                }
+            } else {
+            }
+        }
+
+        return redirect()->to('mentalwellness');
+    }
+
+
+    // CANCEL CONSULTATION REQUEST
+    // -----------------------------------------------------------------
+    public function cancelRequest($id)
+    {
+        $data = $this->consultationsModel->find($id);
+
+        $success1 = $this->consultationsModel
+            ->where('consultation_no', $id)
+            ->set([
+                'status' => 'cancelled'
+            ])->update();
+        $success2 = $this->setNotification($data, 'cancelled');
+
+        if ($success1 && $success2) {
+            session()->setFlashdata('success', 'Cancelled');
+
+            // CREATE ACTIVITY LOG
+            createLog(
+                getIdNo(),
+                'LYCEAN',
+                'Mental Wellness',
+                'Cancel Consultation',
+                "User \"" . getIdNo() . "\" cancelled consultation \"{$id}\""
+            );
+        }
+
+        return redirect()->to('consultation');
+    }
+
+
+    // SET NOTIFICATION
+    // -----------------------------------------------------------------
+    private function setNotification($data, $type)
+    {
+        $icon = '<i class="fas fa-comment-medical fa-lg noti-icon" style="color: #7687CD"></i>';
+
+        if ($type == 'sendConsultation') {
+            $info = "You have new consultation requests";
+            $link = $this->clinicBaseUrl . '/consultations';
+        } else if ($type == 'cancelled') {
+            $info = getUserFullname() . " cancelled the request";
+            $link = $this->clinicBaseUrl . '/consultations/history?cID=' . $data['consultation_no'];
+        }
+
+        return $this->healthPersonnelsNotificationModel->save([
+            'id_no' => $data['personnel_id_no'],
+            'icon' => $icon,
+            'info' => $info,
+            'status' => 'unread',
+            'link' => $link
+        ]);
     }
 }
