@@ -79,17 +79,21 @@
 
         // For datatable
         var activityTable = $("#activitylogs_table").DataTable({
-            dom: 'Bfrtip',
+            dom: 'BQ',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
-            lengthChange: true,
-            autoWidth: true,
+            lengthChange: false,
+            autoWidth: false,
             processing: true,
             searching: true,
             search: {
                 caseInsensitive: false
             },
+            // searchPanes: {
+            //     initCollapsed: true,
+            //     columns: [0]
+            // },
             order: [],
-            buttons: ["csv", "excel", "pdf", "colvis"],
             ajax: {
                 type: 'post',
                 url: '<?= site_url('activitylogs/fetchAllLogs') ?>',
@@ -106,7 +110,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
     $(document).ready(function() {
         // CREATE ACTIVITY LOG ON EXPORT
         $('.btn.btn-secondary.buttons-csv.buttons-html5').on('click', function() {
@@ -157,6 +161,6 @@
             });
         });
     });
-</script>
+</script> -->
 
 <?= $this->endSection('content') ?>
