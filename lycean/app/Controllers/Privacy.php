@@ -10,7 +10,7 @@ class Privacy extends BaseController
 	{
 		helper(['useraccount']);
 		// Page title
-		$this->data['page_title'] = 'Help Menu';
+		$this->data['page_title'] = 'Privacy Policy';
 
 		if (!empty(session()->get('uid')) && !empty(session()->get('pwd'))) {
 			// User fullname
