@@ -1,0 +1,55 @@
+CRITICAL - 2021-12-13 20:25:15 --> Undefined variable $adminID
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\components\consultation\report.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 299)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/cons...', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(717): view('components/cons...', Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->report()
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-12-13 20:28:54 --> Undefined variable $adminID
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\components\consultation\report.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 299)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/cons...', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(717): view('components/cons...', Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->report()
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-12-13 20:28:55 --> Undefined variable $adminID
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\components\consultation\report.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 299)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/cons...', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(717): view('components/cons...', Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->report()
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-12-13 20:29:04 --> Undefined variable $adminID
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\components\consultation\report.php(299): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 299)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/cons...', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(717): view('components/cons...', Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->report()
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-12-13 20:44:38 --> Undefined variable $adminId
+#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Views\components\consultation\report.php(304): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 304)
+#1 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\Common.php(1092): CodeIgniter\View\View->render('components/cons...', Array, true)
+#4 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Consultations.php(717): view('components/cons...', Array)
+#5 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Consultations->report()
+#6 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Consultations))
+#7 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

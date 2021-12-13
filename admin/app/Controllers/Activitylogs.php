@@ -14,7 +14,7 @@ class Activitylogs extends BaseController
         // User admin name
         $this->data['adminName'] = getAdminName();
         // Admin ID
-        $this->data['adminID'] = getAdminId();
+        $this->data['adminId'] = getAdminId();
     }
 
 

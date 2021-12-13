@@ -141,20 +141,29 @@
 </div>
 <!-- /.container-fluid -->
 
+
+
+
+
+
+<!-- SCRIPT -->
 <script>
     $(document).ready(function() {
+        // For sidebar
+        $("#consultationNav > a").addClass('active');
+
         // For datatable
         $("#weekly_table").DataTable({
-            dom: 'Bfrtip',
+            dom: 'B',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
-            lengthChange: true,
-            autoWidth: true,
+            lengthChange: false,
+            autoWidth: false,
             processing: true,
             paging: false,
             searching: false,
-            buttons: ["csv", "excel", "pdf", "colvis"],
             order: [],
-        }).buttons().container().appendTo('#weekly_table_wrapper .col-md-6:eq(0)');
+        });
         $('#dropdownYear').on('input', function() {
             if ($('#dropdownYear').val() == '') {
                 $('#dropdownMonth').prop('disabled', true);
@@ -170,14 +179,14 @@
         });
 
         $("#monthly_table").DataTable({
-            dom: 'Bfrtip',
+            dom: 'B',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
-            lengthChange: true,
-            autoWidth: true,
+            lengthChange: false,
+            autoWidth: false,
             processing: true,
             paging: false,
             searching: false,
-            buttons: ["csv", "excel", "pdf"],
             order: [],
         }).buttons().container().appendTo('#monthly_table_wrapper .col-md-6:eq(0)');
         $('#monthly_dropdownYear').on('input', function() {
@@ -185,14 +194,14 @@
         });
 
         $("#yearly_table").DataTable({
-            dom: 'Bfrtip',
+            dom: 'B',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
-            lengthChange: true,
-            autoWidth: true,
+            lengthChange: false,
+            autoWidth: false,
             processing: true,
-            paging: true,
+            paging: false,
             searching: false,
-            buttons: ["csv", "excel", "pdf"],
             order: [],
             ajax: {
                 type: 'get',
@@ -205,10 +214,7 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        }).buttons().container().appendTo('#yearly_table_wrapper .col-md-6:eq(0)');
-
-        // For sidebar
-        $("#consultationNav > a").addClass('active');
+        });
 
         // For year combobox
         $.ajax({
@@ -230,20 +236,19 @@
                 $('#dropdownMonth').html(response);
             }
         });
-
     });
 
     function fetchWeeklyData() {
         $("#weekly_table").DataTable().destroy();
         $("#weekly_table").DataTable({
-            dom: 'Bfrtip',
+            dom: 'B',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
-            lengthChange: true,
-            autoWidth: true,
+            lengthChange: false,
+            autoWidth: false,
             processing: true,
             paging: false,
             searching: false,
-            buttons: ["csv", "excel", "pdf"],
             order: [],
             ajax: {
                 type: 'get',
@@ -256,21 +261,21 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        }).buttons().container().appendTo('#weekly_table_wrapper .col-md-6:eq(0)');
+        });
     }
 
     function fetchMonthlyData() {
         $("#monthly_table").DataTable().destroy();
         $("#monthly_table").DataTable({
-            dom: 'Bfrtip',
+            dom: 'B',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
-            lengthChange: true,
-            autoWidth: true,
+            lengthChange: false,
+            autoWidth: false,
             processing: true,
             paging: false,
             searching: false,
             order: [],
-            buttons: ["csv", "excel", "pdf"],
             ajax: {
                 type: 'get',
                 url: '<?= site_url('reports/fetchMonthlyReport') ?>' + '?year=' + $('#monthly_dropdownYear').val(),
@@ -282,9 +287,85 @@
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             }
-        }).buttons().container().appendTo('#monthly_table_wrapper .col-md-6:eq(0)');
+        });
     }
 </script>
-<!-- /Script -->
+
+<script src="<?= base_url('assets/js/date_helper.js') ?>"></script>
+<script>
+    $(document).ready(function() {
+        const exportType = ["CSV", "Excel", "PDF"];
+
+        $('#dropdownMonth').on('input', function() {
+            exportType.forEach(function(item, index) {
+                $('#weekly_table_wrapper > .btn-group > .buttons-' + item.toLowerCase()).on('click', function() {
+                    var tempUserId = "<?= $idNo ?>"
+                    var enduserId = tempUserId + "/";
+                    var enduserType = "CLINIC" + "/";
+                    var type = "Reports" + "/";
+                    var action = "Export As " + item + "/";
+
+                    var dateStatement = $('#dropdownMonth').val() != "" && $('dropdownYear').val() != "" ? " from \"" + getMonthName($('#dropdownMonth').val()) + "-" + $('#dropdownYear').val() + "\"" : "";
+                    var description = "User \"" + tempUserId + "\" exported the weekly report" + dateStatement;
+
+                    $.ajax({
+                        url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
+                        type: 'get',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    // console.log("test");
+                });
+            });
+        });
+
+
+        $('#monthly_dropdownYear').on('input', function() {
+            exportType.forEach(function(item, index) {
+                $('#monthly_table_wrapper > .btn-group > .buttons-' + item.toLowerCase()).on('click', function() {
+                    var tempUserId = "<?= $idNo ?>"
+                    var enduserId = tempUserId + "/";
+                    var enduserType = "CLINIC" + "/";
+                    var type = "Reports" + "/";
+                    var action = "Export As " + item + "/";
+
+                    var dateStatement = $('#monthly_dropdownYear').val() != "" ? " from year \"" + $('#monthly_dropdownYear').val() + "\"" : "";
+                    var description = "User \"" + tempUserId + "\" exported the monthly report" + dateStatement;
+
+                    $.ajax({
+                        url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
+                        type: 'get',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    // console.log("test");
+                });
+            });
+        });
+
+
+        exportType.forEach(function(item, index) {
+            $('#yearly_table_wrapper > .btn-group > .buttons-' + item.toLowerCase()).on('click', function() {
+                var tempUserId = "<?= $idNo ?>"
+                var enduserId = tempUserId + "/";
+                var enduserType = "CLINIC" + "/";
+                var type = "Reports" + "/";
+                var action = "Export As " + item + "/";
+                var description = "User \"" + tempUserId + "\" exported the yearly report";
+
+                $.ajax({
+                    url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
+                    type: 'get',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+                // console.log("test");
+            });
+        });
+    });
+</script>
 
 <?= $this->endSection('content') ?>

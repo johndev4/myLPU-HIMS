@@ -207,8 +207,8 @@
                                         <tr>
                                             <th>Consultation No.</th>
                                             <th>Date of Request</th>
-                                            <th>Student No.</th>
-                                            <th>Student Name</th>
+                                            <th>Physician</th>
+                                            <th>Student</th>
                                             <th>Department</th>
                                             <th></th>
                                         </tr>
@@ -231,8 +231,8 @@
                                         <tr>
                                             <th>Consultation No.</th>
                                             <th>Date of Request</th>
-                                            <th>Student No.</th>
-                                            <th>Student Name</th>
+                                            <th>Physician</th>
+                                            <th>Student</th>
                                             <th>Department</th>
                                             <th></th>
                                         </tr>
@@ -265,14 +265,18 @@
 <!-- Script -->
 <script>
     $(document).ready(function() {
+        // For sidebar
+        $("#consultationNav > a").addClass('active');
+
         // For datatable
         $("#accepted_table").DataTable({
+            dom: 'Qtp',
             responsive: true,
             lengthChange: true,
-            autoWidth: true,
+            autoWidth: false,
             processing: true,
-            paging: false,
-            searching: true,
+            paging: true,
+            // searching: true,
             order: [],
             ajax: {
                 type: 'get',
@@ -287,12 +291,13 @@
             }
         });
         $("#rejected_table").DataTable({
+            dom: 'Qtp',
             responsive: true,
             lengthChange: true,
-            autoWidth: true,
+            autoWidth: false,
             processing: true,
-            paging: false,
-            searching: true,
+            paging: true,
+            // searching: true,
             order: [],
             ajax: {
                 type: 'get',
@@ -307,12 +312,13 @@
             }
         });
         $("#cancelled_table").DataTable({
+            dom: 'Qtp',
             responsive: true,
             lengthChange: true,
-            autoWidth: true,
+            autoWidth: false,
             processing: true,
-            paging: false,
-            searching: true,
+            paging: true,
+            // searching: true,
             order: [],
             ajax: {
                 type: 'get',
@@ -326,9 +332,6 @@
                 }
             }
         });
-
-        // For sidebar
-        $("#consultationNav > a").addClass('active');
 
         // Reset stock out modal on close
         $('#clearModal').on('hidden.bs.modal', function(evt) {
