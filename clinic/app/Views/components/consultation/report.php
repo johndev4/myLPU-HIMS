@@ -152,7 +152,7 @@
             processing: true,
             paging: false,
             searching: false,
-            buttons: ["csv", "excel", "pdf"],
+            buttons: ["csv", "excel", "pdf", "colvis"],
             order: [],
         }).buttons().container().appendTo('#weekly_table_wrapper .col-md-6:eq(0)');
         $('#dropdownYear').on('input', function() {
