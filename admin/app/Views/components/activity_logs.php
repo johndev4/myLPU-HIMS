@@ -23,7 +23,7 @@
                 <div class="col-12 mb-5">
                     <div class="card">
                         <div class="card-header record-header">
-                            <h3 class="card-title">.</h3>
+                            <h3 class="card-title"><br></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -74,6 +74,9 @@
 <!-- SCRIPT -->
 <script>
     $(document).ready(function() {
+        // For sidebar
+        $("#activitylogsNav > a").addClass('active');
+
         // For datatable
         var activityTable = $("#activitylogs_table").DataTable({
             dom: 'Bfrtip',

@@ -1,0 +1,16 @@
+CRITICAL - 2021-12-13 11:15:50 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Activitylogs.php(15): getAdminName()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Activitylogs->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-12-13 12:54:08 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\myLPU-HIMS\admin\app\Helpers\useraccount_helper.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\myLPU-HIMS\admin\app\Controllers\Activitylogs.php(15): getAdminName()
+#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(779): App\Controllers\Activitylogs->__construct()
+#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(390): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\myLPU-HIMS\admin\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

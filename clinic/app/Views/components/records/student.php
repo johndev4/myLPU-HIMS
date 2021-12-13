@@ -479,7 +479,6 @@
                 autoWidth: true,
                 processing: true,
                 searching: true,
-                buttons: ["copy", "excel", "pdf", "print"],
                 ajax: {
                     type: 'post',
                     url: '<?= site_url('records/fetchAllStudent') ?>',
@@ -490,7 +489,7 @@
                         'X-Requested-With': 'XMLHttpRequest'
                     }
                 }
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            });
 
             // For sidebar
             $("#mainUserRecordNav").addClass('menu-open');
