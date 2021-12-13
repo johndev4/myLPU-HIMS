@@ -89,7 +89,7 @@
                 caseInsensitive: false
             },
             order: [],
-            buttons: ["csv", "excel", "pdf"],
+            buttons: ["csv", "excel", "pdf", "colvis"],
             ajax: {
                 type: 'post',
                 url: '<?= site_url('activitylogs/fetchAllLogs') ?>',
