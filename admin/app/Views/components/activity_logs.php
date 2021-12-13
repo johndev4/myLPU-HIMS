@@ -102,6 +102,60 @@
                 }
             }
         });
+        activityTable.buttons().container().appendTo('#activitylogs_table_wrapper .col-md-6:eq(0)');
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        // CREATE ACTIVITY LOG ON EXPORT
+        $('.btn.btn-secondary.buttons-csv.buttons-html5').on('click', function() {
+            var enduserID = '<?= $adminID ?>' + '/';
+            var enduserType = 'ADMIN' + '/';
+            var type = 'Activity Log' + '/';
+            var action = 'Export As CSV' + '/';
+            var description = '<?= "User \"" . $adminID . "\" exported activity log" ?>';
+
+            $.ajax({
+                url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserID + enduserType + type + action + description,
+                type: 'get',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+        });
+
+        $('.btn.btn-secondary.buttons-excel.buttons-html5').on('click', function() {
+            var enduserID = '<?= $adminID ?>' + '/';
+            var enduserType = 'ADMIN' + '/';
+            var type = 'Activity Log' + '/';
+            var action = 'Export As Excel' + '/';
+            var description = '<?= "User \"" . $adminID . "\" exported activity log" ?>';
+
+            $.ajax({
+                url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserID + enduserType + type + action + description,
+                type: 'get',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+        });
+
+        $('.btn.btn-secondary.buttons-pdf.buttons-html5').on('click', function() {
+            var enduserID = '<?= $adminID ?>' + '/';
+            var enduserType = 'ADMIN' + '/';
+            var type = 'Activity Log' + '/';
+            var action = 'Export As PDF' + '/';
+            var description = '<?= "User \"" . $adminID . "\" exported activity log" ?>';
+
+            $.ajax({
+                url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserID + enduserType + type + action + description,
+                type: 'get',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+        });
     });
 </script>
 

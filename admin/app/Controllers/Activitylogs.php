@@ -8,11 +8,13 @@ class Activitylogs extends BaseController
 {
     public function __construct()
     {
-        helper(['useraccount']);
+        helper(['useraccount', 'activitylogs']);
         // Page title
         $this->data['page_title'] = 'Activity Logs';
         // User admin name
         $this->data['adminName'] = getAdminName();
+        // Admin ID
+        $this->data['adminID'] = getAdminId();
     }
 
 
@@ -30,7 +32,9 @@ class Activitylogs extends BaseController
     public function fetchAllLogs()
     {
         $result = array('data' => array());
-        $logs = $this->activityLogsModel->findAll();
+        $logs = $this->activityLogsModel
+            ->orderBy('created_at', 'DESC')
+            ->findAll();
 
         foreach ($logs as $key => $log) {
             $result['data'][$key] = array(
@@ -48,5 +52,22 @@ class Activitylogs extends BaseController
         }
 
         return json_encode($result);
+    }
+
+
+    // CREATE LOG FROM AJAX REQUEST
+    // -----------------------------------------------------------------
+    public function createLogGetRequest($enduser_id, $enduser_type, $type, $action, $description)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            // CREATE ACTIVITY LOG
+            createLog(
+                $enduser_id,
+                $enduser_type,
+                $type,
+                $action,
+                $description
+            );
+        }
     }
 }

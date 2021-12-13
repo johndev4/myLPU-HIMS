@@ -27,7 +27,7 @@ class Records extends BaseController
 	{
 		return  [
 			'medicalfile' => [
-				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfile,pdf]',
+				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
 					'max_size' => 'File is too large.',
