@@ -240,7 +240,7 @@ class Records extends BaseController
 				$file = $this->request->getFile('medicalfile');
 				$fileName = $_POST['filename'] != "" ?
 					$_POST['filename'] . "." . $file->getExtension() : $file->getName();
-				$fileDirectory = $this->baseDir['medical_record'] . $lycean['id_no'];
+				$fileDirectory = $this->baseDir['medical_records'] . $lycean['id_no'];
 
 				if ($file->isValid() && !$file->hasMoved()) {
 					if (!file_exists($fileDirectory . '/' . $fileName)) {
