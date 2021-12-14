@@ -132,7 +132,7 @@ class Userdata extends BaseController
                     'ADMIN',
                     'Deleted Accounts',
                     'Delete LY User',
-                    "User \"" . getAdminId() . "\" deleted the data of user \"{id}\""
+                    "User \"" . getAdminId() . "\" deleted the data of user \"{$id}\""
                 );
             } else {
             }
@@ -211,7 +211,7 @@ class Userdata extends BaseController
                     'ADMIN',
                     'Deleted Accounts',
                     'Delete HP User',
-                    "User \"" . getAdminId() . "\" deleted the data of user \"{id}\""
+                    "User \"" . getAdminId() . "\" deleted the data of user \"{$id}\""
                 );
             } else {
             }
