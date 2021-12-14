@@ -492,7 +492,7 @@ class Inventory extends BaseController
 
 		if ($equipments) {
 			foreach ($equipments as $equipment) {
-				$result .= "<option value=\"{$equipment['product_id']}\"> {$equipment['product_name']} </option>";
+				$result .= "<option value=\"{$equipment['product_id']}\"> {$equipment['product_name']} - ({$equipment['qty']}) </option>";
 			}
 		}
 

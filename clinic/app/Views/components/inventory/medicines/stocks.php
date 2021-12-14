@@ -42,25 +42,8 @@
                         <div class="modal-body">
                             <form action="<?= site_url('inventory/stockOut') ?>" method="get" id="stockout_form">
                                 <div class="row">
-                                    <div class="col-12 form-group">
-                                        <label for="out_stockout" class="col-form-label">Stock Out</label>
-                                        <input type="number" class="form-control" id="out_stockout" name="stock_out" value="">
-                                        <!-- Validation Error -->
-                                        <?php if (!empty(session()->get('out_validation'))) : ?>
-                                            <?php if (session()->get('out_validation')->hasError('stock_out')) : ?>
-                                                <span class="error text-danger">
-                                                    <?= session()->get('out_validation')->getError('stock_out'); ?>
-                                                </span>
-                                                <script>
-                                                    $().ready(function() {
-                                                        $('#out_stockout').addClass('border border-danger');
-                                                    });
-                                                </script>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    </div>
                                     <div class="col-6 form-group">
-                                        <label for="out_productname" class="col-form-label">Product Name</label>
+                                        <label for="out_productname" class="col-form-label">Product</label>
                                         <select class="form-control" id="out_productname" name="product_name">
                                             <!-- OPTIONS HERE -->
                                         </select>
@@ -79,7 +62,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-6 form-group">
-                                        <label for="" class="col-form-label">Batch ID</label>
+                                        <label for="" class="col-form-label">Batch</label>
                                         <select class="form-control" id="out_batchid" name="batch_id">
                                             <!-- OPTIONS HERE -->
                                         </select>
@@ -92,6 +75,23 @@
                                                 <script>
                                                     $().ready(function() {
                                                         $('#out_batchid').addClass('border border-danger');
+                                                    });
+                                                </script>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <label for="out_stockout" class="col-form-label">Stock Out</label>
+                                        <input type="number" class="form-control" id="out_stockout" name="stock_out" value="">
+                                        <!-- Validation Error -->
+                                        <?php if (!empty(session()->get('out_validation'))) : ?>
+                                            <?php if (session()->get('out_validation')->hasError('stock_out')) : ?>
+                                                <span class="error text-danger">
+                                                    <?= session()->get('out_validation')->getError('stock_out'); ?>
+                                                </span>
+                                                <script>
+                                                    $().ready(function() {
+                                                        $('#out_stockout').addClass('border border-danger');
                                                     });
                                                 </script>
                                             <?php endif; ?>

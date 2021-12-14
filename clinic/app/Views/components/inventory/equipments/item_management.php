@@ -228,7 +228,7 @@
                             <form action="<?= site_url('inventory/returnEquipment') ?>" method="get" id="return_form">
                                 <div class="row">
                                     <div class="col-md-8 form-group">
-                                        <label for="return_productname" class="col-form-label">Product Name</label>
+                                        <label for="return_productname" class="col-form-label">Product</label>
                                         <select class="form-control" id="return_productname" name="product_name">
                                             <!-- OPTIONS HERE -->
                                         </select>
