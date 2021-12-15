@@ -11,3 +11,4 @@ DROP TABLE lyceans;
 DROP TABLE health_personnels_notification;
 DROP TABLE health_personnels_account;
 DROP TABLE health_personnels
+DROP TABLE activity_logs

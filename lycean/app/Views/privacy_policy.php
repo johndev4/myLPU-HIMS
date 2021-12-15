@@ -34,7 +34,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-light py-3 fixed-top" style="background-color: #a62d38;">
         <div class="container">
-            <a href="<?= site_url('dashboard') ?>" class="navbar-brand">
+            <a href="<?= site_url('login') ?>" class="navbar-brand">
                 <img src="<?= base_url('assets/images/navlogo.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="">
                 <span class="brand-text font-weight-bold text-light">myLPU Clinic</span>
             </a>
@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-3">
                 <ul style="list-style: none; cursor: pointer;">
-                    <li><a href="<?= site_url('dashboard') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
+                    <li><a href="<?= site_url('login') ?>"><i class="fas fa-caret-left"></i> Home</a></li>
 
                     <li><a id="link-1" style="color:rgb(0, 131, 253)">Privacy policy</a></li>
                     <li><a id="link-2" style="color:rgb(0, 131, 253)">Collection of personal information</a></li>
