@@ -589,7 +589,7 @@ class Useraccounts extends BaseController
 
 			if ($this->validate($this->getHealthPersonnelDataRules($id))) {
 				// TEMP DATA FOR ACTIVITY LOG
-				$tempData1 = $this->healthPersonnelModel->find($id);
+				$tempData1 = $this->healthPersonnelsModel->find($id);
 				$tempData2 = $this->healthPersonnelsAccountModel->find($id);
 
 				$data1 = [
