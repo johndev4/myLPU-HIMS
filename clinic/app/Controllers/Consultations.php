@@ -66,10 +66,11 @@ class Consultations extends BaseController
 	{
 		return  [
 			'medicalfiles' => [
-				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfiles,2048]',
+				'rules' => 'uploaded[medicalfiles.0]|max_size[medicalfiles,2048]|ext_in[medicalfiles,pdf]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
-					'max_size' => 'File is too large.'
+					'max_size' => 'File is too large.',
+					'ext_in' => 'Invalid file extension.'
 				]
 			]
 		];

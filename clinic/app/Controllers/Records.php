@@ -27,7 +27,7 @@ class Records extends BaseController
 	{
 		return  [
 			'medicalfile' => [
-				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]',
+				'rules' => 'uploaded[medicalfile]|max_size[medicalfile,2048]|ext_in[medicalfiles,pdf]',
 				'errors' => [
 					'uploaded' => 'No file attached.',
 					'max_size' => 'File is too large.',
@@ -38,7 +38,7 @@ class Records extends BaseController
 				'rules' => 'permit_empty|max_length[20]|alpha_dash',
 				'errors' => [
 					'max_length' => 'Filename max length exceeded.',
-					'alpha_dash' => 'Filename may only contain alphanumeric, underscore, and dash characters.'
+					'alpha_dash' => 'Filename may only contain alphanumeric, underscore, and dash characters.',
 				]
 			]
 		];
