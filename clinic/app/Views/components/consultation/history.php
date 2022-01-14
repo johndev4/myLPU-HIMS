@@ -270,7 +270,8 @@
 
         // For datatable
         $("#accepted_table").DataTable({
-            dom: 'Qtp',
+            dom: 'BQtp',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: true,
             autoWidth: false,
@@ -291,7 +292,8 @@
             }
         });
         $("#rejected_table").DataTable({
-            dom: 'Qtp',
+            dom: 'BQtp',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: true,
             autoWidth: false,
@@ -312,7 +314,8 @@
             }
         });
         $("#cancelled_table").DataTable({
-            dom: 'Qtp',
+            dom: 'BQtp',
+            buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: true,
             autoWidth: false,
@@ -427,6 +430,66 @@
             $('#viewModal').modal('show');
         }, 500);
     <?php endif; ?>
+</script>
+
+<script>
+    $(document).ready(function() {
+        const exportType = ["CSV", "Excel", "PDF"];
+
+        exportType.forEach(function(item, index) {
+            $('#accepted_table_wrapper > .btn-group > .buttons-' + item.toLowerCase()).on('click', function() {
+                var tempUserId = "<?= $idNo ?>"
+                var enduserId = tempUserId + "/";
+                var enduserType = "CLINIC" + "/";
+                var type = "History" + "/";
+                var action = "Export As " + item + "/";
+
+                var description = "User \"" + tempUserId + "\" exported the monthly report" + dateStatement;
+
+                $.ajax({
+                    url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
+                    type: 'get',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+            });
+        });
+        exportType.forEach(function(item, index) {
+            $('#rejected_table_wrapper > .btn-group > .buttons-' + item.toLowerCase()).on('click', function() {
+                var tempUserId = "<?= $idNo ?>"
+                var enduserId = tempUserId + "/";
+                var enduserType = "CLINIC" + "/";
+                var type = "History" + "/";
+                var action = "Export As " + item + "/";
+
+                $.ajax({
+                    url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
+                    type: 'get',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+            });
+        });
+        exportType.forEach(function(item, index) {
+            $('#cancelled_table_wrapper > .btn-group > .buttons-' + item.toLowerCase()).on('click', function() {
+                var tempUserId = "<?= $idNo ?>"
+                var enduserId = tempUserId + "/";
+                var enduserType = "CLINIC" + "/";
+                var type = "History" + "/";
+                var action = "Export As " + item + "/";
+
+                $.ajax({
+                    url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
+                    type: 'get',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+            });
+        });
+    });
 </script>
 <!-- /Script -->
 
