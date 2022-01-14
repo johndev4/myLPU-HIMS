@@ -203,14 +203,14 @@
                     <h5 class="text-normal" id="section-4.3">History</h5>
                     <p>This is where you can see the record of the Accepted and Rejected consultations.</p>
                     <ul>
-                        <img src="<?= base_url('assets/images/help_menu/10.png') ?>" alt="1" class="img-help shadow" width="500">
+                        <img src="<?= base_url('assets/images/help_menu/11.png') ?>" alt="1" class="img-help shadow" width="500">
                     </ul>
                     <br>
                     <!-- Report -->
                     <h5 class="text-normal" id="section-4.4">Report</h5>
                     <p>This is where you can see the Report for the Weekly, Monthly, and Yearly Accepted and Rejected consultations.</p>
                     <ul>
-                        <img src="<?= base_url('assets/images/help_menu/11.png') ?>" alt="1" class="img-help shadow" width="500">
+                        <img src="<?= base_url('assets/images/help_menu/12.0.png') ?>" alt="1" class="img-help shadow" width="500">
                     </ul>
 
                     <?php if ($designation != 'Guidance Counselor') : ?>

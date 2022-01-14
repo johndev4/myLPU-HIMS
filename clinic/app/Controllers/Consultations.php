@@ -489,7 +489,7 @@ class Consultations extends BaseController
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
-						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View Details</button>
 					</div>"
 				);
 			}
@@ -517,7 +517,7 @@ class Consultations extends BaseController
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
-						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View Details</button>
 					</div>"
 				);
 			}
@@ -545,7 +545,7 @@ class Consultations extends BaseController
 					"{$lycean['first_name']} {$lycean['last_name']}",
 					$lycean['department'],
 					"<div align=\"center\">
-						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View</button>
+						<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['consultation_no'] . "')\" data-toggle=\"modal\" data-target=\"#viewModal\">View Details</button>
 					</div>"
 				);
 			}
