@@ -116,7 +116,7 @@ class Records extends BaseController
 				$value['department'],
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
+				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View Details</button></a> 
 				</div>"
 			);
 		}
@@ -138,7 +138,7 @@ class Records extends BaseController
 				$value['department'],
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
+				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View Details</button></a> 
 				</div>"
 			);
 		}
@@ -160,7 +160,7 @@ class Records extends BaseController
 				$value['department'],
 				"<div align=\"center\">
 				<a href=\"\" data-target=\"#viewModal\" data-toggle=\"modal\">
-				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View</button></a> 
+				<button type=\"button\" class=\"btn btn-default\" onclick=\"retrieveData('" . $value['id_no'] . "')\">View Details</button></a> 
 				</div>"
 			);
 		}

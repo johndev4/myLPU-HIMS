@@ -115,7 +115,7 @@ class Mentalwellness extends BaseController
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View Details</a>
                     </div>
                     <div class=\"float-right mr-1\">
                         <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" onclick=\"$('#cancelYes').on('click', function() { cancelRequest('{$consultation['consultation_no']}') })\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
@@ -156,7 +156,7 @@ class Mentalwellness extends BaseController
                 </div>
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View Details</a>
                     </div>
                     <div class=\"float-right mr-1\">
                         <a href=\"#\" class=\"btn btn btn-outline-danger p-2\" onclick=\"$('#cancelYes').on('click', function() { cancelRequest('{$consultation['consultation_no']}') })\" data-target=\"#cancelrequestModal\" data-toggle=\"modal\">Cancel Request</a>
@@ -197,7 +197,7 @@ class Mentalwellness extends BaseController
             <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                 <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">" . date_create($consultation['created_at'])->format('d-M-Y H:i') . "</span>
                 <div class=\"float-right\">
-                <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
+                <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View Details</a>
                 </div>
             </div>
 
@@ -238,7 +238,7 @@ class Mentalwellness extends BaseController
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">" . date_create($consultation['created_at'])->format('d-M-Y H:i') . "</span>
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View Details</a>
                     </div>
                 </div>
 
@@ -281,7 +281,7 @@ class Mentalwellness extends BaseController
                 <div class=\"col-lg-12 mt-3\" style=\"border:1px solid none\">
                     <span class=\"float-left mb-n2 text-secondary\" style=\"margin-top:23px; margin\">" . date_create($consultation['created_at'])->format('d-M-Y H:i') . "</span>
                     <div class=\"float-right\">
-                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View</a>
+                        <a href=\"" . site_url('consultation/details/' . $consultation['consultation_no']) . "\" class=\"btn btn-default p-2\">View Details</a>
                     </div>
                 </div>
 

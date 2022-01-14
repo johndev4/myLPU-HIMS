@@ -32,11 +32,13 @@
                 <div class="row">
                     <div class="col-12 default-nav">
                         <a href="<?= site_url('dashboard') ?>">
-                            <div class="card shadow card2" style="max-width:32rem">
-                                <div class="row p-3 default-nav" style="border:1px solid none">
-                                    <div class="col-12 pt-2 mt-n2 pl-4" style="border:1px solid none">
-                                        <i class="fas fa-chevron-left fa-2x" style="color: #999999;"></i>
-                                        <span class="font-weight-bold ml-1" style="font-size: 25pt; color: #999999">Back</span>
+                            <div class="card shadow card2" style="max-width:32rem; border:3px solid none">
+                                <div class="row p-3 default-nav">
+                                    <div class="col-7 pt-2 mt-n2 pl-4" style="border:1px solid none">
+                                        <span class="font-weight-bold" style="font-size: 25pt; color: #999999">Home</span>
+                                    </div>
+                                    <div class="col-5 mt-1" align="center" style="border:1px solid none">
+                                        <i class="fas fa-home fa-3x" style="color: #999999"></i>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +88,7 @@
                     <div class="col-4 text-center">
                         <a href="<?= site_url('dashboard') ?>">
                             <div class="card shadow card2 py-3" style="max-width:32rem">
-                                <i class="fas fa-chevron-left fa-2x" style="color: #999999"></i>
+                                <i class="fas fa-home fa-2x" style="color: #999999"></i>
                             </div>
                         </a>
                     </div>
