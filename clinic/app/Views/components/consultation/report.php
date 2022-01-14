@@ -315,7 +315,6 @@
                             'X-Requested-With': 'XMLHttpRequest'
                         }
                     });
-                    // console.log("test");
                 });
             });
         });
@@ -340,7 +339,6 @@
                             'X-Requested-With': 'XMLHttpRequest'
                         }
                     });
-                    // console.log("test");
                 });
             });
         });
@@ -362,7 +360,6 @@
                         'X-Requested-With': 'XMLHttpRequest'
                     }
                 });
-                // console.log("test");
             });
         });
     });
