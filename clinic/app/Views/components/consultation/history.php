@@ -444,7 +444,7 @@
                 var type = "History" + "/";
                 var action = "Export As " + item + "/";
 
-                var description = "User \"" + tempUserId + "\" exported the monthly report" + dateStatement;
+                var description = "User \"" + tempUserId + "\" exported the accepted consultation history";
 
                 $.ajax({
                     url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
@@ -463,6 +463,8 @@
                 var type = "History" + "/";
                 var action = "Export As " + item + "/";
 
+                var description = "User \"" + tempUserId + "\" exported the rejected consultation history";
+
                 $.ajax({
                     url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
                     type: 'get',
@@ -479,6 +481,8 @@
                 var enduserType = "CLINIC" + "/";
                 var type = "History" + "/";
                 var action = "Export As " + item + "/";
+
+                var description = "User \"" + tempUserId + "\" exported the cancelled consultation history";
 
                 $.ajax({
                     url: "<?= site_url('activitylogs/createLogGetRequest/') ?>" + enduserId + enduserType + type + action + description,
