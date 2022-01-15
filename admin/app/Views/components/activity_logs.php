@@ -79,21 +79,13 @@
 
         // For datatable
         var activityTable = $("#activitylogs_table").DataTable({
-            dom: 'BQtp',
+            dom: 'QBtp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: false,
             autoWidth: false,
             paging: true,
             processing: true,
-            // searching: true,
-            // search: {
-            //     caseInsensitive: false
-            // },
-            // searchPanes: {
-            //     initCollapsed: true,
-            //     columns: [0]
-            // },
             order: [],
             ajax: {
                 type: 'post',

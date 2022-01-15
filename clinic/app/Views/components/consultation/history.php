@@ -270,7 +270,7 @@
 
         // For datatable
         $("#accepted_table").DataTable({
-            dom: 'BQtp',
+            dom: 'QBtp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: true,
@@ -292,7 +292,7 @@
             }
         });
         $("#rejected_table").DataTable({
-            dom: 'BQtp',
+            dom: 'QBtp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: true,
@@ -314,7 +314,7 @@
             }
         });
         $("#cancelled_table").DataTable({
-            dom: 'BQtp',
+            dom: 'QBtp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: true,

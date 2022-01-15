@@ -154,7 +154,7 @@
 
         // For datatable
         $("#weekly_table").DataTable({
-            dom: 'B',
+            dom: 'Btp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: false,
@@ -179,7 +179,7 @@
         });
 
         $("#monthly_table").DataTable({
-            dom: 'B',
+            dom: 'Btp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: false,
@@ -194,7 +194,7 @@
         });
 
         $("#yearly_table").DataTable({
-            dom: 'B',
+            dom: 'Btp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: false,
@@ -241,7 +241,7 @@
     function fetchWeeklyData() {
         $("#weekly_table").DataTable().destroy();
         $("#weekly_table").DataTable({
-            dom: 'B',
+            dom: 'Btp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: false,
@@ -267,7 +267,7 @@
     function fetchMonthlyData() {
         $("#monthly_table").DataTable().destroy();
         $("#monthly_table").DataTable({
-            dom: 'B',
+            dom: 'Btp',
             buttons: ["csv", "excel", "pdf", "colvis"],
             responsive: true,
             lengthChange: false,
