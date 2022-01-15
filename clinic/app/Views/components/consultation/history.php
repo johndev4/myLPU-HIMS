@@ -184,7 +184,7 @@
                                             <th>Consultation No.</th>
                                             <th>Date of Request</th>
                                             <th>Physician</th>
-                                            <th>Student</th>
+                                            <th>Lycean</th>
                                             <th>Department</th>
                                             <th></th>
                                         </tr>
@@ -208,7 +208,7 @@
                                             <th>Consultation No.</th>
                                             <th>Date of Request</th>
                                             <th>Physician</th>
-                                            <th>Student</th>
+                                            <th>Lycean</th>
                                             <th>Department</th>
                                             <th></th>
                                         </tr>
@@ -232,7 +232,7 @@
                                             <th>Consultation No.</th>
                                             <th>Date of Request</th>
                                             <th>Physician</th>
-                                            <th>Student</th>
+                                            <th>Lycean</th>
                                             <th>Department</th>
                                             <th></th>
                                         </tr>
