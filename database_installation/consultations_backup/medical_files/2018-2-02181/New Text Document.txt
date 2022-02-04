@@ -1,9 +1,0 @@
-1. rankingCoach - I cancelled the rankingCoach contract because I was surprised that it was in the billing section. I'm worried that it may deduct from my PayPal account. It says "Cancelled from November 11, 2022" after I cancel it. Can you clarify if it's already been cancelled and it will not be deducted from my PayPal account or if I still have to wait until Nov. 11, 2022 for it to be cancelled? 
-
-2. Autorenewal - I tried disabling auto-renewal of the Web Hosting Business contract. After I clicked the disabled button, it showed me that my contract was cancelled.
-
-3. I availed myself of a web hosting business contract and paid 6 USD through PayPal on Nov. 12, 2021. Today I checked my PayPal activities and noticed that the transaction I made is still pending. It says here that my payment method will be charged when Ionos completes my order. But the 6 USD has already been deducted from my PayPal account.
-
-3. How do I remove my PayPal account from my IONOS account? I'm concerned that IONOS will deduct funds from my PayPal account at some point in the future.
-
-4. I'm using the CodeIgniter4 PHP framework, but I'm having difficulties with.htaccess because it requires an "index.php" in the URL to access the pages. Do you think you can help me with this?
