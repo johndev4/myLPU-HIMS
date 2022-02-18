@@ -10,7 +10,7 @@ class Activitylogs extends BaseController
     {
         helper(['activitylogs']);
     }
-    
+
     // CREATE LOG FROM AJAX REQUEST
     // -----------------------------------------------------------------
     public function createLogGetRequest($enduser_id, $enduser_type, $type, $action, $description)
@@ -26,5 +26,4 @@ class Activitylogs extends BaseController
             );
         }
     }
-}
 }
