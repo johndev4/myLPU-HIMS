@@ -50,7 +50,6 @@
         <div class="login-logo mb-3 mx-auto d-block">
             <a role="button">
                 <img src="<?= base_url('assets/images/mylpuclinic-logo.png') ?>" class="img-fluid" alt="Logo" width="300" height="240" role="button">
-                <!--<b class="font-weight">myLPU HIMS</b>-->
             </a>
         </div>
 
@@ -115,8 +114,6 @@
                 </div>
 
                 <div class="col-lg-12 mt-3">
-                    <!-- <strong >Copyright &copy;<?= date('Y') ?></strong>
-                        All rights reserved. -->
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('terms') ?>">Terms & Conditions</a></span>
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('privacy') ?>">Privacy Policy</a></span>
                     <span class="mr-1 ml-1" style="font-size: 9pt;"><a href="<?= site_url('help') ?>">Help</a></span>

@@ -41,18 +41,6 @@
                                     </tr>
                                 </thead>
                                 <!-- TBODY HERE -->
-                                <!-- <tfoot>
-                                    <tr>
-                                        <th>End User</th>
-                                        <th>Type</th>
-                                        <th>Action</th>
-                                        <th>Description</th>
-                                        <th>User Agent</th>
-                                        <th>Remote Address</th>
-                                        <th>Server Address</th>
-                                        <th>Date/Time</th>
-                                    </tr>
-                                </tfoot> -->
                             </table>
                         </div>
                         <!-- /.card-body -->

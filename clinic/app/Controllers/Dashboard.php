@@ -14,7 +14,7 @@ class Dashboard extends BaseController
 		// User firstname
 		$this->data['firstname'] = getUserFirstname();
 		// User fullname
-        $this->data['fullname'] = getUserFullname();
+		$this->data['fullname'] = getUserFullname();
 		// User ID No.
 		$this->data['idNo'] = getIdNo();
 		// User designation
@@ -154,29 +154,4 @@ class Dashboard extends BaseController
 
 		return $result;
 	}
-
-	// public function fetchOccupiedSchedule()
-	// {
-	// 	$consultations = $this->consultationsModel
-	// 		->where('status', 'done')->where('personnel_id_no', getIdNo())
-	// 		->findAll();
-
-	// 	foreach ($consultations as $consultation) {
-	// 		$scheduleDate = date_create($consultation['meeting_schedule'])->format('d-M-Y');
-	// 		$scheduleTimeFrom = date_create($consultation['meeting_schedule'])->format('H:i');
-	// 		$scheduleTimeTo = date('H:i', strtotime($consultation['meeting_schedule']) + 1800);
-	// 	}
-	// }
-
-
-
-
-
-
-
-
-
-
-
-	// public function countLyceanRecords(){echo $this->lyceansModel->countAll();}
 }

@@ -273,7 +273,6 @@
 
                                 <div class="footer float-right pb-3">
                                     <button type="submit" class="btn text-light swalDefaultSuccess button-color">Add</button>
-                                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
                                 </div>
                             </form>
                         </div>

@@ -35,10 +35,10 @@
 
                     <input type="password" class="form-control mb-2" id="password" placeholder="New Password" name="password">
                     <!-- Validation Error -->
-                    <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
-                        <?php if (session()->getFlashdata('p_validation')->hasError('password')) : ?>
+                    <?php if (!empty(session()->get('p_validation'))) : ?>
+                        <?php if (session()->get('p_validation')->hasError('password')) : ?>
                             <span class="error text-danger">
-                                <?= session()->getFlashdata('p_validation')->getError('password'); ?>
+                                <?= session()->get('p_validation')->getError('password'); ?>
                             </span>
                             <script>
                                 $().ready(function() {
@@ -51,10 +51,10 @@
 
                     <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" name="confirm_password">
                     <!-- Validation Error -->
-                    <?php if (!empty(session()->getFlashdata('p_validation'))) : ?>
-                        <?php if (session()->getFlashdata('p_validation')->hasError('confirm_password')) : ?>
+                    <?php if (!empty(session()->get('p_validation'))) : ?>
+                        <?php if (session()->get('p_validation')->hasError('confirm_password')) : ?>
                             <span class="error text-danger">
-                                <?= session()->getFlashdata('p_validation')->getError('confirm_password'); ?>
+                                <?= session()->get('p_validation')->getError('confirm_password'); ?>
                             </span>
                             <script>
                                 $().ready(function() {
@@ -88,7 +88,7 @@
     <script>
         $('document').ready(function() {
             // Sweet Alert for success staus
-            <?php if (session()->getFlashdata('success') !== null) : ?>
+            <?php if (session()->get('success') !== null) : ?>
                 var Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
@@ -97,7 +97,7 @@
                 });
                 Toast.fire({
                     icon: 'success',
-                    title: '<?= session()->getFlashdata('success'); ?>'
+                    title: '<?= session()->get('success'); ?>'
                 });
             <?php endif; ?>
         });

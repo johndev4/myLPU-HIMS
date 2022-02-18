@@ -38,8 +38,6 @@ class Activitylogs extends BaseController
 
         foreach ($logs as $key => $log) {
             $result['data'][$key] = array(
-                // $log['log_id'],
-                // $log['enduser_id'],
                 $log['enduser_type'],
                 $log['type'],
                 $log['action'],

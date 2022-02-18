@@ -101,7 +101,6 @@
 
                                 <div class="footer float-right pb-3">
                                     <button type="submit" class="btn text-light swalDefaultSuccess button-color">Save</button>
-                                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
                                 </div>
                             </form>
                         </div>
@@ -131,20 +130,7 @@
                 </div>
             </div>
             <!-- /Insufficent stock Modal -->
-
             <!-- /Modal -->
-
-            <!-- Table -->
-            <!-- <div class="card">
-                <div class="card-header inventory-header">
-                    <h3 class="card-title">Stocks</h3>
-                </div>
-
-                <div class="card-body">
-                </div>
-
-            </div> -->
-            <!-- /Table -->
 
             <!-- Tabs -->
             <div class="col-sm-12 col-md-12">

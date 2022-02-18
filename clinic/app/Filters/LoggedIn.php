@@ -27,7 +27,6 @@ class LoggedIn implements FilterInterface
         if ($user != []) {
             $userInfo = $userModel->find($user['id_no']);
             $default_password = hash('sha256', str_replace(' ', '', strtoupper($userInfo['last_name'])));
-            // Change "!==" to "==="
             if ($user['password'] === $default_password && session()->get('logged_in') == FALSE) {
                 return redirect()->to('changepassword');
             }

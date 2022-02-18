@@ -140,10 +140,6 @@
                                     <p class="mt-n2 mb-2">
                                         <span id="view_concernmessage"></span>
                                     </p>
-                                    <!-- <label class="d-block text-secondary">Denial of Service</label>
-                                    <p class="mt-n2 mb-2">
-                                       
-                                    </p> -->
                                 </div>
                             </div>
 

@@ -78,12 +78,6 @@ class Useraccounts extends BaseController
 					'max_length' => 'Max length exceeded.',
 				]
 			],
-			// 'birth_date' => [
-			// 	'rules' => '',
-			// 	'errors' => [
-			// 		'' => '',
-			// 	]
-			// ],
 			'height' => [
 				'rules' => 'max_length[25]',
 				'errors' => [
@@ -772,7 +766,7 @@ class Useraccounts extends BaseController
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 			$healthPersonnels = $this->healthPersonnelsModel->findAll();
-			
+
 			$success = FALSE;
 			foreach ($healthPersonnels as $healthPersonnel) {
 				$success = $this->healthPersonnelsAccountModel->delete($healthPersonnel['id_no']);

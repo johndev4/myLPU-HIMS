@@ -13,8 +13,6 @@
         </button>
 
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
-
-            <!-- Right navbar links navbar-no-expand -->
             <ul class="order-1 order-md-3 navbar-nav ml-auto">
                 <!-- Profile Dropdown Menu -->
                 <li class="nav-item dropdown">
@@ -33,14 +31,6 @@
                     </div>
                 </li>
 
-                <!-- Usernmame -->
-                <!-- <li>
-                    <div class="nav-link ml-n4" data-toggle="dropdown" href="#">
-                      
-                    </div>
-                </li> -->
-                <!-- /Usernmame -->
-
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown dpst">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -58,59 +48,6 @@
                         </span>
                     </div>
                 </li>
-
-
-
-
-                <!-- Test -->
-
-                <!-- <li class="nav-item dropdown dpst">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown button
-                        </button>
-
-
-                        <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-
-                            <span class="dropdown-header">
-                                <a href="">Clear all</a>
-                            </span>
-
-
-                            <a class="dropdown-item" href="#">
-                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text">
-                                        <p>The doctor has approved your request</p>
-                                        <p class="text-right">2 mins ago</p>
-                                    </div>
-                                </div>
-                            </a>
-
-
-                            <a class="dropdown-item" href="#">
-                                <div class="notifications-item"><i class="fas fa-comment-medical fa-lg"></i>
-                                    <div class="text">
-                                        <p>You have received a medical document</p>
-                                        <p class="text-right">10 mins ago</p>
-                                    </div>
-                                </div>
-                            </a>
-
-
-
-
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </li> -->
-
-                <!-- Test -->
-
-
-
-
             </ul>
 
         </div>

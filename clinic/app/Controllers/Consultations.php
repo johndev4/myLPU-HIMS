@@ -314,6 +314,8 @@ class Consultations extends BaseController
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			if ($this->validate($this->getUploadRules())) {
+				$success1 = [];
+				$success2 = [];
 				$files = $this->request->getFiles();
 				$consultation = $this->consultationsModel->find($id);
 

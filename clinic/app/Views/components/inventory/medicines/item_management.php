@@ -145,27 +145,10 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <!-- <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="username" value="">
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Expiration Date</label>
-                                        <input type="date" class="form-control" id="" name="username" value="">
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="add_department" class="col-form-label">Availability</label>
-                                        <select class="form-control" id="add_department" name="department">
-                                            <option value="" selected="selected">---Choose Status---</option>
-                                            <option value="COECSA">Available</option>
-                                            <option value="CITHM">Unavailable</option>
-                                        </select>
-                                    </div> -->
                                 </div>
 
                                 <div class="footer float-right pb-3">
                                     <button type="submit" class="btn text-light swalDefaultSuccess button-color">Save</button>
-                                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
                                 </div>
                             </form>
                         </div>
@@ -311,36 +294,10 @@
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <!-- <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock</label>
-                                        <input type="number" class="form-control" id="" name="" value="50" disabled>
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Expiration Date</label>
-                                        <input type="date" class="form-control" id="" name="" value="">
-                                    </div>
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock In</label>
-                                        <input type="number" class="form-control" id="" name="" value="0">
-                                    </div>
-
-                                    <div class="col-6 form-group">
-                                        <label for="#add_username" class="col-form-label">Stock Out</label>
-                                        <input type="number" class="form-control" id="" name="" value="0">
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label for="add_department" class="col-form-label">Availability</label>
-                                        <select class="form-control" id="" name="">
-                                            <option value="" selected="selected">---Choose Status---</option>
-                                            <option value="Available">Available</option>
-                                            <option value="Unavailable">Unavailable</option>
-                                        </select>
-                                    </div> -->
                                 </div>
 
                                 <div class="footer float-right pb-3">
                                     <button type="submit" class="btn text-light swalDefaultSuccess button-color">Save</button>
-                                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> -->
                                 </div>
                             </form>
                         </div>
