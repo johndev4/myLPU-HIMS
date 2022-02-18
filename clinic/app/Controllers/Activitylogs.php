@@ -27,3 +27,4 @@ class Activitylogs extends BaseController
         }
     }
 }
+}
