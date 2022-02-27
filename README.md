@@ -1,25 +1,6 @@
-# Serverless Offline Local
+# myLPU: Health Information Management System
 
 ## Prerequisites
 
-• Python
-
-## Installation
-
-• Execute this line:
-
-```python
-pip install -r requirements.txt
-```
-
-• After executing the above line, execute this line:
-
-```
-npm i
-```
-
-## Usage
-
-```
-npm run offline
-```
+• PHP 8.0
+• Maria DB
