@@ -6,7 +6,9 @@ Since the pandemic began, school facilities have been underutilized due to the c
 
 • Maria DB
 
-## Local Machine Usage
-```
-php spark
-```
+## Installation
+
+### Setup Database
+
+
+
