@@ -25,8 +25,8 @@ app.baseURL = [hostname:portnumber]
 # DATABASE
 #--------------------------------------------------------------------
 
-database.default.hostname = [database hostname]
-database.default.database = [database name]
+database.default.hostname = [database_hostname]
+database.default.database = [database_name]
 database.default.username = [db_username]
 database.default.password = [db_password]
 ```
