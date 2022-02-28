@@ -13,7 +13,28 @@ The following technologies are used for the project:
 
 ## Installation
 
-### Setup Database
+### Setup .env file
+```
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
 
+app.baseURL = [hostname:portnumber]
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+
+database.default.hostname = [database hostname]
+database.default.database = [database name]
+database.default.username = [db_username]
+database.default.password = [db_password]
+```
+
+### Setup Database
+1. Open phpmyadmin
+2. Create database named with the value of "database.default.database" on .env file
+3. Import './database/sql_script/table_setup.sql'
+4. Import './database/administrato_accounts' on administrators table
 
 
