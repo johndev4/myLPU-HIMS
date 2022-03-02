@@ -9,7 +9,7 @@ The following technologies are used for the project:
 ## Prerequisites
 • PHP 8.0
 
-• Maria DB
+• MySQL
 
 ## Installation
 
