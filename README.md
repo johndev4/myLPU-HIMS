@@ -7,11 +7,9 @@ The following technologies are used for the project:
 3. JQuery
 
 ## Prerequisites
-• XAMPP
+• XAMPP (Optional)
 
 • PHP 8.0
-
-• MariaDB
 
 ## Installation
 
