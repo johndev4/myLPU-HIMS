@@ -1,8 +1,0 @@
-CRITICAL - 2021-12-14 15:27:27 --> Undefined array key "medical_record"
-#0 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Records.php(243): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 243)
-#1 C:\xampp\htdocs\myLPU-HIMS\clinic\app\Controllers\Records.php(288): App\Controllers\Records->uploadRecord()
-#2 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(802): App\Controllers\Records->uploadStudentRecord()
-#3 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Records))
-#4 C:\xampp\htdocs\myLPU-HIMS\vendor\codeigniter\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#5 C:\xampp\htdocs\myLPU-HIMS\clinic\public\index.php(37): CodeIgniter\CodeIgniter->run()
-#6 {main}
