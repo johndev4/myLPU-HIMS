@@ -1,0 +1,4 @@
+# writable
+writable/debugbar/*.json
+writable/logs/*
+writable/session/*
