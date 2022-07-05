@@ -33,14 +33,14 @@ database.default.password = [db_password]
 ```
 
 **Setup Database**
-1. Create database named with the value of "database.default.database" on .env file
+1. Create a schema named with ```database.default.database``` from .env file
 2. Import ```infrastructure/database/sql/init-create-tables.sql```
 3. Import ```infrastructure/database/csv/administrator-account.csv``` into administrators table
 
 ### Run using XAMPP:
 1. Config php.ini located in php folder and put ```extension=intl``` on it 
   
-    (**NOTE:** You can just uncomment it by using find tool and remove ```;``` at the beginning)
+    (**NOTE:** You can just uncomment it by removing ```;``` at the beginning of it)
 
 2. Open the XAMPP control panel
 3. Start Apache and MySQL server
