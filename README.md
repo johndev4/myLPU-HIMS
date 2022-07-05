@@ -1,13 +1,15 @@
-# myLPU: Health Information Management System
-Since the pandemic began, school facilities have been underutilized due to the closure of most establishments. The purpose of this project is to help students, employees, and especially the clinic staff, to have the ability to utilize the school clinic in an online set-up by providing a health information management system for Lyceum of the Philippines University, helping students to get primary care. The project focuses on the development of a web-based system that will be accessible through a web browser on mobile devices and personal computers with internet connections.
+# myLPU: Health Information Management System for LPU Clinic
+**myLPU HIMS** is a web-based application that aims to improve the function of the clinic and help the students, employees, and especially the clinic personnel, to have the ability to utilize the school clinic in an online set-up even in this pandemic by providing an online consultation service.
+
+The developed system comprises three different user interfaces that will be used by the clinic, lyceans, and administrators. Basically, lyceans will be able to request a consultation at either the clinic for minor sickness or guidance for mental wellness. They can also view or download the medical documents that was sent by the clinic. The health personnel will be able to manage the lyceans’ medical record, consultation history and report, and inventory. Lastly, the admin will be able to view the activity logs, manage the accounts of the students, faculties, staffs, and health personnel.
 
 **The following technologies are used for the project:**
-1. CodeIgniter 4 Framework
-2. Bootstrap 4
-3. JQuerys
+- CodeIgniter 4
+- Bootstrap 4
+- JQuery
 
 ## Prerequisites
-• PHP 8.0
+- PHP 8.0
 
 ## Deployment Guide
 
