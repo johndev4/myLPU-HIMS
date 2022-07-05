@@ -50,11 +50,11 @@ database.default.password = [db_password]
 3. Start Apache and MySQL server
 
 ### Run using command-line interface:
-- **Change working directory to infrastructure**
+1. **Change working directory to infrastructure**
 ```
 cd [path_of_client_side]
 ```
-- **Run php spark serve**
+2. **Run php spark serve**
 ```
 php spark serve --port=[port_number]
 ```
